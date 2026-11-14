@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>KSV — ремонт техники в Новокосино</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0f12;--card:#17191e;--card2:#1e2128;--red:#e3262f;--text:#f2f3f5;--muted:#9ba0ab;--line:#2a2e37}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.55}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.05}
+h2{font-size:clamp(30px,4.2vw,46px);margin-bottom:12px}
+.lead{color:var(--muted);max-width:560px}
+section{padding:80px 0}
+.red{color:var(--red)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;text-decoration:none;padding:15px 26px;border-radius:10px;border:0;cursor:pointer;font:700 16px Inter;transition:.15s}
+.btn:hover{background:#ff3a43;transform:translateY(-2px)}
+.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--text)}
+.btn.wa{background:#25d366;color:#06301a}
+
+nav{position:sticky;top:0;z-index:10;background:rgba(14,15,18,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Space Grotesk";font-weight:700;font-size:20px}
+.logo img{width:38px;height:38px;border-radius:8px;object-fit:cover}
+.navl{display:flex;gap:26px}.navl a{text-decoration:none;color:var(--muted)}.navl a:hover{color:var(--text)}
+
+.hero{padding:60px 0 80px;background:radial-gradient(700px 400px at 80% 30%,rgba(227,38,47,.18),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.tag{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);padding:7px 13px;border-radius:999px;font-size:14px;color:var(--muted);margin-bottom:22px}
+.tag i{width:8px;height:8px;border-radius:50%;background:#2ecc71;box-shadow:0 0 0 4px rgba(46,204,113,.2)}
+.hero h1{font-size:clamp(40px,6vw,72px);margin-bottom:22px}
+.hero p{font-size:19px;color:var(--muted);max-width:480px;margin-bottom:30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.nums{display:flex;gap:34px;margin-top:36px;flex-wrap:wrap}
+.nums b{font-family:"Space Grotesk";font-size:34px;display:block;line-height:1}
+.nums span{font-size:14px;color:var(--muted)}
+.hero-img{position:relative}
+.hero-img img{border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%;border:1px solid var(--line)}
+.hero-img .badge{position:absolute;left:-16px;bottom:-16px;background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:14px 18px;font-size:14px;max-width:250px}
+.hero-img .badge b{color:var(--text);display:block;font-size:15px}
+
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.it{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.15s}
+.it:hover{border-color:var(--red)}
+.it .e{font-size:28px}
+.it h3{font-size:18px;margin:10px 0 6px}
+.it p{font-size:14px;color:var(--muted)}
+
+/* before/after */
+.ba-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}
+.ba{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;max-height:600px;border:1px solid var(--line);user-select:none;touch-action:none;cursor:ew-resize}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .after{clip-path:inset(0 0 0 50%)}
+.ba .bar{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%)}
+.ba .bar::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:#fff;color:#111;display:grid;place-items:center;font-size:20px;font-weight:700}
+.ba .lbl{position:absolute;top:14px;background:rgba(0,0,0,.65);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:700}
+.ba .l1{left:14px}.ba .l2{right:14px}
+
+/* wizard */
+.wiz{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:44px;display:grid;grid-template-columns:.85fr 1.15fr;gap:40px}
+.q{margin-bottom:20px}
+.q b{display:block;margin-bottom:10px;font-weight:500}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:var(--card2);color:var(--text);border:1.5px solid var(--line);border-radius:10px;padding:9px 14px;font:500 15px Inter;cursor:pointer}
+.chip:hover{border-color:var(--muted)}
+.chip.on{background:var(--red);border-color:var(--red)}
+.out{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px;font-family:ui-monospace,Consolas,monospace;font-size:14px;white-space:pre-line;min-height:90px;margin-bottom:16px;color:#cfd3da}
+
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.rev p{font-size:15px;margin:8px 0 12px;color:#d6d9df}
+.rev small{color:var(--muted)}
+.st{color:#ffc53d}
+
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:22px}
+.info{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:34px;display:flex;flex-direction:column;gap:18px}
+.info small{display:block;color:var(--muted);font-size:14px}
+.info b{font-size:18px}
+.map{border-radius:24px;overflow:hidden;border:1px solid var(--line);min-height:380px}
+.map iframe{width:100%;height:100%;min-height:380px;border:0}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 100px}
+.demo{display:inline-block;background:var(--card);padding:8px 14px;border-radius:10px;margin-top:8px}
+.float{position:fixed;right:18px;bottom:18px;z-index:20;box-shadow:0 14px 30px -10px rgba(227,38,47,.6)}
+
+@media(max-width:860px){
+ .hero .wrap,.ba-wrap,.wiz,.contact{grid-template-columns:1fr}
+ .grid{grid-template-columns:1fr 1fr}
+ .revs{grid-template-columns:1fr}
+ .navl{display:none}
+ .wiz{padding:26px 20px}
+ section{padding:56px 0}
+ .hero-img .badge{left:10px}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+ <a class="logo" href="#"><img src="img/2.jpg" alt="">KSV Service</a>
+ <div class="navl"><a href="#repair">Что чиним</a><a href="#clean">Чистка</a><a href="#order">Заявка</a><a href="#reviews">Отзывы</a><a href="#contacts">Адрес</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+ <div>
+  <div class="tag"><i></i>Работаем до 21:00, в том числе в выходные</div>
+  <h1>Разбили экран в субботу? <span class="red">Заберёте в воскресенье.</span></h1>
+  <p>Ремонт телефонов, ноутбуков, приставок и видеокарт в Новокосино. Объясним, что сломалось и зачем, и честно скажем, когда ремонт не выгоден.</p>
+  <div class="cta"><a class="btn" href="#order">Описать поломку</a><a class="btn ghost" href="https://t.me/ServeceKSV" target="_blank" rel="noopener">Telegram</a></div>
+  <div class="nums">
+   <div><b>5,0</b><span>рейтинг на Картах</span></div>
+   <div><b>340</b><span>отзывов</span></div>
+   <div><b>10+</b><span>видов техники</span></div>
+  </div>
+ </div>
+ <div class="hero-img">
+  <img src="img/1.jpg" alt="Мастер KSV ремонтирует телефон">
+  <div class="badge"><b>«Мастер постоянно был на связи»</b>и предлагал варианты, пишут клиенты</div>
+ </div>
+</div></header>
+
+<section id="repair" style="padding-top:10px"><div class="wrap">
+ <h2>Что чиним</h2>
+ <p class="lead">От разбитого стекла до сгоревшей видеокарты.</p>
+ <div class="grid">
+  <div class="it"><div class="e">📱</div><h3>Телефоны</h3><p>iPhone и Android: экраны, батареи, разъёмы, после воды.</p></div>
+  <div class="it"><div class="e">💻</div><h3>Ноутбуки</h3><p>Чистка, термопаста, диагностика, замена деталей.</p></div>
+  <div class="it"><div class="e">🎮</div><h3>Приставки</h3><p>PlayStation и Xbox: чистка от пыли, перегрев, ремонт.</p></div>
+  <div class="it"><div class="e">🖥️</div><h3>Мониторы</h3><p>Подсветка, питание, матрица.</p></div>
+  <div class="it"><div class="e">🧩</div><h3>Видеокарты</h3><p>Пайка, замена чипов памяти, обслуживание.</p></div>
+  <div class="it"><div class="e">⛏️</div><h3>Майнинг-железо</h3><p>Ремонт и обслуживание оборудования.</p></div>
+  <div class="it"><div class="e">💾</div><h3>Данные</h3><p>Восстановление фото и файлов с накопителей.</p></div>
+  <div class="it"><div class="e">📲</div><h3>Планшеты</h3><p>Тачскрины, экраны, зарядка.</p></div>
+ </div>
+</div></section>
+
+<section id="clean" style="padding-top:20px"><div class="wrap ba-wrap">
+ <div>
+  <h2>Ваша приставка <span class="red">изнутри</span></h2>
+  <p class="lead">Потяните ползунок. Слева — PlayStation, которая пришла к нам из-за перегрева. Справа — она же после чистки. Шум и тормоза уходят вместе с пылью.</p>
+  <a class="btn" href="#order" style="margin-top:22px">Записаться на чистку</a>
+ </div>
+ <div class="ba" id="ba">
+  <img src="img/4.jpg" alt="Приставка до чистки">
+  <img class="after" id="after" src="img/5.jpg" alt="Приставка после чистки">
+  <div class="bar" id="bar"></div>
+  <span class="lbl l1">До</span><span class="lbl l2">После</span>
+ </div>
+</div></section>
+
+<section id="order" style="padding-top:20px"><div class="wrap">
+ <div class="wiz">
+  <div>
+   <h2>Что случилось?</h2>
+   <p class="lead">Отметьте устройство и проблему, и мы соберём сообщение мастеру. Он ответит с ценой и сроком, часто в тот же день.</p>
+  </div>
+  <div>
+   <div class="q"><b>Устройство</b><div class="chips" data-k="dev"><button class="chip">iPhone</button><button class="chip">Android</button><button class="chip">Ноутбук</button><button class="chip">Приставка</button><button class="chip">Планшет</button><button class="chip">Другое</button></div></div>
+   <div class="q"><b>Проблема</b><div class="chips" data-k="bug"><button class="chip">Разбит экран</button><button class="chip">Не заряжается</button><button class="chip">Быстро садится</button><button class="chip">Попала вода</button><button class="chip">Греется / шумит</button><button class="chip">Не включается</button></div></div>
+   <div class="out" id="out">&gt; выберите устройство и проблему_</div>
+   <div class="cta"><a class="btn wa" id="wa" href="https://wa.me/79646375595" target="_blank" rel="noopener">Отправить в WhatsApp</a><a class="btn ghost" href="https://t.me/ServeceKSV" target="_blank" rel="noopener">Telegram</a></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="reviews" style="padding-top:20px"><div class="wrap">
+ <h2>Отзывы</h2>
+ <div class="revs">
+  <div class="rev"><span class="st">★★★★★</span><p>«Жена разбила экран на iPhone в субботу. В воскресенье после обеда забрал телефон в идеальном состоянии».</p><small>Отзыв с Яндекс Карт</small></div>
+  <div class="rev"><span class="st">★★★★★</span><p>«Отдала ноутбук на чистку и диагностику. Получила подробнейшее описание, что случилось, почему и что с этим делать».</p><small>Отзыв с Яндекс Карт</small></div>
+  <div class="rev"><span class="st">★★★★★</span><p>«Предупредили, что замена экрана планшета может быть невыгодной, и предложили вариант дешевле. Честно».</p><small>Отзыв с Яндекс Карт</small></div>
+ </div>
+</div></section>
+
+<section id="contacts" style="padding-top:20px"><div class="wrap">
+ <h2>Где мы</h2>
+ <div class="contact">
+  <div class="info">
+   <div><small>Адрес</small><b>Новокосинская ул., 19<br>вход вместе с ломбардом</b></div>
+   <div><small>Метро</small><b>Новокосино — 540 м</b></div>
+   <div><small>Работаем</small><b>до 21:00, в том числе в выходные</b></div>
+   <div><small>Удобно</small><b>Парковка, Wi-Fi, оплата картой</b></div>
+   <div class="cta"><a class="btn wa" href="https://wa.me/79646375595" target="_blank" rel="noopener">WhatsApp</a><a class="btn ghost" href="https://t.me/ServeceKSV" target="_blank" rel="noopener">Telegram</a></div>
+  </div>
+  <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?oid=139027050840&z=16" title="KSV на карте"></iframe></div>
+ </div>
+</div></section>
+
+<footer>© KSV Service · Новокосино<br><span class="demo">Это демо-концепт сайта. Фото и отзывы взяты с Яндекс Карт.</span></footer>
+<a class="btn float" href="#order">🔧 Заявка</a>
+
+<script>
+// before/after
+const ba=document.getElementById('ba'),after=document.getElementById('after'),bar=document.getElementById('bar');
+function setPos(x){const r=ba.getBoundingClientRect();let p=Math.min(100,Math.max(0,(x-r.left)/r.width*100));after.style.clipPath='inset(0 0 0 '+p+'%)';bar.style.left=p+'%';}
+let drag=false;
+ba.addEventListener('pointerdown',e=>{drag=true;ba.setPointerCapture(e.pointerId);setPos(e.clientX)});
+ba.addEventListener('pointermove',e=>{if(drag)setPos(e.clientX)});
+ba.addEventListener('pointerup',()=>drag=false);
+// wizard
+const st={};
+document.querySelectorAll('.chips').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;g.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));b.classList.add('on');st[g.dataset.k]=b.textContent;upd();}));
+function upd(){
+ const m='Здравствуйте! '+(st.dev?'Устройство: '+st.dev+'. ':'')+(st.bug?'Проблема: '+st.bug.toLowerCase()+'.':'')+'\nСколько будет стоить и когда можно принести?';
+ document.getElementById('out').textContent=m;
+ document.getElementById('wa').href='https://wa.me/79646375595?text='+encodeURIComponent(m);
+}
+</script>
+</body>
+</html>
