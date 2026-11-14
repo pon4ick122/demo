@@ -10,7 +10,7 @@
 <style>
 :root{--acc:#ff4fd8;--acc2:#7b5cff;--bg:#07070c;--card:#11111a;--line:#23233a;--ink:#f3f3fa;--muted:#9a9ab5}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.55;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit}
@@ -106,18 +106,46 @@ footer .demo{opacity:.7}
  section{padding:60px 0}
 }
 @media (max-width:520px){.perks{grid-template-columns:1fr}.zone ul{grid-template-columns:1fr}.hero{min-height:auto}}
+.bigword,.sideimg,.ticker{display:none}
+
+body{background-color:#08060d;background-image:linear-gradient(rgba(255,79,216,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,79,216,.06) 1px,transparent 1px);background-size:48px 48px}
+.hero{text-align:center;min-height:auto;padding:110px 0 90px}
+.hero .bgimg{opacity:.22;filter:saturate(1.4) blur(2px)}
+.hero:after{background:radial-gradient(ellipse at center,rgba(8,6,13,.3),var(--bg) 75%)}
+.hero .bigword{display:block;position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);font:700 clamp(180px,34vw,460px)/.8 'Unbounded',sans-serif;color:transparent;-webkit-text-stroke:2px rgba(255,79,216,.28);z-index:0;pointer-events:none;letter-spacing:-.04em}
+.hero .wrap>*:not(.bigword){position:relative;z-index:1}
+.hero h1{margin:22px auto;font-size:clamp(38px,6vw,76px)}
+.hero p{margin:0 auto 32px}
+.pills,.cta{justify-content:center}
+.facts{margin:56px auto 0;border-radius:999px;grid-template-columns:repeat(4,1fr)}
+.facts div{text-align:center}.facts b{font-size:clamp(18px,2vw,24px);white-space:nowrap}
+.btn,.chip,.cnt button,input[type=time]{border-radius:999px}
+.zone,.panel,.perk,blockquote,.map,.gal img{border-radius:32px}
+.zones{grid-template-columns:1fr}
+.zone{display:grid;grid-template-columns:1fr 1.3fr;gap:10px 40px;align-items:center;padding:34px 40px;background:linear-gradient(120deg,rgba(255,79,216,.12),rgba(123,92,255,.08)),var(--card)}
+.zone ul{grid-template-columns:repeat(4,1fr);grid-row:span 2}
+.zone li{flex-direction:column;align-items:center;border:1px solid var(--line);border-radius:18px;padding:14px 6px}
+.zone li span:last-child{font:700 20px 'Unbounded';color:var(--ink)}
+h2{text-align:center}.lead{margin:0 auto;text-align:center}
+.perks{counter-reset:p}
+.perk{position:relative}.perk:after{counter-increment:p;content:'0' counter(p);position:absolute;right:22px;top:18px;font:700 26px 'Unbounded';color:rgba(255,79,216,.25)}
+.btn{box-shadow:0 0 0 1px rgba(255,255,255,.08),0 10px 40px -8px var(--acc)}
+@media (max-width:900px){.zone{grid-template-columns:1fr;padding:26px}.zone ul{grid-template-columns:1fr 1fr}.facts{border-radius:26px;grid-template-columns:1fr 1fr}.hero{padding:70px 0}}
+
 </style>
 </head>
-<body>
+<body class="skin-izi">
 <nav><div class="wrap"><a class="logo" href="#">IZI<span>.</span></a><div class="navl"><a href="#zones">Зоны и цены</a><a href="#book">Бронь</a><a href="#gallery">Клуб</a><a href="#contacts">Контакты</a></div><a class="btn" href="#book" style="padding:11px 20px">Забронировать</a></div></nav>
 
-<header class="hero"><img class="bgimg" src="img/1.jpg" alt=""><div class="wrap">
+<header class="hero"><img class="bgimg" src="img/1.jpg" alt=""><div class="wrap"><div class="bigword" aria-hidden="true">IZI</div><div>
  <div class="pills"><span class="pill"><span class="s">★</span> 5,0 · 260 отзывов</span><span class="pill">🏆 Хорошее место 2026</span><span class="pill">🕒 Круглосуточно</span></div>
  <h1>600+ FPS в&nbsp;CS2. <em>Izi.</em></h1>
  <p>Мониторы BenQ Zowie, мыши Logitech Superlight, свой Discord. Можно со своей едой и напитками. Открыты круглосуточно.</p>
  <div class="cta"><a class="btn" href="#book">Забронировать место</a><a class="btn ghost" href="#zones">Зоны и цены</a></div>
+ </div><img class="sideimg" src="img/1.jpg" alt="Izi">
  <div class="facts"><div><b>400 Гц</b><span>BenQ Zowie</span></div><div><b>i5-14600KF</b><span>в каждом ПК</span></div><div><b>G PRO</b><span>Logitech</span></div><div><b>24/7</b><span>без выходных</span></div></div>
 </div></header>
+
 
 <section id="zones"><div class="wrap">
  <h2>Зоны и <em>цены</em></h2>
