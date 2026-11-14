@@ -10,7 +10,7 @@
 <style>
 :root{--bg:#f3f5fb;--card:#ffffff;--ink:#0d1530;--muted:#5e6788;--line:#dde2f0;--acc:#2453ff;--soft:#e3e9ff;--dark:#0d1530}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.55;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit}
@@ -99,9 +99,35 @@ footer{text-align:center;color:var(--muted);padding:40px 20px 100px;font-size:14
  section{padding:60px 0}
 }
 @media (max-width:520px){.perks{grid-template-columns:1fr}.duo{height:360px}.svcs{grid-template-columns:1fr 1fr}}
+.third,.sticker,.tape{display:none}
+
+body{background:#eef1fb radial-gradient(800px 400px at 90% 0,rgba(36,83,255,.18),transparent) no-repeat}
+h1,h2{text-transform:uppercase;letter-spacing:-.02em}
+.hero h1{font-size:clamp(34px,5vw,60px)}
+em{font-style:normal;font-weight:700;color:#fff;background:var(--acc);padding:0 .18em;border-radius:.2em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.btn{border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);border-radius:14px}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn.light{background:#fff}
+.pill{border:2px solid var(--ink)}
+.duo img{border:2px solid var(--ink)!important;box-shadow:8px 8px 0 var(--acc)}
+.duo img:nth-child(1){transform:rotate(-3deg)}
+.duo img:nth-child(2){transform:rotate(4deg)}
+.duo .badge{transform:rotate(8deg);background:var(--acc);color:#fff;border:2px solid var(--ink);border-radius:999px;width:130px;height:130px;display:grid;place-content:center;text-align:center;padding:0;box-shadow:4px 4px 0 var(--ink)}
+.duo .badge b{color:#fff}
+.duo .sticker{display:block;position:absolute;left:-10px;bottom:30px;background:#fff;border:2px solid var(--ink);border-radius:12px;padding:8px 14px;font:700 14px Unbounded;transform:rotate(-6deg);box-shadow:4px 4px 0 var(--ink);z-index:2}
+.svc,.perk,blockquote,.cbox,.map{border:2px solid var(--ink);border-radius:20px}
+.svc{box-shadow:3px 3px 0 var(--ink)}
+.svc.on{background:var(--acc);color:#fff}.svc.on small,.svc.on .pp{color:#fff}
+.side{border:2px solid var(--ink);box-shadow:8px 8px 0 var(--acc)}
+.gh{text-transform:uppercase;font-size:20px}
+.perk:nth-child(odd){transform:rotate(-1deg)}.perk:nth-child(even){transform:rotate(1deg)}
+.gal img{border:2px solid var(--ink);border-radius:20px}
+.gal img:nth-child(odd){transform:rotate(-1.5deg)}.gal img:nth-child(even){transform:rotate(1.5deg)}
+@media (max-width:520px){.duo .badge{width:100px;height:100px}}
+
 </style>
 </head>
-<body>
+<body class="skin-symptom">
 <nav><div class="wrap"><a class="logo" href="#">SYMPTOM</a><div class="navl"><a href="#book">Услуги и цены</a><a href="#works">Работы</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></div><a class="btn" href="#book" style="padding:10px 20px">Записаться</a></div></nav>
 
 <header class="hero"><div class="wrap">
@@ -111,8 +137,9 @@ footer{text-align:center;color:var(--muted);padding:40px 20px 100px;font-size:14
   <p>Когти, наращивание и кристаллы у «Маяковской». Дизайн в «Когтях» уже входит в цену, а маникюр держится больше трёх недель.</p>
   <div class="cta"><a class="btn" href="#book">Выбрать услугу</a><a class="btn light" href="#works">Смотреть работы</a></div>
  </div>
- <div class="duo"><img src="img/2.jpg" alt="Симптом"><img src="img/1.jpg" alt="Симптом"><div class="badge"><b>4,9</b>Яндекс Карты</div></div>
+ <div class="duo"><img src="img/2.jpg" alt="Симптом"><img src="img/1.jpg" alt="Симптом"><img class="third" src="img/5.jpg" alt="Симптом"><div class="badge"><b>4,9</b>Яндекс Карты</div><div class="sticker">дизайн входит в цену 💎</div></div>
 </div></header>
+<div class="tape" aria-hidden="true"><span></span></div>
 
 <section id="book" style="padding-top:10px"><div class="wrap">
  <h2>Услуги и <em>цены</em></h2>
