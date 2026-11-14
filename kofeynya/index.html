@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Песок — кофе на песке</title>
+<meta name="description" content="Кофейня «Песок»: варим кофе в турке на горячем песке. Меню, зёрна, адрес и часы работы.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#EAD7A4;
+  --sand-deep:#D9BE7C;
+  --cobalt:#1E3A9E;
+  --ink:#152255;
+  --copper:#B5652E;
+  --foam:#FFF8E8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--sand);
+  color:var(--ink);
+  font:400 18px/1.55 "Golos Text",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* шапка */
+.top{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;position:relative;z-index:2}
+.logo{font:800 26px/1 "Unbounded",sans-serif;color:var(--cobalt);text-decoration:none;letter-spacing:-.02em}
+.top nav{display:flex;gap:28px;font-weight:500}
+.top nav a{text-decoration:none;border-bottom:2px solid transparent}
+.top nav a:hover{border-color:var(--cobalt)}
+
+/* первый экран */
+.hero{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:calc(100vh - 80px);min-height:calc(100svh - 80px);padding-bottom:40px}
+.hero-text{position:relative;z-index:1}
+.hero h1{
+  font:800 clamp(44px,6.6vw,90px)/.95 "Unbounded",sans-serif;
+  letter-spacing:-.035em;color:var(--cobalt);
+}
+.hero p{max-width:28em;margin-top:28px;font-size:20px}
+.hero .where{margin-top:18px;font-weight:600}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-block;text-decoration:none;font-weight:600;padding:17px 28px;border-radius:999px;border:2px solid var(--cobalt)}
+.btn-main{background:var(--cobalt);color:var(--foam)}
+.btn-main:hover{background:var(--ink);border-color:var(--ink)}
+.btn-ghost{color:var(--cobalt)}
+.btn-ghost:hover{background:rgba(30,58,158,.08)}
+#cup3d{position:relative;width:calc(100% + 140px);margin-left:-10px;height:min(700px,82vh);cursor:grab}
+#cup3d canvas{
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);
+  display:block;width:100%!important;height:100%!important}
+.hint{position:absolute;bottom:6px;left:0;right:0;text-align:center;font-size:14px;opacity:.6;pointer-events:none}
+
+/* зёрна */
+.beans{background:var(--ink);color:var(--foam);padding:100px 0;overflow:hidden}
+.beans-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+#bean3d{height:520px;cursor:grab;touch-action:pan-y}
+#bean3d canvas{display:block;width:100%!important;height:100%!important}
+h2{font:800 clamp(32px,4.4vw,54px)/1 "Unbounded",sans-serif;letter-spacing:-.03em;margin-bottom:28px}
+.roast-name{font:500 26px/1.2 "Unbounded",sans-serif;color:var(--sand);margin:30px 0 10px}
+.roast-notes{min-height:4.8em;max-width:26em}
+.slider{margin-top:22px}
+.slider input{width:100%;accent-color:var(--sand);height:28px;cursor:pointer}
+.slider-scale{display:flex;justify-content:space-between;font-size:14px;opacity:.7;margin-top:4px}
+
+/* меню */
+.menu{background:var(--cobalt);color:var(--foam);padding:90px 0}
+.menu h2{margin-bottom:48px}
+.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:56px 72px}
+.menu h3{font:500 22px/1.2 "Unbounded",sans-serif;margin-bottom:6px;color:var(--sand)}
+.menu .note{opacity:.75;font-size:16px;margin-bottom:18px}
+.menu ul{list-style:none}
+.menu li{display:flex;align-items:baseline;gap:10px;padding:9px 0}
+.menu li .item{white-space:nowrap}
+.menu li i{flex:1;border-bottom:2px dotted rgba(255,248,232,.35);transform:translateY(-5px)}
+.menu li b{font-weight:600;white-space:nowrap}
+.menu li small{display:block;opacity:.7;font-size:15px}
+
+/* как варим */
+.how{padding:100px 24px}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;counter-reset:s}
+.steps li{counter-increment:s;border-top:3px solid var(--cobalt);padding-top:18px}
+.steps li::before{content:counter(s);display:block;font:800 44px/1 "Unbounded",sans-serif;color:var(--copper);margin-bottom:14px}
+.steps h3{font-size:20px;font-weight:600;margin-bottom:8px}
+
+/* адрес */
+.visit{background:var(--sand-deep);padding:90px 0}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.visit dl{display:grid;grid-template-columns:max-content 1fr;gap:12px 28px;font-size:20px}
+.visit dt{font-weight:600}
+.visit .btn{margin-top:36px;background:var(--copper);border-color:var(--copper);color:var(--foam)}
+.visit .btn:hover{background:var(--ink);border-color:var(--ink)}
+.mapbox{background:var(--sand);border-radius:28px;aspect-ratio:4/3;overflow:hidden}
+.mapbox svg{width:100%;height:100%;display:block}
+
+footer{padding:36px 24px;font-size:15px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .wrap,.top,.how,footer{padding-left:16px;padding-right:16px}
+  .top nav{gap:16px;font-size:16px}
+  .top nav a.hide-m{display:none}
+  .hero{grid-template-columns:1fr;min-height:0;padding-top:8px}
+  #cup3d{height:420px;order:-1;margin-bottom:0;width:calc(100% + 32px);margin-left:-16px}
+  .hint{display:none}
+  .beans-grid,.menu-grid,.visit-grid{grid-template-columns:1fr;gap:40px}
+  #bean3d{height:360px}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  .steps{grid-template-columns:1fr}
+  .menu li .item{white-space:normal}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <a class="logo" href="#">песок</a>
+  <nav>
+    <a href="#beans" class="hide-m">Зёрна</a>
+    <a href="#menu">Меню</a>
+    <a href="#how" class="hide-m">Как варим</a>
+    <a href="#visit">Адрес</a>
+  </nav>
+</header>
+
+<main>
+<section class="wrap hero">
+  <div class="hero-text">
+    <h1>Кофе, который варится в&nbsp;песке</h1>
+    <p>Медная турка, раскалённый кварцевый песок и три минуты терпения. Так кофе варят на Ближнем Востоке уже пятьсот лет, а мы просто не стали ничего упрощать.</p>
+    <p class="where">Покровка, 17. Открыты каждый день с 8:00</p>
+    <div class="hero-actions">
+      <a class="btn btn-main" href="#menu">Смотреть меню</a>
+      <a class="btn btn-ghost" href="#visit">Как нас найти</a>
+    </div>
+  </div>
+  <div id="cup3d" role="img" aria-label="Чашка кофе с пенкой, вокруг летают кофейные зёрна">
+    <span class="hint">Подвигай мышкой или пальцем</span>
+  </div>
+</section>
+
+<section class="beans" id="beans">
+  <div class="wrap beans-grid">
+    <div id="bean3d" role="img" aria-label="Кофейное зерно крупным планом, цвет меняется вместе с обжаркой"></div>
+    <div>
+      <h2>Обжариваем сами, раз в неделю</h2>
+      <p>Зерно приезжает зелёным. Цвет и вкус ему даёт обжарка. Двигай ползунок и смотри, как оно меняется.</p>
+      <p class="roast-name" id="roastName">Средняя</p>
+      <p class="roast-notes" id="roastNotes"></p>
+      <div class="slider">
+        <label for="roast" class="visually-hidden" style="position:absolute;left:-9999px">Степень обжарки</label>
+        <input id="roast" type="range" min="0" max="3" step="0.01" value="2">
+        <div class="slider-scale" aria-hidden="true"><span>Зелёное</span><span>Светлая</span><span>Средняя</span><span>Тёмная</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <h2>Меню</h2>
+    <div class="menu-grid">
+      <div>
+        <h3>На песке</h3>
+        <p class="note">Варим в турке на 120 мл, сорт выбираете сами.</p>
+        <ul>
+          <li><span class="item">Классический<small>Эфиопия, светлая обжарка</small></span><i></i><b>290 ₽</b></li>
+          <li><span class="item">С кардамоном<small>как пьют в Иордании</small></span><i></i><b>320 ₽</b></li>
+          <li><span class="item">Халва и соль<small>сладкий, с морской солью</small></span><i></i><b>350 ₽</b></li>
+          <li><span class="item">Апельсиновая цедра<small>и щепоть корицы</small></span><i></i><b>330 ₽</b></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Если торопитесь</h3>
+        <p class="note">Эспрессо-машина тоже есть, мы не фанатики.</p>
+        <ul>
+          <li><span class="item">Эспрессо</span><i></i><b>180 ₽</b></li>
+          <li><span class="item">Флэт уайт</span><i></i><b>270 ₽</b></li>
+          <li><span class="item">Капучино</span><i></i><b>250 ₽</b></li>
+          <li><span class="item">Раф с халвой</span><i></i><b>340 ₽</b></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Не кофе</h3>
+        <ul>
+          <li><span class="item">Чай с чабрецом<small>чайник на двоих</small></span><i></i><b>300 ₽</b></li>
+          <li><span class="item">Какао на молоке</span><i></i><b>260 ₽</b></li>
+          <li><span class="item">Айран с мятой</span><i></i><b>220 ₽</b></li>
+        </ul>
+      </div>
+      <div>
+        <h3>К кофе</h3>
+        <ul>
+          <li><span class="item">Пахлава, 2 шт.</span><i></i><b>210 ₽</b></li>
+          <li><span class="item">Лукум с фисташкой</span><i></i><b>180 ₽</b></li>
+          <li><span class="item">Сырник с финиками</span><i></i><b>240 ₽</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how wrap" id="how">
+  <h2>Как мы варим</h2>
+  <ol class="steps">
+    <li><h3>Мелем в пыль</h3><p>Помол тоньше, чем для эспрессо, прямо перед варкой. Иначе вкус уходит за пару минут.</p></li>
+    <li><h3>Холодная вода</h3><p>Кофе заливаем холодной водой. Чем дольше нагрев, тем больше вкуса успевает раскрыться.</p></li>
+    <li><h3>Песок 200 °C</h3><p>Турку ведём по песку: глубже значит горячее. Огня нет, поэтому кофе не пригорает.</p></li>
+    <li><h3>Ловим пенку</h3><p>Снимаем, когда шапка поднимается к горлышку. Секунда опоздания, и кофе убежит.</p></li>
+  </ol>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <h2>Заходите</h2>
+      <dl>
+        <dt>Адрес</dt><dd>Москва, Покровка, 17, вход со двора</dd>
+        <dt>Будни</dt><dd>8:00–22:00</dd>
+        <dt>Выходные</dt><dd>10:00–23:00</dd>
+        <dt>Телефон</dt><dd><a href="tel:+70000000000">+7 (000) 000-00-00</a></dd>
+      </dl>
+      <a class="btn" href="#">Забронировать столик</a>
+    </div>
+    <div class="mapbox" aria-hidden="true">
+      <svg viewBox="0 0 400 300">
+        <rect width="400" height="300" fill="#EAD7A4"/>
+        <path d="M-10 120 L410 90" stroke="#FFF8E8" stroke-width="26"/>
+        <path d="M120 -10 L160 310" stroke="#FFF8E8" stroke-width="18"/>
+        <path d="M290 -10 L270 310" stroke="#FFF8E8" stroke-width="14"/>
+        <path d="M-10 230 L410 250" stroke="#FFF8E8" stroke-width="12"/>
+        <text x="300" y="80" font-family="Golos Text,sans-serif" font-size="14" fill="#152255" opacity=".6">Покровка</text>
+        <circle cx="215" cy="150" r="20" fill="#1E3A9E"/>
+        <circle cx="215" cy="150" r="7" fill="#EAD7A4"/>
+      </svg>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>© Песок, 2026</span>
+  <span>Учебный проект для портфолио. Кофейня вымышленная.</span>
+</footer>
+
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- общие помощники ---------- */
+function makeRenderer(el){
+  const r = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+  r.setPixelRatio(Math.min(devicePixelRatio, 2));
+  r.outputColorSpace = THREE.SRGBColorSpace;
+  r.toneMapping = THREE.ACESFilmicToneMapping;
+  r.toneMappingExposure = 1.05;
+  el.prepend(r.domElement);
+  return r;
+}
+function envFor(renderer, scene){
+  const pm = new THREE.PMREMGenerator(renderer);
+  scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture;
+}
+function fit(renderer, camera, el){
+  const w = el.clientWidth, h = el.clientHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+function canvasTex(size, draw){
+  const c = document.createElement('canvas'); c.width = c.height = size;
+  draw(c.getContext('2d'), size);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+// следим, видна ли сцена, чтобы не грузить видеокарту зря
+function whenVisible(el, cb){
+  new IntersectionObserver(([e]) => cb(e.isIntersecting), { rootMargin:'100px' }).observe(el);
+}
+
+/* ---------- модель зерна ---------- */
+function beanGeometry(){
+  const g = new THREE.SphereGeometry(1, 160, 80);
+  const p = g.attributes.position, v = new THREE.Vector3();
+  for (let i = 0; i < p.count; i++){
+    v.fromBufferAttribute(p, i);
+    const x = v.x * 0.7, y = v.y;
+    let z;
+    if (v.z > 0){
+      // плоская сторона с бороздкой (слегка S-образной)
+      z = v.z * 0.34;
+      const cx = 0.07 * Math.sin(v.y * 2.4);
+      const d = x - cx;
+      const edge = Math.sqrt(Math.max(0, 1 - v.y * v.y));
+      z -= 0.2 * Math.exp(-(d * d) / 0.0035) * edge;
+    } else {
+      z = v.z * 0.58; // выпуклая спинка
+    }
+    p.setXYZ(i, x, y, z);
+  }
+  g.computeVertexNormals();
+  return g;
+}
+const BEAN_GEO = beanGeometry();
+
+const ROASTS = [
+  { name:'Зелёное', color:'#7F8C4F', rough:.85, notes:'Так зерно приезжает с фермы. Пахнет свежей травой, варить из него ещё нельзя.' },
+  { name:'Светлая', color:'#A9703C', rough:.7,  notes:'Цитрус, жасмин и чайная кислинка. Так обжариваем Эфиопию для классического кофе на песке.' },
+  { name:'Средняя', color:'#6A3D20', rough:.5,  notes:'Карамель, орех, молочный шоколад. Лучше всего раскрывается с кардамоном.' },
+  { name:'Тёмная',  color:'#2B170C', rough:.28, notes:'Горький шоколад и немного дыма. На поверхности выступает масло, отсюда блеск.' },
+];
+function roastAt(t){
+  const i = Math.min(2, Math.floor(t)), f = t - i;
+  const a = ROASTS[i], b = ROASTS[i + 1];
+  return {
+    color: new THREE.Color(a.color).lerp(new THREE.Color(b.color), f),
+    rough: a.rough + (b.rough - a.rough) * f,
+    label: ROASTS[Math.round(t)],
+  };
+}
+
+/* ---------- сцена 1: чашка ---------- */
+(function cupScene(){
+  const el = document.getElementById('cup3d');
+  let renderer;
+  try { renderer = makeRenderer(el); } catch(e){ el.querySelector('.hint').textContent = ''; return; }
+  const scene = new THREE.Scene();
+  envFor(renderer, scene);
+  const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
+  camera.position.set(0, 3.9, 7.9);
+  camera.lookAt(0, 0.7, 0);
+
+  scene.add(new THREE.HemisphereLight(0xfff3d6, 0x6b4a2a, 0.6));
+  const key = new THREE.DirectionalLight(0xffe2b8, 2.2); key.position.set(3, 5, 4); scene.add(key);
+  const rim = new THREE.DirectionalLight(0x9fb4ff, 1.2); rim.position.set(-4, 2, -3); scene.add(rim);
+
+  const world = new THREE.Group(); scene.add(world);
+  const cup = new THREE.Group(); world.add(cup);
+
+  // чашка: один профиль — снаружи вверх, кромка, внутри вниз
+  const outer = [[0,0],[0.5,0],[0.56,0.04],[0.7,0.35],[0.82,0.75],[0.9,1.05],[0.93,1.1]];
+  const inner = [[0.88,1.12],[0.85,1.06],[0.78,0.7],[0.64,0.3],[0.4,0.14],[0,0.12]];
+  const pts = [...outer, ...inner].map(([x,y]) => new THREE.Vector2(x, y));
+  const cupGeo = new THREE.LatheGeometry(pts, 96);
+  const cobalt = new THREE.Color('#1E3A9E'), cream = new THREE.Color('#F6EEDC');
+  const cols = [], n = pts.length;
+  for (let i = 0; i <= 96; i++) for (let j = 0; j < n; j++){
+    const c = j < outer.length ? cobalt : cream; cols.push(c.r, c.g, c.b);
+  }
+  cupGeo.setAttribute('color', new THREE.Float32BufferAttribute(cols, 3));
+  const ceramic = new THREE.MeshPhysicalMaterial({ vertexColors:true, roughness:.22, clearcoat:1, clearcoatRoughness:.08, side:THREE.DoubleSide });
+  const cupMesh = new THREE.Mesh(cupGeo, ceramic); cupMesh.position.y = 0.08; cup.add(cupMesh);
+
+  // ручка
+  const handle = new THREE.Mesh(
+    new THREE.TorusGeometry(0.28, 0.075, 20, 48, Math.PI * 1.25),
+    new THREE.MeshPhysicalMaterial({ color:cobalt, roughness:.22, clearcoat:1 })
+  );
+  handle.position.set(0.82, 0.68, 0); handle.rotation.z = -Math.PI * 0.62; cup.add(handle);
+
+  // блюдце
+  const saucerPts = [[0,0],[0.9,0],[1.3,0.1],[1.48,0.17],[1.46,0.2],[1.3,0.15],[0.9,0.08],[0,0.08]].map(([x,y]) => new THREE.Vector2(x,y));
+  const saucer = new THREE.Mesh(new THREE.LatheGeometry(saucerPts, 96),
+    new THREE.MeshPhysicalMaterial({ color:'#F6EEDC', roughness:.25, clearcoat:1 }));
+  cup.add(saucer);
+
+  // кофе с пенкой и рисунком-сердцем
+  const crema = canvasTex(512, (g, s) => {
+    const r = s / 2;
+    const grad = g.createRadialGradient(r, r, 0, r, r, r);
+    grad.addColorStop(0, '#9A6236'); grad.addColorStop(.75, '#B98150'); grad.addColorStop(1, '#5A321A');
+    g.fillStyle = grad; g.fillRect(0, 0, s, s);
+    // крапинки крема
+    for (let i = 0; i < 900; i++){
+      g.fillStyle = `rgba(${Math.random()<.5?'70,38,18':'214,170,120'},${Math.random()*.25})`;
+      g.beginPath(); g.arc(Math.random()*s, Math.random()*s, Math.random()*3, 0, 7); g.fill();
+    }
+    // сердце из молока
+    g.fillStyle = '#F5E6CC';
+    g.beginPath();
+    g.moveTo(r, r + 120);
+    g.bezierCurveTo(r - 190, r + 10, r - 120, r - 150, r, r - 60);
+    g.bezierCurveTo(r + 120, r - 150, r + 190, r + 10, r, r + 120);
+    g.fill();
+  });
+  const coffee = new THREE.Mesh(new THREE.CircleGeometry(0.84, 64),
+    new THREE.MeshStandardMaterial({ map:crema, roughness:.35 }));
+  coffee.rotation.x = -Math.PI / 2; coffee.rotation.z = Math.PI * 0.5; coffee.position.y = 0.08 + 0.98; cup.add(coffee);
+
+  // мягкая тень под блюдцем
+  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(4.2, 4.2), new THREE.MeshBasicMaterial({
+    map: canvasTex(256, (g, s) => { const gr = g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2); gr.addColorStop(0,'rgba(60,35,10,.45)'); gr.addColorStop(1,'rgba(60,35,10,0)'); g.fillStyle = gr; g.fillRect(0,0,s,s); }),
+    transparent:true, depthWrite:false }));
+  shadow.rotation.x = -Math.PI / 2; shadow.position.y = -0.01; cup.add(shadow);
+
+  // пар
+  const steamTex = canvasTex(128, (g, s) => { const gr = g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2); gr.addColorStop(0,'rgba(255,255,255,.55)'); gr.addColorStop(1,'rgba(255,255,255,0)'); g.fillStyle = gr; g.fillRect(0,0,s,s); });
+  const steam = [];
+  for (let i = 0; i < 14; i++){
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map:steamTex, transparent:true, depthWrite:false, opacity:0 }));
+    sp.userData.t = i / 14; sp.userData.x = (Math.random() - .5) * .5;
+    cup.add(sp); steam.push(sp);
+  }
+
+  // зёрна вокруг
+  const beanMat = new THREE.MeshPhysicalMaterial({ color:'#5A3219', roughness:.38, clearcoat:.5, clearcoatRoughness:.4 });
+  const beans = [];
+  for (let i = 0; i < 26; i++){
+    const b = new THREE.Mesh(BEAN_GEO, beanMat);
+    const s = 0.16 + Math.random() * 0.08;
+    b.scale.setScalar(s);
+    b.userData = {
+      ang: (i / 26) * Math.PI * 2 + Math.random() * .3,
+      rad: 1.75 + Math.random() * 1.05,
+      y: -0.3 + Math.random() * 2.6,
+      speed: 0.12 + Math.random() * 0.12,
+      spin: new THREE.Vector3(Math.random(), Math.random(), Math.random()).multiplyScalar(1.4),
+      bob: Math.random() * 6,
+    };
+    b.rotation.set(Math.random()*6, Math.random()*6, Math.random()*6);
+    world.add(b); beans.push(b);
+  }
+  // пара зёрен лежит на блюдце
+  [[1.15,0.2,0.4],[-1.05,0.6,1.9],[0.3,1.15,4.2]].forEach(([x,z,r]) => {
+    const b = new THREE.Mesh(BEAN_GEO, beanMat); b.scale.setScalar(.17);
+    b.position.set(x, 0.2, z); b.rotation.set(-Math.PI/2 + .25, 0, r); cup.add(b);
+  });
+
+  world.position.x = -0.1;
+  cup.rotation.y = -0.5;
+
+  // мышь / палец
+  let mx = 0, my = 0, tx = 0, ty = 0;
+  const onMove = (cx, cy) => {
+    const r = el.getBoundingClientRect();
+    tx = ((cx - r.left) / r.width - .5) * 2;
+    ty = ((cy - r.top) / r.height - .5) * 2;
+  };
+  window.addEventListener('pointermove', e => onMove(e.clientX, e.clientY));
+
+  let running = false, last = performance.now(), time = 0;
+  const resize = () => fit(renderer, camera, el);
+  window.addEventListener('resize', resize); resize();
+
+  function frame(now){
+    if (!running) return;
+    const dt = Math.min(.05, (now - last) / 1000); last = now;
+    time += reduce ? 0 : dt;
+    mx += (tx - mx) * .06; my += (ty - my) * .06;
+
+    const scroll = Math.min(1, Math.max(0, window.scrollY / (el.offsetHeight || 1)));
+    world.rotation.y = mx * .45;
+    world.rotation.x = my * .12 + scroll * .3;
+    cup.rotation.y = -0.5 + time * .15;
+
+    beans.forEach(b => {
+      const u = b.userData;
+      const a = u.ang + time * u.speed;
+      const rad = u.rad * (1 + scroll * 1.6);
+      b.position.set(Math.cos(a) * rad, u.y + Math.sin(time * 1.2 + u.bob) * .12 + scroll * 1.2, Math.sin(a) * rad * .7);
+      b.rotation.x += u.spin.x * dt; b.rotation.y += u.spin.y * dt;
+    });
+
+    steam.forEach(sp => {
+      const t = (sp.userData.t + time * .22) % 1;
+      sp.position.set(sp.userData.x + Math.sin(t * 6 + sp.userData.x * 9) * .18, 1.2 + t * 1.6, 0);
+      sp.scale.setScalar(.35 + t * .9);
+      sp.material.opacity = Math.sin(t * Math.PI) * .38;
+    });
+
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+  whenVisible(el, vis => { if (vis && !running){ running = true; last = performance.now(); requestAnimationFrame(frame); } else if (!vis) running = false; });
+})();
+
+/* ---------- сцена 2: одно зерно и обжарка ---------- */
+(function beanScene(){
+  const el = document.getElementById('bean3d');
+  const input = document.getElementById('roast');
+  const nameEl = document.getElementById('roastName');
+  const notesEl = document.getElementById('roastNotes');
+
+  let renderer;
+  try { renderer = makeRenderer(el); } catch(e){ return; }
+  const scene = new THREE.Scene();
+  envFor(renderer, scene);
+  const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+  camera.position.set(0, 0, 6.2);
+
+  scene.add(new THREE.HemisphereLight(0xfff1d8, 0x1a2244, .7));
+  const key = new THREE.DirectionalLight(0xffe0b0, 2.4); key.position.set(3, 4, 5); scene.add(key);
+  const rim = new THREE.DirectionalLight(0x8fa6ff, 2); rim.position.set(-4, 1, -4); scene.add(rim);
+
+  const mat = new THREE.MeshPhysicalMaterial({ color:'#6A3D20', roughness:.5, clearcoat:.4, clearcoatRoughness:.3 });
+  const bean = new THREE.Mesh(BEAN_GEO, mat);
+  bean.rotation.set(.3, -.6, .35);
+  scene.add(bean);
+
+  function setRoast(){
+    const t = parseFloat(input.value);
+    const r = roastAt(t);
+    mat.color.copy(r.color); mat.roughness = r.rough; mat.clearcoat = t > 2.4 ? .9 : .3;
+    nameEl.textContent = r.label.name; notesEl.textContent = r.label.notes;
+    input.setAttribute('aria-valuetext', r.label.name);
+  }
+  input.addEventListener('input', setRoast); setRoast();
+
+  // вращение перетаскиванием
+  let drag = false, px = 0, py = 0, vx = .35, vy = 0;
+  el.addEventListener('pointerdown', e => { drag = true; px = e.clientX; py = e.clientY; el.setPointerCapture(e.pointerId); el.style.cursor = 'grabbing'; });
+  el.addEventListener('pointermove', e => {
+    if (!drag) return;
+    vx = (e.clientX - px) * .01; vy = (e.clientY - py) * .01;
+    bean.rotation.y += vx; bean.rotation.x += vy;
+    px = e.clientX; py = e.clientY;
+  });
+  const up = () => { drag = false; el.style.cursor = ''; };
+  el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
+
+  const resize = () => fit(renderer, camera, el);
+  window.addEventListener('resize', resize); resize();
+
+  let running = false;
+  function frame(){
+    if (!running) return;
+    if (!drag){
+      vx += ((reduce ? 0 : .006) - vx) * .03; vy *= .94;
+      bean.rotation.y += vx; bean.rotation.x += vy;
+    }
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+  whenVisible(el, vis => { if (vis && !running){ running = true; requestAnimationFrame(frame); } else if (!vis) running = false; });
+})();
+</script>
+</body>
+</html>
