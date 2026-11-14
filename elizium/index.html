@@ -10,7 +10,7 @@
 <style>
 :root{--acc:#c04dff;--acc2:#ff3d9a;--bg:#07070c;--card:#11111a;--line:#23233a;--ink:#f3f3fa;--muted:#9a9ab5}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.55;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit}
@@ -106,18 +106,43 @@ footer .demo{opacity:.7}
  section{padding:60px 0}
 }
 @media (max-width:520px){.perks{grid-template-columns:1fr}.zone ul{grid-template-columns:1fr}.hero{min-height:auto}}
+.bigword,.sideimg,.ticker{display:none}
+
+body{background:#07051a radial-gradient(1px 1px at 20% 30%,#fff8,transparent),radial-gradient(1px 1px at 70% 80%,#fff6,transparent);background-color:#080516}
+body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(1.2px 1.2px at 10% 20%,rgba(255,255,255,.7),transparent 2px),radial-gradient(1px 1px at 30% 70%,rgba(255,255,255,.5),transparent 2px),radial-gradient(1.4px 1.4px at 55% 15%,rgba(255,255,255,.6),transparent 2px),radial-gradient(1px 1px at 80% 40%,rgba(255,255,255,.5),transparent 2px),radial-gradient(1.2px 1.2px at 90% 85%,rgba(255,255,255,.6),transparent 2px),radial-gradient(1px 1px at 45% 55%,rgba(255,255,255,.4),transparent 2px),radial-gradient(900px 500px at 85% 0%,rgba(192,77,255,.22),transparent),radial-gradient(700px 500px at 0% 100%,rgba(255,61,154,.12),transparent);background-size:340px 340px,420px 420px,380px 380px,300px 300px,460px 460px,260px 260px,100% 100%,100% 100%}
+section,footer,nav{position:relative;z-index:1}
+.hero .bgimg{display:none}
+.hero:after{display:none}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero .sideimg{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 32px 32px;border:1px solid rgba(192,77,255,.5);box-shadow:0 0 0 10px rgba(192,77,255,.06),0 40px 120px -30px rgba(192,77,255,.7)}
+.hero h1{font-size:clamp(40px,5.6vw,72px)}
+.facts{grid-column:1/-1;max-width:none}
+.zone,.panel,.perk,blockquote,.facts div{background:rgba(255,255,255,.045);backdrop-filter:blur(14px);border:1px solid rgba(192,77,255,.22)}
+.zone{border-radius:28px}
+.zone:hover{box-shadow:0 20px 60px -20px rgba(192,77,255,.6)}
+.facts{background:transparent;border:0;gap:12px}
+.facts div{border-radius:20px}
+h2{text-align:center}.lead{margin:0 auto;text-align:center}
+h2 em{font-style:italic}
+.btn{border-radius:999px}
+.chip,.cnt button,input[type=time]{border-radius:999px}
+.gal img{border-radius:28px}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero .sideimg{aspect-ratio:4/3;border-radius:120px 120px 28px 28px;order:-1}}
+
 </style>
 </head>
-<body>
+<body class="skin-elizium">
 <nav><div class="wrap"><a class="logo" href="#">ELIZIUM<span>.</span></a><div class="navl"><a href="#zones">Зоны и цены</a><a href="#book">Бронь</a><a href="#gallery">Клуб</a><a href="#contacts">Контакты</a></div><a class="btn" href="#book" style="padding:11px 20px">Забронировать</a></div></nav>
 
-<header class="hero"><img class="bgimg" src="img/3.jpg" alt=""><div class="wrap">
+<header class="hero"><img class="bgimg" src="img/3.jpg" alt=""><div class="wrap"><div class="bigword" aria-hidden="true">ELIZIUM</div><div>
  <div class="pills"><span class="pill"><span class="s">★</span> 5,0 · 284 отзывов</span><span class="pill">🏆 Хорошее место 2026</span><span class="pill">🕒 Круглосуточно</span></div>
  <h1>Самая длинная <em>кибер-ночь</em> в&nbsp;районе</h1>
  <p>11 часов игры за 700 ₽, VIP с двумя мониторами до 540 Гц и комната с PS5 на двоих. По будням час с 10 до 11 стоит 1 рубль.</p>
  <div class="cta"><a class="btn" href="#book">Забронировать место</a><a class="btn ghost" href="#zones">Зоны и цены</a></div>
+ </div><img class="sideimg" src="img/3.jpg" alt="Элизиум">
  <div class="facts"><div><b>540 Гц</b><span>в VIP</span></div><div><b>RTX 5070 Ti</b><span>в VIP</span></div><div><b>2×PS5</b><span>отдельная комната</span></div><div><b>1 ₽</b><span>час по будням 10–11</span></div></div>
 </div></header>
+
 
 <section id="zones"><div class="wrap">
  <h2>Зоны и <em>цены</em></h2>
