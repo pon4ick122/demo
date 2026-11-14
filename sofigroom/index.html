@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sofigroom — груминг у Пролетарской</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --violet:#4a2fa0; --violet-d:#2e1a6e; --lav:#efeafc; --lav2:#e2d9fb;
+  --cream:#fffaf3; --ink:#1f1838; --muted:#6b6485; --pink:#ff7aa8; --line:#e6e0f5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.55;font-size:17px}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Comfortaa,sans-serif;line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,42px);margin-bottom:14px}
+.lead{color:var(--muted);max-width:560px}
+section{padding:84px 0}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(255,250,243,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:Comfortaa;font-weight:700;font-size:24px;color:var(--violet);text-decoration:none}
+.logo span{color:var(--pink)}
+.navlinks{display:flex;gap:26px;font-weight:500}
+.navlinks a{text-decoration:none;color:var(--muted)}
+.navlinks a:hover{color:var(--violet)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--violet);color:#fff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;border:0;cursor:pointer;font-size:16px;transition:transform .15s,background .15s}
+.btn:hover{background:var(--violet-d);transform:translateY(-2px)}
+.btn.ghost{background:#fff;color:var(--violet);box-shadow:inset 0 0 0 2px var(--violet)}
+.btn.sm{padding:10px 18px;font-size:15px}
+
+/* hero */
+.hero{padding:56px 0 72px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.badge{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:22px}
+.badge .stars{color:#f5b300;letter-spacing:1px}
+.hero h1{font-size:clamp(38px,6vw,64px);margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--violet);position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:12px;background:var(--pink);opacity:.3;border-radius:6px;z-index:-1}
+.hero p{font-size:19px;color:var(--muted);margin-bottom:30px;max-width:480px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.pets{margin-top:26px;color:var(--muted);font-size:15px}
+.hero-img{position:relative}
+.hero-img .blob{position:absolute;inset:-30px -40px -30px 20px;background:var(--lav2);border-radius:46% 54% 40% 60%/55% 45% 55% 45%;z-index:-1}
+.hero-img img{border-radius:28px;box-shadow:0 30px 60px -25px rgba(46,26,110,.45);transform:rotate(2deg)}
+.sticker{position:absolute;background:#fff;border-radius:18px;padding:12px 16px;font-weight:700;font-size:14px;box-shadow:0 12px 30px -10px rgba(46,26,110,.35)}
+.sticker.s1{left:-24px;bottom:40px;transform:rotate(-4deg)}
+.sticker.s2{right:-10px;top:20px;transform:rotate(5deg)}
+.sticker b{color:var(--violet);font-size:20px;display:block;font-family:Comfortaa}
+
+/* calc */
+.calc{background:var(--violet);color:#fff;border-radius:36px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.calc h2{color:#fff}
+.calc .lead{color:#d9d0fa}
+.calc-box{background:#fff;color:var(--ink);border-radius:24px;padding:28px}
+.calc-box label{font-weight:700;font-size:14px;color:var(--muted);display:block;margin-bottom:8px}
+.search{width:100%;font:inherit;padding:14px 16px;border:2px solid var(--line);border-radius:14px;outline:none}
+.search:focus{border-color:var(--violet)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px;max-height:150px;overflow:auto}
+.chip{border:0;background:var(--lav);color:var(--violet-d);padding:8px 13px;border-radius:999px;font:500 14px Manrope;cursor:pointer}
+.chip.on{background:var(--violet);color:#fff}
+.price{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px dashed var(--line);padding-top:18px}
+.price .what{font-weight:700}
+.price .what small{display:block;color:var(--muted);font-weight:500}
+.price .sum{font-family:Comfortaa;font-weight:700;font-size:38px;color:var(--violet)}
+.calc-note{font-size:13px;color:var(--muted);margin-top:12px}
+
+/* services */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px}
+.card .ic{width:52px;height:52px;border-radius:16px;background:var(--lav);display:grid;place-items:center;font-size:26px;margin-bottom:16px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+.card .from{margin-top:14px;font-weight:800;color:var(--violet)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:36px}
+.gal img{border-radius:22px;aspect-ratio:1/1;object-fit:cover;width:100%}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.why div{background:var(--lav);border-radius:20px;padding:22px}
+.why b{display:block;font-family:Comfortaa;font-size:30px;color:var(--violet)}
+.why span{font-size:15px;color:var(--muted)}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:14px}
+.rev .stars{color:#f5b300}
+.rev p{font-size:15px}
+.rev small{color:var(--muted);margin-top:auto}
+
+/* contacts */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:stretch}
+.info{background:#fff;border:1px solid var(--line);border-radius:28px;padding:36px;display:flex;flex-direction:column;gap:20px}
+.info .row small{display:block;color:var(--muted);font-size:14px}
+.info .row b{font-size:19px}
+.info .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+.map{border-radius:28px;overflow:hidden;min-height:380px;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;border:0;min-height:380px}
+
+footer{padding:36px 0 110px;color:var(--muted);font-size:14px;text-align:center}
+.demo-note{display:inline-block;background:var(--lav);padding:8px 14px;border-radius:12px;margin-top:10px}
+
+/* floating */
+.float{position:fixed;right:18px;bottom:18px;z-index:20;box-shadow:0 14px 30px -10px rgba(46,26,110,.6)}
+
+@media (max-width:860px){
+  .hero .wrap,.calc,.contact{grid-template-columns:1fr}
+  .grid3,.revs,.gal{grid-template-columns:1fr}
+  .why{grid-template-columns:1fr 1fr}
+  .navlinks{display:none}
+  .calc{padding:30px 22px;border-radius:28px}
+  section{padding:60px 0}
+  .sticker.s1{left:6px}.sticker.s2{right:6px}
+  .hero-img .blob{inset:-16px -10px -16px 10px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#">Sofi<span>groom</span></a>
+  <div class="navlinks"><a href="#price">Цены</a><a href="#services">Услуги</a><a href="#works">Работы</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></div>
+  <a class="btn sm" href="#contacts">Записаться</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <div class="badge"><span class="stars">★★★★★</span> 5,0 · 336 отзывов на Яндекс Картах</div>
+    <h1>Груминг, после которого питомец <em>доволен</em></h1>
+    <p>Стрижка, мытьё и вычёсывание собак и кошек. Бережно, без лишнего стресса. Фото «в процессе» присылаем прямо в мессенджер.</p>
+    <div class="cta">
+      <a class="btn" href="#price">Узнать цену за 10 секунд</a>
+      <a class="btn ghost" href="https://t.me/Sofigrooming" target="_blank" rel="noopener">Написать в Telegram</a>
+    </div>
+    <div class="pets">🐶 собаки · 🐱 кошки · 🐰 кролики · 🐹 морские свинки · 🦜 и даже птицы</div>
+  </div>
+  <div class="hero-img">
+    <div class="blob"></div>
+    <img src="img/3.jpg" alt="Пудель до и после стрижки в Sofigroom">
+    <div class="sticker s1"><b>2+ года</b>клиенты возвращаются</div>
+    <div class="sticker s2">📍 м. Пролетарская</div>
+  </div>
+</div></header>
+
+<section id="price"><div class="wrap">
+  <div class="calc">
+    <div>
+      <h2>Сколько стоит стрижка вашей породы?</h2>
+      <p class="lead">Выберите породу, и цена сразу появится. Не нужно звонить и ждать ответа.</p>
+    </div>
+    <div class="calc-box">
+      <label for="q">Порода или услуга</label>
+      <input id="q" class="search" placeholder="Например, шпиц" autocomplete="off">
+      <div class="chips" id="chips"></div>
+      <div class="price">
+        <div class="what" id="what">Выберите породу<small>комплекс: стрижка, мытьё, когти, уши</small></div>
+        <div class="sum" id="sum">—</div>
+      </div>
+      <p class="calc-note">Точная цена зависит от состояния шерсти. Мастер подтвердит её при записи.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="services" style="padding-top:20px"><div class="wrap">
+  <h2>Что мы делаем</h2>
+  <p class="lead">Полный уход за шерстью, когтями и ушами. Работаем со всеми породами, от чихуахуа до маламута.</p>
+  <div class="grid3">
+    <div class="card"><div class="ic">✂️</div><h3>Стрижка-комплекс</h3><p>Мытьё, сушка, стрижка по стандарту породы или как вам нравится, когти и уши.</p><div class="from">от 3 000 ₽</div></div>
+    <div class="card"><div class="ic">🫧</div><h3>Вычёсывание</h3><p>Убираем подшёрсток и колтуны. Без «под ноль», если можно спасти шерсть.</p><div class="from">от 3 500 ₽</div></div>
+    <div class="card"><div class="ic">🐱</div><h3>Груминг кошек</h3><p>Спокойные мастера, которые умеют работать с котами. Даже с капризными.</p><div class="from">от 2 900 ₽</div></div>
+  </div>
+</div></section>
+
+<section id="works" style="padding-top:20px"><div class="wrap">
+  <h2>Наши работы</h2>
+  <p class="lead">Настоящие фото из салона: до, после и «в процессе».</p>
+  <div class="gal">
+    <img src="img/1.jpg" alt="Собака после стрижки" loading="lazy">
+    <img src="img/2.jpg" alt="Кошки после груминга" loading="lazy">
+    <img src="img/3.jpg" alt="Пудель до и после" loading="lazy">
+  </div>
+  <div class="why">
+    <div><b>5,0</b><span>рейтинг на Яндекс Картах</span></div>
+    <div><b>336</b><span>отзывов от владельцев</span></div>
+    <div><b>📸</b><span>фото питомца во время стрижки</span></div>
+    <div><b>🔔</b><span>напомним, когда пора на следующую</span></div>
+  </div>
+</div></section>
+
+<section id="reviews" style="padding-top:20px"><div class="wrap">
+  <h2>Что говорят хозяева</h2>
+  <div class="revs">
+    <div class="rev"><div class="stars">★★★★★</div><p>«Пожалуй, лучший груминг из тех, где бывал наш Филя. Отношение к животным здесь очень нежное и внимательное».</p><small>Отзыв с Яндекс Карт</small></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>«Фото малышей в процессе преображения всегда присылают для умиления переживающим „родителям“. Мы очень довольны!»</p><small>Отзыв с Яндекс Карт</small></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>«Не колтунишки, а колтунищи были удалены без лишнего стресса и с максимальной заботой. Шурик выглядит просто красавцем».</p><small>Отзыв с Яндекс Карт</small></div>
+  </div>
+</div></section>
+
+<section id="contacts" style="padding-top:20px"><div class="wrap">
+  <h2>Записаться</h2>
+  <div class="contact">
+    <div class="info">
+      <div class="row"><small>Адрес</small><b>1-я Дубровская ул., 7/10, цокольный этаж</b></div>
+      <div class="row"><small>Метро</small><b>Улица Мельникова (72 м) · Пролетарская (780 м)</b></div>
+      <div class="row"><small>Телефон</small><b><a href="tel:+79652207580">+7 (965) 220-75-80</a></b></div>
+      <div class="row"><small>Оплата</small><b>Наличные, карта, СБП, по ссылке</b></div>
+      <div class="btns">
+        <a class="btn" href="https://t.me/Sofigrooming" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn ghost" href="https://wa.me/79652207580" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?oid=66097128914&z=16" loading="lazy" title="Sofigroom на карте"></iframe></div>
+  </div>
+</div></section>
+
+<footer>
+  © Sofigroom · груминг в Москве
+  <div class="demo-note">Это демо-концепт сайта. Цены, фото и отзывы взяты с Яндекс Карт.</div>
+</footer>
+
+<a class="btn float" href="https://t.me/Sofigrooming" target="_blank" rel="noopener">✂️ Записаться</a>
+
+<script>
+const PRICES = [
+  ["Чихуахуа", 3000], ["Стрижка кошки", 2900], ["Йоркширский терьер", 3300], ["Бивер-йорк", 3300],
+  ["Мальтийская болонка", 3500], ["Кошка: вычёсывание с купанием", 3500], ["Вест-хайленд", 3600],
+  ["Померанский шпиц", 3700], ["Кавалер кинг-чарльз-спаниель", 3700], ["Мейн-кун: вычёсывание", 3800],
+  ["Той-пудель", 4000], ["Мальтипу", 4200], ["Бишон фризе", 4200], ["Цвергшнауцер (тримминг)", 4500], ["Кавапу", 5700]
+];
+const chips = document.getElementById('chips'), q = document.getElementById('q');
+const what = document.getElementById('what'), sum = document.getElementById('sum');
+function pick(name, price, el){
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on')); el && el.classList.add('on');
+  what.innerHTML = name + '<small>' + (/кош|кун/i.test(name) ? 'уход за кошкой' : 'комплекс: стрижка, мытьё, когти, уши') + '</small>';
+  let n = 0; const step = price/20; clearInterval(window._t);
+  window._t = setInterval(()=>{ n = Math.min(price, n+step); sum.textContent = Math.round(n).toLocaleString('ru') + ' ₽'; if(n>=price) clearInterval(window._t); }, 18);
+}
+function render(f=''){
+  chips.innerHTML='';
+  PRICES.filter(([n])=>n.toLowerCase().includes(f.toLowerCase())).forEach(([n,p])=>{
+    const b=document.createElement('button'); b.className='chip'; b.textContent=n; b.onclick=()=>pick(n,p,b); chips.appendChild(b);
+  });
+  if(!chips.children.length) chips.innerHTML='<span style="color:#6b6485;font-size:14px">Такой породы нет в списке. Напишите нам, и мы посчитаем.</span>';
+}
+q.addEventListener('input', e=>render(e.target.value));
+render();
+</script>
+</body>
+</html>
