@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Ателье Велюдо — у метро Беговая</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#2b2f83;--navy-d:#1b1e5c;--sky:#e9ebfb;--ink:#14163a;--muted:#5e6182;--line:#dfe1f3;--bg:#f7f8fd;--accent:#5ad1c2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.55}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
+h2{font-size:clamp(30px,4.2vw,46px);margin-bottom:14px}
+.lead{color:var(--muted);max-width:580px}
+section{padding:80px 0}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;text-decoration:none;padding:15px 26px;border-radius:12px;border:0;cursor:pointer;font:700 16px Manrope;transition:.15s}
+.btn:hover{background:var(--navy-d);transform:translateY(-2px)}
+.btn.wa{background:#25d366;color:#06301a}.btn.wa:hover{background:#1fc05c}
+.btn.light{background:#fff;color:var(--navy)}
+
+nav{position:sticky;top:0;z-index:10;background:var(--navy);color:#fff}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:20px;letter-spacing:.04em}
+.logo img{width:38px;height:38px;border-radius:9px}
+.navl{display:flex;gap:26px}.navl a{text-decoration:none;opacity:.8;font-weight:500}.navl a:hover{opacity:1}
+
+.hero{background:var(--navy);color:#fff;padding:60px 0 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+.hero h1{font-size:clamp(40px,6vw,70px);margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:19px;opacity:.85;max-width:480px;margin-bottom:30px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;padding-bottom:60px}
+.hero .rate{display:inline-flex;gap:10px;align-items:center;background:rgba(255,255,255,.1);padding:8px 14px;border-radius:10px;font-weight:700;font-size:14px;margin-bottom:22px}
+.hero .rate span{color:#ffd23f}
+.hero-img img{border-radius:24px 24px 0 0;width:100%;aspect-ratio:1/1;object-fit:cover}
+
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
+.svc .ic{font-size:30px;margin-bottom:12px}
+.svc h3{font-size:18px;margin-bottom:6px}
+.svc p{font-size:14px;color:var(--muted)}
+
+/* before after */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
+.ba figure{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.ba img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.ba figcaption{padding:16px 20px;font-weight:700}
+.ba figcaption small{display:block;font-weight:500;color:var(--muted)}
+
+/* wizard */
+.wiz{background:#fff;border:1px solid var(--line);border-radius:32px;padding:44px;display:grid;grid-template-columns:.85fr 1.15fr;gap:40px}
+.q{margin-bottom:22px}
+.q b{display:block;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:2px solid var(--line);background:var(--bg);border-radius:10px;padding:9px 14px;font:500 15px Manrope;cursor:pointer;transition:.12s}
+.chip:hover{border-color:var(--navy)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.msg{background:var(--sky);border-radius:16px;padding:16px 18px;white-space:pre-line;font-size:15px;margin:6px 0 16px;min-height:84px;position:relative}
+.msg::before{content:"Сообщение мастеру";display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}
+.row-btns{display:flex;gap:10px;flex-wrap:wrap}
+.hint{font-size:13px;color:var(--muted);margin-top:10px}
+
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
+.rev .s{color:#f5b300}
+.rev p{font-size:15px;margin:8px 0 12px}
+.rev small{color:var(--muted)}
+
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:22px}
+.info{background:var(--navy);color:#fff;border-radius:28px;padding:34px;display:flex;flex-direction:column;gap:18px}
+.info small{display:block;opacity:.7;font-size:14px}
+.info b{font-size:18px}
+.info a{text-decoration:none}
+.map{border-radius:28px;overflow:hidden;border:1px solid var(--line);min-height:380px}
+.map iframe{width:100%;height:100%;min-height:380px;border:0}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 100px}
+.demo{display:inline-block;background:var(--sky);padding:8px 14px;border-radius:10px;margin-top:8px}
+.float{position:fixed;right:18px;bottom:18px;z-index:20;box-shadow:0 14px 30px -10px rgba(0,0,0,.45)}
+
+@media(max-width:860px){
+ .hero .wrap,.wiz,.contact,.ba{grid-template-columns:1fr}
+ .services{grid-template-columns:1fr 1fr}
+ .revs{grid-template-columns:1fr}
+ .navl{display:none}
+ .wiz{padding:26px 20px}
+ section{padding:56px 0}
+ .hero .cta{padding-bottom:10px}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+ <a class="logo" href="#"><img src="img/1.jpg" alt="">ВЕЛЮДО</a>
+ <div class="navl"><a href="#services">Услуги</a><a href="#works">До / после</a><a href="#order">Заявка</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+ <div>
+  <div class="rate"><span>★★★★★</span> 5,0 · 91 отзыв на Яндекс Картах</div>
+  <h1>Вещь сядет <em>как влитая</em></h1>
+  <p>Подгонка по фигуре, ремонт одежды и пошив на заказ. От джинсов до шубы, с гарантией на работу.</p>
+  <div class="cta"><a class="btn light" href="#order">Оставить заявку за минуту</a><a class="btn wa" href="https://wa.me/79999865050" target="_blank" rel="noopener">WhatsApp</a></div>
+ </div>
+ <div class="hero-img"><img src="img/3.jpg" alt="Дублёнка до и после переделки в ателье Велюдо"></div>
+</div></header>
+
+<section id="services"><div class="wrap">
+ <h2>Что мы делаем</h2>
+ <p class="lead">Мастер подскажет детали, о которых вы бы и не подумали спросить. Так про нас пишут клиенты.</p>
+ <div class="services">
+  <div class="svc"><div class="ic">📏</div><h3>Подгонка</h3><p>Ушить, расширить, укоротить. Плечи, спина, длина — точно по фигуре.</p></div>
+  <div class="svc"><div class="ic">🧵</div><h3>Ремонт</h3><p>Молнии, подкладка, потёртости, трикотаж. Спасаем любимые вещи.</p></div>
+  <div class="svc"><div class="ic">✂️</div><h3>Пошив на заказ</h3><p>Костюмы, платья, детская одежда по индивидуальным меркам.</p></div>
+  <div class="svc"><div class="ic">🧥</div><h3>Мех и дублёнки</h3><p>Ремонт и смена модели шуб и дублёнок. Не боимся дорогих вещей.</p></div>
+  <div class="svc"><div class="ic">✨</div><h3>Вышивка</h3><p>Имена, инициалы, декор на одежде и текстиле.</p></div>
+  <div class="svc"><div class="ic">〰️</div><h3>Плиссировка</h3><p>Гофрирование и плиссе для юбок и платьев.</p></div>
+  <div class="svc"><div class="ic">📐</div><h3>Раскрой ткани</h3><p>Раскроим вашу ткань аккуратно и без лишних отходов.</p></div>
+  <div class="svc"><div class="ic">🛡️</div><h3>Гарантия</h3><p>Если что-то не так, исправим бесплатно.</p></div>
+ </div>
+</div></section>
+
+<section id="works" style="padding-top:20px"><div class="wrap">
+ <h2>До и после</h2>
+ <p class="lead">Наши настоящие работы.</p>
+ <div class="ba">
+  <figure><img src="img/2.jpg" alt="Джинсы до и после" loading="lazy"><figcaption>Джинсы<small>Подгонка по фигуре и ремонт</small></figcaption></figure>
+  <figure><img src="img/5.jpg" alt="Детский костюм" loading="lazy"><figcaption>Детский костюм<small>Пошив по индивидуальному заказу</small></figcaption></figure>
+ </div>
+</div></section>
+
+<section id="order" style="padding-top:20px"><div class="wrap">
+ <div class="wiz">
+  <div>
+   <h2>Заявка в два клика</h2>
+   <p class="lead">Выберите вещь и что с ней сделать. Мы соберём сообщение, вам останется прикрепить фото и отправить. Мастер ответит с ценой и сроком.</p>
+  </div>
+  <div>
+   <div class="q"><b>Какая вещь?</b><div class="chips" data-k="item"><button class="chip">Брюки / джинсы</button><button class="chip">Платье / юбка</button><button class="chip">Пиджак / костюм</button><button class="chip">Пальто / куртка</button><button class="chip">Шуба / дублёнка</button><button class="chip">Другое</button></div></div>
+   <div class="q"><b>Что сделать?</b><div class="chips" data-k="work"><button class="chip">Укоротить</button><button class="chip">Ушить / расширить</button><button class="chip">Заменить молнию</button><button class="chip">Отремонтировать</button><button class="chip">Изменить фасон</button><button class="chip">Сшить с нуля</button></div></div>
+   <div class="msg" id="msg">Выберите вещь и работу…</div>
+   <div class="row-btns"><a class="btn wa" id="wa" href="https://wa.me/79999865050" target="_blank" rel="noopener">Отправить в WhatsApp</a><a class="btn" href="https://t.me/AtelyeVeludo" target="_blank" rel="noopener">Telegram</a></div>
+   <p class="hint">WhatsApp откроется с готовым текстом.</p>
+  </div>
+ </div>
+</div></section>
+
+<section id="reviews" style="padding-top:20px"><div class="wrap">
+ <h2>Что говорят клиенты</h2>
+ <div class="revs">
+  <div class="rev"><span class="s">★★★★★</span><p>«Огромное спасибо за мой идеальный пиджак! Плечи, спина и длина сели точно по фигуре. Качество на высоте, намного лучше масс-маркета».</p><small>Отзыв с Яндекс Карт</small></div>
+  <div class="rev"><span class="s">★★★★★</span><p>«Лучшее ателье в Москве. Протёртое пальто, джинсы на размер больше, платье с другим фасоном — работа любой сложности».</p><small>Отзыв с Яндекс Карт</small></div>
+  <div class="rev"><span class="s">★★★★★</span><p>«Сдавала в ремонт изделия разной сложности, от шубы до блузок, и всё исполнено на высшем уровне».</p><small>Отзыв с Яндекс Карт</small></div>
+ </div>
+</div></section>
+
+<section id="contacts" style="padding-top:20px"><div class="wrap">
+ <h2>Контакты</h2>
+ <div class="contact">
+  <div class="info">
+   <div><small>Адрес</small><b>ул. Полины Осипенко, 2, корп. 1</b></div>
+   <div><small>Метро</small><b>2-й Хорошёвский проезд — 490 м<br>Беговая — 760 м</b></div>
+   <div><small>Телефон / WhatsApp</small><b><a href="tel:+79999865050">+7 999 986-50-50</a></b></div>
+   <div><small>Удобно</small><b>Парковка, пандус, оплата картой</b></div>
+  </div>
+  <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?oid=217937717214&z=16" title="Велюдо на карте"></iframe></div>
+ </div>
+</div></section>
+
+<footer>© Ателье «Велюдо», Москва<br><span class="demo">Это демо-концепт сайта. Фото и отзывы взяты с Яндекс Карт.</span></footer>
+<a class="btn wa float" href="#order">✂️ Заявка</a>
+
+<script>
+const st={};
+document.querySelectorAll('.chips').forEach(g=>g.addEventListener('click',e=>{
+ const b=e.target.closest('.chip'); if(!b) return;
+ g.querySelectorAll('.chip').forEach(x=>x.classList.remove('on')); b.classList.add('on'); st[g.dataset.k]=b.textContent; upd();
+}));
+function upd(){
+ if(!st.item&&!st.work) return;
+ const m='Здравствуйте! Хочу узнать цену и срок.\n'+(st.item?'Вещь: '+st.item.toLowerCase()+'\n':'')+(st.work?'Что сделать: '+st.work.toLowerCase()+'\n':'')+'Фото пришлю следом.';
+ document.getElementById('msg').textContent=m;
+ document.getElementById('wa').href='https://wa.me/79999865050?text='+encodeURIComponent(m);
+}
+</script>
+</body>
+</html>
