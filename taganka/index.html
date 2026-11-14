@@ -10,7 +10,7 @@
 <style>
 :root{--bg:#faf6f1;--card:#ffffff;--ink:#231a17;--muted:#7d6f68;--line:#ebe0d6;--acc:#c4232f;--soft:#f7e3df;--dark:#231a17}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.55;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit}
@@ -99,9 +99,35 @@ footer{text-align:center;color:var(--muted);padding:40px 20px 100px;font-size:14
  section{padding:60px 0}
 }
 @media (max-width:520px){.perks{grid-template-columns:1fr}.duo{height:360px}.svcs{grid-template-columns:1fr 1fr}}
+.third,.sticker,.tape{display:none}
+
+body{background:#f6efe4 repeating-linear-gradient(0deg,rgba(35,26,23,.025) 0 1px,transparent 1px 4px)}
+.hero .wrap{grid-template-columns:.95fr 1.05fr}
+.hero .wrap>div:first-child{order:2}
+.duo{order:1}
+.duo img{border-radius:6px}
+.duo img:nth-child(1){outline:2px dashed var(--acc);outline-offset:8px}
+.duo img:nth-child(2){border:8px solid #fff!important;box-shadow:0 20px 40px -20px rgba(0,0,0,.4)}
+.duo .badge{border-radius:4px;border:1.5px dashed var(--acc);box-shadow:none}
+.tape{display:block;height:34px;background-color:#f2c94c;background-image:repeating-linear-gradient(90deg,#231a17 0 1px,transparent 1px 10px),repeating-linear-gradient(90deg,#231a17 0 1.5px,transparent 1.5px 50px);background-size:auto 9px,auto 16px;background-repeat:repeat-x;border-block:1px solid rgba(0,0,0,.15);position:relative;transform:rotate(-1deg);margin:10px 0 30px}
+.tape span{position:absolute;right:20px;top:9px;font:700 12px Manrope;letter-spacing:.2em;text-transform:uppercase;color:#231a17;background:#f2c94c;padding:0 8px}
+h2:after{content:'';display:block;width:120px;border-bottom:2px dashed var(--acc);margin-top:14px}
+.btn{border-radius:6px}
+.btn.light{background:transparent;border:1.5px dashed var(--ink)}
+.svc,.perk,blockquote,.cbox{border-radius:6px;border:1.5px dashed #cdbcaf}
+.svc:hover,.svc.on{border-style:solid;border-color:var(--acc)}
+.side{border-radius:6px;outline:1.5px dashed rgba(255,255,255,.35);outline-offset:-10px}
+.chip{border-radius:6px}
+.pill{border-radius:6px;border-style:dashed}
+.perk i{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;border:1.5px dashed var(--acc)}
+.gal img{border-radius:4px;border:6px solid #fff;box-shadow:0 14px 30px -18px rgba(0,0,0,.45)}
+.gal img:nth-child(odd){transform:rotate(-1.2deg)}.gal img:nth-child(even){transform:rotate(1.2deg)}
+.map{border-radius:6px}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero .wrap>div:first-child{order:0}.duo{order:1}}
+
 </style>
 </head>
-<body>
+<body class="skin-taganka">
 <nav><div class="wrap"><a class="logo" href="#">Ателье</a><div class="navl"><a href="#book">Услуги и цены</a><a href="#works">Работы</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></div><a class="btn" href="#book" style="padding:10px 20px">Записаться</a></div></nav>
 
 <header class="hero"><div class="wrap">
@@ -111,8 +137,9 @@ footer{text-align:center;color:var(--muted);padding:40px 20px 100px;font-size:14
   <p>Ателье в двух шагах от «Марксистской». Берёмся за срочные заказы, когда в других местах отказывают. Работаем каждый день с 10 до 22.</p>
   <div class="cta"><a class="btn" href="#book">Выбрать услугу</a><a class="btn light" href="#works">Смотреть работы</a></div>
  </div>
- <div class="duo"><img src="img/1.jpg" alt="Ателье на Таганской"><img src="img/5.jpg" alt="Ателье на Таганской"><div class="badge"><b>5,0</b>Яндекс Карты</div></div>
+ <div class="duo"><img src="img/1.jpg" alt="Ателье на Таганской"><img src="img/5.jpg" alt="Ателье на Таганской"><img class="third" src="img/2.jpg" alt="Ателье на Таганской"><div class="badge"><b>5,0</b>Яндекс Карты</div><div class="sticker"></div></div>
 </div></header>
+<div class="tape" aria-hidden="true"><span>Ремонт · пошив · подгонка</span></div>
 
 <section id="book" style="padding-top:10px"><div class="wrap">
  <h2>Услуги и <em>цены</em></h2>
