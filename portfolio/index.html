@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Axiom</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Сайты и Telegram-боты для салонов, ателье и мастеров. Бесплатный черновик за день, готовый сайт за 3 дня, от 6 000 ₽.">
+<meta property="og:title" content="Axiom — сайт для вашего бизнеса за 3 дня">
+<meta property="og:description" content="Заявки с сайта сразу приходят вам в WhatsApp или Telegram. Черновик бесплатно.">
+<meta property="og:image" content="img/kofeynya.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Макет: узкая колонка «для телефона», герой с живой заявкой в мессенджере, работы сеткой, цены как смета */
+:root{
+  --bg:#F2F3EF; --surface:#FFFFFF; --ink:#141A16; --muted:#5B655E; --line:#DADDD5;
+  --accent:#2B4EFF; --accent-ink:#FFFFFF; --soft:#E4E8FF; --wa:#1FAF5A; --tg:#2AA1DA;
+  --display:"Unbounded", "Arial Black", system-ui, sans-serif;
+  --text:"Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:18px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1311; --surface:#181D1A; --ink:#EEF1EC; --muted:#9BA59E; --line:#2A312C;
+  --accent:#6E86FF; --accent-ink:#0B0F1A; --soft:#1E2442; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0F1311; --surface:#181D1A; --ink:#EEF1EC; --muted:#9BA59E; --line:#2A312C;
+  --accent:#6E86FF; --accent-ink:#0B0F1A; --soft:#1E2442; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4.4vw,44px)}
+.eyebrow{font:500 13px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+section{padding-block:clamp(56px,8vw,96px)}
+.lead{color:var(--muted);max-width:60ch;margin:14px 0 0}
+
+/* шапка */
+.top{display:flex;justify-content:space-between;align-items:center;padding-block:18px;gap:12px}
+.logo{font:700 18px/1 var(--display);text-decoration:none}
+.logo span{color:var(--accent)}
+.top nav{display:flex;gap:22px;font-weight:500}
+.top nav a{text-decoration:none;color:var(--muted)}
+.top nav a:hover{color:var(--ink)}
+@media (max-width:640px){.top nav{display:none}}
+
+/* кнопки */
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 22px;border-radius:999px;font:600 16px/1 var(--text);text-decoration:none;border:0;cursor:pointer;transition:transform .15s ease, filter .15s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-tg{background:var(--tg);color:#fff}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* герой */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:clamp(28px,6vw,72px) clamp(48px,7vw,88px)}
+.hero h1{font-size:clamp(36px,6.2vw,68px)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{font-size:19px}
+.hero .btns{margin-top:28px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;color:var(--muted);font-size:15px}
+.facts b{color:var(--ink);font-weight:600}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:36px}}
+
+/* телефон с заявкой */
+.phone{justify-self:center;width:min(320px,100%);background:var(--surface);border:1px solid var(--line);border-radius:34px;padding:14px;box-shadow:0 30px 60px -30px rgba(20,26,22,.35)}
+.chat-head{display:flex;align-items:center;gap:10px;padding:6px 6px 12px;border-bottom:1px solid var(--line)}
+.ava{width:36px;height:36px;border-radius:50%;background:var(--wa);display:grid;place-items:center;color:#fff;font-weight:700}
+.chat-head small{display:block;color:var(--muted);font-size:12px}
+.chat{display:flex;flex-direction:column;gap:10px;padding:14px 4px 6px;min-height:300px}
+.msg{max-width:88%;padding:10px 12px;border-radius:14px;font-size:14px;line-height:1.4;background:var(--soft)}
+.msg.in{align-self:flex-start;border-bottom-left-radius:4px}
+.msg.out{align-self:flex-end;background:var(--wa);color:#fff;border-bottom-right-radius:4px}
+.msg .tag{font:500 11px/1 var(--mono);color:var(--accent);display:block;margin-bottom:6px;letter-spacing:.04em}
+.msg time{display:block;text-align:right;font-size:11px;opacity:.6;margin-top:4px}
+@media (prefers-reduced-motion:no-preference){
+  .msg{animation:pop .5s cubic-bezier(.2,.9,.3,1.2) both}
+  .msg:nth-child(2){animation-delay:.9s}
+  .msg:nth-child(3){animation-delay:1.8s}
+  @keyframes pop{from{transform:translateY(8px) scale(.96)}to{transform:none}}
+}
+
+/* работы */
+.works-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.work{display:flex;flex-direction:column;text-decoration:none;min-width:0}
+.shot{aspect-ratio:16/10;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s ease}
+.work:hover .shot img{transform:scale(1.04)}
+.work h3{font-size:18px;margin-top:14px}
+.work p{margin:6px 0 0;color:var(--muted);font-size:15px}
+.chip{display:inline-block;font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:6px 8px;border-radius:6px;background:var(--soft);color:var(--accent);margin-top:12px;align-self:flex-start}
+.work.big{grid-column:span 2}
+.work.big .shot{aspect-ratio:16/8}
+@media (max-width:560px){.work.big{grid-column:auto}.work.big .shot{aspect-ratio:16/10}}
+
+/* как работаем */
+.how{background:var(--surface);border-block:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:40px;counter-reset:s;list-style:none;padding:0}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:s;border-top:2px solid var(--ink);padding-top:16px}
+.steps li::before{content:"Шаг " counter(s);font:500 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+.steps h3{font-size:19px;margin:12px 0 8px}
+.steps p{margin:0;color:var(--muted);font-size:15px}
+
+/* цены */
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;align-items:start}
+@media (max-width:900px){.prices{grid-template-columns:1fr}}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px}
+.plan.hot{border:2px solid var(--accent)}
+.plan .badge{align-self:flex-start;font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;background:var(--accent);color:var(--accent-ink);padding:6px 9px;border-radius:6px}
+.plan h3{font-size:20px}
+.cost{font:700 34px/1 var(--display);font-variant-numeric:tabular-nums}
+.cost small{font:500 14px/1 var(--text);color:var(--muted)}
+.term{font:500 13px/1 var(--mono);color:var(--muted)}
+.plan ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;font-size:15px}
+.plan li{padding-left:24px;position:relative}
+.plan li::before{content:"";position:absolute;left:2px;top:7px;width:12px;height:7px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.extras{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.extras div{display:flex;justify-content:space-between;gap:16px;padding:16px 22px;border-top:1px solid var(--line)}
+.extras div:first-child{border-top:0}
+.extras b{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+.extras span{color:var(--muted)}
+.extras span strong{color:var(--ink);font-weight:600;display:block}
+
+/* игры */
+.games{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+@media (max-width:700px){.games{grid-template-columns:1fr}}
+
+/* вопросы */
+.faq{margin-top:32px;max-width:760px}
+.faq details{border-top:1px solid var(--line);padding-block:18px}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:500 22px/1 var(--mono);color:var(--accent);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{margin:10px 0 0;color:var(--muted);max-width:62ch}
+
+/* контакты */
+.cta{background:var(--accent);color:var(--accent-ink);border-radius:28px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
+@media (max-width:800px){.cta{grid-template-columns:1fr}}
+.cta h2{color:inherit}
+.cta p{margin:14px 0 0;opacity:.85;max-width:52ch}
+.cta .btns{flex-direction:column}
+.cta .btn{justify-content:center;background:var(--accent-ink);color:var(--accent)}
+.cta .btn.btn-wa{background:var(--wa);color:#fff}
+.cta .note{font-size:14px;opacity:.75;margin-top:4px;text-align:center}
+footer{padding-block:32px 48px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#">Axiom<span>.</span></a>
+    <nav>
+      <a href="#works">Работы</a>
+      <a href="#prices">Цены</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contact">Написать</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Сайты и Telegram-боты для мастеров и салонов</p>
+      <h1 style="margin-top:16px">Клиент выбрал услугу, а&nbsp;заявка <em>уже у&nbsp;вас в&nbsp;телефоне</em></h1>
+      <p class="lead">Делаю сайты для ателье, грумеров, барбершопов, мастеров маникюра и ремонта. Без звонков и долгой переписки: клиент отмечает, что ему нужно, и вам в WhatsApp или Telegram приходит готовая заявка.</p>
+      <div class="btns">
+        <a class="btn btn-main" href="#contact">Получить черновик бесплатно</a>
+        <a class="btn" href="#works" style="background:var(--surface);border:1px solid var(--line)">Посмотреть работы</a>
+      </div>
+      <div class="facts">
+        <span><b>1 день</b> на черновик</span>
+        <span><b>3 дня</b> до готового сайта</span>
+        <span><b>от 6 000 ₽</b>, чек как самозанятый</span>
+      </div>
+    </div>
+
+    <div class="phone" aria-label="Пример заявки, которая приходит с сайта">
+      <div class="chat-head">
+        <div class="ava">А</div>
+        <div><b>Ателье «Ваше»</b><small>заявки с сайта</small></div>
+      </div>
+      <div class="chat">
+        <div class="msg in"><span class="tag">ЗАЯВКА С САЙТА</span>Здравствуйте! Хочу записаться.<br>Вещь: <b>брюки</b><br>Работа: <b>подшить</b>, срочно<br>Когда удобно: завтра после 15:00<time>14:02</time></div>
+        <div class="msg out">Добрый день! Ждём завтра в 15:30, будет готово за час 👌<time>14:05</time></div>
+        <div class="msg in">Отлично, приду 🙏<time>14:06</time></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="works">
+  <div class="wrap">
+    <div class="works-head">
+      <div>
+        <p class="eyebrow">Работы</p>
+        <h2 style="margin-top:12px">Что я уже сделал</h2>
+      </div>
+      <p class="lead" style="margin:0;max-width:44ch">Все сайты живые: нажмите и попробуйте записаться сами. Работают и на телефоне, и на компьютере.</p>
+    </div>
+
+    <div class="grid">
+      <a class="work big" href="https://pon4ick122.github.io/demo/veludo/" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/veludo.png" alt="Сайт ателье: подгонка и ремонт одежды" loading="lazy"></div>
+        <h3>Ателье: подгонка и ремонт</h3>
+        <p>Фото «до/после» и заявка в два клика: вещь + работа → готовое сообщение в WhatsApp.</p>
+        <span class="chip">Концепт · WhatsApp-заявка</span>
+      </a>
+      <a class="work" href="https://pon4ick122.github.io/demo/leo-grooming/" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/leo-grooming.png" alt="Сайт груминг-салона" loading="lazy"></div>
+        <h3>Груминг-салон</h3>
+        <p>Запись: выбрал питомца и услугу, заявка ушла в Telegram.</p>
+        <span class="chip">Концепт · Telegram-заявка</span>
+      </a>
+      <a class="work" href="https://pon4ick122.github.io/demo/club-nails/" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/club-nails.png" alt="Сайт студии маникюра" loading="lazy"></div>
+        <h3>Студия маникюра</h3>
+        <p>Прайс, мастера и запись на удобное время.</p>
+        <span class="chip">Концепт · запись</span>
+      </a>
+      <a class="work" href="https://pon4ick122.github.io/demo/ksv/" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/ksv.png" alt="Сайт сервиса ремонта техники" loading="lazy"></div>
+        <h3>Ремонт техники</h3>
+        <p>Клиент выбирает поломку и сразу видит примерную цену.</p>
+        <span class="chip">Концепт · калькулятор</span>
+      </a>
+      <a class="work" href="https://pon4ick122.github.io/demo/athele-sofia/" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/athele-sofia.png" alt="Сайт ателье со срочными заказами" loading="lazy"></div>
+        <h3>Ателье со срочными заказами</h3>
+        <p>Галочки «Срочно» и «Доставка» прямо в форме заказа.</p>
+        <span class="chip">Концепт · форма заказа</span>
+      </a>
+      <div class="work big">
+        <div class="shot"><img src="img/kofeynya.png" alt="Сайт кофейни с 3D-чашкой" loading="lazy"></div>
+        <h3>Кофейня «Песок»: сайт с 3D</h3>
+        <p>Чашку и зёрна можно крутить мышкой, ползунок меняет степень обжарки. Для тех, кому нужен вау-эффект.</p>
+        <span class="chip">Премиум · 3D-анимация</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <p class="eyebrow">Как работаем</p>
+    <h2 style="margin-top:12px">Сначала смотрите, потом платите</h2>
+    <ol class="steps">
+      <li><h3>Черновик бесплатно</h3><p>Пишете мне название бизнеса. За день делаю черновик сайта в ваших цветах, с вашими фото и отзывами.</p></li>
+      <li><h3>Решаете</h3><p>Не понравилось? Просто не отвечаете, вы ничего не должны. Понравилось? Предоплата 50%.</p></li>
+      <li><h3>Правки</h3><p>Меняю тексты, цены, фото и порядок блоков, пока вам не понравится.</p></li>
+      <li><h3>Запуск</h3><p>Сайт работает по ссылке, заявки идут вам в мессенджер. Вы оплачиваете остаток, я присылаю чек.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="wrap">
+    <p class="eyebrow">Цены</p>
+    <h2 style="margin-top:12px">Цена известна заранее</h2>
+    <p class="lead">Никаких «посчитаем после созвона». Если нужно что-то особенное, назову цену до начала работы.</p>
+
+    <div class="prices">
+      <div class="plan">
+        <h3>Сайт-визитка</h3>
+        <div class="cost">6 000 ₽</div>
+        <div class="term">срок: 3 дня</div>
+        <ul>
+          <li>Одна страница: услуги, цены, фото, отзывы, адрес</li>
+          <li>Кнопки WhatsApp и Telegram</li>
+          <li>Удобно с телефона</li>
+          <li>2 круга правок</li>
+        </ul>
+      </div>
+      <div class="plan hot">
+        <span class="badge">Берут чаще всего</span>
+        <h3>Сайт с записью</h3>
+        <div class="cost">12 000 ₽</div>
+        <div class="term">срок: 5 дней</div>
+        <ul>
+          <li>Всё из визитки</li>
+          <li>Форма записи или калькулятор цены</li>
+          <li>Готовая заявка сразу вам в мессенджер</li>
+          <li>Фото «до/после», мастера, частые вопросы</li>
+          <li>Подключу свой домен (имя.ru)</li>
+          <li>Месяц поддержки бесплатно</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h3>Telegram-бот</h3>
+        <div class="cost"><small>от</small> 10 000 ₽</div>
+        <div class="term">срок: 5–7 дней</div>
+        <ul>
+          <li>Запись на услугу прямо в Telegram</li>
+          <li>Напоминание клиенту накануне</li>
+          <li>Прайс, адрес, ответы на частые вопросы</li>
+          <li>Заявки приходят вам в личку</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="extras">
+      <div><span><strong>Поддержка сайта</strong>меняю цены, фото, акции по вашей просьбе, слежу, чтобы всё работало</span><b>1 500 ₽ / мес</b></div>
+      <div><span><strong>Сайт + бот вместе</strong>заявки и с сайта, и из Telegram</span><b>20 000 ₽</b></div>
+      <div><span><strong>3D и анимации</strong>как у кофейни выше, чтобы запомнили</span><b>от 25 000 ₽</b></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">А ещё</p>
+    <h2 style="margin-top:12px">Я делаю игры</h2>
+    <p class="lead">Три браузерные игры, опубликованы на itch.io и во ВКонтакте. Могу сделать игру под ваш бизнес: например, колесо скидок или мини-игру с призом за запись.</p>
+    <div class="games">
+      <a class="work" href="https://pon4ick122.itch.io/kotiki-merge-cats" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/kotiki.png" alt="Игра Котики: Слияние" loading="lazy"></div>
+        <h3>Котики: Слияние</h3><p>Соединяй котиков, открывай новых.</p>
+      </a>
+      <a class="work" href="https://pon4ick122.itch.io/shariki-ball-sort" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/shariki.jpg" alt="Игра Шарики: Сортировка" loading="lazy"></div>
+        <h3>Шарики: Сортировка</h3><p>Головоломка на 500+ уровней.</p>
+      </a>
+      <a class="work" href="https://pon4ick122.itch.io/samocvety-gem-blocks" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/samocvety.jpg" alt="Игра Самоцветы: Блоки" loading="lazy"></div>
+        <h3>Самоцветы: Блоки</h3><p>Блок-пазл с ежедневным испытанием.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Вопросы</p>
+    <h2 style="margin-top:12px">Что обычно спрашивают</h2>
+    <div class="faq">
+      <details><summary>Сколько стоит содержать сайт?</summary><p>Ссылку вида ваше-имя.github.io даю бесплатно, навсегда. Свой домен (например, atelie-veludo.ru) стоит около 200–900 ₽ в год, подключу сам.</p></details>
+      <details><summary>А если черновик не понравится?</summary><p>Вы ничего не платите и ничего не должны. Можно сказать, что не так, и я переделаю.</p></details>
+      <details><summary>Мне нужно что-то готовить?</summary><p>Нет. Тексты, фото и отзывы я возьму с ваших Яндекс Карт и соцсетей. Если хотите, пришлите свои.</p></details>
+      <details><summary>Как платить?</summary><p>Переводом по СБП: 50% перед началом работы над чистовиком, 50% после запуска. Я самозанятый, пришлю чек.</p></details>
+      <details><summary>Работаете только с Москвой?</summary><p>Нет, всё делается онлайн. Город не важен.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <h2>Хотите черновик своего сайта?</h2>
+        <p>Напишите название бизнеса или ссылку на Яндекс Карты. Завтра пришлю, как может выглядеть ваш сайт. Бесплатно.</p>
+      </div>
+      <div class="btns">
+        <a class="btn btn-tg" id="tg" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1-1 .2-1.5l18.9-7.3c.9-.3 1.6.2 1.4 1.6z"/></svg>Написать в Telegram</a>
+        <a class="btn btn-wa" id="wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.7-.6 13.4 13.4 0 0 1-5.2-4.6c-.4-.5-1-1.6-1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.5z"/></svg>Написать в WhatsApp</a>
+        <div class="note">Telegram: @mellchika · WhatsApp: +7 925 688-00-17<br>Отвечаю в течение пары часов</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>Axiom · сайты, боты и игры</span>
+    <span>Сайт сделан мной же 🙂</span>
+  </footer>
+</div>
+
+<script>
+  // ⬇ Сюда вписать свои контакты
+  const CONTACTS = { telegram: "mellchika", whatsapp: "79256880017" };
+  const text = encodeURIComponent("Здравствуйте! Хочу черновик сайта для своего бизнеса: ");
+  document.getElementById("tg").href = "https://t.me/" + CONTACTS.telegram;
+  document.getElementById("wa").href = "https://wa.me/" + CONTACTS.whatsapp + "?text=" + text;
+</script>
+</body>
+</html>
