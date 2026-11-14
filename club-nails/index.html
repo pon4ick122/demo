@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Club Nails — beauty-bistro у Арбата</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Unbounded:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#f6d3dc;--pink2:#fbe9ee;--rose:#d9637f;--ink:#151214;--muted:#6f6468;--line:#efdfe3;--bg:#fffafb}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.55}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Unbounded,sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.08}
+h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px}
+.hand{font-family:Caveat,cursive;color:var(--rose);font-weight:700}
+.lead{color:var(--muted);max-width:560px}
+section{padding:80px 0}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;text-decoration:none;padding:15px 26px;border-radius:999px;border:0;cursor:pointer;font:700 16px Inter;transition:.15s}
+.btn:hover{background:var(--rose);transform:translateY(-2px)}
+.btn.pink{background:var(--pink);color:var(--ink)}.btn.pink:hover{background:#f2bfcc}
+.btn.wa{background:#25d366;color:#06301a}
+
+nav{position:sticky;top:0;z-index:10;background:rgba(255,250,251,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:66px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+.logo b{font-family:Caveat;font-size:30px}
+.navl{display:flex;gap:26px}.navl a{text-decoration:none;color:var(--muted);font-weight:500}.navl a:hover{color:var(--ink)}
+
+.hero{padding:50px 0 70px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(38px,5.6vw,66px);margin:16px 0 22px}
+.hero h1 .hand{font-size:1.25em;display:inline-block;transform:rotate(-3deg)}
+.hero p{font-size:19px;color:var(--muted);max-width:480px;margin-bottom:30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.pill{display:inline-flex;gap:8px;background:#fff;border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-weight:700;font-size:14px}
+.pill span{color:#f5b300}
+.stack{position:relative;height:520px}
+.stack img{position:absolute;border-radius:26px;object-fit:cover;box-shadow:0 30px 50px -25px rgba(120,30,60,.45);border:6px solid #fff}
+.stack img:nth-of-type(1){width:62%;height:78%;left:0;top:6%;transform:rotate(-4deg)}
+.stack img:nth-of-type(2){width:55%;height:66%;right:0;top:0;transform:rotate(5deg)}
+.stack img:nth-of-type(3){width:46%;height:52%;right:12%;bottom:0;transform:rotate(-2deg)}
+.stack .circle{position:absolute;width:300px;height:300px;border-radius:50%;background:var(--pink);left:25%;top:25%;z-index:-1}
+
+/* palette */
+.pal{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:32px;padding:44px}
+.swatches{display:flex;gap:14px;flex-wrap:wrap;margin:24px 0}
+.sw{width:58px;height:58px;border-radius:50%;border:4px solid #fff;box-shadow:0 0 0 2px var(--line);cursor:pointer;transition:.15s}
+.sw:hover{transform:scale(1.08)}
+.sw.on{box-shadow:0 0 0 3px var(--ink);transform:scale(1.1)}
+.swname{font-family:Caveat;font-size:34px;color:var(--rose);min-height:44px}
+.palimg{border-radius:24px;overflow:hidden;aspect-ratio:3/4;max-height:520px;margin-left:auto}
+.palimg img{width:100%;height:100%;object-fit:cover;transition:opacity .25s}
+
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.svc{background:var(--pink2);border-radius:24px;padding:26px}
+.svc h3{font-size:19px;margin:10px 0 8px}
+.svc p{color:var(--muted);font-size:15px}
+.svc .e{font-size:30px}
+
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.m{border:1px solid var(--line);border-radius:24px;padding:24px;background:#fff}
+.m .av{width:56px;height:56px;border-radius:50%;background:var(--pink);display:grid;place-items:center;font-family:Caveat;font-size:30px;margin-bottom:12px}
+.m h3{font-size:18px}
+.m small{color:var(--rose);font-weight:700}
+.m p{font-size:15px;color:var(--muted);margin-top:10px}
+
+.book{background:var(--ink);color:#fff;border-radius:32px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.book h2{color:#fff}
+.book .lead{color:#cdbfc4}
+.q{margin-bottom:18px}
+.q b{display:block;margin-bottom:10px;font-weight:500}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:transparent;color:#fff;border:1.5px solid #4a3f44;border-radius:999px;padding:8px 15px;font:500 15px Inter;cursor:pointer}
+.chip:hover{border-color:var(--pink)}
+.chip.on{background:var(--pink);color:var(--ink);border-color:var(--pink)}
+.out{background:#231d20;border-radius:16px;padding:16px;white-space:pre-line;font-size:15px;min-height:80px;margin-bottom:16px;color:#e9dde1}
+
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px}
+.rev p{font-size:15px;margin:8px 0 12px}
+.rev small{color:var(--muted)}
+.st{color:#f5b300}
+
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:22px}
+.info{background:var(--pink2);border-radius:28px;padding:34px;display:flex;flex-direction:column;gap:18px}
+.info small{display:block;color:var(--muted);font-size:14px}
+.info b{font-size:18px}
+.map{border-radius:28px;overflow:hidden;border:1px solid var(--line);min-height:380px}
+.map iframe{width:100%;height:100%;min-height:380px;border:0}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 100px}
+.demo{display:inline-block;background:var(--pink2);padding:8px 14px;border-radius:10px;margin-top:8px}
+.float{position:fixed;right:18px;bottom:18px;z-index:20;box-shadow:0 14px 30px -10px rgba(0,0,0,.45)}
+
+@media(max-width:860px){
+ .hero .wrap,.pal,.book,.contact{grid-template-columns:1fr}
+ .svcs,.team,.revs{grid-template-columns:1fr}
+ .navl{display:none}
+ .stack{height:400px}
+ .pal,.book{padding:26px 20px}
+ section{padding:56px 0}
+ .palimg{margin:0 auto}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+ <a class="logo" href="#"><img src="img/1.jpg" alt=""><b>Club Nails</b></a>
+ <div class="navl"><a href="#colors">Цвета</a><a href="#services">Услуги</a><a href="#team">Мастера</a><a href="#book">Запись</a><a href="#contacts">Контакты</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+ <div>
+  <div class="pill"><span>★★★★★</span> 396 отзывов на Яндекс Картах</div>
+  <h1>Маникюр, к которому <span class="hand">возвращаются</span> годами</h1>
+  <p>Уютная beauty-студия в самом центре, у Библиотеки им. Ленина. Маникюр, педикюр, брови и ресницы. Мастера помнят постоянных гостей, а удобное время находится даже «вдруг срочно».</p>
+  <div class="cta"><a class="btn" href="#book">Записаться</a><a class="btn pink" href="#colors">Подобрать цвет</a></div>
+ </div>
+ <div class="stack">
+  <div class="circle"></div>
+  <img src="img/4.jpg" alt="Нюдовый маникюр">
+  <img src="img/5.jpg" alt="Бордовый маникюр">
+  <img src="img/3.jpg" alt="Розовый маникюр">
+ </div>
+</div></header>
+
+<section id="colors" style="padding-top:10px"><div class="wrap">
+ <div class="pal">
+  <div>
+   <h2>Какой цвет <span class="hand">сегодня?</span></h2>
+   <p class="lead">Нажмите на оттенок и посмотрите, как он выглядит на наших работах.</p>
+   <div class="swatches" id="sw"></div>
+   <div class="swname" id="swname">нюд</div>
+   <a class="btn" href="#book" style="margin-top:12px">Хочу такой</a>
+  </div>
+  <div class="palimg"><img id="palimg" src="img/4.jpg" alt="Маникюр"></div>
+ </div>
+</div></section>
+
+<section id="services" style="padding-top:20px"><div class="wrap">
+ <h2>Услуги</h2>
+ <p class="lead">Всё для ухоженных рук, ног и взгляда в одном месте.</p>
+ <div class="svcs">
+  <div class="svc"><div class="e">💅</div><h3>Маникюр</h3><p>Покрытие гель-лаком, укрепление, наращивание и дизайн. Ровно и аккуратно.</p></div>
+  <div class="svc"><div class="e">🦶</div><h3>Педикюр</h3><p>Аппаратный и комбинированный, с покрытием или без.</p></div>
+  <div class="svc"><div class="e">✨</div><h3>Брови</h3><p>Коррекция, окрашивание хной, вельвет. С ювелирной аккуратностью.</p></div>
+  <div class="svc"><div class="e">👁️</div><h3>Ресницы</h3><p>Ламинирование и вельвет ресниц для естественного объёма.</p></div>
+  <div class="svc"><div class="e">👧</div><h3>Для детей</h3><p>Детский маникюр: бережно и с любимыми цветами.</p></div>
+  <div class="svc"><div class="e">☕</div><h3>Beauty-bistro</h3><p>Чай или кофе, пока мастер работает. Можно прийти с собакой.</p></div>
+ </div>
+</div></section>
+
+<section id="team" style="padding-top:20px"><div class="wrap">
+ <h2>Мастера, к которым <span class="hand">записываются заранее</span></h2>
+ <div class="team">
+  <div class="m"><div class="av">М</div><h3>Моника</h3><small>маникюр</small><p>«Таких ровных, аккуратных ноготков давно не было, придраться не к чему».</p></div>
+  <div class="m"><div class="av">Б</div><h3>Бурул</h3><small>маникюр</small><p>«Нашла „своего“ мастера и хожу только к ней».</p></div>
+  <div class="m"><div class="av">С</div><h3>Сабина</h3><small>брови · администратор</small><p>«С такой ювелирной аккуратностью мне брови ещё никто не оформлял».</p></div>
+ </div>
+</div></section>
+
+<section id="book" style="padding-top:20px"><div class="wrap">
+ <div class="book">
+  <div>
+   <h2>Запись без звонков</h2>
+   <p class="lead">Выберите услугу и время, и мы соберём сообщение. Отправьте его в WhatsApp, администратор подтвердит запись.</p>
+  </div>
+  <div>
+   <div class="q"><b>Услуга</b><div class="chips" data-k="svc"><button class="chip">Маникюр</button><button class="chip">Педикюр</button><button class="chip">Маникюр + педикюр</button><button class="chip">Брови</button><button class="chip">Ресницы</button></div></div>
+   <div class="q"><b>Мастер</b><div class="chips" data-k="who"><button class="chip">Любой</button><button class="chip">Моника</button><button class="chip">Бурул</button><button class="chip">Сабина</button></div></div>
+   <div class="q"><b>Когда</b><div class="chips" data-k="when"><button class="chip">Сегодня</button><button class="chip">Завтра</button><button class="chip">На выходных</button><button class="chip">Подберите сами</button></div></div>
+   <div class="out" id="out">Выберите услугу…</div>
+   <div class="cta"><a class="btn wa" id="wa" href="https://wa.me/79646410770" target="_blank" rel="noopener">Отправить в WhatsApp</a><a class="btn pink" href="https://t.me/clubnailsarbat" target="_blank" rel="noopener">Telegram</a></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="reviews" style="padding-top:20px"><div class="wrap">
+ <h2>Гости о нас</h2>
+ <div class="revs">
+  <div class="rev"><span class="st">★★★★★</span><p>«Хожу в Club Nails четвёртый год, и ни разу не разочаровалась ни в качестве, ни в обслуживании».</p><small>Отзыв с Яндекс Карт</small></div>
+  <div class="rev"><span class="st">★★★★★</span><p>«Самый искренне доброжелательный салон, каких мало в Москве. Здесь всегда есть удобное время».</p><small>Отзыв с Яндекс Карт</small></div>
+  <div class="rev"><span class="st">★★★★★</span><p>«Небольшой, но уютный! Хожу уже 2 года. Мастера внимательные и учитывают все пожелания».</p><small>Отзыв с Яндекс Карт</small></div>
+ </div>
+</div></section>
+
+<section id="contacts" style="padding-top:20px"><div class="wrap">
+ <h2>Как нас найти</h2>
+ <div class="contact">
+  <div class="info">
+   <div><small>Адрес</small><b>Большой Кисловский пер., 1, стр. 2<br>1 этаж, офис 122–123</b></div>
+   <div><small>Метро</small><b>Библиотека им. Ленина — 390 м<br>Александровский сад — 430 м</b></div>
+   <div><small>Работаем</small><b>до 21:00, по предварительной записи</b></div>
+   <div class="cta"><a class="btn wa" href="https://wa.me/79646410770" target="_blank" rel="noopener">WhatsApp</a><a class="btn" href="https://t.me/clubnailsarbat" target="_blank" rel="noopener">Telegram</a></div>
+  </div>
+  <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?oid=190609706924&z=16" title="Club Nails на карте"></iframe></div>
+ </div>
+</div></section>
+
+<footer>© Club Nails · beauty-bistro<br><span class="demo">Это демо-концепт сайта. Фото и отзывы взяты с Яндекс Карт.</span></footer>
+<a class="btn float" href="#book">💅 Записаться</a>
+
+<script>
+const COLORS=[["нюд","#e8c3ad","img/4.jpg"],["нежно-розовый","#f4a6c4","img/3.jpg"],["серый","#a9aeb3","img/2.jpg"],["бордо","#6e1b2c","img/5.jpg"],["лаванда","#cdd3f2","img/6.jpg"],["красный","#b3121f","img/7.jpg"]];
+const sw=document.getElementById('sw'),pi=document.getElementById('palimg'),nm=document.getElementById('swname');
+COLORS.forEach(([n,c,src],i)=>{const b=document.createElement('button');b.className='sw'+(i?'':' on');b.style.background=c;b.title=n;b.onclick=()=>{sw.querySelectorAll('.sw').forEach(x=>x.classList.remove('on'));b.classList.add('on');pi.style.opacity=0;setTimeout(()=>{pi.src=src;pi.style.opacity=1},200);nm.textContent=n;st.color=n;upd();};sw.appendChild(b);});
+const st={};
+document.querySelectorAll('.chips').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;g.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));b.classList.add('on');st[g.dataset.k]=b.textContent;upd();}));
+function upd(){
+ if(!st.svc) return;
+ const m='Здравствуйте! Хочу записаться.\nУслуга: '+st.svc.toLowerCase()+(st.color&&/Маникюр/.test(st.svc)?' (цвет: '+st.color+')':'')+'\n'+(st.who?'Мастер: '+(st.who==='Любой'?'любой':st.who)+'\n':'')+(st.when?'Когда: '+st.when.toLowerCase():'');
+ document.getElementById('out').textContent=m;
+ document.getElementById('wa').href='https://wa.me/79646410770?text='+encodeURIComponent(m);
+}
+</script>
+</body>
+</html>
