@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Ателье на Таганской — ателье и ремонт одежды</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf6f1;--card:#ffffff;--ink:#231a17;--muted:#7d6f68;--line:#ebe0d6;--acc:#c4232f;--soft:#f7e3df;--dark:#231a17}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.55;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,.gh,.logo,.perk h3{font-family:'Playfair Display',serif;font-weight:700;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4.4vw,50px);margin-bottom:12px}
+em{font-style:italic;color:var(--acc);font-weight:500}
+.lead{color:var(--muted);max-width:600px}
+section{padding:84px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--dark);color:#fff;text-decoration:none;padding:15px 26px;border-radius:999px;border:0;cursor:pointer;font:700 16px 'Manrope';transition:.15s}
+.btn:hover{background:var(--acc);transform:translateY(-2px)}
+.btn.light{background:var(--soft);color:var(--ink)}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:66px}
+.logo{font-size:26px;text-decoration:none}
+.navl{display:flex;gap:26px}.navl a{text-decoration:none;color:var(--muted);font-weight:500}.navl a:hover{color:var(--ink)}
+.hero{padding:56px 0 70px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(38px,5.4vw,64px);margin:18px 0 22px}
+.hero p{font-size:19px;color:var(--muted);max-width:500px;margin-bottom:30px}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:inline-flex;gap:6px;background:var(--card);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-weight:700;font-size:14px}
+.pill .s{color:#f5b300}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.duo{position:relative;height:540px}
+.duo img{position:absolute;object-fit:cover;border-radius:28px;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.duo img:nth-child(1){width:66%;height:84%;left:0;top:0}
+.duo img:nth-child(2){width:52%;height:56%;right:0;bottom:0;border:8px solid var(--bg)}
+.duo .badge{position:absolute;left:52%;top:8%;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:14px 18px;font-weight:700;box-shadow:0 20px 40px -20px rgba(0,0,0,.3)}
+.duo .badge b{display:block;font-family:'Playfair Display',serif;font-size:34px;line-height:1;color:var(--acc)}
+.book{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;margin-top:30px;align-items:start}
+.lvl{display:inline-flex;background:var(--soft);border-radius:999px;padding:5px;margin:8px 0 6px}
+.lvl button{border:0;background:transparent;padding:9px 18px;border-radius:999px;font:700 15px 'Manrope';color:var(--muted);cursor:pointer}
+.lvl button.on{background:var(--card);color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.gh{font-size:24px;margin:26px 0 12px}
+.svcs{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.svc{text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:16px 18px;cursor:pointer;font:inherit;color:inherit;display:flex;flex-direction:column;gap:4px;transition:.15s}
+.svc:hover{border-color:var(--acc)}
+.svc.on{border-color:var(--acc);background:var(--soft)}
+.svc:disabled{opacity:.35;cursor:not-allowed}
+.sn{font-weight:700}
+.svc small{color:var(--muted);font-size:14px;line-height:1.35}
+.pp{margin-top:auto;padding-top:6px;font-weight:700;color:var(--acc)}
+.side{position:sticky;top:86px;background:var(--dark);color:#fff;border-radius:28px;padding:28px}
+.side h3{font-family:'Playfair Display',serif;font-size:28px;margin-bottom:6px}
+.side .sub{color:rgba(255,255,255,.65);font-size:15px;margin-bottom:18px}
+.q{margin-bottom:16px}
+.q b{display:block;margin-bottom:8px;font-weight:500;font-size:15px;color:rgba(255,255,255,.75)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 13px;font:500 14px 'Manrope';cursor:pointer}
+.chip.on{background:#fff;color:var(--dark);border-color:#fff}
+.msg{white-space:pre-line;background:rgba(255,255,255,.07);border-radius:16px;padding:14px;font-size:14px;color:rgba(255,255,255,.85);margin:6px 0 16px;min-height:96px}
+.side .btn{background:var(--acc);width:100%}
+.side .btn:hover{background:#fff;color:var(--dark)}
+.note{margin-top:18px;background:var(--soft);border-radius:16px;padding:14px 18px;font-size:15px}
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.perk{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px}
+.perk i{font-style:normal;font-size:28px}
+.perk h3{font-size:21px;margin:10px 0 6px}
+.perk p{color:var(--muted);font-size:15px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}
+.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:20px}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+blockquote{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px}
+.st{color:#f5b300;letter-spacing:2px}
+blockquote p{margin:12px 0 14px}
+cite{color:var(--muted);font-size:14px;font-style:normal}
+.cont{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;margin-top:34px}
+.cbox{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:30px}
+.cbox div{margin-bottom:16px}
+.cbox small{display:block;color:var(--muted)}
+.cbox b{font-size:18px}
+.map{border-radius:28px;overflow:hidden;min-height:380px;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;min-height:380px;border:0}
+footer{text-align:center;color:var(--muted);padding:40px 20px 100px;font-size:14px;border-top:1px solid var(--line)}
+.float{position:fixed;right:16px;bottom:16px;z-index:20;display:none}
+@media (max-width:900px){
+ .navl{display:none}
+ .hero .wrap,.book,.cont{grid-template-columns:1fr}
+ .duo{height:420px}
+ .side{position:static}
+ .perks{grid-template-columns:1fr 1fr}
+ .revs{grid-template-columns:1fr}
+ .gal{grid-template-columns:1fr 1fr}
+ .float{display:inline-flex}
+ section{padding:60px 0}
+}
+@media (max-width:520px){.perks{grid-template-columns:1fr}.duo{height:360px}.svcs{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="#">Ателье</a><div class="navl"><a href="#book">Услуги и цены</a><a href="#works">Работы</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></div><a class="btn" href="#book" style="padding:10px 20px">Записаться</a></div></nav>
+
+<header class="hero"><div class="wrap">
+ <div>
+  <div class="pills"><span class="pill"><span class="s">★</span> 5,0 · 36 отзывов</span><span class="pill">🏆 Хорошее место 2026</span></div>
+  <h1>Подошьём, починим, <em>спасём к празднику</em></h1>
+  <p>Ателье в двух шагах от «Марксистской». Берёмся за срочные заказы, когда в других местах отказывают. Работаем каждый день с 10 до 22.</p>
+  <div class="cta"><a class="btn" href="#book">Выбрать услугу</a><a class="btn light" href="#works">Смотреть работы</a></div>
+ </div>
+ <div class="duo"><img src="img/1.jpg" alt="Ателье на Таганской"><img src="img/5.jpg" alt="Ателье на Таганской"><div class="badge"><b>5,0</b>Яндекс Карты</div></div>
+</div></header>
+
+<section id="book" style="padding-top:10px"><div class="wrap">
+ <h2>Услуги и <em>цены</em></h2>
+ <p class="lead">Нажмите на услугу, и справа соберётся готовая заявка. Останется отправить её в Telegram.</p>
+ 
+ <div class="book">
+  <div><h3 class="gh">Что нужно сделать</h3><div class="svcs"><button type="button" class="svc" data-n="Подшить или укоротить"><span class="sn">Подшить или укоротить</span><small>Брюки, джинсы, юбки, рукава</small><span class="pp" data-p="">по фото</span></button><button type="button" class="svc" data-n="Заменить молнию"><span class="sn">Заменить молнию</span><small>Куртки, кофты, сумки</small><span class="pp" data-p="">по фото</span></button><button type="button" class="svc" data-n="Подогнать по фигуре"><span class="sn">Подогнать по фигуре</span><small>Ушить, расставить</small><span class="pp" data-p="">по фото</span></button><button type="button" class="svc" data-n="Свадебное или вечернее платье"><span class="sn">Свадебное или вечернее платье</span><small>Подгонка и ремонт любой сложности</small><span class="pp" data-p="3000">3 000 ₽</span></button><button type="button" class="svc" data-n="Пошив на заказ"><span class="sn">Пошив на заказ</span><small>Брюки, платья, костюмы</small><span class="pp" data-p="">по фото</span></button><button type="button" class="svc" data-n="Ремонт трикотажа и пуховиков"><span class="sn">Ремонт трикотажа и пуховиков</span><small>Аккуратно и незаметно</small><span class="pp" data-p="">по фото</span></button></div><h3 class="gh">Ещё принимаем</h3><div class="svcs"><button type="button" class="svc" data-n="Химчистка"><span class="sn">Химчистка</span><small>Сухая и аквачистка</small><span class="pp" data-p="">по фото</span></button><button type="button" class="svc" data-n="Ремонт обуви"><span class="sn">Ремонт обуви</span><span class="pp" data-p="">по фото</span></button></div><p class="note">Цены на ремонт зависят от вещи. Пришлите фото в Telegram, и мастер сразу назовёт стоимость и срок.</p></div>
+  <aside class="side">
+   <h3>Ваша заявка</h3>
+   <div class="sub" id="pick">Выберите услугу слева</div>
+   <div class="q"><b>Как срочно</b><div class="chips" data-k="Как срочно"><button type="button" class="chip">Срочно, сегодня-завтра</button><button type="button" class="chip">В течение недели</button><button type="button" class="chip">Не горит</button></div></div><div class="q"><b>Когда принесёте</b><div class="chips" data-k="Когда принесёте"><button type="button" class="chip">Сегодня</button><button type="button" class="chip">Завтра</button><button type="button" class="chip">На неделе</button></div></div>
+   <div class="msg" id="msg">Здравствуйте! Хочу сдать вещь в ремонт.</div>
+   <a class="btn" id="send" href="https://t.me/taganka24_5" target="_blank" rel="noopener">Отправить в Telegram</a>
+  </aside>
+ </div>
+</div></section>
+
+<section style="padding-top:10px"><div class="wrap">
+ <h2>За что нас <em>любят</em></h2>
+ <div class="perks"><div class="perk"><i>⚡</i><h3>Срочный ремонт</h3><p>Сделаем к вечеру, когда очень нужно.</p></div><div class="perk"><i>🕙</i><h3>С 10 до 22</h3><p>Каждый день, даже после работы.</p></div><div class="perk"><i>👗</i><h3>Сложные заказы</h3><p>Свадебные платья, кружево, вышивка.</p></div><div class="perk"><i>🧥</i><h3>Всё в одном месте</h3><p>Ремонт, пошив, химчистка и обувь.</p></div></div>
+</div></section>
+
+<section id="works" style="padding-top:10px"><div class="wrap">
+ <h2>Наши <em>работы</em></h2>
+ <div class="gal"><img src="img/2.jpg" alt="Работа: Ателье на Таганской" loading="lazy"><img src="img/4.jpg" alt="Работа: Ателье на Таганской" loading="lazy"><img src="img/6.jpg" alt="Работа: Ателье на Таганской" loading="lazy"></div>
+</div></section>
+
+<section id="reviews" style="padding-top:10px"><div class="wrap">
+ <h2>5,0 на <em>Яндекс Картах</em></h2>
+ <p class="lead">36 отзывов. Вот несколько из них.</p>
+ <div class="revs"><blockquote><div class="st">★★★★★</div><p>Мне надо было срочно заменить сломанную молнию на кофте. В одном ателье отказали, а здесь мастер оказалась отзывчивой и согласилась.</p><cite>Отзыв с Яндекс Карт</cite></blockquote><blockquote><div class="st">★★★★★</div><p>Шила брюки и кружевное боди на свадьбу: на сетке нужно было подобрать и вышить кружево по образцу. Мастерицы прекрасно справились.</p><cite>Отзыв с Яндекс Карт</cite></blockquote><blockquote><div class="st">★★★★★</div><p>Я маленького роста, поэтому почти все вещи после покупки подшиваю. Уже не первый год обращаюсь сюда и невероятно довольна.</p><cite>Отзыв с Яндекс Карт</cite></blockquote></div>
+</div></section>
+
+<section id="contacts" style="padding-top:10px"><div class="wrap">
+ <h2>Как нас <em>найти</em></h2>
+ <div class="cont">
+  <div class="cbox">
+   <div><small>Адрес</small><b>Таганская ул., 24, стр. 5 (цокольный этаж)</b></div>
+   <div><small>Метро</small><b>Марксистская — 390 м</b></div>
+   <div><small>Работаем</small><b>ежедневно, 10:00–22:00</b></div>
+   <div><small>Телефон</small><b><a href="tel:+79037077548">+7 (903) 707-75-48</a></b></div>
+   <a class="btn" href="https://t.me/taganka24_5" target="_blank" rel="noopener">Написать в Telegram</a>
+  </div>
+  <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?oid=150570705983&z=16" title="Ателье на Таганской на карте" loading="lazy"></iframe></div>
+ </div>
+</div></section>
+
+<footer>© Ателье на Таганской · ателье и ремонт одежды<br><span style="opacity:.7">Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></footer>
+<a class="btn float" href="#book">Записаться</a>
+
+<script>
+const HELLO="Здравствуйте! Хочу сдать вещь в ремонт.", LV=null, KIND='tg', H='taganka24_5';
+const st={svc:null,lv:0,q:{}};
+const $=id=>document.getElementById(id);
+const fmt=n=>n.toLocaleString('ru-RU')+' ₽';
+function price(el){const raw=el.querySelector('.pp').dataset.p;if(!raw)return null;const v=JSON.parse(raw);return Array.isArray(v)?v[st.lv]:v;}
+function paint(){
+ document.querySelectorAll('.svc').forEach(el=>{const pp=el.querySelector('.pp');const raw=pp.dataset.p;if(raw&&Array.isArray(JSON.parse(raw))){const v=price(el);el.disabled=v==null;pp.textContent=v==null?'только у топ-мастера':fmt(v);if(v==null&&st.svc===el){st.svc=null;el.classList.remove('on');}}});
+ const s=st.svc;let m=HELLO;
+ if(s){const v=price(s);$('pick').textContent=s.dataset.n+(v!=null?' · '+fmt(v):'');m+='\nУслуга: '+s.dataset.n+(LV?' ('+LV[st.lv].toLowerCase()+')':'')+(v!=null?' — '+fmt(v):'');}
+ for(const k in st.q)m+='\n'+k+': '+st.q[k].toLowerCase();
+ $('msg').textContent=m;
+ $('send').href=KIND==='wa'?'https://wa.me/'+H+'?text='+encodeURIComponent(m):'https://t.me/'+H+'?text='+encodeURIComponent(m);
+ $('send').dataset.m=m;
+}
+document.querySelectorAll('.svc').forEach(el=>el.onclick=()=>{document.querySelectorAll('.svc').forEach(x=>x.classList.remove('on'));el.classList.add('on');st.svc=el;paint();if(innerWidth<900)document.querySelector('.side').scrollIntoView({behavior:'smooth',block:'start'});});
+if($('lvl'))$('lvl').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;[...$('lvl').children].forEach((x,i)=>{x.classList.toggle('on',x===b);if(x===b)st.lv=i;});paint();});
+document.querySelectorAll('.side .chips').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;g.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));b.classList.add('on');st.q[g.dataset.k]=b.textContent;paint();}));
+$('send').addEventListener('click',()=>{try{navigator.clipboard.writeText($('send').dataset.m)}catch(e){}});
+paint();
+</script>
+</body>
+</html>
