@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Груминг у Льва — Московский</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Onest:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sun:#f2a33a;--sun-d:#c9761a;--sand:#fbf3e6;--paper:#fffdf9;--ink:#2a1f14;--muted:#7a6a58;--line:#eedfc8;--green:#2f6b4f}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Onest,system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:17px;line-height:1.55}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Fraunces,serif;line-height:1.08;letter-spacing:-.015em}
+h2{font-size:clamp(30px,4.4vw,48px);margin-bottom:14px}
+.lead{color:var(--muted);max-width:560px}
+section{padding:80px 0}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;padding:15px 26px;border-radius:14px;border:0;cursor:pointer;font:700 16px Onest;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px);background:#000}
+.btn.sun{background:var(--sun);color:var(--ink)}
+.btn.sun:hover{background:#ffb24d}
+
+nav{position:sticky;top:0;z-index:10;background:rgba(255,253,249,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:66px}
+.logo{font-family:Fraunces;font-weight:800;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:34px;height:34px;border-radius:50%;background:var(--sun);display:grid;place-items:center;font-style:normal;font-size:18px}
+.navl{display:flex;gap:26px}.navl a{text-decoration:none;color:var(--muted);font-weight:500}.navl a:hover{color:var(--ink)}
+
+.hero{padding:44px 0 70px;background:radial-gradient(900px 500px at 85% 20%,#fde3bb 0,transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+.kicker{display:inline-block;font-weight:700;font-size:14px;color:var(--sun-d);background:#fff3df;padding:7px 13px;border-radius:999px;margin-bottom:20px}
+.hero h1{font-size:clamp(42px,6.4vw,76px);margin-bottom:22px}
+.hero h1 span{color:var(--sun-d)}
+.hero p{font-size:19px;color:var(--muted);max-width:500px;margin-bottom:30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap}
+.trust b{font-family:Fraunces;font-size:30px;display:block;line-height:1}
+.trust span{font-size:14px;color:var(--muted)}
+.photo{position:relative}
+.photo img{border-radius:200px 200px 28px 28px;aspect-ratio:4/5;object-fit:cover;width:100%;box-shadow:0 40px 70px -35px rgba(80,40,0,.5)}
+.photo .tag{position:absolute;left:-18px;bottom:30px;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 14px 30px -12px rgba(80,40,0,.35);font-size:14px;max-width:230px}
+.photo .tag b{display:block;font-size:16px}
+
+.solo{background:var(--ink);color:#fff;border-radius:32px;padding:54px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.solo h3{font-size:24px;margin:12px 0 8px;color:#fff}
+.solo p{color:#cbbda9;font-size:15px}
+.solo .n{font-family:Fraunces;font-size:44px;color:var(--sun)}
+
+/* booking */
+.book{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+.panel{background:var(--sand);border:1px solid var(--line);border-radius:28px;padding:30px}
+.step{margin-bottom:22px}
+.step label{display:block;font-weight:700;margin-bottom:10px}
+.step label small{color:var(--muted);font-weight:500}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{border:2px solid var(--line);background:#fff;border-radius:12px;padding:9px 14px;font:500 15px Onest;cursor:pointer;transition:.15s}
+.opt:hover{border-color:var(--sun)}
+.opt.on{background:var(--sun);border-color:var(--sun);font-weight:700}
+.inp{width:100%;font:inherit;padding:12px 14px;border:2px solid var(--line);border-radius:12px;background:#fff;outline:none}
+.inp:focus{border-color:var(--sun)}
+.preview{background:#fff;border:2px dashed var(--line);border-radius:16px;padding:16px;font-size:15px;white-space:pre-line;margin-bottom:16px;min-height:90px;color:var(--muted)}
+.preview.ready{color:var(--ink);border-style:solid;border-color:var(--sun)}
+.note{font-size:13px;color:var(--muted);margin-top:10px}
+
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px;margin-top:34px}
+.gal img{width:100%;height:100%;object-fit:cover;border-radius:20px}
+.gal img:first-child{grid-row:span 2;grid-column:span 2}
+
+.revs{columns:3;column-gap:18px;margin-top:34px}
+.rev{break-inside:avoid;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:18px}
+.rev p{font-size:15px;margin:8px 0 10px}
+.rev small{color:var(--muted)}
+.stars{color:var(--sun)}
+
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:24px}
+.info{background:var(--sand);border-radius:28px;padding:34px;display:flex;flex-direction:column;gap:18px}
+.info small{display:block;color:var(--muted);font-size:14px}
+.info b{font-size:18px}
+.map{border-radius:28px;overflow:hidden;border:1px solid var(--line);min-height:360px}
+.map iframe{width:100%;height:100%;min-height:360px;border:0}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 100px}
+.demo{display:inline-block;background:var(--sand);padding:8px 14px;border-radius:10px;margin-top:8px}
+.float{position:fixed;right:18px;bottom:18px;z-index:20;box-shadow:0 14px 30px -10px rgba(0,0,0,.5)}
+
+@media(max-width:860px){
+ .hero .wrap,.book,.contact{grid-template-columns:1fr}
+ .solo{grid-template-columns:1fr;padding:32px 24px}
+ .navl{display:none}
+ .gal{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
+ .revs{columns:1}
+ section{padding:56px 0}
+ .photo .tag{left:10px}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+ <a class="logo" href="#"><i>🦁</i>Груминг у Льва</a>
+ <div class="navl"><a href="#about">О мастере</a><a href="#book">Запись</a><a href="#works">Работы</a><a href="#reviews">Отзывы</a><a href="#contacts">Как добраться</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+ <div>
+  <div class="kicker">★ 5,0 · 143 отзыва на Яндекс Картах</div>
+  <h1>Один мастер. <span>Один питомец.</span> Полное внимание.</h1>
+  <p>В студии только ваша собака или кошка, никаких чужих животных и очередей. Стрижёт сам Лев: к нему ходят годами и приводят даже самых капризных.</p>
+  <div class="cta"><a class="btn sun" href="#book">Записаться за минуту</a><a class="btn" href="https://t.me/leo_grooming" target="_blank" rel="noopener">Написать Льву</a></div>
+  <div class="trust">
+   <div><b>2020</b><span>стрижём с этого года</span></div>
+   <div><b>1 : 1</b><span>мастер и питомец</span></div>
+   <div><b>♿</b><span>пандус и лифт</span></div>
+  </div>
+ </div>
+ <div class="photo">
+  <img src="img/1.jpg" alt="Грумер Лев со шпицами">
+  <div class="tag"><b>Лев Юрьевич</b>«Найдёт подход даже к непростому характеру», пишут хозяева</div>
+ </div>
+</div></header>
+
+<section id="about" style="padding-top:10px"><div class="wrap">
+ <div class="solo">
+  <div><div class="n">01</div><h3>Без стресса</h3><p>Питомец не видит других собак и не нервничает. Йорки, корги и коты спокойно сидят на столе.</p></div>
+  <div><div class="n">02</div><h3>Полный комплекс</h3><p>Мытьё, сушка, стрижка, вычёсывание, когти и уши: всё за один визит.</p></div>
+  <div><div class="n">03</div><h3>Собаки, кошки, свинки</h3><p>Работаем с собаками любых пород, кошками и морскими свинками.</p></div>
+ </div>
+</div></section>
+
+<section id="book" style="padding-top:20px"><div class="wrap book">
+ <div>
+  <h2>Запись без долгой переписки</h2>
+  <p class="lead">Выберите пару пунктов, и мы соберём готовое сообщение. Останется нажать «Отправить» в Telegram.</p>
+ </div>
+ <div class="panel">
+  <div class="step"><label>Кто придёт?</label><div class="opts" data-k="pet"><button class="opt">🐶 Собака</button><button class="opt">🐱 Кошка</button><button class="opt">🐹 Морская свинка</button></div></div>
+  <div class="step"><label>Порода и кличка <small>(по желанию)</small></label><input class="inp" id="breed" placeholder="Например: корги Кекс"></div>
+  <div class="step"><label>Что сделать?</label><div class="opts" data-k="svc"><button class="opt">Комплекс со стрижкой</button><button class="opt">Вычёсывание</button><button class="opt">Гигиена</button><button class="opt">Только когти</button></div></div>
+  <div class="step"><label>Когда удобно?</label><div class="opts" data-k="when"><button class="opt">Будни утром</button><button class="opt">Будни вечером</button><button class="opt">Выходные</button><button class="opt">Как можно скорее</button></div></div>
+  <div class="preview" id="pv">Здесь появится ваше сообщение…</div>
+  <button class="btn sun" id="send" style="width:100%;justify-content:center">Скопировать и открыть Telegram</button>
+  <p class="note">Текст скопируется сам. В чате просто вставьте его и отправьте.</p>
+ </div>
+</div></section>
+
+<section id="works" style="padding-top:20px"><div class="wrap">
+ <h2>До и после — у нас в студии</h2>
+ <p class="lead">Реальные фото наших хвостатых клиентов.</p>
+ <div class="gal">
+  <img src="img/3.jpg" alt="Корги после вычёсывания" loading="lazy">
+  <img src="img/2.jpg" alt="Йорк после стрижки" loading="lazy">
+  <img src="img/4.jpg" alt="Йорк после мытья" loading="lazy">
+  <img src="img/5.jpg" alt="Кот после вычёсывания" loading="lazy">
+  <img src="img/6.jpg" alt="Джек-рассел после стрижки" loading="lazy">
+ </div>
+</div></section>
+
+<section id="reviews" style="padding-top:20px"><div class="wrap">
+ <h2>Хозяева о Льве</h2>
+ <div class="revs">
+  <div class="rev"><span class="stars">★★★★★</span><p>«У Льва наш Кекс стрижётся уже 5 лет! Всегда безупречно. Найдёт подход к непростому характеру собаки, а ещё он очень добрый человек».</p><small>Отзыв с Яндекс Карт</small></div>
+  <div class="rev"><span class="stars">★★★★★</span><p>«Мой очень привередливый и капризный корги очень доволен! А я счастлива видеть его настолько ухоженным».</p><small>Отзыв с Яндекс Карт</small></div>
+  <div class="rev"><span class="stars">★★★★★</span><p>«Наш йорк стрижётся спокойно, без присутствия посторонних животных. Лев всегда найдёт индивидуальный подход».</p><small>Отзыв с Яндекс Карт</small></div>
+  <div class="rev"><span class="stars">★★★★★</span><p>«Всегда чисто, уютно и профессионально. За грумингом только сюда!»</p><small>Отзыв с Яндекс Карт</small></div>
+  <div class="rev"><span class="stars">★★★★★</span><p>«Посещаем мастера с 2020 года. Ваш четвероногий друг в надёжных руках».</p><small>Отзыв с Яндекс Карт</small></div>
+  <div class="rev"><span class="stars">★★★★★</span><p>«Принял нас оперативно, выполнил очень качественно. Мы остались очень довольны!»</p><small>Отзыв с Яндекс Карт</small></div>
+ </div>
+</div></section>
+
+<section id="contacts" style="padding-top:20px"><div class="wrap">
+ <h2>Как нас найти</h2>
+ <div class="contact">
+  <div class="info">
+   <div><small>Адрес</small><b>ул. Никитина, 11, корп. 8, Московский<br>студия 1, подъезд 1, 1 этаж</b></div>
+   <div><small>Рядом</small><b>ост. «Улица Никитина, 11» — 390 м<br>м. Филатов Луг — 2,5 км</b></div>
+   <div><small>Удобно</small><b>Парковка, пандус, лифт, оплата картой</b></div>
+   <a class="btn sun" href="https://t.me/leo_grooming" target="_blank" rel="noopener" style="align-self:flex-start">Написать в Telegram</a>
+  </div>
+  <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?oid=91777481361&z=16" title="Груминг у Льва на карте"></iframe></div>
+ </div>
+</div></section>
+
+<footer>© Груминг у Льва · Московский<br><span class="demo">Это демо-концепт сайта. Фото и отзывы взяты с Яндекс Карт.</span></footer>
+<a class="btn sun float" href="#book">🦁 Записаться</a>
+
+<script>
+const st={};
+document.querySelectorAll('.opts').forEach(g=>g.addEventListener('click',e=>{
+ const b=e.target.closest('.opt'); if(!b) return;
+ g.querySelectorAll('.opt').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+ st[g.dataset.k]=b.textContent.replace(/^\S+\s(?=[А-Я])/,''); upd();
+}));
+document.getElementById('breed').addEventListener('input',upd);
+function msg(){
+ const br=document.getElementById('breed').value.trim();
+ if(!st.pet&&!st.svc) return '';
+ return 'Здравствуйте, Лев! Хочу записаться.\n'+
+  (st.pet?'Питомец: '+st.pet.toLowerCase()+(br?' ('+br+')':'')+'\n':'')+
+  (st.svc?'Услуга: '+st.svc.toLowerCase()+'\n':'')+
+  (st.when?'Удобно: '+st.when.toLowerCase():'');
+}
+function upd(){const m=msg(),pv=document.getElementById('pv'); pv.textContent=m||'Здесь появится ваше сообщение…'; pv.classList.toggle('ready',!!m);}
+document.getElementById('send').onclick=async()=>{
+ const m=msg()||'Здравствуйте, Лев! Хочу записаться на груминг.';
+ try{await navigator.clipboard.writeText(m);}catch(e){}
+ window.open('https://t.me/leo_grooming','_blank');
+};
+</script>
+</body>
+</html>
