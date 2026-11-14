@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Берсерк — компьютерный клуб</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--acc:#3d7bff;--acc2:#9b5cff;--bg:#07070c;--card:#11111a;--line:#23233a;--ink:#f3f3fa;--muted:#9a9ab5}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.55;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.logo{font-family:'Russo One',sans-serif;font-weight:700;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4.4vw,50px);margin-bottom:12px}
+em{font-style:normal;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);max-width:620px}
+section{padding:84px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(90deg,var(--acc),var(--acc2));color:#fff;text-decoration:none;padding:16px 28px;border-radius:14px;border:0;cursor:pointer;font:700 16px Inter;transition:.15s;box-shadow:0 10px 40px -10px var(--acc)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 50px -8px var(--acc)}
+.btn.ghost{background:transparent;border:1.5px solid var(--line);box-shadow:none}
+.btn.ghost:hover{border-color:var(--acc)}
+nav{position:sticky;top:0;z-index:10;background:rgba(7,7,12,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{font-size:24px;letter-spacing:.08em;text-decoration:none}
+.logo span{color:var(--acc)}
+.navl{display:flex;gap:26px}.navl a{text-decoration:none;color:var(--muted);font-weight:500}.navl a:hover{color:var(--ink)}
+.hero{position:relative;min-height:calc(100vh - 68px);display:flex;align-items:center;padding:60px 0;overflow:hidden}
+.hero .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;filter:saturate(1.2)}
+.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 15%,rgba(7,7,12,.55) 60%,rgba(7,7,12,.2)),linear-gradient(0deg,var(--bg),transparent 40%)}
+.hero .wrap{position:relative;z-index:1;width:100%}
+.hero h1{font-size:clamp(42px,7vw,88px);max-width:820px;margin:20px 0 22px}
+.hero p{font-size:19px;color:#c9c9dc;max-width:560px;margin-bottom:32px}
+.pills{display:flex;gap:10px;flex-wrap:wrap}
+.pill{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.06);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-weight:700;font-size:14px;backdrop-filter:blur(6px)}
+.pill .s{color:#ffc93d}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:56px;max-width:860px}
+.facts div{background:rgba(17,17,26,.85);padding:20px 22px;backdrop-filter:blur(6px)}
+.facts b{display:block;font-family:'Russo One',sans-serif;font-size:26px;color:var(--ink)}
+.facts span{color:var(--muted);font-size:14px}
+.zones{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-top:36px}
+.zone{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;transition:.2s}
+.zone:hover{border-color:var(--acc);transform:translateY(-3px)}
+.zt{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.zt h3{font-size:24px}.zt b{color:var(--acc);white-space:nowrap}
+.zone p{color:var(--muted);font-size:14px;margin:6px 0 16px}
+.zone ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
+.zone li{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:4px 0;font-size:15px}
+.zone li span:first-child{color:var(--muted)}
+.book{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;margin-top:36px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px}
+.q{margin-bottom:22px}
+.q>b{display:block;margin-bottom:10px;font-weight:500;color:var(--muted)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:transparent;color:var(--ink);border:1.5px solid var(--line);border-radius:12px;padding:9px 15px;font:500 15px Inter;cursor:pointer;transition:.15s}
+.chip:hover{border-color:var(--acc)}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.chip:disabled{opacity:.3;cursor:not-allowed}
+.cnt{display:flex;align-items:center;gap:16px}
+.cnt button{width:46px;height:46px;border-radius:12px;border:1.5px solid var(--line);background:transparent;color:var(--ink);font-size:22px;cursor:pointer}
+.cnt button:hover{border-color:var(--acc)}
+.cnt output{font:700 28px 'Russo One';min-width:36px;text-align:center}
+input[type=time]{background:transparent;border:1.5px solid var(--line);color:var(--ink);border-radius:12px;padding:9px 14px;font:500 15px Inter;color-scheme:dark}
+.sum{display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(160deg,rgba(255,255,255,.04),transparent),var(--card)}
+.total{font:700 clamp(46px,6vw,64px) 'Russo One';margin:6px 0}
+.total small{font-size:.4em;color:var(--muted)}
+.msg{white-space:pre-line;background:#0b0b12;border:1px dashed var(--line);border-radius:14px;padding:16px;color:#c9c9dc;font-size:14px;margin:18px 0;min-height:110px}
+.hint{font-size:13px;color:var(--muted);margin-top:10px}
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.perk{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px}
+.perk i{font-style:normal;font-size:30px}
+.perk h3{font-size:19px;margin:12px 0 6px}
+.perk p{color:var(--muted);font-size:15px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px;margin-top:36px}
+.gal img{width:100%;height:100%;object-fit:cover;border-radius:18px}
+.gal img:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gal img:nth-child(4){grid-row:span 2}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+blockquote{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
+.st{color:#ffc93d;letter-spacing:2px}
+blockquote p{margin:12px 0 16px}
+cite{color:var(--muted);font-size:14px;font-style:normal}
+.cont{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;margin-top:36px}
+.cont .panel div{margin-bottom:18px}
+.cont small{display:block;color:var(--muted)}
+.cont .panel b{font-size:19px}
+.map{border-radius:24px;overflow:hidden;min-height:380px;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;min-height:380px;border:0;filter:invert(.9) hue-rotate(180deg)}
+footer{text-align:center;color:var(--muted);padding:40px 20px 100px;font-size:14px;border-top:1px solid var(--line)}
+footer .demo{opacity:.7}
+.float{position:fixed;right:18px;bottom:18px;z-index:20;display:none}
+@media (max-width:900px){
+ .navl{display:none}
+ .facts{grid-template-columns:repeat(2,1fr)}
+ .book,.cont{grid-template-columns:1fr}
+ .perks{grid-template-columns:1fr 1fr}
+ .revs{grid-template-columns:1fr}
+ .gal{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
+ .gal img:nth-child(4){grid-row:span 1}
+ .float{display:inline-flex}
+ section{padding:60px 0}
+}
+@media (max-width:520px){.perks{grid-template-columns:1fr}.zone ul{grid-template-columns:1fr}.hero{min-height:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="#">BERSERK<span>.</span></a><div class="navl"><a href="#zones">Зоны и цены</a><a href="#book">Бронь</a><a href="#gallery">Клуб</a><a href="#contacts">Контакты</a></div><a class="btn" href="#book" style="padding:11px 20px">Забронировать</a></div></nav>
+
+<header class="hero"><img class="bgimg" src="img/1.jpg" alt=""><div class="wrap">
+ <div class="pills"><span class="pill"><span class="s">★</span> 5,0 · 110 отзывов</span><span class="pill">🏆 Хорошее место 2026</span><span class="pill">🕒 Круглосуточно</span></div>
+ <h1>Заходи в&nbsp;зал <em>викингов</em></h1>
+ <p>Семь зон: от стандарта до стрим-места на RTX 5080 с OLED 360 Гц. Работаем круглосуточно, бронь в пару кликов.</p>
+ <div class="cta"><a class="btn" href="#book">Забронировать место</a><a class="btn ghost" href="#zones">Зоны и цены</a></div>
+ <div class="facts"><div><b>RTX 5080</b><span>в стрим-зоне</span></div><div><b>360 Гц</b><span>OLED-мониторы</span></div><div><b>PS5 PRO</b><span>отдельная зона</span></div><div><b>24/7</b><span>без выходных</span></div></div>
+</div></header>
+
+<section id="zones"><div class="wrap">
+ <h2>Зоны и <em>цены</em></h2>
+ <p class="lead">Компьютерный клуб у Славянского бульвара. Выберите зону по железу и бюджету, а бронь соберётся ниже.</p>
+ <div class="zones"><div class="zone"><div class="zt"><h3>Стандарт</h3><b>от 200 ₽</b></div><p>RTX 4060 Ti · i5-13400F · 180 Гц</p><ul><li><span>1 ч</span><span>200 ₽</span></li><li><span>3 ч</span><span>520 ₽</span></li><li><span>5 ч</span><span>750 ₽</span></li><li><span>12 ч</span><span>1650 ₽</span></li><li><span>День</span><span>500 ₽</span></li><li><span>Ночь</span><span>800 ₽</span></li></ul></div><div class="zone"><div class="zt"><h3>Буткэмп</h3><b>от 230 ₽</b></div><p>RTX 4060 Ti · отдельная зона для тимы</p><ul><li><span>1 ч</span><span>230 ₽</span></li><li><span>3 ч</span><span>600 ₽</span></li><li><span>5 ч</span><span>850 ₽</span></li><li><span>12 ч</span><span>1900 ₽</span></li><li><span>День</span><span>600 ₽</span></li><li><span>Ночь</span><span>950 ₽</span></li></ul></div><div class="zone"><div class="zt"><h3>Комфорт</h3><b>от 280 ₽</b></div><p>RTX 5060 Ti · Ryzen 7 7700 · 240 Гц</p><ul><li><span>1 ч</span><span>280 ₽</span></li><li><span>3 ч</span><span>750 ₽</span></li><li><span>5 ч</span><span>1100 ₽</span></li><li><span>12 ч</span><span>2350 ₽</span></li><li><span>День</span><span>750 ₽</span></li><li><span>Ночь</span><span>1050 ₽</span></li></ul></div><div class="zone"><div class="zt"><h3>Сквад</h3><b>от 310 ₽</b></div><p>RTX 4070 Super · 240 Гц · места рядом</p><ul><li><span>1 ч</span><span>310 ₽</span></li><li><span>3 ч</span><span>850 ₽</span></li><li><span>5 ч</span><span>1250 ₽</span></li><li><span>12 ч</span><span>2600 ₽</span></li><li><span>День</span><span>850 ₽</span></li><li><span>Ночь</span><span>1200 ₽</span></li></ul></div><div class="zone"><div class="zt"><h3>Премиум</h3><b>от 350 ₽</b></div><p>RTX 5070 Ti · 7800X3D · OLED 280 Гц</p><ul><li><span>1 ч</span><span>350 ₽</span></li><li><span>3 ч</span><span>1000 ₽</span></li><li><span>5 ч</span><span>1500 ₽</span></li><li><span>12 ч</span><span>3200 ₽</span></li><li><span>День</span><span>1000 ₽</span></li><li><span>Ночь</span><span>1450 ₽</span></li></ul></div><div class="zone"><div class="zt"><h3>Стрим</h3><b>от 390 ₽</b></div><p>RTX 5080 · 64 ГБ · OLED 360 Гц</p><ul><li><span>1 ч</span><span>390 ₽</span></li><li><span>3 ч</span><span>1100 ₽</span></li><li><span>5 ч</span><span>1650 ₽</span></li><li><span>12 ч</span><span>3500 ₽</span></li><li><span>День</span><span>1200 ₽</span></li><li><span>Ночь</span><span>1650 ₽</span></li></ul></div></div>
+</div></section>
+
+<section id="book" style="padding-top:20px"><div class="wrap">
+ <h2>Собери <em>пати</em></h2>
+ <p class="lead">Отметьте зону, пакет и сколько вас. Сумма посчитается сразу, а готовая заявка уйдёт администратору в Telegram.</p>
+ <div class="book">
+  <div class="panel">
+   <div class="q"><b>Зона</b><div class="chips" id="zc"></div></div>
+   <div class="q" id="slotq" hidden><b>Когда играете</b><div class="chips" id="sc"></div></div>
+   <div class="q"><b>Пакет</b><div class="chips" id="pc"></div></div>
+   <div class="q"><b>Сколько мест</b><div class="cnt"><button type="button" id="minus" aria-label="меньше">−</button><output id="n">1</output><button type="button" id="plus" aria-label="больше">+</button></div></div>
+   <div class="q"><b>День и время</b><div class="chips" id="dc"><button class="chip on">Сегодня</button><button class="chip">Завтра</button><button class="chip">В выходные</button></div><div style="margin-top:10px"><input type="time" id="tm" value="19:00" aria-label="Время"></div></div>
+  </div>
+  <div class="panel sum">
+   <div><b style="color:var(--muted)">Итого за всех</b><div class="total" id="tot">—</div><div class="msg" id="msg"></div></div>
+   <div><a class="btn" id="send" href="https://t.me/berserk_msk" target="_blank" rel="noopener" style="width:100%">Отправить бронь в Telegram</a><div class="hint">Точную цену и свободные места подтвердит администратор.</div></div>
+  </div>
+ </div>
+</div></section>
+
+<section style="padding-top:20px"><div class="wrap">
+ <h2>Почему к нам <em>возвращаются</em></h2>
+ <div class="perks"><div class="perk"><i>🎂</i><h3>День рождения</h3><p>Соберите пати на всю тиму, места поставим рядом.</p></div><div class="perk"><i>🤝</i><h3>Приведи друга</h3><p>Двойная выгода: бонус получаете вы оба.</p></div><div class="perk"><i>🥊</i><h3>Турниры и UFC</h3><p>Смотрим бои и проводим турниры прямо в клубе.</p></div><div class="perk"><i>🎮</i><h3>Игры по подписке</h3><p>Не нужно ничего покупать: всё уже стоит.</p></div></div>
+</div></section>
+
+<section id="gallery" style="padding-top:20px"><div class="wrap">
+ <h2>Как у нас <em>внутри</em></h2>
+ <div class="gal"><img src="img/1.jpg" alt="Берсерк" loading="lazy"><img src="img/4.jpg" alt="Берсерк" loading="lazy"><img src="img/6.jpg" alt="Берсерк" loading="lazy"><img src="img/3.jpg" alt="Берсерк" loading="lazy"><img src="img/5.jpg" alt="Берсерк" loading="lazy"><img src="img/2.jpg" alt="Берсерк" loading="lazy"></div>
+</div></section>
+
+<section style="padding-top:20px"><div class="wrap">
+ <h2>5,0 на <em>Яндекс Картах</em></h2>
+ <p class="lead">110 отзывов. Вот несколько из них.</p>
+ <div class="revs"><blockquote><div class="st">★★★★★</div><p>Хожу в «Берсерк» уже пару месяцев. Место не пафосное, но со всем необходимым: железо тянет современные игры на высоких.</p><cite>Am1rinosleep · Яндекс Карты</cite></blockquote><blockquote><div class="st">★★★★★</div><p>Интерьер вообще супер, наконец-то не эти жёлтые цвета, интересные скульптуры на стенах, офигенные девайсы. Персонал отзывчивый.</p><cite>Гость · Яндекс Карты</cite></blockquote><blockquote><div class="st">★★★★★</div><p>Место очень комфортное: девайсы хорошие, сиденья чистые. Были неполадки с компьютером — время вернули. Советую.</p><cite>Гость · Яндекс Карты</cite></blockquote></div>
+</div></section>
+
+<section id="contacts" style="padding-top:20px"><div class="wrap">
+ <h2>Как <em>найти</em></h2>
+ <div class="cont">
+  <div class="panel">
+   <div><small>Адрес</small><b>Кастанаевская ул., 41, корп. 2</b></div>
+   <div><small>Метро</small><b>Славянский бульвар — 450 м</b></div>
+   <div><small>Работаем</small><b>Круглосуточно</b></div>
+   <div><small>Телефон</small><b><a href="tel:+79957770312">+7 (995) 777-03-12</a></b></div>
+   <div class="cta"><a class="btn" href="https://t.me/berserk_msk" target="_blank" rel="noopener">Написать в Telegram</a></div>
+  </div>
+  <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?oid=14520581159&z=16" title="Берсерк на карте" loading="lazy"></iframe></div>
+ </div>
+</div></section>
+
+<footer>© Берсерк · компьютерный клуб<br><span class="demo">Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></footer>
+<a class="btn float" href="#book">🎮 Бронь</a>
+
+<script>
+const D={"pk": ["1 ч", "3 ч", "5 ч", "12 ч", "День", "Ночь"], "slots": null, "zones": [["Стандарт", [200, 520, 750, 1650, 500, 800]], ["Буткэмп", [230, 600, 850, 1900, 600, 950]], ["Комфорт", [280, 750, 1100, 2350, 750, 1050]], ["Сквад", [310, 850, 1250, 2600, 850, 1200]], ["Премиум", [350, 1000, 1500, 3200, 1000, 1450]], ["Стрим", [390, 1100, 1650, 3500, 1200, 1650]]], "tg": "tg", "handle": "berserk_msk"};
+const st={z:0,p:0,s:0,n:1,d:'Сегодня'};
+const $=id=>document.getElementById(id);
+function chips(el,items,key,cb){el.innerHTML='';items.forEach((t,i)=>{const b=document.createElement('button');b.className='chip'+(i===st[key]?' on':'');b.textContent=t;b.type='button';b.onclick=()=>{st[key]=i;cb&&cb();render();};el.appendChild(b);});}
+function price(z,p){let v=D.zones[z][1][p];if(Array.isArray(v))v=v[st.s];return v;}
+function render(){
+ chips($('zc'),D.zones.map(z=>z[0]),'z',()=>{if(price(st.z,st.p)==null)st.p=D.pk.findIndex((_,i)=>price(st.z,i)!=null);});
+ if(D.slots){$('slotq').hidden=false;chips($('sc'),D.slots,'s');}
+ chips($('pc'),D.pk,'p');
+ [...$('pc').children].forEach((b,i)=>{if(price(st.z,i)==null)b.disabled=true;});
+ $('n').textContent=st.n;
+ const v=price(st.z,st.p);
+ $('tot').innerHTML=v!=null?(v*st.n).toLocaleString('ru-RU')+' <small>₽</small>':'—';
+ const m='Здравствуйте! Хочу забронировать.\nЗона: '+D.zones[st.z][0]+'\nПакет: '+D.pk[st.p]+(D.slots?' ('+D.slots[st.s].toLowerCase()+')':'')+'\nМест: '+st.n+'\nКогда: '+st.d.toLowerCase()+', '+$('tm').value+(v!=null?'\nПо сайту выходит: '+(v*st.n).toLocaleString('ru-RU')+' ₽':'');
+ $('msg').textContent=m;
+ $('send').href=D.tg==='wa'?'https://wa.me/'+D.handle+'?text='+encodeURIComponent(m):'https://t.me/'+D.handle+'?text='+encodeURIComponent(m);
+ $('send').dataset.m=m;
+}
+$('minus').onclick=()=>{st.n=Math.max(1,st.n-1);render();};
+$('plus').onclick=()=>{st.n=Math.min(20,st.n+1);render();};
+$('tm').oninput=render;
+$('dc').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;[...$('dc').children].forEach(x=>x.classList.remove('on'));b.classList.add('on');st.d=b.textContent;render();});
+$('send').addEventListener('click',()=>{try{navigator.clipboard.writeText($('send').dataset.m)}catch(e){}});
+render();
+</script>
+</body>
+</html>
