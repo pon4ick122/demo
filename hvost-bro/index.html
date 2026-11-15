@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Хвост БРО — груминг в Ильинском-Усово</title>
+<meta name="description" content="Зоосалон «Хвост БРО»: груминг собак и кошек, озоновая ванна, зоогостиница. Ильинское-Усово, Заповедная ул., 2. Ежедневно 9:00–21:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600;800&family=Golos+Text:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sun:#f3b81f;--sun2:#ffd766;--navy:#1d2b4f;--sky:#d7e8f5;--paper:#fffdf7;--coral:#ff6b57;--soft:#5b6785}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--navy);font:400 17px/1.6 "Golos Text",system-ui,sans-serif}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.alt{font-family:"Montserrat Alternates",sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.04}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 16px/1 "Golos Text",sans-serif;padding:18px 28px;border-radius:20px;background:var(--navy);color:#fff;text-decoration:none;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.w{background:#fff;color:var(--navy)}
+.btn.c{background:var(--coral)}
+
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 24px/1 "Montserrat Alternates",sans-serif}
+.logo svg{width:38px;height:38px}
+header nav{display:flex;gap:28px;font-weight:500}
+header nav a{text-decoration:none}
+header nav a:hover{color:var(--coral)}
+
+.hero{padding:20px 0 90px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(44px,5.8vw,80px)}
+.hero p{font-size:19px;color:var(--soft);margin:24px 0 32px;max-width:28em}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;align-items:center;gap:14px;margin-top:34px;font-size:15px;color:var(--soft)}
+.trust b{font:800 34px/1 "Montserrat Alternates",sans-serif;color:var(--navy)}
+.pile{position:relative;height:560px}
+.pile .blob{position:absolute;inset:40px 0 0 30px;background:var(--sun);border-radius:46% 54% 42% 58%/55% 45% 55% 45%}
+.pile figure{position:absolute;overflow:hidden;border:6px solid #fff;box-shadow:0 20px 50px rgba(29,43,79,.18)}
+.pile .a{width:56%;height:62%;left:4%;top:4%;border-radius:200px 200px 28px 28px}
+.pile .b{width:44%;height:46%;right:0;top:20%;border-radius:28px}
+.pile .c{width:42%;height:40%;left:30%;bottom:0;border-radius:50%}
+.pile img{width:100%;height:100%;object-fit:cover}
+.sticker{position:absolute;right:6%;bottom:8%;background:var(--coral);color:#fff;width:132px;height:132px;border-radius:50%;display:grid;place-items:center;text-align:center;font:800 15px/1.2 "Montserrat Alternates",sans-serif;transform:rotate(10deg);box-shadow:0 10px 24px rgba(255,107,87,.4)}
+
+section{padding:96px 0}
+.sh{max-width:720px;margin-bottom:46px}
+.sh h2{font-size:clamp(36px,4.6vw,60px)}
+.sh p{color:var(--soft);font-size:18px;margin-top:16px}
+
+/* care */
+.care{background:var(--sky);border-radius:48px 48px 0 0}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cd{background:#fff;border-radius:28px;padding:28px 24px}
+.cd svg{width:44px;height:44px;margin-bottom:16px}
+.cd h3{font-size:21px;margin-bottom:8px}
+.cd p{color:var(--soft);font-size:15px}
+.cd .pr{display:inline-block;margin-top:14px;font-weight:700;background:var(--sun2);padding:5px 12px;border-radius:10px;font-size:14px}
+
+/* calculator */
+.calc{background:var(--navy);color:#fff}
+.calc .sh p{color:#b8c3dd}
+.calc .lay{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:start}
+.blk{margin-bottom:30px}
+.blk h3{font-size:22px;margin-bottom:14px;color:var(--sun2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 15px/1 "Golos Text",sans-serif;padding:12px 16px;border-radius:14px;border:2px solid rgba(255,255,255,.22);background:transparent;color:#fff;cursor:pointer}
+.chip:hover{border-color:var(--sun2)}
+.chip[aria-pressed=true]{background:var(--sun);border-color:var(--sun);color:var(--navy)}
+.colors{display:flex;gap:10px;flex-wrap:wrap}
+.col{width:44px;height:44px;border-radius:50%;border:3px solid transparent;cursor:pointer;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+.col[aria-pressed=true]{border-color:#fff;transform:scale(1.08)}
+.pet{background:var(--paper);color:var(--navy);border-radius:32px;padding:28px;position:sticky;top:20px}
+.pet .dog{display:block;width:100%;max-width:300px;margin:0 auto 6px}
+.pet .tailc{transition:fill .35s}
+.pet h3{font-size:24px;margin:8px 0 14px;text-align:center}
+.ln{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed #c9d2e3;font-size:15px}
+.ln span:first-child{color:var(--soft)}
+.ln.dis span:last-child{color:#18a058;font-weight:700}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin:16px 0 18px}
+.tot b{font:800 40px/1 "Montserrat Alternates",sans-serif}
+.pet .btn{width:100%}
+.pet small{display:block;text-align:center;color:var(--soft);margin-top:10px;font-size:13px}
+@keyframes wag{0%,100%{transform:rotate(0)}50%{transform:rotate(14deg)}}
+.tail{transform-origin:212px 120px;transform-box:view-box}
+.tail.wag{animation:wag .28s ease-in-out 3}
+
+/* gallery */
+.gal .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gal figure{border-radius:26px;overflow:hidden;aspect-ratio:3/4}
+.gal figure:nth-child(3n+2){border-radius:120px 120px 26px 26px}
+.gal img{width:100%;height:100%;object-fit:cover}
+
+/* reviews */
+.rev{background:var(--sun)}
+.rev .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rc{background:#fff;border-radius:28px;padding:28px}
+.rc p{font-size:16px}
+.rc span{display:block;margin-top:14px;font-weight:700;font-size:14px;color:var(--soft)}
+.score{display:flex;align-items:baseline;gap:16px;margin-bottom:34px}
+.score b{font:800 80px/1 "Montserrat Alternates",sans-serif}
+
+/* hotel + visit */
+.hotel .lay{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.box{border-radius:36px;padding:40px;background:var(--sky)}
+.box.y{background:var(--navy);color:#fff}
+.box h2{font-size:clamp(30px,3.4vw,44px);margin-bottom:14px}
+.box p{color:var(--soft)}
+.box.y p{color:#b8c3dd}
+.night{display:flex;align-items:center;gap:16px;margin:24px 0}
+.night button{width:48px;height:48px;border-radius:14px;border:0;background:#fff;font:800 22px/1 "Golos Text";cursor:pointer;color:var(--navy)}
+.night output{font:800 34px/1 "Montserrat Alternates",sans-serif;min-width:150px}
+dl.inf{display:grid;grid-template-columns:110px 1fr;gap:12px;margin:22px 0 28px}
+dl.inf dt{color:#b8c3dd}
+footer{padding:30px 0;font-size:13px;color:var(--soft)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.mbar{display:none}
+
+@media (max-width:960px){
+  header nav{display:none}
+  .hero .wrap,.calc .lay,.hotel .lay{grid-template-columns:1fr}
+  .pile{height:430px;margin-top:10px}
+  .cards{grid-template-columns:1fr 1fr}
+  .gal .grid{grid-template-columns:1fr 1fr}
+  .rev .grid{grid-template-columns:1fr}
+  .pet{position:static}
+  section{padding:68px 0}
+  .care{border-radius:32px 32px 0 0}
+  .box{padding:28px 22px}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30}
+  .mbar .btn{flex:1;box-shadow:0 10px 26px rgba(29,43,79,.3)}
+  footer{padding-bottom:90px}
+}
+@media (max-width:480px){.cards{grid-template-columns:1fr}.wrap{padding:0 16px}.sticker{width:104px;height:104px;font-size:12px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#f3b81f"/><path d="M11 26c3-9 15-9 18 0" stroke="#1d2b4f" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M29 26c4-2 6-7 4-12" stroke="#ff6b57" stroke-width="3.4" fill="none" stroke-linecap="round"/><circle cx="16" cy="17" r="2" fill="#1d2b4f"/><circle cx="24" cy="17" r="2" fill="#1d2b4f"/></svg>Хвост БРО</a>
+  <nav aria-label="Разделы"><a href="#care">Услуги</a><a href="#calc">Цены</a><a href="#gal">Наши гости</a><a href="#hotel">Гостиница</a></nav>
+  <a class="btn" href="#calc">Записаться</a>
+</div></header>
+
+<main>
+<section class="hero" style="padding-top:20px">
+  <div class="wrap">
+    <div>
+      <h1>Груминг без стресса для собак и кошек</h1>
+      <p>Наши мастера находят подход даже к тревожным собакам из приюта и к котам, которые не дают себя вычесать. Пока питомец у нас, присылаем вам фото.</p>
+      <div class="row"><a class="btn c" href="#calc">Рассчитать цену</a><a class="btn w" href="#gal">Посмотреть работы</a></div>
+      <div class="trust"><b>4,9</b><span>279 оценок на Яндекс Картах.<br>Ильинское-Усово, каждый день с 9 до 21.</span></div>
+    </div>
+    <div class="pile" aria-hidden="true">
+      <div class="blob"></div>
+      <figure class="a"><img src="img/2.jpg" alt=""></figure>
+      <figure class="b"><img src="img/1.jpg" alt=""></figure>
+      <figure class="c"><img src="img/5.jpg" alt=""></figure>
+      <div class="sticker">Хвостик<br>покрасим<br>бесплатно</div>
+    </div>
+  </div>
+</section>
+
+<section class="care" id="care">
+  <div class="wrap">
+    <div class="sh"><h2>Что делаем</h2><p>Комплекс включает мытьё, сушку, вычёсывание, стрижку, когти и уши. Маску подбираем под тип шерсти.</p></div>
+    <div class="cards">
+      <div class="cd"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21" fill="#f3b81f"/><path d="M14 28l16-12M14 16l16 12" stroke="#1d2b4f" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="14" r="3.5" fill="none" stroke="#1d2b4f" stroke-width="2.5"/><circle cx="12" cy="30" r="3.5" fill="none" stroke="#1d2b4f" stroke-width="2.5"/></svg><h3>Комплексный груминг</h3><p>Для собак любых пород, кошек и мейн-кунов.</p><span class="pr">от 2 100 ₽</span></div>
+      <div class="cd"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21" fill="#d7e8f5"/><circle cx="16" cy="20" r="4" fill="#1d2b4f"/><circle cx="27" cy="15" r="3" fill="#1d2b4f"/><circle cx="26" cy="27" r="5" fill="#ff6b57"/></svg><h3>Озоновая ванна</h3><p>Шерсть становится мягкой и блестящей, колтуны уходят.</p><span class="pr">950 ₽</span></div>
+      <div class="cd"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21" fill="#ff6b57"/><path d="M12 30c6-2 8-10 6-16 6 4 10 10 14 16" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg><h3>Экспресс-линька</h3><p>Вычёсываем подшёрсток, чтобы дома не летала шерсть.</p><span class="pr">по запросу</span></div>
+      <div class="cd"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21" fill="#1d2b4f"/><path d="M12 27h20v-9l-10-6-10 6z" fill="#f3b81f"/><rect x="19" y="21" width="6" height="6" fill="#1d2b4f"/></svg><h3>Зоогостиница</h3><p>Присмотрим за питомцем, пока вы в отпуске.</p><span class="pr">950 ₽ в сутки</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="calc" id="calc">
+  <div class="wrap">
+    <div class="sh"><h2>Сколько стоит груминг</h2><p>Выберите питомца, и цена посчитается сама. Заявка уйдёт администратору в WhatsApp, он предложит время.</p></div>
+    <div class="lay">
+      <div>
+        <div class="blk"><h3>Кто придёт</h3><div class="chips" data-k="breed">
+          <button class="chip" data-v="Чихуахуа" data-p="2100">Чихуахуа</button>
+          <button class="chip" data-v="Пекинес" data-p="3000">Пекинес</button>
+          <button class="chip" data-v="Французский бульдог" data-p="3000">Французский бульдог</button>
+          <button class="chip" data-v="Мальтипу" data-p="3100">Мальтипу</button>
+          <button class="chip" data-v="Ши-тцу" data-p="3100">Ши-тцу</button>
+          <button class="chip" data-v="Пудель" data-p="3100">Пудель</button>
+          <button class="chip" data-v="Йорк" data-p="4000">Йорк</button>
+          <button class="chip" data-v="Джек-рассел" data-p="4000">Джек-рассел</button>
+          <button class="chip" data-v="Шпиц" data-p="4100">Шпиц</button>
+          <button class="chip" data-v="Хаски" data-p="4100">Хаски</button>
+          <button class="chip" data-v="Самоед" data-p="5000">Самоед</button>
+          <button class="chip" data-v="Корги" data-p="6000">Корги</button>
+          <button class="chip" data-v="Кошка" data-p="3000">Кошка</button>
+          <button class="chip" data-v="Мейн-кун" data-p="4000">Мейн-кун</button>
+          <button class="chip" data-v="Другая порода" data-p="0">Другая порода</button>
+        </div></div>
+        <div class="blk"><h3>Добавить</h3><div class="chips" data-k="add" data-multi>
+          <button class="chip" data-v="Озоновая ванна" data-p="950">Озоновая ванна +950 ₽</button>
+          <button class="chip" data-v="Уход за ушами" data-p="200">Уход за ушами +200 ₽</button>
+        </div></div>
+        <div class="blk"><h3>Скидки</h3><div class="chips" data-k="disc" data-multi>
+          <button class="chip" data-v="puppy">Щенок до года, −15%</button>
+          <button class="chip" data-v="two">Приведу двоих и больше, −10%</button>
+        </div></div>
+        <div class="blk"><h3>Цвет хвостика (бесплатно)</h3><div class="colors" data-k="tail">
+          <button class="col" data-v="без окрашивания" data-c="#e9d6b4" style="background:#e9d6b4" aria-label="Без окрашивания"></button>
+          <button class="col" data-v="розовый" data-c="#ff7eb6" style="background:#ff7eb6" aria-label="Розовый"></button>
+          <button class="col" data-v="голубой" data-c="#4fb3ff" style="background:#4fb3ff" aria-label="Голубой"></button>
+          <button class="col" data-v="фиолетовый" data-c="#9b6bff" style="background:#9b6bff" aria-label="Фиолетовый"></button>
+          <button class="col" data-v="зелёный" data-c="#3ccf7a" style="background:#3ccf7a" aria-label="Зелёный"></button>
+          <button class="col" data-v="оранжевый" data-c="#ff8a2a" style="background:#ff8a2a" aria-label="Оранжевый"></button>
+        </div></div>
+      </div>
+      <aside class="pet" aria-live="polite">
+        <svg class="dog" viewBox="0 0 300 190" aria-hidden="true">
+          <ellipse cx="150" cy="176" rx="110" ry="9" fill="#1d2b4f" opacity=".08"/>
+          <g class="tail" id="tail"><path class="tailc" id="tailc" d="M208 118c22-10 36-34 34-60-1-9 10-10 12-2 6 30-10 62-40 74z" fill="#e9d6b4"/></g>
+          <path d="M70 120c0-30 30-46 70-46s72 14 72 44c0 22-14 34-28 36v22h-16v-20h-50v20h-16v-22c-18-4-32-14-32-34z" fill="#f3b81f"/>
+          <path d="M44 74c-2-26 18-46 42-44 22 2 34 22 32 44-2 24-20 38-40 38S46 98 44 74z" fill="#f3b81f"/>
+          <path d="M50 46c-12-6-20-22-16-32 10 0 24 10 28 22zM104 40c6-12 20-22 30-20 2 10-6 24-20 30z" fill="#d99a08"/>
+          <circle cx="70" cy="70" r="5" fill="#1d2b4f"/><circle cx="96" cy="68" r="5" fill="#1d2b4f"/>
+          <ellipse cx="84" cy="86" rx="7" ry="5" fill="#1d2b4f"/>
+          <path d="M76 96c5 6 12 6 16 0" stroke="#1d2b4f" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+        <h3 id="p-name">Выберите питомца</h3>
+        <div class="ln"><span>Комплекс</span><span id="p-base">—</span></div>
+        <div class="ln"><span>Дополнительно</span><span id="p-add">—</span></div>
+        <div class="ln dis" id="p-disrow" hidden><span>Скидка</span><span id="p-dis"></span></div>
+        <div class="ln"><span>Хвостик</span><span id="p-tail">без окрашивания</span></div>
+        <div class="tot"><span>Примерно</span><b id="p-sum">0 ₽</b></div>
+        <a class="btn c" id="send" href="#" target="_blank" rel="noopener">Записаться в WhatsApp</a>
+        <small>Цена «от»: точную назовёт мастер, когда увидит шерсть. Колтуны обсуждаем заранее.</small>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="gal" id="gal">
+  <div class="wrap">
+    <div class="sh"><h2>Наши гости после груминга</h2><p>Шпицы, корги, бернские зенненхунды и одна очень довольная сиба-ину.</p></div>
+    <div class="grid">
+      <figure><img src="img/3.jpg" alt="Шпиц после стрижки на столе грумера" loading="lazy"></figure>
+      <figure><img src="img/4.jpg" alt="Сиба-ину в полотенце после мытья" loading="lazy"></figure>
+      <figure><img src="img/6.jpg" alt="Бернский зенненхунд после груминга" loading="lazy"></figure>
+      <figure><img src="img/7.jpg" alt="Пушистая собака на жёлтом диване" loading="lazy"></figure>
+      <figure><img src="img/9.jpg" alt="Шпиц у новогодней ёлки" loading="lazy"></figure>
+      <figure><img src="img/10.jpg" alt="Мастер моет бернского зенненхунда" loading="lazy"></figure>
+      <figure><img src="img/8.jpg" alt="Веймаранер в зоосалоне" loading="lazy"></figure>
+      <figure><img src="img/11.jpg" alt="Кошка на груминге" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="rev">
+  <div class="wrap">
+    <div class="score"><b>4,9</b><span>279 оценок и 190 отзывов на Яндекс Картах</span></div>
+    <div class="grid">
+      <div class="rc"><p>У нас чихуахуа, который очень тревожный и плохо относится к незнакомым людям. Наталья расположила его к себе с первой минуты, и он спокойно ушёл на процедуры.</p><span>Про мастера Наталью</span></div>
+      <div class="rc"><p>Мастер Роман сделал из моей дворняжки произведение искусства! Собака непростая, из приюта, тревожная, но на удивление послушная с мастером.</p><span>Про мастера Романа</span></div>
+      <div class="rc"><p>У нас мейн-кун, шерсть постоянно сваливалась в колтуны. Сделали комплекс с озоновой ванной и экспресс-линькой. Шерсть мягкая, блестящая, колтунов нет.</p><span>Про уход за кошками</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="hotel" id="hotel">
+  <div class="wrap lay">
+    <div class="box">
+      <h2>Уезжаете? Питомец поживёт у нас</h2>
+      <p>Присмотрим, покормим и пришлём фото, чтобы вы не скучали.</p>
+      <div class="night">
+        <button type="button" id="minus" aria-label="Меньше суток">−</button>
+        <output id="nights" aria-live="polite">3 суток</output>
+        <button type="button" id="plus" aria-label="Больше суток">+</button>
+      </div>
+      <p style="font-size:20px;color:var(--navy)"><b id="hsum">2 850 ₽</b> за всё время</p>
+      <a class="btn" id="hsend" href="#" target="_blank" rel="noopener" style="margin-top:20px">Забронировать</a>
+    </div>
+    <div class="box y">
+      <h2>Как нас найти</h2>
+      <dl class="inf">
+        <dt>Адрес</dt><dd>Ильинское-Усово, Заповедная ул., 2</dd>
+        <dt>Рядом</dt><dd>Остановка «ЖК Ильинские Луга», 200 м</dd>
+        <dt>Часы</dt><dd>Каждый день 9:00–21:00</dd>
+        <dt>Телефон</dt><dd><a href="tel:+79166915858">+7 916 691-58-58</a></dd>
+      </dl>
+      <p style="margin-bottom:24px">В салоне есть магазин: японские лакомства, корма и шампуни.</p>
+      <a class="btn w" href="https://yandex.ru/maps/org/khvost_bro/139459602453/" target="_blank" rel="noopener">Открыть на карте</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© Хвост БРО</span><span class="demo">Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></div></footer>
+<div class="mbar"><a class="btn c" href="#calc">Рассчитать и записаться</a></div>
+
+<script>
+const PHONE='79166915858';
+const st={breed:null,add:[],disc:[],tail:{v:'без окрашивания',c:'#e9d6b4'}};
+const fmt=n=>Math.round(n).toLocaleString('ru-RU').replace(/ /g,' ')+' ₽';
+document.querySelectorAll('[data-k]').forEach(g=>{
+  const k=g.dataset.k,multi=g.hasAttribute('data-multi');
+  g.querySelectorAll('button').forEach(b=>{
+    b.type='button';b.setAttribute('aria-pressed','false');
+    b.onclick=()=>{
+      if(multi){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');st[k]=[...g.querySelectorAll('[aria-pressed=true]')].map(x=>({v:x.dataset.v,p:+(x.dataset.p||0)}))}
+      else{g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');
+        if(k==='breed')st.breed={v:b.dataset.v,p:+b.dataset.p};
+        if(k==='tail'){st.tail={v:b.dataset.v,c:b.dataset.c};const t=document.getElementById('tail');t.classList.remove('wag');void t.getBBox();requestAnimationFrame(()=>t.classList.add('wag'));}}
+      draw();
+    };
+  });
+});
+document.querySelector('[data-k=tail] button').setAttribute('aria-pressed','true');
+function draw(){
+  const base=st.breed?st.breed.p:0, add=st.add.reduce((a,x)=>a+x.p,0);
+  let pct=0; st.disc.forEach(d=>{pct+=d.v==='puppy'?15:10});
+  const dis=Math.round(base*pct/100), sum=base+add-dis;
+  document.getElementById('p-name').textContent=st.breed?st.breed.v:'Выберите питомца';
+  document.getElementById('p-base').textContent=st.breed?(base?'от '+fmt(base):'по фото'):'—';
+  document.getElementById('p-add').textContent=st.add.length?st.add.map(a=>a.v.toLowerCase()).join(', '):'—';
+  document.getElementById('p-disrow').hidden=!pct;
+  document.getElementById('p-dis').textContent='−'+pct+'% (−'+fmt(dis)+')';
+  document.getElementById('p-tail').textContent=st.tail.v;
+  document.getElementById('tailc').setAttribute('fill',st.tail.c);
+  document.getElementById('p-sum').textContent=base?'от '+fmt(sum):(add?fmt(add):'0 ₽');
+  const msg=`Здравствуйте! Хочу записать питомца на груминг в «Хвост БРО».\nПитомец: ${st.breed?st.breed.v:'расскажу'}\nДополнительно: ${st.add.map(a=>a.v.toLowerCase()).join(', ')||'нет'}${pct?'\nСкидка: '+st.disc.map(d=>d.v==='puppy'?'щенок до года':'двое питомцев').join(', '):''}\nХвостик: ${st.tail.v}\nПо прайсу: ${base?'от '+fmt(sum):'уточните'}\nКогда есть свободное время?`;
+  document.getElementById('send').href='https://wa.me/'+PHONE+'?text='+encodeURIComponent(msg);
+}
+draw();
+let n=3;const H=950;
+function hdraw(){document.getElementById('nights').textContent=n+' '+(n%10===1&&n%100!==11?'сутки':'суток');document.getElementById('hsum').textContent=fmt(n*H);
+ document.getElementById('hsend').href='https://wa.me/'+PHONE+'?text='+encodeURIComponent(`Здравствуйте! Хочу оставить питомца в зоогостинице на ${n} ${n%10===1&&n%100!==11?'сутки':'суток'}. Какие даты свободны?`);}
+document.getElementById('minus').onclick=()=>{n=Math.max(1,n-1);hdraw()};
+document.getElementById('plus').onclick=()=>{n=Math.min(60,n+1);hdraw()};
+hdraw();
+</script>
+</body>
+</html>
