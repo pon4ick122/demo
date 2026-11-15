@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Бородаусы — барбершоп у Коломенской</title>
+<meta name="description" content="Барбершоп «Бородаусы»: стрижки от 300 ₽ в двух минутах от метро Коломенская. Проспект Андропова, 26.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;800;900&family=Onest:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#0c7a46;--g2:#0a5c36;--deep:#05261a;--mint:#e7f3ec;--white:#fff;--sun:#ffd43b;--grey:#5a6b62}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--deep);font:400 17px/1.55 Onest,system-ui,sans-serif}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.cond{font-family:"Alumni Sans",sans-serif;font-weight:900;text-transform:uppercase;line-height:.86;letter-spacing:-.005em}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:700 16px/1 Onest,sans-serif;padding:18px 26px;border-radius:999px;background:var(--deep);color:#fff;text-decoration:none;border:2px solid var(--deep);cursor:pointer}
+.btn:hover{background:var(--g2);border-color:var(--g2)}
+.btn.lt{background:#fff;color:var(--deep)}
+.btn.lt:hover{background:var(--mint)}
+.btn.sun{background:var(--sun);border-color:var(--sun);color:var(--deep)}
+.btn.sun:hover{background:#ffe27a}
+
+/* cape stripes */
+.stripes{background:repeating-linear-gradient(90deg,var(--g) 0 34px,#fff 34px 68px)}
+
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:2px solid var(--deep)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{font:900 34px/1 "Alumni Sans",sans-serif;text-transform:uppercase;text-decoration:none;letter-spacing:.01em}
+.logo span{color:var(--g)}
+header nav{display:flex;gap:26px;font-weight:500;font-size:15px}
+header nav a{text-decoration:none}
+header nav a:hover{color:var(--g)}
+.hd-r{display:flex;align-items:center;gap:14px}
+.open{font-size:14px;color:var(--grey)}
+.open i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#1fbf6a;margin-right:6px;vertical-align:1px}
+
+.hero{position:relative;overflow:hidden;border-bottom:2px solid var(--deep)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:640px}
+.hero .txt{padding:70px 40px 60px 0;display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:clamp(68px,9.4vw,148px)}
+.hero h1 .g{color:var(--g)}
+.hero p{font-size:19px;max-width:28em;margin:26px 0 32px;color:#22463a}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.tag{display:inline-block;background:var(--sun);font:900 30px/1 "Alumni Sans",sans-serif;text-transform:uppercase;padding:10px 16px 6px;transform:rotate(-3deg);border:2px solid var(--deep);box-shadow:4px 4px 0 var(--deep);margin-bottom:26px;align-self:flex-start}
+.wall{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--deep);padding:6px;border-left:2px solid var(--deep);margin-right:calc((100vw - min(1240px,100vw))/-2 - 24px)}
+.wall img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+.wall figure{position:relative;overflow:hidden}
+.wall figure:nth-child(2){grid-row:span 2}
+.wall figure:nth-child(2) img{aspect-ratio:auto}
+
+.strip{height:26px;border-bottom:2px solid var(--deep)}
+
+section{padding:96px 0}
+h2{font-size:clamp(54px,7vw,104px);margin-bottom:22px}
+.sub{max-width:34em;color:#2f5245;font-size:18px;margin-bottom:46px}
+
+/* price board */
+.prices{background:var(--mint)}
+.board{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--deep);background:#fff}
+.it{padding:26px 24px 22px;border-right:2px solid var(--deep);border-bottom:2px solid var(--deep);display:flex;flex-direction:column;justify-content:space-between;min-height:150px}
+.it:nth-child(3n){border-right:0}
+.it:nth-last-child(-n+3){border-bottom:0}
+.it .n{font-weight:500;font-size:16px}
+.it .p{font:900 64px/.9 "Alumni Sans",sans-serif;margin-top:14px}
+.it .p small{font-size:30px;margin-left:4px}
+.it.hot{background:var(--g);color:#fff}
+.it.hot .n{color:#d6f0e1}
+.note{margin-top:18px;font-size:14px;color:var(--grey)}
+
+/* builder */
+.build .lay{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:start}
+.q{margin-bottom:30px}
+.q h3{font:900 34px/1 "Alumni Sans",sans-serif;text-transform:uppercase;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 15px/1 Onest,sans-serif;padding:13px 18px;border:2px solid var(--deep);border-radius:999px;background:#fff;color:var(--deep);cursor:pointer}
+.chip b{font-weight:700;margin-left:6px;color:var(--g)}
+.chip:hover{background:var(--mint)}
+.chip[aria-pressed=true]{background:var(--deep);color:#fff}
+.chip[aria-pressed=true] b{color:var(--sun)}
+.receipt{position:sticky;top:96px;border:2px solid var(--deep);background:#fff;box-shadow:8px 8px 0 var(--g)}
+.receipt .top{height:22px;border-bottom:2px solid var(--deep)}
+.receipt .in{padding:26px}
+.receipt h3{font:900 40px/1 "Alumni Sans",sans-serif;text-transform:uppercase;margin-bottom:16px}
+.line{display:flex;justify-content:space-between;gap:14px;padding:8px 0;border-bottom:1px dashed #9db5a8;font-size:15px}
+.line span:first-child{color:var(--grey)}
+.line span:last-child{text-align:right;font-weight:500}
+.tot{display:flex;justify-content:space-between;align-items:end;margin:18px 0 20px}
+.tot b{font:900 64px/.8 "Alumni Sans",sans-serif;color:var(--g)}
+.receipt .btn{width:100%}
+.receipt p{font-size:13px;color:var(--grey);margin-top:12px}
+
+/* team */
+.team{background:var(--deep);color:#fff}
+.team h2{color:#fff}
+.team .sub{color:#b6d3c4}
+.names{display:flex;flex-wrap:wrap;gap:10px 14px;margin-bottom:56px}
+.names span{font:900 clamp(40px,5vw,70px)/1 "Alumni Sans",sans-serif;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px #9fd8b9}
+.names span:nth-child(odd){color:#fff;-webkit-text-stroke:0}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.qt{background:#fff;color:var(--deep);padding:26px;border-radius:4px}
+.qt p{font-size:16px}
+.qt span{display:block;margin-top:14px;font-weight:700;color:var(--g);font-size:14px}
+
+/* kids */
+.kids .lay{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.kids .ph{position:relative;border:2px solid var(--deep);box-shadow:-10px 10px 0 var(--sun)}
+.kids .ph img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.kids ul{list-style:none;margin-top:26px;display:grid;gap:12px}
+.kids li{padding-left:34px;position:relative;font-size:17px}
+.kids li:before{content:"";position:absolute;left:0;top:5px;width:18px;height:18px;border-radius:50%;background:var(--g)}
+
+/* visit */
+.visit{background:var(--mint);border-top:2px solid var(--deep)}
+.visit .lay{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.big{font:900 clamp(60px,8vw,120px)/.85 "Alumni Sans",sans-serif;text-transform:uppercase}
+.big small{display:block;font-size:.34em;line-height:1.1;color:var(--g);margin-top:8px}
+.facts{display:grid;gap:16px;margin:28px 0}
+.facts div{display:grid;grid-template-columns:130px 1fr;gap:12px;font-size:17px}
+.facts dt{color:var(--grey)}
+.visit .ph{border:2px solid var(--deep)}
+.visit .ph img{width:100%;aspect-ratio:1;object-fit:cover}
+footer{padding:28px 0 32px;font-size:13px;color:var(--grey)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.mbar{display:none}
+
+@media (max-width:960px){
+  header nav,.open{display:none}
+  .hero .wrap{grid-template-columns:1fr;min-height:0}
+  .hero .txt{padding:46px 0 36px}
+  .wall{margin:0 -24px;border-left:0;border-top:2px solid var(--deep)}
+  .board{grid-template-columns:1fr 1fr}
+  .it{border-right:2px solid var(--deep)!important;border-bottom:2px solid var(--deep)!important;min-height:120px}
+  .it:nth-child(2n){border-right:0!important}
+  .it .p{font-size:50px}
+  .build .lay,.kids .lay,.visit .lay{grid-template-columns:1fr}
+  .receipt{position:static}
+  .quotes{grid-template-columns:1fr}
+  section{padding:68px 0}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30}
+  .mbar .btn{flex:1;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  footer{padding-bottom:90px}
+}
+@media (max-width:420px){.wrap{padding:0 16px}.wall{margin:0 -16px}.facts div{grid-template-columns:100px 1fr}.it{padding:18px 16px}}
+@keyframes slide{from{background-position:0 0}to{background-position:68px 0}}
+.strip{animation:slide 1.2s linear 1}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Бородаусы<span>.</span></a>
+    <nav aria-label="Разделы"><a href="#prices">Цены</a><a href="#book">Запись</a><a href="#team">Мастера</a><a href="#visit">Адрес</a></nav>
+    <div class="hd-r"><span class="open"><i></i>Сегодня до 22:00</span><a class="btn" href="#book">Записаться</a></div>
+  </div>
+</header>
+
+<main>
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="txt">
+      <span class="tag">Стрижка от 300 ₽</span>
+      <h1 class="cond">Стрижём <span class="g">в 2 минутах</span> от Коломенской</h1>
+      <p>Кроп, фейд, шторы, борода и узоры для детей. Без пафоса и переплат: 915 оценок на Яндекс Картах, средняя 5,0.</p>
+      <div class="row">
+        <a class="btn" href="#book">Записаться без очереди</a>
+        <a class="btn lt" href="#prices">Все цены</a>
+      </div>
+    </div>
+    <div class="wall" aria-label="Стрижки наших мастеров">
+      <figure><img src="img/7.jpg" alt="Фейд, вид сбоку"></figure>
+      <figure><img src="img/2.jpg" alt="Стрижка и оформление бороды"></figure>
+      <figure><img src="img/6.jpg" alt="Короткая мужская стрижка"></figure>
+      <figure><img src="img/9.jpg" alt="Аккуратная стрижка с бородой"></figure>
+      <figure><img src="img/3.jpg" alt="Борода после оформления"></figure>
+    </div>
+  </div>
+</section>
+<div class="strip stripes" aria-hidden="true"></div>
+
+<section class="prices" id="prices">
+  <div class="wrap">
+    <h2 class="cond">Цены без сюрпризов</h2>
+    <p class="sub">Называем цену до стрижки, а не после. Так хвалят нас в отзывах: «качественно, быстро и недорого».</p>
+    <div class="board">
+      <div class="it"><span class="n">Наголо</span><span class="p">300<small>₽</small></span></div>
+      <div class="it"><span class="n">Под одну насадку</span><span class="p">350<small>₽</small></span></div>
+      <div class="it"><span class="n">Под две насадки</span><span class="p">450<small>₽</small></span></div>
+      <div class="it hot"><span class="n">Модельная</span><span class="p">700<small>₽</small></span></div>
+      <div class="it"><span class="n">Ножницами</span><span class="p">750<small>₽</small></span></div>
+      <div class="it"><span class="n">Шторы или итальянка</span><span class="p">750<small>₽</small></span></div>
+      <div class="it"><span class="n">Кроп</span><span class="p">800<small>₽</small></span></div>
+      <div class="it"><span class="n">Креативная</span><span class="p">850<small>₽</small></span></div>
+      <div class="it hot"><span class="n">Оформление бороды</span><span class="p">800<small>₽</small></span></div>
+      <div class="it"><span class="n">Креативная + фейд + полоска</span><span class="p">900<small>₽</small></span></div>
+      <div class="it"><span class="n">Ёжик или площадка</span><span class="p">900<small>₽</small></span></div>
+      <div class="it"><span class="n">Узоры к любой стрижке</span><span class="p">+150<small>₽</small></span></div>
+    </div>
+    <p class="note">Детская стрижка с узором — 900 ₽, детский кроп — 800 ₽. Цены с Яндекс Карт, точную стоимость подтвердит мастер.</p>
+  </div>
+</section>
+
+<section class="build" id="book">
+  <div class="wrap">
+    <h2 class="cond">Собери запись</h2>
+    <p class="sub">Три касания, и заявка уходит нам в WhatsApp. Ответим и подтвердим время, а если удобно прийти прямо сейчас, скажем, свободен ли мастер.</p>
+    <div class="lay">
+      <div>
+        <div class="q"><h3>Стрижка</h3><div class="chips" data-k="cut">
+          <button class="chip" data-v="Модельная" data-p="700">Модельная<b>700</b></button>
+          <button class="chip" data-v="Кроп" data-p="800">Кроп<b>800</b></button>
+          <button class="chip" data-v="Шторы" data-p="750">Шторы<b>750</b></button>
+          <button class="chip" data-v="Креативная + фейд + полоска" data-p="900">Фейд + полоска<b>900</b></button>
+          <button class="chip" data-v="Под насадку" data-p="350">Под насадку<b>350</b></button>
+          <button class="chip" data-v="Наголо" data-p="300">Наголо<b>300</b></button>
+          <button class="chip" data-v="Детская с узором" data-p="900">Детская с узором<b>900</b></button>
+          <button class="chip" data-v="Только борода" data-p="0">Без стрижки</button>
+        </div></div>
+        <div class="q"><h3>Ещё</h3><div class="chips" data-k="extra" data-multi>
+          <button class="chip" data-v="Оформление бороды" data-p="800">Борода<b>+800</b></button>
+          <button class="chip" data-v="Узоры" data-p="150">Узоры<b>+150</b></button>
+        </div></div>
+        <div class="q"><h3>Мастер</h3><div class="chips" data-k="who">
+          <button class="chip" data-v="Любой свободный">Любой свободный</button>
+          <button class="chip" data-v="Ваха">Ваха</button>
+          <button class="chip" data-v="Акбар">Акбар</button>
+          <button class="chip" data-v="Жасур">Жасур</button>
+          <button class="chip" data-v="Хасан">Хасан</button>
+          <button class="chip" data-v="Азиз">Азиз</button>
+          <button class="chip" data-v="Миша">Миша</button>
+        </div></div>
+        <div class="q"><h3>Когда</h3><div class="chips" data-k="when">
+          <button class="chip" data-v="Прямо сейчас">Прямо сейчас</button>
+          <button class="chip" data-v="Сегодня вечером">Сегодня вечером</button>
+          <button class="chip" data-v="Завтра">Завтра</button>
+          <button class="chip" data-v="На выходных">На выходных</button>
+        </div></div>
+      </div>
+      <aside class="receipt" aria-live="polite">
+        <div class="top stripes"></div>
+        <div class="in">
+          <h3>Твой чек</h3>
+          <div class="line"><span>Стрижка</span><span id="r-cut">не выбрана</span></div>
+          <div class="line"><span>Мастер</span><span id="r-who">любой свободный</span></div>
+          <div class="line"><span>Когда</span><span id="r-when">договоримся</span></div>
+          <div class="tot"><span>Итого</span><b id="r-sum">0 ₽</b></div>
+          <a class="btn sun" id="send" href="#" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+          <p>Пятница: перерыв с 12 до 15. В остальные дни работаем без перерыва.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="wrap">
+    <h2 class="cond">Своего барбера тут находят быстро</h2>
+    <p class="sub">Эти имена чаще всего встречаются в отзывах. Многие ходят к одному мастеру годами.</p>
+    <div class="names" aria-label="Мастера"><span>Ваха</span><span>Акбар</span><span>Жасур</span><span>Хасан</span><span>Азиз</span><span>Миша</span><span>Баха</span></div>
+    <div class="quotes">
+      <div class="qt"><p>Стригусь тут уже 2 года. Мастеру Акбару отдельный респект: стрижёт быстро и качественно. Был у всех мастеров, рекомендую.</p><span>Про Акбара</span></div>
+      <div class="qt"><p>Уже много лет хожу сюда. Всегда чисто и аккуратно. Даже если приходишь без записи, принимают и стригут быстро.</p><span>Про Ваху</span></div>
+      <div class="qt"><p>Жасур внимательно выслушал пожелания и предложил отличные идеи. Стрижка получилась именно такой, как я хотел, и ещё дал советы по уходу.</p><span>Про Жасура</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="kids">
+  <div class="wrap lay">
+    <div class="ph"><img src="img/5.jpg" alt="Детская стрижка с узором" loading="lazy"></div>
+    <div>
+      <h2 class="cond">Дети больше не плачут</h2>
+      <p class="sub" style="margin-bottom:0">«Раньше были истерики, не любил стричься. Но как только нашли Ваху, стрижка приносит только радость». Так пишет мама одного из маленьких гостей.</p>
+      <ul>
+        <li>Узоры на висках: молнии, полосы, зигзаги</li>
+        <li>Детский кроп за 800 ₽</li>
+        <li>Стрижка с узором за 900 ₽</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap lay">
+    <div>
+      <div class="big">Андропова, 26<small>120 метров от метро Коломенская</small></div>
+      <dl class="facts">
+        <div><dt>Часы</dt><dd>Каждый день 10:00–22:00, в пятницу перерыв 12–15</dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79015252566">+7 901 525-25-66</a></dd></div>
+        <div><dt>Рейтинг</dt><dd>5,0 на Яндекс Картах, 915 оценок</dd></div>
+      </dl>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="#book">Записаться</a><a class="btn lt" href="https://yandex.ru/maps/org/borodausy/127794324400/" target="_blank" rel="noopener">Маршрут</a></div>
+    </div>
+    <div class="ph"><img src="img/1.jpg" alt="Зал барбершопа Бородаусы" loading="lazy"></div>
+  </div>
+</section>
+</main>
+<div class="strip stripes" aria-hidden="true" style="border-top:2px solid var(--deep)"></div>
+<footer><div class="wrap"><span>© Бородаусы</span><span class="demo">Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></div></footer>
+<div class="mbar"><a class="btn" href="#book">Записаться</a></div>
+
+<script>
+const PHONE='79015252566';
+const st={cut:null,extra:[],who:'Любой свободный',when:null};
+const fmt=n=>n.toLocaleString('ru-RU').replace(/ /g,' ')+' ₽';
+document.querySelectorAll('.chips').forEach(g=>{
+  const k=g.dataset.k,multi=g.hasAttribute('data-multi');
+  g.querySelectorAll('.chip').forEach(b=>{
+    b.type='button';b.setAttribute('aria-pressed','false');
+    b.onclick=()=>{
+      if(multi){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');st.extra=[...g.querySelectorAll('[aria-pressed=true]')].map(x=>({v:x.dataset.v,p:+x.dataset.p}))}
+      else{g.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');st[k]=k==='cut'?{v:b.dataset.v,p:+b.dataset.p}:b.dataset.v}
+      draw();
+    };
+  });
+});
+document.querySelector('[data-k=who] .chip').setAttribute('aria-pressed','true');
+function draw(){
+  const sum=(st.cut?st.cut.p:0)+st.extra.reduce((a,x)=>a+x.p,0);
+  const what=[st.cut&&st.cut.v,...st.extra.map(x=>x.v.toLowerCase())].filter(Boolean).join(' + ');
+  document.getElementById('r-cut').textContent=what||'не выбрана';
+  document.getElementById('r-who').textContent=st.who.toLowerCase();
+  document.getElementById('r-when').textContent=st.when||'договоримся';
+  document.getElementById('r-sum').textContent=fmt(sum);
+  const msg=`Здравствуйте! Хочу постричься в «Бородаусах».\nУслуга: ${what||'подскажите'}\nМастер: ${st.who}\nКогда: ${st.when||'подскажите свободное время'}\nПо прайсу: ${fmt(sum)}`;
+  document.getElementById('send').href='https://wa.me/'+PHONE+'?text='+encodeURIComponent(msg);
+}
+draw();
+// open/closed badge
+(function(){const d=new Date(),h=d.getHours()+d.getMinutes()/60,fri=d.getDay()===5;const el=document.querySelector('.open');if(!el)return;
+ if(h<10||h>=22)el.innerHTML='<i style="background:#c44"></i>Откроемся в 10:00';else if(fri&&h>=12&&h<15)el.innerHTML='<i style="background:#e0a800"></i>Перерыв до 15:00';})();
+</script>
+</body>
+</html>
