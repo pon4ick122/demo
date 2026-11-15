@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Массаж у Сергея — Баррикадная, 8</title>
+<meta name="description" content="Лечебный и спортивный массаж у Сергея на Баррикадной. 5,0 и 373 оценки на Яндекс Картах. Покажите, где болит, и запишитесь в Telegram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef2f5; --card:#ffffff; --navy:#132a43; --navy2:#1d3d5f; --mint:#3ddc97; --mint2:#c9f5e1; --muted:#64748b; --line:#d7dee6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--navy);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.u{font-family:Unbounded,sans-serif;font-weight:700;letter-spacing:-.02em}
+
+header{position:sticky;top:0;z-index:20;background:rgba(238,242,245,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo i{width:36px;height:36px;border-radius:12px;background:var(--navy);display:grid;place-items:center}
+.logo i::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 5px rgba(61,220,151,.25)}
+.logo b{font:700 15px Unbounded,sans-serif}
+.logo small{display:block;font-size:12px;color:var(--muted);font-weight:500}
+.nav nav{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--muted)}
+.nav nav a{text-decoration:none}.nav nav a:hover{color:var(--navy)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--navy);color:#fff;text-decoration:none;font:600 15px Inter,sans-serif;padding:15px 24px;border-radius:14px;border:0;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--navy2);transform:translateY(-1px)}
+.btn.mint{background:var(--mint);color:var(--navy)}
+.btn.mint:hover{background:#5ae6a8}
+.btn.line{background:transparent;box-shadow:inset 0 0 0 1.5px var(--navy);color:var(--navy)}
+.btn.sm{padding:10px 16px;font-size:14px;border-radius:12px}
+.btn svg{width:18px;height:18px}
+
+.hero{padding:56px 0 90px}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 8px;font-size:13px;font-weight:500;margin-bottom:24px}
+.pill b{background:var(--mint);color:var(--navy);border-radius:999px;padding:2px 9px;font-weight:700}
+.hero h1{font-size:clamp(36px,5.6vw,70px);line-height:1.02;margin-bottom:22px}
+.hero h1 span{background:linear-gradient(transparent 62%,var(--mint) 62%,var(--mint) 92%,transparent 92%)}
+.hero p{font-size:18px;color:var(--muted);max-width:46ch;margin-bottom:30px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hp{position:relative}
+.hp .img{border-radius:30px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 80px -40px rgba(19,42,67,.55)}
+.hp .img img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.float{position:absolute;background:var(--card);border-radius:18px;padding:14px 16px;box-shadow:0 20px 40px -20px rgba(19,42,67,.4);font-size:13px;color:var(--muted)}
+.float b{display:block;font:700 22px Unbounded,sans-serif;color:var(--navy)}
+.float.a{left:-26px;top:40px}
+.float.b{right:-18px;bottom:60px;max-width:220px}
+.float.b p{color:var(--navy);font-weight:500;font-size:14px;line-height:1.4}
+.stars{color:#f5b301;letter-spacing:2px;font-size:13px}
+
+section{padding:100px 0}
+.h2{font-size:clamp(28px,3.8vw,46px);line-height:1.08;margin-bottom:14px}
+.sub{color:var(--muted);font-size:17px;max-width:56ch}
+
+/* где болит */
+.pain{background:var(--navy);color:#fff;border-radius:40px;margin:0 14px}
+.pain .sub{color:#9fb2c8}
+.pain .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center;margin-top:40px}
+.body{position:relative;max-width:360px;margin:0 auto;width:100%}
+.body svg.fig{width:100%;height:auto}
+.spot{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:0;background:rgba(61,220,151,.25);cursor:pointer;display:grid;place-items:center}
+.spot::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--mint)}
+.spot::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--mint);animation:pulse 2s infinite}
+.spot.on{background:var(--mint)}
+.spot.on::before{background:var(--navy)}
+@keyframes pulse{from{transform:scale(1);opacity:.9}to{transform:scale(2.1);opacity:0}}
+.zones{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.zones button{border:1px solid #33506f;background:transparent;color:#cfe0f0;border-radius:999px;padding:9px 16px;font:500 14px Inter,sans-serif;cursor:pointer}
+.zones button.on{background:var(--mint);border-color:var(--mint);color:var(--navy)}
+.answer{background:var(--navy2);border-radius:26px;padding:30px;border:1px solid #2c4d71}
+.answer .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mint)}
+.answer h3{font:700 26px/1.2 Unbounded,sans-serif;margin:10px 0 14px}
+.answer blockquote{font-size:17px;line-height:1.55;color:#e6eef6;border-left:3px solid var(--mint);padding-left:16px;margin-bottom:22px}
+.answer .ctas{display:flex;gap:10px;flex-wrap:wrap}
+.answer .hint{font-size:13px;color:#9fb2c8;margin-top:14px}
+
+/* как проходит */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.step{background:var(--card);border-radius:24px;padding:26px;border:1px solid var(--line)}
+.step i{font:700 13px Unbounded,sans-serif;font-style:normal;background:var(--mint2);color:var(--navy);border-radius:10px;padding:6px 10px;display:inline-block;margin-bottom:18px}
+.step b{display:block;font-size:17px;margin-bottom:6px}
+.step p{color:var(--muted);font-size:15px}
+
+/* цена + кабинет */
+.office{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
+.price{background:var(--card);border-radius:30px;padding:34px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.price .big{font:700 clamp(46px,6vw,72px)/1 Unbounded,sans-serif}
+.price .big small{display:block;font:500 15px Inter,sans-serif;color:var(--muted);margin-top:10px}
+.price ul{list-style:none;display:grid;gap:10px}
+.price li{display:flex;gap:10px;align-items:flex-start}
+.price li::before{content:"";flex:none;width:20px;height:20px;border-radius:50%;background:var(--mint2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10l3 3 5-6' fill='none' stroke='%23132a43' stroke-width='2'/%3E%3C/svg%3E") center/14px no-repeat;margin-top:2px}
+.pics{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px}
+.pics img{width:100%;height:100%;object-fit:cover;border-radius:22px;min-height:180px}
+.pics img:first-child{grid-row:span 2}
+
+/* отзывы */
+.num{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px}
+.num div{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 22px;min-width:180px}
+.num b{display:block;font:700 30px Unbounded,sans-serif}
+.num span{font-size:13px;color:var(--muted)}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.rev{background:var(--card);border-radius:24px;padding:26px;border:1px solid var(--line)}
+.rev p{margin:10px 0 14px}
+.rev span{font-size:13px;color:var(--muted)}
+
+/* контакты */
+.where{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;margin-top:40px}
+.where .map{border-radius:30px;overflow:hidden;min-height:360px;background:#dfe6ec}
+.where .map iframe{width:100%;height:100%;min-height:360px;border:0}
+.where .info{background:var(--navy);color:#fff;border-radius:30px;padding:34px;display:grid;gap:18px;align-content:start}
+.where .info span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mint)}
+.where .info p{font-size:18px;font-weight:500}
+.where .info small{color:#9fb2c8}
+
+footer{padding:30px 0 40px;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--navy);color:#fff;padding:14px 20px;border-radius:14px;font-size:14px;z-index:40;transition:transform .3s;max-width:92vw;text-align:center}
+.toast.on{transform:translateX(-50%)}
+
+@media (max-width:980px){
+  .nav nav{display:none}
+  .hero .grid,.pain .grid,.office,.where{grid-template-columns:1fr}
+  .hp{max-width:480px;margin:0 auto;width:100%}
+  .steps{grid-template-columns:1fr 1fr}
+  .revs{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  section{padding:70px 0}
+  .hero{padding:34px 0 60px}
+  .pain{margin:0;border-radius:30px}
+  .float.a{left:8px;top:14px}
+  .float.b{right:8px;bottom:14px;max-width:200px}
+  .steps{grid-template-columns:1fr}
+  .answer{padding:22px}
+  .answer h3{font-size:21px}
+  .body{max-width:280px}
+  .head-cta{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><i></i><span><b>Массаж</b><small>Сергей · Баррикадная</small></span></a>
+    <nav><a href="#pain">Где болит</a><a href="#how">Как проходит</a><a href="#price">Цена</a><a href="#where">Контакты</a></nav>
+    <a class="btn sm head-cta" href="#pain">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap grid">
+      <div>
+        <span class="pill"><b>5,0</b> 373 оценки на Яндекс Картах</span>
+        <h1 class="u">Боль уходит <span>с&nbsp;первого</span> сеанса</h1>
+        <p>Лечебный и спортивный массаж у Сергея. Советские методики плюс современные инструменты, техника подбирается под вашу проблему. Три минуты от метро «Баррикадная», есть бесплатная парковка.</p>
+        <div class="ctas">
+          <a class="btn mint" href="#pain">Показать, где болит</a>
+          <a class="btn line" href="#how">Как проходит сеанс</a>
+        </div>
+      </div>
+      <div class="hp">
+        <div class="img"><img src="img/1.jpg" alt="Сергей делает массаж" loading="eager"></div>
+        <div class="float a"><b>100%</b>хвалят массаж<br>(275 отзывов)</div>
+        <div class="float b"><div class="stars">★★★★★</div><p>«Мастер с золотыми руками: сразу почувствовалось облегчение в спине»</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pain" id="pain">
+    <div class="wrap">
+      <h2 class="h2 u">Где болит?</h2>
+      <p class="sub">Нажмите на точку или выберите зону. Покажем, что пишут люди с такой же проблемой, и сразу отправим Сергею заявку.</p>
+      <div class="grid">
+        <div class="body" id="body">
+          <svg class="fig" viewBox="0 0 200 400" aria-hidden="true">
+            <defs><linearGradient id="gb" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2c5179"/><stop offset="1" stop-color="#1d3d5f"/></linearGradient></defs>
+            <g fill="url(#gb)" stroke="#3b6390" stroke-width="1.5">
+              <circle cx="100" cy="36" r="24"/>
+              <path d="M88 58h24l2 14H86z"/>
+              <path d="M58 76c10-6 26-8 42-8s32 2 42 8c8 5 12 14 12 24l-4 74c-1 10-8 16-16 18l-4 20H70l-4-20c-8-2-15-8-16-18l-4-74c0-10 4-19 12-24z"/>
+              <path d="M48 84c-8 4-12 12-14 22l-8 66c-1 8 0 14 2 20l6 30c1 5 8 5 9 0l-2-30 2-20 12-60z"/>
+              <path d="M152 84c8 4 12 12 14 22l8 66c1 8 0 14-2 20l-6 30c-1 5-8 5-9 0l2-30-2-20-12-60z"/>
+              <path d="M70 212h28l-2 76-4 90c0 8-14 8-16 0l-8-90z"/>
+              <path d="M102 212h28l2 76-8 90c-2 8-16 8-16 0l-4-90z"/>
+            </g>
+            <path d="M100 74v134" stroke="#4b77a6" stroke-width="1.5" stroke-dasharray="3 5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="zones" id="zones"></div>
+          <div class="answer">
+            <span class="k" id="a-k"></span>
+            <h3 id="a-h"></h3>
+            <blockquote id="a-q"></blockquote>
+            <div class="ctas">
+              <button class="btn mint" id="tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.3z"/></svg>Записаться в Telegram</button>
+              <a class="btn line" style="color:#fff;box-shadow:inset 0 0 0 1.5px #fff" href="tel:+79151568373">Позвонить</a>
+            </div>
+            <p class="hint">Текст заявки скопируется сам — просто вставьте его в чат с Сергеем.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2 class="h2 u">Как проходит сеанс</h2>
+      <p class="sub">Без конвейера: один мастер и один кабинет. Техника — под вашу проблему.</p>
+      <div class="steps">
+        <div class="step"><i>01</i><b>Разбираемся</b><p>Рассказываете, где и когда болит, — Сергей проводит диагностику.</p></div>
+        <div class="step"><i>02</i><b>Подбираем технику</b><p>Советские методики и современные инструменты — под вашу проблему, а не по шаблону.</p></div>
+        <div class="step"><i>03</i><b>Работаем</b><p>Глубокая проработка мышц. Многие пишут, что облегчение чувствуют уже на столе.</p></div>
+        <div class="step"><i>04</i><b>Даём план</b><p>Сколько сеансов нужно и что делать дома, чтобы эффект держался.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="price" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="h2 u">Цена и кабинет</h2>
+      <p class="sub">Цена с Яндекс Карт. Точную стоимость курса Сергей назовёт после первого сеанса.</p>
+      <div class="office">
+        <div class="price">
+          <div>
+            <p style="color:var(--muted);margin-bottom:8px">Профилактика сколиоза, кифоза и нарушений осанки</p>
+            <div class="big">3 000 ₽<small>за академический час (45 минут)</small></div>
+          </div>
+          <ul>
+            <li>Диагностика, лечение и реабилитация после лечения</li>
+            <li>Спина, шея, поясница, суставы после травм</li>
+            <li>Бесплатная парковка рядом с кабинетом</li>
+            <li>3 минуты пешком от метро «Баррикадная»</li>
+          </ul>
+          <a class="btn" href="#pain">Записаться</a>
+        </div>
+        <div class="pics">
+          <img src="img/3.jpg" alt="Кабинет с массажным столом" loading="lazy">
+          <img src="img/5.jpg" alt="Оборудование в кабинете" loading="lazy">
+          <img src="img/2.jpg" alt="Лестница в здании" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2 class="h2 u">357 отзывов</h2>
+      <div class="num">
+        <div><b>5,0</b><span>рейтинг на Картах</span></div>
+        <div><b>100%</b><span>хвалят массаж</span></div>
+        <div><b>100%</b><span>довольны лечением</span></div>
+        <div><b>100%</b><span>хвалят расположение</span></div>
+      </div>
+      <div class="revs">
+        <div class="rev"><div class="stars">★★★★★</div><p>«Единственный мастер, который полностью убрал мою боль в шее, тогда как другие массажи и баня давали лишь краткосрочный эффект».</p><span>Отзыв с Яндекс Карт</span></div>
+        <div class="rev"><div class="stars">★★★★★</div><p>«После травмы очень болел локоть, уже не болит. Помогло после первого же сеанса. Приду ещё!»</p><span>Отзыв с Яндекс Карт</span></div>
+        <div class="rev"><div class="stars">★★★★★</div><p>«Качественно проработал мышцы. Боль в пояснице ушла после одного сеанса. Внимательный и аккуратный».</p><span>Отзыв с Яндекс Карт</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="where" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="h2 u">Как добраться</h2>
+      <div class="where">
+        <div class="map"><iframe title="Карта" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=37.5815%2C55.7605&z=16&pt=37.5815,55.7605,pm2gnm"></iframe></div>
+        <div class="info">
+          <div><span>Адрес</span><p>Баррикадная ул., 8, стр. 5А</p><small>3 минуты от метро «Баррикадная», есть бесплатная парковка</small></div>
+          <div><span>Часы</span><p>Каждый день до 22:00</p></div>
+          <div><span>Телефон</span><p><a href="tel:+79151568373">+7 915 156-83-73</a></p></div>
+          <div><span>Telegram</span><p><a href="https://t.me/maccagg" target="_blank" rel="noopener">@maccagg</a></p></div>
+          <a class="btn mint" href="#pain">Записаться</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© Массаж у Сергея, Баррикадная</span><span>Это демо-концепт сайта. Фото, цена и отзывы взяты с Яндекс Карт.</span></div></footer>
+<div class="toast" id="toast">Текст заявки скопирован — вставьте его в чат</div>
+
+<script>
+const TG='maccagg';
+// x,y — в процентах от картинки фигуры
+const Z=[
+ {n:'Шея',x:50,y:15.5,h:'Боль в шее',q:'«Единственный мастер, который полностью убрал мою боль в шее, тогда как другие массажи и баня давали лишь краткосрочный эффект. Сергей сочетает советские методики с современными инструментами».'},
+ {n:'Плечи',x:33,y:21,h:'Зажаты плечи и спина',q:'«Сразу почувствовалось облегчение в спине, ушло зажатое напряжение, появилась невероятная лёгкость во всём теле. Обязательно приду на курс».'},
+ {n:'Спина',x:56,y:33,h:'Болит спина',q:'«Пошёл, когда „прижало“ — заболела спина. Сказать, что я был удивлён — ничего не сказать. Профессионал своего дела».'},
+ {n:'Поясница',x:50,y:46,h:'Боль в пояснице',q:'«Качественно проработал мышцы. Боль в пояснице ушла после одного сеанса. Использует разные методики и подходы».'},
+ {n:'Локоть',x:19,y:42,h:'Локоть после травмы',q:'«После травмы очень болел локоть, уже не болит. Помогло после первого же сеанса. Сергей — большой профессионал».'},
+ {n:'Осанка',x:50,y:27,h:'Сколиоз и осанка',q:'Профилактика сколиоза, кифоза и нарушений осанки: диагностика, лечение и реабилитация после лечения. 3 000 ₽ за академический час.'},
+];
+let cur=3;
+const body=document.getElementById('body'),zl=document.getElementById('zones');
+Z.forEach((z,i)=>{
+  const s=document.createElement('button');s.className='spot';s.style.left=z.x+'%';s.style.top=z.y+'%';s.setAttribute('aria-label',z.n);s.onclick=()=>pick(i);body.appendChild(s);
+  const b=document.createElement('button');b.textContent=z.n;b.onclick=()=>pick(i);zl.appendChild(b);
+});
+function msg(){return `Здравствуйте, Сергей! Пишу с сайта. Беспокоит: ${Z[cur].n.toLowerCase()}. Хочу записаться на массаж — подскажите, когда есть свободное время?`;}
+function pick(i){cur=i;
+  body.querySelectorAll('.spot').forEach((s,k)=>s.classList.toggle('on',k===i));
+  [...zl.children].forEach((b,k)=>b.classList.toggle('on',k===i));
+  document.getElementById('a-k').textContent=Z[i].n;
+  document.getElementById('a-h').textContent=Z[i].h;
+  document.getElementById('a-q').textContent=Z[i].q;
+}
+pick(cur);
+document.getElementById('tg').onclick=async()=>{
+  try{await navigator.clipboard.writeText(msg());}catch(e){}
+  const t=document.getElementById('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3200);
+  setTimeout(()=>window.open('https://t.me/'+TG,'_blank'),500);
+};
+</script>
+</body>
+</html>
