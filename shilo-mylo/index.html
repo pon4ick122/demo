@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Шило&amp;Мыло — ателье у Павелецкой</title>
+<meta name="description" content="Ателье «Шило&Мыло»: ремонт и пошив одежды, ремонт обуви и сумок, химчистка. Кожевническая ул., 7, стр. 1, 2 этаж.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#a3132f;--red2:#7f0d23;--leaf:#2f5a3e;--blush:#fbf2f0;--rose:#f3dcd8;--ink:#2b1519;--muted:#7a5c61;--lily:#e2762b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--blush);color:var(--ink);font:400 18px/1.6 Jost,system-ui,sans-serif}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lily);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+h1,h2,h3{font-family:"Yeseva One",serif;font-weight:400;line-height:1.08}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:600 16px/1 Jost,sans-serif;padding:17px 28px;background:var(--red);color:#fff;text-decoration:none;border:2px solid var(--red);cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--red2);border-color:var(--red2)}
+.btn.o{background:transparent;color:var(--red)}
+.btn.o:hover{background:var(--rose)}
+
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:86px;gap:20px}
+.logo{font:400 30px/1 "Yeseva One",serif;color:var(--red);text-decoration:none}
+.logo span{color:var(--leaf)}
+header nav{display:flex;gap:28px;font-weight:500;font-size:16px}
+header nav a{text-decoration:none}
+header nav a:hover{color:var(--red)}
+
+/* hero: their signboard — double red frame */
+.hero{padding:16px 0 90px}
+.sign{position:relative;border:3px solid var(--red);padding:10px}
+.sign>.in{border:1px solid var(--red);display:grid;grid-template-columns:1.1fr .9fr;min-height:560px;background:#fff}
+.sign .txt{padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+.sign h1{font-size:clamp(44px,5.6vw,78px);color:var(--red)}
+.sign p{font-size:19px;color:var(--muted);margin:24px 0 34px;max-width:27em}
+.sign .row{display:flex;gap:12px;flex-wrap:wrap}
+.sign .ph{position:relative;overflow:hidden;border-left:1px solid var(--red)}
+.sign .ph img{width:100%;height:100%;object-fit:cover}
+.stars{display:flex;align-items:center;gap:12px;margin-top:38px;font-size:15px;color:var(--muted)}
+.stars b{font:400 36px/1 "Yeseva One",serif;color:var(--ink)}
+.sprig{position:absolute;right:-22px;bottom:-34px;width:150px;pointer-events:none}
+
+section{padding:96px 0}
+.sh{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.sh h2{font-size:clamp(38px,4.6vw,62px)}
+.sh p{color:var(--muted)}
+
+/* hang tags */
+.tags{display:grid;grid-template-columns:repeat(4,1fr);gap:36px 22px;padding-top:30px}
+.tag{position:relative;background:#fff;border:1.5px solid var(--red);padding:42px 22px 24px;clip-path:polygon(18% 0,82% 0,100% 12%,100% 100%,0 100%,0 12%);min-height:220px}
+.tag:before{content:"";position:absolute;left:50%;top:14px;width:12px;height:12px;margin-left:-6px;border-radius:50%;border:1.5px solid var(--red);background:var(--blush)}
+.tagw{position:relative}
+.tagw:before{content:"";position:absolute;left:50%;top:-30px;width:1.5px;height:50px;background:var(--leaf);transform:rotate(-8deg);transform-origin:bottom}
+.tagw:nth-child(even):before{transform:rotate(9deg)}
+.tag h3{font-size:22px;color:var(--red);margin-bottom:10px;text-align:center}
+.tag ul{list-style:none;font-size:15px;color:var(--muted);text-align:center;line-height:1.5}
+.tag .pr{display:block;text-align:center;margin-top:14px;font-weight:600;color:var(--leaf);font-size:15px}
+
+/* works */
+.works{background:#fff}
+.wg{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:14px}
+.wg figure{position:relative;overflow:hidden}
+.wg img{width:100%;height:100%;object-fit:cover}
+.wg figcaption{position:absolute;left:0;bottom:0;right:0;padding:30px 16px 12px;background:linear-gradient(transparent,rgba(43,21,25,.75));color:#fff;font-size:15px}
+.wg figure:nth-child(1){grid-column:span 2;grid-row:span 3}
+.wg figure:nth-child(2){grid-column:span 2;grid-row:span 3}
+.wg figure:nth-child(3){grid-column:span 2;grid-row:span 2}
+.wg figure:nth-child(4){grid-column:span 2;grid-row:span 1}
+.wg figure:nth-child(5){grid-column:span 3;grid-row:span 2}
+.wg figure:nth-child(6){grid-column:span 3;grid-row:span 2}
+.story{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:64px}
+.story h3{font-size:24px;color:var(--leaf);margin-bottom:10px}
+.story p{color:var(--muted);font-size:16px}
+
+/* order form */
+.order .lay{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:start}
+.q{margin-bottom:30px}
+.q h3{font-size:24px;margin-bottom:14px}
+.opts{display:flex;flex-wrap:wrap;gap:9px}
+.opt{font:500 16px/1 Jost,sans-serif;padding:13px 18px;border:1.5px solid #d9b9b8;background:#fff;color:var(--ink);cursor:pointer}
+.opt:hover{border-color:var(--red)}
+.opt[aria-pressed=true]{background:var(--red);border-color:var(--red);color:#fff}
+.slip{position:sticky;top:22px;background:#fff;border:3px solid var(--red);padding:8px}
+.slip .in{border:1px solid var(--red);padding:30px 26px}
+.slip h3{font-size:28px;color:var(--red);margin-bottom:6px}
+.slip .no{color:var(--muted);font-size:14px;margin-bottom:18px}
+.ln{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dotted #c79c9c;font-size:16px}
+.ln span:first-child{color:var(--muted)}
+.ln span:last-child{text-align:right;font-weight:500}
+.slip .btn{width:100%;margin-top:22px}
+.slip small{display:block;color:var(--muted);font-size:14px;margin-top:12px;line-height:1.45}
+
+/* reviews */
+.revs{background:var(--leaf);color:#fff}
+.revs .sh p{color:#cfe0d3}
+.rl{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rv{background:#fff;color:var(--ink);padding:30px 26px;position:relative}
+.rv:before{content:"“";position:absolute;top:-18px;left:20px;font:400 90px/1 "Yeseva One",serif;color:var(--lily)}
+.rv p{font-size:16px}
+.rv span{display:block;margin-top:14px;color:var(--red);font-weight:600;font-size:14px}
+
+.visit .lay{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.visit dl{display:grid;grid-template-columns:120px 1fr;gap:14px 18px;margin:26px 0 32px}
+.visit dt{color:var(--muted)}
+.hours{border:3px solid var(--red);padding:8px}
+.hours .in{border:1px solid var(--red);padding:30px;background:#fff}
+.hours h3{font-size:28px;color:var(--red);margin-bottom:14px}
+.hr{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dotted #c79c9c}
+.hr.today{color:var(--red);font-weight:600}
+footer{padding:30px 0;border-top:1px solid #e3c9c6;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.mbar{display:none}
+
+@media (max-width:960px){
+  header nav{display:none}
+  .sign>.in{grid-template-columns:1fr}
+  .sign .txt{padding:40px 24px}
+  .sign .ph{border-left:0;border-top:1px solid var(--red);height:340px}
+  .sprig{width:100px;right:-10px}
+  .sh,.order .lay,.visit .lay{grid-template-columns:1fr;gap:16px}
+  .tags{grid-template-columns:1fr 1fr;gap:44px 14px}
+  .wg{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+  .wg figure:nth-child(n){grid-column:span 1;grid-row:span 2}
+  .wg figure:nth-child(5),.wg figure:nth-child(6){grid-column:span 2;grid-row:span 2}
+  .story,.rl{grid-template-columns:1fr;gap:26px}
+  .slip{position:static}
+  section{padding:68px 0}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30}
+  .mbar .btn{flex:1;box-shadow:0 10px 24px rgba(127,13,35,.35)}
+  footer{padding-bottom:90px}
+}
+@media (max-width:480px){.wrap{padding:0 16px}.tags{grid-template-columns:1fr}.tag{min-height:0}}
+@keyframes grow{from{transform:scale(.6) rotate(-12deg);opacity:0}to{transform:none;opacity:1}}
+.sprig{animation:grow 1.2s .4s both;transform-origin:bottom right}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#">Шило<span>&amp;</span>Мыло</a>
+  <nav aria-label="Разделы"><a href="#services">Услуги</a><a href="#works">Работы</a><a href="#order">Заявка</a><a href="#visit">Адрес</a></nav>
+  <a class="btn" href="#order">Оставить заявку</a>
+</div></header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="sign">
+      <div class="in">
+        <div class="txt">
+          <h1>Починим то, что жалко выбросить</h1>
+          <p>Ателье у Павелецкой. Подшиваем, перешиваем, штопаем так, что дырку не найти, чиним обувь и сумки, отдаём в химчистку. Срочное тоже берём.</p>
+          <div class="row"><a class="btn" href="#order">Узнать цену по фото</a><a class="btn o" href="#services">Что мы делаем</a></div>
+          <div class="stars"><b>5,0</b><span>136 оценок на Яндекс Картах</span></div>
+        </div>
+        <div class="ph"><img src="img/2.jpg" alt="Вышивка жемчугом на ткани"></div>
+      </div>
+      <svg class="sprig" viewBox="0 0 150 170" aria-hidden="true">
+        <path d="M120 168C110 120 92 80 60 40" stroke="#2f5a3e" stroke-width="3" fill="none"/>
+        <path d="M98 110c-26-2-44-18-48-40 24 4 42 18 48 40zM84 78c4-24 22-40 46-42-4 24-22 40-46 42z" fill="#2f5a3e"/>
+        <path d="M60 40c-6-14-22-22-36-18 6 8 4 22-6 28 16 4 34 2 42-10zM60 40c2-16 14-30 30-32-2 10 6 22 18 24-14 10-34 14-48 8z" fill="#e2762b"/>
+        <path d="M60 40c-2-14-14-26-28-28" stroke="#a3132f" stroke-width="2" fill="none"/>
+        <circle cx="58" cy="38" r="5" fill="#a3132f"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sh"><h2>Что принести</h2><p>Работаем с текстилем, трикотажем, мехом и кожей. Цена зависит от вещи, ткани и срочности, поэтому проще всего прислать фото.</p></div>
+    <div class="tags">
+      <div class="tagw"><div class="tag"><h3>Подогнать</h3><ul><li>посадка по фигуре</li><li>укорот низа и рукавов</li><li>перекрой изделия</li></ul><span class="pr">брюки и джинсы от 850 ₽</span></div></div>
+      <div class="tagw"><div class="tag"><h3>Починить</h3><ul><li>замена молнии и фурнитуры</li><li>художественная штопка</li><li>новая подкладка и детали</li></ul><span class="pr">цена по фото</span></div></div>
+      <div class="tagw"><div class="tag"><h3>Сшить</h3><ul><li>костюмы и платья</li><li>трикотажные кофты</li><li>костюмы для мероприятий</li></ul><span class="pr">после примерки</span></div></div>
+      <div class="tagw"><div class="tag"><h3>Обувь и сумки</h3><ul><li>ремонт и растяжка обуви</li><li>реставрация обуви и сумок</li><li>ремонт чемоданов</li></ul><span class="pr">цена по фото</span></div></div>
+    </div>
+    <p style="margin-top:34px;color:var(--muted);font-size:16px">Ещё принимаем в химчистку: костюмы, платья, трикотаж, пальто и куртки, дублёнки, кожу, замшу, мех, домашний текстиль, обувь и сумки.</p>
+  </div>
+</section>
+
+<section class="works" id="works">
+  <div class="wrap">
+    <div class="sh"><h2>Работы, которыми гордимся</h2><p>Брендовые вещи, вечерние платья, пальто с мехом и кроссовки, которые все уже списали.</p></div>
+    <div class="wg">
+      <figure><img src="img/5.jpg" alt="Зелёное вечернее платье с вышивкой бисером" loading="lazy"><figcaption>Вечернее платье</figcaption></figure>
+      <figure><img src="img/4.jpg" alt="Пальто с меховыми манжетами" loading="lazy"><figcaption>Пальто и мех</figcaption></figure>
+      <figure><img src="img/3.jpg" alt="Джинсы с брендовыми нашивками" loading="lazy"><figcaption>Брендовые вещи</figcaption></figure>
+      <figure><img src="img/1.jpg" alt="Нитки, иглы и сантиметр" loading="lazy"></figure>
+      <figure><img src="img/7.jpg" alt="Кроссовки после ремонта" loading="lazy"><figcaption>Ремонт обуви</figcaption></figure>
+      <figure><img src="img/6.jpg" alt="Вышивка пайетками на чёрной ткани" loading="lazy"><figcaption>Вышивка и декор</figcaption></figure>
+    </div>
+    <div class="story">
+      <div><h3>Петля на пальто</h3><p>«Во всей Москве не могли найти ателье, где добавили бы петлю на мужское пальто: нет петельной машины. Здесь она нашлась».</p></div>
+      <div><h3>Пиджак HUGO</h3><p>«Забрала мужской пиджак после реставрации дыр на рукаве. Места ремонта найти невозможно. И адекватный ценник».</p></div>
+      <div><h3>Форма к 1 сентября</h3><p>«Анна в самый короткий срок подшила, ушила и привела в порядок форму кадета, хотя перед 1 сентября работы было много».</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="order" id="order">
+  <div class="wrap">
+    <div class="sh"><h2>Заявка за минуту</h2><p>Отметьте, что за вещь и что с ней сделать. Откроется WhatsApp с готовым сообщением, приложите фото, и мастер назовёт цену и срок.</p></div>
+    <div class="lay">
+      <div>
+        <div class="q"><h3>Какая вещь</h3><div class="opts" data-k="item">
+          <button class="opt">Брюки</button><button class="opt">Джинсы</button><button class="opt">Пальто или куртка</button><button class="opt">Платье или юбка</button><button class="opt">Пиджак</button><button class="opt">Трикотаж</button><button class="opt">Мех или кожа</button><button class="opt">Обувь</button><button class="opt">Сумка</button>
+        </div></div>
+        <div class="q"><h3>Что сделать</h3><div class="opts" data-k="job" data-multi>
+          <button class="opt">Укоротить</button><button class="opt">Ушить или расставить</button><button class="opt">Заменить молнию</button><button class="opt">Заштопать дырку</button><button class="opt">Заменить подкладку</button><button class="opt">Химчистка</button><button class="opt">Сшить новое</button><button class="opt">Другое</button>
+        </div></div>
+        <div class="q"><h3>Сроки</h3><div class="opts" data-k="when">
+          <button class="opt">Срочно, за день</button><button class="opt">За несколько дней</button><button class="opt">Не горит</button>
+        </div></div>
+      </div>
+      <aside class="slip" aria-live="polite"><div class="in">
+        <h3>Квитанция</h3>
+        <div class="no">Предварительная, без цены</div>
+        <div class="ln"><span>Вещь</span><span id="s-item">не выбрана</span></div>
+        <div class="ln"><span>Работа</span><span id="s-job">—</span></div>
+        <div class="ln"><span>Сроки</span><span id="s-when">—</span></div>
+        <div class="ln"><span>Ориентир</span><span id="s-price">по фото</span></div>
+        <a class="btn" id="send" href="#" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+        <small>После отправки приложите в чат 1–2 фото вещи. Отвечаем в рабочие часы.</small>
+      </div></aside>
+    </div>
+  </div>
+</section>
+
+<section class="revs">
+  <div class="wrap">
+    <div class="sh"><h2>5,0 и 102 отзыва</h2><p>Чаще всего гостям нравится, что мастера входят в положение и делают срочное, а цены для центра Москвы честные.</p></div>
+    <div class="rl">
+      <div class="rv"><p>Очень хорошее ателье, обращаюсь регулярно. Могут починить вещь, могут отшить новую. Шила костюм, несколько платьев, трикотажные кофты — всё отлично.</p><span>Постоянная гостья</span></div>
+      <div class="rv"><p>Анна — замечательный специалист, творчески подходит к самым сложным задачам, а главное, очень быстро и качественно!</p><span>Про мастера Анну</span></div>
+      <div class="rv"><p>Отдала подшить джинсы и подогнать по размеру брюки. Девушки очень милые, сделали всё день в день. Качество работы понравилось!</p><span>Отзыв с Яндекс Карт</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap lay">
+    <div>
+      <h2 style="font-size:clamp(38px,4.6vw,62px)">Как нас найти</h2>
+      <dl>
+        <dt>Адрес</dt><dd>Кожевническая ул., 7, стр. 1, 2 этаж</dd>
+        <dt>Метро</dt><dd>Павелецкая, 440 м</dd>
+        <dt>Телефон</dt><dd><a href="tel:+79688672094">+7 968 867-20-94</a></dd>
+      </dl>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="#order">Оставить заявку</a><a class="btn o" href="https://yandex.ru/maps/org/shilo_mylo/1023079924/" target="_blank" rel="noopener">Маршрут</a></div>
+    </div>
+    <div class="hours"><div class="in">
+      <h3>Часы работы</h3>
+      <div class="hr" data-d="1,2,3,4,5"><span>Понедельник — пятница</span><span>10:00–20:00</span></div>
+      <div class="hr" data-d="6"><span>Суббота</span><span>11:00–18:00</span></div>
+      <div class="hr" data-d="0"><span>Воскресенье</span><span>выходной</span></div>
+    </div></div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© Шило&amp;Мыло, ателье</span><span class="demo">Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></div></footer>
+<div class="mbar"><a class="btn" href="#order">Узнать цену по фото</a></div>
+
+<script>
+const PHONE='79688672094';
+const st={item:null,job:[],when:null};
+document.querySelectorAll('[data-k]').forEach(g=>{
+  const k=g.dataset.k,multi=g.hasAttribute('data-multi');
+  g.querySelectorAll('.opt').forEach(b=>{
+    b.type='button';b.setAttribute('aria-pressed','false');
+    b.onclick=()=>{
+      if(multi){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');st.job=[...g.querySelectorAll('[aria-pressed=true]')].map(x=>x.textContent)}
+      else{g.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');st[k]=b.textContent}
+      draw();
+    };
+  });
+});
+function draw(){
+  const job=st.job.map(j=>j.toLowerCase()).join(', ');
+  document.getElementById('s-item').textContent=st.item||'не выбрана';
+  document.getElementById('s-job').textContent=job||'—';
+  document.getElementById('s-when').textContent=st.when?st.when.toLowerCase():'—';
+  const short=(st.item==='Брюки'||st.item==='Джинсы')&&st.job.includes('Укоротить');
+  document.getElementById('s-price').textContent=short?'от 850 ₽':'по фото';
+  const msg=`Здравствуйте! Хочу сдать вещь в «Шило&Мыло».\nВещь: ${st.item||'расскажу'}\nЧто сделать: ${job||'подскажите'}\nСроки: ${st.when?st.when.toLowerCase():'обсудим'}\nСейчас пришлю фото. Сколько будет стоить?`;
+  document.getElementById('send').href='https://wa.me/'+PHONE+'?text='+encodeURIComponent(msg);
+}
+draw();
+const d=new Date().getDay();document.querySelectorAll('.hr').forEach(r=>{if(r.dataset.d.split(',').includes(String(d)))r.classList.add('today')});
+</script>
+</body>
+</html>
