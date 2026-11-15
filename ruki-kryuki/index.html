@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Руки-Крюки — тату-студия на Пятницкой</title>
+<meta name="description" content="Тату-студия «Руки-Крюки» на Пятницкой, 3/4с1. Пять мастеров, стерильно, одноразовые материалы, кофе за счёт студии. Оставьте заявку на эскиз в WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Caveat:wght@600;700&family=Golos+Text:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#efe7d8; --paper2:#e6dcc9; --ink:#141212; --red:#d6372b; --blue:#1d4e89; --muted:#5d554b; --line:#141212;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:16px/1.55 "Golos Text",system-ui,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.28;mix-blend-mode:multiply;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.mono{font-family:"Rubik Mono One",Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.01em}
+.hand{font-family:Caveat,cursive}
+
+/* шапка */
+header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:2px solid var(--ink)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:38px;height:38px}
+.logo b{font:400 17px "Rubik Mono One",sans-serif;text-transform:uppercase}
+.nav nav{display:flex;gap:26px;font-weight:500;font-size:15px}
+.nav nav a{text-decoration:none;border-bottom:2px solid transparent}
+.nav nav a:hover{border-color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:var(--paper);text-decoration:none;font:700 15px "Golos Text",sans-serif;padding:14px 22px;border:2px solid var(--ink);border-radius:0;cursor:pointer;box-shadow:5px 5px 0 var(--red);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--red)}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--red)}
+.btn.lt{background:var(--paper);color:var(--ink)}
+.btn.sm{padding:10px 16px;font-size:14px;box-shadow:4px 4px 0 var(--red)}
+
+/* первый экран */
+.hero{padding:56px 0 80px;position:relative}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(46px,8.4vw,112px);line-height:.9;margin-bottom:26px}
+.hero h1 .r{color:var(--red)}
+.hero h1 .s{display:inline-block;font:700 .42em/1 Caveat,cursive;text-transform:none;color:var(--blue);transform:rotate(-6deg) translateY(-.4em);margin-left:.2em}
+.hero p{font-size:18px;max-width:46ch;margin-bottom:30px;color:var(--muted)}
+.hero .ctas{display:flex;gap:16px;flex-wrap:wrap}
+.polaroids{position:relative;height:560px}
+.pol{position:absolute;background:#fff;padding:12px 12px 46px;border:1px solid rgba(0,0,0,.1);box-shadow:0 18px 40px -16px rgba(0,0,0,.45);width:260px}
+.pol img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.pol span{position:absolute;left:0;right:0;bottom:10px;text-align:center;font:700 22px Caveat,cursive}
+.pol.a{left:0;top:30px;transform:rotate(-7deg)}
+.pol.b{right:0;top:0;transform:rotate(5deg)}
+.pol.c{left:90px;bottom:0;transform:rotate(2deg);z-index:2}
+.tape{position:absolute;top:-14px;left:50%;width:90px;height:28px;background:rgba(214,55,43,.55);transform:translateX(-50%) rotate(-4deg)}
+.stamp{position:absolute;z-index:3;right:10px;bottom:30px;width:150px;height:150px;border:3px solid var(--red);border-radius:50%;color:var(--red);display:grid;place-items:center;text-align:center;transform:rotate(12deg);font:400 13px/1.25 "Rubik Mono One",sans-serif;text-transform:uppercase;background:rgba(239,231,216,.8)}
+.stamp b{display:block;font-size:34px;line-height:1}
+
+/* бегущая строка */
+.ticker{border-block:2px solid var(--ink);background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap}
+.ticker div{display:inline-block;padding:14px 0;animation:run 28s linear infinite;font:400 18px "Rubik Mono One",sans-serif;text-transform:uppercase}
+.ticker i{color:var(--red);font-style:normal;margin:0 22px}
+@keyframes run{to{transform:translateX(-50%)}}
+
+section{padding:100px 0}
+.h2{font-size:clamp(30px,4.6vw,58px);line-height:1;margin-bottom:16px}
+.h2 .r{color:var(--red)}
+.sub{color:var(--muted);max-width:58ch;font-size:17px}
+.note-h{font:700 28px Caveat,cursive;color:var(--blue);transform:rotate(-2deg);display:inline-block;margin-bottom:6px}
+
+/* правила студии */
+.rules{display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--ink);margin-top:44px;background:var(--paper2)}
+.rule{padding:28px 22px;border-right:2px solid var(--ink)}
+.rule:last-child{border-right:0}
+.rule svg{width:46px;height:46px;margin-bottom:18px}
+.rule b{display:block;font:400 15px/1.3 "Rubik Mono One",sans-serif;text-transform:uppercase;margin-bottom:8px}
+.rule p{font-size:15px;color:var(--muted)}
+
+/* работы */
+.works{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px}
+.work{background:#fff;padding:10px 10px 40px;box-shadow:0 12px 28px -14px rgba(0,0,0,.4);position:relative;transition:transform .25s}
+.work:nth-child(odd){transform:rotate(-1.6deg)}.work:nth-child(even){transform:rotate(1.4deg)}
+.work:hover{transform:rotate(0) scale(1.03);z-index:2}
+.work img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:contrast(1.05)}
+.work span{position:absolute;left:12px;bottom:8px;font:700 21px Caveat,cursive}
+
+/* мастера */
+.masters{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px}
+.m{border:2px solid var(--ink);background:var(--paper);padding:20px 16px 18px;cursor:pointer;transition:background .15s,color .15s;position:relative;text-align:left;font:inherit;color:inherit}
+.m .ini{width:58px;height:58px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font:400 20px "Rubik Mono One",sans-serif;margin-bottom:14px;background:var(--paper2)}
+.m b{display:block;font-size:18px;margin-bottom:6px}
+.m q{display:block;font-size:13.5px;color:var(--muted);quotes:"«" "»"}
+.m.on{background:var(--ink);color:var(--paper)}
+.m.on q{color:#c9bfae}.m.on .ini{background:var(--red);border-color:var(--red);color:#fff}
+.m.on::after{content:"выбран";position:absolute;top:10px;right:10px;font:700 18px Caveat,cursive;color:var(--red);transform:rotate(8deg)}
+
+/* заявка */
+.form{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;margin-top:44px;align-items:start}
+.q{border:2px solid var(--ink);background:var(--paper2);padding:26px;margin-bottom:18px}
+.q h3{font:400 15px "Rubik Mono One",sans-serif;text-transform:uppercase;margin-bottom:16px;display:flex;gap:12px;align-items:center}
+.q h3 i{font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:2px solid var(--ink);background:var(--paper);padding:9px 14px;font:500 14px "Golos Text",sans-serif;cursor:pointer;color:var(--ink)}
+.chip.on{background:var(--ink);color:var(--paper)}
+.size{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.size .chip{display:grid;gap:8px;justify-items:center;padding:14px 8px;text-align:center}
+.size .chip svg{height:34px;width:34px}
+.size .chip.on svg *{stroke:var(--paper)}
+.size small{font-size:12px;opacity:.75}
+textarea{width:100%;min-height:96px;border:2px solid var(--ink);background:var(--paper);font:15px "Golos Text",sans-serif;padding:12px;resize:vertical;color:var(--ink)}
+.ticket{position:sticky;top:88px;background:#fff;border:2px solid var(--ink);padding:26px 24px 24px;box-shadow:8px 8px 0 var(--ink)}
+.ticket::before{content:"";position:absolute;left:-2px;right:-2px;top:-12px;height:12px;background:radial-gradient(circle at 8px 12px,var(--paper) 7px,transparent 8px) 0 0/16px 12px repeat-x}
+.ticket h3{font:400 18px "Rubik Mono One",sans-serif;text-transform:uppercase;margin-bottom:6px}
+.ticket .hand{font-size:24px;color:var(--blue);margin-bottom:16px}
+.ticket dl{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;font-size:15px;margin-bottom:22px;border-top:2px dashed var(--ink);padding-top:16px}
+.ticket dt{color:var(--muted)}
+.ticket dd{font-weight:700;text-align:right}
+.ticket .btn{width:100%}
+.ticket p.s{font-size:13px;color:var(--muted);margin-top:14px}
+
+/* сертификаты */
+.cert{background:var(--ink);color:var(--paper)}
+.cert .sub{color:#c9bfae}
+.certs{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px}
+.cc{border:2px dashed var(--paper);padding:26px 14px;text-align:center;cursor:pointer;background:transparent;color:var(--paper);font:inherit;transition:.15s}
+.cc b{display:block;font:400 22px "Rubik Mono One",sans-serif;margin-bottom:6px}
+.cc span{font:700 20px Caveat,cursive;color:#e9a39b}
+.cc.on,.cc:hover{background:var(--red);border-style:solid;border-color:var(--red)}
+.cc.on span,.cc:hover span{color:#fff}
+.cert .row{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.cert .btn{box-shadow:5px 5px 0 var(--red);background:var(--paper);color:var(--ink);border-color:var(--paper)}
+
+/* отзывы */
+.revs{columns:3 300px;column-gap:22px;margin-top:40px}
+.rev{break-inside:avoid;margin-bottom:22px;background:#fff;padding:24px;border:2px solid var(--ink)}
+.rev p{margin-bottom:12px}
+.rev span{font:700 20px Caveat,cursive;color:var(--red)}
+.score{display:flex;gap:16px;flex-wrap:wrap;margin-top:26px}
+.score div{border:2px solid var(--ink);padding:10px 16px;background:var(--paper2);font-weight:700}
+.score div b{color:var(--red)}
+
+/* контакты */
+.where .grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch}
+.where .pic{border:2px solid var(--ink);overflow:hidden;min-height:360px}
+.where .pic img{width:100%;height:100%;object-fit:cover}
+.where .info{border:2px solid var(--ink);padding:30px;background:var(--paper2);display:grid;gap:20px;align-content:start}
+.where .info span{display:block;font:400 12px "Rubik Mono One",sans-serif;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.where .info p{font-size:19px;font-weight:500}
+
+footer{border-top:2px solid var(--ink);padding:26px 0 36px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+@media (max-width:980px){
+  .nav nav{display:none}
+  .hero .grid,.form,.where .grid{grid-template-columns:1fr}
+  .polaroids{height:470px;max-width:460px;margin:0 auto;width:100%}
+  .pol{width:210px}
+  .rules{grid-template-columns:1fr 1fr}
+  .rule:nth-child(2){border-right:0}.rule:nth-child(-n+2){border-bottom:2px solid var(--ink)}
+  .works{grid-template-columns:1fr 1fr}
+  .masters{grid-template-columns:1fr 1fr}
+  .certs{grid-template-columns:repeat(3,1fr)}
+  .ticket{position:static}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  section{padding:70px 0}
+  .hero{padding:36px 0 60px}
+  .polaroids{height:400px}
+  .pol{width:170px;padding:8px 8px 36px}
+  .pol.c{left:60px}
+  .pol span{font-size:18px}
+  .stamp{width:116px;height:116px;font-size:10px;right:0}
+  .stamp b{font-size:26px}
+  .rules{grid-template-columns:1fr}
+  .rule{border-right:0!important;border-bottom:2px solid var(--ink)}.rule:last-child{border-bottom:0}
+  .masters{grid-template-columns:1fr}
+  .m{display:grid;grid-template-columns:58px 1fr;column-gap:14px}
+  .m .ini{grid-row:span 2;margin:0}
+  .certs{grid-template-columns:1fr 1fr}
+  .size .chip{padding:12px 4px;font-size:13px}
+  .head-cta{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Руки-Крюки">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="#141212" stroke-width="2.5"/><path d="M14 9v14a6 6 0 0 0 12 0" fill="none" stroke="#d6372b" stroke-width="3" stroke-linecap="round"/><path d="M26 23l3-3" stroke="#d6372b" stroke-width="3" stroke-linecap="round"/><circle cx="14" cy="8" r="2.2" fill="#141212"/></svg>
+      <b>Руки-Крюки</b>
+    </a>
+    <nav><a href="#works">Работы</a><a href="#masters">Мастера</a><a href="#form">Заявка</a><a href="#cert">Сертификаты</a></nav>
+    <a class="btn sm head-cta" href="#form">Хочу тату</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap grid">
+      <div>
+        <span class="note-h">тату-студия на Пятницкой</span>
+        <h1 class="mono">Руки <span class="r">крюки</span><br>тату <span class="s">— ровные</span></h1>
+        <p>Пять мастеров, свой стиль у каждого. Дорабатываем эскиз, чтобы тату смотрелась хорошо и через десять лет. Стерильно, одноразовые материалы, кофе за счёт студии.</p>
+        <div class="ctas"><a class="btn" href="#form">Оставить заявку на эскиз</a><a class="btn lt" href="#works">Смотреть работы</a></div>
+      </div>
+      <div class="polaroids">
+        <div class="pol a"><div class="tape"></div><img src="img/2.jpg" alt="Татуировка: собака" loading="eager"><span>пёс, предплечье</span></div>
+        <div class="pol b"><div class="tape"></div><img src="img/4.jpg" alt="Татуировка: глаз и цветы" loading="eager"><span>глаз, плечо</span></div>
+        <div class="pol c"><div class="tape"></div><img src="img/6.jpg" alt="Татуировка: портрет" loading="eager"><span>портрет, реализм</span></div>
+        <div class="stamp"><div><b>4,9</b>169 оценок<br>на картах</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div>
+    Эскиз под вас<i>✶</i>Стерильно<i>✶</i>Одноразовые материалы<i>✶</i>Кофе и чай<i>✶</i>Пятницкая 3/4с1<i>✶</i>До 22:00<i>✶</i>
+    Эскиз под вас<i>✶</i>Стерильно<i>✶</i>Одноразовые материалы<i>✶</i>Кофе и чай<i>✶</i>Пятницкая 3/4с1<i>✶</i>До 22:00<i>✶</i>
+  </div></div>
+
+  <section>
+    <div class="wrap">
+      <span class="note-h">как у нас</span>
+      <h2 class="h2 mono">Правила <span class="r">студии</span></h2>
+      <div class="rules">
+        <div class="rule"><svg viewBox="0 0 46 46" fill="none" stroke="#141212" stroke-width="2.2"><path d="M8 38l22-22M26 12l8 8M30 8l8 8-4 4-8-8z"/><path d="M8 38l-2 4 4-2" stroke="#d6372b"/></svg><b>Дорабатываем эскиз</b><p>Подскажем, как изменить рисунок, чтобы он не «поплыл» с годами.</p></div>
+        <div class="rule"><svg viewBox="0 0 46 46" fill="none" stroke="#141212" stroke-width="2.2"><rect x="9" y="12" width="28" height="26" rx="3"/><path d="M15 12V8h16v4M17 25l4 4 8-8" stroke="#d6372b"/></svg><b>Стерильно</b><p>Одноразовые иглы и материалы, аккуратное рабочее место.</p></div>
+        <div class="rule"><svg viewBox="0 0 46 46" fill="none" stroke="#141212" stroke-width="2.2"><path d="M10 18h22v10a9 9 0 0 1-9 9h-4a9 9 0 0 1-9-9z"/><path d="M32 21h3a4 4 0 0 1 0 8h-3M16 8c0 3 3 3 3 6M22 8c0 3 3 3 3 6" stroke="#d6372b"/></svg><b>Кофе и чай</b><p>Можно прийти заранее и спокойно обсудить идею с мастером.</p></div>
+        <div class="rule"><svg viewBox="0 0 46 46" fill="none" stroke="#141212" stroke-width="2.2"><path d="M8 34c8-2 10-10 15-10s7 8 15 10"/><circle cx="23" cy="14" r="6" stroke="#d6372b"/></svg><b>На связи после</b><p>Расскажем, как ухаживать за тату, и ответим на вопросы, пока заживает.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="works" style="padding-top:0">
+    <div class="wrap">
+      <span class="note-h">свежее из студии</span>
+      <h2 class="h2 mono">Работы</h2>
+      <p class="sub">Фото с Яндекс Карт. На готовом сайте тут будет ваша лента, разбитая по мастерам и стилям.</p>
+      <div class="works">
+        <div class="work"><img src="img/2.jpg" alt="Тату: собака с бабочкой" loading="lazy"><span>графика</span></div>
+        <div class="work"><img src="img/4.jpg" alt="Тату: глаз" loading="lazy"><span>чёрно-серое</span></div>
+        <div class="work"><img src="img/5.jpg" alt="Тату: надпись" loading="lazy"><span>леттеринг</span></div>
+        <div class="work"><img src="img/6.jpg" alt="Тату: портрет" loading="lazy"><span>реализм</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="masters" style="padding-top:0">
+    <div class="wrap">
+      <span class="note-h">выберите, к кому</span>
+      <h2 class="h2 mono">Мастера</h2>
+      <p class="sub">Цитаты — из отзывов гостей на Яндекс Картах.</p>
+      <div class="masters" id="masters-list"></div>
+    </div>
+  </section>
+
+  <section id="form" style="padding-top:0">
+    <div class="wrap">
+      <span class="note-h">три вопроса — и мастер всё поймёт</span>
+      <h2 class="h2 mono">Заявка <span class="r">на эскиз</span></h2>
+      <p class="sub">Ответьте на три вопроса. Заявка уйдёт в WhatsApp, а фото референса приложите прямо в чат. Цену мастер назовёт по эскизу.</p>
+      <div class="form">
+        <div>
+          <div class="q"><h3><i>1</i>Где будет тату</h3><div class="chips" id="zone"></div></div>
+          <div class="q"><h3><i>2</i>Какого размера</h3>
+            <div class="size" id="size">
+              <button class="chip" data-v="мини, до 5 см"><svg viewBox="0 0 34 34" fill="none" stroke="#141212" stroke-width="2"><rect x="13" y="13" width="8" height="8"/></svg>Мини<small>до 5 см</small></button>
+              <button class="chip on" data-v="средняя, 5–15 см"><svg viewBox="0 0 34 34" fill="none" stroke="#141212" stroke-width="2"><rect x="8" y="8" width="18" height="18"/></svg>Средняя<small>5–15 см</small></button>
+              <button class="chip" data-v="большая, от 15 см"><svg viewBox="0 0 34 34" fill="none" stroke="#141212" stroke-width="2"><rect x="3" y="3" width="28" height="28"/></svg>Большая<small>от 15 см</small></button>
+            </div>
+          </div>
+          <div class="q"><h3><i>3</i>Идея</h3>
+            <div class="chips" id="idea" style="margin-bottom:12px">
+              <button class="chip on" data-v="есть референс, пришлю фото">Есть референс</button>
+              <button class="chip" data-v="нужен эскиз с нуля">Нужен эскиз с нуля</button>
+              <button class="chip" data-v="перекрыть старое тату">Перекрыть старое</button>
+            </div>
+            <textarea id="txt" placeholder="Пара слов об идее: что изображено, в каком стиле, цвет или ч/б"></textarea>
+          </div>
+        </div>
+        <aside class="ticket">
+          <h3>Ваша заявка</h3>
+          <div class="hand" id="tk-m">к любому свободному мастеру</div>
+          <dl><dt>Место</dt><dd id="tk-z">—</dd><dt>Размер</dt><dd id="tk-s">—</dd><dt>Идея</dt><dd id="tk-i">—</dd></dl>
+          <a class="btn" id="send" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+          <p class="s">Ответим, подберём мастера и время. Фото референса можно скинуть сразу после сообщения.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="cert" id="cert">
+    <div class="wrap">
+      <div class="row">
+        <div>
+          <span class="note-h" style="color:#e9a39b">лучший подарок — на всю жизнь</span>
+          <h2 class="h2 mono">Сертификат</h2>
+          <p class="sub">Подарите тату тому, кто давно хочет, но всё никак не решится. Номиналы — как у нас в студии.</p>
+        </div>
+        <a class="btn" id="cert-send" target="_blank" rel="noopener">Купить сертификат</a>
+      </div>
+      <div class="certs" id="certs"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="note-h">не мы это сказали</span>
+      <h2 class="h2 mono">Отзывы</h2>
+      <div class="score"><div><b>95%</b> хвалят татуировки</div><div><b>100%</b> — компетентность</div><div><b>94%</b> — интерьер</div><div><b>93%</b> — атмосферу</div></div>
+      <div class="revs">
+        <div class="rev"><p>Сделал татуировку быстро, качественно, посоветовал, как лучше модернизировать эскиз, чтобы выглядело хорошо спустя много лет. Подробно рассказал, как ухаживать.</p><span>о мастере Николае</span></div>
+        <div class="rev"><p>Долго выбирала студию и не прогадала. Огромное спасибо мастеру Никите за доработку эскиза и невероятное исполнение. Рабочее место аккуратно и стерильно, одноразовые материалы.</p><span>о мастере Никите</span></div>
+        <div class="rev"><p>Это была любовь с первого взгляда на эскиз! В студии невероятная атмосфера: стильно, чисто и очень уютно.</p><span>о мастере Андрее Родном</span></div>
+        <div class="rev"><p>Хорошее расположение, красивый интерьер. Есть чай, кофе и всякое такое. Отдельный респект за Андрея. Приду биться ещё раз.</p><span>об Андрее Уши</span></div>
+        <div class="rev"><p>Первый раз сделал тату. Мастер Яна сделала очень качественно, предложила кофе. У Яны очень лёгкая рука.</p><span>о мастере Яне</span></div>
+        <div class="rev"><p>Делала сегодня парное тату с парнем. Сделали за час две татуировки за хорошую цену. Было максимально комфортно.</p><span>о парном тату</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="where" style="padding-top:0">
+    <div class="wrap grid">
+      <div class="pic"><img src="img/3.jpg" alt="Интерьер студии" loading="lazy"></div>
+      <div class="info">
+        <h2 class="h2 mono">Как <span class="r">найти</span></h2>
+        <div><span>Адрес</span><p>Пятницкая ул., 3/4с1</p></div>
+        <div><span>Метро</span><p>«Новокузнецкая» — 460 м</p></div>
+        <div><span>Часы</span><p>Каждый день до 22:00</p></div>
+        <div><span>Запись</span><p><a href="tel:+79153384064">+7 915 338-40-64</a></p></div>
+        <div><a class="btn" href="#form">Оставить заявку</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© Руки-Крюки, тату-студия</span><span>Это демо-концепт сайта. Фото и отзывы взяты с Яндекс Карт.</span></div></footer>
+
+<script>
+const PHONE='79153384064';
+const MASTERS=[
+  ['Николай','Посоветовал, как модернизировать эскиз, чтобы выглядело хорошо спустя годы'],
+  ['Никита','Доработка эскиза и невероятное исполнение'],
+  ['Андрей Родной','Настоящий профи с твёрдой рукой'],
+  ['Андрей Уши','Ну очень талантливый Андрей'],
+  ['Яна','Очень лёгкая рука'],
+];
+const ZONES=['Предплечье','Плечо','Кисть','Шея','Грудь','Рёбра','Спина','Бедро','Голень','Пока не знаю'];
+const CERTS=[4990,9990,14990,19990,24990];
+const st={m:null,z:'Предплечье',s:'средняя, 5–15 см',i:'есть референс, пришлю фото',c:9990};
+const ml=document.getElementById('masters-list');
+MASTERS.forEach(([n,q],k)=>{const b=document.createElement('button');b.className='m';
+  b.innerHTML=`<span class="ini">${n[0]}</span><b>${n}</b><q>${q}</q>`;
+  b.onclick=()=>{st.m=st.m===k?null:k;draw();};ml.appendChild(b);});
+const zl=document.getElementById('zone');
+ZONES.forEach(z=>{const b=document.createElement('button');b.className='chip';b.textContent=z;b.onclick=()=>{st.z=z;draw();};zl.appendChild(b);});
+document.querySelectorAll('#size .chip').forEach(b=>b.onclick=()=>{st.s=b.dataset.v;draw();});
+document.querySelectorAll('#idea .chip').forEach(b=>b.onclick=()=>{st.i=b.dataset.v;draw();});
+const cl=document.getElementById('certs');
+CERTS.forEach(c=>{const b=document.createElement('button');b.className='cc';b.innerHTML=`<b>${c.toLocaleString('ru-RU')} ₽</b><span>на тату</span>`;b.onclick=()=>{st.c=c;draw();};cl.appendChild(b);});
+document.getElementById('txt').oninput=draw;
+function draw(){
+  [...ml.children].forEach((b,k)=>b.classList.toggle('on',st.m===k));
+  [...zl.children].forEach(b=>b.classList.toggle('on',b.textContent===st.z));
+  document.querySelectorAll('#size .chip').forEach(b=>b.classList.toggle('on',b.dataset.v===st.s));
+  document.querySelectorAll('#idea .chip').forEach(b=>b.classList.toggle('on',b.dataset.v===st.i));
+  [...cl.children].forEach((b,k)=>b.classList.toggle('on',CERTS[k]===st.c));
+  const mName=st.m===null?null:MASTERS[st.m][0];
+  document.getElementById('tk-m').textContent=mName?'к мастеру: '+mName:'к любому свободному мастеру';
+  document.getElementById('tk-z').textContent=st.z;
+  document.getElementById('tk-s').textContent=st.s.split(',')[0];
+  document.getElementById('tk-i').textContent=st.i.split(',')[0];
+  const t=document.getElementById('txt').value.trim();
+  const msg=`Здравствуйте! Хочу тату в «Руки-Крюки».\nМастер: ${mName||'любой свободный'}\nМесто: ${st.z}\nРазмер: ${st.s}\nИдея: ${st.i}${t?'\n'+t:''}`;
+  document.getElementById('send').href='https://wa.me/'+PHONE+'?text='+encodeURIComponent(msg);
+  document.getElementById('cert-send').href='https://wa.me/'+PHONE+'?text='+encodeURIComponent(`Здравствуйте! Хочу купить подарочный сертификат на ${st.c.toLocaleString('ru-RU')} ₽. Как его оформить?`);
+  document.getElementById('cert-send').textContent=`Сертификат на ${st.c.toLocaleString('ru-RU')} ₽`;
+}
+draw();
+</script>
+</body>
+</html>
