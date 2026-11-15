@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Бот-администратор Wiga</title>
+<meta name="description" content="Демо Telegram-бота: записывает клиентов, отвечает на вопросы и присылает заявки администратору 24/7.">
+<style>
+:root{
+  --page:#f4f1ec; --ink:#1f1c1a; --muted:#7b726c; --acc:#8a5a2b; --soft:#efe8e1;
+  --chat:#c9d8c0; --in:#ffffff; --out:#e1fec6; --btn:rgba(255,255,255,.72); --btnInk:#2a6db0; --head:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font:15px/1.4 -apple-system,"Segoe UI",Roboto,Manrope,Arial,sans-serif;color:var(--ink);background:var(--page)}
+.wrap{min-height:100%;display:grid;grid-template-columns:400px 390px;grid-template-areas:"pitch phone" "cta phone";column-gap:64px;align-content:center;justify-content:center;padding:32px 24px}
+.pitch{grid-area:pitch;align-self:end}.phone{grid-area:phone;align-self:center}.cta{grid-area:cta;align-self:start}
+.tag{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);background:var(--soft);padding:6px 10px;border-radius:99px;margin-bottom:18px}
+.pitch h1{font:600 40px/1.08 Georgia,"Times New Roman",serif;margin-bottom:16px}
+.pitch h1 em{color:var(--acc)}
+.pitch p{color:var(--muted);margin-bottom:22px}
+.feat{list-style:none;display:grid;gap:12px;margin-bottom:26px}
+.feat li{display:flex;gap:12px;align-items:flex-start}
+.feat b{display:block}
+.feat span{color:var(--muted);font-size:14px}
+.ico{flex:none;width:34px;height:34px;border-radius:10px;background:#fff;display:grid;place-items:center;font-size:17px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.try{font-size:13px;color:var(--muted);border-left:3px solid var(--acc);padding-left:12px}
+.phone{width:390px;height:780px;max-height:calc(100vh - 64px);border-radius:44px;background:#111;padding:12px;box-shadow:0 30px 60px -20px rgba(40,20,10,.35)}
+.screen{height:100%;border-radius:34px;overflow:hidden;display:flex;flex-direction:column;background:var(--chat)}
+.head{background:var(--head);display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid #eee;flex:none}
+.back{color:#2a8bd8;font-size:22px;line-height:1}
+.ava{width:38px;height:38px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font:600 17px Georgia,serif}
+.who b{display:block;font-size:15px}
+.who span{font-size:12.5px;color:#2a8bd8}
+.feed{flex:1;overflow-y:auto;padding:14px 10px 8px;display:flex;flex-direction:column;gap:6px;background-color:var(--chat);
+  background-image:radial-gradient(rgba(255,255,255,.25) 1px,transparent 1.4px);background-size:18px 18px}
+.day{align-self:center;background:rgba(0,0,0,.22);color:#fff;font-size:12.5px;padding:3px 10px;border-radius:99px;margin:4px 0}
+.msg{max-width:84%;padding:7px 10px 6px;border-radius:14px;white-space:pre-line;font-size:14.5px;box-shadow:0 1px 1px rgba(0,0,0,.08);animation:pop .18s ease-out}
+.msg.in{background:var(--in);align-self:flex-start;border-bottom-left-radius:4px}
+.msg.out{background:var(--out);align-self:flex-end;border-bottom-right-radius:4px}
+.msg .t{float:right;font-size:11px;color:#9aa;margin:6px 0 -4px 10px}
+.msg.out .t{color:#5fa35a}
+.msg b{font-weight:600}
+.msg.admin{background:#fff8e6;border:1px dashed #e0b84a;align-self:stretch;max-width:100%}
+.kb{display:grid;gap:5px;align-self:flex-start;width:84%;animation:pop .18s ease-out}
+.kb.c2{grid-template-columns:1fr 1fr}
+.kb button{font:inherit;font-size:14px;color:var(--btnInk);background:var(--btn);backdrop-filter:blur(6px);border:0;border-radius:10px;padding:9px 8px;cursor:pointer;transition:background .15s}
+.kb button:hover{background:#fff}
+.kb button:disabled{opacity:.5;cursor:default}
+.typing{align-self:flex-start;background:var(--in);border-radius:14px;padding:10px 14px;display:flex;gap:4px}
+.typing i{width:6px;height:6px;border-radius:50%;background:#aab;animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+.bar{flex:none;background:#fff;display:flex;gap:8px;padding:8px 10px;align-items:center}
+.bar input{flex:1;font:inherit;border:0;outline:0;background:#f1f2f4;border-radius:99px;padding:10px 14px}
+.bar button{border:0;background:#2a8bd8;color:#fff;width:40px;height:40px;border-radius:50%;font-size:17px;cursor:pointer}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes blink{50%{opacity:.3}}
+.cta{margin-top:26px;background:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.cta b{font-size:18px}
+.cta p{margin:4px 0 12px;font-size:14px}
+.cta a{display:inline-block;background:var(--acc);color:#fff;text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600;font-size:14px;margin-right:8px}
+.cta a.ghost{background:none;color:var(--acc);padding-left:0}
+@media (max-width:860px){
+  .wrap{display:flex;flex-direction:column;align-items:center;gap:22px;padding:18px 16px 28px}
+  .pitch{max-width:420px;width:100%}
+  .pitch h1{font-size:30px}
+  .feat,.try{display:none}
+  .phone{width:100%;max-width:420px;height:78vh;max-height:none;padding:0;background:none;border-radius:20px;box-shadow:0 14px 30px -12px rgba(40,20,10,.35)}
+  .screen{border-radius:20px}
+  .cta{order:3;width:100%;max-width:420px;margin-top:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="pitch">
+    <span class="tag" id="tag"></span>
+    <h1>Администратор, который <em>не спит</em></h1>
+    <p>Telegram-бот отвечает клиентам за секунду, днём и ночью. Показывает цены, записывает и сразу присылает заявку вам.</p>
+    <ul class="feat">
+      <li><div class="ico">🌙</div><div><b>Работает 24/7</b><span>Ночная заявка не потеряется до утра</span></div></li>
+      <li><div class="ico" id="f2i"></div><div><b id="f2t"></b><span id="f2s"></span></div></li>
+      <li><div class="ico">💬</div><div><b>Понимает вопросы</b><span id="f3s"></span></div></li>
+      <li><div class="ico">🔔</div><div><b>Заявка сразу у вас</b><span>С именем, телефоном и услугой</span></div></li>
+    </ul>
+    <p class="try" id="try"></p>
+  </section>
+
+  <div class="phone">
+    <div class="screen">
+      <div class="head">
+        <span class="back">‹</span>
+        <div class="ava" id="ava"></div>
+        <div class="who"><b id="botName"></b><span>бот</span></div>
+      </div>
+      <div class="feed" id="feed"><div class="day">Сегодня</div></div>
+      <form class="bar" id="bar" autocomplete="off">
+        <input id="inp" placeholder="Сообщение" maxlength="200">
+        <button aria-label="Отправить">➤</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="cta">
+    <b>Такой бот для вас: 15 000 ₽</b>
+    <p>Настрою под ваши услуги и цены за 3–5 дней. Заявки будут приходить вам в Telegram.</p>
+    <a href="https://t.me/mellchika" target="_blank" rel="noopener">Написать в Telegram</a>
+    <a class="ghost" href="https://pon4ick122.github.io/demo/portfolio/" target="_blank" rel="noopener">Другие работы →</a>
+  </div>
+</div>
+
+<script>
+const BIZ = {"id": "wiga", "who": "барбершопа Wiga", "ava": "W", "botName": "Wiga · запись", "acc": "#8a5a2b", "icon": "💈", "bookBtn": "Записаться", "q1": "Что делаем?", "f2": ["Записывает сам", "Услуга, барбер, день и время в пару нажатий"], "ex": ["Сколько стоит стрижка с бородой?", "Где вы?"], "hello": "Здравствуйте! Я бот барбершопа Wiga 💈\nЗапишу к мастеру, подскажу цены и как нас найти. Что интересует?", "addr": "Нижегородская ул., 4, корп. 1", "metro": "Римская", "hours": "Ежедневно 10:00–22:00", "phone": "+7 930 000-30-44", "rating": "5,0 на Яндекс Картах, 185 отзывов", "services": [["Стрижки", [["Мужская стрижка", 2000], ["Стрижка машинкой", 1200], ["Детская стрижка", 1700], ["Отец и сын", 3400], ["Друг и друг", 3700]]], ["Борода и бритьё", [["Моделирование бороды", 1600], ["Коррекция бороды", 1200], ["Традиционное бритьё", 1600], ["Стрижка + моделирование бороды", 3400], ["Стрижка + коррекция бороды", 3000]]], ["Уход", [["Уход за лицом Volcano", 1400], ["Чёрная маска", 1200], ["Коррекция воском", 600]]]], "steps": [{"q": "К какому барберу?", "icon": "👤", "opts": ["Любой свободный", "Серж", "Фёдор", "Нодир", "Рустам"]}], "priceNote": "Мытьё головы, массаж и укладка входят в стрижку.", "reviews": ["Мастер Серж внимательно выслушал мои пожелания, а я пришёл со странным пожеланием. В Wiga я получил настоящий праздник для волос.", "Интерьер хвалят 100% гостей, атмосферу 98%.", "Внутри светло, чисто и спокойно. Можно взять кофе и подождать на диване."], "slots": ["10:00", "12:00", "13:30", "15:00", "17:00", "19:00", "20:30"], "done": "Вы записаны!", "after": "Напомню за 2 часа до визита. Чай и кофе гостям бесплатно ☕", "faq": [["чай|кофе", "Да, чай и кофе гостям бесплатно ☕"], ["мыть|масс|уклад", "Мытьё головы, массаж и укладка уже входят в стрижку 💈"]], "soft": "#efe8e1"};
+
+const $ = id => document.getElementById(id);
+const feed = $('feed'), inp = $('inp');
+const rub = n => n.toLocaleString('ru-RU') + ' ₽';
+const now = () => new Date().toTimeString().slice(0,5);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let order = {}, waiting = null;
+
+$('tag').textContent = 'Демо для ' + BIZ.who;
+$('ava').textContent = BIZ.ava;
+$('botName').textContent = BIZ.botName;
+$('f2i').textContent = BIZ.icon;
+$('f2t').textContent = BIZ.f2[0];
+$('f2s').textContent = BIZ.f2[1];
+$('f3s').textContent = BIZ.ex.map(e => '«' + e + '»').join(', ') + ': отвечает по делу';
+$('try').textContent = 'Попробуйте сами: нажимайте кнопки или напишите вопрос, например «' + BIZ.ex[0].toLowerCase().replace(/\?$/,'') + '».';
+
+function scroll(){ feed.scrollTop = feed.scrollHeight; }
+function add(html, cls){
+  const d = document.createElement('div');
+  d.className = 'msg ' + cls;
+  d.innerHTML = html + '<span class="t">' + now() + (cls==='out' ? ' ✓✓' : '') + '</span>';
+  feed.appendChild(d); scroll(); return d;
+}
+function user(text){ lockKb(); add(esc(text), 'out'); }
+function bot(html, buttons, cols){
+  return new Promise(res => {
+    const t = document.createElement('div'); t.className = 'typing'; t.innerHTML = '<i></i><i></i><i></i>';
+    feed.appendChild(t); scroll();
+    setTimeout(() => { t.remove(); add(html, 'in'); if (buttons) kb(buttons, cols); res(); }, 450 + Math.min(html.length * 4, 700));
+  });
+}
+function kb(buttons, cols){
+  const k = document.createElement('div');
+  k.className = 'kb' + (cols === 2 ? ' c2' : '');
+  buttons.forEach(([label, fn]) => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = label;
+    b.onclick = () => { user(label); fn(); };
+    k.appendChild(b);
+  });
+  feed.appendChild(k); scroll();
+}
+function lockKb(){ feed.querySelectorAll('.kb button').forEach(b => b.disabled = true); }
+const cols = list => list.length > 6 || list.every(([l]) => l.length <= 16) ? 2 : 1;
+
+const MENU = () => [[BIZ.icon + ' ' + BIZ.bookBtn, book], ['💰 Цены', prices], ['📍 Как добраться', where], ['⭐ Отзывы', reviews]];
+const menu = (text='Чем ещё помочь?') => bot(text, MENU(), 2);
+const back = () => [[BIZ.icon + ' ' + BIZ.bookBtn, book], ['⬅️ Меню', () => menu()]];
+
+function priceStr(p){
+  if (p == null) return BIZ.noPrice || 'по фото';
+  if (typeof p === 'string') return p;
+  if (!Array.isArray(p)) return rub(p);
+  const [a,b] = p;
+  if (a == null) return rub(b) + ' (' + BIZ.levels[1].toLowerCase() + ')';
+  return rub(a) + ' / ' + rub(b);
+}
+const fromStr = p => p == null ? (BIZ.noPrice || 'по фото') : typeof p === 'string' ? p : Array.isArray(p) ? 'от ' + rub(p[0] ?? p[1]) : rub(p);
+
+function prices(){
+  let h = '<b>Цены</b>' + (BIZ.levels ? ' (' + BIZ.levels.join(' / ').toLowerCase() + ')' : '') + '\n';
+  BIZ.services.forEach(([cat, list]) => {
+    h += '\n<b>' + cat + '</b>\n' + list.map(([n,p]) => '• ' + n + ': ' + priceStr(p)).join('\n') + '\n';
+  });
+  if (BIZ.priceNote) h += '\n' + BIZ.priceNote;
+  bot(h.trim(), back(), 2);
+}
+function where(){ bot('📍 <b>' + BIZ.addr + '</b>\n🚇 ' + BIZ.metro + '\n🕙 ' + BIZ.hours + '\n📞 ' + BIZ.phone, back(), 2); }
+function reviews(){ bot('⭐ ' + BIZ.rating + '\n\n' + BIZ.reviews.map(x => '«' + x + '»').join('\n\n'), back(), 2); }
+
+/* --- запись --- */
+function book(){
+  order = { extra: [], add: 0 };
+  if (BIZ.services.length === 1) return pickService(...BIZ.services[0], true);
+  bot(BIZ.q1, BIZ.services.map(([cat, list]) => [cat, () => pickService(cat, list)]));
+}
+function pickService(cat, list, first){
+  const btns = list.map(([n,p]) => [n + ' · ' + fromStr(p), () => { order.service = (BIZ.services.length > 1 && !/^(Ещё|Дополнительно)/.test(cat) ? cat + ', ' : '') + n; order.price = p; pickLevel(); }]);
+  bot(first ? BIZ.q1 : cat + ': выберите', btns, cols(btns));
+}
+function pickLevel(){
+  const p = order.price;
+  if (!BIZ.levels || !Array.isArray(p)){ order.sum = Array.isArray(p) ? (p[0] ?? p[1]) : p; return step(0); }
+  if (p[0] == null){ order.level = BIZ.levels[1]; order.sum = p[1]; return step(0); }
+  bot(BIZ.levelQ || 'К какому мастеру?', BIZ.levels.map((l,i) => [l + ' · ' + rub(p[i]), () => { order.level = l; order.sum = p[i]; step(0); }]));
+}
+function step(i){
+  const s = (BIZ.steps || [])[i];
+  if (!s) return pickDay();
+  const btns = s.opts.map(o => {
+    const [label, add] = Array.isArray(o) ? o : [o, 0];
+    return [label + (add ? ' · +' + rub(add) : ''), () => {
+      if (s.mult) order.mult = parseInt(label) || 1;
+      else if (!/^(нет|без|не нужно|любой)/i.test(label)) order.extra.push((s.icon || '•') + ' ' + label);
+      order.add += add || 0; step(i + 1);
+    }];
+  });
+  bot(s.q, btns, cols(btns));
+}
+function pickDay(){
+  const names = ['вс','пн','вт','ср','чт','пт','сб'], days = [];
+  for (let i = 0; i < 4; i++){
+    const d = new Date(); d.setDate(d.getDate() + i);
+    const label = i === 0 ? 'Сегодня' : i === 1 ? 'Завтра' : names[d.getDay()] + ', ' + d.getDate() + '.' + String(d.getMonth()+1).padStart(2,'0');
+    days.push([label, () => { order.day = label; pickTime(i); }]);
+  }
+  bot(BIZ.dayQ || 'Когда удобно?', days, 2);
+}
+function pickTime(i){
+  const h = new Date().getHours();
+  const slots = BIZ.slots.filter(s => i > 0 || !/^\d/.test(s) || +s.split(/[:–-]/)[0] > h + (s.includes('–') ? -1 : 1));
+  if (!slots.length) return bot('На сегодня свободных окон уже нет 😔 Выберите другой день.').then(pickDay);
+  bot(BIZ.timeQ || 'Свободное время:', slots.map(s => [s, () => { order.time = s; askName(); }]), 2);
+}
+function askName(){ waiting = 'name'; bot('Как к вам обращаться? Напишите имя 👇'); inp.focus(); }
+function askPhone(){ waiting = 'phone'; bot('Приятно познакомиться, ' + esc(order.name) + '! Оставьте номер телефона для подтверждения 👇'); inp.focus(); }
+function total(){
+  if (typeof order.sum !== 'number') return priceStr(order.sum);
+  const t = order.sum * (order.mult || 1) + order.add;
+  return rub(t) + (BIZ.approx ? ' (примерно)' : '');
+}
+async function confirmOrder(){
+  waiting = null;
+  const lines = [BIZ.icon + ' ' + order.service];
+  if (order.level) lines.push('👤 ' + order.level);
+  if (order.mult) lines.push('👥 Мест: ' + order.mult);
+  lines.push(...order.extra, '📅 ' + order.day + ', ' + order.time, '💰 ' + total(), '📍 ' + BIZ.addr);
+  await bot('✅ <b>' + BIZ.done + '</b>\n\n' + lines.join('\n') + '\n\n' + BIZ.after);
+  setTimeout(() => {
+    add('🔔 <b>Так заявку видит администратор</b>\n\nНовая заявка\n' + esc(order.name) + ', ' + esc(order.phone) + '\n' +
+        lines.slice(0, -1).map(l => l.replace(/^\S+ /, '')).join(' · '), 'admin');
+    setTimeout(() => menu('Если что-то изменится, просто напишите сюда 🙂'), 900);
+  }, 700);
+}
+
+/* --- свободный текст --- */
+const stems = s => s.toLowerCase().replace(/ё/g,'е').split(/[^a-zа-я0-9]+/).filter(w => w.length >= 3);
+const same = (a, b) => a === b || (a.length >= 4 && b.length >= 4 && a.slice(0, Math.max(4, Math.min(a.length, b.length) - 2)) === b.slice(0, Math.max(4, Math.min(a.length, b.length) - 2)));
+const hits = (name, words) => stems(name).filter(w => words.some(x => same(w, x))).length;
+function findService(t){
+  const words = stems(t); let best = null, score = 0;
+  for (const [cat, list] of BIZ.services) for (const [n,p] of list){
+    const sc = hits(n, words) * 2 + hits(cat, words);
+    if (sc > score){ score = sc; best = [cat, n, p, list, sc < 2]; }
+  }
+  return best;
+}
+function smart(text){
+  const t = text.toLowerCase().replace(/ё/g,'е');
+  for (const [re, ans] of BIZ.faq || []) if (new RegExp(re, 'i').test(t)) return bot(ans, MENU(), 2);
+  const s = findService(t);
+  const askPrice = /цен|стоит|сколько|прайс|стоимост|почем/.test(t);
+  if (/парков/.test(t)) return bot('Передал ваш вопрос администратору, он ответит в ближайшее время 🙌\nА пока могу помочь с этим:', MENU(), 2);
+  if (s && s[4]) return bot('<b>' + s[0] + '</b>\n' + s[3].map(([n,p]) => '• ' + n + ': ' + priceStr(p)).join('\n') + '\n\nЗаписать вас?',
+    [['✅ Да', () => pickService(s[0], s[3])], ['⬅️ Меню', () => menu()]], 2);
+  if (s) return bot(s[1] + (BIZ.services.length > 1 ? ' (' + s[0].toLowerCase() + ')' : '') + ': ' + priceStr(s[2]) + '\nЗаписать вас?',
+    [['✅ Да', () => pickService(s[0], s[3])], ['⬅️ Меню', () => menu()]], 2);
+  if (askPrice) return prices();
+  if (/где|адрес|добрат|метро|найти|доехать/.test(t)) return where();
+  if (/работа|часы|открыт|выходн|до скольк|круглосут/.test(t)) return bot('🕙 ' + BIZ.hours + '. Записаться можно прямо здесь, даже ночью.', MENU(), 2);
+  if (/запис|окошк|свобод|хочу|брон/.test(t)) return book();
+  if (/отзыв|рейтинг/.test(t)) return reviews();
+  if (/привет|здравств|добр/.test(t)) return menu('Здравствуйте! 👋 Чем помочь?');
+  if (/спасиб/.test(t)) return menu('Всегда пожалуйста! 💛');
+  return bot('Передал ваш вопрос администратору, он ответит в ближайшее время 🙌\nА пока могу помочь с этим:', MENU(), 2);
+}
+
+$('bar').addEventListener('submit', e => {
+  e.preventDefault();
+  const text = inp.value.trim(); if (!text) return;
+  inp.value = ''; user(text);
+  if (waiting === 'name'){ order.name = text.slice(0,40); return askPhone(); }
+  if (waiting === 'phone'){
+    if ((text.match(/\d/g) || []).length < 10) return bot('Кажется, в номере не хватает цифр. Попробуйте ещё раз, например +7 900 123-45-67');
+    order.phone = text; return confirmOrder();
+  }
+  smart(text);
+});
+
+setTimeout(() => bot(BIZ.hello, MENU(), 2), 400);
+</script>
+</body>
+</html>
