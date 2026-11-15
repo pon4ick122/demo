@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Wiga — барбершоп на Нижегородской</title>
+<meta name="description" content="Барбершоп Wiga: стрижки, борода, традиционное бритьё. Нижегородская ул., 4, корп. 1. Ежедневно 10:00–22:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#18352a; --green-2:#1f4334; --green-3:#2a5643;
+  --brass:#c3a265; --brass-2:#e2c995; --wood:#6b3420;
+  --paper:#ecefe6; --ink:#122019; --muted:#a9b8ad;
+  --line:rgba(195,162,101,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--green);color:var(--paper);font:400 17px/1.65 Literata,Georgia,serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass-2);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+h1,h2,h3,.forum{font-family:Forum,serif;font-weight:400;letter-spacing:.01em}
+
+/* top */
+.top{position:absolute;inset:0 0 auto;z-index:5}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:86px}
+.logo{font-family:Forum,serif;font-size:34px;letter-spacing:.18em;text-decoration:none;color:var(--brass-2)}
+.top nav{display:flex;gap:30px;font-size:15px}
+.top nav a{text-decoration:none;color:var(--paper);opacity:.85}
+.top nav a:hover{opacity:1;color:var(--brass-2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:500 15px/1 Literata,serif;padding:16px 26px;border-radius:2px;border:1px solid var(--brass);background:var(--brass);color:var(--ink);text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:var(--brass-2)}
+.btn.ghost{background:transparent;color:var(--brass-2)}
+.btn.ghost:hover{background:rgba(195,162,101,.12)}
+
+/* hero */
+.hero{position:relative;padding:150px 0 90px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(46px,6.2vw,86px);line-height:1.02;color:var(--paper)}
+.hero p.lead{margin:26px 0 36px;max-width:30em;color:#cfd8cf;font-size:18px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.facts{display:flex;gap:34px;margin-top:46px;padding-top:26px;border-top:1px solid var(--line);flex-wrap:wrap}
+.facts div{font-size:14px;color:var(--muted)}
+.facts b{display:block;font:400 30px/1.1 Forum,serif;color:var(--brass-2)}
+/* the mirror */
+.mirror{position:relative;justify-self:end;width:min(460px,100%)}
+.mirror .frame{position:relative;padding:18px;background:linear-gradient(160deg,#8a4a2c,#5a2a17 40%,#7b3f24 70%,#4a2213);border-radius:230px 230px 6px 6px;box-shadow:0 40px 80px rgba(0,0,0,.45),inset 0 0 0 2px rgba(255,220,170,.18)}
+.mirror .glass{border-radius:212px 212px 2px 2px;overflow:hidden;aspect-ratio:4/5;box-shadow:inset 0 0 0 3px var(--brass)}
+.mirror .glass img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.mirror .lamp{position:absolute;top:-34px;left:50%;transform:translateX(-50%);width:62px;height:30px;background:#b3261e;border-radius:31px 31px 4px 4px;box-shadow:0 0 60px 18px rgba(255,190,120,.25)}
+.mirror .lamp:before{content:"";position:absolute;left:50%;top:-70px;width:2px;height:70px;background:#0c1a14}
+.badge{position:absolute;left:-54px;bottom:40px;background:var(--paper);color:var(--ink);padding:16px 20px;border-radius:2px;box-shadow:0 18px 40px rgba(0,0,0,.35);max-width:210px}
+.badge .r{font:400 34px/1 Forum,serif;color:var(--green)}
+.badge .s{color:#c9921b;letter-spacing:2px;font-size:15px}
+.badge small{display:block;font-size:13px;color:#4c5a50;line-height:1.35;margin-top:4px}
+
+/* sections */
+section{padding:110px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:54px}
+.head h2{font-size:clamp(36px,4.4vw,58px);line-height:1.05}
+.head p{max-width:27em;color:var(--muted)}
+
+/* menu card */
+.menu{background:var(--green-2)}
+.card{position:relative;background:var(--paper);color:var(--ink);padding:64px 70px;border-radius:3px}
+.card:before{content:"";position:absolute;inset:12px;border:1px solid #b99b62;pointer-events:none}
+.card:after{content:"";position:absolute;inset:18px;border:1px solid rgba(185,155,98,.45);pointer-events:none}
+.card .title{text-align:center;margin-bottom:44px}
+.card .title h3{font-size:44px;color:var(--green)}
+.card .title p{color:#6b766d;font-size:15px}
+.card .orn{display:block;margin:10px auto 0;width:140px;height:14px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px 70px}
+.grp h4{font:400 24px/1.2 Forum,serif;color:var(--wood);margin:0 0 14px;padding-bottom:8px;border-bottom:1px solid #d6cdb8}
+.grp+.grp{margin-top:34px}
+.row{display:flex;align-items:baseline;gap:10px;padding:9px 0}
+.row .n{font-weight:500}
+.row .n small{display:block;font-weight:400;color:#6b766d;font-size:14px;line-height:1.4}
+.row .dots{flex:1;border-bottom:1px dotted #9aa598;transform:translateY(-5px);min-width:20px}
+.row .p{font:400 22px/1 Forum,serif;color:var(--green);white-space:nowrap}
+.card .foot{text-align:center;margin-top:40px;color:#6b766d;font-size:14px}
+
+/* room */
+.room .grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:120px;gap:14px}
+.room figure{overflow:hidden;border-radius:2px;position:relative}
+.room figure img{width:100%;height:100%;object-fit:cover}
+.room figure:nth-child(1){grid-column:1/8;grid-row:span 4}
+.room figure:nth-child(2){grid-column:8/13;grid-row:span 2}
+.room figure:nth-child(3){grid-column:8/13;grid-row:span 2}
+.room figure:nth-child(4){grid-column:1/5;grid-row:span 3}
+.room figure:nth-child(5){grid-column:5/9;grid-row:span 3}
+.room figure:nth-child(6){grid-column:9/13;grid-row:span 3}
+.room figcaption{position:absolute;left:14px;bottom:12px;background:rgba(18,32,25,.82);padding:6px 12px;font-size:14px;color:var(--paper)}
+.points{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:64px}
+.points h3{font-size:28px;color:var(--brass-2);margin-bottom:8px}
+.points p{color:#c4cfc6}
+
+/* booking */
+.book{background:var(--paper);color:var(--ink)}
+.book .head p{color:#5d6a60}
+.book .lay{display:grid;grid-template-columns:1.25fr .75fr;gap:46px;align-items:start}
+.step{margin-bottom:34px}
+.step h3{font-size:26px;color:var(--green);margin-bottom:14px}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{font:500 15px/1.2 Literata,serif;padding:12px 18px;border:1px solid #c5ccbf;background:#fff;color:var(--ink);border-radius:2px;cursor:pointer;transition:border-color .15s,background .15s}
+.opt small{display:block;font-weight:400;color:#6b766d;font-size:13px;margin-top:3px}
+.opt:hover{border-color:var(--green-3)}
+.opt[aria-pressed=true]{background:var(--green);border-color:var(--green);color:var(--paper)}
+.opt[aria-pressed=true] small{color:var(--brass-2)}
+.ticket{position:sticky;top:24px;background:var(--green);color:var(--paper);padding:34px 32px;border-radius:2px}
+.ticket h3{font-size:30px;color:var(--brass-2);margin-bottom:18px}
+.ticket dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:15px}
+.ticket dt{color:var(--muted)}
+.ticket dd{text-align:right}
+.ticket .sum{display:flex;justify-content:space-between;align-items:baseline;margin:22px 0;padding-top:18px;border-top:1px solid var(--line)}
+.ticket .sum b{font:400 40px/1 Forum,serif;color:var(--brass-2)}
+.ticket .btn{width:100%}
+.ticket p.note{font-size:13px;color:var(--muted);margin-top:14px;line-height:1.5}
+
+/* reviews */
+.revs .list{display:grid;grid-template-columns:repeat(3,1fr);gap:46px}
+.rev{border-top:1px solid var(--brass);padding-top:24px}
+.rev q{display:block;font-size:18px;line-height:1.6;quotes:none;color:#dfe6de}
+.rev span{display:block;margin-top:16px;color:var(--brass-2);font-size:14px}
+.rate{display:flex;align-items:center;gap:18px;margin-bottom:60px}
+.rate b{font:400 74px/1 Forum,serif;color:var(--brass-2)}
+.rate div{color:var(--muted);font-size:15px}
+
+/* visit */
+.visit{background:var(--green-2)}
+.visit .lay{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.visit dl{display:grid;grid-template-columns:140px 1fr;gap:18px 20px;margin:30px 0 36px}
+.visit dt{color:var(--muted)}
+.visit dd a{color:var(--brass-2)}
+.visit .ph{border-radius:2px;overflow:hidden;aspect-ratio:4/3}
+.visit .ph img{width:100%;height:100%;object-fit:cover}
+footer{padding:34px 0;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.mbar{display:none}
+@media (max-width:920px){
+  .top nav{display:none}
+  .hero{padding:110px 0 60px}
+  .hero .wrap,.book .lay,.visit .lay{grid-template-columns:1fr}
+  .mirror{justify-self:center;width:min(360px,88%);margin-top:30px}
+  .badge{left:-20px;bottom:20px}
+  .card{padding:46px 26px}
+  .cols{grid-template-columns:1fr}
+  .head{flex-direction:column;align-items:start}
+  .room .grid{grid-auto-rows:90px}
+  .room figure:nth-child(n){grid-column:span 12;grid-row:span 3}
+  .room figure:nth-child(2),.room figure:nth-child(3){grid-column:span 6;grid-row:span 2}
+  .room figure:nth-child(4),.room figure:nth-child(5),.room figure:nth-child(6){display:none}
+  .points,.revs .list{grid-template-columns:1fr;gap:30px}
+  .ticket{position:static}
+  section{padding:76px 0}
+  .visit dl{grid-template-columns:110px 1fr}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:9;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+  .mbar .btn{flex:1}
+  footer{padding-bottom:90px}
+}
+@media (max-width:420px){.wrap{padding:0 18px}.facts{gap:22px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+/* one entrance moment: the mirror light comes on */
+@keyframes lampOn{0%{box-shadow:0 0 0 0 rgba(255,190,120,0)}100%{box-shadow:0 0 60px 18px rgba(255,190,120,.25)}}
+@keyframes glassIn{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
+.mirror .lamp{animation:lampOn 1.6s .3s both}
+.mirror .glass img{animation:glassIn 1.4s .1s both}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#">WIGA</a>
+    <nav aria-label="Разделы">
+      <a href="#menu">Цены</a><a href="#room">Барбершоп</a><a href="#reviews">Отзывы</a><a href="#visit">Как найти</a>
+    </nav>
+    <a class="btn ghost" href="#book">Записаться</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Барбершоп, где хочется задержаться после стрижки</h1>
+      <p class="lead">Кожаные диваны, дерево, кофе в мороз и мастера, которые слушают, чего вы хотите. На Нижегородской, каждый день с 10 до 22.</p>
+      <div class="actions">
+        <a class="btn" href="#book">Выбрать мастера и время</a>
+        <a class="btn ghost" href="#menu">Посмотреть цены</a>
+      </div>
+      <div class="facts">
+        <div><b>5,0</b>на Яндекс Картах</div>
+        <div><b>370</b>оценок гостей</div>
+        <div><b>10–22</b>без выходных</div>
+      </div>
+    </div>
+    <div class="mirror" aria-hidden="true">
+      <span class="lamp"></span>
+      <div class="frame"><div class="glass"><img src="img/7.jpg" alt=""></div></div>
+      <div class="badge"><div class="r">5,0</div><div class="s">★★★★★</div><small>98% гостей хвалят атмосферу</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="card">
+      <div class="title">
+        <h3>Меню барбершопа</h3>
+        <p>Мытьё головы, массаж и укладка входят в стрижку</p>
+        <svg class="orn" viewBox="0 0 140 14" aria-hidden="true"><path d="M0 7h52M88 7h52" stroke="#b99b62"/><path d="M70 1l6 6-6 6-6-6z" fill="none" stroke="#b99b62"/><circle cx="58" cy="7" r="1.6" fill="#b99b62"/><circle cx="82" cy="7" r="1.6" fill="#b99b62"/></svg>
+      </div>
+      <div class="cols">
+        <div>
+          <div class="grp"><h4>Стрижки</h4>
+            <div class="row"><span class="n">Мужская стрижка</span><span class="dots"></span><span class="p">2 000 ₽</span></div>
+            <div class="row"><span class="n">Стрижка машинкой<small>одна насадка</small></span><span class="dots"></span><span class="p">1 200 ₽</span></div>
+            <div class="row"><span class="n">Детская стрижка<small>до 12 лет</small></span><span class="dots"></span><span class="p">1 700 ₽</span></div>
+            <div class="row"><span class="n">Укладка</span><span class="dots"></span><span class="p">600 ₽</span></div>
+            <div class="row"><span class="n">Камуфляж седины, голова</span><span class="dots"></span><span class="p">1 600 ₽</span></div>
+          </div>
+          <div class="grp"><h4>Вдвоём</h4>
+            <div class="row"><span class="n">Отец и сын</span><span class="dots"></span><span class="p">3 400 ₽</span></div>
+            <div class="row"><span class="n">Друг и друг</span><span class="dots"></span><span class="p">3 700 ₽</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="grp"><h4>Борода и бритьё</h4>
+            <div class="row"><span class="n">Моделирование бороды</span><span class="dots"></span><span class="p">1 600 ₽</span></div>
+            <div class="row"><span class="n">Коррекция бороды</span><span class="dots"></span><span class="p">1 200 ₽</span></div>
+            <div class="row"><span class="n">Традиционное бритьё</span><span class="dots"></span><span class="p">1 600 ₽</span></div>
+            <div class="row"><span class="n">Камуфляж седины, борода</span><span class="dots"></span><span class="p">1 400 ₽</span></div>
+            <div class="row"><span class="n">Стрижка и моделирование бороды</span><span class="dots"></span><span class="p">3 400 ₽</span></div>
+            <div class="row"><span class="n">Стрижка и коррекция бороды</span><span class="dots"></span><span class="p">3 000 ₽</span></div>
+          </div>
+          <div class="grp"><h4>Уход</h4>
+            <div class="row"><span class="n">Уход за лицом Volcano</span><span class="dots"></span><span class="p">1 400 ₽</span></div>
+            <div class="row"><span class="n">Очищающая чёрная маска</span><span class="dots"></span><span class="p">1 200 ₽</span></div>
+            <div class="row"><span class="n">Коррекция воском</span><span class="dots"></span><span class="p">600 ₽</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="foot">Чай и кофе гостям — бесплатно</p>
+    </div>
+  </div>
+</section>
+
+<section class="room" id="room">
+  <div class="wrap">
+    <div class="head">
+      <h2>Зал, похожий на старый клуб</h2>
+      <p>Зеркала в резных рамах, винтажные кресла и библиотека с гитарой в зоне ожидания. Гости пишут, что внутри светло, чисто и спокойно.</p>
+    </div>
+    <div class="grid">
+      <figure><img src="img/1.jpg" alt="Зал барбершопа Wiga с винтажными креслами" loading="lazy"></figure>
+      <figure><img src="img/2.jpg" alt="Зона ожидания с кожаными диванами" loading="lazy"><figcaption>Зона ожидания</figcaption></figure>
+      <figure><img src="img/6.jpg" alt="Инструменты барбера" loading="lazy"><figcaption>Чистые инструменты</figcaption></figure>
+      <figure><img src="img/4.jpg" alt="Рабочее место с зеркалом в деревянной раме" loading="lazy"></figure>
+      <figure><img src="img/3.jpg" alt="Машинки и средства для укладки" loading="lazy"></figure>
+      <figure><img src="img/5.jpg" alt="Ряд кресел в зале" loading="lazy"></figure>
+    </div>
+    <div class="points">
+      <div><h3>Слышат, что вы хотите</h3><p>Даже если пришли со странной идеей: мастер обсудит, подскажет и сделает так, что стрижка держит форму, пока отрастает.</p></div>
+      <div><h3>Массаж головы</h3><p>Входит в каждую стрижку вместе с мытьём и укладкой. Гости отдельно хвалят его в отзывах.</p></div>
+      <div><h3>Без суеты</h3><p>Работаем по записи, поэтому в зале спокойно. Можно взять кофе и подождать на диване.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="head">
+      <h2>Запись за полминуты</h2>
+      <p>Выберите услугу, мастера и время. Заявка уйдёт администратору в WhatsApp, он подтвердит запись.</p>
+    </div>
+    <div class="lay">
+      <div>
+        <div class="step"><h3>Услуга</h3><div class="opts" data-k="svc">
+          <button class="opt" data-v="Мужская стрижка" data-p="2000">Мужская стрижка<small>2 000 ₽</small></button>
+          <button class="opt" data-v="Стрижка и моделирование бороды" data-p="3400">Стрижка и борода<small>3 400 ₽</small></button>
+          <button class="opt" data-v="Моделирование бороды" data-p="1600">Борода<small>1 600 ₽</small></button>
+          <button class="opt" data-v="Традиционное бритьё" data-p="1600">Бритьё<small>1 600 ₽</small></button>
+          <button class="opt" data-v="Отец и сын" data-p="3400">Отец и сын<small>3 400 ₽</small></button>
+          <button class="opt" data-v="Друг и друг" data-p="3700">Друг и друг<small>3 700 ₽</small></button>
+        </div></div>
+        <div class="step"><h3>Дополнить</h3><div class="opts" data-k="add" data-multi>
+          <button class="opt" data-v="Чёрная маска" data-p="1200">Чёрная маска<small>+1 200 ₽</small></button>
+          <button class="opt" data-v="Уход Volcano" data-p="1400">Уход Volcano<small>+1 400 ₽</small></button>
+          <button class="opt" data-v="Воск" data-p="600">Воск<small>+600 ₽</small></button>
+          <button class="opt" data-v="Камуфляж седины" data-p="1400">Камуфляж седины<small>+1 400 ₽</small></button>
+        </div></div>
+        <div class="step"><h3>Мастер</h3><div class="opts" data-k="master">
+          <button class="opt" data-v="Любой свободный">Любой свободный</button>
+          <button class="opt" data-v="Серж">Серж</button>
+          <button class="opt" data-v="Фёдор">Фёдор</button>
+          <button class="opt" data-v="Нодир">Нодир</button>
+          <button class="opt" data-v="Рустам">Рустам</button>
+        </div></div>
+        <div class="step"><h3>Когда</h3><div class="opts" data-k="day">
+          <button class="opt" data-v="Сегодня">Сегодня</button>
+          <button class="opt" data-v="Завтра">Завтра</button>
+          <button class="opt" data-v="На выходных">На выходных</button>
+        </div>
+        <div class="opts" data-k="time" style="margin-top:10px">
+          <button class="opt" data-v="утром">10–13</button>
+          <button class="opt" data-v="днём">13–18</button>
+          <button class="opt" data-v="вечером">18–22</button>
+        </div></div>
+      </div>
+      <aside class="ticket" aria-live="polite">
+        <h3>Ваша запись</h3>
+        <dl>
+          <dt>Услуга</dt><dd id="t-svc">не выбрана</dd>
+          <dt>Мастер</dt><dd id="t-master">любой</dd>
+          <dt>Когда</dt><dd id="t-when">обсудим</dd>
+        </dl>
+        <div class="sum"><span>Итого</span><b id="t-sum">0 ₽</b></div>
+        <a class="btn" id="send" href="#" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+        <p class="note">Оплата на месте после стрижки. Если планы поменяются, просто напишите в тот же чат.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="revs" id="reviews">
+  <div class="wrap">
+    <div class="rate"><b>5,0</b><div>370 оценок и 185 отзывов на Яндекс Картах.<br>Интерьер хвалят 100% гостей, атмосферу 98%.</div></div>
+    <div class="list">
+      <div class="rev"><q>Мастер Серж внимательно выслушал мои пожелания, а я, признаюсь, пришёл со странным пожеланием. В Wiga я получил не просто стрижку, а настоящий праздник для волос.</q><span>Отзыв о мастере Серже</span></div>
+      <div class="rev"><q>Фёдор — внимательный и техничный барбер. Идеально плавные переходы, чёткие линии, симметрия. Работает чистыми инструментами, это важно!</q><span>Отзыв о мастере Фёдоре</span></div>
+      <div class="rev"><q>Приятная атмосфера, отличные специалисты, предложили и чай, и кофе — в сильный мороз самое то. Нодир — мастер своего дела, а массаж головы бомбовый.</q><span>Гости о Нодире</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap lay">
+    <div>
+      <h2 style="font-size:clamp(36px,4.4vw,58px);line-height:1.05">Как нас найти</h2>
+      <dl>
+        <dt>Адрес</dt><dd>Нижегородская ул., 4, корп. 1</dd>
+        <dt>Рядом</dt><dd>Остановка «Абельмановская Застава», 140 м</dd>
+        <dt>Часы</dt><dd>Каждый день с 10:00 до 22:00</dd>
+        <dt>Телефон</dt><dd><a href="tel:+79300003044">+7 930 000-30-44</a></dd>
+      </dl>
+      <div class="actions" style="display:flex;gap:14px;flex-wrap:wrap">
+        <a class="btn" href="#book">Записаться</a>
+        <a class="btn ghost" href="https://yandex.ru/maps/org/wiga/132892543104/" target="_blank" rel="noopener">Открыть на карте</a>
+      </div>
+    </div>
+    <div class="ph"><img src="img/8.jpg" alt="Зона ожидания Wiga" loading="lazy"></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© Wiga, барбершоп</span><span class="demo">Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></div></footer>
+<div class="mbar"><a class="btn" href="#book">Записаться</a></div>
+
+<script>
+const PHONE='79300003044';
+const st={svc:null,add:[],master:'Любой свободный',day:null,time:null};
+const fmt=n=>n.toLocaleString('ru-RU').replace(/ /g,' ')+' ₽';
+document.querySelectorAll('.opts').forEach(g=>{
+  const k=g.dataset.k, multi=g.hasAttribute('data-multi');
+  g.querySelectorAll('.opt').forEach(b=>{
+    b.setAttribute('aria-pressed','false'); b.type='button';
+    b.addEventListener('click',()=>{
+      if(multi){const on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);st.add=[...g.querySelectorAll('[aria-pressed=true]')].map(x=>({v:x.dataset.v,p:+x.dataset.p}));}
+      else{g.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');st[k]=k==='svc'?{v:b.dataset.v,p:+b.dataset.p}:b.dataset.v;}
+      draw();
+    });
+  });
+});
+document.querySelector('[data-k=master] .opt').setAttribute('aria-pressed','true');
+function draw(){
+  const sum=(st.svc?st.svc.p:0)+st.add.reduce((a,x)=>a+x.p,0);
+  document.getElementById('t-svc').textContent=st.svc?[st.svc.v,...st.add.map(a=>a.v.toLowerCase())].join(', '):'не выбрана';
+  document.getElementById('t-master').textContent=st.master;
+  document.getElementById('t-when').textContent=[st.day,st.time].filter(Boolean).join(', ')||'обсудим';
+  document.getElementById('t-sum').textContent=fmt(sum);
+  const msg=`Здравствуйте! Хочу записаться в Wiga.\nУслуга: ${st.svc?st.svc.v:'подскажите'}${st.add.length?' + '+st.add.map(a=>a.v.toLowerCase()).join(', '):''}\nМастер: ${st.master}\nКогда: ${[st.day,st.time].filter(Boolean).join(', ')||'подскажите свободное время'}\nПо прайсу: ${fmt(sum)}`;
+  document.getElementById('send').href='https://wa.me/'+PHONE+'?text='+encodeURIComponent(msg);
+}
+draw();
+</script>
+</body>
+</html>
