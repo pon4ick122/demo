@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jam Sneaker Workshop — чистка и реставрация обуви у Курской</title>
+<meta name="description" content="Jam Sneaker Workshop: химчистка, ремонт, покраска и кастом кроссовок и обуви. Нижний Сусальный пер., 5с9, 168 м от «Курской». 5,0 на Яндекс Картах.">
+<meta property="og:title" content="Jam Sneaker Workshop — вернём пару к жизни">
+<meta property="og:description" content="Чистка, реставрация, покраска и кастом. Посмотрите «до/после» и соберите уход для своей пары.">
+<meta property="og:image" content="img/jordan-after.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0c0d;--bg2:#151517;--ink:#f3f1ec;--mute:#8d8a84;--line:rgba(243,241,236,.14);--red:#ff3d24;--red2:#ff6a3d;--paper:#efece6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 Onest,system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.wrap{max-width:1320px;margin:0 auto;padding-left:24px;padding-right:24px}
+.d{font-family:"Dela Gothic One",sans-serif;font-weight:400;letter-spacing:-.02em}
+.m{font:500 12px/1.3 "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+.red{color:var(--red)}
+::selection{background:var(--red);color:#fff}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 24px;mix-blend-mode:difference;color:#fff}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo b{font:400 22px/1 "Dela Gothic One"}
+.logo span{font:500 10px/1.15 "JetBrains Mono";letter-spacing:.1em;text-transform:uppercase}
+.nav ul{display:flex;gap:28px;list-style:none}
+.nav ul a{text-decoration:none;font:500 12px "JetBrains Mono";letter-spacing:.08em;text-transform:uppercase}
+.nav ul a:hover{text-decoration:line-through}
+@media(max-width:860px){.nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;height:100vh;min-height:640px;overflow:hidden}
+#gl{position:absolute;inset:0;width:100%;height:100%}
+.fallback{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);opacity:.35}
+.fallback img{width:100%;height:100%;object-fit:cover}
+.gl-ok .fallback{display:none}
+.hero-ui{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 24px 34px;pointer-events:none}
+.hero h1{font:400 clamp(54px,13.4vw,220px)/.84 "Dela Gothic One";letter-spacing:-.045em;text-transform:uppercase}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .ln>span{display:inline-block}
+.hero h1 .o{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:26px;pointer-events:auto}
+.hero-row p{max-width:430px;color:#cfccc5;font-size:17px}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.tag{position:absolute;top:84px;left:24px;right:24px;display:flex;justify-content:space-between;gap:14px;pointer-events:none}
+.rate{display:flex;align-items:center;gap:12px}
+.rate b{font:400 34px/1 "Dela Gothic One"}
+.scroll{display:flex;align-items:center;gap:10px}
+.scroll i{width:1px;height:40px;background:var(--ink);transform-origin:top;animation:sc 1.8s ease-in-out infinite}
+@keyframes sc{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(max-width:760px){.hero-row{flex-direction:column;align-items:flex-start}.hero h1 .o{-webkit-text-stroke:1.4px var(--ink)}.tag .scroll{display:none}}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:17px 24px;border-radius:999px;border:0;cursor:pointer;text-decoration:none;font:700 15px/1 Onest;background:var(--red);color:#fff;transition:transform .25s,background .25s;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-2px);background:var(--red2)}
+.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.btn .ar{display:inline-block;transition:transform .25s}
+.btn:hover .ar{transform:translateX(4px) rotate(-45deg)}
+
+/* marquee */
+.mq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:22px 0;background:var(--bg)}
+.mq .t{display:flex;gap:44px;width:max-content;animation:run 38s linear infinite;will-change:transform}
+.mq span{font:400 clamp(26px,3.6vw,46px)/1 "Dela Gothic One";text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:44px}
+.mq span:after{content:"";width:16px;height:16px;border-radius:50%;background:var(--red)}
+.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1.2px var(--ink)}
+@keyframes run{to{transform:translateX(-50%)}}
+.skew{transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+
+section{padding-top:130px;padding-bottom:130px;position:relative}
+.kicker{display:flex;align-items:center;gap:12px;color:var(--mute);margin-bottom:26px}
+.kicker:before{content:"";width:34px;height:1px;background:var(--red)}
+h2{font:400 clamp(40px,6.6vw,104px)/.9 "Dela Gothic One";letter-spacing:-.04em;text-transform:uppercase}
+h2 .ln{display:block;overflow:hidden;padding-bottom:.05em}
+h2 .ln>span{display:inline-block}
+.lead{max-width:520px;color:#bdb9b1;font-size:18px;margin-top:26px}
+.head{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:end;margin-bottom:60px}
+@media(max-width:900px){.head{grid-template-columns:1fr;gap:0}section{padding-top:90px;padding-bottom:90px}}
+
+/* before / after */
+.ba{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:stretch}
+.ba-stage{position:relative;aspect-ratio:9/8;border-radius:26px;overflow:hidden;background:#222;cursor:ew-resize;touch-action:pan-y;user-select:none}
+.ba-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-stage .after{clip-path:inset(0 0 0 var(--x,50%))}
+.ba-bar{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;background:#fff;transform:translateX(-1px);pointer-events:none}
+.ba-knob{position:absolute;top:50%;left:50%;width:62px;height:62px;border-radius:50%;background:var(--red);transform:translate(-50%,-50%);display:grid;place-items:center;color:#fff;font:700 18px Onest;box-shadow:0 8px 30px rgba(255,61,36,.5)}
+.ba-lbl{position:absolute;top:18px;padding:8px 12px;border-radius:999px;background:rgba(12,12,13,.72);backdrop-filter:blur(6px)}
+.ba-lbl.l{left:18px}.ba-lbl.r{right:18px;background:var(--red)}
+.ba-side{display:flex;flex-direction:column;gap:18px}
+.pairs{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.pair{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 4px;border:0;border-bottom:1px solid var(--line);background:none;cursor:pointer;text-align:left;transition:padding .3s,color .3s}
+.pair b{font:400 22px/1.1 "Dela Gothic One";text-transform:uppercase;letter-spacing:-.02em}
+.pair small{color:var(--mute);font-size:13px;display:block;margin-top:4px}
+.pair .n{color:var(--mute)}
+.pair:hover{padding-left:12px}
+.pair.on{color:var(--red);padding-left:12px}
+.pair.on .n{color:var(--red)}
+.ba-note{color:var(--mute);font-size:14px;margin-top:auto}
+@media(max-width:900px){.ba{grid-template-columns:1fr}.ba-stage{aspect-ratio:1/1}}
+
+/* builder */
+.builder{background:var(--paper);color:#111;border-radius:34px;display:grid;grid-template-columns:1.25fr 1fr;overflow:hidden}
+.b-l{padding:44px}
+.b-r{background:#111;color:var(--ink);padding:44px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.step{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.step i{font-style:normal;width:28px;height:28px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;font:500 11px "JetBrains Mono"}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.chip{border:1.5px solid #cfcac1;background:#fff;border-radius:999px;padding:11px 16px;cursor:pointer;font:500 15px Onest;transition:all .18s;text-align:left}
+.chip small{color:#777;margin-left:6px;font-size:13px}
+.chip:hover{border-color:#111}
+.chip.on{background:#111;color:#fff;border-color:#111}
+.chip.on small{color:#bbb}
+.qty{display:flex;align-items:center;gap:14px}
+.qty button{width:46px;height:46px;border-radius:50%;border:1.5px solid #111;background:none;cursor:pointer;font:700 20px Onest;color:#111}
+.qty button:hover{background:#111;color:#fff}
+.qty b{font:400 34px "Dela Gothic One";min-width:40px;text-align:center}
+.total{font:400 clamp(48px,6vw,86px)/.9 "Dela Gothic One";letter-spacing:-.04em;margin:18px 0 6px}
+.total small{font-size:.4em;color:var(--mute);letter-spacing:0}
+.lines{margin:22px 0 26px;border-top:1px solid var(--line)}
+.lines div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px;color:#cfccc5}
+.lines div b{color:var(--ink);font-weight:500;white-space:nowrap}
+.b-r .btn{align-self:flex-start;margin-top:auto}
+.fine{color:var(--mute);font-size:13px;margin-top:14px}
+.blob{position:absolute;width:340px;height:340px;right:-120px;top:-120px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--red2),var(--red) 45%,transparent 70%);filter:blur(10px);opacity:.55;animation:float 9s ease-in-out infinite}
+@keyframes float{50%{transform:translate(-40px,40px) scale(1.12)}}
+@media(max-width:900px){.builder{grid-template-columns:1fr;border-radius:24px}.b-l,.b-r{padding:26px}}
+
+/* process (horizontal) */
+.proc{overflow:hidden;padding-top:0}
+.track{display:flex;gap:24px;width:max-content;padding:0 24px}
+.card{width:min(420px,78vw);min-height:520px;border-radius:28px;background:var(--bg2);border:1px solid var(--line);padding:32px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.card .num{font:400 120px/.8 "Dela Gothic One";color:transparent;-webkit-text-stroke:1.5px var(--red);letter-spacing:-.05em}
+.card h3{font:400 30px/1 "Dela Gothic One";text-transform:uppercase;margin:24px 0 12px;letter-spacing:-.02em}
+.card p{color:#bdb9b1}
+.card img{margin-top:auto;border-radius:18px;height:210px;width:100%;object-fit:cover}
+.card.intro{background:none;border:0;padding-left:0;justify-content:center;width:min(520px,86vw)}
+@media(max-width:900px){.track{flex-direction:column;width:auto}.card{width:auto;min-height:0}.card.intro{width:auto}}
+
+/* gallery strip */
+.strip{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.strip figure{border-radius:22px;overflow:hidden;position:relative}
+.strip img{width:100%;height:100%;object-fit:cover;transform:scale(1.15)}
+.strip figcaption{position:absolute;left:14px;bottom:14px;padding:7px 11px;border-radius:999px;background:rgba(12,12,13,.75)}
+.g1{grid-column:1/6;height:560px}.g2{grid-column:6/9;height:380px;margin-top:120px}.g3{grid-column:9/13;height:470px;margin-top:40px}
+@media(max-width:900px){.strip{grid-template-columns:1fr 1fr}.strip figure{grid-column:auto!important;height:260px!important;margin-top:0!important}.strip .g1{grid-column:1/3!important;height:340px!important}}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{border-radius:24px;padding:30px;background:var(--bg2);border:1px solid var(--line);display:flex;flex-direction:column;gap:20px;transition:transform .4s,border-color .4s}
+.rev:hover{transform:translateY(-6px) rotate(-.6deg);border-color:var(--red)}
+.rev q{font-size:19px;line-height:1.45;quotes:"«" "»"}
+.rev q b{color:var(--red);font-weight:500}
+.rev .who{margin-top:auto;color:var(--mute)}
+.rev.big{grid-column:span 2;background:var(--red);border-color:var(--red)}
+.rev.big q{font:400 clamp(24px,2.6vw,36px)/1.15 "Dela Gothic One";letter-spacing:-.02em}
+.rev.big q b{color:#111}
+.rev.big .who{color:#ffd6cf}
+@media(max-width:900px){.revs{grid-template-columns:1fr}.rev.big{grid-column:auto}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:34px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font:400 clamp(44px,5vw,72px)/1 "Dela Gothic One";letter-spacing:-.04em}
+.stat span{color:var(--mute);font-size:14px}
+@media(max-width:900px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.visit .info{border-radius:28px;background:var(--bg2);border:1px solid var(--line);padding:40px}
+.visit dl{display:grid;grid-template-columns:120px 1fr;gap:16px 18px;margin:30px 0 34px}
+.visit dt{color:var(--mute)}
+.visit dd{font-weight:500}
+.visit .acts{display:flex;flex-wrap:wrap;gap:10px}
+.visit .ph{border-radius:28px;overflow:hidden;min-height:440px;position:relative}
+.visit .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.visit .ph .m{position:absolute;left:18px;top:18px;padding:8px 12px;border-radius:999px;background:var(--red)}
+@media(max-width:900px){.visit{grid-template-columns:1fr}.visit .info{padding:26px}.visit dl{grid-template-columns:100px 1fr}.visit .ph{min-height:300px}}
+
+.end{padding:120px 0 60px;text-align:center;overflow:hidden}
+.end h2{font-size:clamp(24px,6.7vw,98px);line-height:.88}
+.end h2 .ln>span{white-space:nowrap}
+.end .btn{margin-top:40px}
+footer{padding:30px 24px 110px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--mute);border-top:1px solid var(--line)}
+
+.float{position:fixed;right:18px;bottom:18px;z-index:60;width:62px;height:62px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.4);transition:transform .25s,opacity .3s}
+.float.hide{opacity:0;pointer-events:none;transform:scale(.6)}
+.float:hover{transform:scale(1.08)}
+
+/* cursor */
+.cur{position:fixed;left:0;top:0;width:14px;height:14px;border-radius:50%;background:var(--red);pointer-events:none;z-index:100;transform:translate(-50%,-50%);transition:width .25s,height .25s,opacity .25s;mix-blend-mode:difference;opacity:0}
+.cur.big{width:70px;height:70px}
+@media(hover:none){.cur{display:none}}
+@media(prefers-reduced-motion:reduce){.mq .t,.blob,.scroll i{animation:none}}
+</style>
+</head>
+<body>
+<div class="cur" id="cur"></div>
+
+<header class="nav">
+  <a class="logo" href="#top"><b>JAM</b><span>sneaker<br>workshop</span></a>
+  <ul><li><a href="#ba">До / после</a></li><li><a href="#build">Цена</a></li><li><a href="#how">Как работаем</a></li><li><a href="#visit">Адрес</a></li></ul>
+  <span class="m" id="open">Курская · 168 м</span>
+</header>
+
+<main id="top">
+  <!-- HERO with 3D -->
+  <div class="hero">
+    <div class="fallback"><img src="img/t-master.jpg" alt=""><img src="img/t-paint.jpg" alt=""><img src="img/t-dunk.jpg" alt=""><img src="img/t-apron.jpg" alt=""></div>
+    <canvas id="gl" aria-hidden="true"></canvas>
+    <div class="tag">
+      <div class="rate"><b>5,0</b><span class="m">131 оценка<br>на Яндекс Картах</span></div>
+      <div class="scroll m"><i></i>листайте</div>
+    </div>
+    <div class="hero-ui">
+      <h1><span class="ln"><span>Вернём</span></span><span class="ln"><span class="o">пару</span> <span class="red">к&nbsp;жизни</span></span></h1>
+      <div class="hero-row">
+        <p>Чистим, клеим, красим и кастомим кроссовки, ботинки и каблуки. Даже то, от чего другие отказываются. Нижний Сусальный, 5с9 — две минуты от «Курской».</p>
+        <div class="hero-cta">
+          <a class="btn" href="#build">Посчитать уход <span class="ar">→</span></a>
+          <a class="btn ghost" data-wa href="#">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mq"><div class="t skew" id="mq"></div></div>
+
+  <!-- BEFORE / AFTER -->
+  <section id="ba" class="wrap">
+    <div class="head">
+      <div><div class="kicker m">01 — до / после</div><h2 class="split"><span class="ln"><span>Потяните</span></span><span class="ln"><span class="red">ползунок</span></span></h2></div>
+      <p class="lead">Настоящие пары из мастерской. Слева — как принесли, справа — как отдали. Выберите пару в списке.</p>
+    </div>
+    <div class="ba">
+      <div class="ba-stage" id="stage">
+        <img id="imgB" src="img/jordan-before.jpg" alt="До чистки">
+        <img id="imgA" class="after" src="img/jordan-after.jpg" alt="После чистки">
+        <div class="ba-bar"><div class="ba-knob">⇆</div></div>
+        <span class="ba-lbl l m">до</span><span class="ba-lbl r m">после</span>
+      </div>
+      <div class="ba-side">
+        <div class="pairs" id="pairs"></div>
+        <p class="ba-note">Фото — из карточки мастерской на Яндекс Картах.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILDER -->
+  <section id="build" class="wrap" style="padding-top:0">
+    <div class="head">
+      <div><div class="kicker m">02 — цена</div><h2 class="split"><span class="ln"><span>Соберите</span></span><span class="ln"><span class="red">уход</span></span></h2></div>
+      <p class="lead">Выберите пару и что с ней сделать — сумма посчитается по прайсу мастерской. Заявка уйдёт в WhatsApp, мастер ответит и уточнит по фото.</p>
+    </div>
+    <div class="builder rv">
+      <div class="b-l">
+        <div class="step"><i>1</i><span class="m">Базовый уход · какая пара</span></div>
+        <div class="chips" data-one="h">
+          <button class="chip on" data-p="3100">Низкая<small>3 100 ₽</small></button>
+          <button class="chip" data-p="3600">Средняя<small>3 600 ₽</small></button>
+          <button class="chip" data-p="4100">Высокая<small>4 100 ₽</small></button>
+          <button class="chip" data-p="0">Без чистки<small>только ремонт</small></button>
+        </div>
+        <div class="step"><i>2</i><span class="m">Что ещё сделать</span></div>
+        <div class="chips" data-many="x">
+          <button class="chip" data-p="3000">Покраска подошвы<small>3 000 ₽</small></button>
+          <button class="chip" data-p="1500">Покраска замши / нубука<small>1 500 ₽</small></button>
+          <button class="chip" data-p="2000">Покраска гладкой кожи<small>2 000 ₽</small></button>
+          <button class="chip" data-p="2200">Профилактика подошвы<small>2 200 ₽</small></button>
+          <button class="chip" data-p="1500">Замена набоек<small>1 500 ₽</small></button>
+          <button class="chip" data-p="2000">Круговой переклей<small>2 000 ₽</small></button>
+          <button class="chip" data-p="1500">Латка изнутри<small>1 500 ₽</small></button>
+          <button class="chip" data-p="2000">Растяжка<small>2 000 ₽</small></button>
+          <button class="chip" data-p="5000">Кастомизация<small>от 5 000 ₽</small></button>
+        </div>
+        <div class="step"><i>3</i><span class="m">Сколько пар</span></div>
+        <div class="qty"><button id="minus" aria-label="Меньше">−</button><b id="q">1</b><button id="plus" aria-label="Больше">+</button></div>
+      </div>
+      <div class="b-r">
+        <div class="blob"></div>
+        <span class="m" style="color:var(--mute);position:relative">Ваш заказ</span>
+        <div class="total" style="position:relative"><span id="sum">3 100</span> <small>₽</small></div>
+        <div class="lines" id="lines" style="position:relative"></div>
+        <a class="btn" id="send" href="#" target="_blank" rel="noopener" style="position:relative">Отправить в WhatsApp <span class="ar">→</span></a>
+        <p class="fine" style="position:relative">Цены «от» — из прайса на Яндекс Картах. Точную сумму мастер назовёт после осмотра. Набойки и профилактика — 3–5 дней.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats wrap" style="padding:0">
+    <div class="stat"><b data-n="5.0">5,0</b><span>рейтинг на Яндекс Картах</span></div>
+    <div class="stat"><b data-n="131">131</b><span>оценка от клиентов</span></div>
+    <div class="stat"><b data-n="98">98%</b><span>хвалят персонал</span></div>
+    <div class="stat"><b data-n="168">168 м</b><span>от метро «Курская»</span></div>
+  </div>
+
+  <!-- PROCESS -->
+  <section id="how" class="proc">
+    <div class="track" id="track">
+      <div class="card intro">
+        <div class="kicker m">03 — как работаем</div>
+        <h2 class="split"><span class="ln"><span>Пять шагов</span></span><span class="ln"><span class="red">до новой</span></span><span class="ln"><span>пары</span></span></h2>
+        <p class="lead">«Парни всегда покажут и расскажут, что именно будут делать с обувью, и обозначат сроки» — из отзыва.</p>
+      </div>
+      <div class="card"><span class="num">01</span><h3>Принесли</h3><p>Заходите или пишите в WhatsApp — можно сразу прислать фото пары.</p><img src="img/handover.jpg" alt="Клиент передаёт кроссовки мастеру" loading="lazy"></div>
+      <div class="card"><span class="num">02</span><h3>Осмотр</h3><p>Мастер смотрит материал и дефекты, называет цену и срок. Никаких лишних услуг.</p><img src="img/master.jpg" alt="Мастер осматривает пару" loading="lazy"></div>
+      <div class="card"><span class="num">03</span><h3>Чистка</h3><p>Подошва, верх, внутри. Замше возвращаем ворс и цвет, кожу увлажняем и полируем.</p><img src="img/care.jpg" alt="Средства для ухода за обувью" loading="lazy"></div>
+      <div class="card"><span class="num">04</span><h3>Реставрация</h3><p>Клеим, перешиваем задники, ставим латки, подбираем кожу по фактуре и цвету, красим.</p><img src="img/paint.jpg" alt="Мастер красит кроссовки" loading="lazy"></div>
+      <div class="card"><span class="num">05</span><h3>Забрали</h3><p>Проверяете результат, получаете советы по уходу. Есть гарантия и доставка.</p><img src="img/boxes.jpg" alt="Готовые пары в боксах" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="wrap" style="padding-top:0">
+    <div class="strip">
+      <figure class="g1 rv"><img class="px" src="img/apron.jpg" alt="Мастер с парами кроссовок" loading="lazy"><figcaption class="m">мастерская</figcaption></figure>
+      <figure class="g2 rv"><img class="px" src="img/dunk.jpg" alt="Nike Dunk после чистки" loading="lazy"><figcaption class="m">nike dunk</figcaption></figure>
+      <figure class="g3 rv"><img class="px" src="img/runner.jpg" alt="Яркие кроссовки после чистки" loading="lazy"><figcaption class="m">после чистки</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="wrap" style="padding-top:20px">
+    <div class="head">
+      <div><div class="kicker m">04 — отзывы</div><h2 class="split"><span class="ln"><span>«Ребята</span></span><span class="ln"><span class="red">волшебники»</span></span></h2></div>
+      <p class="lead">84 отзыва на Яндекс Картах. Вот несколько — без правок.</p>
+    </div>
+    <div class="revs">
+      <div class="rev big rv"><q>12 лет я «убивала» свои любимые нубуковые рыжие лакосты. <b>Ребята просто волшебники</b> — словно в магазине в первый день увидела их.</q><span class="who m">отзыв на Яндекс Картах</span></div>
+      <div class="rev rv"><q>Уже <b>4 пары балансов</b> у них реставрировал, всегда как новые. Никаких лишних услуг, всё в срок.</q><span class="who m">Алекс Б.</span></div>
+      <div class="rev rv"><q>Сдавал Maison Margiela и Rick Owens — <b>сделали лучше, чем было</b>. Подобрали кожу по фактуре и цвету.</q><span class="who m">отзыв на Яндекс Картах</span></div>
+      <div class="rev rv"><q>Отдавала перешить задник New Balance 990v5 <b>после другого мастера, который испортил пару</b>. Всё объяснили, согласовали цвет сетки.</q><span class="who m">отзыв на Яндекс Картах</span></div>
+      <div class="rev rv"><q>Спасли <b>погрызанный собакой ремень</b> от Acne и любимые челси.</q><span class="who m">отзыв на Яндекс Картах</span></div>
+      <div class="rev rv"><q>Ребята <b>берутся даже за то, от чего другие отказываются</b>. Аккуратно обращаются с брендовой обувью.</q><span class="who m">отзыв на Яндекс Картах</span></div>
+      <div class="rev rv"><q>Зимняя обувь <b>не умирает после одного сезона с реагентами</b>. Была одним из первых клиентов лет 6 назад.</q><span class="who m">постоянный клиент</span></div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" class="wrap" style="padding-top:0">
+    <div class="visit">
+      <div class="info rv">
+        <div class="kicker m">05 — адрес</div>
+        <h2 class="split" style="font-size:clamp(36px,4.4vw,64px)"><span class="ln"><span>Красный дом</span></span><span class="ln"><span class="red">во дворе</span></span></h2>
+        <dl>
+          <dt>Адрес</dt><dd>Нижний Сусальный пер., 5, стр. 9, 1 этаж</dd>
+          <dt>Метро</dt><dd>«Курская» — 168 м</dd>
+          <dt>Открываемся</dt><dd>в 12:00</dd>
+          <dt>Телефон</dt><dd><a href="tel:+74952115147">+7 495 211-51-47</a></dd>
+          <dt>Ещё</dt><dd>доставка, гарантия, подарочные сертификаты, можно с собакой</dd>
+        </dl>
+        <div class="acts">
+          <a class="btn" data-wa href="#">WhatsApp</a>
+          <a class="btn ghost" href="tel:+74952115147">Позвонить</a>
+          <a class="btn ghost" href="https://yandex.ru/maps/org/jam_sneaker_workshop/182456641584/" target="_blank" rel="noopener">На карте</a>
+        </div>
+      </div>
+      <div class="ph rv"><img src="img/house.jpg" alt="Красное здание мастерской во дворе" loading="lazy"><span class="m">вход здесь</span></div>
+    </div>
+  </section>
+
+  <div class="end wrap">
+    <h2 class="split"><span class="ln"><span>Не выбрасывайте.</span></span><span class="ln"><span class="red">Несите.</span></span></h2>
+    <a class="btn" data-wa href="#">Прислать фото пары <span class="ar">→</span></a>
+  </div>
+</main>
+
+<footer><span class="m">Jam Sneaker Workshop · Нижний Сусальный, 5с9</span><span class="m">Демо-версия сайта</span></footer>
+<a class="float hide" id="flt" data-wa href="#" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.9 11.9 0 004.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+const WA='79852115147', wa=t=>'https://wa.me/'+WA+'?text='+encodeURIComponent(t);
+document.querySelectorAll('[data-wa]').forEach(a=>{a.href=wa('Здравствуйте! Хочу сдать пару в мастерскую. Пришлю фото.');a.target='_blank';a.rel='noopener'});
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const flt=document.getElementById('flt');addEventListener('scroll',()=>flt.classList.toggle('hide',scrollY<innerHeight*.8),{passive:true});
+/* ---------- marquee ---------- */
+const brands=['Jordan 1','New Balance 990v5','Yeezy','Maison Margiela','Rick Owens','Timberland','UGG','Nike Dunk','Lacoste','Converse','Premiata','Valentino','Jimmy Choo','Acne'];
+document.getElementById('mq').innerHTML=[...brands,...brands].map(b=>'<span>'+b+'</span>').join('');
+
+/* ---------- open now ---------- */
+(function(){const h=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Moscow'})).getHours();if(h<12)document.getElementById('open').textContent='Откроемся в 12:00'})();
+
+/* ---------- before / after ---------- */
+const PAIRS=[
+ ['jordan','Air Jordan 1','чистка + отбеливание'],
+ ['yeezy','Yeezy 750','чистка + цвет замши'],
+ ['ugg','UGG','засолы и цвет'],
+ ['timbs','Timberland','чистка + цвет кожи'],
+ ['hikers','Горные ботинки','чистка + подошва'],
+ ['valentino','Valentino Rockrunner','бережная чистка'],
+ ['heels','Jimmy Choo','замша на каблуках']];
+const stage=document.getElementById('stage'),imgA=document.getElementById('imgA'),imgB=document.getElementById('imgB'),pl=document.getElementById('pairs');
+pl.innerHTML=PAIRS.map((p,i)=>'<button class="pair'+(i?'':' on')+'" data-i="'+i+'"><span><b>'+p[1]+'</b><small>'+p[2]+'</small></span><span class="n m">0'+(i+1)+'</span></button>').join('');
+PAIRS.forEach(p=>{new Image().src='img/'+p[0]+'-after.jpg';new Image().src='img/'+p[0]+'-before.jpg'});
+let x=50;const setX=v=>{x=Math.max(0,Math.min(100,v));stage.style.setProperty('--x',x+'%')};
+function wipe(){if(RM||!window.gsap){setX(50);return}const o={v:100};gsap.to(o,{v:50,duration:1.2,ease:'expo.out',onUpdate:()=>setX(o.v)})}
+pl.addEventListener('click',e=>{const b=e.target.closest('.pair');if(!b)return;pl.querySelectorAll('.pair').forEach(p=>p.classList.toggle('on',p===b));const p=PAIRS[b.dataset.i];imgB.src='img/'+p[0]+'-before.jpg';imgA.src='img/'+p[0]+'-after.jpg';imgA.alt=p[1]+' после';imgB.alt=p[1]+' до';wipe()});
+let drag=false;const mv=e=>{const r=stage.getBoundingClientRect();setX((e.clientX-r.left)/r.width*100)};
+stage.addEventListener('pointerdown',e=>{drag=true;stage.setPointerCapture(e.pointerId);mv(e)});
+stage.addEventListener('pointermove',e=>{if(drag)mv(e)});
+stage.addEventListener('pointerup',()=>drag=false);stage.addEventListener('pointercancel',()=>drag=false);
+
+/* ---------- builder ---------- */
+const fmt=n=>n.toLocaleString('ru-RU').replace(/,/g,' ');
+let q=1;
+document.querySelectorAll('[data-one]').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;g.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===b));calc()}));
+document.querySelectorAll('[data-many]').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;b.classList.toggle('on');calc()}));
+document.getElementById('minus').onclick=()=>{q=Math.max(1,q-1);calc()};
+document.getElementById('plus').onclick=()=>{q=Math.min(10,q+1);calc()};
+const name=c=>c.childNodes[0].textContent.trim();
+let shown=3100;
+function calc(){
+  const base=document.querySelector('[data-one] .chip.on'),extra=[...document.querySelectorAll('[data-many] .chip.on')];
+  const items=[];if(+base.dataset.p)items.push(['Базовый уход, '+name(base).toLowerCase()+' пара',+base.dataset.p]);
+  extra.forEach(c=>items.push([name(c),+c.dataset.p]));
+  const per=items.reduce((s,i)=>s+i[1],0),tot=per*q;
+  document.getElementById('q').textContent=q;
+  document.getElementById('lines').innerHTML=(items.length?items:[['Выберите услуги',0]]).map(i=>'<div><span>'+i[0]+'</span><b>'+(i[1]?fmt(i[1])+' ₽':'—')+'</b></div>').join('')+(q>1?'<div><span>Пар</span><b>× '+q+'</b></div>':'');
+  const el=document.getElementById('sum');
+  if(window.gsap&&!RM){const o={v:shown};gsap.to(o,{v:tot,duration:.6,ease:'power3.out',onUpdate:()=>el.textContent=fmt(Math.round(o.v/10)*10)})}else el.textContent=fmt(tot);
+  shown=tot;
+  document.getElementById('send').href=wa('Здравствуйте! Заявка с сайта.\n'+(items.length?items.map(i=>'• '+i[0]).join('\n'):'• Нужна консультация')+'\nПар: '+q+'\nОриентир по прайсу: от '+fmt(tot)+' ₽\nПришлю фото.');
+}
+calc();
+
+/* ---------- custom cursor ---------- */
+const cur=document.getElementById('cur');
+if(matchMedia('(hover:hover)').matches){addEventListener('pointermove',e=>{cur.style.opacity=1;cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+document.querySelectorAll('a,button,.ba-stage').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))})}
+
+/* ---------- 3D hero: ring of photos + foam ---------- */
+(function(){
+  const cv=document.getElementById('gl');
+  if(!window.THREE)return;
+  let r;try{r=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){return}
+  document.documentElement.classList.add('gl-ok');
+  const mob=innerWidth<760;
+  r.setPixelRatio(Math.min(devicePixelRatio,mob?1.5:2));
+  const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(mob?52:38,1,.1,100);
+  cam.position.set(0,0.3,mob?12:11.5);
+  const ring=new THREE.Group();scene.add(ring);
+  const T=['master','paint','apron','runner','dunk','shelf','brogues','handover','suede','care'];
+  const N=T.length,R=3.0,H=2.1,gap=.88,arc=Math.PI*2/N*gap,loader=new THREE.TextureLoader();
+  T.forEach((n,i)=>{
+    const tex=loader.load('img/t-'+n+'.jpg');
+    const ry=(R*arc)/H; tex.repeat.set(1,Math.min(1,ry)); tex.offset.set(0,(1-Math.min(1,ry))/2);
+    if(THREE.sRGBEncoding)tex.encoding=THREE.sRGBEncoding;
+    const g=new THREE.CylinderGeometry(R,R,H,24,1,true,i*Math.PI*2/N,arc);
+    const front=new THREE.Mesh(g,new THREE.MeshBasicMaterial({map:tex,side:THREE.FrontSide}));
+    const back=new THREE.Mesh(g,new THREE.MeshBasicMaterial({map:tex,side:THREE.BackSide,color:0x3a3a3a}));
+    ring.add(front,back);
+  });
+  ring.rotation.set(.16,0,-.1);const OX=mob?0:2.6,OY=mob?.6:.35;ring.position.set(OX,OY,0);
+  // red orbit line
+  const orbit=new THREE.Mesh(new THREE.TorusGeometry(R+.55,.012,8,200),new THREE.MeshBasicMaterial({color:0xff3d24}));
+  orbit.rotation.x=Math.PI/2-.16;orbit.rotation.y=.1;orbit.position.set(OX,OY,0);scene.add(orbit);
+  // foam bubbles
+  const C=mob?90:180,pos=new Float32Array(C*3),spd=[];
+  for(let i=0;i<C;i++){pos[i*3]=(Math.random()-.5)*16;pos[i*3+1]=(Math.random()-.5)*10;pos[i*3+2]=(Math.random()-.5)*8;spd.push(.004+Math.random()*.012)}
+  const bg=new THREE.BufferGeometry();bg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  const c2=document.createElement('canvas');c2.width=c2.height=64;const x2=c2.getContext('2d');
+  const gr=x2.createRadialGradient(26,26,2,32,32,30);gr.addColorStop(0,'rgba(255,255,255,.95)');gr.addColorStop(.25,'rgba(255,255,255,.18)');gr.addColorStop(.85,'rgba(255,255,255,.35)');gr.addColorStop(1,'rgba(255,255,255,0)');
+  x2.fillStyle=gr;x2.beginPath();x2.arc(32,32,30,0,7);x2.fill();
+  const foam=new THREE.Points(bg,new THREE.PointsMaterial({size:.22,map:new THREE.CanvasTexture(c2),transparent:true,depthWrite:false,opacity:.8}));
+  scene.add(foam);
+  function size(){const w=cv.clientWidth,h=cv.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+  size();addEventListener('resize',size);
+  let mx=0,my=0,boost=0,prog=0,lastY=scrollY,vis=true;
+  addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+  addEventListener('scroll',()=>{boost+=Math.min(.08,Math.abs(scrollY-lastY)*.0009);lastY=scrollY;prog=Math.min(1,scrollY/innerHeight)},{passive:true});
+  new IntersectionObserver(es=>vis=es[0].isIntersecting).observe(cv);
+  function loop(){
+    requestAnimationFrame(loop);if(!vis)return;
+    boost*=.93;
+    ring.rotation.y+=(RM?0:.0035)+boost;
+    orbit.rotation.z+=.002+boost*.5;
+    cam.position.x+=(mx*1.6-cam.position.x)*.05;
+    cam.position.y+=(.3-my*1.2-cam.position.y)*.05;
+    cam.position.z=(mob?12:11.5)-prog*3.2;
+    cam.lookAt(mob?0:1.2,0,0);
+    if(!RM){const p=bg.attributes.position.array;for(let i=0;i<C;i++){p[i*3+1]+=spd[i];p[i*3]+=Math.sin(Date.now()*.0006+i)*.002;if(p[i*3+1]>5)p[i*3+1]=-5}bg.attributes.position.needsUpdate=true}
+    r.render(scene,cam);
+  }
+  loop();
+})();
+
+/* ---------- motion (GSAP) ---------- */
+if(window.gsap&&window.ScrollTrigger&&!RM){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from('.hero h1 .ln>span',{yPercent:110,rotate:4,duration:1.3,ease:'expo.out',stagger:.12,delay:.15});
+  gsap.from('.hero-row>*,.tag>*',{y:30,opacity:0,duration:1,ease:'power3.out',stagger:.1,delay:.6});
+  gsap.to('.hero-ui',{yPercent:-18,opacity:.2,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  document.querySelectorAll('h2.split').forEach(h=>gsap.from(h.querySelectorAll('.ln>span'),{yPercent:110,duration:1.1,ease:'expo.out',stagger:.1,scrollTrigger:{trigger:h,start:'top 85%'}}));
+  gsap.utils.toArray('.rv').forEach(el=>gsap.from(el,{y:60,opacity:0,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}}));
+  gsap.utils.toArray('.px').forEach(im=>gsap.fromTo(im,{yPercent:-8},{yPercent:8,ease:'none',scrollTrigger:{trigger:im.parentNode,start:'top bottom',end:'bottom top',scrub:true}}));
+  gsap.from('.ba-stage',{clipPath:'inset(12% 12% 12% 12% round 26px)',duration:1.4,ease:'expo.out',scrollTrigger:{trigger:'.ba-stage',start:'top 80%',onEnter:wipe}});
+  // marquee skew by velocity
+  const mq=document.getElementById('mq');
+  ScrollTrigger.create({onUpdate:s=>{const v=Math.max(-12,Math.min(12,s.getVelocity()/180));mq.style.transform='skewX('+(-v)+'deg)';clearTimeout(mq._t);mq._t=setTimeout(()=>mq.style.transform='',120)}});
+  // counters
+  document.querySelectorAll('.stat b').forEach(b=>{const t=b.textContent,n=parseFloat(b.dataset.n),suf=t.replace(/[\d,.\s]/g,''),dec=String(b.dataset.n).includes('.');const o={v:0};
+    gsap.to(o,{v:n,duration:1.6,ease:'power2.out',scrollTrigger:{trigger:b,start:'top 90%'},onUpdate:()=>b.textContent=(dec?o.v.toFixed(1).replace('.',','):Math.round(o.v))+(suf?(suf==='м'?' м':suf):'')})});
+  // horizontal process
+  ScrollTrigger.matchMedia({'(min-width: 901px)':()=>{
+    const tr=document.getElementById('track');
+    gsap.to(tr,{x:()=>-(tr.scrollWidth-innerWidth+48),ease:'none',scrollTrigger:{trigger:'#how',start:'top top',end:()=>'+='+(tr.scrollWidth-innerWidth),pin:true,scrub:1,invalidateOnRefresh:true}});
+  }});
+}
+</script>
+</body>
+</html>
