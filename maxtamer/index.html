@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ателье Maxtamer — ремонт, пошив и партии под ваш бренд</title>
+<meta name="description" content="Ателье Maxtamer на Нижегородской: ремонт и подгонка одежды, индивидуальный пошив, партии для маркетплейсов, спортивная форма и униформа. 5,0 на Яндекс Картах.">
+<meta property="og:title" content="Ателье Maxtamer — от подшива джинсов до партии худи">
+<meta property="og:description" content="Ремонт, пошив и производство небольших партий. Нижегородская ул., 94к4.">
+<meta property="og:image" content="img/hoodie.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eceef0;--card:#fff;--ink:#14171a;--mute:#6b7178;--grid:#d3d7db;--acc:#ff4f1f;--navy:#1f3fae;--ok:#1fa855}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 Onest,system-ui,sans-serif;overflow-x:clip;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:48px 48px;background-attachment:fixed}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px}
+.mono{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.acc{color:var(--acc)}
+
+/* top bar */
+.bar{background:var(--ink);color:#c9ced3}
+.bar .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap}
+.bar b{color:#fff;font-weight:700}
+.nav{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo .mk{width:42px;height:42px;background:var(--ink);color:#fff;display:grid;place-items:center;font:900 20px Onest;position:relative}
+.logo .mk:after{content:"";position:absolute;right:-5px;bottom:-5px;width:12px;height:12px;background:var(--acc)}
+.logo b{font:900 21px/1 Onest;letter-spacing:-.03em;display:block}
+.logo small{font-size:12px;color:var(--mute)}
+.nav ul{display:flex;gap:24px;list-style:none;font-weight:500;font-size:15px}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--acc)}
+@media(max-width:860px){.nav ul{display:none}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;text-decoration:none;
+  font:700 15px/1 Onest;padding:17px 24px;background:var(--ink);color:#fff;border-radius:4px;transition:background .2s,transform .2s}
+.btn:hover{background:var(--acc)}
+.btn.wa{background:var(--ok)}
+.btn.wa:hover{background:#168a44}
+.btn.out{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.out:hover{background:var(--ink);color:#fff}
+
+/* hero split */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:10px;padding-bottom:80px}
+.panel{background:var(--card);border:1px solid var(--grid);border-radius:6px;position:relative;overflow:hidden}
+.hero .main{grid-column:1/3;display:grid;grid-template-columns:1.15fr 1fr;min-height:520px}
+.hero .txt{padding:46px 44px;display:flex;flex-direction:column}
+h1{font:900 clamp(38px,5.4vw,74px)/.98 Onest;letter-spacing:-.045em;margin:18px 0 20px}
+h1 s{text-decoration:none;color:var(--mute);font-weight:500}
+.hero .txt p{font-size:19px;color:#3d4247;max-width:520px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hero .ph{position:relative;background:#ddd}
+.hero .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.spec{position:absolute;left:16px;top:16px;background:rgba(255,255,255,.94);padding:12px 14px;border-radius:4px;display:grid;grid-template-columns:auto auto;gap:4px 14px}
+.spec span{color:var(--mute)}
+.stats{display:flex;gap:30px;margin-top:auto;padding-top:36px;flex-wrap:wrap}
+.stats b{display:block;font:900 30px/1 Onest;letter-spacing:-.03em}
+.stats span{font-size:13px;color:var(--mute)}
+.door{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 26px;text-decoration:none;transition:border-color .2s}
+.door:hover{border-color:var(--ink)}
+.door h3{font:700 22px/1.15 Onest;letter-spacing:-.02em}
+.door p{color:var(--mute);font-size:15px}
+.door .arr{flex:none;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:20px;transition:background .2s}
+.door:hover .arr{background:var(--acc)}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero .main{grid-column:auto;grid-template-columns:1fr}.hero .txt{padding:30px 22px}.hero .ph{min-height:380px}}
+
+section{padding-top:90px;padding-bottom:90px}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:34px;flex-wrap:wrap}
+h2{font:900 clamp(32px,4.4vw,56px)/1 Onest;letter-spacing:-.04em;max-width:760px}
+.sh p{color:var(--mute);max-width:420px}
+.tag{display:inline-block;background:var(--acc);color:#fff;padding:5px 9px;border-radius:3px;margin-bottom:14px}
+
+/* fix block (for people) */
+.fix{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.fx{padding:26px}
+.fx .mono{color:var(--mute)}
+.fx .was{margin-top:14px;font-size:15px;color:var(--mute);text-decoration:line-through;text-decoration-color:var(--acc)}
+.fx .now{margin-top:6px;font:700 20px/1.3 Onest;letter-spacing:-.01em}
+.fx q{display:block;margin-top:18px;padding-top:16px;border-top:1px dashed var(--grid);font-size:15px;color:#3d4247;quotes:"«" "»"}
+.master{grid-column:1/4;display:grid;grid-template-columns:1fr 1.4fr;min-height:320px}
+.master .img{position:relative}
+.master .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.master .t{padding:36px}
+.master h3{font:900 34px/1.05 Onest;letter-spacing:-.03em;margin:10px 0 12px}
+.master ul{list-style:none;margin-top:18px;display:grid;gap:10px}
+.master li{display:flex;gap:12px;align-items:flex-start}
+.master li:before{content:"";flex:none;width:10px;height:10px;margin-top:8px;background:var(--acc)}
+@media(max-width:900px){.fix{grid-template-columns:1fr}.master{grid-column:auto;grid-template-columns:1fr}.master .img{min-height:260px}.master .t{padding:24px}}
+
+/* B2B configurator */
+.b2b{background:var(--ink);color:#fff;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr}
+.cfg{padding:40px}
+.cfg h2{color:#fff}
+.cfg .lead{color:#9aa1a8;margin:12px 0 30px;max-width:520px}
+.lbl{display:flex;justify-content:space-between;color:#9aa1a8;margin:0 0 12px}
+.grid-opts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:28px}
+.go{background:#22272c;border:1.5px solid #2f363c;color:#fff;padding:14px 10px 12px;border-radius:4px;cursor:pointer;text-align:left;font:500 14px/1.25 Onest;transition:all .15s}
+.go:hover{border-color:#5a636b}
+.go.on{border-color:var(--acc);background:#2a1c17}
+.go svg{display:block;margin-bottom:10px;opacity:.9}
+.row-opts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.ro{background:transparent;border:1.5px solid #2f363c;color:#fff;padding:10px 14px;border-radius:999px;cursor:pointer;font:500 14px Onest}
+.ro.on{background:#fff;color:var(--ink);border-color:#fff}
+input[type=range]{width:100%;accent-color:var(--acc);height:28px;margin-bottom:6px}
+.qty{font:900 46px/1 Onest;letter-spacing:-.04em}
+.qty small{font:500 16px Onest;color:#9aa1a8;letter-spacing:0}
+.sheet{background:#f6f7f8;color:var(--ink);padding:34px;display:flex;flex-direction:column;position:relative}
+.sheet:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:repeating-linear-gradient(180deg,var(--acc) 0 14px,transparent 14px 24px)}
+.sheet h3{font:900 26px/1.1 Onest;letter-spacing:-.02em;margin:10px 0 18px}
+.sheet table{width:100%;border-collapse:collapse;font-size:15px}
+.sheet td{padding:11px 0;border-bottom:1px solid var(--grid);vertical-align:top}
+.sheet td:first-child{color:var(--mute);width:42%;font-family:"JetBrains Mono",monospace;font-size:12px;text-transform:uppercase;padding-top:14px}
+.sheet td:last-child{font-weight:700}
+.sheet .btn{margin-top:24px}
+.sheet .note{font-size:13px;color:var(--mute);margin-top:12px}
+.cases{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+.case{overflow:hidden}
+.case .im{height:260px;position:relative}
+.case .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.case .c{padding:16px 18px 18px}
+.case b{display:block;font-size:16px}
+.case span{font-size:14px;color:var(--mute)}
+@media(max-width:900px){.b2b{grid-template-columns:1fr}.cfg,.sheet{padding:24px}.grid-opts{grid-template-columns:repeat(2,1fr)}.cases{grid-template-columns:1fr 1fr}.case .im{height:200px}}
+
+/* shop strip */
+.strip{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px}
+.strip .panel{min-height:300px}
+.strip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.strip .cap{position:absolute;left:14px;bottom:14px;background:#fff;padding:8px 12px;border-radius:3px}
+@media(max-width:900px){.strip{grid-template-columns:1fr 1fr}.strip .panel:first-child{grid-column:1/3}.strip .panel{min-height:220px}}
+
+/* reviews */
+.revs{columns:3 300px;column-gap:16px}
+.rv-card{break-inside:avoid;margin-bottom:16px;padding:24px}
+.rv-card .stars{color:var(--acc);letter-spacing:2px}
+.rv-card p{margin-top:10px;font-size:16px}
+.rv-card p b{background:linear-gradient(transparent 60%,rgba(255,79,31,.22) 60%)}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.visit .info{padding:36px}
+.visit dl{display:grid;grid-template-columns:120px 1fr;gap:12px 16px;margin:22px 0 28px}
+.visit dt{color:var(--mute)}
+.visit dd{font-weight:500}
+.visit .acts{display:flex;flex-wrap:wrap;gap:10px}
+.visit .ph{min-height:380px}
+.visit .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.visit{grid-template-columns:1fr}.visit .info{padding:24px}.visit dl{grid-template-columns:100px 1fr}}
+
+footer{padding:30px 0 110px;color:var(--mute);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.float{position:fixed;right:18px;bottom:18px;z-index:40;width:60px;height:60px;border-radius:50%;background:var(--ok);display:grid;place-items:center;box-shadow:0 10px 26px rgba(31,168,85,.4)}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="bar mono"><div class="wrap"><span>Нижегородская ул., 94к4 · м. Нижегородская</span><span id="st">Пн–Пт <b>10:00–18:00</b></span></div></div>
+<header class="wrap">
+  <nav class="nav">
+    <a class="logo" href="#top"><span class="mk">M</span><span><b>Maxtamer</b><small>ателье и швейный цех</small></span></a>
+    <ul><li><a href="#fix">Ремонт</a></li><li><a href="#b2b">Партии для бизнеса</a></li><li><a href="#reviews">Отзывы</a></li><li><a href="#visit">Контакты</a></li></ul>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="panel main">
+      <div class="txt">
+        <span class="mono acc">● 5,0 · 98 оценок на Яндекс Картах</span>
+        <h1>От подшива джинсов <s>до</s> партии худи для вашего бренда</h1>
+        <p>Ремонтируем и подгоняем одежду, шьём на заказ — и отшиваем небольшие тиражи: одежду для маркетплейсов, спортивную форму, униформу.</p>
+        <div class="ctas">
+          <a class="btn" href="#b2b">Рассчитать партию</a>
+          <a class="btn wa" data-wa href="#">Ремонт: написать в WhatsApp</a>
+        </div>
+        <div class="stats">
+          <div><b>5,0</b><span>рейтинг на Картах</span></div>
+          <div><b>74</b><span>отзыва</span></div>
+          <div><b>2 в 1</b><span>ателье + швейный цех</span></div>
+        </div>
+      </div>
+      <div class="ph">
+        <img src="img/hoodie.jpg" alt="Худи, сшитое в ателье Maxtamer">
+        <div class="spec mono"><span>арт.</span><b>MX-HD-01</b><span>изделие</span><b>худи</b><span>цех</span><b>Нижегородская</b></div>
+      </div>
+    </div>
+    <a class="panel door rv" href="#fix"><div><span class="mono acc">для себя</span><h3>Подшить, ушить, заменить молнию</h3><p>Или исправить то, что испортили в другом ателье</p></div><span class="arr">↓</span></a>
+    <a class="panel door rv" href="#b2b"><div><span class="mono acc">для бизнеса</span><h3>Отшить партию под ваш бренд</h3><p>Маркетплейсы, форма для команды, униформа</p></div><span class="arr">↓</span></a>
+  </div>
+
+  <!-- FIX -->
+  <section id="fix" class="wrap" style="padding-top:0">
+    <div class="sh">
+      <div><span class="tag mono">ремонт и подгонка</span><h2>Исправляем то, что не получилось в другом месте</h2></div>
+      <p>Об этом пишут в отзывах чаще всего: после чужой неудачной работы — к нам, и дальше «только сюда».</p>
+    </div>
+    <div class="fix">
+      <div class="panel fx rv"><span class="mono">кейс 01 · юбка</span><div class="was">испортили в другом ателье</div><div class="now">Профессионально и быстро переделали</div><q>Махабат очень внимательная и приятная! И цены тут тоже ниже, чем в других ателье. Буду приходить только сюда!</q></div>
+      <div class="panel fx rv"><span class="mono">кейс 02 · униформа</span><div class="was">ушивала в другом месте — не очень</div><div class="now">Платье теперь сидит потрясающе</div><q>Наконец-то нашла место, где могу на постоянной основе приводить свою форму в надлежащий вид.</q></div>
+      <div class="panel fx rv"><span class="mono">кейс 03 · пуховое пальто</span><div class="was">молния прорвала дырки, лез пух</div><div class="now">Заштопали — совсем не заметно</div><q>Замечательно заштопали испорченную куртку-пальто после стирки с джинсами. Отличная работа.</q></div>
+      <div class="panel master rv">
+        <div class="img"><img src="img/shop.jpg" alt="Швейный цех ателье Maxtamer"></div>
+        <div class="t">
+          <span class="mono acc">как мы работаем</span>
+          <h3>Квитанция, срок и сообщение в WhatsApp, когда готово</h3>
+          <p style="color:var(--mute)">«Предварительно подобрали молнию, сказали, что 2 дня на ремонт и что напишут в WhatsApp. Дали квитанцию. Через 2 дня, как и было обещано, написали о готовности».</p>
+          <ul>
+            <li>Подбираем фурнитуру и ткань заранее, называем цену до начала работы</li>
+            <li>Работаем с трикотажем, кожей, костюмными тканями, вечерними платьями</li>
+            <li>Даём гарантию, есть скидки льготным категориям</li>
+          </ul>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="btn wa" data-wa href="#">Прислать фото вещи</a><a class="btn out" href="tel:+79639634222">Позвонить</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B -->
+  <section id="b2b" class="wrap" style="padding-top:20px">
+    <div class="b2b rv">
+      <div class="cfg">
+        <span class="tag mono">для бизнеса</span>
+        <h2>Партия под ваш бренд</h2>
+        <p class="lead">Отшиваем одежду для маркетплейсов, форму для спортивных команд и униформу для сотрудников. Заполните спецификацию — пришлём расчёт.</p>
+
+        <div class="lbl mono"><span>01 · изделие</span></div>
+        <div class="grid-opts" data-k="item">
+          <button class="go on"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 5l-6 4 2 6 3-1v13h12V14l3 1 2-6-6-4c-1 3-3 4-5 4s-4-1-5-4z"/><path d="M13 5c0 2 1 4 3 4s3-2 3-4"/></svg>Худи</button>
+          <button class="go"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 5l-6 4 2 6 3-1v13h12V14l3 1 2-6-6-4c-1 2-3 3-5 3s-4-1-5-3z"/></svg>Свитшот</button>
+          <button class="go"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 6L4 10l2 5 4-2v13h12V13l4 2 2-5-7-4c-1 2-3 3-5 3s-4-1-5-3z"/></svg>Футболка</button>
+          <button class="go"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4h14l2 24h-6l-3-15-3 15H7z"/></svg>Брюки / джоггеры</button>
+          <button class="go"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 4l-4 5v19h18V9l-4-5-5 6z"/><path d="M16 10v18"/></svg>Жилет</button>
+          <button class="go"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 12h20l-2 15H8z"/><path d="M11 12a5 5 0 0110 0"/></svg>Сумка / шопер</button>
+          <button class="go"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 5l-6 4 2 6 3-1v13h12V14l3 1 2-6-6-4"/><text x="16" y="22" font-size="8" text-anchor="middle" fill="currentColor" stroke="none" font-family="Onest" font-weight="700">10</text></svg>Спортивная форма</button>
+          <button class="go"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 4h12l3 6-3 18H10L7 10z"/><path d="M13 4l3 5 3-5M16 9v19"/></svg>Униформа</button>
+        </div>
+
+        <div class="lbl mono"><span>02 · тираж</span><span id="qv">50 шт.</span></div>
+        <input type="range" id="qty" min="10" max="500" step="10" value="50" aria-label="Тираж">
+        <div class="qty" id="qbig">50 <small>штук</small></div>
+        <div style="height:24px"></div>
+
+        <div class="lbl mono"><span>03 · что у вас есть</span></div>
+        <div class="row-opts" data-k="base">
+          <button class="ro on">Только идея</button><button class="ro">Образец / фото</button><button class="ro">Лекала и ТЗ</button>
+        </div>
+        <div class="lbl mono"><span>04 · брендирование</span></div>
+        <div class="row-opts" data-k="brand" style="margin-bottom:0">
+          <button class="ro on">Не нужно</button><button class="ro">Вышивка</button><button class="ro">Принт / нашивка</button><button class="ro">Свои бирки</button>
+        </div>
+      </div>
+      <div class="sheet">
+        <span class="mono acc">техническая спецификация</span>
+        <h3 id="sTitle">Худи · 50 шт.</h3>
+        <table>
+          <tr><td>Изделие</td><td id="sItem">Худи</td></tr>
+          <tr><td>Тираж</td><td id="sQty">50 шт.</td></tr>
+          <tr><td>Исходные</td><td id="sBase">только идея</td></tr>
+          <tr><td>Бренд</td><td id="sBrand">не нужно</td></tr>
+          <tr><td>Следующий шаг</td><td id="sNext"></td></tr>
+        </table>
+        <a class="btn wa" id="sSend" href="#" target="_blank" rel="noopener">Отправить спецификацию</a>
+        <p class="note">Цена зависит от ткани, модели и тиража — посчитаем по вашему ТЗ. Подскажем, как улучшить изделие, и поможем подобрать ткань и фурнитуру.</p>
+      </div>
+    </div>
+    <div class="cases">
+      <div class="panel case rv"><div class="im"><img src="img/collage.jpg" alt="Коллекция одежды"></div><div class="c"><b>Худи, костюмы, шоперы</b><span>из галереи ателье</span></div></div>
+      <div class="panel case rv"><div class="im"><img src="img/vest.jpg" alt="Жилет с надписью"></div><div class="c"><b>Жилеты с надписью</b><span>брендирование на спине</span></div></div>
+      <div class="panel case rv"><div class="im"><img src="img/whiteset.jpg" alt="Белый костюм"></div><div class="c"><b>Комплект «топ + брюки»</b><span>трикотаж, примерка в цеху</span></div></div>
+      <div class="panel case rv"><div class="im"><img src="img/model.jpg" alt="Модель в юбке и куртке"></div><div class="c"><b>Юбка и куртка</b><span>из галереи ателье</span></div></div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <section class="wrap" style="padding-top:0">
+    <div class="strip">
+      <div class="panel rv"><img src="img/wedding.jpg" alt="Свадебное платье на примерке"><span class="cap mono">вечерние и свадебные платья</span></div>
+      <div class="panel rv"><img src="img/jacket.jpg" alt="Белый жакет на манекене"><span class="cap mono">жакет · пошив</span></div>
+      <div class="panel rv"><img src="img/threads.jpg" alt="Катушки ниток"><span class="cap mono">нитки под любую ткань</span></div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="wrap" style="padding-top:0">
+    <div class="sh"><div><span class="tag mono">74 отзыва · 5,0</span><h2>Что пишут клиенты</h2></div><p>Фрагменты отзывов с Яндекс Карт.</p></div>
+    <div class="revs">
+      <div class="panel rv-card rv"><div class="stars">★★★★★</div><p>Обращалась по пошиву <b>партии одежды для реализации на маркетплейсе</b>. Сделали качественно в адекватный срок, и цена приятная. Буду обращаться ещё.</p></div>
+      <div class="panel rv-card rv"><div class="stars">★★★★★</div><p>Очень качественно выполнили заказ по <b>пошиву формы для команды спортсменов</b>, подсказали, как улучшить изделия, подробно сориентировали по подбору ткани и фурнитуры.</p></div>
+      <div class="panel rv-card rv"><div class="stars">★★★★★</div><p>Было страшновато отдавать в незнакомое ателье дорогостоящее вечернее платье. <b>У Махабат просто золотые руки.</b> Всё сделала на пять с плюсом, быстро и очень недорого.</p></div>
+      <div class="panel rv-card rv"><div class="stars">★★★★★</div><p>Сдавал куртку на замену молнии. Через 2 дня, как и было обещано, написали в WhatsApp. <b>Всё выполнено так, как будто ремонта и не было.</b></p></div>
+      <div class="panel rv-card rv"><div class="stars">★★★★★</div><p>Несмотря на последние дни месяца, <b>успели всё сделать и отдать перед 1 сентября</b>.</p></div>
+      <div class="panel rv-card rv"><div class="stars">★★★★★</div><p>Подшивала брюки, работой довольна: <b>строчки ровные, хороший оверлок</b>. Планирую сшить платье позже.</p></div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" class="wrap" style="padding-top:0">
+    <div class="visit">
+      <div class="panel info rv">
+        <span class="mono acc">контакты</span>
+        <h2 style="margin-top:10px">Приходите или пишите</h2>
+        <dl>
+          <dt>Адрес</dt><dd>Нижегородская ул., 94, корп. 4</dd>
+          <dt>Метро</dt><dd>«Нижегородская», 880 м</dd>
+          <dt>Часы</dt><dd>пн–пт 10:00–18:00, сб–вс выходной</dd>
+          <dt>Телефон</dt><dd><a href="tel:+79639634222">+7 963 963-42-22</a></dd>
+          <dt>Оплата</dt><dd>карта, наличные, перевод, онлайн</dd>
+        </dl>
+        <div class="acts">
+          <a class="btn wa" data-wa href="#">WhatsApp</a>
+          <a class="btn out" href="https://t.me/mmatelier_studio" target="_blank" rel="noopener">Telegram</a>
+          <a class="btn out" href="https://yandex.ru/maps/org/atelye_maxtamer/68958945784/" target="_blank" rel="noopener">На карте</a>
+        </div>
+      </div>
+      <div class="panel ph rv"><img src="img/building.jpg" alt="Вход в здание ателье"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap"><span>Ателье Maxtamer · Нижегородская ул., 94к4</span><span>Демо-версия сайта</span></footer>
+<a class="float" data-wa href="#" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.9 11.9 0 004.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg></a>
+
+<script>
+const WA='79639634222', wa=t=>'https://wa.me/'+WA+'?text='+encodeURIComponent(t);
+document.querySelectorAll('[data-wa]').forEach(a=>{a.href=wa('Здравствуйте! Хочу сдать вещь в ремонт. Пришлю фото.');a.target='_blank';a.rel='noopener'});
+const st={item:'Худи',base:'Только идея',brand:'Не нужно',qty:50};
+const low=s=>s.charAt(0).toLowerCase()+s.slice(1);
+document.querySelectorAll('[data-k]').forEach(g=>g.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  g.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  st[g.dataset.k]=[...b.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join('').trim(); draw();
+}));
+const q=document.getElementById('qty'); q.oninput=()=>{st.qty=+q.value;draw()};
+const NEXT={'Только идея':'обсудим модель и ткань, сошьём образец','Образец / фото':'разберём образец, подберём ткань и фурнитуру','Лекала и ТЗ':'посчитаем цену и срок по ТЗ'};
+function draw(){
+  document.getElementById('qv').textContent=st.qty+' шт.';
+  document.getElementById('qbig').innerHTML=st.qty+' <small>штук</small>';
+  document.getElementById('sTitle').textContent=st.item+' · '+st.qty+' шт.';
+  document.getElementById('sItem').textContent=st.item;
+  document.getElementById('sQty').textContent=st.qty+' шт.';
+  document.getElementById('sBase').textContent=low(st.base);
+  document.getElementById('sBrand').textContent=low(st.brand);
+  document.getElementById('sNext').textContent=NEXT[st.base];
+  document.getElementById('sSend').href=wa('Здравствуйте! Хочу рассчитать партию.\nИзделие: '+st.item+'\nТираж: '+st.qty+' шт.\nЕсть: '+low(st.base)+'\nБрендирование: '+low(st.brand)+'\nСроки: ');
+}
+draw();
+(function(){const d=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Moscow'}));const h=d.getHours(),w=d.getDay();const o=w>=1&&w<=5&&h>=10&&h<18;document.getElementById('st').innerHTML=o?'<b style="color:#5be38a">● открыто</b> до 18:00':'Пн–Пт <b>10:00–18:00</b> · сейчас закрыто'})();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
