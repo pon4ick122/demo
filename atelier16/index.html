@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier16 — ателье и химчистка у Делового центра</title>
+<meta name="description" content="Atelier16: ремонт и пошив одежды, вышивка, химчистка. Шмитовский пр., 16с2. Каждый день 10:00–21:00. 5,0 на Яндекс Картах.">
+<meta property="og:title" content="Atelier16 — ателье, галерея или химчистка?">
+<meta property="og:description" content="Подшить к вечеру, заменить молнию за час, сшить костюм. Шмитовский пр., 16с2.">
+<meta property="og:image" content="img/threads.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Golos+Text:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+:root{--wall:#f7f6f2;--ink:#111;--mute:#77746c;--line:#d9d6ce;--red:#e2362b;--blue:#2c6ef2;--yellow:#ffd23f;--green:#1fa855}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--wall);color:var(--ink);font:400 17px/1.55 "Golos Text",system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding-left:22px;padding-right:22px}
+.u{font-family:Unbounded,sans-serif}
+.it{font:italic 500 1.08em "Cormorant Garamond",serif;letter-spacing:0}
+
+/* spool rainbow */
+.spools{height:10px;background:linear-gradient(90deg,#e2362b 0 8%,#ff7a1a 8% 16%,#ffd23f 16% 24%,#9bd34a 24% 32%,#1fa855 32% 40%,#16b3a8 40% 48%,#2c6ef2 48% 56%,#6a3df0 56% 64%,#c23ad8 64% 72%,#ff5fa2 72% 80%,#8a5a3c 80% 88%,#111 88% 96%,#fff 96%)}
+
+/* nav */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.logo{font:900 22px/1 Unbounded;letter-spacing:-.04em;text-decoration:none}
+.logo sup{font-size:11px;color:var(--red);margin-left:2px}
+.nav ul{display:flex;gap:26px;list-style:none;font-weight:500;font-size:15px}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--red)}
+.open{font-size:14px;display:flex;align-items:center;gap:8px}
+.open i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(31,168,85,.18)}
+@media(max-width:860px){.nav ul{display:none}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;border:0;cursor:pointer;
+  font:700 15px/1 "Golos Text";padding:17px 24px;border-radius:0;background:var(--ink);color:#fff;transition:background .2s,transform .2s}
+.btn:hover{background:var(--red)}
+.btn.wa{background:var(--green)}
+.btn.wa:hover{background:#178a45}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.line:hover{background:var(--ink);color:#fff}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:0;border-bottom:1px solid var(--line)}
+.hero-l{padding:60px 40px 50px 0;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.eyebrow{font:700 12px/1 Unbounded;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+h1{font:900 clamp(40px,6.4vw,92px)/.92 Unbounded;letter-spacing:-.055em;margin:22px 0 26px}
+h1 .q{display:block;font:italic 500 .62em/1.1 "Cormorant Garamond",serif;letter-spacing:0;color:var(--red);margin-top:12px}
+.hero-l p{max-width:520px;font-size:19px;color:#333}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:auto;padding-top:50px}
+.facts div{border-top:1.5px solid var(--ink);padding-top:12px}
+.facts b{display:block;font:900 30px/1 Unbounded;letter-spacing:-.04em}
+.facts span{font-size:13px;color:var(--mute)}
+.hero-r{position:relative;min-height:620px;overflow:hidden}
+.hero-r img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.label{position:absolute;background:#fff;padding:14px 16px;font-size:13px;line-height:1.35;box-shadow:0 10px 30px rgba(0,0,0,.12);max-width:250px}
+.label b{display:block;font:700 14px "Golos Text"}
+.label em{font:italic 500 16px "Cormorant Garamond",serif;color:var(--mute)}
+.label.l1{left:22px;bottom:22px}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-l{border-right:0;padding:36px 0 30px}
+  .hero-r{min-height:440px;margin:0 -22px}
+  .facts{padding-top:34px}
+  .facts b{font-size:22px}
+}
+
+/* ticker of reviews */
+.tick{border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0;background:#fff}
+.tick .t{display:flex;gap:60px;width:max-content;animation:run 50s linear infinite;font:italic 500 24px "Cormorant Garamond",serif}
+.tick .t span:before{content:"✳";font-style:normal;color:var(--red);margin-right:16px;font-size:18px}
+@keyframes run{to{transform:translateX(-50%)}}
+
+section{padding-top:100px;padding-bottom:100px}
+.head{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:end;margin-bottom:46px}
+h2{font:900 clamp(32px,4.6vw,62px)/.98 Unbounded;letter-spacing:-.05em}
+h2 .it{color:var(--red);font-size:1.05em}
+.head p{color:#444;font-size:18px;max-width:560px}
+@media(max-width:900px){.head{grid-template-columns:1fr;gap:16px}}
+
+/* rush planner */
+.planner{display:grid;grid-template-columns:1.2fr 1fr;border:1.5px solid var(--ink);background:#fff}
+.pl-l{padding:34px;border-right:1.5px solid var(--ink)}
+.q-title{font:700 12px/1 Unbounded;letter-spacing:.12em;text-transform:uppercase;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.q-title i{font-style:normal;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:11px;letter-spacing:0}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.opt{font:500 15px "Golos Text";padding:11px 16px;border:1.5px solid var(--line);background:var(--wall);cursor:pointer;transition:all .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.opt small{display:block;font-size:12px;opacity:.65;margin-top:2px}
+.pl-r{padding:34px;display:flex;flex-direction:column;background:var(--yellow);position:relative}
+.ticket{font:700 12px Unbounded;letter-spacing:.12em;text-transform:uppercase}
+.sum{margin:18px 0 6px;font:900 clamp(26px,3vw,38px)/1.05 Unbounded;letter-spacing:-.04em}
+.sum .it{font-size:1.1em;color:var(--red)}
+.rows{margin:18px 0;border-top:1.5px solid var(--ink)}
+.rows div{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px dashed rgba(0,0,0,.35);font-size:15px}
+.rows b{text-align:right}
+.proof{font:italic 500 19px/1.35 "Cormorant Garamond",serif;margin:6px 0 20px;min-height:52px}
+.pl-r .btn{margin-top:auto}
+.small{font-size:12.5px;color:rgba(0,0,0,.62);margin-top:12px}
+@media(max-width:900px){.planner{grid-template-columns:1fr}.pl-l{border-right:0;border-bottom:1.5px solid var(--ink);padding:24px}.pl-r{padding:24px}}
+
+/* exhibits */
+.exh{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+.ex{position:relative}
+.ex img{width:100%;height:100%;object-fit:cover;background:#ddd}
+.ex .frame{overflow:hidden;height:100%}
+.ex .frame img{transition:transform .8s}
+.ex:hover .frame img{transform:scale(1.04)}
+.ex figcaption{margin-top:12px;font-size:13px;line-height:1.4;color:var(--mute);border-left:2px solid var(--red);padding-left:10px}
+.ex figcaption b{display:block;color:var(--ink);font-size:14px}
+.ex figcaption em{font:italic 500 16px "Cormorant Garamond",serif}
+.e1{grid-column:1/6;height:560px}.e2{grid-column:6/9;height:380px;margin-top:90px}.e3{grid-column:9/13;height:470px}
+.e4{grid-column:2/5;height:400px}.e5{grid-column:5/9;height:320px;margin-top:60px}.e6{grid-column:9/12;height:420px}
+.exh .ex{display:flex;flex-direction:column}
+.exh .ex .frame{flex:1}
+@media(max-width:900px){.exh{grid-template-columns:1fr 1fr;gap:16px}.exh .ex{grid-column:auto!important;height:300px!important;margin-top:0!important}.e1{grid-column:1/3!important;height:380px!important}}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--ink)}
+.s{padding:28px 26px 30px 0;border-bottom:1px solid var(--line)}
+.s:not(:nth-child(3n)){border-right:1px solid var(--line)}
+.s:not(:nth-child(3n+1)){padding-left:26px}
+.s .n{font:700 12px Unbounded;color:var(--red);letter-spacing:.1em}
+.s h3{font:700 22px/1.15 Unbounded;letter-spacing:-.03em;margin:12px 0 10px}
+.s p{color:#555;font-size:15.5px}
+.s .p{margin-top:16px;font:700 18px "Golos Text"}
+@media(max-width:900px){.svc{grid-template-columns:1fr}.s{padding:22px 0!important;border-right:0!important}}
+
+/* custom embroidery band */
+.custom{background:var(--ink);color:#fff;display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.custom .txt{padding:80px 60px;display:flex;flex-direction:column;justify-content:center}
+.custom h2 .it{color:var(--yellow)}
+.custom p{color:#bbb;font-size:18px;margin:20px 0 30px;max-width:460px}
+.custom .pics{display:grid;grid-template-columns:1fr 1fr}
+.custom .pics img{width:100%;height:100%;object-fit:cover}
+.custom .btn{background:#fff;color:var(--ink);align-self:flex-start}
+.custom .btn:hover{background:var(--yellow)}
+@media(max-width:900px){.custom{grid-template-columns:1fr}.custom .txt{padding:56px 22px}.custom .pics{height:340px}}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1.5px solid var(--ink)}
+.rev{padding:30px 28px 34px 0;border-bottom:1px solid var(--line)}
+.rev:not(:nth-child(3n+1)){padding-left:28px;border-left:1px solid var(--line)}
+.rev q{display:block;font:italic 500 24px/1.3 "Cormorant Garamond",serif;quotes:"«" "»"}
+.rev q b{font-weight:500;background:linear-gradient(transparent 62%,var(--yellow) 62%)}
+.rev .who{margin-top:16px;font-size:13px;color:var(--mute)}
+@media(max-width:900px){.revs{grid-template-columns:1fr}.rev{padding:24px 0!important;border-left:0!important}}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--ink)}
+.visit .info{padding:44px}
+.visit dl{display:grid;grid-template-columns:110px 1fr;gap:14px 18px;margin:26px 0 30px}
+.visit dt{color:var(--mute);font-size:14px;padding-top:2px}
+.visit dd{font-weight:500}
+.visit .acts{display:flex;flex-wrap:wrap;gap:10px}
+.visit .ph{position:relative;min-height:420px}
+.visit .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.visit{grid-template-columns:1fr}.visit .info{padding:26px}.visit .ph{min-height:300px}.visit dl{grid-template-columns:90px 1fr}}
+
+footer{padding:40px 0 110px;font-size:13px;color:var(--mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.float{position:fixed;right:18px;bottom:18px;z-index:40;background:var(--green);color:#fff;text-decoration:none;font:700 15px "Golos Text";padding:16px 20px;display:flex;align-items:center;gap:10px;box-shadow:0 12px 30px rgba(0,0,0,.2)}
+.float:hover{background:#178a45}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.tick .t{animation:none}}
+</style>
+</head>
+<body>
+<div class="spools"></div>
+<header class="wrap">
+  <nav class="nav">
+    <a class="logo" href="#top">Atelier16<sup>●</sup></a>
+    <ul><li><a href="#rush">Срочно</a></li><li><a href="#works">Работы</a></li><li><a href="#services">Услуги</a></li><li><a href="#custom">Вышивка</a></li><li><a href="#visit">Как найти</a></li></ul>
+    <span class="open" id="open"><i></i>каждый день 10–21</span>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="hero-l">
+      <span class="eyebrow">Шмитовский пр., 16с2 · у Делового центра</span>
+      <h1>Ателье, галерея или химчистка?<span class="q">— так про нас пишут в отзывах</span></h1>
+      <p>Подшиваем к вечеру, меняем молнию, пока вы пьёте кофе, шьём костюмы на заказ и вышиваем на ваших вещах. А ещё чистим — химчистка здесь же.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#rush">Нужно срочно →</a>
+        <a class="btn wa" data-wa href="#">Написать в WhatsApp</a>
+      </div>
+      <div class="facts">
+        <div><b>5,0</b><span>129 оценок на Яндекс Картах</span></div>
+        <div><b>10–21</b><span>без выходных</span></div>
+        <div><b>0 ₽</b><span>доставка готовой вещи</span></div>
+      </div>
+    </div>
+    <div class="hero-r">
+      <img src="img/threads.jpg" alt="Стена из катушек ниток в Atelier16">
+      <div class="label l1"><b>Стена ниток</b><em>все цвета радуги</em><br>Подберём нитку под любую вещь — от худи до пальто.</div>
+    </div>
+  </div>
+
+  <div class="tick"><div class="t" id="tick"></div></div>
+
+  <!-- RUSH -->
+  <section id="rush" class="wrap">
+    <div class="head">
+      <h2>Нужно <span class="it">к вечеру?</span></h2>
+      <p>Соберите заявку за 20 секунд: что за вещь, что сделать и к какому сроку. Мастер ответит в WhatsApp и подтвердит время и цену.</p>
+    </div>
+    <div class="planner rv">
+      <div class="pl-l">
+        <div class="q-title"><i>1</i>Что за вещь</div>
+        <div class="opts" data-k="item">
+          <button class="opt on">Брюки</button><button class="opt">Джинсы</button><button class="opt">Платье</button><button class="opt">Куртка</button><button class="opt">Пальто</button><button class="opt">Пиджак / костюм</button><button class="opt">Худи / свитшот</button><button class="opt">Рюкзак / сумка</button>
+        </div>
+        <div class="q-title"><i>2</i>Что сделать</div>
+        <div class="opts" data-k="task">
+          <button class="opt on">Подшить / укоротить</button><button class="opt">Ушить / подогнать</button><button class="opt">Молния или замок</button><button class="opt">Починить / зашить</button><button class="opt">Вышивка</button><button class="opt">Пошить новое</button><button class="opt">Химчистка</button>
+        </div>
+        <div class="q-title"><i>3</i>Когда нужно</div>
+        <div class="opts" data-k="when">
+          <button class="opt on">Сегодня вечером</button><button class="opt">Завтра</button><button class="opt">На этой неделе</button><button class="opt">Не горит</button>
+        </div>
+        <div class="q-title"><i>4</i>Как передать</div>
+        <div class="opts" data-k="how" style="margin-bottom:0">
+          <button class="opt on">Привезу сам<small>Шмитовский, 16с2</small></button><button class="opt">Выезд мастера<small>3 000 ₽</small></button>
+        </div>
+      </div>
+      <div class="pl-r">
+        <span class="ticket">Ваша заявка № <span id="tn">016</span></span>
+        <div class="sum" id="sum"></div>
+        <div class="rows">
+          <div><span>Цена</span><b id="price"></b></div>
+          <div><span>Срок</span><b id="when"></b></div>
+          <div><span>Готовую вещь</span><b>привезём бесплатно</b></div>
+        </div>
+        <p class="proof" id="proof"></p>
+        <a class="btn" id="send" href="#" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+        <p class="small">Цены «от» — из прайса на Яндекс Картах. Точную сумму и срок мастер скажет, когда увидит вещь (можно прислать фото).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section id="works" class="wrap" style="padding-top:0">
+    <div class="head">
+      <h2>Экспозиция <span class="it">мастерской</span></h2>
+      <p>Это не музей, но ходят сюда «найдя предлог». Арт на стенах, стритвир на вешалках, манекены в работе.</p>
+    </div>
+    <div class="exh">
+      <figure class="ex e1 rv"><div class="frame"><img src="img/workshop.jpg" alt="Рабочее место мастера"></div><figcaption><b>Мастерская</b><em>белые стены, синие столы</em> · всё на виду</figcaption></figure>
+      <figure class="ex e2 rv"><div class="frame"><img src="img/coat.jpg" alt="Светлое пальто на манекене"></div><figcaption><b>Пальто с поясом</b><em>на примерке</em></figcaption></figure>
+      <figure class="ex e3 rv"><div class="frame"><img src="img/art.jpg" alt="Арт-уголок ателье"></div><figcaption><b>Арт-уголок</b><em>мох, фигурки, графика</em></figcaption></figure>
+      <figure class="ex e4 rv"><div class="frame"><img src="img/blazer.jpg" alt="Пиджак в клетку"></div><figcaption><b>Пиджак в клетку</b><em>подгонка по фигуре</em></figcaption></figure>
+      <figure class="ex e5 rv"><div class="frame"><img src="img/cutting.jpg" alt="Мастер кроит ткань"></div><figcaption><b>Крой</b><em>индивидуальный пошив от 3 000 ₽</em></figcaption></figure>
+      <figure class="ex e6 rv"><div class="frame"><img src="img/client.jpg" alt="Клиент в пальто"></div><figcaption><b>Готово</b><em>забирайте или привезём</em></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="wrap" style="padding-top:20px">
+    <div class="head">
+      <h2>Что <span class="it">делаем</span></h2>
+      <p>От подшива джинсов до реставрации пуховика. Если сомневаетесь — консультация бесплатная, по телефону или в мессенджере.</p>
+    </div>
+    <div class="svc">
+      <div class="s rv"><span class="n">01</span><h3>Ремонт и подгонка</h3><p>Подшить, ушить, заменить молнию, зашить, поставить заплатку. Часто — в тот же день.</p><div class="p">от 500 ₽</div></div>
+      <div class="s rv"><span class="n">02</span><h3>Пошив на заказ</h3><p>Костюмы, платья, брюки, верхняя одежда, мужские сорочки. Мех, кожа, трикотаж, текстиль.</p><div class="p">от 3 000 ₽</div></div>
+      <div class="s rv"><span class="n">03</span><h3>Вышивка</h3><p>Надписи, логотипы, принты на худи, футболках и штанах.</p><div class="p">по эскизу</div></div>
+      <div class="s rv"><span class="n">04</span><h3>Химчистка</h3><p>Здесь же, в ателье: сдали брюки подшить — заодно сдайте пальто почистить.</p><div class="p">уточним по вещи</div></div>
+      <div class="s rv"><span class="n">05</span><h3>Кожа и пуховики</h3><p>Ремонт кожи, реставрация пухо-перовых изделий, ремонт обуви.</p><div class="p">уточним по вещи</div></div>
+      <div class="s rv"><span class="n">06</span><h3>Выезд и доставка</h3><p>Мастер приедет снять мерки или забрать вещь. Готовое привезём бесплатно.</p><div class="p">выезд 3 000 ₽ · доставка 0 ₽</div></div>
+    </div>
+  </section>
+
+  <!-- CUSTOM -->
+  <section id="custom" class="custom" style="padding:0">
+    <div class="txt rv">
+      <span class="eyebrow" style="color:#888">кастом</span>
+      <h2 style="margin-top:16px">Вышьем то, <span class="it">чего нет ни у кого</span></h2>
+      <p>Готическая надпись на штанине, сердечко на футболке, логотип команды на худи. Пришлите идею или картинку — подберём нитки со стены и покажем эскиз.</p>
+      <a class="btn" data-wa-custom href="#">Обсудить вышивку</a>
+    </div>
+    <div class="pics">
+      <img src="img/embroidery.jpg" alt="Вышивка готическими буквами на штанах">
+      <img src="img/patches.jpg" alt="Куртка с нашивками">
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="wrap">
+    <div class="head">
+      <h2>Говорят <span class="it">гости</span></h2>
+      <p>Из 95 отзывов на Яндекс Картах. Чаще всего хвалят скорость и атмосферу.</p>
+    </div>
+    <div class="revs">
+      <div class="rev rv"><q>Сдал двое брюк на укорачивание с просьбой завтра к вечеру забрать — <b>выдали в этот же день</b>. Я вернусь к вам, найдя предлог.</q><div class="who">Отзыв на Яндекс Картах</div></div>
+      <div class="rev rv"><q>Замочки сместились, в других местах — «3–5 дней, специалист работает в определённые дни». <b>Здесь справились меньше чем за час.</b></q><div class="who">Отзыв на Яндекс Картах</div></div>
+      <div class="rev rv"><q>Пришёл в выходной день, <b>сделали всё очень оперативно, за 30 минут</b>. Приятный интерьер и персонал.</q><div class="who">Отзыв на Яндекс Картах</div></div>
+      <div class="rev rv"><q>Это не просто ателье или химчистка — скорее <b>я прихожу к друзьям в мастерскую</b>, где любая задача выполняется с любовью.</q><div class="who">Постоянный клиент</div></div>
+      <div class="rev rv"><q>Мастер Айджан сделала мне <b>чёрную кожаную куртку</b> — просто восторг!</q><div class="who">Отзыв на Яндекс Картах</div></div>
+      <div class="rev rv"><q>Нужно было срочно подшить брюки к вечеру — всё успели, <b>сделали идеально, как будто так и было</b>. И не по космическим ценам.</q><div class="who">Отзыв на Яндекс Картах</div></div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" class="wrap" style="padding-top:0">
+    <div class="visit rv">
+      <div class="info">
+        <span class="eyebrow">Как найти</span>
+        <h2 style="margin-top:14px">Заходите <span class="it">в любой день</span></h2>
+        <dl>
+          <dt>Адрес</dt><dd>Шмитовский пр., 16, стр. 2</dd>
+          <dt>Метро</dt><dd>«Деловой центр», 1,3 км</dd>
+          <dt>Часы</dt><dd>каждый день 10:00–21:00</dd>
+          <dt>Телефон</dt><dd><a href="tel:+79684720002">+7 968 472-00-02</a></dd>
+          <dt>Удобства</dt><dd>парковка, Wi-Fi, оплата картой, можно с животными</dd>
+        </dl>
+        <div class="acts">
+          <a class="btn wa" data-wa href="#">WhatsApp</a>
+          <a class="btn line" href="tel:+79684720002">Позвонить</a>
+          <a class="btn line" href="https://yandex.ru/maps/org/atelier16/23632368826/" target="_blank" rel="noopener">На карте</a>
+        </div>
+      </div>
+      <div class="ph"><img src="img/front.jpg" alt="Вход в Atelier16 с жёлтыми скамейками"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap"><span>Atelier16 · ателье и химчистка · Шмитовский пр., 16с2</span><span>Демо-версия сайта</span></footer>
+<a class="float" data-wa href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.9 11.9 0 004.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg>Написать</a>
+
+<script>
+const WA='79684720002', wa=t=>'https://wa.me/'+WA+'?text='+encodeURIComponent(t);
+document.querySelectorAll('[data-wa]').forEach(a=>{a.href=wa('Здравствуйте! Хочу сдать вещь в ателье.');a.target='_blank';a.rel='noopener'});
+document.querySelectorAll('[data-wa-custom]').forEach(a=>{a.href=wa('Здравствуйте! Хочу вышивку на вещи. Вещь: \nИдея / картинка: ');a.target='_blank';a.rel='noopener'});
+
+const quotes=['выдали в этот же день к вечеру','сделали всё за 30 минут','справились меньше чем за час','самое приветливое ателье в районе','ателье, галерея или химчистка?','я прихожу к друзьям в мастерскую','не по космическим ценам','10 из 10'];
+document.getElementById('tick').innerHTML=[...quotes,...quotes].map(q=>'<span>'+q+'</span>').join('');
+
+const st={item:'Брюки',task:'Подшить / укоротить',when:'Сегодня вечером',how:'Привезу сам'};
+document.querySelectorAll('.opts').forEach(g=>g.addEventListener('click',e=>{
+  const b=e.target.closest('.opt'); if(!b) return;
+  g.querySelectorAll('.opt').forEach(x=>x.classList.toggle('on',x===b));
+  st[g.dataset.k]=b.childNodes[0].textContent.trim(); draw();
+}));
+const PRICE={'Подшить / укоротить':'от 500 ₽','Ушить / подогнать':'от 500 ₽','Молния или замок':'от 500 ₽','Починить / зашить':'от 500 ₽','Вышивка':'по эскизу','Пошить новое':'от 3 000 ₽','Химчистка':'по вещи'};
+const PROOF={
+ 'Подшить / укоротить':'«Сдал брюки с просьбой забрать завтра к вечеру — выдали в этот же день»',
+ 'Ушить / подогнать':'«Ребята учтут все нюансы и пожелания»',
+ 'Молния или замок':'«Справились меньше чем за час, когда в других местах 3–5 дней»',
+ 'Починить / зашить':'«Сдавал починить ручку от рюкзака — справились на 5+»',
+ 'Вышивка':'«Внимание к деталям на уровне»',
+ 'Пошить новое':'«Мастер Айджан сделала мне чёрную кожаную куртку — просто восторг!»',
+ 'Химчистка':'«Была приятно удивлена, что тут есть и химчистка»'};
+const low=s=>s.charAt(0).toLowerCase()+s.slice(1);
+function draw(){
+  document.getElementById('sum').innerHTML=st.item+' — <span class="it">'+low(st.task)+'</span>';
+  let p=PRICE[st.task]; if(st.how==='Выезд мастера') p+=' + выезд 3 000 ₽';
+  document.getElementById('price').textContent=p;
+  document.getElementById('when').textContent=low(st.when);
+  document.getElementById('proof').textContent=PROOF[st.task];
+  const big=['Пошить новое','Вышивка','Химчистка'].includes(st.task);
+  document.getElementById('send').href=wa('Здравствуйте! Заявка с сайта.\nВещь: '+st.item+'\nЧто сделать: '+low(st.task)+'\nКогда нужно: '+low(st.when)+'\nКак передам: '+low(st.how)+'\n'+(big?'Детали: ':'Могу прислать фото.'));
+}
+draw();
+document.getElementById('tn').textContent=String(Math.floor(Math.random()*900)+100);
+
+// open now
+(function(){const h=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Moscow'})).getHours();const o=document.getElementById('open');if(h<10||h>=21){o.innerHTML='<i style="background:#bbb;box-shadow:none"></i>откроемся в 10:00'}else{o.innerHTML='<i></i>открыто до 21:00'}})();
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
