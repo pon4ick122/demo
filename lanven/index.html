@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ателье «Ланвэн» — ремонт и пошив, Королёв</title>
+<meta name="description" content="Салон-ателье «Ланвэн», Королёв, ул. Богомолова, 6. Ремонт любой сложности, кожа, мех, шторы, перекрой и пошив по мерке. Соберите заказ — мастер ответит в WhatsApp.">
+<meta property="og:title" content="Ателье «Ланвэн», Королёв">
+<meta property="og:description" content="Вещи, которые жалко выбросить, — к нам. Соберите бирку заказа за 20 секунд.">
+<meta property="og:image" content="img/1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Manrope:wght@400;500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f0e6; --paper2:#efe6d8; --ink:#231b2c; --muted:#76697e; --line:#ddd1c0;
+  --plum:#5b2a86; --violet:#8f4fd1; --thread:#c8323c; --gold:#b8913f;
+  --disp:"Cormorant Garamond",Georgia,serif; --sans:"Manrope",system-ui,sans-serif; --hand:"Caveat",cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{width:min(1180px,100% - 32px);margin:0 auto}
+.kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--plum);font-weight:700;display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:34px;border-top:2px dashed var(--thread)}
+h2{font:600 clamp(36px,4.6vw,64px)/1.02 var(--disp);margin:14px 0 18px;letter-spacing:-.01em}
+h2 i{color:var(--plum)}
+.lead{color:var(--muted);max-width:620px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;font:700 15px var(--sans);text-decoration:none;cursor:pointer;border:1.5px solid var(--ink);background:none;color:var(--ink);transition:background-color .2s,color .2s,translate .2s}
+.btn:hover{translate:0 -2px}
+.btn-plum{background:var(--plum);border-color:var(--plum);color:#fff}
+.btn-plum:hover{background:var(--ink);border-color:var(--ink)}
+
+header{position:fixed;inset:0 0 auto;z-index:30;padding:14px 0;transition:background-color .3s,box-shadow .3s}
+header.solid{background:#f6f0e6ee;backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font:italic 600 30px/1 var(--disp);text-decoration:none;color:var(--plum)}
+.logo small{display:block;font:500 10px var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.nav nav{display:flex;gap:26px;font-size:15px;color:var(--muted)}
+.nav nav a{text-decoration:none}.nav nav a:hover{color:var(--plum)}
+.nav .btn{padding:10px 18px;font-size:14px}
+@media(max-width:880px){.nav nav{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 60px;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 0;height:120px;background:linear-gradient(transparent,var(--paper));pointer-events:none;z-index:1}
+.hero-3d{position:absolute;top:0;right:0;width:58%;height:100%;z-index:0}
+.hero-3d canvas{display:block;width:100%;height:100%}
+.hero-in{position:relative;z-index:2;max-width:620px}
+.hero h1{font:600 clamp(48px,7vw,104px)/.92 var(--disp);letter-spacing:-.02em}
+.hero h1 i{color:var(--plum);font-weight:500}
+.hero h1 .st{position:relative;display:inline-block}
+.hero h1 .st::after{content:"";position:absolute;left:0;right:0;bottom:.04em;border-bottom:3px dashed var(--thread);transform-origin:left;transform:scaleX(var(--s,0))}
+.hero p{margin:24px 0 32px;font-size:19px;color:var(--muted);max-width:500px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:40px;font-size:14px;color:var(--muted)}
+.meta b{display:block;font:600 34px/1 var(--disp);color:var(--ink)}
+@media(max-width:880px){
+  .hero{flex-direction:column;align-items:stretch;padding-top:100px}
+  .hero-3d{position:relative;width:100%;height:300px;order:2;margin-top:10px}
+  .hero::after{display:none}
+}
+
+/* ticker */
+.tick-clip{overflow:hidden;border-block:1px solid var(--line);background:var(--ink);color:var(--paper)}
+.ticker{display:flex;gap:44px;padding:16px 0;width:max-content;animation:run 38s linear infinite;font:italic 500 24px var(--disp)}
+.ticker span::after{content:"✂";margin-left:44px;color:var(--violet);font-style:normal;font-size:18px}
+@keyframes run{to{transform:translateX(-50%)}}
+
+section{padding:110px 0}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+.card{background:#fff;border-radius:22px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.card .ph{aspect-ratio:4/3;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .ph img{transform:scale(1.06)}
+.card .tx{padding:20px 22px 24px}
+.card h3{font:600 28px/1.1 var(--disp);margin-bottom:6px}
+.card p{color:var(--muted);font-size:15px}
+.card.dark{background:var(--plum);color:#fff;border-color:var(--plum);justify-content:center;padding:30px}
+.card.dark h3{font-size:36px}
+.card.dark p{color:#e6d9f5}
+.card.dark ul{list-style:none;margin-top:14px;font-size:15px}
+.card.dark li{padding:7px 0;border-bottom:1px dashed #ffffff40}
+@media(max-width:900px){.svc{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.svc{grid-template-columns:1fr}}
+
+/* order builder */
+.order{background:var(--paper2);border-radius:36px;padding:70px 0;overflow-x:clip}
+.ob{display:grid;grid-template-columns:1.25fr .9fr;gap:50px;align-items:start;margin-top:40px}
+.step{margin-bottom:28px}
+.step h4{font:700 13px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.step h4 b{color:var(--thread)}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 16px;font:500 15px var(--sans);cursor:pointer;color:var(--ink);transition:background-color .15s,border-color .15s,color .15s}
+.chip:hover{border-color:var(--plum)}
+.chip.on{background:var(--plum);border-color:var(--plum);color:#fff}
+textarea{width:100%;min-height:86px;border:1.5px solid var(--line);border-radius:16px;padding:14px;font:15px var(--sans);background:#fff;resize:vertical}
+textarea:focus{outline:2px solid var(--violet);border-color:transparent}
+.tagbox{position:sticky;top:100px;display:flex;flex-direction:column;align-items:center}
+.string{width:2px;height:60px;background:var(--thread)}
+.tag{position:relative;width:min(340px,100%);background:#fffaf0;border-radius:14px 14px 22px 22px;padding:46px 28px 28px;box-shadow:0 30px 60px -30px #4a2a6a66,0 2px 0 var(--line);transform-origin:50% -60px;font-family:var(--hand);font-size:25px;line-height:1.25;color:#2c2140}
+.tag::before{content:"";position:absolute;top:14px;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:var(--paper2);box-shadow:inset 0 0 0 3px var(--gold)}
+.tag::after{content:"";position:absolute;inset:8px;border:1.5px dashed #c8323c66;border-radius:10px 10px 18px 18px;pointer-events:none}
+.tag .no{font:700 12px var(--sans);letter-spacing:.2em;color:var(--muted);text-transform:uppercase;display:flex;justify-content:space-between;margin-bottom:14px}
+.tag .ln{border-bottom:1px solid #e5dccd;padding:4px 0 6px;min-height:40px}
+.tag .ln small{display:block;font:600 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#a99cb0}
+.tag .ln.empty span{color:#c6bccb}
+.tag-send{margin-top:22px;width:min(340px,100%);justify-content:center}
+.hint{font-size:13px;color:var(--muted);text-align:center;margin-top:10px;max-width:320px}
+@media(max-width:900px){.ob{grid-template-columns:1fr}.tagbox{position:static}}
+
+/* story */
+.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.story .pic{border-radius:28px;overflow:hidden;aspect-ratio:3/4;position:relative}
+.story .pic img{width:100%;height:100%;object-fit:cover}
+.story .pic .stamp{position:absolute;left:18px;bottom:18px;background:var(--thread);color:#fff;font:700 13px var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;border-radius:999px}
+blockquote{font:italic 500 clamp(26px,3vw,38px)/1.25 var(--disp);border-left:3px solid var(--thread);padding-left:24px;margin:20px 0}
+.story .who{color:var(--muted);font-size:14px}
+@media(max-width:900px){.story{grid-template-columns:1fr}.story .pic{aspect-ratio:4/3}}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px}
+.rev .stars{color:var(--gold);letter-spacing:3px;margin-bottom:10px}
+.rev p{font-size:15.5px}
+.rev small{display:block;margin-top:12px;color:var(--muted);font-size:13px}
+.score{display:flex;align-items:center;gap:20px;margin-top:10px}
+.score b{font:600 76px/1 var(--disp);color:var(--plum)}
+@media(max-width:900px){.revs{grid-template-columns:1fr}}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px;margin-top:40px}
+.gal figure{border-radius:18px;overflow:hidden}
+.gal figure:nth-child(1){grid-row:span 2}
+.gal figure:nth-child(4){grid-column:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gal figure:hover img{transform:scale(1.05)}
+@media(max-width:800px){.gal{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.gal figure:nth-child(4){grid-column:span 1}}
+
+/* contacts */
+.contacts{background:var(--ink);color:var(--paper);border-radius:36px 36px 0 0;padding:90px 0 40px}
+.contacts h2 i{color:#c9a6f2}
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin:40px 0 60px}
+.cg h4{font:700 12px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#a99cb0;margin-bottom:10px}
+.cg p,.cg a{font-size:18px}
+.hours div{display:flex;justify-content:space-between;border-bottom:1px dashed #ffffff26;padding:6px 0;max-width:290px}
+.contacts .btn{border-color:var(--paper);color:var(--paper)}
+.contacts .btn-plum{border-color:var(--violet);background:var(--violet)}
+.foot{border-top:1px solid #ffffff1f;padding-top:24px;font-size:13px;color:#a99cb0;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:800px){.cg{grid-template-columns:1fr}}
+
+.fab{position:fixed;right:18px;bottom:18px;z-index:40;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px -8px #25d36699}
+.fab svg{width:30px;height:30px;fill:#fff}
+@media (prefers-reduced-motion:reduce){.ticker{animation:none}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="logo">Ланвэн<small>салон-ателье · Королёв</small></a>
+    <nav><a href="#uslugi">Услуги</a><a href="#zakaz">Собрать заказ</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a></nav>
+    <a class="btn btn-plum" href="#zakaz">Собрать заказ</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-3d" id="tape"></div>
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="kicker">Ремонт и пошив · ул. Богомолова, 6</div>
+      <h1 style="margin-top:18px">Вещи, которые <i>жалко</i> <span class="st" id="st">выбросить</span>, — к нам</h1>
+      <p>Подошьём джинсы за день, заменим молнию в пуховике, спасём кожаную куртку, перешьём шубу и сошьём платье по вашей мерке.</p>
+      <div class="row">
+        <a class="btn btn-plum" href="#zakaz">Собрать бирку заказа →</a>
+        <a class="btn" href="https://wa.me/79165147719" target="_blank" rel="noopener">Написать мастеру</a>
+      </div>
+      <div class="meta">
+        <div><b>5,0</b>на Яндекс Картах</div>
+        <div><b>74</b>оценки клиентов</div>
+        <div><b>10+</b>лет с нами</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tick-clip"><div class="ticker" aria-hidden="true">
+  <span>Ремонт изделий любой сложности</span><span>Художественный ремонт</span><span>Изделия из кожи</span><span>Меховые изделия</span><span>Шторы и текстиль</span><span>Перекрой</span><span>Индивидуальный пошив</span>
+  <span>Ремонт изделий любой сложности</span><span>Художественный ремонт</span><span>Изделия из кожи</span><span>Меховые изделия</span><span>Шторы и текстиль</span><span>Перекрой</span><span>Индивидуальный пошив</span>
+</div></div>
+
+<section id="uslugi">
+  <div class="wrap">
+    <div class="kicker">Что мы делаем</div>
+    <h2>От подшить брюки<br>до <i>сшить с нуля</i></h2>
+    <p class="lead">Всё, что написано у нас на двери, — только с фотографиями. Не знаете, можно ли спасти вещь? Пришлите фото, ответим честно.</p>
+    <div class="svc">
+      <article class="card rv"><div class="ph"><img src="img/7.jpg" alt="Кожаная куртка" loading="lazy"></div><div class="tx"><h3>Кожа</h3><p>Потёртые локти, порванная подкладка, новая молния. Берём мотокуртки, от которых отказались в других ателье.</p></div></article>
+      <article class="card rv"><div class="ph"><img src="img/1.jpg" alt="Костюм, сшитый в ателье" loading="lazy"></div><div class="tx"><h3>Пошив по мерке</h3><p>Блузка «как я хотела», костюм к празднику, детский новогодний наряд. Ткани есть в салоне.</p></div></article>
+      <article class="card rv"><div class="ph"><img src="img/2.jpg" alt="Швейная машина Juki" loading="lazy"></div><div class="tx"><h3>Ремонт и подгонка</h3><p>Укоротить, ушить, заменить молнию. Брюки часто отдаём в тот же день.</p></div></article>
+      <article class="card rv"><div class="ph"><img src="img/5.jpg" alt="Ткани и головные уборы в салоне" loading="lazy"></div><div class="tx"><h3>Мех и шубы</h3><p>Перешьём и подгоним шубу по фигуре, отремонтируем мех. Работаем и с шёлком.</p></div></article>
+      <article class="card rv"><div class="ph"><img src="img/8.jpg" alt="Молнии" loading="lazy"></div><div class="tx"><h3>Шторы и текстиль</h3><p>Подшить, пошить, подогнать по высоте. Подскажем ткань и фурнитуру.</p></div></article>
+      <article class="card dark rv"><h3>Художественный ремонт</h3><p>Дырка на видном месте? Сделаем так, что никто не догадается.</p><ul><li>Штопка и латки «в цвет»</li><li>Перекрой старой вещи</li><li>Сложный ремонт верхней одежды</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section id="zakaz" style="padding-top:20px">
+  <div class="order"><div class="wrap">
+    <div class="kicker">Без звонков и очередей</div>
+    <h2>Соберите <i>бирку</i> заказа</h2>
+    <p class="lead">Отметьте вещь и что с ней сделать. Бирка уйдёт мастеру в WhatsApp, а вы пришлёте фото, и вам скажут цену и срок.</p>
+    <div class="ob">
+      <div>
+        <div class="step"><h4><b>01</b> · Какая вещь</h4><div class="chips" id="cItem"></div></div>
+        <div class="step"><h4><b>02</b> · Что сделать (можно несколько)</h4><div class="chips" id="cJob"></div></div>
+        <div class="step"><h4><b>03</b> · Когда нужно</h4><div class="chips" id="cWhen"></div></div>
+        <div class="step"><h4><b>04</b> · Пара слов (по желанию)</h4><textarea id="cNote" placeholder="Например: укоротить на 4 см, оставить родной шов"></textarea></div>
+      </div>
+      <div class="tagbox">
+        <div class="string"></div>
+        <div class="tag" id="tag">
+          <div class="no"><span>Ланвэн</span><span id="tagNo">№ 0000</span></div>
+          <div class="ln" id="tItem"><small>вещь</small><span></span></div>
+          <div class="ln" id="tJob"><small>что сделать</small><span></span></div>
+          <div class="ln" id="tWhen"><small>когда</small><span></span></div>
+          <div class="ln" id="tNote"><small>заметка</small><span></span></div>
+        </div>
+        <a class="btn btn-plum tag-send" id="send" href="#" target="_blank" rel="noopener">Отправить бирку в WhatsApp</a>
+        <div class="hint">Откроется WhatsApp с готовым текстом, останется прикрепить фото вещи</div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<section>
+  <div class="wrap story">
+    <div class="pic rv"><img src="img/7.jpg" alt="Кожаная куртка после ремонта" loading="lazy"><span class="stamp">Спасли</span></div>
+    <div>
+      <div class="kicker">История из отзывов</div>
+      <h2>Мотокуртка, которую <i>не взяли</i> в других ателье</h2>
+      <blockquote>«Были стёрты локти насквозь, часть груди справа, кусок на пояснице… В паре других ателье до этого отказались брать».</blockquote>
+      <p class="who">Отзыв с Яндекс Карт. В Ланвэн куртку взяли и вернули к жизни.</p>
+    </div>
+  </div>
+</section>
+
+<section id="otzyvy" style="padding-top:20px">
+  <div class="wrap">
+    <div class="kicker">Отзывы</div>
+    <h2>«Девочки просто <i>волшебницы</i>»</h2>
+    <div class="score"><b>5,0</b><div class="lead">74 оценки и 49 отзывов на Яндекс Картах.<br>Мастера Юлия и Марина.</div></div>
+    <div class="revs">
+      <div class="rev rv"><div class="stars">★★★★★</div><p>Ремонт и пошив на высшем уровне. Пользуюсь услугами ателье более 10 лет. Заменили молнию в любимом пуховике, сшили прекрасную блузку, как я и хотела.</p><small>Яндекс Карты</small></div>
+      <div class="rev rv"><div class="stars">★★★★★</div><p>Быстро, качественно и цены адекватные. Отдавала подшить брюки — забрала готовые в тот же день. Рекомендую!</p><small>Яндекс Карты</small></div>
+      <div class="rev rv"><div class="stars">★★★★★</div><p>Перешила и скорректировала 2 шубы, подгон платьев, пиджаков по фигуре — всё прекрасно и за разумную цену. Спасибо Юлии и Марине 🤍</p><small>Яндекс Карты</small></div>
+      <div class="rev rv"><div class="stars">★★★★★</div><p>Ремонтируем у них куртки, подшиваем штаны — никогда не догадаешься, что с изделием что-то было не так!</p><small>Яндекс Карты</small></div>
+      <div class="rev rv"><div class="stars">★★★★★</div><p>Отдаю любые вещи на любой сложности ремонт без страха. И верхнюю одежду, и меха, и шёлка. Золотые ручки!</p><small>Яндекс Карты</small></div>
+      <div class="rev rv"><div class="stars">★★★★★</div><p>Отдавал укоротить рубашку и брюки: потратили минут 5 на разметку, дольше переодевался. В оговоренное время всё было готово.</p><small>Яндекс Карты</small></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker">Салон изнутри</div>
+    <h2>Примерочная, ткани <i>и машинки</i></h2>
+    <div class="gal">
+      <figure class="rv"><img src="img/4.jpg" alt="Примерочная" loading="lazy"></figure>
+      <figure class="rv"><img src="img/6.jpg" alt="Оверлок" loading="lazy"></figure>
+      <figure class="rv"><img src="img/9.jpg" alt="Вывеска с услугами" loading="lazy"></figure>
+      <figure class="rv"><img src="img/3.jpg" alt="Мастерская" loading="lazy"></figure>
+      <figure class="rv"><img src="img/5.jpg" alt="Ткани" loading="lazy"></figure>
+      <figure class="rv"><img src="img/2.jpg" alt="Швейная машина" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<footer class="contacts" id="kontakty">
+  <div class="wrap">
+    <div class="kicker" style="color:#c9a6f2">Приходите на примерку</div>
+    <h2>Королёв, <i>Богомолова, 6</i></h2>
+    <div class="cg">
+      <div><h4>Адрес</h4><p>ул. Богомолова, 6, Королёв<br>300 м от остановки «Улица Терешковой»</p><p style="margin-top:14px"><a href="https://yandex.ru/maps/org/lanven/1373528804/" target="_blank" rel="noopener">Открыть на Яндекс Картах →</a></p></div>
+      <div class="hours"><h4>Часы работы</h4><div><span>Пн–Пт</span><span>10:00–19:00</span></div><div><span>Суббота</span><span>11:00–15:00</span></div><div><span>Воскресенье</span><span>выходной</span></div></div>
+      <div><h4>Связаться</h4><p><a href="tel:+79165147719">+7 (916) 514-77-19</a></p><p><a href="https://t.me/salonatelelanven" target="_blank" rel="noopener">Telegram-канал ателье</a></p><div class="row" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="btn btn-plum" href="https://wa.me/79165147719" target="_blank" rel="noopener">WhatsApp</a><a class="btn" href="#zakaz">Собрать заказ</a></div></div>
+    </div>
+    <div class="foot"><span>© Салон-ателье «Ланвэн», Королёв</span><span>Демо-версия сайта · сделано для ателье «Ланвэн»</span></div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/79165147719" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+/* ---------- шапка ---------- */
+const hdr = document.getElementById('hdr');
+addEventListener('scroll', () => hdr.classList.toggle('solid', scrollY > 30), {passive:true});
+
+/* ---------- бирка заказа ---------- */
+const WA = '79165147719';
+const ITEMS = ['Джинсы, брюки','Куртка, пуховик','Кожаная вещь','Шуба, мех','Платье, блузка','Пиджак, костюм','Шторы, текстиль','Сшить с нуля'];
+const JOBS = ['Укоротить','Ушить, подогнать','Заменить молнию','Дырка, потёртость','Художественный ремонт','Перекрой','Пошив по мерке','Подшить шторы'];
+const WHEN = ['Не срочно','К выходным','Срочно, за 1–2 дня'];
+const st = {item:null, jobs:new Set(), when:null};
+const no = '№ ' + String(1000 + Math.floor(Math.random()*8999));
+document.getElementById('tagNo').textContent = no;
+
+function chips(id, list, multi, key){
+  const box = document.getElementById(id);
+  list.forEach(t => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.textContent = t;
+    b.onclick = () => {
+      if (multi) { st.jobs.has(t) ? st.jobs.delete(t) : st.jobs.add(t); b.classList.toggle('on'); }
+      else { st[key] = st[key] === t ? null : t; box.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c.textContent === st[key])); }
+      render(true);
+    };
+    box.appendChild(b);
+  });
+}
+chips('cItem', ITEMS, false, 'item'); chips('cJob', JOBS, true); chips('cWhen', WHEN, false, 'when');
+const note = document.getElementById('cNote');
+note.addEventListener('input', () => render(false));
+
+function setLn(id, val, ph){
+  const el = document.getElementById(id); el.classList.toggle('empty', !val);
+  el.querySelector('span').textContent = val || ph;
+}
+function render(swing){
+  const jobs = [...st.jobs].join(', ');
+  const n = note.value.trim();
+  setLn('tItem', st.item, 'выберите вещь');
+  setLn('tJob', jobs, 'что сделать');
+  setLn('tWhen', st.when, 'когда нужно');
+  setLn('tNote', n.length > 60 ? n.slice(0,60) + '…' : n, '—');
+  const lines = ['Здравствуйте! Бирка заказа с сайта, ' + no + ':'];
+  if (st.item) lines.push('Вещь: ' + st.item);
+  if (jobs) lines.push('Что сделать: ' + jobs);
+  if (st.when) lines.push('Когда нужно: ' + st.when);
+  if (n) lines.push('Комментарий: ' + n);
+  lines.push('Сейчас пришлю фото. Подскажете цену и срок?');
+  document.getElementById('send').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(lines.join('\n'));
+  if (swing && window.gsap) gsap.fromTo('#tag', {rotation:-4}, {rotation:0, duration:1.2, ease:'elastic.out(1,0.35)'});
+}
+render(false);
+
+/* ---------- 3D: сантиметровая лента ---------- */
+(function(){
+  if (!window.THREE) return;
+  const box = document.getElementById('tape');
+  const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  box.appendChild(renderer.domElement);
+  const scene = new THREE.Scene();
+  const cam = new THREE.PerspectiveCamera(35, 1, .1, 100);
+  cam.position.set(0, 0, 11);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xd9c8b0, 1.0));
+  const dl = new THREE.DirectionalLight(0xffffff, .7); dl.position.set(3, 5, 6); scene.add(dl);
+
+  // текстура ленты: 150 см
+  const cv = document.createElement('canvas'); cv.width = 4096; cv.height = 128;
+  const g = cv.getContext('2d');
+  g.fillStyle = '#f4d35e'; g.fillRect(0, 0, cv.width, cv.height);
+  const px = cv.width / 150;
+  g.fillStyle = '#2a2233'; g.font = 'bold 40px Manrope, sans-serif'; g.textAlign = 'center';
+  for (let c = 0; c <= 150; c++) {
+    const x = c * px;
+    const h = c % 10 === 0 ? 46 : c % 5 === 0 ? 32 : 20;
+    g.fillRect(x - 1.5, 0, 3, h); g.fillRect(x - 1.5, cv.height - h, 3, h);
+    for (let m = 1; m < 10 && c < 150; m++) g.fillRect(x + m * px / 10 - .5, 0, 1, 9);
+    if (c % 10 === 0 && c > 0) { g.fillStyle = '#c8323c'; g.fillText(c, x, 80); g.fillStyle = '#2a2233'; }
+    else if (c % 5 === 0 && c > 0) g.fillText(c, x, 80);
+  }
+  const tex = new THREE.CanvasTexture(cv);
+  tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+
+  const N = 360, W = .42;
+  const pos = new Float32Array((N + 1) * 2 * 3), uv = new Float32Array((N + 1) * 2 * 2), idx = [];
+  for (let i = 0; i <= N; i++) {
+    uv.set([1 - i / N, 1, 1 - i / N, 0], i * 4);
+    if (i < N) { const a = i * 2; idx.push(a, a + 1, a + 2, a + 1, a + 3, a + 2); }
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  geo.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+  geo.setIndex(idx);
+  const tape = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({map:tex, side:THREE.DoubleSide, roughness:.55, metalness:.05}));
+  const grp = new THREE.Group(); grp.add(tape); scene.add(grp);
+
+  // иголка + красная нить
+  const needle = new THREE.Group();
+  const steel = new THREE.MeshStandardMaterial({color:0xd8dde4, metalness:.9, roughness:.25});
+  const shaft = new THREE.Mesh(new THREE.CylinderGeometry(.035, .035, 2.4, 16), steel);
+  const tip = new THREE.Mesh(new THREE.ConeGeometry(.035, .4, 16), steel); tip.position.y = -1.4;
+  const eye = new THREE.Mesh(new THREE.TorusGeometry(.06, .018, 8, 24), steel); eye.position.y = 1.25; eye.scale.set(.6, 1.4, 1);
+  needle.add(shaft, tip, eye); needle.rotation.z = -.6; needle.position.set(1.8, 1.9, .8);
+  grp.add(needle);
+  const pts = []; for (let i = 0; i <= 60; i++) { const t = i / 60; pts.push(new THREE.Vector3(1.8 + .72 + Math.sin(t * 9) * .5 - t * 2.4, 1.9 + .93 - t * 3.6, .8 + Math.cos(t * 7) * .5)); }
+  const thGeo = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 200, .025, 8, false);
+  const thread = new THREE.Mesh(thGeo, new THREE.MeshStandardMaterial({color:0xc8323c, roughness:.6}));
+  grp.add(thread);
+  const thCount = thGeo.index.count;
+
+  const P = {k:0, draw:0};
+  const tmp = new THREE.Vector3();
+  function center(s, k, out){
+    const a = s * Math.PI * 2 * 3.6, r = 2.1 - s * .9;
+    const cx = Math.cos(a) * r, cy = (s - .5) * 1.6, cz = Math.sin(a) * r;
+    const wx = (s - .5) * 9, wy = Math.sin(s * Math.PI * 2.4) * 1.1 - .2, wz = Math.cos(s * Math.PI * 1.7) * 1.2;
+    const e = k * k * (3 - 2 * k);
+    return out.set(cx + (wx - cx) * e, cy + (wy - cy) * e, cz + (wz - cz) * e);
+  }
+  function build(time){
+    for (let i = 0; i <= N; i++) {
+      const s = i / N;
+      center(s, P.k, tmp);
+      const tw = Math.sin(s * 6 + time * .6) * .25 * P.k;   // лёгкий изгиб ленты
+      const ux = Math.sin(tw) * W / 2, uy = Math.cos(tw) * W / 2;
+      pos.set([tmp.x - ux, tmp.y + uy, tmp.z, tmp.x + ux, tmp.y - uy, tmp.z], i * 6);
+    }
+    geo.attributes.position.needsUpdate = true;
+    geo.computeVertexNormals();
+  }
+
+  function size(){
+    const w = box.clientWidth, h = box.clientHeight;
+    renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix();
+    const mob = innerWidth < 880;
+    grp.scale.setScalar(mob ? 1 : 1);
+    grp.position.set(mob ? -.2 : .3, mob ? -.5 : 0, 0);
+  }
+  size(); addEventListener('resize', size);
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  gsap.to(P, {draw:1, duration:2.4, delay:.4, ease:'power2.inOut'});
+  if (window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.matchMedia({'(min-width: 881px)': () => {
+      gsap.to(P, {k:1, ease:'none', scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:1}});
+    }});
+  }
+  let vis = true;
+  new IntersectionObserver(e => vis = e[0].isIntersecting).observe(box);
+  const clock = new THREE.Clock();
+  (function loop(){
+    requestAnimationFrame(loop);
+    if (!vis) return;
+    const t = clock.getElapsedTime();
+    build(t);
+    thGeo.setDrawRange(0, Math.floor(thCount * P.draw / 3) * 3);
+    if (!reduce) { grp.rotation.y = t * .18 + P.k * .6; grp.rotation.x = Math.sin(t * .4) * .08 + .15; needle.position.y = 1.9 + Math.sin(t * 1.3) * .08; }
+    renderer.render(scene, cam);
+  })();
+})();
+
+/* ---------- анимации появления ---------- */
+if (window.gsap && window.ScrollTrigger) {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from('.hero-in > *', {y:30, opacity:0, duration:.9, stagger:.1, ease:'power3.out', clearProps:'all'});
+  gsap.to('#st', {'--s':1, duration:1.2, delay:1, ease:'power2.inOut'});
+  gsap.utils.toArray('.rv').forEach(el => gsap.from(el, {y:40, opacity:0, duration:.8, ease:'power3.out', clearProps:'opacity,transform', scrollTrigger:{trigger:el, start:'top 90%'}}));
+  gsap.from('.tag', {rotation:-14, duration:1.6, ease:'elastic.out(1,0.3)', scrollTrigger:{trigger:'.tagbox', start:'top 75%'}});
+} else document.getElementById('st').style.setProperty('--s', 1);
+</script>
+</body>
+</html>
