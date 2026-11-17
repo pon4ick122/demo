@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dog Corleone — груминг-салон в Мытищах</title>
+<meta name="description" content="Груминг-салон Dog Corleone в Мытищах, Лётная 21/2. Цены по 60+ породам, запись в WhatsApp. 5,0 на Яндекс Картах.">
+<meta property="og:title" content="Dog Corleone — груминг в Мытищах">
+<meta property="og:description" content="Предложение, от которого ваш пёс не откажется. Цена по породе за 5 секунд.">
+<meta property="og:image" content="img/1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d0b09; --ink2:#17130f; --line:#2a241c;
+  --gold:#c9a45c; --gold2:#e6c98a; --cream:#f3ead8; --muted:#a89a82; --wine:#7a2230;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Onest",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:var(--sans);font-size:17px;line-height:1.55;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:min(1180px,100% - 32px);margin:0 auto}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid var(--gold);transition:.25s;cursor:pointer;font-family:var(--sans);font-size:16px}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:var(--gold2)}
+.btn-ghost{color:var(--cream);background:transparent}
+.btn-ghost:hover{background:#c9a45c1a}
+
+/* ===== header ===== */
+header{position:fixed;inset:0 0 auto;z-index:20;padding:18px 0;transition:background .3s}
+header.solid{background:#0d0b09e6;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.02em;text-decoration:none}
+.logo i{color:var(--gold)}
+.nav nav{display:flex;gap:26px;font-size:15px;color:var(--muted)}
+.nav nav a{text-decoration:none}
+.nav nav a:hover{color:var(--cream)}
+.nav .btn{padding:10px 18px;font-size:14px}
+@media(max-width:820px){.nav nav{display:none}}
+
+/* ===== hero ===== */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:120px 0 64px;overflow:hidden}
+#stage{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0d0b09 18%,#0d0b09b3 45%,transparent 75%),linear-gradient(to top,#0d0b09 6%,transparent 40%);z-index:1;pointer-events:none}
+@media(max-width:899px){.hero::after{background:linear-gradient(to top,#0d0b09 42%,#0d0b0999 70%,transparent)}}
+.hero-in{position:relative;z-index:2}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,8.2vw,124px);line-height:.92;letter-spacing:-.01em;margin:14px 0 22px}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln>span{display:inline-block}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero p.lead{max-width:540px;color:#d8ccb4;font-size:19px;margin-bottom:30px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:22px;margin-top:40px;color:var(--muted);font-size:14px}
+.hero .meta b{color:var(--cream);font-weight:600}
+.stars{color:var(--gold);letter-spacing:2px}
+
+/* ===== ticker ===== */
+.ticker{border-block:1px solid var(--line);padding:18px 0;overflow:hidden;white-space:nowrap;background:var(--ink2)}
+.ticker .row{display:inline-flex;gap:48px;font-family:var(--serif);font-style:italic;font-size:28px;color:var(--gold2);will-change:transform}
+.ticker .row span::after{content:"✦";margin-left:48px;color:var(--wine);font-style:normal;font-size:18px}
+
+/* ===== sections ===== */
+section{padding:110px 0}
+.h2{font-family:var(--serif);font-weight:500;font-size:clamp(36px,5.4vw,72px);line-height:1;letter-spacing:-.01em;margin:12px 0 20px}
+.h2 em{color:var(--gold);font-style:italic}
+.sub{color:var(--muted);max-width:620px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-top:48px}
+.stat{background:var(--ink);padding:30px 26px}
+.stat .n{font-family:var(--serif);font-size:58px;line-height:1;color:var(--gold2)}
+.stat .t{color:var(--muted);font-size:14px;margin-top:8px}
+@media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}.stat .n{font-size:44px}}
+
+/* finder */
+.finder{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;margin-top:44px}
+@media(max-width:900px){.finder{grid-template-columns:1fr}}
+.panel{background:linear-gradient(160deg,#1b1611,#110e0b);border:1px solid var(--line);border-radius:26px;padding:28px}
+.search{position:relative}
+.search input{width:100%;background:#0d0b09;border:1px solid #3a3124;border-radius:16px;padding:18px 20px 18px 52px;color:var(--cream);font:500 18px var(--sans);outline:none;transition:border .2s}
+.search input:focus{border-color:var(--gold)}
+.search svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);opacity:.7}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 6px}
+.chip{border:1px solid #3a3124;background:transparent;color:#d8ccb4;border-radius:999px;padding:8px 14px;font:500 14px var(--sans);cursor:pointer;transition:.2s}
+.chip:hover,.chip.on{border-color:var(--gold);color:var(--ink);background:var(--gold)}
+.list{max-height:330px;overflow:auto;margin-top:14px;border-top:1px solid var(--line)}
+.list button{display:flex;justify-content:space-between;gap:16px;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);color:var(--cream);padding:13px 4px;font:400 16px var(--sans);cursor:pointer}
+.list button:hover,.list button.on{color:var(--gold2)}
+.list button b{font-family:var(--mono);font-weight:500;color:var(--gold);white-space:nowrap}
+.list .empty{color:var(--muted);padding:18px 4px}
+.result{display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.result .breed{font-family:var(--serif);font-size:clamp(32px,4vw,46px);line-height:1.02}
+.result .price{font-family:var(--serif);font-size:clamp(64px,9vw,104px);line-height:1;color:var(--gold2)}
+.result .price small{font-size:.38em;color:var(--muted)}
+.result ul{list-style:none;display:grid;gap:8px;color:#d8ccb4;font-size:15px}
+.result li::before{content:"— ";color:var(--gold)}
+.result .note{font-size:13px;color:var(--muted)}
+.disc{display:inline-block;background:var(--wine);color:#fff;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600}
+
+/* steps (pinned horizontal) */
+.steps-wrap{overflow:hidden}
+.steps{display:flex;gap:24px;padding:0 max(16px,calc((100vw - 1180px)/2));width:max-content}
+.step{width:min(440px,82vw);flex:none;border:1px solid var(--line);border-radius:26px;padding:34px;background:var(--ink2);min-height:330px;display:flex;flex-direction:column;justify-content:space-between}
+.step .k{font-family:var(--serif);font-style:italic;font-size:84px;line-height:.9;color:var(--gold)}
+.step h3{font-family:var(--serif);font-weight:600;font-size:32px;margin:14px 0 8px}
+.step p{color:var(--muted)}
+@media(max-width:820px){.steps{flex-direction:column;width:auto}.step{width:auto;min-height:0}}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:44px}
+.gal figure{position:relative;border-radius:22px;overflow:hidden;background:#000;transform-style:preserve-3d}
+.gal figure img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:14px;bottom:14px;background:#0d0b09cc;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px}
+.gal{grid-auto-rows:clamp(300px,36vw,500px)}
+.g1{grid-column:span 5}.g2{grid-column:span 4}.g3{grid-column:span 3}
+.g4{grid-column:span 4}.g5{grid-column:span 4}
+@media(max-width:820px){.gal{grid-auto-rows:260px}}
+.gtxt{grid-column:span 4;border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;background:radial-gradient(circle at 20% 10%,#7a223033,transparent 60%),var(--ink2)}
+.gtxt q{font-family:var(--serif);font-style:italic;font-size:28px;line-height:1.15}
+.gtxt span{color:var(--muted);font-size:14px;margin-top:14px}
+@media(max-width:820px){.gal{grid-template-columns:repeat(2,1fr)}.gal>*{grid-column:span 1!important}.gtxt{grid-column:span 2!important}}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.svc div{border:1px solid var(--line);border-radius:20px;padding:24px;transition:translate .25s,border-color .25s}
+.svc div:hover{border-color:var(--gold);translate:0 -4px}
+.svc h4{font-family:var(--serif);font-size:26px;font-weight:600;margin-bottom:6px}
+.svc p{color:var(--muted);font-size:15px}
+@media(max-width:820px){.svc{grid-template-columns:1fr}}
+
+/* reviews */
+.revs{display:flex;gap:18px;margin-top:40px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}
+.rev{flex:none;width:min(380px,84vw);scroll-snap-align:start;border:1px solid var(--line);border-radius:22px;padding:26px;background:var(--ink2)}
+.rev p{font-size:16px;color:#e4d9c3}
+.rev .who{margin-top:16px;font-size:13px;color:var(--gold)}
+
+/* final */
+.final{text-align:center;padding:130px 0;background:radial-gradient(ellipse at 50% 0%,#c9a45c22,transparent 60%)}
+.final .h2{font-size:clamp(40px,7vw,96px)}
+.final .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:70px;text-align:left}
+.info div{border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:15px}
+.info b{display:block;color:var(--cream);font-weight:500;margin-top:4px;font-size:17px}
+@media(max-width:820px){.info{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding:26px 0;color:#6f6556;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.fab{position:fixed;right:18px;bottom:18px;z-index:30;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px #0008;transition:transform .2s}
+.fab:hover{transform:scale(1.08)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="logo" href="#top">Dog <i>Corleone</i></a>
+    <nav><a href="#price">Цены</a><a href="#ritual">Комплекс</a><a href="#works">Работы</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+    <a class="btn btn-gold" data-wa="Здравствуйте! Хочу записаться на груминг.">Записаться</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <div class="mono">Груминг-салон · Мытищи, Лётная 21/2</div>
+    <h1>
+      <span class="ln"><span>Предложение,</span></span>
+      <span class="ln"><span>от которого</span></span>
+      <span class="ln"><span><em>ваш пёс</em> не откажется</span></span>
+    </h1>
+    <p class="lead">Купание по типу шерсти, стрижка, уши, лапы и когти — за один визит. Без стресса: присылаем фото и видео прямо с процедуры.</p>
+    <div class="cta">
+      <a class="btn btn-gold" href="#price">Узнать цену по породе →</a>
+      <a class="btn btn-ghost" data-wa="Здравствуйте! Хочу записаться на груминг.">Написать в WhatsApp</a>
+    </div>
+    <div class="meta">
+      <span><span class="stars">★★★★★</span> <b>5,0</b> на Яндекс Картах · 112 оценок</span>
+      <span>Первое посещение <b>−10%</b></span>
+      <span>Собаки и <b>кошки</b></span>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="row" id="tick">
+  <span>Купание по типу шерсти</span><span>Стрижка и тримминг</span><span>Когтикюр</span><span>Экспресс-линька</span><span>Восстановление цвета шерсти</span><span>Spa для кошек</span><span>Дневная передержка</span>
+  <span>Купание по типу шерсти</span><span>Стрижка и тримминг</span><span>Когтикюр</span><span>Экспресс-линька</span><span>Восстановление цвета шерсти</span><span>Spa для кошек</span><span>Дневная передержка</span>
+</div></div>
+
+<section>
+  <div class="wrap">
+    <div class="mono">Семья с репутацией</div>
+    <h2 class="h2">Здесь стригутся <em>годами</em></h2>
+    <p class="sub">«Не первый год стрижёмся здесь и только здесь», «посещаем со дня открытия» — так пишут о салоне в отзывах.</p>
+    <div class="stats">
+      <div class="stat"><div class="n" data-count="5" data-dec="1">5,0</div><div class="t">рейтинг на Яндекс Картах</div></div>
+      <div class="stat"><div class="n" data-count="112">112</div><div class="t">оценок от хозяев</div></div>
+      <div class="stat"><div class="n" data-count="60" data-suffix="+">60+</div><div class="t">пород в прайсе — цена сразу</div></div>
+      <div class="stat"><div class="n" data-count="10" data-prefix="−" data-suffix="%">−10%</div><div class="t">на первое посещение</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="price" style="padding-top:20px">
+  <div class="wrap">
+    <div class="mono">Прайс без звонков</div>
+    <h2 class="h2">Сколько стоит <em>ваш</em>?</h2>
+    <p class="sub">Начните вводить породу — цена комплекса из прайса салона появится сразу. Одно нажатие — и заявка уже в WhatsApp у администратора.</p>
+    <div class="finder">
+      <div class="panel">
+        <label class="search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a45c" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="q" type="search" placeholder="Например: шпиц, пудель, корги…" autocomplete="off" aria-label="Порода">
+        </label>
+        <div class="chips" id="chips"></div>
+        <div class="list" id="list" role="listbox"></div>
+      </div>
+      <div class="panel result" id="res" aria-live="polite">
+        <div>
+          <div class="mono">Комплекс для</div>
+          <div class="breed" id="rBreed">Померанского шпица</div>
+        </div>
+        <div class="price" id="rPrice">— <small>₽</small></div>
+        <ul id="rList"></ul>
+        <div>
+          <span class="disc">−10% на первое посещение</span>
+          <p class="note" style="margin-top:10px">Точная цена зависит от состояния шерсти — мастер скажет на месте.</p>
+        </div>
+        <a class="btn btn-gold" id="rBtn" style="justify-content:center">Записаться на этот комплекс</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ritual" style="padding-bottom:40px">
+  <div class="wrap">
+    <div class="mono">Что входит в комплекс</div>
+    <h2 class="h2">Ритуал из <em>четырёх</em> шагов</h2>
+  </div>
+</section>
+<div class="steps-wrap" id="stepsWrap">
+  <div class="steps" id="steps">
+    <div class="step"><div class="k">I</div><div><h3>Купание</h3><p>Средства подбираем по типу шерсти: у пуделя, шпица и лабрадора — разная косметика.</p></div></div>
+    <div class="step"><div class="k">II</div><div><h3>Сушка и вычёсывание</h3><p>Выдуваем подшёрсток и аккуратно разбираем колтуны — без рывков.</p></div></div>
+    <div class="step"><div class="k">III</div><div><h3>Стрижка или тримминг</h3><p>По породному стандарту или «как на фото» — мастер учтёт все пожелания.</p></div></div>
+    <div class="step"><div class="k">IV</div><div><h3>Уши, лапы, когти</h3><p>Обработка ушек, подушечек и когтей, гигиена интимных зон — всё уже в цене.</p></div></div>
+  </div>
+</div>
+
+<section id="works">
+  <div class="wrap">
+    <div class="mono">Наши работы</div>
+    <h2 class="h2">Портреты <em>семьи</em></h2>
+    <div class="gal">
+      <figure class="g1 tilt"><img src="img/3.jpg" alt="Рыжий пудель после стрижки" loading="lazy"><figcaption>«Плюшевая» стрижка</figcaption></figure>
+      <figure class="g2 tilt"><img src="img/2.jpg" alt="Чёрный пудель после груминга" loading="lazy"><figcaption>Пудель</figcaption></figure>
+      <figure class="g3 tilt"><img src="img/1.jpg" alt="Той-пудель" loading="lazy"><figcaption>Той-пудель</figcaption></figure>
+      <div class="gtxt"><q>До и после — земля и небо! Наш лабрадудль наконец-то выглядит как с обложки журнала.</q><span>Из отзыва на Яндекс Картах</span></div>
+      <figure class="g4 tilt"><img src="img/5.jpg" alt="Бишон фризе" loading="lazy"><figcaption>Бишон</figcaption></figure>
+      <figure class="g5 tilt"><img src="img/4.jpg" alt="Кошка после экспресс-линьки" loading="lazy"><figcaption>Экспресс-линька кошке</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap">
+    <div class="mono">Ещё в салоне</div>
+    <h2 class="h2">Не только <em>стрижка</em></h2>
+    <div class="svc">
+      <div><h4>Кошки</h4><p>Spa-комплекс и линька для котиков, даже не самых дружелюбных — мастер найдёт подход.</p></div>
+      <div><h4>Когтикюр</h4><p>Быстро и спокойно: «пёс вышел радостный, без стресса».</p></div>
+      <div><h4>Экспресс-линька</h4><p>Когда подшёрсток везде, кроме собаки.</p></div>
+      <div><h4>Восстановление цвета</h4><p>Маски и уход, чтобы белые оставались белыми, а рыжие — рыжими.</p></div>
+      <div><h4>Дневная передержка</h4><p>Можно оставить питомца на день, пока вы на работе.</p></div>
+      <div><h4>Подарочный сертификат</h4><p>Лучший подарок другу с собакой.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:10px">
+  <div class="wrap">
+    <div class="mono">Что говорят хозяева</div>
+    <h2 class="h2">Золотые <em>руки</em></h2>
+    <div class="revs">
+      <div class="rev"><p>«Мастер Юлия сделала идеальную „плюшевую“ стрижку: округлые лапки, аккуратная мордочка, красивая линия корпуса. Спасибо за любовь к собакам!»</p><div class="who">Лабрадудль · мастер Юлия</div></div>
+      <div class="rev"><p>«Кот у меня не очень дружелюбный. Мастер Татьяна сделала из моего старика красавчика — он даже помолодел».</p><div class="who">Кот · мастер Татьяна</div></div>
+      <div class="rev"><p>«Девочки очень бережно отнеслись к щенку, присылали фото и видео с процедур, рассказали про уход и помогли подобрать расчёски».</p><div class="who">Щенок 3 мес. · первый груминг</div></div>
+      <div class="rev"><p>«Уютно, домашняя атмосфера, идеальная чистота, приятный запах. Собака довольна и я тоже».</p><div class="who">Мастер Светлана</div></div>
+      <div class="rev"><p>«Грумер Дарина нашла подход к кошке ещё до того, как забрать её. Кошка перенесла spa с минимальным стрессом».</p><div class="who">Кошка · мастер Дарина</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="contacts">
+  <div class="wrap">
+    <div class="mono">Запись</div>
+    <h2 class="h2">Приходите <em>всей семьёй</em></h2>
+    <p class="sub" style="margin:0 auto">Напишите породу и удобный день — администратор подберёт время и мастера.</p>
+    <div class="cta">
+      <a class="btn btn-gold" data-wa="Здравствуйте! Хочу записаться на груминг. Порода: ">Записаться в WhatsApp</a>
+      <a class="btn btn-ghost" href="tel:+79151163777">+7 915 116-37-77</a>
+    </div>
+    <div class="info">
+      <div>Адрес<b>Мытищи, Лётная ул., 21/2</b></div>
+      <div>Рядом<b>остановка «Бульвар Ветеранов»</b></div>
+      <div>Оплата<b>карта, СБП, наличные</b></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© Dog Corleone, Мытищи</span><span>Демо-версия сайта · цены и отзывы — с Яндекс Карт</span></div></footer>
+
+<a class="fab" data-wa="Здравствуйте! Хочу записаться на груминг." aria-label="Написать в WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+
+<script>
+/* ===== данные: прайс салона с Яндекс Карт ===== */
+const WA = "79151163777";
+const PRICES = [
+ ["Померанский шпиц",3500,"стрижка"],["Йоркширский терьер (до 2 кг)",3000,"стрижка"],["Йоркширский терьер (2–4 кг)",3300,"стрижка"],["Йоркширский терьер (от 4 кг)",3800,"стрижка"],
+ ["Той-пудель / карликовый пудель (28–35 см)",4000,"стрижка"],["Бишон фризе",4000,"стрижка"],["Мальтипу / кавапу",4000,"стрижка"],["Кокапу",4000,"стрижка"],
+ ["Йоркипу (до 2 кг)",3000,"стрижка"],["Йоркипу (2–4 кг)",3300,"стрижка"],["Йоркипу (от 4 кг)",3800,"стрижка"],
+ ["Вельш-корги",3500,"вычёсывание"],["Корги флаффи",3500,"вычёсывание"],["Бигль",3500,"вычёсывание"],["Джек-рассел (гладкошёрстный)",3000,"вычёсывание"],["Парсон-рассел (гладкошёрстный)",3000,"стрижка"],
+ ["Чихуахуа гладкошёрстная (до 2 кг)",2200,"вычёсывание"],["Чихуахуа гладкошёрстная (2–3,5 кг)",2500,"вычёсывание"],["Чихуахуа гладкошёрстная (от 3,5 кг)",3000,"вычёсывание"],
+ ["Чихуахуа длинношёрстная (до 2 кг)",2500,"стрижка"],["Чихуахуа длинношёрстная (2–3,5 кг)",3000,"стрижка"],["Чихуахуа длинношёрстная (от 3,5 кг)",3500,"стрижка"],
+ ["Такса гладкошёрстная",3000,"вычёсывание"],["Такса длинношёрстная (до 4 кг)",2700,"стрижка"],["Такса длинношёрстная (от 4 кг)",3300,"стрижка"],
+ ["Карликовый пинчер",2500,"вычёсывание"],["Китайская хохлатая (голая)",2500,"стрижка"],["Китайская хохлатая (пуховка)",3000,"стрижка"],
+ ["Кавалер кинг-чарльз спаниель",4000,"стрижка"],["Американский кокер-спаниель",5000,"стрижка"],["Английский кокер-спаниель",5000,"стрижка"],
+ ["Английский бульдог",4000,"вычёсывание"],["Бассет-хаунд",4000,"вычёсывание"],["Боксёр",4000,"вычёсывание"],["Булли",3800,"вычёсывание"],["Бультерьер",3500,"вычёсывание"],
+ ["Бордер-колли",4000,"стрижка"],["Колли",4000,"стрижка"],["Аусси (австралийская овчарка)",5500,"стрижка"],["Ирландский сеттер",4500,"стрижка"],
+ ["Веймаранер",4500,"вычёсывание"],["Венгерская выжла",4500,"вычёсывание"],["Доберман",5000,"вычёсывание"],["Золотистый ретривер",5500,"вычёсывание"],
+ ["Акита-ину",6000,"вычёсывание"],["Лаготто-романьоло",6000,"стрижка"],["Бриар",7000,"стрижка"],["Коббердог",6500,"стрижка"],["Аляскинский маламут",7000,"вычёсывание"],["Кане-корсо",7000,"вычёсывание"],
+ ["Метис гладкошёрстный (до 8 кг)",3000,"вычёсывание"],["Метис гладкошёрстный (8–15 кг)",4000,"вычёсывание"],["Метис гладкошёрстный (15–22 кг)",5000,"вычёсывание"],["Метис гладкошёрстный (22–30 кг)",6000,"вычёсывание"],["Метис гладкошёрстный (от 30 кг)",7000,"вычёсывание"],
+ ["Метис длинношёрстный (до 8 кг)",3500,"вычёсывание"],["Метис длинношёрстный (8–15 кг)",4500,"вычёсывание"],["Метис длинношёрстный (15–22 кг)",5500,"вычёсывание"],["Метис длинношёрстный (22–30 кг)",6500,"вычёсывание"],["Метис длинношёрстный (от 30 кг)",7500,"вычёсывание"]
+];
+const POPULAR = ["Померанский шпиц","Той-пудель","Йоркширский","Вельш-корги","Мальтипу","Бишон","Чихуахуа","Метис"];
+
+const $ = s => document.querySelector(s);
+const waLink = t => "https://wa.me/" + WA + "?text=" + encodeURIComponent(t);
+document.querySelectorAll("[data-wa]").forEach(a => { a.href = waLink(a.dataset.wa); a.target = "_blank"; a.rel = "noopener"; });
+
+/* ===== поиск цены ===== */
+const norm = s => s.toLowerCase().replace(/ё/g,"е").replace(/[-–]/g," ");
+const SYN = {"шпиц":"померанский","пудель":"пудель","йорк":"йоркширский","корги":"корги","ретривер":"ретривер","голден":"ретривер","лабрадудль":"метис длинн","дворняж":"метис","метис":"метис","мальти":"мальтипу","джек":"джек","маламут":"маламут","хаски":"метис длинн"};
+let current = null;
+function render(q){
+  const nq = norm(q.trim());
+  let items = PRICES;
+  if (nq){
+    const extra = Object.entries(SYN).filter(([k])=>nq.includes(k)).map(([,v])=>v);
+    items = PRICES.filter(([n]) => { const nn = norm(n); return nn.includes(nq) || nq.split(" ").every(w => nn.includes(w)) || extra.some(e => nn.includes(e)); });
+  }
+  const list = $("#list");
+  list.innerHTML = items.length ? items.map(([n,p]) => `<button type="button" data-n="${n}" class="${current&&current[0]===n?"on":""}"><span>${n}</span><b>${p.toLocaleString("ru-RU")} ₽</b></button>`).join("")
+    : `<div class="empty">Такой породы нет в прайсе — напишите нам, посчитаем индивидуально.</div>`;
+  list.querySelectorAll("button").forEach(b => b.onclick = () => pick(b.dataset.n));
+}
+function pick(name){
+  current = PRICES.find(p => p[0] === name); if (!current) return;
+  const [n,p,kind] = current;
+  $("#rBreed").textContent = n;
+  animateNum($("#rPrice"), p);
+  const items = ["Купание с уходовыми средствами по типу шерсти","Сушка и вычёсывание", kind==="стрижка" ? "Стрижка или тримминг по желанию" : "Вычёсывание подшёрстка","Уши, подушечки лап, когти, гигиена"];
+  $("#rList").innerHTML = items.map(i=>`<li>${i}</li>`).join("");
+  $("#rBtn").href = waLink(`Здравствуйте! Хочу записаться на комплекс для породы «${n}» (по прайсу ${p.toLocaleString("ru-RU")} ₽). Первое посещение. Когда есть время?`);
+  $("#rBtn").target = "_blank";
+  document.querySelectorAll("#list button").forEach(b => b.classList.toggle("on", b.dataset.n === n));
+}
+function animateNum(el, to){
+  const from = parseInt(el.dataset.v || 0); el.dataset.v = to;
+  const t0 = performance.now(), d = 600;
+  const step = t => { const k = Math.min(1,(t-t0)/d), e = 1-Math.pow(1-k,3);
+    el.innerHTML = Math.round(from + (to-from)*e).toLocaleString("ru-RU") + " <small>₽</small>"; if (k<1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+$("#chips").innerHTML = POPULAR.map(p=>`<button class="chip" type="button">${p}</button>`).join("");
+$("#chips").querySelectorAll(".chip").forEach(c => c.onclick = () => { $("#q").value = c.textContent; render(c.textContent); const f = PRICES.find(p=>norm(p[0]).includes(norm(c.textContent))); if (f) pick(f[0]); document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x===c)); });
+$("#q").addEventListener("input", e => render(e.target.value));
+render(""); pick("Померанский шпиц");
+
+/* ===== шапка ===== */
+addEventListener("scroll", () => $("#hdr").classList.toggle("solid", scrollY > 40), {passive:true});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ===== 3D: галерея семейных портретов (настоящие фото салона) ===== */
+(function(){
+  if (!window.THREE) return;
+  const canvas = document.getElementById("stage");
+  let renderer;
+  try { renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true}); } catch(e){ return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0x0d0b09, 6, 15);
+  const cam = new THREE.PerspectiveCamera(42, 1, .1, 50);
+  cam.position.set(0, .2, 8.5);
+
+  const group = new THREE.Group(); scene.add(group);
+  const loader = new THREE.TextureLoader();
+  const N = 10, R = 4.2;
+  const frames = [];
+  for (let i=0;i<N;i++){
+    const tex = loader.load(`img/${(i%5)+1}.jpg`);
+    tex.encoding = THREE.sRGBEncoding;
+    const card = new THREE.Group();
+    const frame = new THREE.Mesh(new THREE.PlaneGeometry(1.72, 2.22), new THREE.MeshBasicMaterial({color:0xc9a45c}));
+    const photo = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 2.1), new THREE.MeshBasicMaterial({map:tex}));
+    photo.position.z = .005;
+    const back = new THREE.Mesh(new THREE.PlaneGeometry(1.72, 2.22), new THREE.MeshBasicMaterial({color:0x17130f}));
+    back.rotation.y = Math.PI; back.position.z = -.005;
+    card.add(frame, photo, back);
+    const a = i / N * Math.PI * 2;
+    card.position.set(Math.sin(a)*R, Math.sin(i*1.7)*.55, Math.cos(a)*R);
+    card.lookAt(0, card.position.y, 0); card.rotateY(Math.PI);
+    card.userData = {y: card.position.y, ph: i};
+    group.add(card); frames.push(card);
+  }
+  // золотая пыль
+  const P = 700, pos = new Float32Array(P*3);
+  for (let i=0;i<P;i++){ pos[i*3]=(Math.random()-.5)*16; pos[i*3+1]=(Math.random()-.5)*9; pos[i*3+2]=(Math.random()-.5)*12; }
+  const pg = new THREE.BufferGeometry(); pg.setAttribute("position", new THREE.BufferAttribute(pos,3));
+  const dust = new THREE.Points(pg, new THREE.PointsMaterial({color:0xe6c98a, size:.03, transparent:true, opacity:.8}));
+  scene.add(dust);
+
+  let mx=0, my=0, vel=0, lastY=scrollY;
+  addEventListener("pointermove", e => { mx = e.clientX/innerWidth-.5; my = e.clientY/innerHeight-.5; }, {passive:true});
+  addEventListener("scroll", () => { vel += (scrollY-lastY)*.0004; lastY = scrollY; }, {passive:true});
+  function size(){ const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w,h,false); cam.aspect = w/h;
+    const wide = w >= 900;                       // на ПК кольцо справа от заголовка, на телефоне — дальше и выше
+    cam.position.z = wide ? 11 : 13; group.position.set(wide ? 3.6 : 0, wide ? 0 : 1.8, 0); group.scale.setScalar(wide ? .85 : .75);
+    cam.updateProjectionMatrix(); }
+  addEventListener("resize", size); size();
+  let visible = true;
+  new IntersectionObserver(([e]) => visible = e.isIntersecting).observe(canvas);
+  const clock = new THREE.Clock();
+  (function loop(){
+    requestAnimationFrame(loop);
+    if (!visible) return;
+    const t = clock.getElapsedTime();
+    vel *= .92;
+    group.rotation.y += (REDUCED ? 0 : .0022) + vel;
+    group.rotation.x += ((my*.18) - group.rotation.x)*.04;
+    frames.forEach(f => f.position.y = f.userData.y + (REDUCED?0:Math.sin(t*.8+f.userData.ph)*.08));
+    dust.rotation.y = t*.01;
+    cam.position.x += (mx*1.2 - cam.position.x)*.04;
+    cam.lookAt(0,0,0);
+    renderer.render(scene, cam);
+  })();
+})();
+
+/* ===== GSAP-анимации ===== */
+(function(){
+  if (!window.gsap || REDUCED) return;
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from(".hero h1 .ln>span", {yPercent:110, duration:1.1, ease:"power4.out", stagger:.12, delay:.2});
+  gsap.from(".hero .lead, .hero .cta, .hero .meta, .hero .mono", {y:24, opacity:0, duration:.9, ease:"power3.out", stagger:.08, delay:.6});
+
+  // бегущая строка, наклон от скорости
+  const row = document.getElementById("tick");
+  const tw = gsap.to(row, {xPercent:-50, ease:"none", duration:28, repeat:-1});
+  ScrollTrigger.create({onUpdate: s => { const v = s.getVelocity(); gsap.to(row, {skewX: gsap.utils.clamp(-12,12,v/-160), duration:.3}); tw.timeScale(1 + Math.min(4, Math.abs(v)/600)); gsap.to(tw, {timeScale:1, duration:1, delay:.2}); }});
+
+  document.querySelectorAll(".h2").forEach(h => gsap.from(h, {y:50, opacity:0, duration:1, ease:"power3.out", scrollTrigger:{trigger:h, start:"top 85%"}}));
+  gsap.from(".stat", {y:40, opacity:0, duration:.8, stagger:.1, ease:"power3.out", scrollTrigger:{trigger:".stats", start:"top 85%"}});
+  document.querySelectorAll("[data-count]").forEach(el => {
+    const to = +el.dataset.count, dec = +el.dataset.dec || 0, pre = el.dataset.prefix||"", suf = el.dataset.suffix||"";
+    const o = {v:0};
+    gsap.to(o, {v:to, duration:1.6, ease:"power2.out", scrollTrigger:{trigger:el, start:"top 90%"}, onUpdate:() => el.textContent = pre + o.v.toFixed(dec).replace(".",",") + suf});
+  });
+
+  // горизонтальные шаги (только на широких экранах)
+  ScrollTrigger.matchMedia({"(min-width: 821px)": () => {
+    const steps = document.getElementById("steps");
+    const dist = () => steps.scrollWidth - innerWidth;
+    gsap.to(steps, {x: () => -dist(), ease:"none", scrollTrigger:{trigger:"#stepsWrap", start:"top 15%", end: () => "+=" + dist(), pin:true, scrub:1, invalidateOnRefresh:true}});
+  }});
+
+  gsap.from(".gal > *", {y:60, opacity:0, duration:.9, stagger:.08, ease:"power3.out", scrollTrigger:{trigger:".gal", start:"top 80%"}});
+  gsap.from(".svc > div", {y:40, opacity:0, duration:.7, stagger:.06, ease:"power3.out", scrollTrigger:{trigger:".svc", start:"top 85%"}});
+
+  // наклон фото за курсором
+  document.querySelectorAll(".tilt").forEach(f => {
+    f.addEventListener("pointermove", e => { const r = f.getBoundingClientRect(); gsap.to(f, {rotateY:(e.clientX-r.left)/r.width*10-5, rotateX:-((e.clientY-r.top)/r.height*10-5), transformPerspective:800, duration:.4}); });
+    f.addEventListener("pointerleave", () => gsap.to(f, {rotateX:0, rotateY:0, duration:.6}));
+  });
+})();
+</script>
+</body>
+</html>
