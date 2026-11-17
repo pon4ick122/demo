@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Шиномонтаж 008 — Королёв, по записи без очереди</title>
+<meta name="description" content="Шиномонтаж R13–R22 в Королёве, Южная ул., 9. По записи без очереди, хранение шин, помощь на дороге. 5,0 на Яндекс Картах.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1f6b45;--g2:#2c8a5a;--blue:#1e5bd8;--ink:#0d1210;--paper:#eef2ee;--y:#ffd23f;--mute:#5b6660}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Onest,system-ui,sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+a{color:inherit}
+.mono{font-family:"JetBrains Mono",monospace}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:rgba(13,18,16,.85);backdrop-filter:blur(8px);color:#fff}
+.logo{font-family:Unbounded;font-weight:800;font-size:18px;letter-spacing:.5px}
+.logo b{color:var(--y)}
+nav .cta{background:var(--y);color:var(--ink);padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none;font-size:14px}
+/* hero */
+.hero{min-height:100vh;background:
+ repeating-linear-gradient(90deg,#1b5c3c 0 34px,#227049 34px 40px,#1b5c3c 40px 74px);
+ color:#fff;position:relative;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;padding:110px 6vw 60px;gap:20px;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.45));pointer-events:none}
+.hero>*{position:relative;z-index:2}
+.plate{display:inline-flex;gap:10px;align-items:center;background:#111;border:2px solid #333;border-radius:8px;padding:8px 14px;font-family:"JetBrains Mono";font-size:14px;color:#ddd;margin-bottom:22px}
+.plate i{width:10px;height:10px;border-radius:50%;background:#e33;box-shadow:0 0 10px #e33;animation:bl 1.4s infinite}
+@keyframes bl{50%{opacity:.25}}
+h1{font-family:Unbounded;font-weight:800;font-size:clamp(40px,6.4vw,92px);line-height:.95;letter-spacing:-1px}
+h1 .y{color:var(--y)}
+.lead{font-size:clamp(17px,1.5vw,21px);margin:24px 0 30px;max-width:520px;line-height:1.45;color:#e7f1ea}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:16px 22px;border-radius:12px;font-weight:700;text-decoration:none;font-size:16px;border:0;cursor:pointer}
+.btn.y{background:var(--y);color:var(--ink)}
+.btn.o{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
+.badges{display:flex;gap:18px;margin-top:34px;flex-wrap:wrap}
+.badge{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:10px 14px;border-radius:12px;font-size:14px}
+.badge b{display:block;font-family:Unbounded;font-size:22px;color:var(--y)}
+#tire{width:100%;height:min(70vh,620px)}
+.hint{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-size:12px;opacity:.7;z-index:3;color:#fff}
+/* ticker */
+.tick{background:var(--y);overflow:hidden;white-space:nowrap;padding:14px 0;font-family:Unbounded;font-weight:800;font-size:20px}
+.tick div{display:inline-block;animation:mv 22s linear infinite}
+@keyframes mv{to{transform:translateX(-50%)}}
+section{padding:90px 6vw}
+h2{font-family:Unbounded;font-weight:800;font-size:clamp(30px,4vw,54px);line-height:1;margin-bottom:14px;letter-spacing:-.5px}
+.sub{color:var(--mute);font-size:18px;max-width:640px;margin-bottom:40px}
+/* booking */
+.book{background:var(--ink);color:#fff}
+.book .sub{color:#a9b8af}
+.wiz{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
+.step{margin-bottom:28px}
+.step h4{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#7f9488;margin-bottom:12px;font-family:"JetBrains Mono"}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{background:#1a221e;border:2px solid #26332c;color:#fff;padding:12px 16px;border-radius:12px;cursor:pointer;font:500 15px Onest;transition:.15s}
+.opt:hover{border-color:#3d5a4a}
+.opt.on{background:var(--y);color:var(--ink);border-color:var(--y)}
+.opt small{display:block;font-size:12px;opacity:.7}
+.slots .opt{min-width:72px;text-align:center}
+.slot.busy{opacity:.3;pointer-events:none;text-decoration:line-through}
+.ticket{background:#fff;color:var(--ink);border-radius:18px;padding:26px;position:sticky;top:90px;align-self:start;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.ticket h3{font-family:Unbounded;font-size:20px;margin-bottom:16px}
+.ticket .row{display:flex;justify-content:space-between;border-bottom:1px dashed #cfd6d1;padding:10px 0;font-size:15px;gap:10px}
+.ticket .row span:first-child{color:var(--mute)}
+.ticket .sum{font-family:Unbounded;font-size:24px;margin:18px 0 6px}
+.ticket .note{font-size:13px;color:var(--mute);margin-bottom:18px}
+.ticket .btn{width:100%;text-align:center;background:#25d366;color:#fff}
+.ticket .btn[disabled]{background:#c9d1cc;cursor:not-allowed}
+/* services */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:#fff;border-radius:18px;padding:24px;border:1px solid #dbe3dd;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.card .ic{font-size:30px;margin-bottom:14px}
+.card h3{font-size:19px;margin-bottom:8px}
+.card p{color:var(--mute);font-size:15px;line-height:1.45}
+.card .pr{margin-top:14px;font-family:Unbounded;font-size:18px;color:var(--g)}
+/* garage */
+.garage{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.garage img{width:100%;height:340px;object-fit:cover;border-radius:16px;display:block}
+.garage figure{position:relative}
+.garage figcaption{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.65);color:#fff;padding:6px 10px;border-radius:8px;font-size:13px}
+/* master */
+.master{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center;background:#fff}
+.master img{width:100%;border-radius:20px;max-height:560px;object-fit:cover}
+.quote{font-size:clamp(20px,2vw,26px);line-height:1.4;font-weight:500}
+.quote:before{content:"“";font-family:Unbounded;font-size:80px;color:var(--y);display:block;line-height:.6}
+.who{margin-top:16px;color:var(--mute)}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{background:#fff;border-radius:18px;padding:22px;border:1px solid #dbe3dd}
+.rev .st{color:#f5a300;margin-bottom:10px}
+.rev p{line-height:1.5;font-size:15px}
+.rev .n{margin-top:12px;font-weight:700;font-size:14px}
+.score{display:flex;gap:30px;flex-wrap:wrap;margin-bottom:30px}
+.score div{font-size:14px;color:var(--mute)}
+.score b{display:block;font-family:Unbounded;font-size:34px;color:var(--ink)}
+/* footer */
+footer{background:var(--ink);color:#cfd8d2;padding:60px 6vw 90px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+footer h3{font-family:Unbounded;color:#fff;font-size:26px;margin-bottom:14px}
+footer a{color:var(--y)}
+footer p{line-height:1.7}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;background:#25d366;color:#fff;border-radius:50px;padding:14px 18px;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.demo{position:fixed;left:16px;bottom:16px;z-index:30;background:#000;color:#fff;font-size:12px;padding:8px 12px;border-radius:8px;opacity:.8}
+.rv{opacity:0;transform:translateY(30px)}
+@media(max-width:900px){
+ .hero{grid-template-columns:1fr;padding-top:96px;text-align:left}
+ #tire{height:320px;order:-1}
+ .wiz,.master,footer{grid-template-columns:1fr}
+ .cards{grid-template-columns:1fr 1fr}
+ .garage{grid-template-columns:1fr 1fr}.garage img{height:200px}
+ .revs{grid-template-columns:1fr}
+ section{padding:64px 16px}
+ .hero{padding-left:16px;padding-right:16px}
+ nav{padding:12px 16px}
+ .ticket{position:static}
+}
+@media(max-width:480px){.cards{grid-template-columns:1fr}.logo{font-size:15px}nav .cta{padding:8px 12px;font-size:13px}}
+</style>
+</head>
+<body>
+<nav><div class="logo">ШИНОМОНТАЖ <b>008</b></div><a class="cta" href="#book">Записаться</a></nav>
+
+<header class="hero">
+ <div>
+  <div class="plate"><i></i>Королёв · Южная ул., 9 · R13–R22</div>
+  <h1>Приехал —<br>и <span class="y">сразу</span><br>на подъёмник</h1>
+  <p class="lead">Шиномонтаж по записи и без очереди. Новое оборудование, хранение шин и помощь на дороге — когда колесо «в хлам» на Ярославке.</p>
+  <div class="btns"><a class="btn y" href="#book">Выбрать время</a><a class="btn o" href="#price">Цены</a></div>
+  <div class="badges">
+   <div class="badge"><b>5,0</b>234 оценки на Картах</div>
+   <div class="badge"><b>100%</b>довольны временем ожидания</div>
+   <div class="badge"><b>2026</b>«Хорошее место»</div>
+  </div>
+ </div>
+ <canvas id="tire"></canvas>
+ <div class="hint mono">↻ колесо можно покрутить</div>
+</header>
+
+<div class="tick"><div>ПО ЗАПИСИ · БЕЗ ОЧЕРЕДИ · R13–R22 · ХРАНЕНИЕ ШИН · ПОМОЩЬ НА ДОРОГЕ · НОВОЕ ОБОРУДОВАНИЕ · ПО ЗАПИСИ · БЕЗ ОЧЕРЕДИ · R13–R22 · ХРАНЕНИЕ ШИН · ПОМОЩЬ НА ДОРОГЕ · НОВОЕ ОБОРУДОВАНИЕ · </div></div>
+
+<section class="book" id="book">
+ <h2>Запись за 20 секунд</h2>
+ <p class="sub">Выберите машину, радиус и время — заявка уйдёт мастеру в WhatsApp. Приезжаете к своему времени, без живой очереди.</p>
+ <div class="wiz">
+  <div>
+   <div class="step"><h4>01 · Машина</h4><div class="opts" data-k="car">
+    <button class="opt" data-v="Седан / хэтчбек / универсал">Седан, хэтчбек<small>универсал</small></button>
+    <button class="opt" data-v="Кроссовер / внедорожник">Кроссовер<small>внедорожник</small></button>
+   </div></div>
+   <div class="step"><h4>02 · Радиус</h4><div class="opts" data-k="r"></div></div>
+   <div class="step"><h4>03 · Что сделать</h4><div class="opts" data-k="srv">
+    <button class="opt" data-v="Сезонная замена (4 колеса)">Сезонная замена<small>4 колеса</small></button>
+    <button class="opt" data-v="Прокол / ремонт колеса">Прокол, ремонт</button>
+    <button class="opt" data-v="Замена + хранение шин">Замена + хранение<small>шины 3 000 ₽</small></button>
+    <button class="opt" data-v="Замена + хранение колёс">Замена + хранение<small>колёса 4 000 ₽</small></button>
+   </div></div>
+   <div class="step"><h4>04 · День</h4><div class="opts" data-k="day" id="days"></div></div>
+   <div class="step"><h4>05 · Время</h4><div class="opts slots" data-k="t" id="slots"></div></div>
+  </div>
+  <aside class="ticket">
+   <h3>Ваша запись</h3>
+   <div class="row"><span>Машина</span><span id="o-car">—</span></div>
+   <div class="row"><span>Радиус</span><span id="o-r">—</span></div>
+   <div class="row"><span>Работа</span><span id="o-srv">—</span></div>
+   <div class="row"><span>Когда</span><span id="o-when">—</span></div>
+   <div class="sum" id="o-sum">от 1 500 ₽</div>
+   <div class="note">Точную цену мастер скажет по радиусу и состоянию колёс.</div>
+   <button class="btn" id="send" disabled>Отправить в WhatsApp</button>
+  </aside>
+ </div>
+</section>
+
+<section id="price">
+ <h2>Цены без сюрпризов</h2>
+ <p class="sub">Из актуального прайса на Яндекс Картах. Комплект — 4 колеса.</p>
+ <div class="cards">
+  <div class="card rv"><div class="ic">🚗</div><h3>Легковой</h3><p>Седан, хэтчбек, универсал. Снятие, монтаж, балансировка.</p><div class="pr">1 500–8 000 ₽</div></div>
+  <div class="card rv"><div class="ic">🚙</div><h3>Кроссовер</h3><p>Кроссоверы и внедорожники, большие радиусы до R22.</p><div class="pr">1 500–10 000 ₽</div></div>
+  <div class="card rv"><div class="ic">📦</div><h3>Хранение</h3><p>Сезонное хранение: шины — 3 000 ₽, колёса с дисками — 4 000 ₽.</p><div class="pr">от 3 000 ₽</div></div>
+  <div class="card rv"><div class="ic">🛟</div><h3>Помощь на дороге</h3><p>Пробили колесо или нужна докатка — звоните, подскажем и поможем.</p><div class="pr">по звонку</div></div>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <h2>Новое оборудование</h2>
+ <p class="sub">Шиномонтажный и балансировочный станки Sivik — колесо отбалансировано «в ноль».</p>
+ <div class="garage">
+  <figure class="rv"><img src="img/p2.jpg" alt="Балансировочный станок" loading="lazy"><figcaption>Балансировка</figcaption></figure>
+  <figure class="rv"><img src="img/p5.jpg" alt="Шиномонтажный станок" loading="lazy"><figcaption>Шиномонтажный станок</figcaption></figure>
+  <figure class="rv"><img src="img/p4.jpg" alt="Экран балансировки 0 и 0" loading="lazy"><figcaption>0 · 0 — идеально</figcaption></figure>
+ </div>
+</section>
+
+<section class="master">
+ <img class="rv" src="img/p1.jpg" alt="Мастер у шиномонтажа 008" loading="lazy">
+ <div class="rv">
+  <p class="quote">Пока вызывала «помощь на дороге», остановился автомобиль — молодой человек сказал, что шиномонтажник. За 10 минут мой хромой боевой конь стоял на докатке.</p>
+  <p class="who">— Nataliya F., отзыв на Яндекс Картах о мастере Дмитрии</p>
+ </div>
+</section>
+
+<section>
+ <div class="score">
+  <div><b>5,0</b>рейтинг</div><div><b>227</b>отзывов</div><div><b>100%</b>хвалят персонал</div><div><b>100%</b>хвалят время ожидания</div>
+ </div>
+ <div class="revs">
+  <div class="rev rv"><div class="st">★★★★★</div><p>Шиномонтаж по записи, что удобно — без очередей. Записалась и приехала ко времени. Всё оперативно и с пояснениями, вопрос с проколом тоже решили.</p><div class="n">Екатерина М.</div></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Очень удобно, что есть предварительная запись. Записались заранее, приехали к назначенному времени — приняли минута в минуту.</p><div class="n">Брэд Лю</div></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Огромное спасибо Дмитрию, что остановился помочь! Если нужен спец своего дела — все к Дмитрию!</p><div class="n">Nataliya F.</div></div>
+ </div>
+</section>
+
+<footer>
+ <div><h3>Шиномонтаж 008</h3><p>Королёв, мкр Текстильщик, Южная ул., 9<br>Остановка «Калининградская улица, 27» — 550 м<br>Телефон: <a href="tel:+79250080066">8 925 008-00-66</a><br>WhatsApp: <a href="https://wa.me/79637779630">+7 963 777-96-30</a></p></div>
+ <div><iframe title="Карта" src="https://yandex.ru/map-widget/v1/?ll=37.827617%2C55.947681&z=15&pt=37.827617,55.947681,pm2rdm" style="width:100%;height:240px;border:0;border-radius:16px" loading="lazy"></iframe></div>
+</footer>
+
+<a class="fab" href="https://wa.me/79637779630">WhatsApp</a>
+<div class="demo">Демо-версия сайта</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+const WA='79637779630';
+/* ---------- booking ---------- */
+const st={};
+const R=['R13','R14','R15','R16','R17','R18','R19','R20','R21','R22'];
+document.querySelector('[data-k="r"]').innerHTML=R.map(r=>`<button class="opt" data-v="${r}">${r}</button>`).join('');
+const days=document.getElementById('days'), names=['вс','пн','вт','ср','чт','пт','сб'];
+const now=new Date();
+for(let i=0;i<6;i++){const d=new Date(now);d.setDate(now.getDate()+i);const lbl=i===0?'Сегодня':i===1?'Завтра':names[d.getDay()]+' '+d.getDate();days.insertAdjacentHTML('beforeend',`<button class="opt" data-v="${lbl} (${d.getDate()}.${String(d.getMonth()+1).padStart(2,'0')})" data-i="${i}">${lbl}<small>${d.getDate()}.${String(d.getMonth()+1).padStart(2,'0')}</small></button>`)}
+function drawSlots(seed){const s=document.getElementById('slots');let h='';for(let t=10;t<=20;t++){for(const m of ['00','30']){if(t===20&&m==='30')continue;const busy=((t*7+(m==='30'?3:0)+seed*5)%4===0);h+=`<button class="opt slot${busy?' busy':''}" data-v="${t}:${m}">${t}:${m}</button>`}}s.innerHTML=h;}
+drawSlots(0);
+document.addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;const g=b.parentElement,k=g.dataset.k;g.querySelectorAll('.opt').forEach(x=>x.classList.remove('on'));b.classList.add('on');st[k]=b.dataset.v;if(k==='day'){drawSlots(+b.dataset.i);delete st.t}upd();});
+function price(){if(!st.car)return'от 1 500 ₽';const big=st.car.startsWith('Кросс');if(st.srv&&st.srv.startsWith('Прокол'))return'по осмотру';let r=big?'1 500–10 000 ₽':'1 500–8 000 ₽';if(st.srv&&st.srv.includes('шин'))r+=' + 3 000 ₽';if(st.srv&&st.srv.includes('колёс'))r+=' + 4 000 ₽';return r;}
+function upd(){document.getElementById('o-car').textContent=st.car||'—';document.getElementById('o-r').textContent=st.r||'—';document.getElementById('o-srv').textContent=st.srv||'—';document.getElementById('o-when').textContent=st.day?(st.day.split(' (')[0]+(st.t?', '+st.t:'')):'—';document.getElementById('o-sum').textContent=price();document.getElementById('send').disabled=!(st.car&&st.r&&st.srv&&st.day&&st.t);}
+document.getElementById('send').onclick=()=>{const txt=`Здравствуйте! Хочу записаться на шиномонтаж.\nМашина: ${st.car}\nРадиус: ${st.r}\nРабота: ${st.srv}\nКогда: ${st.day}, ${st.t}\n(заявка с сайта)`;window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(txt),'_blank');};
+
+/* ---------- 3D tire ---------- */
+(function(){
+ const c=document.getElementById('tire');if(!window.THREE)return;
+ const r=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:true});r.setPixelRatio(Math.min(devicePixelRatio,2));
+ const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(35,1,.1,100);cam.position.set(0,0,9);
+ sc.add(new THREE.AmbientLight(0xffffff,.55));const dl=new THREE.DirectionalLight(0xffffff,1.1);dl.position.set(4,5,6);sc.add(dl);const dl2=new THREE.DirectionalLight(0xffd23f,.6);dl2.position.set(-5,-2,3);sc.add(dl2);
+ const wheel=new THREE.Group();sc.add(wheel);
+ const rub=new THREE.MeshStandardMaterial({color:0x151515,roughness:.85,metalness:.05});
+ wheel.add(new THREE.Mesh(new THREE.TorusGeometry(2,.72,32,96),rub));
+ // tread blocks
+ const blk=new THREE.BoxGeometry(.32,.5,1.25);
+ for(let i=0;i<48;i++){const a=i/48*Math.PI*2;const m=new THREE.Mesh(blk,rub);m.position.set(Math.cos(a)*2.66,Math.sin(a)*2.66,0);m.rotation.z=a+(i%2?.35:-.35);wheel.add(m);}
+ // rim
+ const metal=new THREE.MeshStandardMaterial({color:0xc9ced3,roughness:.25,metalness:.9});
+ const rim=new THREE.Mesh(new THREE.CylinderGeometry(1.55,1.55,.9,64,1,true),metal);rim.rotation.x=Math.PI/2;wheel.add(rim);
+ const face=new THREE.Mesh(new THREE.CircleGeometry(1.5,64),new THREE.MeshStandardMaterial({color:0x1e5bd8,roughness:.35,metalness:.7}));face.position.z=.3;wheel.add(face);
+ for(let i=0;i<5;i++){const a=i/5*Math.PI*2;const sp=new THREE.Mesh(new THREE.BoxGeometry(.28,1.25,.18),metal);sp.position.set(Math.cos(a)*.75,Math.sin(a)*.75,.42);sp.rotation.z=a-Math.PI/2;wheel.add(sp);}
+ const hub=new THREE.Mesh(new THREE.CylinderGeometry(.38,.38,.3,32),new THREE.MeshStandardMaterial({color:0xffd23f,metalness:.4,roughness:.3}));hub.rotation.x=Math.PI/2;hub.position.z=.5;wheel.add(hub);
+ wheel.rotation.y=-.5;
+ function size(){const w=c.clientWidth,h=c.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}
+ size();addEventListener('resize',size);
+ let drag=false,px=0,py=0,vx=.004,vy=0;
+ c.addEventListener('pointerdown',e=>{drag=true;px=e.clientX;py=e.clientY;c.setPointerCapture(e.pointerId)});
+ c.addEventListener('pointermove',e=>{if(!drag)return;vy=(e.clientX-px)*.004;vx=(e.clientY-py)*.004;px=e.clientX;py=e.clientY;});
+ c.addEventListener('pointerup',()=>drag=false);
+ let spin=0;
+ (function loop(){requestAnimationFrame(loop);spin+=.012;wheel.children.forEach(()=>{});wheel.rotation.z-=.012;wheel.rotation.y+=vy;wheel.rotation.x+=vx;vy*=.94;vx*=.94;if(!drag){wheel.rotation.y+=(-.5-wheel.rotation.y)*.02;wheel.rotation.x+=(0-wheel.rotation.x)*.02;}r.render(sc,cam);})();
+ if(window.gsap){gsap.from(wheel.position,{x:6,duration:1.4,ease:'power3.out'});gsap.from(wheel.rotation,{z:6,duration:1.4,ease:'power3.out'});}
+})();
+/* ---------- reveal ---------- */
+if(window.gsap&&window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);document.querySelectorAll('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%'}}));gsap.from('.hero h1',{y:40,opacity:0,duration:1});}
+else document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none'});
+</script>
+</body>
+</html>
