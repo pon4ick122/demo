@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дом быта на Юбилейной — ремонт одежды в Мытищах</title>
+<meta name="description" content="Дом быта, Мытищи, Юбилейная 16: ремонт одежды, обуви, ключи, фото на документы. Посчитайте стоимость онлайн и отправьте заявку в WhatsApp.">
+<meta property="og:title" content="Дом быта на Юбилейной, Мытищи">
+<meta property="og:description" content="Подшить, ушить, починить — рядом с домом. Цены онлайн.">
+<meta property="og:image" content="img/1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f2fb; --card:#ffffff; --ink:#1c1730; --muted:#6c6684; --line:#e3ddf1;
+  --lav:#7b68d6; --lav2:#b9adf0; --green:#1f9d63; --coral:#f06d5b; --sun:#f4b63f;
+  --disp:"Unbounded",system-ui,sans-serif; --sans:"Onest",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+.tick-clip{overflow:hidden;padding:24px 0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:min(1180px,100% - 32px);margin:0 auto}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--lav)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 24px;border-radius:16px;font-weight:700;text-decoration:none;border:2px solid var(--ink);transition:.2s;cursor:pointer;font:700 16px var(--sans)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:var(--lav);border-color:var(--lav)}
+.btn-line{background:transparent}
+.btn-line:hover{background:#fff}
+
+/* stitched line */
+.stitch{height:2px;background:repeating-linear-gradient(90deg,var(--lav) 0 14px,transparent 14px 24px);opacity:.6}
+
+header{position:fixed;inset:0 0 auto;z-index:20;padding:14px 0;transition:.3s}
+header.solid{background:#f5f2fbe6;backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 17px var(--disp);letter-spacing:-.01em}
+.logo .spool{width:30px;height:30px;border-radius:9px;background:var(--lav);display:grid;place-items:center;color:#fff;font-size:16px}
+.nav nav{display:flex;gap:24px;font-weight:500;color:var(--muted);font-size:15px}
+.nav nav a{text-decoration:none}.nav nav a:hover{color:var(--ink)}
+.nav .btn{padding:10px 16px;font-size:14px;border-radius:12px}
+@media(max-width:860px){.nav nav{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:center;padding:110px 0 60px;overflow:hidden}
+#stage{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.hero h1{font:700 clamp(38px,5.6vw,82px)/.98 var(--disp);letter-spacing:-.03em;margin:14px 0 22px}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block}
+.hero h1 .hl{color:var(--lav);position:relative;white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:-.04em;height:.08em;background:repeating-linear-gradient(90deg,var(--coral) 0 .3em,transparent .3em .5em)}
+.hero p.lead{max-width:520px;color:var(--muted);font-size:19px;margin-bottom:28px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.badge{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:500}
+.badge b{color:var(--lav)}
+.hero-in>div{position:relative}
+.hero-in>div::before{content:"";position:absolute;inset:-40px -60px;background:radial-gradient(closest-side,#f5f2fbf2,#f5f2fb00);z-index:-1}
+@media(max-width:900px){.hero-in{grid-template-columns:1fr}.hero{align-items:end}.hero h1{font-size:clamp(30px,9.4vw,60px)}.hero h1 .hl{white-space:normal}}
+
+/* ticker */
+.ticker{background:var(--ink);color:#fff;padding:16px 0;overflow:hidden;white-space:nowrap;transform:rotate(-1.2deg);margin:0 -20px}
+.ticker .row{display:inline-flex;gap:40px;font:700 22px var(--disp);will-change:transform}
+.ticker .row span{display:inline-flex;align-items:center;gap:40px}
+.ticker .row span::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--sun)}
+.ticker .row span:nth-child(3n+1)::after{background:var(--coral)}
+.ticker .row span:nth-child(3n+2)::after{background:var(--lav2)}
+
+section{padding:100px 0}
+.h2{font:700 clamp(30px,4.6vw,58px)/1.02 var(--disp);letter-spacing:-.03em;margin:12px 0 16px}
+.h2 em{font-style:normal;color:var(--lav)}
+.sub{color:var(--muted);max-width:620px}
+
+/* all-in-one */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px;position:relative;overflow:hidden;transition:translate .25s,box-shadow .25s}
+.tile:hover{translate:0 -4px;box-shadow:0 18px 40px #7b68d61f}
+.tile .ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:26px;margin-bottom:18px}
+.tile h3{font:700 20px var(--disp);letter-spacing:-.02em;margin-bottom:6px}
+.tile p{color:var(--muted);font-size:15px}
+.tile .from{position:absolute;top:22px;right:22px;font:500 13px var(--mono);color:var(--lav)}
+@media(max-width:860px){.tiles{grid-template-columns:1fr}}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;margin-top:40px;align-items:start}
+@media(max-width:900px){.calc{grid-template-columns:1fr}}
+.cbox{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:22px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tab{border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:9px 14px;font:500 14px var(--sans);cursor:pointer;color:var(--ink);transition:.2s}
+.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.items{display:grid;gap:4px}
+.item{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:12px 10px;border-radius:14px;transition:.15s}
+.item:hover{background:var(--bg)}
+.item.sel{background:#efeafe}
+.item .n{font-size:15.5px}
+.item .p{font:500 14px var(--mono);color:var(--lav);white-space:nowrap}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:32px;height:32px;border-radius:10px;border:1px solid var(--line);background:#fff;font:700 18px var(--sans);cursor:pointer;color:var(--ink)}
+.qty button:hover{border-color:var(--lav);color:var(--lav)}
+.qty span{min-width:18px;text-align:center;font-weight:700}
+.sum{position:sticky;top:90px;background:var(--ink);color:#fff;border-radius:26px;padding:26px}
+.sum h3{font:700 20px var(--disp);margin-bottom:12px}
+.sum ul{list-style:none;display:grid;gap:8px;font-size:15px;color:#cfc8e8;margin-bottom:18px;max-height:240px;overflow:auto}
+.sum li{display:flex;justify-content:space-between;gap:10px}
+.sum .empty{color:#9b93b8}
+.sum .tot{font:700 clamp(40px,5vw,56px)/1 var(--disp);letter-spacing:-.03em;margin:8px 0 6px}
+.sum .note{font-size:13px;color:#9b93b8;margin-bottom:18px}
+.sum .btn{width:100%;background:var(--sun);color:var(--ink);border-color:var(--sun)}
+.sum .btn:hover{background:#fff;border-color:#fff}
+.sum .when{display:flex;gap:8px;margin-bottom:14px}
+.sum .when button{flex:1;border:1px solid #ffffff33;background:transparent;color:#fff;border-radius:12px;padding:9px 6px;font:500 13px var(--sans);cursor:pointer}
+.sum .when button.on{background:#fff;color:var(--ink)}
+
+/* photos */
+.ph{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-top:40px}
+.ph figure{border-radius:26px;overflow:hidden;position:relative;background:#ddd}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph .big{grid-row:span 2;min-height:560px}
+.ph .sm{min-height:270px}
+.ph figcaption{position:absolute;left:14px;bottom:14px;background:#fff;border-radius:12px;padding:8px 12px;font-size:14px;font-weight:500}
+@media(max-width:860px){.ph{grid-template-columns:1fr}.ph .big{min-height:420px;grid-row:auto}}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px}
+.rev .st{color:var(--sun);letter-spacing:2px;margin-bottom:10px}
+.rev p{font-size:16px}
+.rev:nth-child(2){transform:rotate(1deg)}.rev:nth-child(4){transform:rotate(-1deg)}
+@media(max-width:860px){.revs{grid-template-columns:1fr}}
+
+/* how */
+.how{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;counter-reset:s}
+.how div{border-top:3px solid var(--lav);padding-top:16px}
+.how div::before{counter-increment:s;content:"0" counter(s);font:700 34px var(--disp);color:var(--lav2);display:block;margin-bottom:8px}
+.how h4{font:700 18px var(--disp);margin-bottom:6px}
+.how p{color:var(--muted);font-size:15px}
+@media(max-width:860px){.how{grid-template-columns:1fr 1fr}}
+
+.final{background:var(--ink);color:#fff;border-radius:36px;padding:70px 40px;text-align:center;position:relative;overflow:hidden}
+.final .h2{color:#fff}
+.final .h2 em{color:var(--sun)}
+.final p{color:#cfc8e8;max-width:560px;margin:0 auto}
+.final .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
+.final .btn-ink{background:var(--sun);color:var(--ink);border-color:var(--sun)}
+.final .btn-line{color:#fff;border-color:#fff}
+.final .btn-line:hover{background:#ffffff1a}
+.addr{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px;text-align:left}
+.addr div{background:#ffffff0d;border-radius:18px;padding:18px;font-size:14px;color:#cfc8e8}
+.addr b{display:block;color:#fff;font-size:16px;margin-top:4px}
+@media(max-width:860px){.addr{grid-template-columns:1fr}.final{padding:50px 22px}}
+footer{padding:26px 0 90px;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.fab{position:fixed;right:18px;bottom:18px;z-index:30;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px #1c173040;transition:transform .2s}
+.fab:hover{transform:scale(1.08)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header id="hdr"><div class="wrap nav">
+  <a class="logo" href="#top"><span class="spool">✂</span>Дом быта</a>
+  <nav><a href="#all">Услуги</a><a href="#calc">Цены</a><a href="#photos">Мастерская</a><a href="#reviews">Отзывы</a><a href="#contacts">Как найти</a></nav>
+  <a class="btn btn-ink" data-wa="Здравствуйте! Хочу узнать про ремонт одежды.">Написать</a>
+</div></header>
+
+<section class="hero" id="top">
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <div>
+      <div class="mono">Мытищи · Юбилейная, 16</div>
+      <h1>
+        <span class="ln"><span>Подшить, ушить,</span></span>
+        <span class="ln"><span>починить —</span></span>
+        <span class="ln"><span class="hl">рядом с домом</span></span>
+      </h1>
+      <p class="lead">Ремонт одежды, обуви, ключи и фото на документы — всё в одном окне. Цены видно сразу, без звонков.</p>
+      <div class="cta">
+        <a class="btn btn-ink" href="#calc">Посчитать стоимость</a>
+        <a class="btn btn-line" data-wa="Здравствуйте! Хочу узнать про ремонт одежды.">WhatsApp</a>
+      </div>
+      <div class="badges">
+        <span class="badge">★ <b>5,0</b> · 221 оценка на Картах</span>
+        <span class="badge"><b>50+</b> услуг с ценами</span>
+        <span class="badge">Бывает <b>в тот же день</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tick-clip"><div class="ticker" aria-hidden="true"><div class="row" id="tick">
+  <span>Укоротить джинсы</span><span>Заменить молнию</span><span>Ушить пальто</span><span>Подшить шторы</span><span>Ремонт обуви</span><span>Ключи</span><span>Фото на паспорт</span><span>Ремонт меха и кожи</span>
+  <span>Укоротить джинсы</span><span>Заменить молнию</span><span>Ушить пальто</span><span>Подшить шторы</span><span>Ремонт обуви</span><span>Ключи</span><span>Фото на паспорт</span><span>Ремонт меха и кожи</span>
+</div></div></div>
+
+<section id="all">
+  <div class="wrap">
+    <div class="mono">Всё в одном окне</div>
+    <h2 class="h2">Зашли по пути — <em>решили всё</em></h2>
+    <p class="sub">«Подшили сумочку, молнию заменили, фотографию сделали, ключики сделали и распечатали что нужно» — из отзыва на Яндекс Картах.</p>
+    <div class="tiles">
+      <div class="tile"><div class="ic" style="background:#efeafe">🧵</div><span class="from">от 150 ₽</span><h3>Ремонт одежды</h3><p>Укоротить, ушить, заменить молнию, заштопать, пришить пуговицу.</p></div>
+      <div class="tile"><div class="ic" style="background:#fde9e6">🧥</div><span class="from">от 1 000 ₽</span><h3>Мех и кожа</h3><p>Порывы, крючки, укорачивание шуб и кожаных юбок.</p></div>
+      <div class="tile"><div class="ic" style="background:#e6f6ee">👞</div><span class="from">по фото</span><h3>Ремонт обуви</h3><p>Принесите или пришлите фото — мастер скажет цену.</p></div>
+      <div class="tile"><div class="ic" style="background:#fff3dc">🔑</div><span class="from">при вас</span><h3>Изготовление ключей</h3><p>Дубликаты для дома и домофона.</p></div>
+      <div class="tile"><div class="ic" style="background:#efeafe">📷</div><span class="from">от 450 ₽</span><h3>Фото на документы</h3><p>Паспорт, виза, 3×4. Печать фото — от 45 ₽.</p></div>
+      <div class="tile"><div class="ic" style="background:#fde9e6">🪟</div><span class="from">от 350 ₽</span><h3>Шторы и чехлы</h3><p>Подшив тюля и штор, чехлы на мебель.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="stitch"></div></div>
+
+<section id="calc">
+  <div class="wrap">
+    <div class="mono">Калькулятор по прайсу</div>
+    <h2 class="h2">Отметьте, что нужно — <em>сумма сразу</em></h2>
+    <p class="sub">Цены из прайса ателье. Выберите вещи и работы — заявка со списком уйдёт администратору в WhatsApp, останется только принести.</p>
+    <div class="calc">
+      <div class="cbox">
+        <div class="tabs" id="tabs"></div>
+        <div class="items" id="items"></div>
+      </div>
+      <aside class="sum" aria-live="polite">
+        <h3>Ваш заказ</h3>
+        <ul id="sumList"><li class="empty">Пока пусто — нажмите «+» у нужной работы</li></ul>
+        <div class="tot" id="tot">0 ₽</div>
+        <div class="note">Итог примерный: сложные вещи мастер оценит на месте.</div>
+        <div class="when" id="when"><button type="button" class="on">Не срочно</button><button type="button">К завтра</button><button type="button">Сегодня</button></div>
+        <a class="btn" id="send">Отправить заявку</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="photos" style="padding-top:20px">
+  <div class="wrap">
+    <div class="mono">Мастерская</div>
+    <h2 class="h2">Машинки, нитки <em>всех цветов</em></h2>
+    <div class="ph">
+      <figure class="big"><img src="img/1.jpg" alt="Швейная машина и стена с нитками" loading="lazy"><figcaption>Подберём нитку в тон</figcaption></figure>
+      <figure class="sm"><img src="img/2.jpg" alt="Стойка: ремонт обуви, ключи, ремонт одежды" loading="lazy"><figcaption>Обувь · ключи · одежда</figcaption></figure>
+      <figure class="sm"><img src="img/3.jpg" alt="Вход с вывеской Дом быта" loading="lazy"><figcaption>Вход с вывеской «Дом быта»</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="mono">Как это работает</div>
+    <h2 class="h2">Четыре шага <em>без очереди</em></h2>
+    <div class="how">
+      <div><h4>Посчитали</h4><p>Отметили работы в калькуляторе — видите примерную сумму.</p></div>
+      <div><h4>Написали</h4><p>Заявка со списком уходит в WhatsApp, администратор подтвердит.</p></div>
+      <div><h4>Принесли</h4><p>Примерим на месте, отметим длину булавками.</p></div>
+      <div><h4>Забрали</h4><p>Пришлём сообщение, когда готово. Простое — часто в тот же день.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:20px">
+  <div class="wrap">
+    <div class="mono">Отзывы с Яндекс Карт</div>
+    <h2 class="h2">«Выручает <em>постоянно</em>»</h2>
+    <div class="revs">
+      <div class="rev"><div class="st">★★★★★</div><p>«Уже много лет всё подшиваю в этом ателье, жена всё чаще ушивает. Ценник более чем адекватный, видно, что мастер в теме очень давно».</p></div>
+      <div class="rev"><div class="st">★★★★★</div><p>«Пальто нужно было ушить по фигуре. Сдала 8-го, 10-го пришло СМС о готовности. Учли все пожелания, работа качественная».</p></div>
+      <div class="rev"><div class="st">★★★★★</div><p>«Качественный ремонт, всё быстро, бывает даже в тот же день, несмотря на выходные. Удобный режим работы».</p></div>
+      <div class="rev"><div class="st">★★★★★</div><p>«Попросили надеть джинсы и встать на пол без обуви — подогнули ровно как надо».</p></div>
+      <div class="rev"><div class="st">★★★★★</div><p>«Персонал приветливый и вежливый — мне как человеку стеснительному было спокойно и уютно».</p></div>
+      <div class="rev"><div class="st">★★★★★</div><p>«Прекрасный дом быта, один из лучших: и сумочку подшили, и молнию заменили, и фото сделали, и ключи».</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" style="padding-top:20px">
+  <div class="wrap">
+    <div class="final">
+      <div class="mono" style="color:var(--lav2)">Юбилейная, 16 · Мытищи</div>
+      <h2 class="h2">Несите — <em>починим</em></h2>
+      <p>Напишите, что нужно сделать, или пришлите фото вещи — скажем цену и срок.</p>
+      <div class="cta">
+        <a class="btn btn-ink" data-wa="Здравствуйте! Хочу сдать вещь в ремонт: ">Написать в WhatsApp</a>
+        <a class="btn btn-line" href="tel:+79853397409">+7 985 339-74-09</a>
+      </div>
+      <div class="addr">
+        <div>Адрес<b>Мытищи, Юбилейная ул., 16</b></div>
+        <div>Рядом<b>школа № 26</b></div>
+        <div>Вход<b>вывеска «Дом быта» у «РЕСО-Мед»</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap"><span>© Дом быта, Мытищи</span><span>Демо-версия сайта · цены и отзывы — с Яндекс Карт</span></div></footer>
+
+<a class="fab" data-wa="Здравствуйте! Хочу узнать про ремонт." aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+
+<script>
+const WA = "79853397409";
+const waLink = t => "https://wa.me/" + WA + "?text=" + encodeURIComponent(t);
+document.querySelectorAll("[data-wa]").forEach(a => { a.href = waLink(a.dataset.wa); a.target = "_blank"; a.rel = "noopener"; });
+const $ = s => document.querySelector(s);
+addEventListener("scroll", () => $("#hdr").classList.toggle("solid", scrollY > 30), {passive:true});
+
+/* прайс с Яндекс Карт */
+const CATS = {
+  "Брюки и джинсы": [["Укоротить брюки/джинсы",550],["Укоротить джинсы с сохранением края",750],["Машинная штопка джинс (одна сторона)",450],["Замена молнии в джинсах",950],["Замена молнии в брюках",950],["Ушить брюки в талии (женские)",1200],["Ушить брюки в талии (мужские)",900],["Ушить брюки от бедра",1550],["Ушить брюки от колена",1350],["Ушить джинсы в талии",1500],["Укоротить брюки трикотажные",750],["Замена джинсовой пуговицы",150]],
+  "Блузы, юбки, футболки": [["Укоротить блузу/рубашку",800],["Ушить блузу/рубашку по бокам",1200],["Замена молнии в юбке",950],["Укоротить футболку",800],["Пришить пуговицу",200]],
+  "Пиджаки и пальто": [["Укоротить рукава пиджака",1700],["Укоротить низ пиджака",2200],["Ушить пиджак по фигуре",3200],["Укоротить низ пальто",2500],["Укоротить рукава пальто",1900],["Ушить пальто по фигуре",3500],["Ушить пальто по бокам",3000]],
+  "Куртки": [["Замена молнии в куртке (до 60 см)",2500],["Замена подклада в куртке",4500],["Укоротить рукава куртки",1700],["Ушить куртку по бокам",3000],["Зашить порыв в куртке",450]],
+  "Мех и кожа": [["Укоротить кожаную юбку",1000],["Замена молнии (кожа)",1000],["Ремонт кожаных изделий",1000],["Ремонт меховых изделий",1000],["Зашить порыв подмышки в шубе",1500],["Замена крючка/петли в шубе",500],["Укоротить меховое изделие",5000]],
+  "Мелочи": [["Замена бегунка",250],["Замена бегунка в сумке",450],["Установка кнопки",150],["Установка люверса/хольнитена",100],["Пришить нашивку",250]],
+  "Шторы и чехлы": [["Подшить тюль/шторы снизу (1 м)",350],["Подшить тюль/шторы сверху (1 м)",450],["Чехол на мебель",1000]],
+  "Фото": [["Фото на паспорт/визу",500],["Фото на документы 3×4",450],["Печать фото 10×15",45],["Печать фото 13×18",120]]
+};
+const cart = new Map();
+let cat = Object.keys(CATS)[0], when = "Не срочно";
+const fmt = n => n.toLocaleString("ru-RU") + " ₽";
+$("#tabs").innerHTML = Object.keys(CATS).map(c => `<button class="tab${c===cat?" on":""}" type="button">${c}</button>`).join("");
+$("#tabs").querySelectorAll(".tab").forEach(t => t.onclick = () => { cat = t.textContent; $("#tabs").querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x===t)); drawItems(); });
+function drawItems(){
+  $("#items").innerHTML = CATS[cat].map(([n,p]) => { const q = cart.get(n)?.q || 0;
+    return `<div class="item${q?" sel":""}" data-n="${n}"><span class="n">${n}</span><span class="p">${fmt(p)}</span><span class="qty"><button type="button" data-d="-1" aria-label="Меньше">−</button><span>${q}</span><button type="button" data-d="1" aria-label="Больше">+</button></span></div>`; }).join("");
+  $("#items").querySelectorAll(".item").forEach(row => row.querySelectorAll("button").forEach(b => b.onclick = () => {
+    const n = row.dataset.n, p = CATS[cat].find(x => x[0]===n)[1];
+    const q = Math.max(0, (cart.get(n)?.q || 0) + +b.dataset.d);
+    q ? cart.set(n, {p, q}) : cart.delete(n);
+    drawItems(); drawSum(true);
+  }));
+}
+let shown = 0;
+function drawSum(bump){
+  const rows = [...cart].map(([n,{p,q}]) => `<li><span>${n}${q>1?" × "+q:""}</span><span>${fmt(p*q)}</span></li>`);
+  $("#sumList").innerHTML = rows.length ? rows.join("") : `<li class="empty">Пока пусто — нажмите «+» у нужной работы</li>`;
+  const total = [...cart.values()].reduce((s,{p,q}) => s+p*q, 0);
+  const from = shown, t0 = performance.now();
+  const step = t => { const k = Math.min(1,(t-t0)/450); shown = Math.round(from+(total-from)*(1-Math.pow(1-k,3))); $("#tot").textContent = (total&&rows.length?"≈ ":"") + fmt(shown); if (k<1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+  const lines = [...cart].map(([n,{p,q}]) => `• ${n}${q>1?" × "+q:""} — ${fmt(p*q)}`).join("\n");
+  $("#send").href = waLink(rows.length ? `Здравствуйте! Хочу сдать в ремонт:\n${lines}\nИтого по прайсу ≈ ${fmt(total)}\nСрок: ${when}` : "Здравствуйте! Хочу узнать про ремонт одежды.");
+  $("#send").target = "_blank";
+  if (bump && window.gsap) gsap.fromTo("#tot", {scale:1.08}, {scale:1, duration:.4, ease:"back.out(3)"});
+}
+$("#when").querySelectorAll("button").forEach(b => b.onclick = () => { when = b.textContent; $("#when").querySelectorAll("button").forEach(x => x.classList.toggle("on", x===b)); drawSum(); });
+drawItems(); drawSum();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ===== 3D: катушки ниток и нить, которая «прошивает» экран ===== */
+(function(){
+  if (!window.THREE) return;
+  const canvas = document.getElementById("stage");
+  let renderer; try { renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true}); } catch(e){ return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  const scene = new THREE.Scene();
+  const cam = new THREE.PerspectiveCamera(38, 1, .1, 60); cam.position.set(0, 0, 14);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xb9adf0, .9));
+  const dl = new THREE.DirectionalLight(0xffffff, .9); dl.position.set(4, 6, 8); scene.add(dl);
+
+  // текстура «намотанная нитка»
+  function threadTex(hex){
+    const c = document.createElement("canvas"); c.width = 64; c.height = 256; const x = c.getContext("2d");
+    x.fillStyle = hex; x.fillRect(0,0,64,256);
+    for (let y=0;y<256;y+=4){ x.fillStyle = `rgba(255,255,255,${.10+Math.random()*.1})`; x.fillRect(0,y,64,1.4); x.fillStyle = "rgba(0,0,0,.10)"; x.fillRect(0,y+2,64,1); }
+    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.encoding = THREE.sRGBEncoding; return t;
+  }
+  const wood = new THREE.MeshStandardMaterial({color:0xe9d2ab, roughness:.6});
+  const COLORS = ["#7b68d6","#f06d5b","#f4b63f","#1f9d63","#2b2440","#b9adf0","#4da3ff"];
+  const spools = new THREE.Group(); scene.add(spools);
+  const list = [];
+  COLORS.forEach((hex,i) => {
+    const s = new THREE.Group();
+    const thread = new THREE.Mesh(new THREE.CylinderGeometry(.62,.62,1.5,40,1,true), new THREE.MeshStandardMaterial({map:threadTex(hex), roughness:.75}));
+    const top = new THREE.Mesh(new THREE.CylinderGeometry(.82,.82,.16,40), wood); top.position.y = .83;
+    const bot = top.clone(); bot.position.y = -.83;
+    const core = new THREE.Mesh(new THREE.CylinderGeometry(.18,.18,1.8,20), new THREE.MeshStandardMaterial({color:0xcfb388}));
+    s.add(thread, top, bot, core);
+    const a = i / COLORS.length * Math.PI * 2;
+    s.userData = {a, r: 3.4 + (i%2)*.9, y: Math.sin(i*2.1)*1.6, spin: .004 + i*.0012, tilt: (Math.random()-.5)*1.2};
+    s.rotation.set(s.userData.tilt, 0, (Math.random()-.5)*.9);
+    spools.add(s); list.push(s);
+  });
+  // нить: кривая через сцену
+  const pts = []; for (let i=0;i<=12;i++){ pts.push(new THREE.Vector3(-9 + i*1.5, Math.sin(i*.9)*1.8, Math.cos(i*.7)*1.2)); }
+  const curve = new THREE.CatmullRomCurve3(pts);
+  const tubeGeo = new THREE.TubeGeometry(curve, 300, .035, 8, false);
+  const tube = new THREE.Mesh(tubeGeo, new THREE.MeshStandardMaterial({color:0xf06d5b, roughness:.5}));
+  scene.add(tube);
+  const total = tubeGeo.index.count; tubeGeo.setDrawRange(0, 0);
+  // игла
+  const needle = new THREE.Mesh(new THREE.ConeGeometry(.05, 1.4, 12), new THREE.MeshStandardMaterial({color:0xc9cdd6, metalness:.9, roughness:.25}));
+  scene.add(needle);
+
+  let mx=0,my=0,vel=0,lastY=scrollY, prog = REDUCED ? 1 : 0;
+  addEventListener("pointermove", e => { mx = e.clientX/innerWidth-.5; my = e.clientY/innerHeight-.5; }, {passive:true});
+  addEventListener("scroll", () => { vel += (scrollY-lastY)*.0006; lastY = scrollY; }, {passive:true});
+  function size(){ const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w,h,false); cam.aspect = w/h;
+    const wide = w >= 900; spools.position.set(wide ? 5.6 : 0, wide ? 0 : 3.9, 0); spools.scale.setScalar(wide ? .8 : .5); cam.updateProjectionMatrix(); }
+  addEventListener("resize", size); size();
+  let visible = true; new IntersectionObserver(([e]) => visible = e.isIntersecting).observe(canvas);
+  const clock = new THREE.Clock();
+  (function loop(){
+    requestAnimationFrame(loop); if (!visible) return;
+    const t = clock.getElapsedTime(); vel *= .9;
+    list.forEach(s => { const u = s.userData; const a = u.a + (REDUCED?0:t*.12) + vel;
+      s.position.set(Math.cos(a)*u.r, u.y + Math.sin(t+u.a)*.25, Math.sin(a)*u.r*.6);
+      s.rotation.y += u.spin + Math.abs(vel)*.4; });
+    spools.rotation.x += ((my*.25) - spools.rotation.x)*.05; spools.rotation.y += ((mx*.4) - spools.rotation.y)*.05;
+    // «прошивание»
+    if (prog < 1) prog = Math.min(1, prog + .006);
+    const k = Math.floor(total * prog / 3) * 3; tubeGeo.setDrawRange(0, k);
+    const p = curve.getPointAt(Math.min(.999, prog)), tg = curve.getTangentAt(Math.min(.999, prog));
+    needle.position.copy(p); needle.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0), tg); needle.visible = prog < 1;
+    tube.position.y = Math.sin(t*.6)*.1;
+    renderer.render(scene, cam);
+  })();
+})();
+
+(function(){
+  if (!window.gsap || REDUCED) return;
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from(".hero h1 .ln>span", {yPercent:110, duration:1, ease:"power4.out", stagger:.1, delay:.15});
+  gsap.from(".hero .lead, .hero .cta, .badges .badge", {y:20, opacity:0, duration:.8, ease:"power3.out", stagger:.07, delay:.55});
+  const row = document.getElementById("tick");
+  const tw = gsap.to(row, {xPercent:-50, ease:"none", duration:26, repeat:-1});
+  ScrollTrigger.create({onUpdate: s => { const v = s.getVelocity(); tw.timeScale(1 + Math.min(5, Math.abs(v)/500)); gsap.to(tw, {timeScale: v<0 ? -1 : 1, duration:.8}); }});
+  document.querySelectorAll(".h2").forEach(h => gsap.from(h, {y:40, opacity:0, duration:.9, ease:"power3.out", scrollTrigger:{trigger:h, start:"top 86%"}}));
+  gsap.from(".tile", {y:50, opacity:0, rotation:(i) => [-3,2,-2,3,-1,2][i%6], duration:.8, stagger:.07, ease:"power3.out", scrollTrigger:{trigger:".tiles", start:"top 82%"}});
+  gsap.from(".stitch", {scaleX:0, transformOrigin:"left", duration:1.4, ease:"power2.inOut", scrollTrigger:{trigger:".stitch", start:"top 90%"}});
+  gsap.from(".ph figure", {clipPath:"inset(100% 0 0 0 round 26px)", duration:1.1, stagger:.12, ease:"power3.inOut", scrollTrigger:{trigger:".ph", start:"top 80%"}});
+  gsap.from(".how > div", {y:30, opacity:0, duration:.7, stagger:.1, scrollTrigger:{trigger:".how", start:"top 85%"}});
+  gsap.from(".rev", {y:40, opacity:0, duration:.7, stagger:.07, ease:"power3.out", scrollTrigger:{trigger:".revs", start:"top 85%"}});
+  gsap.from(".final", {scale:.94, opacity:0, duration:1, ease:"power3.out", scrollTrigger:{trigger:".final", start:"top 85%"}});
+})();
+</script>
+</body>
+</html>
