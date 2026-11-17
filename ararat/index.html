@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ремонт обуви на Совхозной — Химки</title>
+<meta name="description" content="Мастерская по ремонту обуви, Химки, Совхозная 8А. Подошвы, набойки, молнии, кроссовки, ключи, заточка. Опишите поломку — мастер ответит в WhatsApp.">
+<meta property="og:title" content="Ремонт обуви на Совхозной, Химки">
+<meta property="og:description" content="Опишите поломку за 10 секунд — мастер скажет цену по фото.">
+<meta property="og:image" content="img/1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f0f10; --bg2:#18181a; --line:#2b2b2f; --txt:#f2efe9; --muted:#9c9890;
+  --or:#ff7a1a; --yl:#ffd23f; --steel:#c7ccd4;
+  --disp:"Oswald",Impact,sans-serif; --sans:"Onest",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-size:17px;line-height:1.55;overflow-x:hidden}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{width:min(1180px,100% - 32px);margin:0 auto}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--or);display:inline-flex;align-items:center;gap:8px}
+.tag::before{content:"";width:18px;height:2px;background:var(--or)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 24px;font:700 16px var(--sans);text-decoration:none;border:2px solid var(--or);cursor:pointer;transition:background .2s,color .2s;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}
+.btn-or{background:var(--or);color:#111}
+.btn-or:hover{background:var(--yl);border-color:var(--yl)}
+.btn-line{background:transparent;color:var(--txt);border-color:#ffffff40}
+.btn-line:hover{border-color:var(--or);color:var(--or)}
+
+header{position:fixed;inset:0 0 auto;z-index:20;padding:14px 0;transition:background .3s}
+header.solid{background:#0f0f10eb;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 20px var(--disp);text-transform:uppercase;letter-spacing:.02em}
+.logo b{background:var(--or);color:#111;padding:2px 8px}
+.nav nav{display:flex;gap:24px;color:var(--muted);font-size:15px}
+.nav nav a{text-decoration:none}.nav nav a:hover{color:var(--or)}
+.nav .btn{padding:10px 16px;font-size:14px}
+@media(max-width:860px){.nav nav{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:110px 0 70px;overflow:hidden;background:radial-gradient(circle at 75% 45%,#ff7a1a26,transparent 45%)}
+#stage{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+.hero-in{position:relative;z-index:2;max-width:900px}
+.hero h1{font:700 clamp(46px,6.8vw,100px)/.92 var(--disp);text-transform:uppercase;letter-spacing:-.01em;margin:18px 0 22px}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln>span{display:inline-block}
+.hero h1 .o{color:var(--or)}
+.hero h1 .s{-webkit-text-stroke:2px var(--txt);color:transparent}
+.hero .lead{color:#cfcac2;font-size:19px;max-width:520px;margin-bottom:28px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.hstats{display:flex;gap:30px;margin-top:40px;flex-wrap:wrap}
+.hstats div{font:700 34px var(--disp)}
+.hstats span:last-child{display:block;font:500 13px var(--sans);color:var(--muted)}
+@media(max-width:899px){.hero{align-items:flex-end}}
+
+/* hazard tape */
+.tape{background:repeating-linear-gradient(-45deg,var(--yl) 0 22px,#111 22px 44px);height:14px}
+.ticker{background:var(--or);color:#111;overflow:hidden;white-space:nowrap;padding:12px 0}
+.ticker .row{display:inline-flex;gap:34px;font:700 24px var(--disp);text-transform:uppercase;will-change:transform}
+.ticker .row span::after{content:"✕";margin-left:34px;font-size:16px}
+
+section{padding:100px 0}
+.h2{font:700 clamp(38px,5.6vw,76px)/.95 var(--disp);text-transform:uppercase;margin:14px 0 16px}
+.h2 .o{color:var(--or)}
+.sub{color:var(--muted);max-width:620px}
+
+/* diagnosis */
+.diag{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;margin-top:40px;align-items:start}
+@media(max-width:900px){.diag{grid-template-columns:1fr}}
+.box{background:var(--bg2);border:1px solid var(--line);padding:24px}
+.box h3{font:700 22px var(--disp);text-transform:uppercase;margin-bottom:14px;letter-spacing:.02em}
+.box h3 small{font:500 13px var(--mono);color:var(--muted);margin-left:8px;text-transform:none}
+.probs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:600px){.probs{grid-template-columns:repeat(2,1fr)}}
+.prob{background:#111;border:1px solid var(--line);color:var(--txt);padding:14px 12px;text-align:left;cursor:pointer;font:500 15px var(--sans);display:flex;flex-direction:column;gap:6px;transition:border-color .15s,background .15s;min-height:86px}
+.prob i{font-style:normal;font-size:22px}
+.prob:hover{border-color:var(--or)}
+.prob.on{background:var(--or);color:#111;border-color:var(--or)}
+.seg{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.seg button{background:#111;border:1px solid var(--line);color:var(--txt);padding:10px 14px;font:500 14px var(--sans);cursor:pointer}
+.seg button.on{border-color:var(--or);color:var(--or)}
+.ticket{position:sticky;top:90px;background:var(--txt);color:#111;padding:26px;font-family:var(--mono);font-size:14px;clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),95% 100%,90% calc(100% - 14px),85% 100%,80% calc(100% - 14px),75% 100%,70% calc(100% - 14px),65% 100%,60% calc(100% - 14px),55% 100%,50% calc(100% - 14px),45% 100%,40% calc(100% - 14px),35% 100%,30% calc(100% - 14px),25% 100%,20% calc(100% - 14px),15% 100%,10% calc(100% - 14px),5% 100%,0 calc(100% - 14px));padding-bottom:40px}
+.ticket .hd{display:flex;justify-content:space-between;border-bottom:2px dashed #0003;padding-bottom:12px;margin-bottom:12px;font-weight:700}
+.ticket ul{list-style:none;display:grid;gap:6px;min-height:60px;margin-bottom:14px}
+.ticket li::before{content:"▸ ";color:var(--or)}
+.ticket .empty{color:#0008}
+.ticket .row2{display:flex;justify-content:space-between;border-top:2px dashed #0003;padding-top:10px;margin-bottom:16px}
+.ticket .btn{width:100%;font-family:var(--sans)}
+.ticket p{font-size:12px;color:#0009;margin-top:12px;font-family:var(--sans)}
+
+/* services */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px;border-top:1px solid var(--line)}
+.svc div{display:flex;gap:20px;align-items:baseline;padding:22px 6px;border-bottom:1px solid var(--line)}
+.svc div:nth-child(odd){border-right:1px solid var(--line);padding-right:24px}
+.svc div:nth-child(even){padding-left:24px}
+.svc b{font:700 30px var(--disp);color:var(--or);min-width:52px}
+.svc h4{font:700 22px var(--disp);text-transform:uppercase;letter-spacing:.02em}
+.svc p{color:var(--muted);font-size:15px}
+@media(max-width:760px){.svc{grid-template-columns:1fr}.svc div:nth-child(odd){border-right:0;padding-right:6px}.svc div:nth-child(even){padding-left:6px}}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(220px,24vw,340px);gap:12px;margin-top:40px}
+.gal figure{position:relative;overflow:hidden;background:#222}
+.gal img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.05);transition:transform .6s}
+.gal figure:hover img{transform:scale(1.06)}
+.gal .w2{grid-column:span 2;grid-row:span 2}
+.gal figcaption{position:absolute;left:0;bottom:0;background:var(--or);color:#111;font:700 14px var(--disp);text-transform:uppercase;padding:6px 10px;letter-spacing:.03em}
+@media(max-width:760px){.gal{grid-template-columns:1fr 1fr}.gal .w2{grid-column:span 2;grid-row:span 1}}
+
+/* reviews */
+.revs{columns:3 300px;column-gap:16px;margin-top:40px}
+.rev{break-inside:avoid;background:var(--bg2);border-left:3px solid var(--or);padding:22px;margin-bottom:16px}
+.rev p{font-size:16px}
+.rev span{display:block;margin-top:10px;font:500 12px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.meter{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+.meter div{background:var(--bg2);padding:18px 20px}
+.meter .bar{height:8px;background:#2b2b2f;margin-top:10px}
+.meter .bar i{display:block;height:100%;background:var(--or);width:0}
+@media(max-width:600px){.meter{grid-template-columns:1fr}}
+
+.final{position:relative;overflow:hidden;background:var(--or);color:#111;padding:80px 0}
+.final .h2{color:#111}
+.final .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.final .btn-or{background:#111;color:var(--txt);border-color:#111}
+.final .btn-or:hover{background:var(--txt);color:#111;border-color:var(--txt)}
+.final .btn-line{color:#111;border-color:#111}
+.final .btn-line:hover{background:#111;color:var(--or)}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:46px}
+.info div{border-top:2px solid #111;padding-top:12px;font-size:14px}
+.info b{display:block;font:700 22px var(--disp);text-transform:uppercase;margin-top:2px}
+@media(max-width:760px){.info{grid-template-columns:1fr}}
+footer{padding:24px 0 90px;color:#6e6a63;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.fab{position:fixed;right:18px;bottom:18px;z-index:30;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px #0009;transition:transform .2s}
+.fab:hover{transform:scale(1.08)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header id="hdr"><div class="wrap nav">
+  <a class="logo" href="#top"><b>8А</b>Ремонт обуви</a>
+  <nav><a href="#diag">Что случилось?</a><a href="#svc">Услуги</a><a href="#works">Работы</a><a href="#reviews">Отзывы</a><a href="#contacts">Адрес</a></nav>
+  <a class="btn btn-or" data-wa="Здравствуйте! Нужен ремонт обуви.">Написать</a>
+</div></header>
+
+<section class="hero" id="top">
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <div class="wrap"><div class="hero-in">
+    <div class="tag">Химки · Совхозная, 8А · 1 этаж</div>
+    <h1>
+      <span class="ln"><span>Не выбрасывайте.</span></span>
+      <span class="ln"><span class="o">Починим</span> <span class="s">так,</span></span>
+      <span class="ln"><span>что прослужит</span></span>
+    </h1>
+    <p class="lead">Подошвы, набойки, молнии, кроссовки — и металлоремонт: ключи, заточка, зонты, коляски. Опишите поломку за 10 секунд — мастер ответит в WhatsApp.</p>
+    <div class="cta">
+      <a class="btn btn-or" href="#diag">Что случилось с обувью? →</a>
+      <a class="btn btn-line" data-wa="Здравствуйте! Нужен ремонт обуви.">WhatsApp</a>
+    </div>
+    <div class="hstats">
+      <div><span data-n="5" data-d="1">5,0</span><span>на Яндекс Картах</span></div>
+      <div><span data-n="143">143</span><span>оценки</span></div>
+      <div><span data-n="93" data-s="%">93%</span><span>довольны сроками</span></div>
+    </div>
+  </div></div>
+</section>
+
+<div class="tape"></div>
+<div class="ticker" aria-hidden="true"><div class="row" id="tick">
+  <span>Подошвы</span><span>Набойки</span><span>Молнии</span><span>Кроссовки</span><span>Прошивка</span><span>Ключи</span><span>Заточка ножей</span><span>Зонты</span><span>Коляски</span>
+  <span>Подошвы</span><span>Набойки</span><span>Молнии</span><span>Кроссовки</span><span>Прошивка</span><span>Ключи</span><span>Заточка ножей</span><span>Зонты</span><span>Коляски</span>
+</div></div>
+
+<section id="diag">
+  <div class="wrap">
+    <div class="tag">Квитанция за 10 секунд</div>
+    <h2 class="h2">Что <span class="o">случилось?</span></h2>
+    <p class="sub">Отметьте поломку и тип обуви — соберём сообщение мастеру. Приложите фото в WhatsApp, и он сразу скажет цену и срок.</p>
+    <div class="diag">
+      <div class="box">
+        <h3>Поломка <small>можно несколько</small></h3>
+        <div class="probs" id="probs"></div>
+        <h3 style="margin-top:22px">Обувь</h3>
+        <div class="seg" id="kind"></div>
+        <h3 style="margin-top:22px">Когда нужно</h3>
+        <div class="seg" id="when"></div>
+      </div>
+      <aside class="ticket" aria-live="polite">
+        <div class="hd"><span>КВИТАНЦИЯ</span><span id="num">№ —</span></div>
+        <ul id="tList"><li class="empty">Выберите поломку слева</li></ul>
+        <div class="row2"><span>Обувь</span><b id="tKind">—</b></div>
+        <div class="row2" style="border-top:0;padding-top:0"><span>Срок</span><b id="tWhen">—</b></div>
+        <a class="btn btn-or" id="send">Отправить мастеру</a>
+        <p>После отправки прикрепите 1–2 фото — так цена будет точной.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="tape"></div>
+
+<section id="svc">
+  <div class="wrap">
+    <div class="tag">Что делаем</div>
+    <h2 class="h2">Обувь и <span class="o">металл</span></h2>
+    <div class="svc">
+      <div><b>01</b><div><h4>Подошвы и подмётки</h4><p>Переклейка, прошивка «для надёжности», профилактика скользкой подошвы.</p></div></div>
+      <div><b>02</b><div><h4>Набойки</h4><p>Меняем хлипкие заводские на прочные — «хватит на несколько сезонов».</p></div></div>
+      <div><b>03</b><div><h4>Молнии и швы</h4><p>Замена молний в сапогах и куртках, ремонт порванных швов.</p></div></div>
+      <div><b>04</b><div><h4>Кроссовки</h4><p>Подклейка, прошивка, задники.</p></div></div>
+      <div><b>05</b><div><h4>Ключи</h4><p>Дубликаты ключей и установка фурнитуры.</p></div></div>
+      <div><b>06</b><div><h4>Заточка</h4><p>Ножи, ножницы и инструмент.</p></div></div>
+      <div><b>07</b><div><h4>Зонты и коляски</h4><p>Чиним спицы, механизмы и колёса.</p></div></div>
+      <div><b>08</b><div><h4>Ремешки часов</h4><p>«Сделали моментально, аккуратно и по очень приятной цене».</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="works" style="padding-top:20px">
+  <div class="wrap">
+    <div class="tag">Из мастерской</div>
+    <h2 class="h2">Руки, <span class="o">откуда надо</span></h2>
+    <div class="gal">
+      <figure class="w2"><img src="img/1.jpg" alt="Мастерская: стенд с ключами и обувью" loading="lazy"><figcaption>Мастерская на Совхозной</figcaption></figure>
+      <figure><img src="img/2.jpg" alt="Новая подмётка на туфле" loading="lazy"><figcaption>Новая подмётка</figcaption></figure>
+      <figure><img src="img/3.jpg" alt="Профилактика подошвы" loading="lazy"><figcaption>Профилактика</figcaption></figure>
+      <figure><img src="img/4.jpg" alt="Кроссовки" loading="lazy"><figcaption>Кроссовки — тоже к нам</figcaption></figure>
+      <figure><img src="img/5.jpg" alt="Здание с вывеской Бытовой ряд" loading="lazy"><figcaption>Ищите «Бытовой ряд»</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:20px">
+  <div class="wrap">
+    <div class="tag">Отзывы с Яндекс Карт</div>
+    <h2 class="h2">«Мастера <span class="o">рекомендую</span>»</h2>
+    <div class="meter">
+      <div>Персонал — 92% положительных отзывов<div class="bar"><i data-w="92"></i></div></div>
+      <div>Время ожидания — 93% положительных<div class="bar"><i data-w="93"></i></div></div>
+    </div>
+    <div class="revs">
+      <div class="rev"><p>«Замечательный мастер, работа выполнена профессионально и в срок! Уже не первый раз отдаю сюда свою и семьи обувь — никогда нет проблем».</p><span>Постоянный клиент</span></div>
+      <div class="rev"><p>«Нужно было срочно отремонтировать обувь ребёнку перед школой — мастер задержался в своё свободное время и сделал всё очень качественно».</p><span>Срочный ремонт</span></div>
+      <div class="rev"><p>«Арарат — отличный мастер! Меньше чем за день поменял набойки, заводские были хлипкие. Теперь очень прочные».</p><span>Набойки</span></div>
+      <div class="rev"><p>«Сдавала новые итальянские ботинки со скользкой подошвой. Мастер ответственно подошёл, думал, как сделать лучше, и сделал недорого».</p><span>Профилактика</span></div>
+      <div class="rev"><p>«Хорошо сделали обувь. Прошили дополнительно, увеличив надёжность».</p><span>Прошивка</span></div>
+      <div class="rev"><p>«У каждой девушки должен быть проверенный парикмахер, мастер по маникюру и мастер по ремонту обуви. Здесь последнюю потребность вы закроете».</p><span>Женская обувь</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="contacts">
+  <div class="wrap">
+    <div class="tag" style="color:#111">Химки · Совхозная, 8А</div>
+    <h2 class="h2">Принесите — <br>посмотрим сразу</h2>
+    <p style="max-width:540px">Или пришлите фото в WhatsApp: скажем цену и срок до того, как вы выйдете из дома.</p>
+    <div class="cta">
+      <a class="btn btn-or" data-wa="Здравствуйте! Пришлю фото обуви — подскажите цену и срок?">Отправить фото в WhatsApp</a>
+      <a class="btn btn-line" href="tel:+79014044008">+7 901 404-40-08</a>
+    </div>
+    <div class="info">
+      <div>Адрес<b>Химки, Совхозная ул., 8А</b></div>
+      <div>Этаж<b>первый</b></div>
+      <div>Оплата<b>картой или наличными</b></div>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap"><span>© Мастерская по ремонту обуви, Химки</span><span>Демо-версия сайта · отзывы — с Яндекс Карт</span></div></footer>
+
+<a class="fab" data-wa="Здравствуйте! Нужен ремонт обуви." aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+
+<script>
+const WA = "79014044008";
+const waLink = t => "https://wa.me/" + WA + "?text=" + encodeURIComponent(t);
+document.querySelectorAll("[data-wa]").forEach(a => { a.href = waLink(a.dataset.wa); a.target = "_blank"; a.rel = "noopener"; });
+const $ = s => document.querySelector(s);
+addEventListener("scroll", () => $("#hdr").classList.toggle("solid", scrollY > 30), {passive:true});
+
+const PROBS = [["🥾","Отклеилась подошва"],["👠","Сносились набойки"],["🤐","Сломалась молния"],["🧵","Порвался шов"],["👟","Ремонт кроссовок"],["🧊","Скользкая подошва"],["🔑","Сделать ключ"],["🔪","Заточить нож / ножницы"],["☂️","Сломался зонт"],["⌚","Ремешок часов"],["🛒","Ремонт коляски"],["❓","Другое"]];
+const KINDS = ["Женская","Мужская","Детская","Кроссовки","Не обувь"];
+const WHENS = ["Не срочно","Как можно скорее","К конкретной дате"];
+const sel = new Set(); let kind = "", when = "Не срочно";
+$("#num").textContent = "№ " + String(Math.floor(1000 + Math.random()*8999));
+$("#probs").innerHTML = PROBS.map(([i,t]) => `<button type="button" class="prob" data-t="${t}"><i>${i}</i>${t}</button>`).join("");
+$("#probs").querySelectorAll(".prob").forEach(b => b.onclick = () => { const t = b.dataset.t; sel.has(t) ? sel.delete(t) : sel.add(t); b.classList.toggle("on"); upd(); if (window.gsap) gsap.fromTo(b, {scale:.94}, {scale:1, duration:.35, ease:"back.out(4)"}); });
+function seg(id, arr, cb, init){ $(id).innerHTML = arr.map(x => `<button type="button" class="${x===init?"on":""}">${x}</button>`).join(""); $(id).querySelectorAll("button").forEach(b => b.onclick = () => { $(id).querySelectorAll("button").forEach(x => x.classList.toggle("on", x===b)); cb(b.textContent); upd(); }); }
+seg("#kind", KINDS, v => kind = v, "");
+seg("#when", WHENS, v => when = v, "Не срочно");
+function upd(){
+  $("#tList").innerHTML = sel.size ? [...sel].map(t => `<li>${t}</li>`).join("") : `<li class="empty">Выберите поломку слева</li>`;
+  $("#tKind").textContent = kind || "—"; $("#tWhen").textContent = when;
+  const msg = sel.size ? `Здравствуйте! ${kind ? "Обувь: " + kind.toLowerCase() + ". " : ""}Что случилось: ${[...sel].join(", ").toLowerCase()}. Срок: ${when.toLowerCase()}. Сейчас пришлю фото — подскажите цену и когда можно принести?` : "Здравствуйте! Нужен ремонт обуви.";
+  $("#send").href = waLink(msg); $("#send").target = "_blank";
+}
+upd();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ===== 3D: подошва с протектором + искры от точила ===== */
+(function(){
+  if (!window.THREE) return;
+  const canvas = document.getElementById("stage");
+  let renderer; try { renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true}); } catch(e){ return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  const scene = new THREE.Scene();
+  const cam = new THREE.PerspectiveCamera(36, 1, .1, 60); cam.position.set(0, 0, 16);
+  scene.add(new THREE.AmbientLight(0xffffff, .35));
+  const key = new THREE.DirectionalLight(0xffffff, 1.1); key.position.set(-5, 6, 8); scene.add(key);
+  const rim = new THREE.PointLight(0xff7a1a, 2.2, 30); rim.position.set(5, -2, 4); scene.add(rim);
+
+  // силуэт подошвы
+  const s = new THREE.Shape();
+  s.moveTo(0, -4.4);
+  s.bezierCurveTo(1.3, -4.4, 1.55, -3.2, 1.45, -2.1);
+  s.bezierCurveTo(1.35, -1.0, 1.2, -.2, 1.55, 1.0);
+  s.bezierCurveTo(1.95, 2.4, 1.9, 4.4, 0, 4.6);
+  s.bezierCurveTo(-1.9, 4.4, -1.95, 2.4, -1.55, 1.0);
+  s.bezierCurveTo(-1.2, -.2, -1.35, -1.0, -1.45, -2.1);
+  s.bezierCurveTo(-1.55, -3.2, -1.3, -4.4, 0, -4.4);
+  const geo = new THREE.ExtrudeGeometry(s, {depth:.55, bevelEnabled:true, bevelThickness:.12, bevelSize:.1, bevelSegments:4, curveSegments:40});
+  geo.center();
+  // протектор — процедурная текстура «ёлочка»
+  const c = document.createElement("canvas"); c.width = c.height = 512; const x = c.getContext("2d");
+  x.fillStyle = "#1c1c1f"; x.fillRect(0,0,512,512);
+  x.strokeStyle = "#2f2f34"; x.lineWidth = 10;
+  for (let y=-40;y<560;y+=34){ x.beginPath(); x.moveTo(0,y); x.lineTo(256,y+30); x.lineTo(512,y); x.stroke(); }
+  x.save(); x.translate(512, 0); x.scale(-1, 1);   // лицевая сторона подошвы зеркалит текстуру — пишем наоборот
+  x.fillStyle = "#ff7a1a"; x.font = "bold 46px Oswald, Impact, sans-serif"; x.textAlign = "center"; x.fillText("8А", 256, 270); x.restore();
+  const tex = new THREE.CanvasTexture(c); tex.encoding = THREE.sRGBEncoding;
+  tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(.24, .11); tex.offset.set(.5, .5);
+  const bump = tex.clone(); bump.needsUpdate = true;
+  const solMat = new THREE.MeshStandardMaterial({map:tex, roughness:.85, metalness:.05, bumpMap:bump, bumpScale:.06});
+  const sideMat = new THREE.MeshStandardMaterial({color:0xff7a1a, roughness:.5});
+  const sole = new THREE.Mesh(geo, [solMat, sideMat]);
+  const holder = new THREE.Group(); holder.add(sole); scene.add(holder);
+
+  // набойка (каблук) — отдельный блок
+  const heel = new THREE.Mesh(new THREE.CylinderGeometry(1.25,1.25,.5,40,1,false,0,Math.PI), new THREE.MeshStandardMaterial({color:0x2a2a2e, roughness:.6, metalness:.2}));
+  heel.rotation.x = Math.PI/2; heel.position.set(0,-3.1,.55); holder.add(heel);
+
+  // искры
+  const N = 260, pos = new Float32Array(N*3), vel = [];
+  for (let i=0;i<N;i++){ vel.push(new THREE.Vector3()); reset(i, true); }
+  function reset(i, rnd){ pos[i*3] = -.6; pos[i*3+1] = -3.9; pos[i*3+2] = .8; const a = Math.PI*.55 + Math.random()*Math.PI*.4; const sp = .08 + Math.random()*.18;
+    vel[i].set(Math.cos(a)*sp, Math.sin(a)*sp + .05, (Math.random()-.5)*.08); if (rnd){ const k = Math.random()*40; for(let j=0;j<k;j++) step(i); } }
+  function step(i){ vel[i].y -= .006; pos[i*3]+=vel[i].x; pos[i*3+1]+=vel[i].y; pos[i*3+2]+=vel[i].z; if (pos[i*3+1] < -9) reset(i); }
+  const pg = new THREE.BufferGeometry(); pg.setAttribute("position", new THREE.BufferAttribute(pos,3));
+  const sparks = new THREE.Points(pg, new THREE.PointsMaterial({color:0xffc04d, size:.08, transparent:true, opacity:.95, blending:THREE.AdditiveBlending, depthWrite:false}));
+  scene.add(sparks);
+
+  let mx=0,my=0,sv=0,lastY=scrollY;
+  addEventListener("pointermove", e => { mx = e.clientX/innerWidth-.5; my = e.clientY/innerHeight-.5; }, {passive:true});
+  addEventListener("scroll", () => { sv += (scrollY-lastY)*.0008; lastY = scrollY; }, {passive:true});
+  function size(){ const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w,h,false); cam.aspect = w/h;
+    const wide = w >= 900; holder.position.set(wide ? 6.2 : 1.6, wide ? -.2 : 3.6, 0); holder.scale.setScalar(wide ? .72 : .62);
+    sparks.position.copy(holder.position); sparks.scale.copy(holder.scale); cam.updateProjectionMatrix(); }
+  addEventListener("resize", size); size();
+  let visible = true; new IntersectionObserver(([e]) => visible = e.isIntersecting).observe(canvas);
+  const clock = new THREE.Clock();
+  (function loop(){
+    requestAnimationFrame(loop); if (!visible) return;
+    const t = clock.getElapsedTime(); sv *= .9;
+    holder.rotation.y = (REDUCED ? .5 : t*.45) + sv*4 + mx*.6;
+    holder.rotation.x = -.35 + my*.4 + Math.sin(t*.7)*.08;
+    holder.rotation.z = .35;
+    if (!REDUCED){ for (let i=0;i<N;i++) step(i); pg.attributes.position.needsUpdate = true; }
+    rim.intensity = 1.8 + Math.random()*.8;
+    renderer.render(scene, cam);
+  })();
+})();
+
+(function(){
+  if (!window.gsap || REDUCED) return;
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from(".hero h1 .ln>span", {yPercent:110, duration:1, ease:"power4.out", stagger:.1, delay:.15});
+  gsap.from(".hero .lead, .hero .cta, .hstats > div, .hero .tag", {y:20, opacity:0, duration:.8, ease:"power3.out", stagger:.07, delay:.55});
+  document.querySelectorAll(".hstats [data-n]").forEach(el => { const o = {v:0}, to = +el.dataset.n, d = +el.dataset.d||0, s = el.dataset.s||"";
+    gsap.to(o, {v:to, duration:1.6, delay:.7, ease:"power2.out", onUpdate:() => el.textContent = o.v.toFixed(d).replace(".",",") + s}); });
+  const row = document.getElementById("tick");
+  const tw = gsap.to(row, {xPercent:-50, ease:"none", duration:22, repeat:-1});
+  ScrollTrigger.create({onUpdate: s => { const v = s.getVelocity(); tw.timeScale(1 + Math.min(5, Math.abs(v)/400)); gsap.to(tw, {timeScale:1, duration:1}); gsap.to(row, {skewX: gsap.utils.clamp(-10,10,v/-200), duration:.3}); }});
+  document.querySelectorAll(".h2").forEach(h => gsap.from(h, {x:-60, opacity:0, duration:.9, ease:"power3.out", scrollTrigger:{trigger:h, start:"top 86%"}}));
+  gsap.from(".prob", {y:24, opacity:0, duration:.5, stagger:.035, ease:"power2.out", scrollTrigger:{trigger:".probs", start:"top 85%"}});
+  gsap.from(".ticket", {y:60, rotation:2, opacity:0, duration:.9, ease:"power3.out", scrollTrigger:{trigger:".ticket", start:"top 90%"}});
+  gsap.from(".svc > div", {opacity:0, x:-30, duration:.6, stagger:.06, scrollTrigger:{trigger:".svc", start:"top 85%"}});
+  gsap.from(".gal figure", {clipPath:"inset(0 100% 0 0)", duration:1, stagger:.1, ease:"power3.inOut", scrollTrigger:{trigger:".gal", start:"top 80%"}});
+  document.querySelectorAll(".meter i").forEach(i => gsap.to(i, {width: i.dataset.w + "%", duration:1.4, ease:"power2.out", scrollTrigger:{trigger:i, start:"top 92%"}}));
+  gsap.from(".rev", {y:30, opacity:0, duration:.6, stagger:.06, scrollTrigger:{trigger:".revs", start:"top 85%"}});
+  document.querySelectorAll(".tape").forEach(t => gsap.to(t, {backgroundPositionX:"+=300px", ease:"none", scrollTrigger:{trigger:t, scrub:true}}));
+})();
+// без GSAP полоски рейтинга всё равно заполнены
+if (!window.gsap || REDUCED) document.querySelectorAll(".meter i").forEach(i => i.style.width = i.dataset.w + "%");
+</script>
+</body>
+</html>
