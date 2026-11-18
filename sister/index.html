@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sister Margaret — барбершоп на Сокольническом Валу</title>
+<meta name="description" content="Барбершоп Sister Margaret, ул. Сокольнический Вал, 22. Мужские и детские стрижки, борода, королевское бритьё. 5,0 на Яндекс Картах, «Хорошее место 2026».">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Old+Standard+TT:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--green:#123a2c;--green2:#0b2a1f;--ox:#7a1622;--ox2:#9b2130;--cream:#f2e8d5;--cream2:#e4d6bc;--brass:#c9a35a;--ink:#14110e;--mute:#8e8573}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"IBM Plex Sans",system-ui,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+a{color:inherit}
+.mono{font-family:"IBM Plex Mono",monospace;letter-spacing:1.5px;font-size:12px}
+.frak{font-family:UnifrakturMaguntia,serif}
+nav{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 22px;background:rgba(11,42,31,.92);backdrop-filter:blur(6px);color:var(--cream);border-bottom:1px solid rgba(201,163,90,.3)}
+.logo{font-family:UnifrakturMaguntia;font-size:26px;color:var(--cream)}
+.logo b{color:var(--brass);font-weight:400}
+nav .cta{background:var(--brass);color:var(--ink);padding:10px 16px;border-radius:4px;text-decoration:none;font-weight:600;font-size:14px}
+/* hero */
+.hero{min-height:100vh;background:var(--green);color:var(--cream);display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:20px;padding:100px 6vw 50px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 2px,transparent 2px 90px);pointer-events:none}
+.hero>*{position:relative;z-index:2}
+.est{display:flex;align-items:center;gap:14px;color:var(--brass);margin-bottom:22px}
+.est:before,.est:after{content:"";height:1px;width:40px;background:var(--brass)}
+h1{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(46px,7vw,108px);line-height:.92;letter-spacing:-1px}
+h1 i{font-family:"Old Standard TT";font-weight:400;color:var(--brass)}
+h1 .ln{display:block;overflow:hidden}h1 .ln>span{display:inline-block}
+.lead{font-size:clamp(16px,1.4vw,20px);line-height:1.55;color:var(--cream2);max-width:520px;margin:24px 0 30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:16px 24px;border-radius:4px;font-weight:600;text-decoration:none;font-size:15px;border:0;cursor:pointer;font-family:"IBM Plex Sans"}
+.btn.b{background:var(--brass);color:var(--ink)}
+.btn.o{border:1px solid rgba(242,232,213,.45);color:var(--cream)}
+.seal{display:flex;gap:28px;margin-top:38px;flex-wrap:wrap}
+.seal div{border-left:2px solid var(--ox2);padding-left:12px;font-size:13px;color:var(--cream2)}
+.seal b{display:block;font-family:"Playfair Display";font-size:30px;color:var(--cream)}
+#pole{width:100%;height:min(78vh,680px);cursor:grab}
+.motto{position:absolute;right:6vw;bottom:24px;font-family:UnifrakturMaguntia;color:rgba(201,163,90,.6);font-size:18px;z-index:2}
+/* ribbon */
+.rib{background:var(--ox);color:var(--cream);overflow:hidden;white-space:nowrap;padding:16px 0;transform:rotate(-1.2deg) scale(1.02);margin-top:-14px;position:relative;z-index:3}
+.rib div{display:inline-block;font-family:"Playfair Display";font-style:italic;font-size:22px;animation:mv 26s linear infinite}
+.rib span{color:var(--brass);margin:0 18px;font-style:normal}
+@keyframes mv{to{transform:translateX(-50%)}}
+section{padding:100px 6vw}
+h2{font-family:"Playfair Display";font-weight:900;font-size:clamp(36px,5vw,70px);line-height:.98;margin-bottom:16px;letter-spacing:-.5px}
+h2 i{font-family:"Old Standard TT";font-weight:400;color:var(--ox)}
+.sub{color:#6c6455;font-size:17px;line-height:1.55;max-width:620px;margin-bottom:44px}
+.kick{color:var(--ox);display:block;margin-bottom:14px}
+/* menu */
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
+.it{display:flex;align-items:baseline;gap:12px;padding:20px 0;border-bottom:1px solid #d6c8ad}
+.it h3{font-family:"Playfair Display";font-size:24px;white-space:nowrap}
+.it .dots{flex:1;border-bottom:2px dotted #bfae8c;transform:translateY(-6px)}
+.it .pr{font-family:"Old Standard TT";font-style:italic;font-size:20px;white-space:nowrap;color:var(--ox)}
+.it p{flex-basis:100%;color:#7a7160;font-size:14px;margin-top:4px}
+.it{flex-wrap:wrap}
+/* booking */
+.book{background:var(--green2);color:var(--cream)}
+.book .sub{color:#a9b5a6}.book .kick{color:var(--brass)}
+.bgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px}
+.step{margin-bottom:28px}
+.step h4{color:#8fa392;margin-bottom:12px;font-weight:500}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{background:transparent;border:1px solid #2f5545;color:var(--cream);padding:12px 16px;border-radius:4px;cursor:pointer;font:500 15px "IBM Plex Sans";transition:.15s;text-align:left}
+.opt small{display:block;font-size:12px;color:#8fa392}
+.opt:hover{border-color:var(--brass)}
+.opt.on{background:var(--brass);color:var(--ink);border-color:var(--brass)}.opt.on small{color:#4a3d22}
+.slot.busy{opacity:.28;pointer-events:none;text-decoration:line-through}
+.ticket{background:var(--cream);color:var(--ink);padding:28px;border-radius:2px;position:sticky;top:90px;align-self:start;box-shadow:0 30px 60px rgba(0,0,0,.45);background-image:radial-gradient(circle at 0 50%,var(--green2) 10px,transparent 11px),radial-gradient(circle at 100% 50%,var(--green2) 10px,transparent 11px)}
+.ticket .frak{font-size:30px;text-align:center;color:var(--green)}
+.ticket .t2{text-align:center;color:var(--mute);margin:4px 0 18px}
+.ticket .row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed #cbbc9e;padding:10px 0;font-size:15px}
+.ticket .row span:first-child{color:var(--mute)}
+.ticket .note{font-size:13px;color:var(--mute);margin:16px 0}
+.ticket .btn{width:100%;text-align:center;background:#25d366;color:#fff}
+.ticket .btn[disabled]{background:#d3c7b0;color:#8e8573;cursor:not-allowed}
+/* fix */
+.fix{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.fix .ph{position:relative}
+.fix .ph img{width:100%;border-radius:2px;display:block;filter:sepia(.15)}
+.fix .ph .stamp{position:absolute;right:-14px;bottom:-14px;background:var(--ox);color:var(--cream);width:120px;height:120px;border-radius:50%;display:grid;place-items:center;text-align:center;font-family:"Playfair Display";font-style:italic;font-size:15px;line-height:1.2;transform:rotate(-12deg);border:3px double var(--brass)}
+.fix ul{list-style:none;margin-top:20px}
+.fix li{padding:14px 0 14px 34px;border-bottom:1px solid #d6c8ad;position:relative;line-height:1.5}
+.fix li:before{content:"✂";position:absolute;left:0;color:var(--ox);font-size:18px}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:12px}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.2) contrast(1.05);transition:filter .5s}
+.gal img:hover{filter:none}
+.gal .w2{grid-column:span 2}.gal .h2{grid-row:span 2}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:#fff8ea;border:1px solid #dccdb0;padding:26px;position:relative}
+.rev:before{content:"“";font-family:"Playfair Display";font-size:90px;color:var(--ox);position:absolute;top:-18px;left:16px;line-height:1}
+.rev p{font-family:"Old Standard TT";font-size:19px;line-height:1.45;margin-top:22px}
+.rev .src{margin-top:14px;color:var(--mute)}
+footer{background:var(--green);color:var(--cream2);padding:70px 6vw 100px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+footer .frak{font-size:48px;color:var(--cream);margin-bottom:14px}
+footer p{line-height:1.8}footer a{color:var(--brass)}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;background:#25d366;color:#fff;border-radius:50px;padding:14px 18px;font-weight:600;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.demo{position:fixed;left:16px;bottom:16px;z-index:30;background:#000;color:#fff;font-size:12px;padding:8px 12px;border-radius:6px;opacity:.85}
+.rv{opacity:0;transform:translateY(28px)}
+@media(max-width:900px){
+ .hero{grid-template-columns:1fr;padding:84px 16px 50px}
+ #pole{height:300px;order:-1}
+ .motto{display:none}
+ .menu,.bgrid,.fix,footer{grid-template-columns:1fr}
+ .gal{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+ .revs{grid-template-columns:1fr}
+ section{padding:70px 16px}nav{padding:10px 16px}
+ .ticket{position:static}
+ .fix .ph .stamp{right:8px;bottom:-20px;width:100px;height:100px;font-size:13px}
+ footer{padding:60px 16px 100px}
+}
+@media(max-width:480px){.it h3{font-size:20px;white-space:normal}.logo{font-size:21px}}
+@media(prefers-reduced-motion:reduce){.rib div{animation:none}}
+</style>
+</head>
+<body>
+<nav><div class="logo">Sister <b>Margaret</b></div><a class="cta" href="#book">Записаться</a></nav>
+
+<header class="hero">
+ <div>
+  <div class="est mono">СОКОЛЬНИЧЕСКИЙ ВАЛ, 22</div>
+  <h1><span class="ln"><span>Барбер,</span></span><span class="ln"><span>к которому</span></span><span class="ln"><span><i>ходят семьёй</i></span></span></h1>
+  <p class="lead">Мужские и детские стрижки, оформление бороды и королевское бритьё. Мастер слушает, что вы задумали, — и делает именно это.</p>
+  <div class="btns"><a class="btn b" href="#book">Записаться онлайн</a><a class="btn o" href="#menu">Услуги</a></div>
+  <div class="seal">
+   <div><b>5,0</b>на Яндекс Картах</div>
+   <div><b>239</b>оценок</div>
+   <div><b>2026</b>«Хорошее место»</div>
+  </div>
+ </div>
+ <canvas id="pole" aria-label="3D барбер-пол, можно покрутить"></canvas>
+ <div class="motto">Amor tussisque non celantur</div>
+</header>
+
+<div class="rib"><div>стрижки <span>✦</span> борода <span>✦</span> детские стрижки <span>✦</span> королевское бритьё <span>✦</span> исправим неудачную стрижку <span>✦</span> стрижки <span>✦</span> борода <span>✦</span> детские стрижки <span>✦</span> королевское бритьё <span>✦</span> исправим неудачную стрижку <span>✦</span> </div></div>
+
+<section id="menu">
+ <span class="kick mono">— МЕНЮ ЗАВЕДЕНИЯ —</span>
+ <h2>Услуги <i>барбершопа</i></h2>
+ <p class="sub">Точную стоимость подскажет мастер при записи — цены возьмём из вашего прайса.</p>
+ <div class="menu">
+  <div class="it rv"><h3>Мужская стрижка</h3><span class="dots"></span><span class="pr">по прайсу</span><p>Классика, фейд, «как на фото» — с мытьём и укладкой</p></div>
+  <div class="it rv"><h3>Оформление бороды</h3><span class="dots"></span><span class="pr">по прайсу</span><p>Форма, контур, уход</p></div>
+  <div class="it rv"><h3>Стрижка + борода</h3><span class="dots"></span><span class="pr">по прайсу</span><p>Полный образ за один визит</p></div>
+  <div class="it rv"><h3>Детская стрижка</h3><span class="dots"></span><span class="pr">по прайсу</span><p>Спокойно и терпеливо — даже самым непоседливым</p></div>
+  <div class="it rv"><h3>Королевское бритьё</h3><span class="dots"></span><span class="pr">2 500 ₽</span><p>Горячее полотенце, опасная бритва, уход за кожей</p></div>
+  <div class="it rv"><h3>Исправление стрижки</h3><span class="dots"></span><span class="pr">по прайсу</span><p>Если в другом месте что-то пошло не так</p></div>
+ </div>
+</section>
+
+<section class="book" id="book">
+ <span class="kick mono">— ЗАПИСЬ —</span>
+ <h2>Ваше кресло <i>свободно</i></h2>
+ <p class="sub">Выберите услугу и время — заявка уйдёт в WhatsApp барбершопа, мастер подтвердит запись.</p>
+ <div class="bgrid">
+  <div>
+   <div class="step"><h4 class="mono">I · УСЛУГА</h4><div class="opts" data-k="srv">
+    <button class="opt" data-v="Мужская стрижка">Мужская стрижка</button>
+    <button class="opt" data-v="Оформление бороды">Борода</button>
+    <button class="opt" data-v="Стрижка + борода">Стрижка + борода</button>
+    <button class="opt" data-v="Детская стрижка">Детская стрижка</button>
+    <button class="opt" data-v="Королевское бритьё">Королевское бритьё<small>2 500 ₽</small></button>
+    <button class="opt" data-v="Исправить неудачную стрижку">Исправить стрижку</button>
+   </div></div>
+   <div class="step"><h4 class="mono">II · ДЕНЬ</h4><div class="opts" data-k="day" id="days"></div></div>
+   <div class="step"><h4 class="mono">III · ВРЕМЯ</h4><div class="opts" data-k="t" id="slots"></div></div>
+  </div>
+  <aside class="ticket">
+   <div class="frak">Sister Margaret</div>
+   <div class="t2 mono">ТАЛОН НА ПОСЕЩЕНИЕ</div>
+   <div class="row"><span>Услуга</span><span id="o-srv">—</span></div>
+   <div class="row"><span>День</span><span id="o-day">—</span></div>
+   <div class="row"><span>Время</span><span id="o-t">—</span></div>
+   <p class="note">Сокольнический Вал, 22. Мастер ответит в WhatsApp и подтвердит время.</p>
+   <button class="btn" id="send" disabled>Отправить в WhatsApp</button>
+  </aside>
+ </div>
+</section>
+
+<section class="fix">
+ <div class="ph rv"><img src="img/p5.jpg" alt="Аккуратный фейд" loading="lazy"><div class="stamp">исправим<br>за один<br>визит</div></div>
+ <div class="rv">
+  <span class="kick mono">— ЗА ЧТО ЛЮБЯТ —</span>
+  <h2>Стрижёт, <i>как задумали</i></h2>
+  <ul>
+   <li>Исправляют неудачные стрижки после других салонов — об этом пишут в отзывах.</li>
+   <li>Детей стригут спокойно: родители приводят «загородных леших» — и потом ходят всей семьёй.</li>
+   <li>Барбер Роман — «наш теперь семейный профессионал», по словам клиентов.</li>
+   <li>Можно просто поговорить: мастер открыт к диалогу, атмосфера без пафоса.</li>
+  </ul>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <div class="gal">
+  <img class="rv h2" src="img/p1.jpg" alt="Мастер Sister Margaret" loading="lazy">
+  <img class="rv w2" src="img/p2.jpg" alt="Мастер за работой" loading="lazy">
+  <img class="rv" src="img/p7.jpg" alt="Средства Reuzel" loading="lazy">
+  <img class="rv h2" src="img/p6.jpg" alt="Детская стрижка" loading="lazy">
+  <img class="rv" src="img/p4.jpg" alt="Интерьер барбершопа" loading="lazy">
+  <img class="rv w2" src="img/p3.jpg" alt="В кресле" loading="lazy">
+ </div>
+</section>
+
+<section>
+ <span class="kick mono">— ОТЗЫВЫ —</span>
+ <h2>5,0 · <i>152 отзыва</i></h2>
+ <p class="sub">Цитаты с Яндекс Карт.</p>
+ <div class="revs">
+  <div class="rev rv"><p>У моего ребёнка была неудачная стрижка после другого салона. Мастер оказался на высоте, всё сделал идеально. Теперь будем ходить только сюда.</p><div class="src mono">ЯНДЕКС КАРТЫ</div></div>
+  <div class="rev rv"><p>Делал оформление бороды, мастер Роман показал весь свой профессионализм. Походу, нашёл себе барбера.</p><div class="src mono">ЯНДЕКС КАРТЫ</div></div>
+  <div class="rev rv"><p>Посетил впервые. Мастер воплотил задумку в моей голове в реальность, а ещё была прекрасная беседа. Советую!</p><div class="src mono">ЯНДЕКС КАРТЫ</div></div>
+ </div>
+</section>
+
+<footer>
+ <div><div class="frak">Sister Margaret</div><p>Москва, ул. Сокольнический Вал, 22<br>Телефон / WhatsApp: <a href="tel:+79661431881">+7 966 143-18-81</a><br>Записаться: <a href="#book">онлайн на сайте</a></p></div>
+ <div><iframe title="Карта" src="https://yandex.ru/map-widget/v1/?ll=37.66052%2C55.791791&z=16&pt=37.66052,55.791791,pm2rdm" style="width:100%;height:260px;border:0;border-radius:2px;filter:sepia(.35)" loading="lazy"></iframe></div>
+</footer>
+
+<a class="fab" href="https://wa.me/79661431881">WhatsApp</a>
+<div class="demo">Демо-версия сайта</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+const WA='79661431881';
+/* ---------- booking ---------- */
+const st={};
+const days=document.getElementById('days'),nm=['вс','пн','вт','ср','чт','пт','сб'],now=new Date();
+for(let i=0;i<7;i++){const d=new Date(now);d.setDate(now.getDate()+i);const dd=d.getDate()+'.'+String(d.getMonth()+1).padStart(2,'0');const l=i===0?'Сегодня':i===1?'Завтра':nm[d.getDay()]+' '+d.getDate();days.insertAdjacentHTML('beforeend',`<button class="opt" data-v="${l} (${dd})" data-i="${i}">${l}<small>${dd}</small></button>`);}
+function slots(seed){let h='';for(let t=10;t<=20;t++){const busy=((t*5+seed*3)%4===0);h+=`<button class="opt slot${busy?' busy':''}" data-v="${t}:00">${t}:00</button>`;}document.getElementById('slots').innerHTML=h;}
+slots(0);
+document.addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;const g=b.closest('[data-k]'),k=g.dataset.k;g.querySelectorAll('.opt').forEach(x=>x.classList.remove('on'));b.classList.add('on');st[k]=b.dataset.v;if(k==='day'){slots(+b.dataset.i);delete st.t;}upd();});
+function upd(){document.getElementById('o-srv').textContent=st.srv||'—';document.getElementById('o-day').textContent=st.day?st.day.split(' (')[0]:'—';document.getElementById('o-t').textContent=st.t||'—';document.getElementById('send').disabled=!(st.srv&&st.day&&st.t);}
+document.getElementById('send').onclick=()=>{const t=`Здравствуйте! Хочу записаться.\nУслуга: ${st.srv}\nКогда: ${st.day}, ${st.t}\n(заявка с сайта)`;window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');};
+
+/* ---------- 3D barber pole ---------- */
+(function(){
+ const c=document.getElementById('pole');if(!window.THREE)return;
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const r=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:true});r.setPixelRatio(Math.min(devicePixelRatio,2));
+ const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(32,1,.1,100);cam.position.set(0,0,12);
+ sc.add(new THREE.AmbientLight(0xffffff,.5));
+ const k=new THREE.DirectionalLight(0xfff1d6,1.1);k.position.set(4,6,8);sc.add(k);
+ const rim=new THREE.PointLight(0xc9a35a,1.2,30);rim.position.set(-5,2,4);sc.add(rim);
+ // stripe texture
+ const cv=document.createElement('canvas');cv.width=512;cv.height=512;const x=cv.getContext('2d');
+ x.fillStyle='#f2e8d5';x.fillRect(0,0,512,512);
+ const cols=['#7a1622','#f2e8d5','#123a2c','#f2e8d5'];
+ for(let i=-4;i<8;i++){x.save();x.translate(i*128,0);x.transform(1,0,-1,1,0,0);for(let j=0;j<4;j++){x.fillStyle=cols[j];x.fillRect(j*32,0,32,512);}x.restore();}
+ // overlay diagonal using rotation trick
+ const tex=new THREE.CanvasTexture(cv);tex.wrapS=tex.wrapT=THREE.RepeatWrapping;tex.repeat.set(1,2.2);
+ const g=new THREE.Group();sc.add(g);
+ const body=new THREE.Mesh(new THREE.CylinderGeometry(1,1,5.2,64,1,true),new THREE.MeshStandardMaterial({map:tex,roughness:.35,metalness:.05}));g.add(body);
+ const glass=new THREE.Mesh(new THREE.CylinderGeometry(1.12,1.12,5.3,64,1,true),new THREE.MeshPhysicalMaterial({color:0xffffff,transparent:true,opacity:.14,roughness:.05,metalness:0,clearcoat:1}));g.add(glass);
+ const brass=new THREE.MeshStandardMaterial({color:0xc9a35a,roughness:.28,metalness:.95});
+ const cap=(y,s)=>{const m=new THREE.Mesh(new THREE.CylinderGeometry(1.3,1.3,.36,64),brass);m.position.y=y;g.add(m);const d=new THREE.Mesh(new THREE.SphereGeometry(1.15,48,24,0,Math.PI*2,0,Math.PI/2),brass);d.position.y=y+s*.18;if(s<0)d.rotation.x=Math.PI;g.add(d);const n=new THREE.Mesh(new THREE.SphereGeometry(.28,24,16),brass);n.position.y=y+s*1.35;g.add(n);};
+ cap(2.8,1);cap(-2.8,-1);
+ const ring=(y)=>{const m=new THREE.Mesh(new THREE.TorusGeometry(1.16,.05,12,64),brass);m.rotation.x=Math.PI/2;m.position.y=y;g.add(m);};ring(2.6);ring(-2.6);
+ g.rotation.z=-.12;g.scale.setScalar(.82);
+ function size(){const w=c.clientWidth,h=c.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();cam.position.z=w<500?15:12;}
+ size();addEventListener('resize',size);
+ let drag=false,px=0,vy=0,last=scrollY,boost=0;
+ c.addEventListener('pointerdown',e=>{drag=true;px=e.clientX;c.setPointerCapture(e.pointerId);c.style.cursor='grabbing';});
+ c.addEventListener('pointermove',e=>{if(!drag)return;vy=(e.clientX-px)*.01;px=e.clientX;});
+ c.addEventListener('pointerup',()=>{drag=false;c.style.cursor='grab';});
+ addEventListener('scroll',()=>{boost+=Math.abs(scrollY-last)*.0004;last=scrollY;},{passive:true});
+ let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
+ (function loop(){requestAnimationFrame(loop);if(!vis)return;boost*=.93;
+  tex.offset.y-=reduce?0:(.004+boost);
+  g.rotation.y+=vy;vy*=.92;
+  g.position.y=Math.sin(performance.now()/1400)*.12;
+  r.render(sc,cam);})();
+ if(window.gsap&&!reduce)gsap.from(g.position,{y:-8,duration:1.4,ease:'power3.out'});
+})();
+
+/* ---------- motion ---------- */
+if(window.gsap&&window.ScrollTrigger&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+ gsap.registerPlugin(ScrollTrigger);
+ gsap.from('h1 .ln>span',{yPercent:110,duration:1,ease:'power4.out',stagger:.12,delay:.1});
+ gsap.from('.seal div',{opacity:0,y:16,duration:.7,stagger:.1,delay:.6});
+ document.querySelectorAll('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 90%'}}));
+}else document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none'});
+</script>
+</body>
+</html>
