@@ -86,7 +86,7 @@ const g = (m, f) => D.g === "f" ? f : m;
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const hasGsap = typeof gsap !== "undefined";
 
-document.title = `Письмо от Деда Мороза для ${D.n}`;
+document.title = `${D.dat || D.n} — письмо от Деда Мороза`;
 $("to").textContent = D.dat || D.n;
 $("hi").textContent = `Здравствуй, ${D.n}!`;
 $("ok").textContent = `${D.n} — есть! ✓`;
