@@ -259,7 +259,7 @@ document.getElementById('send').onclick=()=>{const t=`Здравствуйте! 
  const g=new THREE.Group();sc.add(g);
  const body=new THREE.Mesh(new THREE.CylinderGeometry(1,1,5.2,64,1,true),new THREE.MeshStandardMaterial({map:tex,roughness:.35,metalness:.05}));g.add(body);
  const glass=new THREE.Mesh(new THREE.CylinderGeometry(1.12,1.12,5.3,64,1,true),new THREE.MeshPhysicalMaterial({color:0xffffff,transparent:true,opacity:.14,roughness:.05,metalness:0,clearcoat:1}));g.add(glass);
- const brass=new THREE.MeshStandardMaterial({color:0xc9a35a,roughness:.28,metalness:.95});
+ const brass=new THREE.MeshStandardMaterial({color:0xd8b46a,roughness:.32,metalness:.55,emissive:0x3a2a0a,emissiveIntensity:.35});
  const cap=(y,s)=>{const m=new THREE.Mesh(new THREE.CylinderGeometry(1.3,1.3,.36,64),brass);m.position.y=y;g.add(m);const d=new THREE.Mesh(new THREE.SphereGeometry(1.15,48,24,0,Math.PI*2,0,Math.PI/2),brass);d.position.y=y+s*.18;if(s<0)d.rotation.x=Math.PI;g.add(d);const n=new THREE.Mesh(new THREE.SphereGeometry(.28,24,16),brass);n.position.y=y+s*1.35;g.add(n);};
  cap(2.8,1);cap(-2.8,-1);
  const ring=(y)=>{const m=new THREE.Mesh(new THREE.TorusGeometry(1.16,.05,12,64),brass);m.rotation.x=Math.PI/2;m.position.y=y;g.add(m);};ring(2.6);ring(-2.6);
