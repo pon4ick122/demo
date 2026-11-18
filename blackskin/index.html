@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Black Skin — тату-студия на Новослободской</title>
+<meta name="description" content="Тату-студия Black Skin, Новослободская ул., 16А. Fine-line, графика, перекрытие шрамов и старых тату. 5,0 на Яндекс Картах, 541 оценка.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0c0b0b;--ink2:#161414;--skin:#efe4d8;--skin2:#d9c9b8;--red:#c8102e;--mute:#9a8f86;--line:#2a2524}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--ink);color:var(--skin);overflow-x:hidden}
+a{color:inherit}
+.mono{font-family:"JetBrains Mono",monospace;letter-spacing:1px}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+nav{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:linear-gradient(180deg,rgba(12,11,11,.92),rgba(12,11,11,0))}
+.logo{font-weight:800;letter-spacing:3px;font-size:15px;display:flex;align-items:center;gap:10px}
+.logo img{width:34px;height:34px;border-radius:50%}
+.logo b{color:var(--red)}
+nav .cta{border:1px solid var(--skin);padding:10px 16px;border-radius:40px;text-decoration:none;font-size:14px;font-weight:700;transition:.2s}
+nav .cta:hover{background:var(--skin);color:var(--ink)}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0 6vw 9vh;overflow:hidden}
+#helix{position:absolute;inset:0;width:100%;height:100%}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 80%,rgba(12,11,11,.92) 0,rgba(12,11,11,.55) 45%,rgba(12,11,11,.1) 75%);pointer-events:none}
+.hero .txt{position:relative;z-index:2;max-width:760px}
+.tag{display:inline-flex;gap:10px;align-items:center;font-size:12px;color:var(--skin2);margin-bottom:22px}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red)}
+h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(48px,8.4vw,132px);line-height:.88;letter-spacing:-2px}
+h1 em{color:var(--red);font-style:italic}
+h1 .ln{display:block;overflow:hidden}
+h1 .ln span{display:inline-block}
+.lead{font-size:clamp(16px,1.4vw,20px);line-height:1.5;color:var(--skin2);max-width:520px;margin:26px 0 30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:16px 24px;border-radius:40px;font-weight:800;text-decoration:none;font-size:15px;border:0;cursor:pointer;font-family:Manrope}
+.btn.r{background:var(--red);color:#fff}
+.btn.o{border:1px solid rgba(239,228,216,.5);color:var(--skin);background:transparent}
+.stats{position:absolute;right:6vw;bottom:9vh;z-index:2;display:flex;flex-direction:column;gap:18px;text-align:right}
+.stats b{display:block;font-family:"Cormorant Garamond";font-size:46px;line-height:1;font-weight:700}
+.stats span{font-size:13px;color:var(--mute)}
+.scrollhint{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:2;font-size:11px;color:var(--mute)}
+/* marquee */
+.mq{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0}
+.mq div{display:inline-block;font-family:"Cormorant Garamond";font-style:italic;font-size:clamp(28px,4vw,54px);animation:mv 30s linear infinite}
+.mq div span{color:var(--red);margin:0 24px;font-style:normal}
+@keyframes mv{to{transform:translateX(-50%)}}
+section{padding:100px 6vw}
+h2{font-family:"Cormorant Garamond";font-weight:500;font-size:clamp(40px,5.6vw,84px);line-height:.95;letter-spacing:-1px;margin-bottom:18px}
+h2 em{color:var(--red)}
+.sub{color:var(--mute);font-size:17px;max-width:620px;line-height:1.55;margin-bottom:46px}
+.kick{font-size:12px;color:var(--red);margin-bottom:16px;display:block}
+/* works */
+.works{columns:4 240px;column-gap:14px}
+.works figure{break-inside:avoid;margin-bottom:14px;position:relative;overflow:hidden;border-radius:6px;cursor:zoom-in}
+.works img{width:100%;display:block;transition:transform .6s,filter .6s;filter:grayscale(.25)}
+.works figure:hover img{transform:scale(1.05);filter:none}
+.works figcaption{position:absolute;left:10px;bottom:10px;font-size:11px;background:rgba(12,11,11,.75);padding:5px 9px;border-radius:20px}
+/* wizard */
+.quiz{background:var(--skin);color:var(--ink)}
+.quiz .sub{color:#6d625a}
+.qgrid{display:grid;grid-template-columns:1.25fr .75fr;gap:36px}
+.step{margin-bottom:30px}
+.step h4{font-family:"JetBrains Mono";font-size:12px;letter-spacing:2px;color:#8c7f74;margin-bottom:12px;font-weight:500}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{background:#fff;border:1.5px solid #d8cabd;color:var(--ink);padding:13px 16px;border-radius:14px;cursor:pointer;font:600 15px Manrope;text-align:left;transition:.15s}
+.opt small{display:block;font-weight:500;font-size:12px;color:#8c7f74;margin-top:2px}
+.opt:hover{border-color:var(--ink)}
+.opt.on{background:var(--ink);color:var(--skin);border-color:var(--ink)}
+.opt.on small{color:var(--skin2)}
+.body-map{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.body-map .opt{text-align:center}
+.sketch{background:var(--ink);color:var(--skin);border-radius:22px;padding:28px;position:sticky;top:90px;align-self:start;overflow:hidden}
+.sketch:before{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border:1px dashed rgba(239,228,216,.2);border-radius:50%}
+.sketch h3{font-family:"Cormorant Garamond";font-size:32px;font-weight:500;margin-bottom:6px}
+.sketch .no{font-size:12px;color:var(--mute);margin-bottom:18px}
+.sketch .row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:11px 0;font-size:14px}
+.sketch .row span:first-child{color:var(--mute)}
+.sketch .row span:last-child{text-align:right}
+.sketch .sum{font-family:"Cormorant Garamond";font-size:40px;margin:18px 0 4px}
+.sketch .note{font-size:12px;color:var(--mute);margin-bottom:18px;line-height:1.5}
+.sketch .btn{width:100%;text-align:center;background:#25d366;color:#fff}
+.sketch .btn[disabled]{background:#3a3433;color:#7d726b;cursor:not-allowed}
+/* price */
+.plist{border-top:1px solid var(--line)}
+.pl{display:grid;grid-template-columns:60px 1fr auto;gap:20px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);transition:padding .3s}
+.pl:hover{padding-left:12px}
+.pl .n{font-family:"JetBrains Mono";color:var(--mute);font-size:13px}
+.pl h3{font-family:"Cormorant Garamond";font-size:clamp(26px,3vw,40px);font-weight:500}
+.pl p{color:var(--mute);font-size:14px;margin-top:4px}
+.pl .pr{font-family:"Cormorant Garamond";font-size:clamp(24px,2.6vw,34px);white-space:nowrap}
+/* care */
+.care{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.care div{background:var(--ink);padding:30px 24px}
+.care b{font-family:"Cormorant Garamond";font-size:52px;color:var(--red);font-weight:500;display:block;line-height:1}
+.care h3{font-size:17px;margin:14px 0 8px}
+.care p{color:var(--mute);font-size:14px;line-height:1.5}
+/* gift */
+.gift{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.card3d{perspective:1000px}
+.gcard{aspect-ratio:1.6;border-radius:20px;background:linear-gradient(135deg,#1c1717,#0c0b0b 60%),#111;border:1px solid #3a3030;padding:28px;display:flex;flex-direction:column;justify-content:space-between;transform-style:preserve-3d;transition:transform .15s;box-shadow:0 40px 80px rgba(0,0,0,.6);position:relative;overflow:hidden}
+.gcard:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.08) 45%,transparent 60%);transform:translateX(var(--sh,0));pointer-events:none}
+.gcard .top{display:flex;justify-content:space-between;align-items:center}
+.gcard .top img{width:46px;border-radius:50%}
+.gcard .amt{font-family:"Cormorant Garamond";font-size:clamp(44px,5vw,70px);line-height:1}
+.gcard .amt small{font-size:.4em;color:var(--mute)}
+.gcard .to{font-size:13px;color:var(--mute)}
+.amts{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+.amts .opt{background:transparent;color:var(--skin);border-color:var(--line)}
+.amts .opt.on{background:var(--skin);color:var(--ink)}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{border:1px solid var(--line);border-radius:18px;padding:26px;background:var(--ink2)}
+.rev p{font-family:"Cormorant Garamond";font-size:22px;line-height:1.35;font-style:italic}
+.rev .src{margin-top:16px;font-size:12px;color:var(--mute)}
+.rev .st{color:var(--red);letter-spacing:3px;margin-bottom:12px;font-size:13px}
+footer{border-top:1px solid var(--line);padding:70px 6vw 100px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+footer h3{font-family:"Cormorant Garamond";font-size:44px;font-weight:500;margin-bottom:16px}
+footer p{line-height:1.8;color:var(--skin2)}
+footer a{color:var(--skin);text-decoration-color:var(--red)}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;background:#25d366;color:#fff;border-radius:50px;padding:14px 18px;font-weight:800;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.4);font-size:15px}
+.demo{position:fixed;left:16px;bottom:16px;z-index:30;background:rgba(0,0,0,.8);color:#fff;font-size:12px;padding:8px 12px;border-radius:8px;border:1px solid #333}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:50;display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+.lb.on{display:flex}.lb img{max-width:100%;max-height:92vh;border-radius:8px}
+.rv{opacity:0;transform:translateY(30px)}
+@media(max-width:900px){
+ .qgrid,.gift,footer{grid-template-columns:1fr}
+ .care{grid-template-columns:1fr 1fr}
+ .revs{grid-template-columns:1fr}
+ .stats{position:relative;right:auto;bottom:auto;flex-direction:row;text-align:left;gap:26px;margin-top:30px}
+ .hero{flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:0 16px 70px}
+ .stats b{font-size:34px}
+ section{padding:70px 16px}
+ nav{padding:12px 16px}
+ .sketch{position:static}
+ .body-map{grid-template-columns:repeat(3,1fr)}
+ .pl{grid-template-columns:36px 1fr;}
+ .pl .pr{grid-column:2}
+ footer{padding:60px 16px 100px}
+}
+@media(max-width:480px){.care{grid-template-columns:1fr}.body-map{grid-template-columns:1fr 1fr}.logo span{display:none}}
+@media(prefers-reduced-motion:reduce){.mq div{animation:none}}
+</style>
+</head>
+<body>
+<nav><div class="logo"><img src="img/p14.jpg" alt="Black Skin"><span>BLACK <b>SKIN</b></span></div><a class="cta" href="#quiz">Записаться</a></nav>
+
+<header class="hero">
+ <canvas id="helix" aria-hidden="true"></canvas>
+ <div class="txt">
+  <div class="tag mono"><i></i>НОВОСЛОБОДСКАЯ, 16А · 2 МИНУТЫ ОТ МЕТРО</div>
+  <h1><span class="ln"><span>Тату,</span></span><span class="ln"><span>которое <em>хочется</em></span></span><span class="ln"><span>показывать</span></span></h1>
+  <p class="lead">Fine-line, графика, цветные работы и перекрытие старых тату. Эскиз под вас, памятка и мазь для ухода — и чай с конфетами перед сеансом.</p>
+  <div class="btns"><a class="btn r" href="#quiz">Подобрать тату</a><a class="btn o" href="#works">Смотреть работы</a></div>
+ </div>
+ <div class="stats">
+  <div><b>5,0</b><span>рейтинг на Яндекс Картах</span></div>
+  <div><b>541</b><span>оценка</span></div>
+  <div><b>391</b><span>отзыв</span></div>
+ </div>
+ <div class="scrollhint mono">листайте ↓</div>
+</header>
+
+<div class="mq"><div>fine-line <span>✦</span> графика <span>✦</span> перекрытие шрамов <span>✦</span> мини-тату <span>✦</span> эскиз в день сеанса <span>✦</span> fine-line <span>✦</span> графика <span>✦</span> перекрытие шрамов <span>✦</span> мини-тату <span>✦</span> эскиз в день сеанса <span>✦</span> </div></div>
+
+<section id="works">
+ <span class="kick mono">01 — РАБОТЫ СТУДИИ</span>
+ <h2>Каждая — <em>под человека</em></h2>
+ <p class="sub">Настоящие работы мастеров Black Skin с Яндекс Карт. Нажмите, чтобы рассмотреть линии.</p>
+ <div class="works">
+  <figure class="rv"><img src="img/p1.jpg" alt="Дракон с цветами" loading="lazy"><figcaption>графика + акцент</figcaption></figure>
+  <figure class="rv"><img src="img/p13.jpg" alt="Мини-тату луна" loading="lazy"><figcaption>мини</figcaption></figure>
+  <figure class="rv"><img src="img/p2.jpg" alt="Змея и пион" loading="lazy"><figcaption>цвет + графика</figcaption></figure>
+  <figure class="rv"><img src="img/p6.jpg" alt="Лиса" loading="lazy"><figcaption>акварель</figcaption></figure>
+  <figure class="rv"><img src="img/p9.jpg" alt="Лотос на спине" loading="lazy"><figcaption>fine-line</figcaption></figure>
+  <figure class="rv"><img src="img/p3.jpg" alt="Тигр и горы" loading="lazy"><figcaption>сюжет</figcaption></figure>
+  <figure class="rv"><img src="img/p12.jpg" alt="Надпись на ключице" loading="lazy"><figcaption>леттеринг</figcaption></figure>
+  <figure class="rv"><img src="img/p5.jpg" alt="Ветка на руке" loading="lazy"><figcaption>fine-line</figcaption></figure>
+  <figure class="rv"><img src="img/p7.jpg" alt="Кинжал с цветами" loading="lazy"><figcaption>графика</figcaption></figure>
+  <figure class="rv"><img src="img/p10.jpg" alt="Знаки зодиака" loading="lazy"><figcaption>цвет</figcaption></figure>
+  <figure class="rv"><img src="img/p11.jpg" alt="Крылья" loading="lazy"><figcaption>мини</figcaption></figure>
+  <figure class="rv"><img src="img/p8.jpg" alt="Лилия и колибри" loading="lazy"><figcaption>графика</figcaption></figure>
+ </div>
+</section>
+
+<section class="quiz" id="quiz">
+ <span class="kick mono">02 — ЗАПИСЬ</span>
+ <h2>Соберите заявку <em>за минуту</em></h2>
+ <p class="sub">Выберите формат, место и как будет с эскизом — мастер получит заявку в WhatsApp и ответит по стоимости и свободным датам.</p>
+ <div class="qgrid">
+  <div>
+   <div class="step"><h4>01 · ФОРМАТ</h4><div class="opts" data-k="fmt">
+    <button class="opt" data-v="Мини-тату" data-p="4500">Мини-тату<small>от 4 500 ₽</small></button>
+    <button class="opt" data-v="Две мини-тату" data-p="6500">Две мини-тату<small>от 6 500 ₽</small></button>
+    <button class="opt" data-v="Тату по фото" data-p="6900">Тату по фото<small>от 6 900 ₽</small></button>
+    <button class="opt" data-v="Перекрытие шрама / старой тату" data-p="10000">Перекрытие<small>шрама или старой тату · 10 000 ₽</small></button>
+    <button class="opt" data-v="Большой сеанс" data-p="29000">Большой сеанс<small>29 000 ₽</small></button>
+   </div></div>
+   <div class="step"><h4>02 · МЕСТО</h4><div class="opts body-map" data-k="place">
+    <button class="opt" data-v="запястье">Запястье</button><button class="opt" data-v="предплечье">Предплечье</button><button class="opt" data-v="плечо">Плечо</button><button class="opt" data-v="ключица">Ключица</button>
+    <button class="opt" data-v="спина">Спина</button><button class="opt" data-v="рёбра">Рёбра</button><button class="opt" data-v="нога">Нога</button><button class="opt" data-v="другое">Другое</button>
+   </div></div>
+   <div class="step"><h4>03 · ЭСКИЗ</h4><div class="opts" data-k="sk">
+    <button class="opt" data-v="есть свой эскиз">Есть свой<small>пришлю картинку</small></button>
+    <button class="opt" data-v="нужен эскиз от мастера">Нужен от мастера<small>расскажу идею</small></button>
+    <button class="opt" data-v="хочу как на фото, доработать">Есть референс<small>доработать под меня</small></button>
+   </div></div>
+   <div class="step"><h4>04 · КОГДА УДОБНО</h4><div class="opts" data-k="when">
+    <button class="opt" data-v="в ближайшие дни">Ближайшие дни</button>
+    <button class="opt" data-v="на выходных">На выходных</button>
+    <button class="opt" data-v="в будни вечером">Будни вечером</button>
+    <button class="opt" data-v="до Нового года">До Нового года</button>
+   </div></div>
+  </div>
+  <aside class="sketch">
+   <h3>Ваша заявка</h3>
+   <div class="no mono" id="no">№ BS-0000</div>
+   <div class="row"><span>Формат</span><span id="o-fmt">—</span></div>
+   <div class="row"><span>Место</span><span id="o-place">—</span></div>
+   <div class="row"><span>Эскиз</span><span id="o-sk">—</span></div>
+   <div class="row"><span>Когда</span><span id="o-when">—</span></div>
+   <div class="sum" id="o-sum">от 4 500 ₽</div>
+   <div class="note">Цены — из прайса студии на Яндекс Картах. Точную стоимость мастер скажет по эскизу и размеру.</div>
+   <button class="btn" id="send" disabled>Отправить мастеру в WhatsApp</button>
+  </aside>
+ </div>
+</section>
+
+<section id="price">
+ <span class="kick mono">03 — ЦЕНЫ</span>
+ <h2>Прайс <em>без звёздочек</em></h2>
+ <div class="plist">
+  <div class="pl rv"><span class="n">01</span><div><h3>Мини-тату</h3><p>Надписи, символы, маленькие графичные работы</p></div><span class="pr">от 4 500 ₽</span></div>
+  <div class="pl rv"><span class="n">02</span><div><h3>Две мини-тату</h3><p>Парные тату — с подругой, мамой, второй половинкой</p></div><span class="pr">от 6 500 ₽</span></div>
+  <div class="pl rv"><span class="n">03</span><div><h3>Тату по фото</h3><p>Принесите референс — мастер доработает под вас</p></div><span class="pr">от 6 900 ₽</span></div>
+  <div class="pl rv"><span class="n">04</span><div><h3>Перекрытие шрамов</h3><p>И переделка старых тату, которые разонравились</p></div><span class="pr">10 000 ₽</span></div>
+  <div class="pl rv"><span class="n">05</span><div><h3>Большой сеанс</h3><p>Рукав, спина, крупный сюжет</p></div><span class="pr">29 000 ₽</span></div>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <span class="kick mono">04 — ПОЧЕМУ ВОЗВРАЩАЮТСЯ</span>
+ <h2>Забота <em>до и после</em></h2>
+ <p class="sub">То, что клиенты чаще всего отмечают в отзывах.</p>
+ <div class="care">
+  <div class="rv"><b>01</b><h3>Эскиз под вас</h3><p>Мастер слушает идею, советует по композиции и дорабатывает рисунок — иногда эскиз и тату в один день.</p></div>
+  <div class="rv"><b>02</b><h3>Стерильно и спокойно</h3><p>Чисто, уютно, не страшно. Чай с конфетами, тапочки, музыка и фильм во время сеанса.</p></div>
+  <div class="rv"><b>03</b><h3>Уход после</h3><p>Памятка по уходу, мазь и советы по заживлению — тату заживают быстро и ровно.</p></div>
+  <div class="rv"><b>04</b><h3>Ждём фото через месяц</h3><p>Мастера на связи после сеанса и просят показать, как зажило.</p></div>
+ </div>
+</section>
+
+<section class="gift" id="gift">
+ <div>
+  <span class="kick mono">05 — ПОДАРОК</span>
+  <h2>Сертификат <em>под ёлку</em></h2>
+  <p class="sub" style="margin-bottom:0">Подарок, который запомнится надолго. Выберите сумму — отправим запрос в студию, сертификат оформят на нужное имя.</p>
+  <div class="amts opts" data-k="gift">
+   <button class="opt on" data-v="3000">3 000 ₽</button><button class="opt" data-v="5000">5 000 ₽</button><button class="opt" data-v="10000">10 000 ₽</button>
+  </div>
+  <a class="btn r" id="giftbtn" href="#">Заказать сертификат</a>
+ </div>
+ <div class="card3d"><div class="gcard" id="gcard">
+  <div class="top"><img src="img/p14.jpg" alt=""><span class="mono" style="font-size:11px">ПОДАРОЧНЫЙ СЕРТИФИКАТ</span></div>
+  <div><div class="amt" id="gamt">3 000 <small>₽</small></div><div class="to">на любую работу студии · Новослободская, 16А</div></div>
+ </div></div>
+</section>
+
+<section>
+ <span class="kick mono">06 — ОТЗЫВЫ</span>
+ <h2>5,0 из <em>541 оценки</em></h2>
+ <p class="sub">Цитаты из отзывов на Яндекс Картах.</p>
+ <div class="revs">
+  <div class="rev rv"><div class="st">★★★★★</div><p>«Мастер Анна — профессионал высокого уровня. Перекрытие старой татуировки легло так шикарно, что я даже представить не могла».</p><div class="src">отзыв на Яндекс Картах</div></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>«Эскиз + тату в один день — это уровень крутого профессионализма! Памятка по уходу, мази, и вы даже ждёте наши фото через месяц».</p><div class="src">отзыв на Яндекс Картах</div></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>«Пробовала разные студии, но буду возвращаться только сюда. Чисто, уютно, за стерильностью следят, студия в двух минутах от метро».</p><div class="src">отзыв на Яндекс Картах</div></div>
+ </div>
+</section>
+
+<footer>
+ <div><h3>Black Skin</h3><p>Москва, Новослободская ул., 16А<br>2 минуты от метро<br>Телефон / WhatsApp: <a href="tel:+79104111955">+7 910 411-19-55</a><br>Telegram: <a href="https://t.me/Black_Skin_m">@Black_Skin_m</a> · ВК: <a href="https://vk.ru/black_skin_msk">black_skin_msk</a></p></div>
+ <div><iframe title="Карта" src="https://yandex.ru/map-widget/v1/?ll=37.600297%2C55.782002&z=16&pt=37.600297,55.782002,pm2rdm" style="width:100%;height:260px;border:0;border-radius:16px;filter:grayscale(.6) invert(.9) hue-rotate(180deg)" loading="lazy"></iframe></div>
+</footer>
+
+<a class="fab" href="https://wa.me/79104111955">WhatsApp</a>
+<div class="demo">Демо-версия сайта</div>
+<div class="lb" id="lb"><img alt=""></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+const WA='79104111955';
+const fmt=n=>n.toLocaleString('ru-RU').replace(/ /g,' ');
+/* ---------- quiz ---------- */
+const st={gift:'3000'};
+document.getElementById('no').textContent='№ BS-'+String(Math.floor(1000+Math.random()*8999));
+document.addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;const g=b.closest('[data-k]'),k=g.dataset.k;g.querySelectorAll('.opt').forEach(x=>x.classList.remove('on'));b.classList.add('on');st[k]=b.dataset.v;if(k==='fmt')st.p=+b.dataset.p;upd();});
+function upd(){
+ ['fmt','place','sk','when'].forEach(k=>document.getElementById('o-'+k).textContent=st[k]||'—');
+ document.getElementById('o-sum').textContent=st.p?(['Перекрытие шрама / старой тату','Большой сеанс'].includes(st.fmt)?fmt(st.p)+' ₽':'от '+fmt(st.p)+' ₽'):'от 4 500 ₽';
+ document.getElementById('send').disabled=!(st.fmt&&st.place&&st.sk&&st.when);
+ document.getElementById('gamt').innerHTML=fmt(+st.gift)+' <small>₽</small>';
+}
+document.getElementById('send').onclick=()=>{const t=`Здравствуйте! Хочу записаться на тату.\nФормат: ${st.fmt}\nМесто: ${st.place}\nЭскиз: ${st.sk}\nКогда: ${st.when}\n(заявка с сайта, ${document.getElementById('no').textContent})`;window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');};
+document.getElementById('giftbtn').onclick=e=>{e.preventDefault();const t=`Здравствуйте! Хочу подарочный сертификат на ${fmt(+st.gift)} ₽. Подскажите, как оформить?\n(с сайта)`;window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');};
+/* gift card tilt */
+const gc=document.getElementById('gcard');
+gc.parentElement.addEventListener('pointermove',e=>{const r=gc.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;gc.style.transform=`rotateY(${x*18}deg) rotateX(${-y*14}deg)`;gc.style.setProperty('--sh',(x*120)+'%');});
+gc.parentElement.addEventListener('pointerleave',()=>{gc.style.transform='';});
+/* lightbox */
+const lb=document.getElementById('lb');
+document.querySelectorAll('.works img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});
+lb.onclick=()=>lb.classList.remove('on');
+
+/* ---------- 3D helix of real works ---------- */
+(function(){
+ const c=document.getElementById('helix');if(!window.THREE)return;
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const r=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:true});r.setPixelRatio(Math.min(devicePixelRatio,2));
+ const sc=new THREE.Scene();sc.fog=new THREE.Fog(0x0c0b0b,8,22);
+ const cam=new THREE.PerspectiveCamera(42,1,.1,100);cam.position.set(0,0,11);
+ const grp=new THREE.Group();sc.add(grp);
+ const ld=new THREE.TextureLoader();
+ const imgs=[1,2,3,4,5,6,7,8,9,10,11,12,13];
+ const N=26,R=4.2;
+ for(let i=0;i<N;i++){
+  const tex=ld.load('img/p'+imgs[i%imgs.length]+'.jpg');
+  const m=new THREE.Mesh(new THREE.PlaneGeometry(1.5,2,1,1),new THREE.MeshBasicMaterial({map:tex,side:THREE.DoubleSide,transparent:true,opacity:.92}));
+  const a=i/N*Math.PI*4;m.position.set(Math.cos(a)*R,(i-N/2)*.55,Math.sin(a)*R);m.lookAt(0,m.position.y,0);m.rotateY(Math.PI);grp.add(m);
+ }
+ // ink particles
+ const pg=new THREE.BufferGeometry(),P=600,pos=new Float32Array(P*3);
+ for(let i=0;i<P;i++){pos[i*3]=(Math.random()-.5)*18;pos[i*3+1]=(Math.random()-.5)*14;pos[i*3+2]=(Math.random()-.5)*10;}
+ pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+ const pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0xc8102e,size:.035,transparent:true,opacity:.7}));sc.add(pts);
+ grp.position.x=2.2;grp.rotation.z=.18;
+ function size(){const w=c.clientWidth,h=c.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();grp.position.x=w<900?0:2.4;cam.position.z=w<900?13:11;}
+ size();addEventListener('resize',size);
+ let mx=0,my=0,boost=0,lastY=scrollY;
+ addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;});
+ addEventListener('scroll',()=>{boost+=Math.abs(scrollY-lastY)*.0006;lastY=scrollY;},{passive:true});
+ let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
+ (function loop(){requestAnimationFrame(loop);if(!vis)return;
+  boost*=.92;grp.rotation.y+=reduce?0:(.0025+boost);
+  grp.position.y+=((-scrollY*.004)-grp.position.y)*.08;
+  cam.position.x+=(mx*1.2-cam.position.x)*.04;cam.position.y+=(-my*.8-cam.position.y)*.04;cam.lookAt(0,0,0);
+  pts.rotation.y+=.0006;r.render(sc,cam);})();
+})();
+
+/* ---------- motion ---------- */
+if(window.gsap&&window.ScrollTrigger&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+ gsap.registerPlugin(ScrollTrigger);
+ gsap.from('h1 .ln span',{yPercent:110,duration:1.1,ease:'power4.out',stagger:.12,delay:.15});
+ gsap.from('.stats div',{opacity:0,y:20,duration:.8,stagger:.1,delay:.7});
+ document.querySelectorAll('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 90%'}}));
+ document.querySelectorAll('h2').forEach(h=>gsap.from(h,{opacity:0,x:-30,duration:.9,ease:'power3.out',scrollTrigger:{trigger:h,start:'top 88%'}}));
+}else document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none'});
+</script>
+</body>
+</html>
