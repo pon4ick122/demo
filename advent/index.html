@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Адвент-календарь — кофейня «Песок»</title>
+<meta name="description" content="31 окошко до Нового года. Каждый день — новый подарок от кофейни.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c1210;--bg2:#13201b;--ink:#f6f1e7;--muted:#a9b8ad;--red:#e5483c;--gold:#f2c46b;--green:#2f6b4f;--line:#ffffff1c}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif;overflow-x:hidden}
+body{min-height:100svh;background:radial-gradient(110% 70% at 50% -10%,#1d3a2d 0,var(--bg) 60%)}
+#snow{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 16px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-family:"Dela Gothic One";font-size:22px}.logo span{color:var(--gold)}
+.tag{font-family:"JetBrains Mono";font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:6px 12px}
+.hero{text-align:center;padding:26px 0 30px}
+.kick{font-family:"JetBrains Mono";font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+h1{font-family:"Dela Gothic One";font-weight:400;font-size:clamp(38px,7vw,88px);line-height:.95;margin:12px 0 16px}
+h1 em{font-style:normal;color:var(--red)}
+.lead{color:var(--muted);font-size:clamp(16px,1.7vw,19px);max-width:560px;margin:0 auto;line-height:1.5}
+.count{display:inline-flex;gap:10px;margin-top:22px}
+.count div{background:#ffffff0a;border:1px solid var(--line);border-radius:16px;padding:10px 14px;min-width:70px}
+.count b{display:block;font-family:"Dela Gothic One";font-weight:400;font-size:28px;color:var(--gold)}
+.count small{color:var(--muted);font-size:12px}
+.demo{margin:18px auto 0;font-size:13px;color:var(--gold);background:#f2c46b14;border:1px dashed #f2c46b66;border-radius:12px;padding:8px 12px;display:inline-block}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;padding:20px 0 60px;perspective:1200px}
+.day{position:relative;aspect-ratio:1/1.08;border-radius:18px;cursor:pointer;border:0;padding:0;background:none;color:inherit;font:inherit}
+.day.big{grid-column:span 2;aspect-ratio:auto}
+.inside,.door{position:absolute;inset:0;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px}
+.inside{background:linear-gradient(180deg,#f6f1e7,#e6dccb);color:#1a221e;box-shadow:inset 0 4px 14px #0003}
+.inside .em{font-size:clamp(22px,3vw,34px);line-height:1}
+.inside .pt{font-size:clamp(10px,1.1vw,13px);font-weight:700;margin-top:6px;line-height:1.15}
+.door{transform-origin:0 50%;backface-visibility:hidden;transform-style:preserve-3d;border:1px solid #ffffff22;
+  background:linear-gradient(145deg,var(--c1),var(--c2));box-shadow:0 10px 24px #0007,inset 0 1px 0 #ffffff30;transition:transform .2s}
+.door .n{font-family:"Dela Gothic One";font-size:clamp(22px,3.4vw,42px);line-height:1;text-shadow:0 2px 0 #0004}
+.door .w{font-family:"JetBrains Mono";font-size:10px;opacity:.75;margin-top:4px;letter-spacing:1px}
+.door::after{content:"";position:absolute;right:10px;top:50%;width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.day:not(.locked):not(.opened):hover .door{transform:rotateY(-14deg)}
+.day.locked{cursor:not-allowed}.day.locked .door{filter:saturate(.35) brightness(.7)}
+.day.locked .door .w::before{content:"🔒 "}
+.day.today .door{outline:3px solid var(--gold);outline-offset:3px;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{outline-color:#f2c46b44}}
+.day.opened .door{transform:rotateY(-105deg);box-shadow:none}
+/* модалка */
+.modal{position:fixed;inset:0;display:grid;place-items:center;background:#060a08cc;backdrop-filter:blur(6px);z-index:20;opacity:0;pointer-events:none;transition:opacity .3s;padding:16px}
+.modal.show{opacity:1;pointer-events:auto}
+.card{position:relative;background:linear-gradient(180deg,#183026,#0f1b16);border:1px solid var(--line);border-radius:28px;padding:28px 24px;max-width:420px;width:100%;text-align:center;box-shadow:0 30px 80px #000a}
+.x{position:absolute;right:14px;top:10px;background:none;border:0;color:var(--muted);font-size:26px;cursor:pointer}
+.card .k{font-family:"JetBrains Mono";font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+.card .big{font-size:56px;margin:6px 0}
+.card h2{font-family:"Dela Gothic One";font-weight:400;font-size:30px;margin:0 0 6px;color:var(--gold)}
+.card p{color:var(--muted);margin:0 0 16px;line-height:1.45}
+.code{font-family:"JetBrains Mono";font-size:22px;letter-spacing:3px;border:2px dashed var(--red);border-radius:14px;padding:12px;margin:0 0 16px;background:#e5483c14}
+.card input{width:100%;font:500 17px Onest,sans-serif;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:#ffffff0d;color:var(--ink);margin-bottom:10px}
+.btn{appearance:none;border:0;cursor:pointer;width:100%;font:700 18px Onest,sans-serif;color:#fff;background:linear-gradient(180deg,#f0645a,var(--red));padding:17px 30px;border-radius:18px;box-shadow:0 10px 30px #e5483c55,inset 0 -4px 0 #0000002a}
+.fine{font-size:12px;color:#7f8f84;margin-top:12px}
+/* для бизнеса */
+.biz{padding:60px 0 80px;border-top:1px solid var(--line)}
+.biz h3{font-family:"Dela Gothic One";font-weight:400;font-size:clamp(28px,4vw,44px);margin:0 0 26px}
+.cells{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cell{border:1px solid var(--line);border-radius:22px;padding:22px;background:#ffffff06}
+.cell b{display:block;font-size:30px;font-family:"Dela Gothic One";font-weight:400;color:var(--red);margin-bottom:8px}
+.cell p{margin:0;color:var(--muted);line-height:1.5}
+.offer{margin-top:22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;border:1px solid #f2c46b55;background:#f2c46b0d;border-radius:22px;padding:22px}
+.offer b{font-family:"Dela Gothic One";font-weight:400;font-size:26px;color:var(--gold)}
+.offer a{text-decoration:none;font-weight:700;background:var(--gold);color:#1a1408;padding:14px 22px;border-radius:14px}
+footer{padding:22px 0 40px;color:#6f7f74;font-size:13px}
+canvas.confetti{position:fixed;inset:0;pointer-events:none;z-index:30}
+@media (max-width:860px){.grid{grid-template-columns:repeat(4,1fr);gap:9px}.cells{grid-template-columns:1fr}}
+@media (max-width:420px){.grid{grid-template-columns:repeat(3,1fr)}.count div{min-width:60px;padding:8px 10px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<canvas id="snow" aria-hidden="true"></canvas>
+<div class="wrap">
+  <header><div class="logo">Пе<span>с</span>ок</div><div class="tag">кофейня · Москва</div></header>
+  <section class="hero">
+    <div class="kick">декабрь · 31 подарок</div>
+    <h1>Каждый день —<br><em>новое окошко</em></h1>
+    <p class="lead">Заходите раз в день и открывайте окошко с сегодняшним числом. Внутри подарок от кофейни: покажите код бариста или заберите его в WhatsApp.</p>
+    <div class="count" id="count"></div><br>
+    <div class="demo" id="demoNote" hidden>Демо-режим: можно открыть любое окошко. У клиента откроется только окошко с сегодняшним числом и прошлые.</div>
+  </section>
+  <section class="grid" id="grid" aria-label="Окошки календаря"></section>
+
+  <section class="biz">
+    <h3>Как это работает для бизнеса</h3>
+    <div class="cells">
+      <div class="cell"><b>31</b><p>Тридцать одна причина зайти к вам в декабре. Люди возвращаются каждый день, чтобы открыть новое окошко, и заходят за подарком.</p></div>
+      <div class="cell"><b>WA</b><p>Подарок гость забирает через WhatsApp, и его номер остаётся у вас. После праздников можно позвать его снова.</p></div>
+      <div class="cell"><b>QR</b><p>Ссылку ставим в Instagram, VK, Telegram, а QR-код вешаем на кассу и столики. Подарки, цвета и логотип делаем ваши.</p></div>
+    </div>
+    <div class="offer">
+      <div><b>Соберу под ваш бизнес за 2 дня</b><br><span style="color:var(--muted)">Запуск до 1 декабря, чтобы успеть к первому окошку</span></div>
+      <a href="https://wa.me/79256880017?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B0%D0%B4%D0%B2%D0%B5%D0%BD%D1%82-%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D1%8C" target="_blank" rel="noopener">Хочу такой</a>
+    </div>
+  </section>
+  <footer>Демо-проект студии Axiom · pon4ick122.github.io/demo/portfolio</footer>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="pz">
+  <div class="card">
+    <button class="x" id="close" aria-label="Закрыть">×</button>
+    <div class="k" id="pzDay">1 декабря</div>
+    <div class="big" id="pzEm">🎁</div>
+    <h2 id="pz">—</h2>
+    <p id="pzText">Покажите код бариста или заберите подарок в WhatsApp.</p>
+    <div class="code" id="code">PESOK-01-0000</div>
+    <input id="name" placeholder="Как вас зовут?" autocomplete="given-name">
+    <button class="btn" id="claim">Забрать в WhatsApp</button>
+    <div class="fine">Код действует только в этот день.</div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script>
+"use strict";
+/* ===== НАСТРОЙКИ ПОД КЛИЕНТА ===== */
+const CFG = {
+  brand: "PESOK",
+  wa: "79256880017",          // номер бизнеса (сейчас наш, для демо)
+  year: 2026, month: 12,      // декабрь
+  demo: true,                 // true — открыть можно любое окошко; у клиента false
+  days: [                     // 31 подарок по дням: em — эмодзи, t — подарок
+    ["☕","−10% на любой кофе"],["🍪","Печенье к кофе"],["🍫","Какао вместо латте"],["🥐","Круассан −50%"],
+    ["🎄","−15% на весь заказ"],["🍯","Сироп бесплатно"],["☕","Второй капучино −50%"],["🧁","Десерт дня в подарок"],
+    ["❄️","Раф по цене американо"],["🍪","2 печенья к заказу"],["🎁","−20% на зёрна"],["🍊","Глинтвейн б/а −30%"],
+    ["☕","Двойной шот бесплатно"],["🥧","Пирог −30%"],["🎄","Ёлочный пряник"],["🧡","Кофе для друга −50%"],
+    ["🍫","Горячий шоколад −20%"],["🥐","Круассан к кофе"],["🍯","Медовый раф −25%"],["🎁","Кружка «Песок» −30%"],
+    ["❄️","Мороз-латте в подарок"],["🧁","Капкейк в подарок"],["☕","−25% на весь заказ"],["🍪","Набор пряников −30%"],
+    ["🎄","Сюрприз от бариста"],["🍊","Цитрусовый чай бесплатно"],["🎁","Зёрна 250 г −30%"],["🥧","Штоллен −25%"],
+    ["🧡","Кофе с собой −30%"],["🍾","−30% на всё меню"],["🎆","Сертификат на 1 000 ₽"]
+  ]
+};
+
+const $ = id => document.getElementById(id);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const hasGsap = typeof gsap !== "undefined";
+const PAL = [["#c23b31","#7e1f19"],["#2f6b4f","#173d2c"],["#b8862f","#6e4e14"],["#1f4a5e","#0f2733"]];
+const WD = ["вс","пн","вт","ср","чт","пт","сб"];
+const KEY = "advent_" + CFG.brand;
+let opened = {};
+try { opened = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { opened = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(opened)); } catch (e) {} };
+
+const now = new Date();
+const inMonth = now.getFullYear() === CFG.year && now.getMonth() + 1 === CFG.month;
+const afterMonth = now > new Date(CFG.year, CFG.month, 1);
+const todayN = inMonth ? now.getDate() : (afterMonth ? 99 : 0);
+if (CFG.demo) $("demoNote").hidden = false;
+
+/* отсчёт */
+(function counter() {
+  const end = new Date(CFG.year + (CFG.month === 12 ? 1 : 0), CFG.month === 12 ? 0 : CFG.month, 1);
+  const ms = end - now, d = Math.max(0, Math.floor(ms / 864e5)), h = Math.max(0, Math.floor(ms / 36e5) % 24);
+  const left = 31 - Object.keys(opened).length;
+  $("count").innerHTML = `<div><b>${d}</b><small>дней до НГ</small></div><div><b>${h}</b><small>часов</small></div><div><b>${left}</b><small>окошек</small></div>`;
+})();
+
+/* сетка: неделя начинается с понедельника, 31-е — большое окно */
+const grid = $("grid");
+CFG.days.forEach(([em, t], i) => {
+  const n = i + 1, wd = new Date(CFG.year, CFG.month - 1, n).getDay();
+  const [c1, c2] = PAL[(n * 7) % PAL.length];
+  const b = document.createElement("button");
+  b.className = "day" + (n === 31 ? " big" : "");
+  b.style.setProperty("--c1", c1); b.style.setProperty("--c2", c2);
+  b.setAttribute("aria-label", `${n} декабря`);
+  b.innerHTML = `<div class="inside"><div class="em">${em}</div><div class="pt">${t}</div></div>
+    <div class="door"><div class="n">${n}</div><div class="w">${WD[wd]}</div></div>`;
+  const locked = !CFG.demo && n > todayN;
+  if (locked) b.classList.add("locked");
+  if (n === todayN) b.classList.add("today");
+  if (opened[n]) b.classList.add("opened");
+  b.onclick = () => openDay(n, b);
+  grid.appendChild(b);
+});
+
+let cur = null;
+function code(n) { return `${CFG.brand}-${String(n).padStart(2, "0")}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`; }
+function openDay(n, el) {
+  if (el.classList.contains("locked")) {
+    if (hasGsap) gsap.fromTo(el, { x: -6 }, { x: 0, duration: .4, ease: "elastic.out(1,.3)" });
+    return;
+  }
+  if (!opened[n]) { opened[n] = code(n); save(); }
+  const first = !el.classList.contains("opened");
+  el.classList.add("opened");
+  setTimeout(() => show(n), first && !reduce ? 650 : 0);
+  if (first) setTimeout(confetti, first && !reduce ? 450 : 0);
+}
+function show(n) {
+  cur = n;
+  const [em, t] = CFG.days[n - 1];
+  $("pzDay").textContent = `${n} декабря`;
+  $("pzEm").textContent = em; $("pz").textContent = t; $("code").textContent = opened[n];
+  $("modal").classList.add("show");
+  if (hasGsap && !reduce) gsap.from(".card", { y: 40, scale: .92, opacity: 0, duration: .55, ease: "back.out(1.6)" });
+}
+$("close").onclick = () => $("modal").classList.remove("show");
+$("modal").onclick = e => { if (e.target.id === "modal") $("modal").classList.remove("show"); };
+addEventListener("keydown", e => { if (e.key === "Escape") $("modal").classList.remove("show"); });
+$("claim").onclick = () => {
+  const name = $("name").value.trim();
+  const [, t] = CFG.days[cur - 1];
+  const msg = `Здравствуйте! ${name ? "Меня зовут " + name + ". " : ""}Открыл(а) окошко ${cur} декабря: «${t}». Код ${opened[cur]}`;
+  open(`https://wa.me/${CFG.wa}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+};
+
+/* снег */
+const sc = $("snow"), sx = sc.getContext("2d");
+let W, H, flakes = [];
+function rs() { W = sc.width = innerWidth * devicePixelRatio; H = sc.height = innerHeight * devicePixelRatio;
+  flakes = Array.from({ length: Math.min(160, innerWidth / 6) }, () => ({ x: Math.random() * W, y: Math.random() * H, r: (Math.random() * 2 + .6) * devicePixelRatio, s: Math.random() * .6 + .3, d: Math.random() * 6 })); }
+rs(); addEventListener("resize", rs);
+(function snow(t) {
+  sx.clearRect(0, 0, W, H); sx.fillStyle = "#ffffffb0";
+  for (const f of flakes) { f.y += f.s * devicePixelRatio; f.x += Math.sin(t / 1600 + f.d) * .3 * devicePixelRatio;
+    if (f.y > H) { f.y = -5; f.x = Math.random() * W; } sx.beginPath(); sx.arc(f.x, f.y, f.r, 0, 7); sx.fill(); }
+  if (!reduce) requestAnimationFrame(snow);
+})(0);
+
+/* конфетти */
+function confetti() {
+  if (reduce) return;
+  const c = document.createElement("canvas"); c.className = "confetti"; document.body.appendChild(c);
+  const x = c.getContext("2d"); c.width = innerWidth; c.height = innerHeight;
+  const cols = ["#e5483c", "#f2c46b", "#2f6b4f", "#f6f1e7"];
+  const ps = Array.from({ length: 120 }, () => ({ x: innerWidth / 2, y: innerHeight / 2, vx: (Math.random() - .5) * 14, vy: Math.random() * -14 - 4, a: Math.random() * 6, c: cols[Math.random() * 4 | 0] }));
+  let f = 0; (function step() { x.clearRect(0, 0, c.width, c.height);
+    for (const p of ps) { p.vy += .4; p.x += p.vx; p.y += p.vy; p.a += .2; x.save(); x.translate(p.x, p.y); x.rotate(p.a); x.fillStyle = p.c; x.fillRect(-4, -2, 8, 4); x.restore(); }
+    if (++f < 110) requestAnimationFrame(step); else c.remove(); })();
+}
+
+if (hasGsap && !reduce) {
+  gsap.from("h1, .kick, .lead, .count", { y: 30, opacity: 0, duration: .8, stagger: .08, ease: "power3.out" });
+  gsap.from(".day", { y: 30, opacity: 0, rotateX: -40, duration: .6, stagger: .025, delay: .3, ease: "back.out(1.4)" });
+}
+</script>
+</body>
+</html>
