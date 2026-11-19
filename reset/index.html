@@ -10,7 +10,7 @@
 <style>
 :root{--bg:#f3efe8;--bg2:#ebe5da;--card:#fbf9f5;--sage:#5f6e5a;--sage2:#46523f;--sage3:#a9b5a0;--clay:#b9876b;--ink:#2a2b27;--mute:#7b7d73;--line:#dcd5c8}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{font-family:"Inter Tight",system-ui,sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit}
@@ -43,7 +43,7 @@ h1 em{font-style:normal;color:var(--clay)}
 .facts{display:flex;gap:34px;margin-top:46px;flex-wrap:wrap}
 .facts div{font-size:13px;color:var(--mute)}
 .facts b{display:block;font-family:"Tenor Sans";font-weight:400;font-size:38px;color:var(--sage2);line-height:1.1}
-.breath{position:absolute;right:8vw;bottom:44px;z-index:2;display:flex;align-items:center;gap:12px;color:var(--sage);font-size:13px}
+.hero>.breath{position:absolute;right:10vw;bottom:44px;z-index:2;display:flex;align-items:center;gap:12px;color:var(--sage);font-size:13px}
 .breath i{width:12px;height:12px;border-radius:50%;background:var(--sage);animation:br 8s ease-in-out infinite}
 @keyframes br{0%,100%{transform:scale(.6);opacity:.4}45%{transform:scale(1.5);opacity:1}}
 
@@ -306,7 +306,7 @@ function draw(anim){
  document.getElementById('r-h').textContent=x.n;
  document.getElementById('r-ty').textContent=x.ty;
  document.getElementById('r-p').textContent=x.p;
- document.getElementById('dur').innerHTML=x.d.map(([h,c],i)=>`<button data-i="${i}" class="${i===di?'on':''}"><b>${fmt(c)}</b>${String(h).replace('.',',')} часа</button>`).join('');
+ document.getElementById('dur').innerHTML=x.d.map(([h,c],i)=>`<button data-i="${i}" class="${i===di?'on':''}"><b>${fmt(c)}</b>${h===1?'1 час':'1,5 часа'}</button>`).join('');
  document.querySelectorAll('#focus .chip').forEach(b=>b.classList.toggle('on',b.dataset.f===st.f));
  if(anim){const r=document.getElementById('res');r.classList.remove('fl');void r.offsetWidth;r.classList.add('fl');}
  window.blobState&&window.blobState(st);
@@ -329,9 +329,9 @@ cd.addEventListener('pointerleave',()=>cd.style.transform='');
  let r;try{r=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:true});}catch(e){return;}
  r.setPixelRatio(Math.min(devicePixelRatio,2));
  const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(35,1,.1,100);cam.position.set(0,0,9);
- sc.add(new THREE.HemisphereLight(0xfdf7ec,0x6b7b65,.9));
- const k=new THREE.DirectionalLight(0xffffff,.8);k.position.set(3,4,5);sc.add(k);
- const warm=new THREE.PointLight(0xe0a07e,1.1,20);warm.position.set(-3,-2,3);sc.add(warm);
+ sc.add(new THREE.HemisphereLight(0xf4f6ef,0x3e4a39,.75));
+ const k=new THREE.DirectionalLight(0xffffff,.7);k.position.set(3,4,5);sc.add(k);
+ const warm=new THREE.PointLight(0xe0a07e,.55,20);warm.position.set(-3,-2,3);sc.add(warm);
  const geo=new THREE.SphereGeometry(1.7,112,84);
  const base=geo.attributes.position.array.slice();
  const mat=new THREE.MeshStandardMaterial({color:0x8e9c86,roughness:.55,metalness:.05});
