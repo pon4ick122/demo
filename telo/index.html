@@ -35,7 +35,7 @@ nav .links a{text-decoration:none}nav .links a:hover{color:var(--gold2)}
 #ring{position:absolute;inset:0;width:100%;height:100%;z-index:1}
 .hero .kick{color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:26px}
 .hero .kick:before{content:"";width:44px;height:1px;background:var(--gold)}
-h1{font-family:"Cormorant Garamond";font-weight:500;font-size:clamp(50px,7.4vw,118px);line-height:.92;letter-spacing:-.01em}
+h1{font-family:"Cormorant Garamond";font-weight:500;font-size:clamp(46px,5.6vw,92px);line-height:.92;letter-spacing:-.01em}
 h1 i{color:var(--gold2);font-style:italic}
 h1 .ln{display:block;overflow:hidden;padding:.04em 0 .12em;margin-bottom:-.1em}h1 .ln>span{display:inline-block}
 .lead{font-size:clamp(16px,1.35vw,19px);line-height:1.6;color:#cfd8d1;max-width:500px;margin:26px 0 32px}
@@ -116,7 +116,7 @@ h2 i{color:var(--g3)}
 
 /* gallery: horizontal */
 .hs{background:var(--g);color:var(--cream);padding:0;overflow:hidden}
-.hs .in{display:flex;gap:22px;padding:100px 6vw;align-items:center;width:max-content}
+.hs .in{display:flex;gap:22px;padding:90px 6vw;align-items:center;width:max-content;min-height:100vh}
 .hs .intro{width:min(420px,80vw);flex:none;margin-right:30px}
 .hs .intro h2 i{color:var(--gold2)}
 .hs .intro p{color:#b9c5bc;line-height:1.6}
@@ -216,7 +216,7 @@ footer .logo{font-size:30px}
     <div class="try"><small>Пробный сеанс</small><b id="r-t"></b></div>
     <div><small id="r-cl">Курс</small><b id="r-c"></b></div>
    </div>
-   <button class="btn wa" id="send"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.1.3.7 1.1 1.4 1.8 1 .9 1.8 1.1 2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.1.1.7-.1 1.3z"/></svg>Записаться на пробный</button>
+   <button class="btn wa" id="send"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.1.3.7 1.1 1.4 1.8 1 .9 1.8 1.1 2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.1.1.7-.1 1.3z"/></svg><span id="sendt">Записаться на пробный</span></button>
    <p class="note">Откроется WhatsApp с готовым текстом — останется нажать «отправить».</p>
   </aside>
  </div>
@@ -315,10 +315,10 @@ document.getElementById('ribt').innerHTML=(words.map(w=>w+'<span>✦</span>').jo
 /* ---------- quiz ---------- */
 const ZN={
  face:{n:'Лицо',i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="11" rx="7" ry="8.5"/><path d="M9 10h.01M15 10h.01M9.5 15c1.5 1 3.5 1 5 0"/></svg>',g:[
-  {n:'Подтянуть овал',h:'RF-лифтинг лица',p:'Безболезненная процедура: кожа подтягивается и становится плотнее, эффект видно после первого визита.',t:2500,c:'1 сеанс',cv:2500,alt:'Вместе с ним часто берут LPG-массаж лица — тоже 2 500 ₽.'},
+  {n:'Подтянуть овал',h:'RF-лифтинг лица',p:'Безболезненная процедура: кожа подтягивается и становится плотнее, эффект видно после первого визита.',nt:1,t:2500,tl:'RF-лифтинг',c:'+ LPG-массаж лица',cv:2500,alt:'Гости часто совмещают его с LPG-массажем лица.'},
   {n:'Свежий цвет лица',h:'Газожидкостный пилинг',p:'Глубокое очищение без боли, подходит даже для чувствительной кожи. Лицо свежее сразу после сеанса.',t:1700,c:'1 сеанс',cv:2500},
   {n:'Чистая кожа, поры',h:'Ультразвуковая чистка лица',p:'Быстрый и мягкий способ привести в порядок проблемную кожу — без покраснений «на неделю».',t:1500,c:'1 сеанс',cv:2500},
-  {n:'Просто расслабиться',h:'Массаж лица',p:'Ручной массаж 30 или 60 минут: снимает напряжение и отёки, лицо выглядит отдохнувшим.',t:2500,tl:'30 минут',c:'60 минут',cv:4200},
+  {n:'Просто расслабиться',h:'Массаж лица',p:'Ручной массаж 30 или 60 минут: снимает напряжение и отёки, лицо выглядит отдохнувшим.',nt:1,t:2500,tl:'30 минут',c:'60 минут',cv:4200},
   {n:'Перед событием',h:'Уход «Выход в свет»',p:'Уходовая процедура, после которой можно сразу идти на праздник: сияние без восстановления.',t:1500,c:'1 сеанс',cv:2500}
  ]},
  body:{n:'Тело',i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="4.5" r="2.2"/><path d="M8 9c2.5-1 5.5-1 8 0l-1 6h-6zM9 15l-1 7M15 15l1 7"/></svg>',g:[
@@ -348,12 +348,13 @@ function draw(){
  document.getElementById('r-p').textContent=g.p+(g.alt?' '+g.alt:'');
  document.getElementById('r-t').textContent=fmt(g.t);
  document.querySelector('.prices .try small').textContent=g.tl||'Пробный сеанс';
+ document.getElementById('sendt').textContent=g.nt?'Записаться':'Записаться на пробный';
  document.getElementById('r-cl').textContent=g.c;
  document.getElementById('r-c').textContent=fmt(g.cv);
  res.classList.remove('flash');void res.offsetWidth;res.classList.add('flash');
 }
 draw();
-document.getElementById('send').onclick=()=>{const g=ZN[zk].g[gi];const t=`Здравствуйте! Хочу записаться на пробный сеанс.\nПроцедура: ${g.h}\nЗадача: ${g.n.toLowerCase()}\nПодскажите, когда есть свободное время?\n(заявка с сайта)`;window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');};
+document.getElementById('send').onclick=()=>{const g=ZN[zk].g[gi];const t=`Здравствуйте! Хочу записаться${g.nt?'':' на пробный сеанс'}.\nПроцедура: ${g.h}\nЗадача: ${g.n.toLowerCase()}\nПодскажите, когда есть свободное время?\n(заявка с сайта)`;window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');};
 
 /* ---------- before/after ---------- */
 const BA=['img/2.jpg','img/8.jpg'];
@@ -392,7 +393,7 @@ drawP();
  sc.add(new THREE.AmbientLight(0xffffff,.35));
  const k=new THREE.DirectionalLight(0xfff0d0,1.3);k.position.set(5,6,8);sc.add(k);
  const rim=new THREE.PointLight(0x9fd7b8,1.1,40);rim.position.set(-6,-3,5);sc.add(rim);
- const warm=new THREE.PointLight(0xffd79a,1.4,40);warm.position.set(4,-2,6);sc.add(warm);
+ const warm=new THREE.PointLight(0xffd79a,.8,40);warm.position.set(4,-2,6);sc.add(warm);
  // env-ish gradient for metal reflections
  const ec=document.createElement('canvas');ec.width=256;ec.height=128;const ex=ec.getContext('2d');
  const gr=ex.createLinearGradient(0,0,0,128);gr.addColorStop(0,'#fff6dc');gr.addColorStop(.45,'#5c7a64');gr.addColorStop(.55,'#1b3226');gr.addColorStop(1,'#c8a565');ex.fillStyle=gr;ex.fillRect(0,0,256,128);
@@ -406,9 +407,9 @@ drawP();
  const leaf=new THREE.SphereGeometry(.16,16,8);leaf.scale(1,.42,.2);
  for(let i=-3;i<=3;i++){const m=new THREE.Mesh(leaf,gold);const a=-Math.PI/2+i*.07;m.position.set(Math.cos(a)*3.4+i*.02,Math.sin(a)*3.4-.28,0);m.rotation.z=a+(i%2?0.9:-0.9);leafG.add(m);}
  // pearls
- const pearlM=new THREE.MeshStandardMaterial({color:0xf6efe2,metalness:.15,roughness:.25,envMap:env,envMapIntensity:.8});
+ const pearlM=new THREE.MeshStandardMaterial({color:0xd9cdb6,metalness:.35,roughness:.3,envMap:env,envMapIntensity:.9});
  const pearls=[];
- for(let i=0;i<26;i++){const s=.08+Math.random()*.22;const m=new THREE.Mesh(new THREE.SphereGeometry(s,24,16),pearlM);
+ for(let i=0;i<18;i++){const s=.05+Math.random()*.12;const m=new THREE.Mesh(new THREE.SphereGeometry(s,24,16),pearlM);
   const a=Math.random()*Math.PI*2,rad=2.2+Math.random()*3.6;m.userData={a,rad,sp:(.05+Math.random()*.12)*(Math.random()<.5?-1:1),y:(Math.random()-.5)*4,z:(Math.random()-.5)*3,ph:Math.random()*6};
   pearls.push(m);sc.add(m);}
  // dust
@@ -416,7 +417,7 @@ drawP();
  const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
  const dust=new THREE.Points(pg,new THREE.PointsMaterial({color:0xe6cf9c,size:.045,transparent:true,opacity:.7}));sc.add(dust);
  function size(){const w=c.clientWidth,h=c.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();
-  const mob=w<980;G.position.set(mob?1.6:4.2,mob?2.6:.6,0);G.scale.setScalar(mob?.62:1);}
+  const mob=w<980;G.position.set(mob?1.8:3.9,mob?2.4:.2,0);G.scale.setScalar(mob?.6:.8);}
  size();addEventListener('resize',size);
  let mx=0,my=0,boost=0,last=scrollY;
  addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;},{passive:true});
