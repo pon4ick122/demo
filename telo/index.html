@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Тело&amp;Лицо — студия на Маросейке</title>
+<meta name="description" content="Тело&Лицо: аппаратный и ручной массаж, уход за лицом и кожей головы на Маросейке, 67 м от метро «Китай-город». 5,0 на Яндекс Картах. Пробные сеансы от 950 ₽.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1d3a2d;--g2:#132a20;--g3:#2a4d3c;--gold:#c8a565;--gold2:#e6cf9c;--cream:#f5f0e6;--cream2:#ebe2d1;--ink:#16211b;--mute:#6f7a72}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.serif{font-family:"Cormorant Garamond",serif}
+.cap{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+nav{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 6vw;background:rgba(19,42,32,.86);backdrop-filter:blur(10px);color:var(--cream);border-bottom:1px solid rgba(200,165,101,.25)}
+.logo{font-family:"Cormorant Garamond";font-size:26px;font-weight:600;color:var(--gold2);text-decoration:none}
+.logo b{font-weight:500;color:var(--gold)}
+nav .links{display:flex;gap:28px;font-size:14px;color:#c9d3cc}
+nav .links a{text-decoration:none}nav .links a:hover{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:999px;font:600 15px Manrope,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:.2s}
+.btn.gold{background:var(--gold);color:var(--g2)}.btn.gold:hover{background:var(--gold2)}
+.btn.line{box-shadow:inset 0 0 0 1px rgba(245,240,230,.5);color:var(--cream);background:transparent}
+.btn.line:hover{box-shadow:inset 0 0 0 1px var(--gold2);color:var(--gold2)}
+.btn.sm{padding:10px 18px;font-size:14px}
+.btn.wa{background:#25d366;color:#fff}.btn.wa:hover{background:#2fe174}
+.btn svg{width:18px;height:18px}
+
+/* hero */
+.hero{min-height:100vh;background:radial-gradient(120% 90% at 75% 40%,#2a4d3c 0,#1d3a2d 45%,#102419 100%);color:var(--cream);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:20px;padding:110px 6vw 60px;position:relative;overflow:hidden}
+.hero>*{position:relative;z-index:2}
+#ring{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.hero .kick{color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.hero .kick:before{content:"";width:44px;height:1px;background:var(--gold)}
+h1{font-family:"Cormorant Garamond";font-weight:500;font-size:clamp(50px,7.4vw,118px);line-height:.92;letter-spacing:-.01em}
+h1 i{color:var(--gold2);font-style:italic}
+h1 .ln{display:block;overflow:hidden;padding:.04em 0 .12em;margin-bottom:-.1em}h1 .ln>span{display:inline-block}
+.lead{font-size:clamp(16px,1.35vw,19px);line-height:1.6;color:#cfd8d1;max-width:500px;margin:26px 0 32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;gap:34px;margin-top:44px;flex-wrap:wrap}
+.facts div{font-size:13px;color:#b9c5bc;line-height:1.4}
+.facts b{display:block;font-family:"Cormorant Garamond";font-size:40px;font-weight:600;color:var(--gold2);line-height:1}
+.hcard{justify-self:end;width:min(380px,100%);background:rgba(245,240,230,.07);border:1px solid rgba(200,165,101,.35);backdrop-filter:blur(8px);border-radius:28px;padding:14px;margin-top:180px}
+.hcard img{border-radius:18px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.hcard p{font-family:"Cormorant Garamond";font-style:italic;font-size:21px;line-height:1.3;padding:16px 10px 6px;color:var(--cream)}
+.hcard span{display:block;padding:0 10px 8px;font-size:12px;color:var(--gold)}
+.scroll{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:2;color:var(--gold);font-size:11px;letter-spacing:.3em}
+
+/* ribbon */
+.rib{background:var(--gold);color:var(--g2);overflow:hidden;white-space:nowrap;padding:16px 0}
+.rib div{display:inline-block;font-family:"Cormorant Garamond";font-size:26px;font-style:italic;will-change:transform}
+.rib span{margin:0 22px;font-style:normal;font-size:16px}
+
+section{padding:110px 6vw}
+h2{font-family:"Cormorant Garamond";font-weight:500;font-size:clamp(40px,5.2vw,78px);line-height:.98;margin-bottom:18px}
+h2 i{color:var(--g3)}
+.sub{color:var(--mute);font-size:17px;line-height:1.6;max-width:600px;margin-bottom:48px}
+.kicker{color:#9b7c43;display:block;margin-bottom:16px}
+
+/* quiz */
+.quiz{background:var(--g2);color:var(--cream);border-radius:44px;margin:0 14px}
+.quiz h2 i{color:var(--gold2)}.quiz .sub{color:#a9b8ad}.quiz .kicker{color:var(--gold)}
+.qgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start}
+.qs h4{color:var(--gold);margin:0 0 14px}
+.qs .row{margin-bottom:30px}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{background:transparent;border:1px solid #35594a;color:var(--cream);padding:13px 18px;border-radius:999px;cursor:pointer;font:500 15px Manrope,sans-serif;transition:.18s}
+.opt:hover{border-color:var(--gold)}
+.opt.on{background:var(--gold);border-color:var(--gold);color:var(--g2)}
+.zone{display:flex;align-items:center;gap:10px;padding:16px 22px;font-size:16px}
+.zone svg{width:22px;height:22px}
+.res{background:linear-gradient(160deg,#24473a,#173226);border:1px solid rgba(200,165,101,.35);border-radius:30px;padding:32px;position:sticky;top:90px}
+.res .cap{color:var(--gold)}
+.res h3{font-family:"Cormorant Garamond";font-weight:500;font-size:38px;line-height:1.05;margin:12px 0 12px}
+.res p{color:#c4d0c7;line-height:1.6}
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0}
+.prices div{background:rgba(0,0,0,.18);border-radius:18px;padding:16px}
+.prices small{display:block;font-size:12px;color:#9fb0a4;margin-bottom:4px}
+.prices b{font-family:"Cormorant Garamond";font-size:34px;font-weight:600;color:var(--gold2)}
+.prices .try{background:var(--gold);color:var(--g2)}.prices .try small{color:#5b4a26}.prices .try b{color:var(--g2)}
+.res .btn{width:100%}
+.res .note{font-size:13px;color:#93a598;margin-top:12px;text-align:center}
+.res.flash{animation:fl .5s}
+@keyframes fl{0%{transform:scale(.985);border-color:var(--gold2)}100%{transform:none}}
+
+/* before/after */
+.ba{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}
+.tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.tabs button{border:1px solid #cdbf9f;background:transparent;border-radius:999px;padding:10px 18px;font:500 14px Manrope;cursor:pointer;color:var(--ink)}
+.tabs button.on{background:var(--g);color:var(--cream);border-color:var(--g)}
+.cmp{position:relative;aspect-ratio:1/1.3;border-radius:30px;overflow:hidden;user-select:none;touch-action:pan-y;cursor:ew-resize;box-shadow:0 40px 80px -40px rgba(19,42,32,.6);background:#ddd}
+.cmp .im{position:absolute;inset:0;background-repeat:no-repeat;background-size:200% 100%}
+.cmp .bef{background-position:0 0}
+.cmp .aft{background-position:100% 0;clip-path:inset(0 0 0 50%)}
+.cmp .bar{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--gold2);transform:translateX(-1px)}
+.cmp .bar:after{content:"‹ ›";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:var(--gold);color:var(--g2);display:grid;place-items:center;font:700 18px Manrope;letter-spacing:4px}
+.cmp .lb{position:absolute;top:18px;padding:6px 12px;border-radius:999px;background:rgba(19,42,32,.78);color:var(--cream);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.cmp .lb.l{left:18px}.cmp .lb.r{right:18px;background:var(--gold);color:var(--g2)}
+.ba ul{list-style:none;margin-top:10px}
+.ba li{padding:14px 0 14px 30px;border-bottom:1px solid #d9ccb2;position:relative;line-height:1.5}
+.ba li:before{content:"✦";position:absolute;left:0;color:#9b7c43}
+
+/* price */
+.ptabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.ptabs button{border:0;background:var(--cream2);border-radius:999px;padding:11px 18px;font:600 14px Manrope;cursor:pointer;color:var(--ink)}
+.ptabs button.on{background:var(--g);color:var(--gold2)}
+.plist{display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
+.pi{display:flex;align-items:baseline;gap:12px;padding:18px 0;border-bottom:1px solid #d9ccb2}
+.pi h3{font-weight:500;font-size:17px}
+.pi .d{flex:1;border-bottom:1px dotted #bba980;transform:translateY(-5px);min-width:20px}
+.pi .p{font-family:"Cormorant Garamond";font-size:26px;font-weight:600;white-space:nowrap}
+.pi .t{font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:var(--g2);border-radius:999px;padding:3px 8px;margin-left:8px;vertical-align:3px;font-weight:700}
+
+/* gallery: horizontal */
+.hs{background:var(--g);color:var(--cream);padding:0;overflow:hidden}
+.hs .in{display:flex;gap:22px;padding:100px 6vw;align-items:center;width:max-content}
+.hs .intro{width:min(420px,80vw);flex:none;margin-right:30px}
+.hs .intro h2 i{color:var(--gold2)}
+.hs .intro p{color:#b9c5bc;line-height:1.6}
+.hs figure{flex:none;width:min(360px,72vw);height:min(480px,62vh);border-radius:26px;overflow:hidden;position:relative}
+.hs figure:nth-of-type(even){height:min(400px,52vh);margin-top:80px}
+.hs figure img{width:100%;height:100%;object-fit:cover}
+.hs figcaption{position:absolute;left:14px;bottom:14px;background:rgba(19,42,32,.8);border-radius:999px;padding:6px 14px;font-size:13px}
+
+/* reviews */
+.nums{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.nums div{background:#fff;border:1px solid #e2d8c4;border-radius:22px;padding:18px 24px;min-width:170px}
+.nums b{display:block;font-family:"Cormorant Garamond";font-size:44px;font-weight:600;line-height:1;color:var(--g)}
+.nums span{font-size:13px;color:var(--mute)}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:#fff;border:1px solid #e2d8c4;border-radius:26px;padding:28px}
+.rev .st{color:var(--gold);letter-spacing:3px;font-size:13px}
+.rev p{font-family:"Cormorant Garamond";font-size:22px;line-height:1.35;margin:12px 0 16px}
+.rev span{font-size:13px;color:var(--mute)}
+
+/* contacts */
+.where{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.where .map{border-radius:30px;overflow:hidden;min-height:380px;background:#dcd3c1}
+.where iframe{width:100%;height:100%;min-height:380px;border:0;filter:saturate(.7)}
+.where .info{background:var(--g2);color:var(--cream);border-radius:30px;padding:36px;display:grid;gap:20px;align-content:start}
+.where .info .cap{color:var(--gold)}
+.where .info p{font-size:18px;font-weight:500;margin-top:6px}
+.where .info small{color:#a2b2a6}
+footer{background:var(--g2);color:#9fb0a4;padding:34px 6vw 110px;font-size:13px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer .logo{font-size:30px}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;background:#25d366;color:#fff;border-radius:50px;padding:14px 18px;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3);font-size:15px}
+.demo{position:fixed;left:16px;bottom:16px;z-index:30;background:#000;color:#fff;font-size:12px;padding:8px 12px;border-radius:6px;opacity:.85}
+.rv{opacity:0;transform:translateY(28px)}
+
+@media(max-width:980px){
+ nav .links{display:none}
+ .hero{grid-template-columns:1fr;padding:92px 16px 70px;min-height:auto}
+ .hcard{justify-self:start;margin-top:36px;width:100%;max-width:420px}
+ .facts{gap:24px}
+ .qgrid,.ba,.where{grid-template-columns:1fr}
+ .res{position:static}
+ .plist{grid-template-columns:1fr}
+ .revs{grid-template-columns:1fr}
+ section{padding:74px 16px}
+ .quiz{margin:0;border-radius:30px}
+ nav{padding:10px 16px}
+ .hs .in{padding:70px 16px}
+ .cmp{aspect-ratio:1/1.1}
+ footer{padding:30px 16px 100px}
+ .scroll{display:none}
+}
+@media(max-width:480px){
+ .res{padding:22px}.res h3{font-size:30px}
+ .prices b{font-size:28px}
+ .pi h3{font-size:15px}.pi .p{font-size:22px}
+ .facts b{font-size:34px}
+ .zone{padding:13px 16px;font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><a class="logo" href="#top">Тело<b>&amp;</b>Лицо</a><div class="links"><a href="#quiz">Подбор процедуры</a><a href="#ba">До и после</a><a href="#price">Цены</a><a href="#where">Контакты</a></div><a class="btn gold sm" href="#quiz">Записаться</a></nav>
+
+<header class="hero" id="top">
+ <canvas id="ring" aria-hidden="true"></canvas>
+ <div>
+  <div class="kick cap">Маросейка · 67 м от «Китай-города»</div>
+  <h1><span class="ln"><span>Красота</span></span><span class="ln"><span><i>без границ</i> —</span></span><span class="ln"><span>с пробного сеанса</span></span></h1>
+  <p class="lead">Аппаратный и ручной массаж, уход за лицом и кожей головы в уютной студии в историческом особняке. Почти любую процедуру можно сначала попробовать по сниженной цене.</p>
+  <div class="btns"><a class="btn gold" href="#quiz">Подобрать процедуру</a><a class="btn line" href="#price">Цены</a></div>
+  <div class="facts">
+   <div><b>5,0</b>на Яндекс Картах</div>
+   <div><b>166</b>оценок</div>
+   <div><b>от 950 ₽</b>пробный сеанс</div>
+  </div>
+ </div>
+ <div class="hcard rv"><img src="img/5.jpg" alt="Массаж лица в студии Тело&amp;Лицо" loading="eager"><p>«После процедуры я не шла, я летела. Удивительная лёгкость во всём теле»</p><span>— отзыв с Яндекс Карт</span></div>
+ <div class="scroll">ЛИСТАЙТЕ</div>
+</header>
+
+<div class="rib"><div id="ribt"></div></div>
+
+<section class="quiz" id="quiz">
+ <span class="kicker cap">Подбор за 30 секунд</span>
+ <h2>С чего <i>начать?</i></h2>
+ <p class="sub">Выберите зону и задачу — покажем подходящую процедуру, цену пробного сеанса и курса. Заявка уйдёт в WhatsApp студии.</p>
+ <div class="qgrid">
+  <div class="qs">
+   <div class="row"><h4 class="cap">01 · Зона</h4><div class="opts" id="zones"></div></div>
+   <div class="row"><h4 class="cap">02 · Что хочется</h4><div class="opts" id="goals"></div></div>
+  </div>
+  <aside class="res" id="res">
+   <span class="cap" id="r-k"></span>
+   <h3 id="r-h"></h3>
+   <p id="r-p"></p>
+   <div class="prices">
+    <div class="try"><small>Пробный сеанс</small><b id="r-t"></b></div>
+    <div><small id="r-cl">Курс</small><b id="r-c"></b></div>
+   </div>
+   <button class="btn wa" id="send"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.1.3.7 1.1 1.4 1.8 1 .9 1.8 1.1 2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.1.1.7-.1 1.3z"/></svg>Записаться на пробный</button>
+   <p class="note">Откроется WhatsApp с готовым текстом — останется нажать «отправить».</p>
+  </aside>
+ </div>
+</section>
+
+<section id="ba">
+ <div class="ba">
+  <div class="rv">
+   <span class="kicker cap">Результат</span>
+   <h2>До <i>и после</i></h2>
+   <p class="sub" style="margin-bottom:24px">Потяните ползунок. Фото клиентов студии с Яндекс Карт.</p>
+   <div class="tabs" id="batabs"><button class="on" data-i="0">Лифтинг лица</button><button data-i="1">Чистка и пилинг</button></div>
+   <ul>
+    <li>Медицинская прессотерапия «как в клиниках и санаториях», но дешевле</li>
+    <li>Сначала консультация и бережный подход — без навязывания лишнего</li>
+    <li>Чистые кабинеты после дизайнерского ремонта</li>
+   </ul>
+  </div>
+  <div class="cmp rv" id="cmp">
+   <div class="im bef"></div><div class="im aft"></div>
+   <span class="lb l">До</span><span class="lb r">После</span>
+   <div class="bar"></div>
+  </div>
+ </div>
+</section>
+
+<section id="price" style="padding-top:0">
+ <span class="kicker cap">Цены с Яндекс Карт</span>
+ <h2>Прайс <i>студии</i></h2>
+ <p class="sub">Золотая метка — есть пробный сеанс по сниженной цене. Курсы выгоднее разовых визитов.</p>
+ <div class="ptabs" id="ptabs"></div>
+ <div class="plist" id="plist"></div>
+</section>
+
+<section class="hs" id="hs">
+ <div class="in" id="hsin">
+  <div class="intro">
+   <span class="kicker cap" style="color:var(--gold)">Студия</span>
+   <h2>Маленькая, <i>уютная</i>, своя</h2>
+   <p>Бархат, свечи, музыка — «ощущение, что открывается портал в другую вселенную», как написала одна из гостий. Листайте дальше.</p>
+  </div>
+  <figure><img src="img/3.jpg" alt="Кабинет" loading="lazy"><figcaption>Кабинет</figcaption></figure>
+  <figure><img src="img/6.jpg" alt="LPG-массаж тела" loading="lazy"><figcaption>LPG-массаж</figcaption></figure>
+  <figure><img src="img/4.jpg" alt="Зона ожидания" loading="lazy"><figcaption>Зона ожидания</figcaption></figure>
+  <figure><img src="img/7.jpg" alt="Массаж лица" loading="lazy"><figcaption>Массаж лица</figcaption></figure>
+  <figure><img src="img/10.jpg" alt="Аппараты" loading="lazy"><figcaption>Эндосфера и LPG</figcaption></figure>
+  <figure><img src="img/9.jpg" alt="Уходовая косметика" loading="lazy"><figcaption>Уходовая косметика</figcaption></figure>
+ </div>
+</section>
+
+<section>
+ <span class="kicker cap">Отзывы</span>
+ <h2>Что <i>говорят</i> гости</h2>
+ <div class="nums">
+  <div><b>5,0</b><span>рейтинг на Картах</span></div>
+  <div><b>166</b><span>оценок</span></div>
+  <div><b>152</b><span>отзыва</span></div>
+ </div>
+ <div class="revs">
+  <div class="rev rv"><div class="st">★★★★★</div><p>Ходила к мастеру Ольге на пробный LPG и эндосферу. Я в восторге! Массаж действительно эффективен — уже вечером увидела результат.</p><span>Жанна С. · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Делала RF-лифтинг и эндосферу на лицо. Эффект сразу видно: лицо свежее и подтянутое. Всё объясняют, спрашивают про ощущения.</p><span>Irina · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Наконец-то нашла идеальное место! Косметологи — профессионалы, а цены в 3 раза ниже, чем в салоне напротив.</p><span>Ольга Андрэ · Яндекс Карты</span></div>
+ </div>
+</section>
+
+<section id="where" style="padding-top:0">
+ <span class="kicker cap">Как добраться</span>
+ <h2>Ждём <i>в гости</i></h2>
+ <div class="where" style="margin-top:30px">
+  <div class="map"><iframe title="Карта" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=37.63234%2C55.757187&z=16&pt=37.63234,55.757187,pm2dgm"></iframe></div>
+  <div class="info">
+   <div><span class="cap">Адрес</span><p>ул. Маросейка, 2/15, стр. 1</p><small>67 м от метро «Китай-город», 420 м от «Лубянки»</small></div>
+   <div><span class="cap">Телефон / WhatsApp</span><p><a href="tel:+79035589843">+7 903 558-98-43</a></p></div>
+   <div><span class="cap">Telegram</span><p><a href="https://t.me/Telo_Litco" target="_blank" rel="noopener">@Telo_Litco</a></p></div>
+   <a class="btn gold" href="#quiz">Подобрать процедуру</a>
+  </div>
+ </div>
+</section>
+
+<footer><span class="logo">Тело<b>&amp;</b>Лицо</span><span>Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></footer>
+<a class="fab" href="https://wa.me/79035589843">WhatsApp</a>
+<div class="demo">Демо-версия сайта</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+const WA='79035589843';
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fmt=n=>n.toLocaleString('ru-RU').replace(/ /g,' ')+' ₽';
+
+/* ---------- ribbon ---------- */
+const words=['LPG-массаж','эндосфера','RF-лифтинг','прессотерапия','газожидкостный пилинг','массаж лица','кавитация','гидропилинг головы'];
+document.getElementById('ribt').innerHTML=(words.map(w=>w+'<span>✦</span>').join('')).repeat(4);
+
+/* ---------- quiz ---------- */
+const ZN={
+ face:{n:'Лицо',i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="11" rx="7" ry="8.5"/><path d="M9 10h.01M15 10h.01M9.5 15c1.5 1 3.5 1 5 0"/></svg>',g:[
+  {n:'Подтянуть овал',h:'RF-лифтинг лица',p:'Безболезненная процедура: кожа подтягивается и становится плотнее, эффект видно после первого визита.',t:2500,c:'1 сеанс',cv:2500,alt:'Вместе с ним часто берут LPG-массаж лица — тоже 2 500 ₽.'},
+  {n:'Свежий цвет лица',h:'Газожидкостный пилинг',p:'Глубокое очищение без боли, подходит даже для чувствительной кожи. Лицо свежее сразу после сеанса.',t:1700,c:'1 сеанс',cv:2500},
+  {n:'Чистая кожа, поры',h:'Ультразвуковая чистка лица',p:'Быстрый и мягкий способ привести в порядок проблемную кожу — без покраснений «на неделю».',t:1500,c:'1 сеанс',cv:2500},
+  {n:'Просто расслабиться',h:'Массаж лица',p:'Ручной массаж 30 или 60 минут: снимает напряжение и отёки, лицо выглядит отдохнувшим.',t:2500,tl:'30 минут',c:'60 минут',cv:4200},
+  {n:'Перед событием',h:'Уход «Выход в свет»',p:'Уходовая процедура, после которой можно сразу идти на праздник: сияние без восстановления.',t:1500,c:'1 сеанс',cv:2500}
+ ]},
+ body:{n:'Тело',i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="4.5" r="2.2"/><path d="M8 9c2.5-1 5.5-1 8 0l-1 6h-6zM9 15l-1 7M15 15l1 7"/></svg>',g:[
+  {n:'Убрать объём',h:'RSL-скульптурирование / эндосфера',p:'Глубокая проработка мышц с лимфодренажем, моделирует силуэт. Гости пишут, что результат видно уже вечером.',t:1500,tl:'Пробный, 30 мин',c:'Курс 10 × 45 мин',cv:29000},
+  {n:'Отёки, лёгкость',h:'Прессотерапия',p:'Медицинский аппарат, как в клиниках и санаториях. Уходят отёки и тяжесть в ногах.',t:1100,c:'Курс 10 сеансов',cv:11000},
+  {n:'Целлюлит',h:'LPG-массаж тела',p:'Аппаратный массаж, который разглаживает кожу и улучшает её тонус. Самый доступный старт.',t:950,tl:'Пробный, 30 мин',c:'1 сеанс, 60 мин',cv:2300},
+  {n:'Подтянуть кожу',h:'RF-лифтинг тела',p:'Кожа становится плотнее и ровнее — хорошо в паре с эндосферой или кавитацией.',t:1500,c:'Курс 5 сеансов',cv:11000},
+  {n:'Снять напряжение',h:'Ручной массаж',p:'Классический ручной массаж всего тела у опытного мастера: снимает зажимы и усталость.',t:2600,tl:'Пробный, от',c:'1 сеанс',cv:3200}
+ ]},
+ head:{n:'Кожа головы',i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12a7 7 0 0 1 14 0v3H5z"/><path d="M8 7c1-2 3-3 4-3M12 4c1.5 0 3 1 4 3"/></svg>',g:[
+  {n:'Перхоть и зуд',h:'Аппаратный гидропилинг головы',p:'Глубокое очищение кожи головы: уходит перхоть, волосы растут здоровее. Ощущение свежести сразу.',t:1500,c:'Курс 5 сеансов',cv:10000},
+  {n:'Укрепить волосы',h:'Газожидкостный пилинг головы',p:'Безопасная процедура, которая улучшает питание корней волос и состояние кожи головы.',t:1700,c:'1 сеанс',cv:2500},
+  {n:'Курс на месяц',h:'Гидропилинг головы — 10 сеансов',p:'Самый выгодный вариант для заметного результата: один сеанс выходит 1 800 ₽ вместо 2 500 ₽.',t:1500,c:'Курс 10 сеансов',cv:18000}
+ ]}
+};
+let zk='face',gi=0;
+const zEl=document.getElementById('zones'),gEl=document.getElementById('goals'),res=document.getElementById('res');
+Object.entries(ZN).forEach(([k,z])=>zEl.insertAdjacentHTML('beforeend',`<button class="opt zone" data-z="${k}">${z.i}${z.n}</button>`));
+zEl.onclick=e=>{const b=e.target.closest('[data-z]');if(!b)return;zk=b.dataset.z;gi=0;draw();};
+gEl.onclick=e=>{const b=e.target.closest('[data-g]');if(!b)return;gi=+b.dataset.g;draw();};
+function draw(){
+ zEl.querySelectorAll('.opt').forEach(b=>b.classList.toggle('on',b.dataset.z===zk));
+ gEl.innerHTML=ZN[zk].g.map((g,i)=>`<button class="opt${i===gi?' on':''}" data-g="${i}">${g.n}</button>`).join('');
+ const g=ZN[zk].g[gi];
+ document.getElementById('r-k').textContent=ZN[zk].n+' · '+g.n;
+ document.getElementById('r-h').textContent=g.h;
+ document.getElementById('r-p').textContent=g.p+(g.alt?' '+g.alt:'');
+ document.getElementById('r-t').textContent=fmt(g.t);
+ document.querySelector('.prices .try small').textContent=g.tl||'Пробный сеанс';
+ document.getElementById('r-cl').textContent=g.c;
+ document.getElementById('r-c').textContent=fmt(g.cv);
+ res.classList.remove('flash');void res.offsetWidth;res.classList.add('flash');
+}
+draw();
+document.getElementById('send').onclick=()=>{const g=ZN[zk].g[gi];const t=`Здравствуйте! Хочу записаться на пробный сеанс.\nПроцедура: ${g.h}\nЗадача: ${g.n.toLowerCase()}\nПодскажите, когда есть свободное время?\n(заявка с сайта)`;window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');};
+
+/* ---------- before/after ---------- */
+const BA=['img/2.jpg','img/8.jpg'];
+const cmp=document.getElementById('cmp'),aft=cmp.querySelector('.aft'),bar=cmp.querySelector('.bar');
+function setBA(i){cmp.querySelectorAll('.im').forEach(x=>x.style.backgroundImage=`url(${BA[i]})`);document.querySelectorAll('#batabs button').forEach(b=>b.classList.toggle('on',+b.dataset.i===i));}
+setBA(0);
+document.getElementById('batabs').onclick=e=>{const b=e.target.closest('button');if(b)setBA(+b.dataset.i);};
+function pos(p){p=Math.max(4,Math.min(96,p));aft.style.clipPath=`inset(0 0 0 ${p}%)`;bar.style.left=p+'%';}
+let dr=false;
+const mv=e=>{const r=cmp.getBoundingClientRect();pos((e.clientX-r.left)/r.width*100);};
+cmp.addEventListener('pointerdown',e=>{dr=true;mv(e);});
+addEventListener('pointermove',e=>{if(dr)mv(e);});
+addEventListener('pointerup',()=>dr=false);
+
+/* ---------- price list ---------- */
+const PR={
+ 'Лицо':[['RF-лифтинг лица',2500],['LPG-массаж лица',2500],['Карбокситерапия лица',2500],['Газожидкостный пилинг лица',2500,1700],['Ультразвуковая чистка лица',2500,1500],['Микротоковая терапия',2500],['Гидропилинг лица',2500,1500],['Массаж лица, 30 / 60 мин',2500,0,'4 200'],['Уход «Выход в свет»',2500,1500],['Уход «Ботокс-эффект»',2500]],
+ 'Тело':[['Эндосфера, 45 мин',3000,1500],['Эндосфера, курс 10 × 45 мин',29000],['LPG-массаж тела, 45 мин',2000,950],['Прессотерапия',1490,1100],['Прессотерапия, курс 10',11000],['Кавитация',2400,1500],['RF-лифтинг тела, курс 5',11000,1500],['Миостимуляция',1450,1100],['Ручной массаж',3200,2600],['Бандажное обёртывание',2000],['Альго-термо обёртывание',1500]],
+ 'Кожа головы':[['Гидропилинг головы',2500,1500],['Гидропилинг головы, курс 5',10000],['Гидропилинг головы, курс 10',18000],['Газожидкостный пилинг головы',2500,1700]],
+ 'Для мужчин':[['Массаж лица, 30 мин',2600],['Массаж лица, 60 мин',4400],['Ручной массаж + массаж лица',5700]]
+};
+const pt=document.getElementById('ptabs'),pl=document.getElementById('plist');let pk='Лицо';
+Object.keys(PR).forEach(k=>pt.insertAdjacentHTML('beforeend',`<button data-k="${k}">${k}</button>`));
+function drawP(){pt.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.k===pk));
+ pl.innerHTML=PR[pk].map(([n,p,t,alt])=>`<div class="pi"><h3>${n}${t?`<span class="t">проба ${fmt(t)}</span>`:''}</h3><span class="d"></span><span class="p">${alt?fmt(p).replace(' ₽','')+' / '+alt+' ₽':fmt(p)}</span></div>`).join('');
+ if(window.gsap&&!reduce)gsap.from('#plist .pi',{opacity:0,y:14,duration:.45,stagger:.035,ease:'power2.out'});}
+pt.onclick=e=>{const b=e.target.closest('button');if(b){pk=b.dataset.k;drawP();}};
+drawP();
+
+/* ---------- 3D: golden ring + pearls ---------- */
+(function(){
+ const c=document.getElementById('ring');if(!window.THREE)return;
+ let r;try{r=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:true});}catch(e){return;}
+ r.setPixelRatio(Math.min(devicePixelRatio,2));
+ const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(35,1,.1,100);cam.position.set(0,0,14);
+ sc.add(new THREE.AmbientLight(0xffffff,.35));
+ const k=new THREE.DirectionalLight(0xfff0d0,1.3);k.position.set(5,6,8);sc.add(k);
+ const rim=new THREE.PointLight(0x9fd7b8,1.1,40);rim.position.set(-6,-3,5);sc.add(rim);
+ const warm=new THREE.PointLight(0xffd79a,1.4,40);warm.position.set(4,-2,6);sc.add(warm);
+ // env-ish gradient for metal reflections
+ const ec=document.createElement('canvas');ec.width=256;ec.height=128;const ex=ec.getContext('2d');
+ const gr=ex.createLinearGradient(0,0,0,128);gr.addColorStop(0,'#fff6dc');gr.addColorStop(.45,'#5c7a64');gr.addColorStop(.55,'#1b3226');gr.addColorStop(1,'#c8a565');ex.fillStyle=gr;ex.fillRect(0,0,256,128);
+ const env=new THREE.CanvasTexture(ec);env.mapping=THREE.EquirectangularReflectionMapping;
+ const gold=new THREE.MeshStandardMaterial({color:0xd8b16a,metalness:1,roughness:.22,envMap:env,envMapIntensity:1.2});
+ const G=new THREE.Group();sc.add(G);
+ const ring=new THREE.Mesh(new THREE.TorusGeometry(3.4,.09,24,220),gold);G.add(ring);
+ const ring2=new THREE.Mesh(new THREE.TorusGeometry(3.75,.025,12,220),gold);G.add(ring2);
+ // leaf sprig under ring (like logo)
+ const leafG=new THREE.Group();G.add(leafG);
+ const leaf=new THREE.SphereGeometry(.16,16,8);leaf.scale(1,.42,.2);
+ for(let i=-3;i<=3;i++){const m=new THREE.Mesh(leaf,gold);const a=-Math.PI/2+i*.07;m.position.set(Math.cos(a)*3.4+i*.02,Math.sin(a)*3.4-.28,0);m.rotation.z=a+(i%2?0.9:-0.9);leafG.add(m);}
+ // pearls
+ const pearlM=new THREE.MeshStandardMaterial({color:0xf6efe2,metalness:.15,roughness:.25,envMap:env,envMapIntensity:.8});
+ const pearls=[];
+ for(let i=0;i<26;i++){const s=.08+Math.random()*.22;const m=new THREE.Mesh(new THREE.SphereGeometry(s,24,16),pearlM);
+  const a=Math.random()*Math.PI*2,rad=2.2+Math.random()*3.6;m.userData={a,rad,sp:(.05+Math.random()*.12)*(Math.random()<.5?-1:1),y:(Math.random()-.5)*4,z:(Math.random()-.5)*3,ph:Math.random()*6};
+  pearls.push(m);sc.add(m);}
+ // dust
+ const n=420,pos=new Float32Array(n*3);for(let i=0;i<n;i++){pos[i*3]=(Math.random()-.5)*24;pos[i*3+1]=(Math.random()-.5)*14;pos[i*3+2]=(Math.random()-.5)*10-2;}
+ const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+ const dust=new THREE.Points(pg,new THREE.PointsMaterial({color:0xe6cf9c,size:.045,transparent:true,opacity:.7}));sc.add(dust);
+ function size(){const w=c.clientWidth,h=c.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();
+  const mob=w<980;G.position.set(mob?1.6:4.2,mob?2.6:.6,0);G.scale.setScalar(mob?.62:1);}
+ size();addEventListener('resize',size);
+ let mx=0,my=0,boost=0,last=scrollY;
+ addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;},{passive:true});
+ addEventListener('scroll',()=>{boost+=Math.abs(scrollY-last)*.00025;last=scrollY;},{passive:true});
+ let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
+ const t0=performance.now();
+ (function loop(){requestAnimationFrame(loop);if(!vis)return;
+  const t=(performance.now()-t0)/1000;boost*=.94;
+  const sp=reduce?0:1;
+  G.rotation.y+=((mx*.7)-G.rotation.y)*.05+(.0)*sp;G.rotation.x+=((-my*.5+.18)-G.rotation.x)*.05;
+  ring.rotation.z+=(.002+boost)*sp;ring2.rotation.z-=(.0015+boost*.6)*sp;
+  pearls.forEach(p=>{const u=p.userData;u.a+=u.sp*.01*sp*(1+boost*40);p.position.set(G.position.x+Math.cos(u.a)*u.rad*G.scale.x,G.position.y+(u.y+Math.sin(t*.6+u.ph)*.25)*G.scale.x,u.z);});
+  dust.rotation.y=t*.01*sp;dust.position.y=Math.sin(t*.3)*.2*sp;
+  r.render(sc,cam);})();
+ if(window.gsap&&!reduce){gsap.from(G.scale,{x:.2,y:.2,z:.2,duration:1.8,ease:'expo.out'});gsap.from(G.rotation,{x:1.4,duration:2,ease:'expo.out'});}
+})();
+
+/* ---------- motion ---------- */
+if(window.gsap&&window.ScrollTrigger&&!reduce){
+ gsap.registerPlugin(ScrollTrigger);
+ gsap.from('h1 .ln>span',{yPercent:110,duration:1.1,ease:'power4.out',stagger:.12,delay:.15});
+ gsap.from('.facts div',{opacity:0,y:16,duration:.7,stagger:.1,delay:.7});
+ document.querySelectorAll('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.9,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%'}}));
+ // ribbon with velocity skew
+ const rb=document.getElementById('ribt');let x=0,v=0;
+ ScrollTrigger.create({onUpdate:s=>{v=s.getVelocity()/600;}});
+ gsap.ticker.add(()=>{x-=0.6+Math.abs(v);v*=.9;const w=rb.scrollWidth/4;if(-x>w)x+=w;rb.style.transform=`translateX(${x}px) skewX(${Math.max(-12,Math.min(12,-v*3))}deg)`;});
+ // horizontal gallery
+ const hin=document.getElementById('hsin');
+ const dist=()=>Math.max(0,hin.scrollWidth-innerWidth);
+ gsap.to(hin,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:'#hs',start:'top top',end:()=>'+='+dist(),pin:true,scrub:.6,invalidateOnRefresh:true}});
+ // intro before/after sweep
+ ScrollTrigger.create({trigger:'#cmp',start:'top 70%',once:true,onEnter:()=>{const o={p:50};gsap.timeline().to(o,{p:20,duration:.8,ease:'power2.inOut',onUpdate:()=>pos(o.p)}).to(o,{p:78,duration:1,ease:'power2.inOut',onUpdate:()=>pos(o.p)}).to(o,{p:50,duration:.7,ease:'power2.out',onUpdate:()=>pos(o.p)});}});
+}else{document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none'});const hs=document.getElementById('hs');hs.style.overflowX='auto';}
+</script>
+</body>
+</html>
