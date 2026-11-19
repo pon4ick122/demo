@@ -166,6 +166,7 @@ footer .logo{font-size:30px}
  .cmp{aspect-ratio:1/1.1}
  footer{padding:30px 16px 100px}
  .scroll{display:none}
+ #ring{opacity:.6}
 }
 @media(max-width:480px){
  .res{padding:22px}.res h3{font-size:30px}
@@ -417,7 +418,7 @@ drawP();
  const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
  const dust=new THREE.Points(pg,new THREE.PointsMaterial({color:0xe6cf9c,size:.045,transparent:true,opacity:.7}));sc.add(dust);
  function size(){const w=c.clientWidth,h=c.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();
-  const mob=w<980;G.position.set(mob?1.8:3.9,mob?2.4:.2,0);G.scale.setScalar(mob?.6:.8);}
+  const mob=w<980;const nar=w<600;G.position.set(nar?2.3:mob?2.6:3.9,nar?4.6:mob?3.4:.2,0);G.scale.setScalar(nar?.42:mob?.5:.8);}
  size();addEventListener('resize',size);
  let mx=0,my=0,boost=0,last=scrollY;
  addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;},{passive:true});
