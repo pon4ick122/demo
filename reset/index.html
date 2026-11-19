@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reset The Body — массаж у Трубной</title>
+<meta name="description" content="Reset The Body — центр телесной психологии и массажа в Нижнем Кисельном переулке, у метро «Трубная» и «Цветной бульвар». Авторские программы массажа. 5,0 на Яндекс Картах.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3efe8;--bg2:#ebe5da;--card:#fbf9f5;--sage:#5f6e5a;--sage2:#46523f;--sage3:#a9b5a0;--clay:#b9876b;--ink:#2a2b27;--mute:#7b7d73;--line:#dcd5c8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Inter Tight",system-ui,sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.t{font-family:"Tenor Sans",serif;font-weight:400}
+.cap{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+nav{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 6vw;background:rgba(243,239,232,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--sage2)}
+.logo svg{width:28px;height:28px}
+.logo b{font-family:"Tenor Sans";font-size:20px;letter-spacing:.18em;font-weight:400}
+.logo small{font-size:10px;letter-spacing:.3em;display:block;color:var(--mute)}
+nav .links{display:flex;gap:28px;font-size:14px;color:var(--mute)}
+nav .links a{text-decoration:none}nav .links a:hover{color:var(--sage2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:999px;font:500 15px "Inter Tight",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:.2s}
+.btn.s{background:var(--sage);color:#fff}.btn.s:hover{background:var(--sage2)}
+.btn.o{box-shadow:inset 0 0 0 1px var(--sage3);color:var(--sage2);background:transparent}.btn.o:hover{box-shadow:inset 0 0 0 1px var(--sage)}
+.btn.tg{background:#2aabee;color:#fff}.btn.tg:hover{background:#229ed9}
+.btn.sm{padding:10px 18px;font-size:14px}
+.btn svg{width:18px;height:18px}
+
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:20px;padding:110px 6vw 60px;position:relative;overflow:hidden}
+#blob{position:absolute;right:-4vw;top:50%;transform:translateY(-50%);width:58vw;height:100%;z-index:0}
+.hero>div{position:relative;z-index:2}
+.hero .k{color:var(--sage);margin-bottom:26px;display:flex;gap:14px;align-items:center}
+.hero .k:before{content:"";width:40px;height:1px;background:var(--sage)}
+h1{font-family:"Tenor Sans";font-weight:400;font-size:clamp(44px,6vw,96px);line-height:1;letter-spacing:-.01em;color:var(--sage2)}
+h1 .ln{display:block;overflow:hidden;padding:.04em 0 .1em;margin-bottom:-.08em}h1 .ln>span{display:inline-block}
+h1 em{font-style:normal;color:var(--clay)}
+.lead{font-size:clamp(16px,1.35vw,19px);line-height:1.6;color:var(--mute);max-width:480px;margin:24px 0 32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;gap:34px;margin-top:46px;flex-wrap:wrap}
+.facts div{font-size:13px;color:var(--mute)}
+.facts b{display:block;font-family:"Tenor Sans";font-weight:400;font-size:38px;color:var(--sage2);line-height:1.1}
+.breath{position:absolute;right:8vw;bottom:44px;z-index:2;display:flex;align-items:center;gap:12px;color:var(--sage);font-size:13px}
+.breath i{width:12px;height:12px;border-radius:50%;background:var(--sage);animation:br 8s ease-in-out infinite}
+@keyframes br{0%,100%{transform:scale(.6);opacity:.4}45%{transform:scale(1.5);opacity:1}}
+
+.rib{background:var(--sage);color:#eef0e8;overflow:hidden;white-space:nowrap;padding:18px 0}
+.rib div{display:inline-block;font-family:"Tenor Sans";font-size:24px;letter-spacing:.04em;will-change:transform}
+.rib span{margin:0 24px;color:var(--sage3)}
+
+section{padding:110px 6vw}
+h2{font-family:"Tenor Sans";font-weight:400;font-size:clamp(36px,4.6vw,68px);line-height:1.04;margin-bottom:16px;color:var(--sage2)}
+h2 em{font-style:normal;color:var(--clay)}
+.sub{color:var(--mute);font-size:17px;line-height:1.6;max-width:600px;margin-bottom:46px}
+.kick{color:var(--sage);display:block;margin-bottom:16px}
+
+/* state */
+.state{background:var(--card);border:1px solid var(--line);border-radius:44px;margin:0 14px}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.sl{margin-bottom:30px}
+.sl label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;font-weight:500}
+.sl label span{font-family:"Tenor Sans";font-size:26px;color:var(--sage2)}
+.sl small{display:flex;justify-content:space-between;color:var(--mute);font-size:12px;margin-top:8px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--sage) var(--v,50%),var(--line) var(--v,50%));outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid var(--sage);box-shadow:0 4px 14px rgba(70,82,63,.3);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:#fff;border:2px solid var(--sage);cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:12px 18px;font:500 15px "Inter Tight";cursor:pointer;color:var(--ink);transition:.15s}
+.chip:hover{border-color:var(--sage3)}
+.chip.on{background:var(--sage);border-color:var(--sage);color:#fff}
+.res{background:var(--sage2);color:#f0f1ea;border-radius:32px;padding:34px;position:sticky;top:96px;overflow:hidden}
+.res:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;right:-120px;top:-120px;background:radial-gradient(circle,rgba(185,135,107,.45),transparent 70%)}
+.res .cap{color:var(--sage3)}
+.res h3{font-family:"Tenor Sans";font-weight:400;font-size:40px;line-height:1.05;margin:12px 0 6px}
+.res .ty{color:#c8cfbf;margin-bottom:14px;font-size:15px}
+.res p{color:#dfe3d8;line-height:1.6;position:relative;z-index:1}
+.dur{display:flex;gap:8px;margin:22px 0 6px}
+.dur button{flex:1;border:1px solid #6d7c66;background:transparent;color:#f0f1ea;border-radius:16px;padding:12px;font:500 14px "Inter Tight";cursor:pointer}
+.dur button b{display:block;font-family:"Tenor Sans";font-size:26px;font-weight:400}
+.dur button.on{background:#f0f1ea;color:var(--sage2);border-color:#f0f1ea}
+.dur button[disabled]{opacity:.3;cursor:default}
+.res .btn{width:100%;margin-top:18px;position:relative;z-index:1}
+.res .note{font-size:12px;color:#aeb8a6;margin-top:12px;text-align:center}
+.res.fl{animation:fl .5s}
+@keyframes fl{from{transform:scale(.985)}to{transform:none}}
+
+/* programs */
+.progs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pg{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:12px;transition:.25s}
+.pg:hover{transform:translateY(-4px);box-shadow:0 30px 50px -30px rgba(70,82,63,.4)}
+.pg .cap{color:var(--clay)}
+.pg h3{font-family:"Tenor Sans";font-weight:400;font-size:28px;color:var(--sage2)}
+.pg p{color:var(--mute);line-height:1.55;font-size:15px;flex:1}
+.pg .pr{display:flex;gap:16px;border-top:1px solid var(--line);padding-top:14px;font-size:14px;color:var(--mute)}
+.pg .pr b{font-family:"Tenor Sans";font-weight:400;font-size:22px;color:var(--ink);display:block}
+
+/* gallery: stacked sticky */
+.stack{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:start}
+.stack .txt{position:sticky;top:120px}
+.cards{display:grid;gap:18px}
+.cards figure{border-radius:30px;overflow:hidden;position:sticky;top:110px;box-shadow:0 -20px 40px -30px rgba(42,43,39,.4)}
+.cards img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.cards figcaption{position:absolute;left:18px;bottom:18px;background:rgba(251,249,245,.9);border-radius:999px;padding:7px 14px;font-size:13px}
+.masters{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.masters span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:14px}
+
+/* gift */
+.gift{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:var(--bg2);border-radius:44px;margin:0 14px}
+.card3d{aspect-ratio:1.6;border-radius:24px;background:linear-gradient(135deg,#6b7b65,#3e4a39);color:#eef0e8;padding:30px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 40px 70px -30px rgba(46,55,42,.6);transform-style:preserve-3d;transition:transform .15s;position:relative;overflow:hidden;max-width:520px;width:100%;justify-self:center}
+.card3d:before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,30%) var(--my,20%),rgba(255,255,255,.25),transparent 50%)}
+.card3d .top{display:flex;justify-content:space-between;align-items:flex-start}
+.card3d svg{width:44px;height:44px}
+.card3d b{font-family:"Tenor Sans";font-weight:400;font-size:clamp(26px,3vw,38px);letter-spacing:.06em}
+.card3d small{letter-spacing:.3em;font-size:11px;opacity:.8}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:28px}
+.rev .st{color:var(--clay);letter-spacing:3px;font-size:13px}
+.rev p{font-size:17px;line-height:1.55;margin:12px 0 16px}
+.rev span{font-size:13px;color:var(--mute)}
+
+.where{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.where .map{border-radius:30px;overflow:hidden;min-height:380px;background:var(--bg2)}
+.where iframe{width:100%;height:100%;min-height:380px;border:0;filter:saturate(.6)}
+.where .info{background:var(--sage2);color:#eef0e8;border-radius:30px;padding:36px;display:grid;gap:20px;align-content:start}
+.where .info .cap{color:var(--sage3)}
+.where .info p{font-size:18px;font-weight:500;margin-top:6px}
+.where .info small{color:#bcc5b4}
+footer{color:var(--mute);padding:34px 6vw 110px;font-size:13px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line)}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;background:#2aabee;color:#fff;border-radius:50px;padding:14px 18px;font-weight:600;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.25);font-size:15px}
+.demo{position:fixed;left:16px;bottom:16px;z-index:30;background:#000;color:#fff;font-size:12px;padding:8px 12px;border-radius:6px;opacity:.85}
+.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%) translateY(160px);background:var(--sage2);color:#fff;padding:14px 20px;border-radius:14px;font-size:14px;z-index:40;transition:transform .3s;max-width:92vw;text-align:center}
+.toast.on{transform:translateX(-50%)}
+.rv{opacity:0;transform:translateY(28px)}
+
+@media(max-width:980px){
+ nav .links{display:none}
+ .hero{grid-template-columns:1fr;padding:90px 16px 60px;min-height:auto}
+ #blob{position:relative;right:auto;top:auto;transform:none;width:100%;height:320px;order:-1;margin:-10px 0 0}
+ .breath{display:none}
+ .sgrid,.stack,.gift,.where{grid-template-columns:1fr}
+ .res,.stack .txt{position:static}
+ .progs,.revs{grid-template-columns:1fr}
+ .cards figure{top:80px}
+ section{padding:74px 16px}
+ .state,.gift{margin:0;border-radius:30px}
+ nav{padding:10px 16px}
+ footer{padding:30px 16px 100px}
+}
+@media(max-width:480px){.res{padding:24px}.res h3{font-size:32px}.facts{gap:22px}.facts b{font-size:32px}.logo b{font-size:17px}}
+</style>
+</head>
+<body>
+<nav>
+ <a class="logo" href="#top"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M16 6c3 3.5 3 9 0 13-3-4-3-9.5 0-13z"/><path d="M16 19c-3-1-7-4-8-9 4 0 7 3 8 9zM16 19c3-1 7-4 8-9-4 0-7 3-8 9z"/><path d="M16 19c-4 1-8 0-11-3 4-2 8-1 11 3zM16 19c4 1 8 0 11-3-4-2-8-1-11 3z"/><path d="M16 22v4M14 24h4"/></svg><span><b>RESET</b><small>THE BODY</small></span></a>
+ <div class="links"><a href="#state">Подбор</a><a href="#progs">Программы</a><a href="#gift">Сертификат</a><a href="#where">Контакты</a></div>
+ <a class="btn s sm" href="#state">Записаться</a>
+</nav>
+
+<header class="hero" id="top">
+ <canvas id="blob" aria-hidden="true"></canvas>
+ <div>
+  <div class="k cap">Трубная · Цветной бульвар</div>
+  <h1><span class="ln"><span>Перезагрузка</span></span><span class="ln"><span>для тела</span></span><span class="ln"><span>и <em>головы</em></span></span></h1>
+  <p class="lead">Центр телесной психологии и массажа. Не «поток», а индивидуальный подход: мастер слышит ваш запрос, сам находит зажимы и работает бережно, без спешки. После сеанса — тот самый чай.</p>
+  <div class="btns"><a class="btn s" href="#state">Подобрать программу</a><a class="btn o" href="#progs">Все программы</a></div>
+  <div class="facts">
+   <div><b>5,0</b>на Яндекс Картах</div>
+   <div><b>104</b>оценки</div>
+   <div><b>10+</b>авторских программ</div>
+  </div>
+ </div>
+ <div class="breath"><i></i>дышите вместе с формой</div>
+</header>
+
+<div class="rib"><div id="ribt"></div></div>
+
+<section class="state" id="state">
+ <span class="kick cap">Подбор за 30 секунд</span>
+ <h2>Как вы <em>сейчас?</em></h2>
+ <p class="sub">Подвиньте ползунки — подберём программу. Форма наверху страницы реагирует на ваше состояние.</p>
+ <div class="sgrid">
+  <div>
+   <div class="sl"><label>Уровень стресса <span id="v-s">7</span></label><input type="range" min="0" max="10" value="7" id="s"><small><span>спокойно</span><span>на пределе</span></small></div>
+   <div class="sl"><label>Зажатость в теле <span id="v-t">5</span></label><input type="range" min="0" max="10" value="5" id="tn"><small><span>свободно</span><span>всё забито</span></small></div>
+   <div class="sl"><label>Отёки, тяжесть <span id="v-w">3</span></label><input type="range" min="0" max="10" value="3" id="w"><small><span>лёгкость</span><span>тяжело</span></small></div>
+   <div class="sl" style="margin-bottom:0"><label>Главное сейчас</label><div class="chips" id="focus"><button class="chip on" data-f="all">Всё тело</button><button class="chip" data-f="back">Спина и шея</button><button class="chip" data-f="legs">Ноги</button><button class="chip" data-f="fig">Фигура</button></div></div>
+  </div>
+  <aside class="res" id="res">
+   <span class="cap" id="r-k">Вам подойдёт</span>
+   <h3 id="r-h"></h3>
+   <div class="ty" id="r-ty"></div>
+   <p id="r-p"></p>
+   <div class="dur" id="dur"></div>
+   <button class="btn tg" id="send"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.3z"/></svg>Записаться в Telegram</button>
+   <p class="note">Текст заявки скопируется сам — просто вставьте его в чат.</p>
+  </aside>
+ </div>
+</section>
+
+<section id="progs">
+ <span class="kick cap">Авторские программы</span>
+ <h2>У каждой — <em>своя задача</em></h2>
+ <p class="sub">Цены с Яндекс Карт. Большинство программ — 1 час или 1,5 часа.</p>
+ <div class="progs" id="pl"></div>
+</section>
+
+<section style="padding-top:0">
+ <div class="stack">
+  <div class="txt rv">
+   <span class="kick cap">Студия</span>
+   <h2>Светло, тихо, <em>ароматно</em></h2>
+   <p class="sub" style="margin-bottom:10px">«Стерильная чистота, уютная атмосфера и невероятная забота о госте». Чай, кофе и сладости после процедуры.</p>
+   <div class="masters"><span>Елена</span><span>Евгений</span><span>Алёна</span><span>Юлия Акименко — основательница</span></div>
+  </div>
+  <div class="cards">
+   <figure><img src="img/1.jpg" alt="Кабинет Reset The Body" loading="lazy"><figcaption>Кабинет</figcaption></figure>
+   <figure><img src="img/6.jpg" alt="Массаж лица" loading="lazy"><figcaption>Остеопластика лица</figcaption></figure>
+   <figure><img src="img/4.jpg" alt="Кабинет с мягким светом" loading="lazy"><figcaption>Вечерний свет</figcaption></figure>
+   <figure><img src="img/5.jpg" alt="Уход за лицом" loading="lazy"><figcaption>Эстетика лица</figcaption></figure>
+   <figure><img src="img/3.jpg" alt="Студия Reset The Body" loading="lazy"><figcaption>Reset The Body</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section class="gift" id="gift">
+ <div class="rv">
+  <span class="kick cap">К Новому году</span>
+  <h2>Подарите <em>перезагрузку</em></h2>
+  <p class="sub" style="margin-bottom:26px">Подарочный сертификат на любую процедуру студии — лучший подарок тому, кто устал за год. Можно на сумму или на конкретную программу.</p>
+  <button class="btn s" id="giftb">Заказать сертификат</button>
+ </div>
+ <div class="card3d rv" id="card3d">
+  <div class="top"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M16 6c3 3.5 3 9 0 13-3-4-3-9.5 0-13z"/><path d="M16 19c-3-1-7-4-8-9 4 0 7 3 8 9zM16 19c3-1 7-4 8-9-4 0-7 3-8 9z"/><path d="M16 19c-4 1-8 0-11-3 4-2 8-1 11 3zM16 19c4 1 8 0 11-3-4-2-8-1-11 3z"/></svg><small>ПОДАРОЧНЫЙ СЕРТИФИКАТ</small></div>
+  <div><b>RESET THE BODY</b><br><small>на любую процедуру</small></div>
+ </div>
+</section>
+
+<section>
+ <span class="kick cap">Отзывы · 5,0 · 86 отзывов</span>
+ <h2>Место, где <em>отдыхаешь</em></h2>
+ <div class="revs">
+  <div class="rev rv"><div class="st">★★★★★</div><p>Это не «потоковая» массажная студия, а действительно место для перезагрузки. К каждому клиенту индивидуальный подход.</p><span>Ira Karpusheva · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Евгений реально тщательно прорабатывает каждую мышцу — и шею, и поясницу. Чувствуется профессиональный подход, а не просто разминание.</p><span>Отзыв с Яндекс Карт</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Рекомендую мастера Елену: индивидуальный подход, деликатно, вдумчиво, без спешки. После её рук меняется походка и настроение.</p><span>Елена Шустикова · Яндекс Карты</span></div>
+ </div>
+</section>
+
+<section id="where" style="padding-top:0">
+ <span class="kick cap">Контакты</span>
+ <h2>Как <em>добраться</em></h2>
+ <div class="where" style="margin-top:30px">
+  <div class="map"><iframe title="Карта" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=37.622164%2C55.765098&z=16&pt=37.622164,55.765098,pm2gnm"></iframe></div>
+  <div class="info">
+   <div><span class="cap">Адрес</span><p>Нижний Кисельный пер., 4</p><small>Рядом с метро «Трубная» и «Цветной бульвар»</small></div>
+   <div><span class="cap">Телефон</span><p><a href="tel:+79933584018">+7 993 358-40-18</a></p></div>
+   <div><span class="cap">Telegram</span><p><a href="https://t.me/welcome_resetthebody" target="_blank" rel="noopener">@welcome_resetthebody</a></p></div>
+   <a class="btn o" style="color:#eef0e8;box-shadow:inset 0 0 0 1px #8d9a85" href="#state">Подобрать программу</a>
+  </div>
+ </div>
+</section>
+
+<footer><span class="t" style="letter-spacing:.18em;color:var(--sage2)">RESET THE BODY</span><span>Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></footer>
+<a class="fab" href="https://t.me/welcome_resetthebody" target="_blank" rel="noopener">Telegram</a>
+<div class="demo">Демо-версия сайта</div>
+<div class="toast" id="toast">Текст заявки скопирован — вставьте его в чат</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+const TG='welcome_resetthebody';
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fmt=n=>n.toLocaleString('ru-RU').replace(/ /g,' ')+' ₽';
+const PG={
+ reboot:{n:'«Перезагрузка»',ty:'общий массаж тела',p:'Снимает усталость и напряжение, даёт глубокий релакс и восстановление. Для тех, кто много работает.',d:[[1,4500],[1.5,6000]]},
+ flow:{n:'«Поток»',ty:'лимфодренажный массаж',p:'Уходят отёки, улучшается микроциркуляция, в теле появляется лёгкость.',d:[[1,4500],[1.5,6000]]},
+ silence:{n:'«Тишина внутри»',ty:'антистрессовый массаж',p:'Мягкая работа, после которой выключается внутренний шум. Когда стресс на пределе.',d:[[1,4500],[1.5,6000]]},
+ support:{n:'«Точка опоры»',ty:'массаж спины',p:'Работа с болью и напряжением в спине, шее и пояснице — быстро и глубоко.',d:[[1,4500]]},
+ freedom:{n:'«Свобода движения»',ty:'миофасциальный массаж',p:'Мягко снимает мышечные зажимы и возвращает свободу движения — без боли.',d:[[1.5,6000]]},
+ legs:{n:'«Лёгкие ноги»',ty:'массаж ног',p:'Расслабляющий и восстанавливающий массаж: снимает усталость и отёки, улучшает кровообращение.',d:[[1,4500]]},
+ venus:{n:'«Венера»',ty:'антицеллюлитный массаж с элементами телесной терапии',p:'Без боли, с глубоким расслаблением и видимым эффектом: кожа ровнее, контуры тела чётче.',d:[[1,5000]]}
+};
+document.getElementById('ribt').innerHTML=Object.values(PG).map(x=>x.n.replace(/[«»]/g,'')+'<span>❋</span>').join('').repeat(4);
+document.getElementById('pl').innerHTML=['reboot','silence','support','freedom','flow','venus'].map(k=>PG[k]).map(x=>`<div class="pg rv"><span class="cap">${x.ty}</span><h3>${x.n}</h3><p>${x.p}</p><div class="pr">${x.d.map(([h,c])=>`<span><b>${fmt(c)}</b>${String(h).replace('.',',')} ч</span>`).join('')}</div></div>`).join('');
+
+/* ---------- state quiz ---------- */
+const st={s:7,t:5,w:3,f:'all'};let pick='reboot',di=0;
+const S=document.getElementById('s'),T=document.getElementById('tn'),W=document.getElementById('w');
+function choose(){const{s,t,w,f}=st;
+ if(f==='fig')return'venus';
+ if(f==='legs')return w>=6?'flow':'legs';
+ if(f==='back')return t>=7?'freedom':'support';
+ if(s>=7&&s>=t)return'silence';
+ if(w>=6)return'flow';
+ if(t>=7)return'freedom';
+ return'reboot';}
+function draw(anim){
+ [[S,'s','v-s'],[T,'t','v-t'],[W,'w','v-w']].forEach(([el,k,id])=>{st[k]=+el.value;document.getElementById(id).textContent=el.value;el.style.setProperty('--v',el.value*10+'%');});
+ const np=choose();if(np!==pick){pick=np;di=0;}
+ const x=PG[pick];
+ document.getElementById('r-h').textContent=x.n;
+ document.getElementById('r-ty').textContent=x.ty;
+ document.getElementById('r-p').textContent=x.p;
+ document.getElementById('dur').innerHTML=x.d.map(([h,c],i)=>`<button data-i="${i}" class="${i===di?'on':''}"><b>${fmt(c)}</b>${String(h).replace('.',',')} часа</button>`).join('');
+ document.querySelectorAll('#focus .chip').forEach(b=>b.classList.toggle('on',b.dataset.f===st.f));
+ if(anim){const r=document.getElementById('res');r.classList.remove('fl');void r.offsetWidth;r.classList.add('fl');}
+ window.blobState&&window.blobState(st);
+}
+[S,T,W].forEach(el=>el.addEventListener('input',()=>{const old=pick;draw(false);if(old!==pick)draw(true);}));
+document.getElementById('focus').onclick=e=>{const b=e.target.closest('[data-f]');if(b){st.f=b.dataset.f;draw(true);}};
+document.getElementById('dur').onclick=e=>{const b=e.target.closest('[data-i]');if(b){di=+b.dataset.i;draw(false);}};
+function toTG(text){(async()=>{try{await navigator.clipboard.writeText(text);}catch(e){}})();const t=document.getElementById('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3200);setTimeout(()=>window.open('https://t.me/'+TG,'_blank'),500);}
+document.getElementById('send').onclick=()=>{const x=PG[pick],[h,c]=x.d[di];toTG(`Здравствуйте! Хочу записаться на программу ${x.n} (${x.ty}), ${String(h).replace('.',',')} ч — ${fmt(c)}.\nСтресс ${st.s}/10, зажатость ${st.t}/10, отёки ${st.w}/10.\nПодскажите, когда есть свободное время?\n(заявка с сайта)`);};
+document.getElementById('giftb').onclick=()=>toTG('Здравствуйте! Хочу подарочный сертификат Reset The Body. Подскажите, какие есть варианты?\n(заявка с сайта)');
+
+/* gift card tilt */
+const cd=document.getElementById('card3d');
+cd.addEventListener('pointermove',e=>{const r=cd.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;cd.style.transform=`perspective(900px) rotateY(${(x-.5)*16}deg) rotateX(${(.5-y)*12}deg)`;cd.style.setProperty('--mx',x*100+'%');cd.style.setProperty('--my',y*100+'%');});
+cd.addEventListener('pointerleave',()=>cd.style.transform='');
+
+/* ---------- 3D breathing blob ---------- */
+(function(){
+ const c=document.getElementById('blob');if(!window.THREE)return;
+ let r;try{r=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:true});}catch(e){return;}
+ r.setPixelRatio(Math.min(devicePixelRatio,2));
+ const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(35,1,.1,100);cam.position.set(0,0,9);
+ sc.add(new THREE.HemisphereLight(0xfdf7ec,0x6b7b65,.9));
+ const k=new THREE.DirectionalLight(0xffffff,.8);k.position.set(3,4,5);sc.add(k);
+ const warm=new THREE.PointLight(0xe0a07e,1.1,20);warm.position.set(-3,-2,3);sc.add(warm);
+ const geo=new THREE.SphereGeometry(1.7,112,84);
+ const base=geo.attributes.position.array.slice();
+ const mat=new THREE.MeshStandardMaterial({color:0x8e9c86,roughness:.55,metalness:.05});
+ const m=new THREE.Mesh(geo,mat);sc.add(m);
+ const ring=new THREE.Mesh(new THREE.TorusGeometry(2.6,.008,8,200),new THREE.MeshBasicMaterial({color:0xb9876b,transparent:true,opacity:.6}));ring.rotation.x=1.2;sc.add(ring);
+ const ring2=ring.clone();ring2.scale.setScalar(1.18);ring2.rotation.set(1.4,.3,0);ring2.material=ring.material.clone();ring2.material.opacity=.3;sc.add(ring2);
+ let amp=.32,spd=1.1,tAmp=amp,tSpd=spd;const col=new THREE.Color(0x8e9c86),tCol=new THREE.Color(0x8e9c86);
+ window.blobState=s=>{tAmp=.08+s.s*.04+s.t*.012;tSpd=.45+s.t*.13+s.s*.05;tCol.set(0x8e9c86).lerp(new THREE.Color(0xb9876b),s.w/14);};
+ function size(){const w=c.clientWidth,h=c.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();cam.position.z=w<600?10.5:9;}
+ size();addEventListener('resize',size);
+ let mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;},{passive:true});
+ let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
+ const p=geo.attributes.position,v=new THREE.Vector3();let time=0,last=performance.now();
+ (function loop(){requestAnimationFrame(loop);const now=performance.now(),dt=Math.min(.05,(now-last)/1000);last=now;if(!vis)return;
+  amp+=(tAmp-amp)*.04;spd+=(tSpd-spd)*.04;col.lerp(tCol,.04);mat.color.copy(col);
+  time+=dt*(reduce?0:spd);
+  const breath=1+Math.sin(now/1000*Math.PI*2/8)*.06*(reduce?0:1);
+  for(let i=0;i<p.count;i++){const x=base[i*3],y=base[i*3+1],z=base[i*3+2];v.set(x,y,z).normalize();
+   const n=Math.sin(v.x*2.1+time)*Math.cos(v.y*2.4+time*.8)+Math.sin(v.z*2.8+time*1.2)*.6+Math.sin((v.x+v.y)*4+time*1.7)*.18;
+   const rr=1.7*(1+n*amp*.33)*breath;p.setXYZ(i,v.x*rr,v.y*rr,v.z*rr);}
+  p.needsUpdate=true;geo.computeVertexNormals();
+  m.rotation.y+=(mx*.8-m.rotation.y)*.03;m.rotation.x+=(my*.5-m.rotation.x)*.03;
+  ring.rotation.z+=.002*(reduce?0:1);ring2.rotation.z-=.0015*(reduce?0:1);
+  r.render(sc,cam);})();
+ if(window.gsap&&!reduce)gsap.from(m.scale,{x:.3,y:.3,z:.3,duration:2,ease:'elastic.out(1,.6)'});
+})();
+draw(false);
+
+/* ---------- motion ---------- */
+if(window.gsap&&window.ScrollTrigger&&!reduce){
+ gsap.registerPlugin(ScrollTrigger);
+ gsap.from('h1 .ln>span',{yPercent:110,duration:1.2,ease:'power4.out',stagger:.13,delay:.15});
+ gsap.from('.facts div',{opacity:0,y:16,duration:.7,stagger:.1,delay:.8});
+ document.querySelectorAll('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.9,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%'}}));
+ const rb=document.getElementById('ribt');let x=0,v=0;
+ ScrollTrigger.create({onUpdate:s=>{v=s.getVelocity()/600;}});
+ gsap.ticker.add(()=>{x-=0.5+Math.abs(v);v*=.9;const w=rb.scrollWidth/4;if(-x>w)x+=w;rb.style.transform=`translateX(${x}px) skewX(${Math.max(-10,Math.min(10,-v*3))}deg)`;});
+ document.querySelectorAll('.cards figure').forEach((f,i,a)=>{if(i<a.length-1)gsap.to(f,{scale:.92,opacity:.6,ease:'none',scrollTrigger:{trigger:a[i+1],start:'top 85%',end:'top 120px',scrub:true}});});
+}else document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none'});
+</script>
+</body>
+</html>
