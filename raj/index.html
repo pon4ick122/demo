@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Райская студия массажа — Ряжская, 13</title>
+<meta name="description" content="Райская студия массажа на Ряжской улице: массаж спины и всего тела, антицеллюлитный и аппаратный массаж, прессотерапия. 5,0 на Яндекс Картах. Первое посещение — 1 500 ₽.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Marck+Script&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#120d0d;--bg2:#1b1414;--bg3:#251b1a;--wine:#8e1f2b;--wine2:#b02a38;--neon:#ffd84d;--sand:#e9dcc6;--sand2:#cdb99a;--mute:#9b8d80;--line:#3a2c2a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Golos Text",system-ui,sans-serif;background:var(--bg);color:var(--sand);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.f{font-family:Forum,serif;font-weight:400}
+.cap{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+.neon{font-family:"Marck Script",cursive;color:var(--neon);text-shadow:0 0 8px rgba(255,216,77,.75),0 0 26px rgba(255,216,77,.45),0 0 60px rgba(255,190,40,.25)}
+nav{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 6vw;background:rgba(18,13,13,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:30px;height:30px;color:var(--wine2)}
+.logo b{font-family:Forum;font-size:24px;font-weight:400;line-height:1}
+.logo small{display:block;font-size:11px;color:var(--mute);letter-spacing:.12em;text-transform:uppercase}
+nav .links{display:flex;gap:28px;font-size:14px;color:var(--sand2)}
+nav .links a{text-decoration:none}nav .links a:hover{color:var(--neon)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:14px;font:600 15px "Golos Text",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:.2s}
+.btn.w{background:var(--wine);color:#fff}.btn.w:hover{background:var(--wine2)}
+.btn.n{background:var(--neon);color:#1a1405;box-shadow:0 0 24px rgba(255,216,77,.35)}.btn.n:hover{box-shadow:0 0 40px rgba(255,216,77,.6)}
+.btn.o{box-shadow:inset 0 0 0 1px #5a4643;color:var(--sand);background:transparent}.btn.o:hover{box-shadow:inset 0 0 0 1px var(--neon)}
+.btn.sm{padding:10px 16px;font-size:14px;border-radius:12px}
+.btn.wa{background:#25d366;color:#fff}
+
+/* hero */
+.hero{min-height:100vh;position:relative;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px;padding:110px 6vw 70px;background:radial-gradient(70% 60% at 80% 55%,rgba(142,31,43,.45),transparent 70%),radial-gradient(50% 50% at 10% 100%,rgba(142,31,43,.25),transparent 70%),var(--bg)}
+#neon{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.hero>div{position:relative;z-index:2}
+.promo{display:inline-flex;align-items:center;gap:12px;border:1px solid #4a3633;background:rgba(37,27,26,.7);border-radius:999px;padding:7px 16px 7px 7px;font-size:14px;margin-bottom:28px}
+.promo b{background:var(--wine);color:#fff;border-radius:999px;padding:5px 12px;font-weight:600}
+.promo s{color:var(--mute)}
+h1{font-family:Forum;font-weight:400;font-size:clamp(46px,6.2vw,100px);line-height:.98;letter-spacing:-.01em}
+h1 .ln{display:block;overflow:hidden;padding:.05em 0 .14em;margin-bottom:-.12em}h1 .ln>span{display:inline-block}
+h1 .neon{font-size:1.12em;line-height:.8;padding-right:.1em}
+.lead{font-size:clamp(16px,1.35vw,19px);line-height:1.6;color:var(--sand2);max-width:500px;margin:24px 0 32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;gap:30px;margin-top:42px;flex-wrap:wrap}
+.facts div{font-size:13px;color:var(--mute);border-left:2px solid var(--wine);padding-left:12px}
+.facts b{display:block;font-family:Forum;font-size:36px;font-weight:400;color:var(--sand);line-height:1.05}
+.hph{justify-self:end;width:min(400px,100%);position:relative}
+.hph .img{border-radius:200px 200px 26px 26px;overflow:hidden;aspect-ratio:3/4;border:1px solid #4a3633;box-shadow:0 40px 90px -30px rgba(176,42,56,.55)}
+.hph img{width:100%;height:100%;object-fit:cover;object-position:center 70%}
+.hph .tag{position:absolute;left:-30px;bottom:40px;background:var(--bg2);border:1px solid #4a3633;border-radius:18px;padding:14px 16px;max-width:240px;font-size:14px;line-height:1.4}
+.hph .tag .s{color:var(--neon);letter-spacing:2px;font-size:12px}
+
+.rib{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0;background:var(--bg2)}
+.rib div{display:inline-block;font-family:Forum;font-size:26px;will-change:transform}
+.rib span{color:var(--wine2);margin:0 22px}
+
+section{padding:110px 6vw}
+h2{font-family:Forum;font-weight:400;font-size:clamp(38px,5vw,74px);line-height:1;margin-bottom:16px}
+h2 .neon{font-size:1.1em}
+.sub{color:var(--mute);font-size:17px;line-height:1.6;max-width:600px;margin-bottom:46px}
+.kick{color:var(--wine2);display:block;margin-bottom:16px}
+
+/* booking */
+.book{background:var(--bg2);border-radius:40px;margin:0 14px;border:1px solid var(--line)}
+.bgrid{display:grid;grid-template-columns:1.25fr .75fr;gap:34px;align-items:start}
+.st{margin-bottom:34px}
+.st h4{color:var(--sand2);margin-bottom:14px;display:flex;gap:10px;align-items:center}
+.st h4 i{font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--wine);color:#fff;display:grid;place-items:center;font-size:12px}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{background:var(--bg3);border:1px solid #3d2e2c;color:var(--sand);padding:13px 16px;border-radius:14px;cursor:pointer;font:500 15px "Golos Text";text-align:left;transition:.15s}
+.opt small{display:block;font-size:12px;color:var(--mute);margin-top:2px}
+.opt:hover{border-color:var(--neon)}
+.opt.on{background:var(--neon);border-color:var(--neon);color:#1a1405;box-shadow:0 0 22px rgba(255,216,77,.3)}.opt.on small{color:#5c4a10}
+.opt.busy{opacity:.25;pointer-events:none;text-decoration:line-through}
+.rec{margin-top:14px;background:rgba(142,31,43,.18);border:1px dashed #6b2a31;border-radius:16px;padding:14px 16px;font-size:15px;line-height:1.5;color:var(--sand)}
+.rec b{color:var(--neon);font-weight:600}
+.masters{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ms{background:var(--bg3);border:1px solid #3d2e2c;border-radius:18px;padding:16px;cursor:pointer;text-align:left;color:var(--sand);font-family:"Golos Text";transition:.15s}
+.ms:hover{border-color:var(--neon)}
+.ms .av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--wine2),#4a1218);display:grid;place-items:center;font:400 22px Forum;color:#fff;margin-bottom:10px}
+.ms b{display:block;font-size:16px;font-weight:600}
+.ms span{display:block;font-size:12px;color:var(--mute);margin-top:4px;line-height:1.4}
+.ms.on{border-color:var(--neon);box-shadow:0 0 0 1px var(--neon),0 0 26px rgba(255,216,77,.2)}
+.ms.on .av{background:var(--neon);color:#1a1405}
+.mq{font-size:14px;color:var(--sand2);margin-top:12px;font-style:italic;min-height:42px;line-height:1.5}
+.tk{background:var(--sand);color:#1d1513;border-radius:24px;padding:26px;position:sticky;top:90px;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.tk .h{display:flex;align-items:center;gap:10px;border-bottom:2px dashed #c8b393;padding-bottom:14px;margin-bottom:6px}
+.tk .h svg{width:28px;height:28px;color:var(--wine)}
+.tk .h b{font:400 24px Forum}
+.tk .row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid #d8c7aa;font-size:15px}
+.tk .row span:first-child{color:#7d6c5b}
+.tk .row span:last-child{text-align:right;font-weight:600}
+.tk .sum{display:flex;justify-content:space-between;align-items:baseline;margin:16px 0}
+.tk .sum b{font:400 34px Forum;color:var(--wine)}
+.tk .btn{width:100%}
+.tk .btn[disabled]{background:#cdbfa6;color:#8d7d68;cursor:not-allowed}
+.tk p{font-size:12px;color:#7d6c5b;margin-top:10px;text-align:center}
+
+/* first visit */
+.first{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.fc{border:1px solid var(--line);border-radius:28px;padding:30px;background:var(--bg2);position:relative;overflow:hidden}
+.fc.hl{background:linear-gradient(160deg,#5c141c,#2a0c10);border-color:#7a2530}
+.fc .cap{color:var(--neon)}
+.fc h3{font:400 30px/1.1 Forum;margin:12px 0 10px}
+.fc p{color:var(--sand2);font-size:15px;line-height:1.55}
+.fc .pr{margin-top:22px;display:flex;align-items:baseline;gap:12px}
+.fc .pr b{font:400 44px Forum;color:#fff}
+.fc .pr s{color:var(--mute);font-size:18px}
+
+/* price */
+.plist{display:grid;grid-template-columns:1fr 1fr;gap:0 60px;margin-top:10px}
+.pi{display:flex;align-items:baseline;gap:12px;padding:20px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.pi h3{font-weight:500;font-size:18px}
+.pi .d{flex:1;border-bottom:1px dotted #5a4643;transform:translateY(-5px);min-width:20px}
+.pi .p{font:400 28px Forum;white-space:nowrap;color:var(--neon)}
+.pi small{flex-basis:100%;color:var(--mute);font-size:14px}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:260px;gap:12px}
+.gal figure{overflow:hidden;border-radius:22px;position:relative}
+.gal img{width:100%;height:120%;object-fit:cover;will-change:transform}
+.gal .t2{grid-row:span 2}.gal .w2{grid-column:span 2}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{background:var(--bg2);border:1px solid var(--line);border-radius:26px;padding:28px}
+.rev .s{color:var(--neon);letter-spacing:3px;font-size:13px}
+.rev p{font-size:17px;line-height:1.55;margin:14px 0 16px}
+.rev span{font-size:13px;color:var(--mute)}
+
+.where{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.where .map{border-radius:30px;overflow:hidden;min-height:380px;background:#2a2020}
+.where iframe{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(.3) contrast(1.05)}
+.where .info{background:var(--bg2);border:1px solid var(--line);border-radius:30px;padding:36px;display:grid;gap:20px;align-content:start}
+.where .info .cap{color:var(--wine2)}
+.where .info p{font-size:18px;font-weight:500;margin-top:6px}
+.where .info small{color:var(--mute)}
+footer{border-top:1px solid var(--line);color:var(--mute);padding:34px 6vw 110px;font-size:13px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;background:#25d366;color:#fff;border-radius:50px;padding:14px 18px;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.4);font-size:15px}
+.demo{position:fixed;left:16px;bottom:16px;z-index:30;background:#000;color:#fff;font-size:12px;padding:8px 12px;border-radius:6px;opacity:.85}
+.rv{opacity:0;transform:translateY(28px)}
+
+@media(max-width:980px){
+ nav .links{display:none}
+ .hero{grid-template-columns:1fr;padding:92px 16px 70px;min-height:auto}
+ .hph{justify-self:center;max-width:340px;margin-top:20px}
+ .hph .tag{left:-8px}
+ .bgrid,.where,.first{grid-template-columns:1fr}
+ .masters{grid-template-columns:1fr 1fr}
+ .tk{position:static}
+ .plist,.revs{grid-template-columns:1fr}
+ .gal{grid-template-columns:1fr 1fr;grid-auto-rows:190px}
+ section{padding:74px 16px}
+ .book{margin:0;border-radius:28px}
+ nav{padding:10px 16px}
+ footer{padding:30px 16px 100px}
+}
+@media(max-width:480px){
+ .promo{font-size:13px}
+ .facts{gap:20px}.facts b{font-size:30px}
+ .ms{padding:13px}.ms span{display:none}
+ .fc h3{font-size:26px}
+}
+</style>
+</head>
+<body>
+<nav>
+ <a class="logo" href="#top"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 30c-.6 0-1-.4-1-1 0-4.6.3-9.2 1-13.4-2.6-2.8-6.6-3.7-11-2.6 2.2-4 6.8-5.3 10.3-3.4-1.4-2.9-4.4-4.6-7.8-4.4 3.3-2.7 7.8-2.3 9.6 1 .8-3.5 4-5.6 7.8-5-3 1.5-4.7 3.8-5 6.4 3.6-1.6 7.8-.4 10.1 3-4-.9-7.8 0-10.4 2.7.8 4.6 1.4 9.6 1.4 15.7 0 .6-.4 1-1 1z"/></svg><span><b>Райская</b><small>студия массажа</small></span></a>
+ <div class="links"><a href="#book">Запись</a><a href="#first">Первый визит</a><a href="#price">Цены</a><a href="#where">Контакты</a></div>
+ <a class="btn w sm" href="#book">Записаться</a>
+</nav>
+
+<header class="hero" id="top">
+ <canvas id="neon" aria-hidden="true"></canvas>
+ <div>
+  <div class="promo"><b>1 500 ₽</b>первое посещение <s>2 000 ₽</s></div>
+  <h1><span class="ln"><span>Спина после офиса</span></span><span class="ln"><span>скажет <span class="neon">спасибо</span></span></span></h1>
+  <p class="lead">Массаж с проработкой мышц и триггерных точек, антицеллюлитный и аппаратный массаж, прессотерапия. Камерная студия с приглушённым светом, а после сеанса вам нальют кофе.</p>
+  <div class="btns"><a class="btn n" href="#book">Записаться онлайн</a><a class="btn o" href="#price">Цены</a></div>
+  <div class="facts">
+   <div><b>5,0</b>на Яндекс Картах</div>
+   <div><b>182</b>оценки</div>
+   <div><b>7+ лет</b>опыт Анны</div>
+  </div>
+ </div>
+ <div class="hph rv">
+  <div class="img"><img src="img/2.jpg" alt="Кабинет Райской студии массажа с неоновой подсветкой" loading="eager"></div>
+  <div class="tag"><div class="s">★★★★★</div>«Спина и шея после сеанса разгрузились как никогда»</div>
+ </div>
+</header>
+
+<div class="rib"><div id="ribt"></div></div>
+
+<section class="book" id="book">
+ <span class="kick cap">Онлайн-запись</span>
+ <h2>Запишитесь <span class="neon">за минуту</span></h2>
+ <p class="sub">Выберите, что беспокоит, мастера и время. Заявка уйдёт в WhatsApp студии, администратор подтвердит запись.</p>
+ <div class="bgrid">
+  <div>
+   <div class="st"><h4 class="cap"><i>1</i>Что беспокоит</h4>
+    <div class="opts" id="pains"></div>
+    <div class="rec" id="rec"></div>
+   </div>
+   <div class="st"><h4 class="cap"><i>2</i>Мастер</h4>
+    <div class="masters" id="masters"></div>
+    <p class="mq" id="mq"></p>
+   </div>
+   <div class="st"><h4 class="cap"><i>3</i>День</h4><div class="opts" id="days"></div></div>
+   <div class="st" style="margin-bottom:0"><h4 class="cap"><i>4</i>Время</h4><div class="opts" id="slots"></div></div>
+  </div>
+  <aside class="tk">
+   <div class="h"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 30c-.6 0-1-.4-1-1 0-4.6.3-9.2 1-13.4-2.6-2.8-6.6-3.7-11-2.6 2.2-4 6.8-5.3 10.3-3.4-1.4-2.9-4.4-4.6-7.8-4.4 3.3-2.7 7.8-2.3 9.6 1 .8-3.5 4-5.6 7.8-5-3 1.5-4.7 3.8-5 6.4 3.6-1.6 7.8-.4 10.1 3-4-.9-7.8 0-10.4 2.7.8 4.6 1.4 9.6 1.4 15.7 0 .6-.4 1-1 1z"/></svg><b>Ваша запись</b></div>
+   <div class="row"><span>Услуга</span><span id="o-s">—</span></div>
+   <div class="row"><span>Мастер</span><span id="o-m">—</span></div>
+   <div class="row"><span>Когда</span><span id="o-d">—</span></div>
+   <div class="sum"><span>Стоимость</span><b id="o-p">—</b></div>
+   <button class="btn wa" id="send" disabled>Отправить в WhatsApp</button>
+   <p>Ряжская ул., 13, корп. 1 · ежедневно 10:00–22:00</p>
+  </aside>
+ </div>
+</section>
+
+<section id="first">
+ <span class="kick cap">Первое посещение</span>
+ <h2>Попробуйте <span class="neon">дешевле</span></h2>
+ <p class="sub">Для первого знакомства со студией — специальные цены. Многие после пробного сеанса сразу берут абонемент.</p>
+ <div class="first">
+  <div class="fc hl rv"><span class="cap">Акция</span><h3>Sketch-торнадо, 25 минут</h3><p>Аппаратный антицеллюлитный массаж: кожа ровнее, уходят отёки и лишний объём. После пробного сеанса можно закрепить цену за собой.</p><div class="pr"><b>1 500 ₽</b><s>2 000 ₽</s></div></div>
+  <div class="fc rv"><span class="cap">Лёгкость</span><h3>Прессотерапия, 30 минут</h3><p>Лимфодренаж для ног и тела: уходит тяжесть и отёки после рабочего дня. Хорошо в паре с массажем.</p><div class="pr"><b>1 500 ₽</b></div></div>
+  <div class="fc rv"><span class="cap">Хит</span><h3>Спина + антицеллюлитный, 55 минут</h3><p>Проработка мышц спины плюс вакуумный массаж. «Решила сходить на пробный — в итоге купила абонемент на 10 сеансов».</p><div class="pr"><b>3 500 ₽</b></div></div>
+ </div>
+</section>
+
+<section id="price" style="padding-top:0">
+ <span class="kick cap">Цены с Яндекс Карт</span>
+ <h2>Прайс</h2>
+ <div class="plist">
+  <div class="pi rv"><h3>Массаж спины</h3><span class="d"></span><span class="p">2 500 ₽</span><small>30 минут · спина, шея, плечи</small></div>
+  <div class="pi rv"><h3>Общий массаж с проработкой мышц</h3><span class="d"></span><span class="p">3 500 ₽</span><small>50 минут · снятие зажимов, триггерные точки</small></div>
+  <div class="pi rv"><h3>Спина + антицеллюлитный</h3><span class="d"></span><span class="p">3 500 ₽</span><small>55 минут · спина + аппаратный массаж</small></div>
+  <div class="pi rv"><h3>Sketch-торнадо (пробный)</h3><span class="d"></span><span class="p">1 500 ₽</span><small>25 минут · антицеллюлитный аппаратный массаж</small></div>
+  <div class="pi rv"><h3>Прессотерапия</h3><span class="d"></span><span class="p">1 500 ₽</span><small>30 минут</small></div>
+  <div class="pi rv"><h3>Мастер-класс, обучение массажу</h3><span class="d"></span><span class="p">7 000 ₽</span><small>1,5 часа · проводит Анна</small></div>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <span class="kick cap">Студия</span>
+ <h2>Свет приглушён, <span class="neon">музыка мягкая</span></h2>
+ <p class="sub">Камерная студия: чисто, без посторонних запахов, чай, кофе и вода для гостей.</p>
+ <div class="gal">
+  <figure class="t2 rv"><img src="img/6.jpg" alt="Массаж спины" loading="lazy"></figure>
+  <figure class="w2 rv"><img src="img/9.jpg" alt="Кабинет студии" loading="lazy"></figure>
+  <figure class="t2 rv"><img src="img/4.jpg" alt="Надпись Raiskaya Massage Studio" loading="lazy"></figure>
+  <figure class="rv"><img src="img/8.jpg" alt="Руки мастера" loading="lazy"></figure>
+  <figure class="rv"><img src="img/5.jpg" alt="Неоновая подсветка в кабинете" loading="lazy"></figure>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <span class="kick cap">Отзывы · 5,0 · 164 отзыва</span>
+ <h2>Что <span class="neon">пишут</span></h2>
+ <div class="revs">
+  <div class="rev rv"><div class="s">★★★★★</div><p>Моё сутулое тело, изнурённое офисной работой, просто кричало о помощи. Спина и шея после сеанса разгрузились как никогда.</p><span>Владислав · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="s">★★★★★</div><p>Прихожу не в первый раз к мастеру Анне — супер-профессионал, который буквально спасает! Вернулась подвижность, ушла боль в пояснице.</p><span>Мария Чернышова · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="s">★★★★★</div><p>Мастер Елизавета учла мои пожелания по медпоказаниям — «принцип не навредить». Чисто, уютно, хороший релакс.</p><span>Галина Самойлова · Яндекс Карты</span></div>
+ </div>
+</section>
+
+<section id="where" style="padding-top:0">
+ <span class="kick cap">Контакты</span>
+ <h2>Как <span class="neon">добраться</span></h2>
+ <div class="where" style="margin-top:30px">
+  <div class="map"><iframe title="Карта" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=37.67049%2C55.590214&z=16&pt=37.67049,55.590214,pm2rdm"></iframe></div>
+  <div class="info">
+   <div><span class="cap">Адрес</span><p>Ряжская ул., 13, корп. 1</p><small>Остановка «Ряжская улица» — 2 минуты пешком</small></div>
+   <div><span class="cap">Часы</span><p>Ежедневно 10:00–22:00</p></div>
+   <div><span class="cap">Телефон / WhatsApp</span><p><a href="tel:+79912599587">+7 991 259-95-87</a></p></div>
+   <div><span class="cap">Telegram</span><p><a href="https://t.me/raiskaya_annaa" target="_blank" rel="noopener">@raiskaya_annaa</a></p></div>
+   <a class="btn n" href="#book">Записаться онлайн</a>
+  </div>
+ </div>
+</section>
+
+<footer><span class="f" style="font-size:22px;color:var(--sand)">Райская студия массажа</span><span>Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></footer>
+<a class="fab" href="https://wa.me/79912599587">WhatsApp</a>
+<div class="demo">Демо-версия сайта</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+const WA='79912599587';
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fmt=n=>n.toLocaleString('ru-RU').replace(/ /g,' ')+' ₽';
+document.getElementById('ribt').innerHTML=['массаж спины','триггерные точки','антицеллюлитный','прессотерапия','Sketch-торнадо','массаж всего тела','чай и кофе после сеанса'].map(w=>w+'<span>✦</span>').join('').repeat(4);
+
+/* ---------- booking ---------- */
+const P=[
+ {n:'Спина и шея после офиса',s:'Массаж спины, 30 мин',p:2500,r:'Проработка спины, шеи и плеч — снимает зажимы от сидячей работы.'},
+ {n:'Болит поясница',s:'Общий массаж с проработкой мышц, 50 мин',p:3500,r:'Проработка мышц и триггерных точек — в отзывах часто пишут, что боль в пояснице уходит.'},
+ {n:'Целлюлит, объём',s:'Sketch-торнадо, 25 мин (первое посещение)',p:1500,r:'Аппаратный антицеллюлитный массаж. Цена для первого визита — 1 500 ₽ вместо 2 000 ₽.'},
+ {n:'Отёки, тяжесть в ногах',s:'Прессотерапия, 30 мин',p:1500,r:'Лимфодренаж: уходят отёки и тяжесть после рабочего дня.'},
+ {n:'Всё сразу',s:'Спина + антицеллюлитный, 55 мин',p:3500,r:'Проработка мышц спины и вакуумный массаж за один визит — самый популярный комплекс.'},
+ {n:'Просто расслабиться',s:'Общий массаж, 50 мин',p:3500,r:'Приглушённый свет, мягкая музыка и целый час на себя. После — чай или кофе.'}
+];
+const M=[
+ {n:'Анна',d:'руководитель студии, опыт 7+ лет',q:'«Очень сильные руки, мышцы прорабатывает хорошо, болевые точки чувствует отлично» — Виктория'},
+ {n:'Елизавета',d:'бережно, с учётом медпоказаний',q:'«Потрясающий мастер и невероятно приятный человек, очень чутко относится к клиенту» — Альбина'},
+ {n:'Олеся',d:'шея, плечи, напряжение',q:'«Ушло напряжение в шее и плечах, которое мучило несколько недель. Купила сразу абонемент» — отзыв с Карт'},
+ {n:'Любой',d:'ближайшее свободное время',q:'Подберём мастера под ваше время — все мастера студии с оценкой 5,0.'}
+];
+const S={};
+const pEl=document.getElementById('pains'),mEl=document.getElementById('masters');
+P.forEach((x,i)=>pEl.insertAdjacentHTML('beforeend',`<button class="opt" data-p="${i}">${x.n}</button>`));
+M.forEach((x,i)=>mEl.insertAdjacentHTML('beforeend',`<button class="ms" data-m="${i}"><div class="av">${x.n[0]}</div><b>${x.n}</b><span>${x.d}</span></button>`));
+const days=document.getElementById('days'),nm=['вс','пн','вт','ср','чт','пт','сб'],now=new Date();
+for(let i=0;i<7;i++){const d=new Date(now);d.setDate(now.getDate()+i);const dd=d.getDate()+'.'+String(d.getMonth()+1).padStart(2,'0');const l=i===0?'Сегодня':i===1?'Завтра':nm[d.getDay()]+', '+d.getDate();days.insertAdjacentHTML('beforeend',`<button class="opt" data-d="${i}" data-v="${l} (${dd})">${l}<small>${dd}</small></button>`);}
+function slots(seed){let h='';const hr=now.getHours();for(let t=10;t<=21;t++){const busy=((t*7+seed*5)%5===0)||(seed===0&&t<=hr);h+=`<button class="opt${busy?' busy':''}" data-t="${t}:00">${t}:00</button>`;}document.getElementById('slots').innerHTML=h;}
+slots(0);
+document.addEventListener('click',e=>{
+ const p=e.target.closest('[data-p]'),m=e.target.closest('[data-m]'),d=e.target.closest('[data-d]'),t=e.target.closest('[data-t]');
+ if(p){S.p=+p.dataset.p;}
+ else if(m){S.m=+m.dataset.m;}
+ else if(d){S.d=d.dataset.v;S.di=+d.dataset.d;slots(S.di);delete S.t;}
+ else if(t){S.t=t.dataset.t;}
+ else return;
+ draw();
+});
+function draw(){
+ pEl.querySelectorAll('.opt').forEach(b=>b.classList.toggle('on',+b.dataset.p===S.p));
+ mEl.querySelectorAll('.ms').forEach(b=>b.classList.toggle('on',+b.dataset.m===S.m));
+ days.querySelectorAll('.opt').forEach(b=>b.classList.toggle('on',+b.dataset.d===S.di));
+ document.querySelectorAll('#slots .opt').forEach(b=>b.classList.toggle('on',b.dataset.t===S.t));
+ const rec=document.getElementById('rec');
+ if(S.p!=null){const x=P[S.p];rec.innerHTML=`Советуем: <b>${x.s}</b> — ${fmt(x.p)}. ${x.r}`;rec.style.display='block';}else rec.style.display='none';
+ document.getElementById('mq').textContent=S.m!=null?M[S.m].q:'';
+ document.getElementById('o-s').textContent=S.p!=null?P[S.p].s:'—';
+ document.getElementById('o-m').textContent=S.m!=null?M[S.m].n:'—';
+ document.getElementById('o-d').textContent=S.d?(S.d.split(' (')[0]+(S.t?', '+S.t:'')):'—';
+ document.getElementById('o-p').textContent=S.p!=null?fmt(P[S.p].p):'—';
+ document.getElementById('send').disabled=!(S.p!=null&&S.m!=null&&S.d&&S.t);
+}
+draw();
+document.getElementById('send').onclick=()=>{const x=P[S.p];const t=`Здравствуйте! Хочу записаться на массаж.\nБеспокоит: ${x.n.toLowerCase()}\nУслуга: ${x.s} — ${fmt(x.p)}\nМастер: ${M[S.m].n}\nКогда: ${S.d}, ${S.t}\n(заявка с сайта)`;window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');};
+
+/* ---------- 3D neon wave ---------- */
+(function(){
+ const c=document.getElementById('neon');if(!window.THREE)return;
+ let r;try{r=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:true});}catch(e){return;}
+ r.setPixelRatio(Math.min(devicePixelRatio,2));
+ const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(35,1,.1,100);cam.position.set(0,0,16);
+ // squiggle path like the neon on their wall
+ const pts=[];for(let i=0;i<=60;i++){const t=i/60;const y=5-t*10;const x=Math.sin(t*Math.PI*3.2)*1.35+Math.sin(t*Math.PI*7)*.35;const z=Math.cos(t*Math.PI*2.4)*.9;pts.push(new THREE.Vector3(x,y,z));}
+ const curve=new THREE.CatmullRomCurve3(pts);
+ const G=new THREE.Group();sc.add(G);
+ const core=new THREE.Mesh(new THREE.TubeGeometry(curve,400,.07,12,false),new THREE.MeshBasicMaterial({color:0xfff3c4}));
+ const glow1=new THREE.Mesh(new THREE.TubeGeometry(curve,400,.2,12,false),new THREE.MeshBasicMaterial({color:0xffd84d,transparent:true,opacity:.35,blending:THREE.AdditiveBlending,depthWrite:false}));
+ const glow2=new THREE.Mesh(new THREE.TubeGeometry(curve,400,.5,12,false),new THREE.MeshBasicMaterial({color:0xffb020,transparent:true,opacity:.09,blending:THREE.AdditiveBlending,depthWrite:false}));
+ [glow2,glow1,core].forEach(m=>G.add(m));
+ const total=core.geometry.index.count;
+ // warm particles (dust in red light)
+ const n=360,pos=new Float32Array(n*3),col=new Float32Array(n*3);
+ for(let i=0;i<n;i++){pos[i*3]=(Math.random()-.5)*26;pos[i*3+1]=(Math.random()-.5)*16;pos[i*3+2]=(Math.random()-.5)*8-2;const red=Math.random()<.55;col[i*3]=1;col[i*3+1]=red?.35:.85;col[i*3+2]=red?.35:.45;}
+ const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));pg.setAttribute('color',new THREE.BufferAttribute(col,3));
+ const dust=new THREE.Points(pg,new THREE.PointsMaterial({size:.06,vertexColors:true,transparent:true,opacity:.75,blending:THREE.AdditiveBlending,depthWrite:false}));sc.add(dust);
+ function size(){const w=c.clientWidth,h=c.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();
+  const nar=w<600,mob=w<980;G.position.set(nar?2.2:mob?3:6.2,nar?3.2:mob?1.5:0,nar?-6:mob?-3:0);G.scale.setScalar(nar?.7:mob?.85:1);}
+ size();addEventListener('resize',size);
+ const draw={v:reduce?1:0};
+ const setDraw=()=>{const k=Math.floor(total*draw.v/3)*3;[core,glow1,glow2].forEach(m=>m.geometry.setDrawRange(0,k));};
+ setDraw();
+ if(window.gsap&&!reduce)gsap.to(draw,{v:1,duration:2.6,ease:'power2.inOut',delay:.3,onUpdate:setDraw});else{draw.v=1;setDraw();}
+ let mx=0,my=0,sy=0;
+ addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;},{passive:true});
+ addEventListener('scroll',()=>{sy=scrollY;},{passive:true});
+ let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
+ const t0=performance.now();
+ (function loop(){requestAnimationFrame(loop);if(!vis)return;const t=(performance.now()-t0)/1000,k=reduce?0:1;
+  G.rotation.y+=((mx*.6+Math.sin(t*.25)*.25*k)-G.rotation.y)*.04;
+  G.rotation.x+=((my*.25)-G.rotation.x)*.04;
+  G.rotation.z=-.08+sy*.0004*k;
+  const fl=.92+Math.sin(t*9)*.02*k+(Math.random()<.004*k?-.35:0);
+  glow1.material.opacity=.35*fl;glow2.material.opacity=.09*fl;
+  dust.rotation.y=t*.012*k;dust.position.y=Math.sin(t*.3)*.25*k;
+  r.render(sc,cam);})();
+})();
+
+/* ---------- motion ---------- */
+if(window.gsap&&window.ScrollTrigger&&!reduce){
+ gsap.registerPlugin(ScrollTrigger);
+ gsap.from('h1 .ln>span',{yPercent:110,duration:1.1,ease:'power4.out',stagger:.14,delay:.15});
+ gsap.from('.facts div',{opacity:0,y:16,duration:.7,stagger:.1,delay:.8});
+ gsap.from('.promo',{opacity:0,y:-10,duration:.7,delay:.1});
+ document.querySelectorAll('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.9,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%'}}));
+ document.querySelectorAll('.gal img').forEach(im=>gsap.fromTo(im,{yPercent:-12},{yPercent:0,ease:'none',scrollTrigger:{trigger:im.parentNode,start:'top bottom',end:'bottom top',scrub:true}}));
+ const rb=document.getElementById('ribt');let x=0,v=0;
+ ScrollTrigger.create({onUpdate:s=>{v=s.getVelocity()/600;}});
+ gsap.ticker.add(()=>{x-=0.6+Math.abs(v);v*=.9;const w=rb.scrollWidth/4;if(-x>w)x+=w;rb.style.transform=`translateX(${x}px) skewX(${Math.max(-12,Math.min(12,-v*3))}deg)`;});
+}else document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none'});
+</script>
+</body>
+</html>
