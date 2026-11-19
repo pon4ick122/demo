@@ -31,7 +31,7 @@ nav .links a{text-decoration:none}nav .links a:hover{color:var(--sage2)}
 .btn svg{width:18px;height:18px}
 
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:20px;padding:110px 6vw 60px;position:relative;overflow:hidden}
-#blob{position:absolute;right:-4vw;top:50%;transform:translateY(-50%);width:58vw;height:100%;z-index:0}
+#blob{position:absolute;right:-2vw;top:50%;transform:translateY(-50%);width:60vw;height:100%;z-index:0}
 .hero>div{position:relative;z-index:2}
 .hero .k{color:var(--sage);margin-bottom:26px;display:flex;gap:14px;align-items:center}
 .hero .k:before{content:"";width:40px;height:1px;background:var(--sage)}
@@ -340,7 +340,7 @@ cd.addEventListener('pointerleave',()=>cd.style.transform='');
  const ring2=ring.clone();ring2.scale.setScalar(1.18);ring2.rotation.set(1.4,.3,0);ring2.material=ring.material.clone();ring2.material.opacity=.3;sc.add(ring2);
  let amp=.32,spd=1.1,tAmp=amp,tSpd=spd;const col=new THREE.Color(0x8e9c86),tCol=new THREE.Color(0x8e9c86);
  window.blobState=s=>{tAmp=.08+s.s*.04+s.t*.012;tSpd=.45+s.t*.13+s.s*.05;tCol.set(0x8e9c86).lerp(new THREE.Color(0xb9876b),s.w/14);};
- function size(){const w=c.clientWidth,h=c.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();cam.position.z=w<600?10.5:9;}
+ function size(){const w=c.clientWidth,h=c.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();cam.position.z=w<600?10.5:11.5;}
  size();addEventListener('resize',size);
  let mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;},{passive:true});
  let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
