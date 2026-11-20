@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Своя игра — Новогодний выпуск</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#07112b;--bg2:#0d2150;--cell:#123175;--cell2:#1a43a0;--gold:#ffcf5a;--gold2:#ff9f2e;
+  --ink:#f4f7ff;--mute:#9fb2e0;--red:#ff5a6e;--green:#3ddc97;--line:rgba(255,255,255,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:radial-gradient(120% 90% at 50% 0%,var(--bg2),var(--bg1) 70%) fixed;background-color:var(--bg1);overflow:hidden;user-select:none}
+h1,h2,.u{font-family:Unbounded,system-ui,sans-serif}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+#snow{position:fixed;inset:0;pointer-events:none;z-index:0}
+.app{position:relative;z-index:1;height:100%;display:grid;grid-template-rows:auto 1fr auto;gap:1.6vh;padding:2vh 2.4vw}
+/* header */
+.top{display:flex;align-items:center;gap:16px}
+.logo{font-family:Unbounded;font-weight:900;font-size:clamp(18px,2.6vw,40px);letter-spacing:.02em;background:linear-gradient(180deg,#fff3c4,var(--gold) 45%,var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 18px rgba(255,190,60,.35))}
+.sub{color:var(--mute);font-weight:700;font-size:clamp(11px,1vw,16px);margin-top:2px}
+.tools{margin-left:auto;display:flex;gap:8px}
+.tb{padding:9px 14px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid var(--line);font-weight:800;font-size:14px;transition:.2s}
+.tb:hover{background:rgba(255,255,255,.14)}
+/* board */
+.board{display:grid;gap:1vh .8vw;grid-template-columns:repeat(var(--cols),1fr);grid-template-rows:auto repeat(var(--rows),1fr);min-height:0}
+.cat{display:grid;place-items:center;text-align:center;padding:1.2vh .6vw;border-radius:14px;background:linear-gradient(180deg,rgba(255,207,90,.18),rgba(255,207,90,.05));border:1px solid rgba(255,207,90,.35);font-family:Unbounded;font-weight:800;font-size:clamp(11px,1.25vw,22px);line-height:1.15;min-height:8vh}
+.cell{position:relative;border-radius:16px;background:linear-gradient(180deg,var(--cell2),var(--cell));border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 10px 24px rgba(0,0,0,.35);font-family:Unbounded;font-weight:900;font-size:clamp(18px,3.4vw,58px);color:var(--gold);text-shadow:0 3px 0 rgba(0,0,0,.35);transition:transform .18s,filter .18s,opacity .3s}
+.cell:hover{transform:translateY(-3px) scale(1.02);filter:brightness(1.15)}
+.cell.done{opacity:.18;pointer-events:none;color:transparent;text-shadow:none}
+.cell.done::after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:var(--mute);font-size:.6em}
+/* teams */
+.teams{display:flex;gap:1vw;justify-content:center;flex-wrap:wrap}
+.team{min-width:min(220px,20vw);padding:1.2vh 1.2vw;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid var(--line);text-align:center;position:relative}
+.team .nm{font-weight:800;font-size:clamp(12px,1.1vw,18px);color:var(--mute);outline:none}
+.team .sc{font-family:Unbounded;font-weight:900;font-size:clamp(20px,2.6vw,44px);transition:color .3s}
+.team.lead{border-color:rgba(255,207,90,.6);box-shadow:0 0 30px rgba(255,207,90,.18)}
+.team.lead::before{content:"★";position:absolute;top:6px;right:10px;color:var(--gold)}
+.team .adj{position:absolute;left:8px;top:6px;display:none;gap:4px}
+.team:hover .adj{display:flex}
+.adj button{width:22px;height:22px;border-radius:7px;background:rgba(255,255,255,.1);font-weight:800;font-size:13px;line-height:1}
+.pop{animation:pop .5s}
+@keyframes pop{40%{transform:scale(1.25)}}
+/* question overlay */
+.ov{position:fixed;inset:0;z-index:5;display:none;place-items:center;background:rgba(4,10,30,.82);backdrop-filter:blur(8px)}
+.ov.on{display:grid}
+.qbox{width:min(1100px,92vw);max-height:92vh;overflow:auto;padding:4vh 4vw;border-radius:28px;background:linear-gradient(180deg,#16398a,#0c2361);border:1px solid rgba(255,255,255,.18);box-shadow:0 40px 120px rgba(0,0,0,.6);text-align:center;animation:zoom .45s cubic-bezier(.2,1.4,.4,1)}
+@keyframes zoom{from{transform:scale(.6);opacity:0}}
+.qmeta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:2.5vh}
+.pill{padding:8px 16px;border-radius:99px;background:rgba(255,207,90,.15);border:1px solid rgba(255,207,90,.4);color:var(--gold);font-weight:800;font-size:clamp(12px,1.1vw,18px)}
+.qtext{font-family:Unbounded;font-weight:800;font-size:clamp(20px,2.9vw,50px);line-height:1.2}
+.qimg{display:block;max-width:100%;max-height:44vh;margin:2.5vh auto 0;border-radius:18px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.ans{margin-top:3vh;padding:2.4vh 2vw;border-radius:20px;background:rgba(61,220,151,.12);border:1px solid rgba(61,220,151,.45);font-family:Unbounded;font-weight:800;font-size:clamp(18px,2.4vw,40px);color:#bff5dc;display:none}
+.ans.on{display:block;animation:zoom .4s}
+.timer{margin:3vh auto 0;width:min(520px,70%);height:12px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+.timer i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--green),var(--gold),var(--red));transform-origin:left;transition:transform linear}
+.tnum{margin-top:8px;font-weight:800;color:var(--mute);font-size:18px}
+.acts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:3vh}
+.btn{padding:14px 22px;border-radius:14px;font-weight:800;font-size:clamp(13px,1.1vw,18px);background:rgba(255,255,255,.1);border:1px solid var(--line);transition:.2s}
+.btn:hover{background:rgba(255,255,255,.18)}
+.btn.gold{background:linear-gradient(180deg,var(--gold),var(--gold2));color:#2b1600;border:0}
+.btn.ok{background:rgba(61,220,151,.18);border-color:rgba(61,220,151,.5)}
+.btn.no{background:rgba(255,90,110,.16);border-color:rgba(255,90,110,.5)}
+.award{display:none;margin-top:2vh}
+.award.on{display:block}
+.award .row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:10px}
+.hint{color:var(--mute);font-size:14px;margin-top:2vh}
+/* final */
+.final h2{font-size:clamp(26px,4vw,70px);background:linear-gradient(180deg,#fff3c4,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.podium{display:flex;gap:2vw;justify-content:center;align-items:flex-end;margin-top:4vh}
+.pod{display:flex;flex-direction:column;justify-content:flex-end;width:min(220px,26vw);border-radius:18px 18px 6px 6px;background:linear-gradient(180deg,#1f4fbf,#0f2a6e);padding:2vh 1vw;text-align:center}
+.pod .u{font-size:clamp(18px,2.4vw,40px);color:var(--gold)}
+/* editor */
+.ed{position:fixed;inset:0;z-index:6;display:none;background:var(--bg1);overflow:auto;padding:24px clamp(16px,3vw,48px) 80px;user-select:text}
+.ed.on{display:block}
+.ed h2{font-size:24px;margin-bottom:6px}
+.ed .note{color:var(--mute);margin-bottom:18px;max-width:900px;line-height:1.5}
+.ed label{display:block;font-weight:800;font-size:13px;color:var(--mute);margin:10px 0 4px}
+.ed input,.ed textarea,.ed select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);font:inherit}
+.ed textarea{min-height:84px;resize:vertical}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.ecat{margin-top:22px;padding:16px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.eq{padding:12px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.eq .pr{font-family:Unbounded;color:var(--gold);font-weight:800}
+.eq img{max-width:100%;max-height:90px;border-radius:8px;margin-top:6px;display:block}
+.edbar{position:fixed;left:0;right:0;bottom:0;z-index:7;display:none;gap:8px;justify-content:center;flex-wrap:wrap;padding:12px;background:rgba(7,17,43,.95);border-top:1px solid var(--line)}
+.edbar.on{display:flex}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:9;padding:12px 20px;border-radius:12px;background:#1d3f8f;border:1px solid var(--line);font-weight:800;opacity:0;transition:.3s;pointer-events:none}
+.toast.on{opacity:1}
+@media (max-width:700px){
+  body{overflow:auto}
+  .app{height:auto;min-height:100%}
+  .board{grid-template-columns:repeat(var(--cols),minmax(0,1fr))}
+  .cat{font-size:9px;min-height:44px;padding:4px}
+  .cell{min-height:52px;font-size:18px;border-radius:10px}
+  .tools .tb span{display:none}
+}
+</style>
+</head>
+<body>
+<canvas id="snow"></canvas>
+
+<div class="app" id="app">
+  <div class="top">
+    <div>
+      <div class="logo" id="title">СВОЯ ИГРА</div>
+      <div class="sub" id="subtitle"></div>
+    </div>
+    <div class="tools">
+      <button class="tb" id="bSound" title="Звук">🔊</button>
+      <button class="tb" id="bFull" title="На весь экран">⛶ <span>Экран</span></button>
+      <button class="tb" id="bEnd" title="Итоги">🏆 <span>Итоги</span></button>
+      <button class="tb" id="bEdit" title="Редактор">✎ <span>Вопросы</span></button>
+    </div>
+  </div>
+  <div class="board" id="board"></div>
+  <div class="teams" id="teams"></div>
+</div>
+
+<div class="ov" id="ov"><div class="qbox" id="qbox"></div></div>
+
+<div class="ed" id="ed"></div>
+<div class="edbar" id="edbar">
+  <button class="btn gold" id="eSave">Сохранить и играть</button>
+  <button class="btn" id="eDown">⬇ Скачать игру файлом</button>
+  <button class="btn" id="eJson">Экспорт вопросов</button>
+  <label class="btn" style="margin:0">Импорт вопросов<input type="file" id="eImp" accept=".json" hidden></label>
+  <button class="btn no" id="eReset">Сбросить к исходным</button>
+  <button class="btn" id="eClose">Закрыть</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script id="gamedata" type="application/json">
+{
+ "title":"СВОЯ ИГРА",
+ "subtitle":"Новогодний выпуск · 2027",
+ "finalText":"С Новым годом!",
+ "time":30,
+ "teams":["Команда Ёлки","Команда Снежинки","Команда Мандарины"],
+ "cats":[
+  {"name":"Новогоднее кино","q":[
+   {"p":100,"q":"В каком фильме герой после бани по ошибке улетает в Ленинград?","a":"«Ирония судьбы, или С лёгким паром!»"},
+   {"p":200,"q":"Как зовут героиню Людмилы Гурченко в «Карнавальной ночи»?","a":"Леночка Крылова"},
+   {"p":300,"q":"В какой город Кевин по ошибке улетает во втором фильме «Один дома»?","a":"Нью-Йорк"},
+   {"p":400,"q":"По мотивам повести каких писателей снят фильм «Чародеи»?","a":"Братьев Стругацких («Понедельник начинается в субботу»)"},
+   {"p":500,"q":"Кто снял и «Карнавальную ночь», и «Иронию судьбы»?","a":"Эльдар Рязанов"}
+  ]},
+  {"name":"Новый год в мире","q":[
+   {"p":100,"q":"В какой стране, по легенде, в Лапландии живёт Санта-Клаус?","a":"Финляндия"},
+   {"p":200,"q":"Где под бой курантов съедают 12 виноградин — по одной на каждый удар?","a":"Испания"},
+   {"p":300,"q":"Какая страна первой в мире встречает Новый год?","a":"Кирибати (острова Лайн)"},
+   {"p":400,"q":"Какое животное — символ 2027 года по восточному календарю?","a":"Коза (Овца)"},
+   {"p":500,"q":"В какой стране была традиция выбрасывать в Новый год старые вещи из окна?","a":"Италия"}
+  ]},
+  {"name":"Праздничный стол","q":[
+   {"p":100,"q":"Как называется салат из селёдки, свёклы, картофеля и моркови «в слоях»?","a":"Селёдка под шубой"},
+   {"p":200,"q":"Какой фрукт стал главным запахом советского Нового года?","a":"Мандарин"},
+   {"p":300,"q":"В каком городе в ресторане «Эрмитаж» придумали салат оливье?","a":"В Москве"},
+   {"p":400,"q":"Из какой страны родом фондю?","a":"Швейцария"},
+   {"p":500,"q":"Как переводится с немецкого слово «глинтвейн»?","a":"«Пылающее (горячее) вино»"}
+  ]},
+  {"name":"Песни под ёлку","q":[
+   {"p":100,"q":"Продолжите строчку: «В лесу родилась…»","a":"…ёлочка"},
+   {"p":200,"q":"Какая шведская группа спела «Happy New Year»?","a":"ABBA"},
+   {"p":300,"q":"Какая группа выпустила «Last Christmas» в 1984 году?","a":"Wham! (Джордж Майкл)"},
+   {"p":400,"q":"Кто написал музыку к балету «Щелкунчик»?","a":"Пётр Ильич Чайковский"},
+   {"p":500,"q":"Назовите самую известную рождественскую песню Мэрайи Кэри.","a":"«All I Want for Christmas Is You»"}
+  ]},
+  {"name":"Зима и наука","q":[
+   {"p":100,"q":"Сколько лучей у снежинки?","a":"Шесть"},
+   {"p":200,"q":"Какое хвойное дерево сбрасывает иголки на зиму?","a":"Лиственница"},
+   {"p":300,"q":"Как называется самое холодное постоянно населённое место на Земле?","a":"Оймякон (Якутия)"},
+   {"p":400,"q":"Кто первым достиг Южного полюса?","a":"Руаль Амундсен, 1911 год"},
+   {"p":500,"q":"Почему снег хрустит под ногами в мороз?","a":"Ломаются тысячи ледяных кристаллов-снежинок"}
+  ]}
+ ]
+}
+</script>
+
+<script>
+(()=>{
+const SOURCE = '<!doctype html>\n' + document.documentElement.outerHTML;
+const KEY = 'svoya-igra:' + location.pathname;
+const $ = s => document.querySelector(s);
+const DEF = JSON.parse($('#gamedata').textContent);
+let G, S; // G — вопросы, S — состояние партии
+function load(){
+  try{ G = JSON.parse(localStorage.getItem(KEY+':data')) || null }catch(e){ G=null }
+  if(!G) G = JSON.parse(JSON.stringify(DEF));
+  try{ S = JSON.parse(localStorage.getItem(KEY+':state')) || null }catch(e){ S=null }
+  if(!S || !S.scores || S.scores.length!==G.teams.length) S = {done:{}, scores:G.teams.map(()=>0)};
+}
+function saveState(){ try{localStorage.setItem(KEY+':state',JSON.stringify(S))}catch(e){} }
+function saveData(){ try{localStorage.setItem(KEY+':data',JSON.stringify(G))}catch(e){ toast('Не хватает места: уменьшите фото') } }
+const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function toast(t){ const el=$('#toast'); el.textContent=t; el.classList.add('on'); clearTimeout(el._t); el._t=setTimeout(()=>el.classList.remove('on'),2200) }
+
+/* ---------- звук (без файлов) ---------- */
+let AC, soundOn = true;
+function tone(f, d=.15, type='sine', v=.15, when=0){
+  if(!soundOn) return;
+  try{
+    AC = AC || new (window.AudioContext||window.webkitAudioContext)();
+    const o=AC.createOscillator(), g=AC.createGain(), t=AC.currentTime+when;
+    o.type=type; o.frequency.value=f; g.gain.setValueAtTime(v,t); g.gain.exponentialRampToValueAtTime(.001,t+d);
+    o.connect(g).connect(AC.destination); o.start(t); o.stop(t+d);
+  }catch(e){}
+}
+const sfx = {
+  open(){ [523,659,784,1047].forEach((f,i)=>tone(f,.22,'triangle',.12,i*.07)) },
+  ok(){ [784,988,1319].forEach((f,i)=>tone(f,.25,'triangle',.14,i*.08)) },
+  no(){ tone(220,.35,'sawtooth',.08); tone(160,.4,'sawtooth',.07,.12) },
+  tick(){ tone(1200,.05,'square',.04) },
+  end(){ [523,659,784,1047,784,1047,1319].forEach((f,i)=>tone(f,.3,'triangle',.13,i*.12)) }
+};
+
+/* ---------- поле ---------- */
+function render(){
+  $('#title').textContent = G.title || 'СВОЯ ИГРА';
+  $('#subtitle').textContent = G.subtitle || '';
+  document.title = (G.title||'Своя игра') + (G.subtitle?' — '+G.subtitle:'');
+  const rows = Math.max(...G.cats.map(c=>c.q.length));
+  const b = $('#board'); b.style.setProperty('--cols',G.cats.length); b.style.setProperty('--rows',rows);
+  let h = G.cats.map(c=>`<div class="cat">${esc(c.name)}</div>`).join('');
+  for(let r=0;r<rows;r++) G.cats.forEach((c,ci)=>{
+    const q=c.q[r]; if(!q){ h+='<div></div>'; return }
+    const id=ci+'-'+r;
+    h+=`<button class="cell ${S.done[id]?'done':''}" data-id="${id}">${q.p}</button>`;
+  });
+  b.innerHTML = h;
+  renderTeams();
+}
+function renderTeams(bump){
+  const max = Math.max(...S.scores);
+  $('#teams').innerHTML = G.teams.map((t,i)=>`
+    <div class="team ${S.scores[i]===max&&max>0?'lead':''}">
+      <div class="adj"><button data-adj="${i}" data-v="-100">−</button><button data-adj="${i}" data-v="100">+</button></div>
+      <div class="nm" contenteditable spellcheck="false" data-tn="${i}">${esc(t)}</div>
+      <div class="sc ${bump===i?'pop':''}" style="color:${S.scores[i]<0?'var(--red)':''}">${S.scores[i]}</div>
+    </div>`).join('');
+}
+$('#board').addEventListener('click',e=>{ const c=e.target.closest('.cell'); if(c) openQ(c.dataset.id) });
+$('#teams').addEventListener('click',e=>{
+  const a=e.target.closest('[data-adj]'); if(!a) return;
+  const i=+a.dataset.adj; S.scores[i]+=+a.dataset.v; saveState(); renderTeams(i);
+});
+$('#teams').addEventListener('blur',e=>{
+  const n=e.target.dataset?.tn; if(n===undefined) return;
+  G.teams[+n]=e.target.textContent.trim()||('Команда '+(+n+1)); saveData();
+},true);
+$('#teams').addEventListener('keydown',e=>{ if(e.key==='Enter'&&e.target.dataset.tn!==undefined){e.preventDefault();e.target.blur()} });
+
+/* ---------- вопрос ---------- */
+let cur=null, tmr=null;
+function openQ(id){
+  const [ci,r]=id.split('-').map(Number), c=G.cats[ci], q=c.q[r];
+  cur={id,q,tried:new Set()};
+  $('#qbox').innerHTML = `
+    <div class="qmeta"><span class="pill">${esc(c.name)}</span><span class="pill">${q.p}</span></div>
+    <div class="qtext">${esc(q.q)}</div>
+    ${q.img?`<img class="qimg" src="${esc(q.img)}" alt="">`:''}
+    <div class="timer"><i id="tbar"></i></div><div class="tnum" id="tnum"></div>
+    <div class="ans" id="ans">${esc(q.a)}</div>
+    ${q.aimg?`<img class="qimg" id="aimg" src="${esc(q.aimg)}" alt="" style="display:none">`:''}
+    <div class="award" id="award">
+      <div class="hint">Кто ответил? Нажмите, чтобы начислить очки</div>
+      <div class="row">${G.teams.map((t,i)=>`<button class="btn ok" data-win="${i}">✓ ${esc(t)} +${q.p}</button>`).join('')}</div>
+      <div class="row">${G.teams.map((t,i)=>`<button class="btn no" data-lose="${i}">✗ ${esc(t)} −${q.p}</button>`).join('')}</div>
+    </div>
+    <div class="acts">
+      <button class="btn gold" id="bShow">Показать ответ</button>
+      <button class="btn" id="bPause">⏸ Таймер</button>
+      <button class="btn" id="bClose">Никто не ответил</button>
+    </div>
+    <div class="hint">Пробел — показать ответ · Esc — закрыть</div>`;
+  $('#ov').classList.add('on'); sfx.open(); startTimer(+G.time||30);
+}
+function startTimer(sec){
+  clearInterval(tmr); let left=sec; const bar=$('#tbar'), num=$('#tnum');
+  if(!sec){ $('.timer').style.display='none'; num.style.display='none'; return }
+  bar.style.transition='none'; bar.style.transform='scaleX(1)'; bar.offsetWidth;
+  bar.style.transition=`transform ${sec}s linear`; bar.style.transform='scaleX(0)';
+  num.textContent=left+' с'; cur.paused=false;
+  tmr=setInterval(()=>{ if(cur.paused) return; left--; num.textContent=left>0?left+' с':'Время!'; if(left<=5&&left>0) sfx.tick(); if(left<=0){clearInterval(tmr); sfx.no()} },1000);
+  cur.left=()=>left;
+}
+function pauseTimer(){
+  if(!cur) return; const bar=$('#tbar'); cur.paused=!cur.paused;
+  if(cur.paused){ const w=getComputedStyle(bar).transform; bar.style.transition='none'; bar.style.transform=w; $('#bPause').textContent='▶ Таймер' }
+  else { const l=cur.left(); bar.style.transition=`transform ${l}s linear`; bar.style.transform='scaleX(0)'; $('#bPause').textContent='⏸ Таймер' }
+}
+function showAns(){
+  const a=$('#ans'); if(!a||a.classList.contains('on')) return;
+  a.classList.add('on'); const ai=$('#aimg'); if(ai) ai.style.display='block';
+  $('#award').classList.add('on'); $('#bShow').style.display='none'; $('#bPause').style.display='none'; $('.timer').style.display='none'; $('#tnum').style.display='none'; $('#bClose').textContent='К полю';
+  clearInterval(tmr); sfx.ok();
+}
+function closeQ(){
+  if(!cur) return; clearInterval(tmr);
+  S.done[cur.id]=1; saveState(); cur=null;
+  $('#ov').classList.remove('on'); render();
+  if(Object.keys(S.done).length>=G.cats.reduce((n,c)=>n+c.q.length,0)) setTimeout(final,600);
+}
+$('#qbox').addEventListener('click',e=>{
+  const t=e.target.closest('button'); if(!t) return;
+  if(t.id==='bShow') showAns();
+  else if(t.id==='bPause') pauseTimer();
+  else if(t.id==='bClose') closeQ();
+  else if(t.dataset.win!==undefined){ const i=+t.dataset.win; S.scores[i]+=cur.q.p; sfx.ok(); burst(); saveState(); renderTeams(i); closeQ() }
+  else if(t.dataset.lose!==undefined){ const i=+t.dataset.lose; if(cur.tried.has(i)) return; cur.tried.add(i); S.scores[i]-=cur.q.p; sfx.no(); t.disabled=true; t.style.opacity=.4; saveState(); renderTeams(i) }
+});
+document.addEventListener('keydown',e=>{
+  if($('#ed').classList.contains('on')) return;
+  if(!cur) return;
+  if(e.code==='Space'){ e.preventDefault(); showAns() }
+  if(e.key==='Escape') closeQ();
+});
+
+/* ---------- итоги ---------- */
+function final(){
+  const order=G.teams.map((t,i)=>({t,s:S.scores[i]})).sort((a,b)=>b.s-a.s);
+  const place=[1,0,2].filter(i=>order[i]);
+  $('#qbox').innerHTML=`<div class="final">
+    <h2>${esc(G.finalText||'Победители!')}</h2>
+    <div class="podium">${place.map(i=>`<div class="pod" style="min-height:${[34,28,24][i]}vh">
+      <div style="font-size:clamp(28px,4vw,60px)">${['🥇','🥈','🥉'][i]}</div>
+      <div style="font-weight:800;margin:6px 0">${esc(order[i].t)}</div>
+      <div class="u">${order[i].s}</div></div>`).join('')}</div>
+    <div class="acts" style="margin-top:4vh"><button class="btn gold" id="bAgain">Новая партия</button><button class="btn" id="bBack">К полю</button></div></div>`;
+  $('#ov').classList.add('on'); sfx.end(); for(let k=0;k<6;k++) setTimeout(burst,k*350);
+  $('#bAgain').onclick=()=>{ if(!confirm('Обнулить очки и открыть все вопросы?')) return; S={done:{},scores:G.teams.map(()=>0)}; saveState(); $('#ov').classList.remove('on'); render() };
+  $('#bBack').onclick=()=>$('#ov').classList.remove('on');
+}
+$('#bEnd').onclick=final;
+$('#bSound').onclick=()=>{ soundOn=!soundOn; $('#bSound').textContent=soundOn?'🔊':'🔇' };
+$('#bFull').onclick=()=>{ document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen?.() };
+
+/* ---------- снег и конфетти ---------- */
+const cv=$('#snow'), cx=cv.getContext('2d'); let W,H,flakes=[],parts=[];
+function rs(){ W=cv.width=innerWidth*devicePixelRatio; H=cv.height=innerHeight*devicePixelRatio }
+addEventListener('resize',rs); rs();
+for(let i=0;i<110;i++) flakes.push({x:Math.random(),y:Math.random(),r:Math.random()*2.2+.6,s:Math.random()*.4+.15,w:Math.random()*6});
+function burst(){ const cols=['#ffcf5a','#ff5a6e','#3ddc97','#7fb0ff','#fff'];
+  for(let i=0;i<90;i++) parts.push({x:W/2,y:H*.45,vx:(Math.random()-.5)*26,vy:-Math.random()*24-6,c:cols[i%5],l:90,r:Math.random()*5+3}) }
+(function loop(t){
+  cx.clearRect(0,0,W,H); const d=devicePixelRatio;
+  cx.fillStyle='rgba(255,255,255,.75)';
+  for(const f of flakes){ f.y+=f.s/H*d*2.2; f.x+=Math.sin(t/1500+f.w)*.0003; if(f.y>1){f.y=0;f.x=Math.random()}
+    cx.beginPath(); cx.arc(f.x*W,f.y*H,f.r*d,0,7); cx.fill() }
+  for(const p of parts){ p.x+=p.vx; p.y+=p.vy; p.vy+=.9; p.vx*=.98; p.l--; cx.fillStyle=p.c; cx.globalAlpha=Math.max(p.l/90,0); cx.fillRect(p.x,p.y,p.r*d,p.r*d*1.6) }
+  cx.globalAlpha=1; parts=parts.filter(p=>p.l>0); requestAnimationFrame(loop);
+})(0);
+
+/* ---------- редактор ---------- */
+function openEd(){
+  const E=JSON.parse(JSON.stringify(G)); $('#ed')._E=E; drawEd();
+  $('#ed').classList.add('on'); $('#edbar').classList.add('on');
+}
+function drawEd(){
+  const E=$('#ed')._E;
+  $('#ed').innerHTML=`<h2>Редактор вопросов</h2>
+  <p class="note">Меняйте названия, вопросы и ответы. К любому вопросу можно добавить фото (например, «Угадай коллегу по детской фотографии»). Всё сохраняется в этом браузере. Чтобы забрать игру на другой компьютер — «Скачать игру файлом»: получится один HTML-файл со всеми вопросами и фото, он работает без интернета.</p>
+  <div class="grid2">
+    <div><label>Название</label><input data-k="title" value="${esc(E.title)}"></div>
+    <div><label>Подзаголовок</label><input data-k="subtitle" value="${esc(E.subtitle)}"></div>
+    <div><label>Надпись в итогах</label><input data-k="finalText" value="${esc(E.finalText||'')}"></div>
+    <div><label>Таймер, секунд (0 — без таймера)</label><input data-k="time" type="number" min="0" max="300" value="${esc(E.time)}"></div>
+    <div><label>Команды (через запятую, 2–6)</label><input data-k="teams" value="${esc(E.teams.join(', '))}"></div>
+  </div>
+  ${E.cats.map((c,ci)=>`<div class="ecat">
+     <div class="grid2" style="align-items:end"><div><label>Тема ${ci+1}</label><input data-c="${ci}" value="${esc(c.name)}"></div>
+     <div style="text-align:right"><button class="btn no" data-delc="${ci}">Удалить тему</button> <button class="btn" data-addq="${ci}">+ вопрос</button></div></div>
+     <div class="grid2" style="margin-top:10px">${c.q.map((q,qi)=>`<div class="eq">
+       <div style="display:flex;gap:8px;align-items:center"><span class="pr">Цена</span><input style="width:90px" type="number" step="100" data-f="p" data-cq="${ci}-${qi}" value="${q.p}"><button class="btn no" style="padding:6px 10px;margin-left:auto" data-delq="${ci}-${qi}">✕</button></div>
+       <label>Вопрос</label><textarea data-f="q" data-cq="${ci}-${qi}">${esc(q.q)}</textarea>
+       <label>Ответ</label><textarea data-f="a" data-cq="${ci}-${qi}">${esc(q.a)}</textarea>
+       <label>Фото к вопросу</label><input type="file" accept="image/*" data-img="${ci}-${qi}-img">${q.img?`<img src="${esc(q.img)}"><button class="btn" style="padding:4px 10px;margin-top:4px" data-rmimg="${ci}-${qi}-img">убрать фото</button>`:''}
+       <label>Фото к ответу</label><input type="file" accept="image/*" data-img="${ci}-${qi}-aimg">${q.aimg?`<img src="${esc(q.aimg)}"><button class="btn" style="padding:4px 10px;margin-top:4px" data-rmimg="${ci}-${qi}-aimg">убрать фото</button>`:''}
+     </div>`).join('')}</div></div>`).join('')}
+  <div style="margin-top:18px"><button class="btn gold" id="eAddCat">+ Добавить тему</button></div>`;
+}
+const ed=$('#ed');
+ed.addEventListener('input',e=>{
+  const E=ed._E, t=e.target;
+  if(t.dataset.k==='teams') E.teams=t.value.split(',').map(s=>s.trim()).filter(Boolean).slice(0,6);
+  else if(t.dataset.k) E[t.dataset.k]= t.dataset.k==='time' ? Math.max(0,+t.value||0) : t.value;
+  else if(t.dataset.c!==undefined) E.cats[+t.dataset.c].name=t.value;
+  else if(t.dataset.cq){ const [ci,qi]=t.dataset.cq.split('-').map(Number); E.cats[ci].q[qi][t.dataset.f]= t.dataset.f==='p'?(+t.value||0):t.value }
+});
+ed.addEventListener('change',e=>{
+  const t=e.target; if(!t.dataset.img||!t.files[0]) return;
+  const [ci,qi,f]=t.dataset.img.split('-'); shrink(t.files[0]).then(url=>{ ed._E.cats[+ci].q[+qi][f]=url; drawEd() });
+});
+ed.addEventListener('click',e=>{
+  const E=ed._E, t=e.target.closest('button'); if(!t) return;
+  if(t.id==='eAddCat'){ E.cats.push({name:'Новая тема',q:[100,200,300,400,500].map(p=>({p,q:'',a:''}))}); drawEd() }
+  else if(t.dataset.delc!==undefined){ if(E.cats.length>1&&confirm('Удалить тему целиком?')){E.cats.splice(+t.dataset.delc,1);drawEd()} }
+  else if(t.dataset.addq!==undefined){ const c=E.cats[+t.dataset.addq]; const p=(c.q.at(-1)?.p||0)+100; c.q.push({p,q:'',a:''}); drawEd() }
+  else if(t.dataset.delq){ const [ci,qi]=t.dataset.delq.split('-').map(Number); if(E.cats[ci].q.length>1){E.cats[ci].q.splice(qi,1);drawEd()} }
+  else if(t.dataset.rmimg){ const [ci,qi,f]=t.dataset.rmimg.split('-'); delete E.cats[+ci].q[+qi][f]; drawEd() }
+});
+function shrink(file){ // ужимаем фото, чтобы файл игры оставался лёгким
+  return new Promise(res=>{ const fr=new FileReader(); fr.onload=()=>{ const im=new Image(); im.onload=()=>{
+    const k=Math.min(1,1400/Math.max(im.width,im.height)), c=document.createElement('canvas');
+    c.width=Math.round(im.width*k); c.height=Math.round(im.height*k); c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+    res(c.toDataURL('image/jpeg',.82)) }; im.src=fr.result }; fr.readAsDataURL(file) });
+}
+function applyEd(){
+  const E=ed._E; if(E.teams.length<2) E.teams=['Команда 1','Команда 2'];
+  const teamsChanged = E.teams.length!==G.teams.length;
+  G=E; saveData(); if(teamsChanged) S.scores=G.teams.map(()=>0);
+  S.done={}; saveState();
+}
+function download(name,text,type){ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([text],{type})); a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),4000) }
+$('#bEdit').onclick=openEd;
+$('#eSave').onclick=()=>{ applyEd(); ed.classList.remove('on'); $('#edbar').classList.remove('on'); render(); toast('Сохранено, поле обновлено') };
+$('#eClose').onclick=()=>{ ed.classList.remove('on'); $('#edbar').classList.remove('on') };
+$('#eJson').onclick=()=>download('voprosy.json',JSON.stringify(ed._E,null,1),'application/json');
+$('#eImp').onchange=e=>{ const f=e.target.files[0]; if(!f) return; f.text().then(t=>{ try{ const d=JSON.parse(t); if(!d.cats) throw 0; ed._E=d; drawEd(); toast('Вопросы загружены — нажмите «Сохранить»') }catch(_){ toast('Это не файл вопросов') } }) };
+$('#eReset').onclick=()=>{ if(!confirm('Вернуть исходные вопросы? Ваши изменения в этом браузере удалятся.')) return; ed._E=JSON.parse(JSON.stringify(DEF)); drawEd() };
+$('#eDown').onclick=()=>{
+  const json=JSON.stringify(ed._E).replace(/</g,'\\u003c');
+  const html=SOURCE.replace(/(<script id="gamedata" type="application\/json">)[\s\S]*?(<\/script>)/, (_,a,b)=>a+'\n'+json+'\n'+b);
+  download((ed._E.title||'svoya-igra').replace(/[^\wа-яё -]/gi,'').trim().replace(/\s+/g,'-')+'.html',html,'text/html');
+  toast('Файл игры скачан');
+};
+
+/* ---------- демо-режим для скриншотов: #q=0-2, #edit, #final ---------- */
+load(); render();
+const hsh=location.hash.slice(1);
+if(hsh.startsWith('q=')) openQ(hsh.slice(2));
+if(hsh.startsWith('a=')){ openQ(hsh.slice(2)); showAns() }
+if(hsh==='edit') openEd();
+if(hsh==='final'){ S.scores=[2300,1800,1200]; final() }
+})();
+</script>
+</body>
+</html>
