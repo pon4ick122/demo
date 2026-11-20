@@ -26,7 +26,7 @@ nav .links a{text-decoration:none}nav .links a:hover{color:var(--sand)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 26px;border-radius:14px;font:600 15px "Golos Text",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:.2s}
 .btn.c{background:var(--cu);color:#1b120b}.btn.c:hover{background:var(--cu2)}
 .btn.o{box-shadow:inset 0 0 0 1px var(--line);color:var(--sand);background:transparent}.btn.o:hover{box-shadow:inset 0 0 0 1px var(--cu)}
-.btn.tg{background:#2aabee;color:#fff}.btn.tg:hover{background:#229ed9}
+.btn.tg{background:#25d366;color:#fff}.btn.tg:hover{background:#1fb956}
 .btn.sm{padding:11px 18px;font-size:14px}
 .btn svg{width:18px;height:18px}
 
@@ -202,7 +202,7 @@ footer{color:var(--mute);padding:34px 5vw 110px;font-size:13px;display:flex;just
 <section id="build">
  <span class="kick cap">Конструктор сеанса</span>
  <h2>Соберите <em>свой</em> массаж</h2>
- <p class="sub">Выберите силу нажима и задачу — подскажем массаж, добавьте доп. услуги и сразу увидите итог по цене и времени. Заявка уйдёт в Telegram студии.</p>
+ <p class="sub">Выберите силу нажима и задачу — подскажем массаж, добавьте доп. услуги и сразу увидите итог по цене и времени. Заявка уйдёт в WhatsApp студии.</p>
  <div class="bgrid">
   <div class="panel rv">
    <div class="step"><h3><i>1</i>Сила нажима</h3>
@@ -219,8 +219,8 @@ footer{color:var(--mute);padding:34px 5vw 110px;font-size:13px;display:flex;just
    <p id="r-p"></p>
    <div class="lines" id="lines"></div>
    <div class="tot"><b id="r-t"></b><span id="r-m"></span></div>
-   <button class="btn tg" id="send"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.3z"/></svg>Записаться в Telegram</button>
-   <p class="note">Текст заявки скопируется — просто вставьте его в чат</p>
+   <button class="btn tg" id="send"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>Записаться в WhatsApp</button>
+   <p class="note">Откроется чат с готовым текстом заявки</p>
   </aside>
  </div>
 </section>
@@ -294,14 +294,14 @@ footer{color:var(--mute);padding:34px 5vw 110px;font-size:13px;display:flex;just
    <div><span class="cap">Адрес</span><p>Измайловский проспект, 5/1к3</p><small>370 м от остановки «Измайловский проезд» · своя парковка</small></div>
    <div><span class="cap">Время работы</span><p>Ежедневно 08:30–21:00</p></div>
    <div><span class="cap">Телефон</span><p><a href="tel:+79261757595">+7 926 175-75-95</a></p></div>
-   <div><span class="cap">Telegram</span><p><a href="https://t.me/studia_massazha" target="_blank" rel="noopener">@studia_massazha</a></p></div>
+   <div><span class="cap">WhatsApp</span><p><a href="https://wa.me/79261757595" target="_blank" rel="noopener">Написать в WhatsApp</a></p></div>
    <a class="btn o" href="#build">Собрать сеанс</a>
   </div>
  </div>
 </section>
 
 <footer><span class="u" style="font-weight:800;color:var(--sand)">СТУДИЯ МАССАЖА</span><span>Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></footer>
-<a class="fab" href="https://t.me/studia_massazha" target="_blank" rel="noopener">Telegram</a>
+<a class="fab" style="background:#25d366" href="https://wa.me/79261757595" target="_blank" rel="noopener">WhatsApp</a>
 <div class="demo">Демо-версия сайта</div>
 <div class="toast" id="toast">Текст заявки скопирован — вставьте его в чат</div>
 
@@ -309,7 +309,7 @@ footer{color:var(--mute);padding:34px 5vw 110px;font-size:13px;display:flex;just
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
 <script>
-const TG='studia_massazha';
+const WA='79261757595';
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fmt=n=>n.toLocaleString('ru-RU').replace(/\s/g,' ')+' ₽';
 const M={
@@ -354,7 +354,7 @@ PR.style.setProperty('--v',(PR.value-1)/9*100+'%');
 document.getElementById('goal').onclick=e=>{const b=e.target.closest('[data-g]');if(b){st.goal=b.dataset.g;render(true);}};
 document.getElementById('dur').onclick=e=>{const b=e.target.closest('[data-d]');if(b){st.dur=+b.dataset.d;render(true);}};
 document.getElementById('adds').onchange=e=>{const i=e.target;if(i.checked)st.adds.add(i.value);else st.adds.delete(i.value);render(true);};
-function toTG(text){(async()=>{try{await navigator.clipboard.writeText(text);}catch(e){}})();const t=document.getElementById('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3200);setTimeout(()=>window.open('https://t.me/'+TG,'_blank'),500);}
+function toTG(text){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(text),'_blank');}
 document.getElementById('send').onclick=()=>toTG(st.text);
 render(false);
 
