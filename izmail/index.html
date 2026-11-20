@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Студия массажа — Измайловский проспект, 5/1к3</title>
+<meta name="description" content="Студия массажа в Измайлове: классический, спортивный, лимфодренажный, антицеллюлитный, медовый массаж и массаж лица. Ежедневно 08:30–21:00. 5,0 на Яндекс Картах, «Хорошее место 2026».">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#131211;--bg2:#1b1917;--card:#211e1b;--line:#34302b;--cu:#d48c4f;--cu2:#f0b27a;--sand:#efe4d6;--mute:#a1978b;--ink:#efe4d6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:"Golos Text",system-ui,sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.u{font-family:Unbounded,sans-serif}
+.cap{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:rgba(19,18,17,.72);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+.logo{text-decoration:none;display:flex;align-items:center;gap:12px}
+.logo i{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--cu2),var(--cu) 55%,#7a4520);box-shadow:0 0 24px rgba(212,140,79,.45)}
+.logo b{font:800 15px Unbounded;letter-spacing:.08em}
+.logo small{display:block;font-size:10.5px;color:var(--mute);letter-spacing:.14em;text-transform:uppercase}
+nav .links{display:flex;gap:28px;font-size:14px;color:var(--mute)}
+nav .links a{text-decoration:none}nav .links a:hover{color:var(--sand)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 26px;border-radius:14px;font:600 15px "Golos Text",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:.2s}
+.btn.c{background:var(--cu);color:#1b120b}.btn.c:hover{background:var(--cu2)}
+.btn.o{box-shadow:inset 0 0 0 1px var(--line);color:var(--sand);background:transparent}.btn.o:hover{box-shadow:inset 0 0 0 1px var(--cu)}
+.btn.tg{background:#2aabee;color:#fff}.btn.tg:hover{background:#229ed9}
+.btn.sm{padding:11px 18px;font-size:14px}
+.btn svg{width:18px;height:18px}
+
+.hero{position:relative;min-height:100vh;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;padding:120px 5vw 70px;overflow:hidden}
+#skin{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(19,18,17,.85) 0%,rgba(19,18,17,.35) 55%,rgba(19,18,17,.1));z-index:1;pointer-events:none}
+.hero>div{position:relative;z-index:2}
+.hero .k{color:var(--cu);display:flex;gap:12px;align-items:center;margin-bottom:26px}
+.hero .k:before{content:"";width:36px;height:1px;background:var(--cu)}
+h1{font:800 clamp(38px,5.6vw,92px)/.98 Unbounded;letter-spacing:-.02em;text-transform:uppercase}
+h1 .ln{display:block;overflow:hidden;padding:.03em 0}h1 .ln>span{display:inline-block}
+h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--cu2)}
+.lead{font-size:clamp(16px,1.3vw,18.5px);line-height:1.65;color:var(--mute);max-width:520px;margin:28px 0 32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;gap:40px;margin-top:46px;flex-wrap:wrap}
+.facts div{font-size:13px;color:var(--mute)}
+.facts b{display:block;font:600 32px Unbounded;color:var(--sand);margin-bottom:4px}
+.hph{justify-self:end;width:min(100%,380px);border-radius:28px;overflow:hidden;position:relative;box-shadow:0 50px 80px -40px rgba(0,0,0,.9);border:1px solid rgba(255,255,255,.08)}
+.hph img{width:100%;aspect-ratio:3/4.4;object-fit:cover}
+.hph span{position:absolute;left:14px;bottom:14px;right:14px;background:rgba(19,18,17,.78);backdrop-filter:blur(8px);border-radius:14px;padding:12px 14px;font-size:13px;color:var(--mute)}
+.hph span b{display:block;color:var(--sand);font-size:14px}
+.tip{position:absolute;z-index:2;left:5vw;bottom:24px;font-size:12.5px;color:var(--mute);display:flex;gap:10px;align-items:center}
+.tip i{width:8px;height:8px;border-radius:50%;background:var(--cu);box-shadow:0 0 12px var(--cu);animation:p 1.6s infinite}
+@keyframes p{50%{opacity:.3}}
+
+.tape{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:20px 0;background:var(--bg2)}
+.tape div{display:inline-block;font:600 22px Unbounded;text-transform:uppercase;letter-spacing:.02em;will-change:transform}
+.tape span{color:var(--cu);margin:0 22px}
+
+section{padding:110px 5vw}
+h2{font:800 clamp(30px,4vw,60px)/1.02 Unbounded;text-transform:uppercase;letter-spacing:-.015em;margin-bottom:18px}
+h2 em{font-style:normal;color:var(--cu)}
+.sub{color:var(--mute);font-size:17px;line-height:1.65;max-width:620px;margin-bottom:46px}
+.kick{color:var(--cu);display:block;margin-bottom:16px}
+
+/* builder */
+.bgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:32px}
+.step{margin-bottom:32px}.step:last-child{margin-bottom:0}
+.step h3{font:600 14px Unbounded;letter-spacing:.04em;margin-bottom:16px;display:flex;gap:12px;align-items:center}
+.step h3 i{font-style:normal;width:26px;height:26px;border-radius:50%;border:1px solid var(--cu);color:var(--cu);display:grid;place-items:center;font-size:11px}
+.press{display:flex;align-items:center;gap:16px}
+.press output{font:800 34px Unbounded;color:var(--cu2);min-width:58px;text-align:right}
+input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:8px;border-radius:8px;background:linear-gradient(90deg,var(--cu) var(--v,60%),var(--line) var(--v,60%));outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:var(--sand);border:4px solid var(--cu);cursor:pointer;box-shadow:0 0 20px rgba(212,140,79,.5)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--sand);border:4px solid var(--cu);cursor:pointer}
+.pl{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mute);margin-top:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:transparent;border-radius:12px;padding:12px 16px;font:500 14.5px "Golos Text";cursor:pointer;color:var(--sand);transition:.15s}
+.chip:hover{border-color:var(--cu)}
+.chip.on{background:var(--cu);border-color:var(--cu);color:#1b120b}
+.adds{display:grid;gap:8px}
+.add{display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:16px;padding:14px 16px;cursor:pointer;transition:.15s}
+.add:hover{border-color:#5a4c3f}
+.add input{display:none}
+.add .bx{width:22px;height:22px;border-radius:7px;border:1.5px solid var(--mute);display:grid;place-items:center;flex:none;transition:.15s}
+.add .bx:after{content:"";width:10px;height:6px;border:2px solid #1b120b;border-top:0;border-right:0;transform:rotate(-45deg) translateY(-1px);opacity:0}
+.add input:checked~.bx{background:var(--cu);border-color:var(--cu)}
+.add input:checked~.bx:after{opacity:1}
+.add:has(input:checked){border-color:var(--cu);background:rgba(212,140,79,.07)}
+.add div{flex:1}.add b{font-weight:600;display:block}.add small{color:var(--mute);font-size:13px}
+.add em{font:600 15px Unbounded;font-style:normal;color:var(--cu2);white-space:nowrap}
+.rcpt{position:sticky;top:96px;background:var(--sand);color:#1d1712;border-radius:28px;padding:30px;overflow:hidden}
+.rcpt:before{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(212,140,79,.45),transparent 70%)}
+.rcpt>*{position:relative}
+.rcpt .cap{color:#9a5a28}
+.rcpt h4{font:800 26px/1.1 Unbounded;text-transform:uppercase;margin:12px 0 8px}
+.rcpt p{color:#5b5046;line-height:1.55;font-size:15px}
+.lines{margin:20px 0 6px;border-top:1px dashed #b9a893;padding-top:12px;display:grid;gap:8px;font-size:14.5px}
+.lines div{display:flex;justify-content:space-between;gap:10px}
+.tot{display:flex;justify-content:space-between;align-items:baseline;border-top:1px dashed #b9a893;padding-top:14px;margin-top:10px}
+.tot b{font:800 34px Unbounded}
+.tot span{color:#5b5046;font-size:14px}
+.rcpt .btn{width:100%;margin-top:18px}
+.rcpt .note{font-size:12px;color:#7b6e61;margin-top:10px;text-align:center}
+.rcpt.fl{animation:fl .4s}
+@keyframes fl{from{transform:translateY(4px);opacity:.75}to{transform:none;opacity:1}}
+
+/* masters */
+.ms{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.m{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:32px;display:grid;gap:14px;align-content:start}
+.m .ini{width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,var(--cu2),#8b4d22);display:grid;place-items:center;font:800 26px Unbounded;color:#1b120b}
+.m h3{font:800 26px Unbounded;text-transform:uppercase}
+.m p{color:var(--mute);line-height:1.6}
+.m q{border-left:2px solid var(--cu);padding-left:16px;line-height:1.55;font-size:16.5px;quotes:none}
+.m q small{display:block;color:var(--mute);font-size:13px;margin-top:6px}
+
+/* before/after + gallery */
+.ba{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+.ba figure{border-radius:28px;overflow:hidden;border:1px solid var(--line)}
+.mos{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px}
+.mos figure{border-radius:20px;overflow:hidden;position:relative}
+.mos figure.t{grid-row:span 2}.mos figure.w{grid-column:span 2}
+.mos img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s;filter:saturate(.85)}
+.mos figure:hover img{transform:scale(1.06);filter:saturate(1.05)}
+.mos figcaption{position:absolute;left:12px;bottom:12px;background:rgba(19,18,17,.78);border-radius:10px;padding:6px 11px;font-size:12.5px}
+
+/* prices */
+.prl{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.pi{display:flex;gap:16px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+.pi div{flex:1}.pi b{font-weight:600;font-size:17px}
+.pi small{display:block;color:var(--mute);font-size:13.5px;margin-top:4px;line-height:1.45}
+.pi em{font-style:normal;color:var(--mute);font-size:13px;white-space:nowrap}
+.pi span{font:600 19px Unbounded;color:var(--cu2);white-space:nowrap}
+
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px}
+.rev .st{color:var(--cu);letter-spacing:3px;font-size:13px}
+.rev p{font-size:16px;line-height:1.6;margin:12px 0 14px}
+.rev span{font-size:13px;color:var(--mute)}
+
+.where{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.where .map{border-radius:28px;overflow:hidden;min-height:400px;background:var(--bg2);border:1px solid var(--line)}
+.where iframe{width:100%;height:100%;min-height:400px;border:0;filter:grayscale(.6) invert(.9) hue-rotate(180deg) contrast(.9)}
+.where .info{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:34px;display:grid;gap:22px;align-content:start}
+.where .info .cap{color:var(--cu)}
+.where .info p{font-size:18px;font-weight:600;margin-top:6px}
+.where .info small{color:var(--mute)}
+footer{color:var(--mute);padding:34px 5vw 110px;font-size:13px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line)}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;background:#2aabee;color:#fff;border-radius:50px;padding:14px 18px;font-weight:600;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.4);font-size:15px}
+.demo{position:fixed;left:16px;bottom:16px;z-index:30;background:#fff;color:#000;font-size:12px;padding:8px 12px;border-radius:6px;opacity:.85}
+.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%) translateY(160px);background:var(--sand);color:#1b120b;padding:14px 20px;border-radius:14px;font-size:14px;z-index:40;transition:transform .3s;max-width:92vw;text-align:center;font-weight:500}
+.toast.on{transform:translateX(-50%)}
+.rv{opacity:0;transform:translateY(28px)}
+
+@media(max-width:980px){
+ nav .links{display:none}
+ .hero{grid-template-columns:1fr;padding:96px 16px 70px;min-height:auto}
+ .hero:after{background:linear-gradient(180deg,rgba(19,18,17,.5),rgba(19,18,17,.85))}
+ .hph{justify-self:start;width:100%;max-width:420px}
+ .hph img{aspect-ratio:4/3.4;object-position:50% 30%}
+ .tip{left:16px}
+ .bgrid,.ms,.ba,.where,.prl{grid-template-columns:1fr}
+ .rcpt{position:static}
+ .revs{grid-template-columns:1fr}
+ .mos{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+ .mos figure.w{grid-column:span 2}
+ section{padding:76px 16px}
+ .panel{padding:22px}
+ nav{padding:10px 16px}
+ footer{padding:30px 16px 100px}
+}
+@media(max-width:980px){.hero>div{min-width:0}.hero .k{flex-wrap:wrap;letter-spacing:.14em}h1{font-size:min(7vw,52px)}}
+@media(max-width:480px){.facts{gap:24px}.facts b{font-size:26px}.rcpt{padding:24px}.tot b{font-size:28px}.logo small{display:none}.press output{font-size:28px;min-width:46px}}
+</style>
+</head>
+<body>
+<nav>
+ <a class="logo" href="#top"><i></i><span><b>СТУДИЯ МАССАЖА</b><small>Измайловский проспект</small></span></a>
+ <div class="links"><a href="#build">Сеанс</a><a href="#masters">Мастера</a><a href="#prices">Цены</a><a href="#where">Контакты</a></div>
+ <a class="btn c sm" href="#build">Записаться</a>
+</nav>
+
+<header class="hero" id="top">
+ <canvas id="skin" aria-hidden="true"></canvas>
+ <div>
+  <div class="k cap">Измайлово · ежедневно 08:30–21:00</div>
+  <h1><span class="ln"><span>Почувствуйте</span></span><span class="ln"><span><em>силу</em></span></span><span class="ln"><span>прикосновения</span></span></h1>
+  <p class="lead">Проминающий классический, спортивный, лимфодренажный и антицеллюлитный массаж. Мастера находят триггерные точки, работают с силой, которую вы выбираете, и снимают боль уже с первого сеанса.</p>
+  <div class="btns"><a class="btn c" href="#build">Собрать сеанс</a><a class="btn o" href="#prices">Цены</a></div>
+  <div class="facts">
+   <div><b>5,0</b>110 оценок на Яндекс Картах</div>
+   <div><b>2026</b>«Хорошее место»</div>
+   <div><b>3 500 ₽</b>час массажа</div>
+  </div>
+ </div>
+ <div class="hph"><img src="img/hero.jpg" alt="Массажист студии за работой"><span><b>«Ощущение, что позвоночник перебрали и сложили заново»</b>Ирина Д., отзыв на Яндекс Картах</span></div>
+ <div class="tip"><i></i>Проведите курсором по фону — так работает нажим</div>
+</header>
+
+<div class="tape"><div id="tape"></div></div>
+
+<section id="build">
+ <span class="kick cap">Конструктор сеанса</span>
+ <h2>Соберите <em>свой</em> массаж</h2>
+ <p class="sub">Выберите силу нажима и задачу — подскажем массаж, добавьте доп. услуги и сразу увидите итог по цене и времени. Заявка уйдёт в Telegram студии.</p>
+ <div class="bgrid">
+  <div class="panel rv">
+   <div class="step"><h3><i>1</i>Сила нажима</h3>
+    <div class="press"><input type="range" id="pr" min="1" max="10" value="6" aria-label="Сила нажима"><output id="pv">6</output></div>
+    <div class="pl"><span>нежно, расслабиться</span><span>глубоко, «промять»</span></div>
+   </div>
+   <div class="step"><h3><i>2</i>Задача</h3><div class="chips" id="goal"></div></div>
+   <div class="step"><h3><i>3</i>Длительность</h3><div class="chips" id="dur"><button class="chip on" data-d="60">1 час</button><button class="chip" data-d="90">1,5 часа · 5 000 ₽</button></div></div>
+   <div class="step"><h3><i>4</i>Добавить к сеансу</h3><div class="adds" id="adds"></div></div>
+  </div>
+  <aside class="rcpt rv" id="rcpt">
+   <span class="cap">Ваш сеанс</span>
+   <h4 id="r-h"></h4>
+   <p id="r-p"></p>
+   <div class="lines" id="lines"></div>
+   <div class="tot"><b id="r-t"></b><span id="r-m"></span></div>
+   <button class="btn tg" id="send"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.3z"/></svg>Записаться в Telegram</button>
+   <p class="note">Текст заявки скопируется — просто вставьте его в чат</p>
+  </aside>
+ </div>
+</section>
+
+<div class="tape"><div id="tape2"></div></div>
+
+<section id="masters">
+ <span class="kick cap">Мастера</span>
+ <h2>К ним <em>приезжают</em> из других районов</h2>
+ <p class="sub">Внимательно расспрашивают, что беспокоит, подстраивают силу и технику прямо во время сеанса и не навязывают лишних процедур.</p>
+ <div class="ms">
+  <div class="m rv"><div class="ini">Ю</div><h3>Юлия</h3><p>Классический, антицеллюлитный и восстановительный массаж. Сильные руки — «если нужно хорошо промять», — и бережный подход. Для курса по фигуре делает замеры объёмов.</p><q>Юлия — лучший мастер, приезжаю специально к ней из другого района.<small>Лиана Л., Яндекс Карты</small></q></div>
+  <div class="m rv"><div class="ini">Д</div><h3>Дмитрий</h3><p>Спортивный массаж, триггерные точки, острые боли в шее и спине. Прислушивается к ощущениям клиента и объясняет, что делает.</p><q>Пришла с защемлением шеи — Дмитрий снял острую боль за один сеанс.<small>Татьяна Л., Яндекс Карты</small></q></div>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <div class="ba">
+  <div class="rv">
+   <span class="kick cap">Результат</span>
+   <h2>Спина <em>до</em> и <em>после</em></h2>
+   <p class="sub" style="margin-bottom:24px">Фото из студии: после проработки уходит застой и отёчность, мышцы «оживают». Для фигуры — курсы антицеллюлитного и медового массажа с замерами.</p>
+   <a class="btn c" href="#build">Подобрать массаж</a>
+  </div>
+  <figure class="rv"><img src="img/ba.jpg" alt="Спина до и после массажа" loading="lazy"></figure>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <span class="kick cap">Студия</span>
+ <h2>Всё для <em>глубокой</em> работы</h2>
+ <p class="sub">Классика руками, банки, древотерапия и аппаратный массаж. Своя парковка и Wi-Fi.</p>
+ <div class="mos">
+  <figure class="t rv"><img src="img/room.jpg" alt="Кабинет" loading="lazy"><figcaption>Кабинет</figcaption></figure>
+  <figure class="w rv"><img src="img/deep.jpg" alt="Проработка спины" loading="lazy"><figcaption>Проработка спины</figcaption></figure>
+  <figure class="t rv"><img src="img/wood.jpg" alt="Древотерапия" loading="lazy"><figcaption>Древотерапия</figcaption></figure>
+  <figure class="rv"><img src="img/cups.jpg" alt="Баночный массаж" loading="lazy"><figcaption>Баночный</figcaption></figure>
+  <figure class="rv"><img src="img/legs.jpg" alt="Массаж ног" loading="lazy"><figcaption>Лимфодренаж</figcaption></figure>
+  <figure class="w rv"><img src="img/press.jpg" alt="Классический массаж" loading="lazy"><figcaption>Классический</figcaption></figure>
+  <figure class="rv"><img src="img/oils.jpg" alt="Масла" loading="lazy"><figcaption>Масла</figcaption></figure>
+  <figure class="rv"><img src="img/apparat.jpg" alt="Аппарат для массажа" loading="lazy"><figcaption>Аппаратный массаж</figcaption></figure>
+ </div>
+</section>
+
+<section id="prices" style="padding-top:0">
+ <span class="kick cap">Цены</span>
+ <h2>Час массажа — <em>3 500 ₽</em></h2>
+ <p class="sub">Любой массаж на 1,5 часа — 5 000 ₽. Цены с Яндекс Карт, обновлены студией 30 сентября.</p>
+ <div class="prl" id="prl"></div>
+</section>
+
+<section style="padding-top:0">
+ <span class="kick cap">Отзывы · 5,0 · 79 отзывов</span>
+ <h2>«Новый <em>человек</em>»</h2>
+ <div class="revs" style="margin-top:36px">
+  <div class="rev rv"><div class="st">★★★★★</div><p>Это лучший массаж за все мои походы по массажам — а салонов было пройдено огромное количество. Сочетание тёплых рук и правильной силы.</p><span>Александр · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Хожу на антицеллюлитный и ни разу не пожалела. Уже после первых сеансов кожа стала упругой, ушла отёчность, тело подтянутое.</p><span>Даниэла М. · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Застудил спину, осталось напряжение. Юлия сняла все зажимы и сделала спину как новую. Огромное спасибо!</p><span>Андрей К. · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Во время массажа мы вместе корректировали и силу, и технику — в зависимости от того, как отзывается тело. Очень рекомендую.</p><span>Светлана К. · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Прорабатывает все триггерные точки, под любого подстроится, чтобы было комфортно. Третью неделю приезжаю — не хочу расставаться!</p><span>Мария Смирнова · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Индивидуальный подход, уверенность в своём деле, бережное отношение и главное — облегчение боли уже после первого сеанса.</p><span>Yana T. · Яндекс Карты</span></div>
+ </div>
+</section>
+
+<section id="where" style="padding-top:0">
+ <span class="kick cap">Контакты</span>
+ <h2>Как <em>добраться</em></h2>
+ <div class="where" style="margin-top:30px">
+  <div class="map"><iframe title="Карта" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=37.764474%2C55.798268&z=16&pt=37.764474,55.798268,pm2orm"></iframe></div>
+  <div class="info">
+   <div><span class="cap">Адрес</span><p>Измайловский проспект, 5/1к3</p><small>370 м от остановки «Измайловский проезд» · своя парковка</small></div>
+   <div><span class="cap">Время работы</span><p>Ежедневно 08:30–21:00</p></div>
+   <div><span class="cap">Телефон</span><p><a href="tel:+79261757595">+7 926 175-75-95</a></p></div>
+   <div><span class="cap">Telegram</span><p><a href="https://t.me/studia_massazha" target="_blank" rel="noopener">@studia_massazha</a></p></div>
+   <a class="btn o" href="#build">Собрать сеанс</a>
+  </div>
+ </div>
+</section>
+
+<footer><span class="u" style="font-weight:800;color:var(--sand)">СТУДИЯ МАССАЖА</span><span>Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></footer>
+<a class="fab" href="https://t.me/studia_massazha" target="_blank" rel="noopener">Telegram</a>
+<div class="demo">Демо-версия сайта</div>
+<div class="toast" id="toast">Текст заявки скопирован — вставьте его в чат</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+const TG='studia_massazha';
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fmt=n=>n.toLocaleString('ru-RU').replace(/\s/g,' ')+' ₽';
+const M={
+ classic:{n:'Классический массаж',d:'Проминающий: техники классического и спортивного массажа. Разминает мышцы, улучшает кровообращение, уменьшает боль и возвращает гибкость.',p:3500,t:60},
+ sport:{n:'Спортивный массаж',d:'Снятие боли и восстановление мышц после нагрузок.',p:3500,t:60},
+ lymph:{n:'Лимфодренажный массаж',d:'Борьба с отёками и тяжестью, оздоровление.',p:3500,t:60},
+ cell:{n:'Антицеллюлитный массаж',d:'Избавление от целлюлита, подтяжка кожи и тела. Лучше всего работает курсом.',p:3500,t:60},
+ honey:{n:'Медовый массаж',d:'Уменьшение жировой прослойки, тонус кожи.',p:3500,t:60},
+ face:{n:'Массаж лица',d:'Расслабляет мышцы лица, возвращает здоровый цвет и улучшает тонус кожи.',p:1800,t:30}
+};
+const ADD={trig:{n:'Работа с триггерными точками',s:'Проработка мышц, избавление от боли',p:2000,t:30},cup:{n:'Баночный массаж',s:'Лимфоток, боль, тонус кожи',p:2000,t:30},feet:{n:'Массаж стоп',s:'Снимает напряжение и тяжесть в ногах',p:1500,t:20}};
+const G=[['pain','Боль и зажимы'],['relax','Расслабиться'],['sport','После спорта'],['fig','Фигура'],['edema','Отёки'],['face','Лицо']];
+const st={press:6,goal:'pain',dur:60,adds:new Set()};
+document.getElementById('goal').innerHTML=G.map(([k,n])=>`<button class="chip ${k===st.goal?'on':''}" data-g="${k}">${n}</button>`).join('');
+document.getElementById('adds').innerHTML=Object.entries(ADD).map(([k,a])=>`<label class="add"><input type="checkbox" value="${k}"><span class="bx"></span><div><b>${a.n}</b><small>${a.s} · ${a.t} мин</small></div><em>+${fmt(a.p)}</em></label>`).join('');
+function pick(){const{press:p,goal:g}=st;
+ if(g==='face')return'face';if(g==='edema')return'lymph';if(g==='sport')return'sport';
+ if(g==='fig')return p>=6?'cell':'honey';return'classic';}
+function note(k){const p=st.press;
+ if(k==='classic'&&st.goal==='relax')return' Нажим '+p+'/10 — мастер будет работать мягко, в спокойном темпе.';
+ if(k==='classic'&&p>=7)return' Нажим '+p+'/10 — глубокая проработка, советуем добавить триггерные точки.';
+ return' Нажим '+p+'/10 — мастер подстроит силу по ходу сеанса.';}
+function render(anim){
+ const k=pick(),m=M[k],face=k==='face';
+ document.getElementById('dur').style.opacity=face?.4:1;document.getElementById('dur').style.pointerEvents=face?'none':'';
+ const base=face?{p:m.p,t:m.t}:(st.dur===90?{p:5000,t:90}:{p:m.p,t:m.t});
+ const L=[[m.n+(face?'':st.dur===90?', 1,5 ч':', 1 ч'),base.p]];let sum=base.p,tm=base.t;
+ st.adds.forEach(a=>{L.push([ADD[a].n,ADD[a].p]);sum+=ADD[a].p;tm+=ADD[a].t;});
+ document.getElementById('r-h').textContent=m.n;
+ document.getElementById('r-p').textContent=m.d+note(k);
+ document.getElementById('lines').innerHTML=L.map(([n,p])=>`<div><span>${n}</span><span>${fmt(p)}</span></div>`).join('');
+ document.getElementById('r-t').textContent=fmt(sum);
+ const h=Math.floor(tm/60),mm=tm%60;document.getElementById('r-m').textContent='≈ '+(h?h+' ч ':'')+(mm?mm+' мин':'');
+ document.querySelectorAll('#goal .chip').forEach(b=>b.classList.toggle('on',b.dataset.g===st.goal));
+ document.querySelectorAll('#dur .chip').forEach(b=>b.classList.toggle('on',+b.dataset.d===st.dur));
+ st.text=`Здравствуйте! Хочу записаться: ${L.map(([n,p])=>n+' — '+fmt(p)).join('; ')}.\nИтого ${fmt(sum)}, нажим ${st.press}/10.\nПодскажите, когда есть свободное время?\n(заявка с сайта)`;
+ if(anim){const r=document.getElementById('rcpt');r.classList.remove('fl');void r.offsetWidth;r.classList.add('fl');}
+}
+const PR=document.getElementById('pr');
+PR.addEventListener('input',()=>{st.press=+PR.value;document.getElementById('pv').textContent=PR.value;PR.style.setProperty('--v',(PR.value-1)/9*100+'%');window.setPress&&window.setPress(st.press);render(false);});
+PR.style.setProperty('--v',(PR.value-1)/9*100+'%');
+document.getElementById('goal').onclick=e=>{const b=e.target.closest('[data-g]');if(b){st.goal=b.dataset.g;render(true);}};
+document.getElementById('dur').onclick=e=>{const b=e.target.closest('[data-d]');if(b){st.dur=+b.dataset.d;render(true);}};
+document.getElementById('adds').onchange=e=>{const i=e.target;if(i.checked)st.adds.add(i.value);else st.adds.delete(i.value);render(true);};
+function toTG(text){(async()=>{try{await navigator.clipboard.writeText(text);}catch(e){}})();const t=document.getElementById('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3200);setTimeout(()=>window.open('https://t.me/'+TG,'_blank'),500);}
+document.getElementById('send').onclick=()=>toTG(st.text);
+render(false);
+
+/* прайс */
+const PL=[['Классический массаж','Проминающий: классика + спортивные техники',60,3500],['Спортивный массаж','Снятие боли и оздоровление мышц',60,3500],['Лимфодренажный массаж','Борьба с отёками и оздоровление',60,3500],['Антицеллюлитный массаж','Подтяжка кожи и тела',60,3500],['Медовый массаж','Уменьшение жировой прослойки, тонус кожи',60,3500],['Массаж на выбор, 1,5 часа','Любой массаж из списка',90,5000],['Массаж лица','Тонус и здоровый цвет кожи',30,1800],['+ Триггерные точки','Доп. услуга: проработка мышц, избавление от боли',30,2000],['+ Баночный массаж','Доп. услуга: лимфоток, тонус кожи',30,2000],['+ Массаж стоп','Доп. услуга: снимает тяжесть в ногах',20,1500]];
+document.getElementById('prl').innerHTML=PL.map(([n,s,t,p])=>`<div class="pi rv"><div><b>${n}</b><small>${s}</small></div><em>${t} мин</em><span>${fmt(p)}</span></div>`).join('');
+
+/* ленты */
+const words=['Классический','Спортивный','Лимфодренаж','Антицеллюлитный','Медовый','Баночный','Триггерные точки','Массаж лица'];
+document.getElementById('tape').innerHTML=(words.join('<span>●</span>')+'<span>●</span>').repeat(4);
+document.getElementById('tape2').innerHTML=('5,0 на Яндекс Картах<span>●</span>Хорошее место 2026<span>●</span>Ежедневно 08:30–21:00<span>●</span>Своя парковка<span>●</span>').repeat(4);
+
+/* 3D: поверхность, продавливающаяся под «рукой» */
+(function(){
+ const c=document.getElementById('skin');if(!window.THREE)return;
+ let r;try{r=new THREE.WebGLRenderer({canvas:c,antialias:true});}catch(e){return;}
+ r.setPixelRatio(Math.min(devicePixelRatio,1.75));r.setClearColor(0x131211);
+ const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(38,1,.1,100);cam.position.set(0,-5.4,6.2);cam.lookAt(0,0,0);
+ sc.add(new THREE.AmbientLight(0x3a2c22,.9));
+ const key=new THREE.DirectionalLight(0xffe0c4,.55);key.position.set(-3,2,5);sc.add(key);
+ const cu=new THREE.PointLight(0xd48c4f,2.2,9,1.6);sc.add(cu);
+ const mob=innerWidth<700,SX=mob?90:170,SY=mob?70:120;
+ const geo=new THREE.PlaneGeometry(16,12,SX,SY),pos=geo.attributes.position,base=pos.array.slice();
+ const mat=new THREE.MeshStandardMaterial({color:0x5a4537,roughness:.5,metalness:.15});
+ const mesh=new THREE.Mesh(geo,mat);sc.add(mesh);
+ const ray=new THREE.Raycaster(),ndc=new THREE.Vector2(),hit=new THREE.Vector3(),plane=new THREE.Plane(new THREE.Vector3(0,0,1),0);
+ let tx=2.5,ty=.5,hx=2.5,hy=.5,depth=0,tDepth=.9,user=false;
+ window.setPress=p=>{tDepth=.25+p*.14;};window.setPress(6);
+ function size(){const w=c.clientWidth,h=c.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}
+ size();addEventListener('resize',size);
+ c.parentElement.addEventListener('pointermove',e=>{const b=c.getBoundingClientRect();ndc.set((e.clientX-b.left)/b.width*2-1,-(e.clientY-b.top)/b.height*2+1);ray.setFromCamera(ndc,cam);if(ray.ray.intersectPlane(plane,hit)){tx=hit.x;ty=hit.y;user=true;}});
+ c.parentElement.addEventListener('pointerleave',()=>user=false);
+ let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
+ const t0=performance.now();
+ (function loop(){requestAnimationFrame(loop);if(!vis)return;const t=(performance.now()-t0)/1000;
+  if(!user&&!reduce){tx=2.6+Math.sin(t*.45)*2.2;ty=.3+Math.sin(t*.7)*1.3;}
+  hx+=(tx-hx)*.08;hy+=(ty-hy)*.08;depth+=(tDepth-depth)*.06;
+  const pulse=reduce?1:1+Math.sin(t*2.2)*.08,R=1.25+depth*.35;
+  for(let i=0;i<pos.count;i++){const x=base[i*3],y=base[i*3+1];
+   const dx=x-hx,dy=y-hy,d2=dx*dx+dy*dy;
+   const wave=reduce?0:Math.sin(x*.9+t*.6)*Math.cos(y*1.1+t*.4)*.12+Math.sin((x+y)*2.2+t)*.03;
+   const dent=-depth*pulse*Math.exp(-d2/(R*R));
+   const rim=depth*.22*Math.exp(-Math.pow(Math.sqrt(d2)-R*1.25,2)/.35);
+   pos.setZ(i,wave+dent+rim);}
+  pos.needsUpdate=true;geo.computeVertexNormals();
+  cu.position.set(hx-.6,hy-1.1,1.6);
+  r.render(sc,cam);})();
+})();
+
+/* motion */
+if(window.gsap&&window.ScrollTrigger&&!reduce){
+ gsap.registerPlugin(ScrollTrigger);
+ gsap.from('h1 .ln>span',{yPercent:110,duration:1.1,ease:'power4.out',stagger:.12,delay:.1});
+ gsap.from('.lead,.btns,.facts div',{opacity:0,y:18,duration:.8,stagger:.08,delay:.55});
+ gsap.from('.hph',{opacity:0,y:60,rotate:3,duration:1.3,ease:'power3.out',delay:.3});
+ document.querySelectorAll('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.85,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%'}}));
+ [['tape',-1],['tape2',1]].forEach(([id,dir])=>{const el=document.getElementById(id);let x=dir>0?-el.scrollWidth/4:0,v=0;ScrollTrigger.create({onUpdate:s=>{v=s.getVelocity()/500;}});
+  gsap.ticker.add(()=>{x+=dir*(0.6+Math.abs(v));v*=.9;const w=el.scrollWidth/4;if(-x>w)x+=w;if(x>0)x-=w;el.style.transform=`translateX(${x}px)`;});});
+}else document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none'});
+</script>
+</body>
+</html>
