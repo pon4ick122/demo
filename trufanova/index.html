@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Студия эстетики тела Натальи Труфановой — массаж в Солнцеве</title>
+<meta name="description" content="Студия эстетики тела Натальи Труфановой: классический, лимфодренажный, корректирующий массаж, массаж лица и СПА-обёртывания. Боровский проезд, 24, Солнцево. 5,0 на Яндекс Картах, «Хорошее место 2026».">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1ee;--bg2:#efe6e4;--card:#fffaf8;--plum:#4a2747;--plum2:#341a33;--lav:#b9a2cf;--lav2:#e6dcef;--rose:#c98f9b;--ink:#2b1f2a;--mute:#7c6f7b;--line:#e3d7d6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.serif{font-family:"Cormorant Garamond",serif}
+.cap{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 5vw;background:rgba(246,241,238,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--plum)}
+.mono{width:42px;height:42px;border-radius:50%;border:1px solid var(--lav);display:grid;place-items:center;font:italic 600 19px "Cormorant Garamond";letter-spacing:-.02em}
+.logo b{font:600 15px Manrope;letter-spacing:.04em;display:block}
+.logo small{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+nav .links{display:flex;gap:28px;font-size:14px;color:var(--mute)}
+nav .links a{text-decoration:none}nav .links a:hover{color:var(--plum)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:999px;font:600 15px Manrope,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:.2s}
+.btn.p{background:var(--plum);color:#fff}.btn.p:hover{background:var(--plum2)}
+.btn.o{box-shadow:inset 0 0 0 1px var(--lav);color:var(--plum);background:transparent}.btn.o:hover{box-shadow:inset 0 0 0 1.5px var(--plum)}
+.btn.wa{background:#25d366;color:#fff}.btn.wa:hover{background:#1fb956}
+.btn.sm{padding:10px 18px;font-size:14px}
+.btn svg{width:18px;height:18px}
+
+/* hero */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:110px 5vw 60px;position:relative}
+.hero .k{color:var(--rose);display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.hero .k:before{content:"";width:36px;height:1px;background:var(--rose)}
+h1{font-family:"Cormorant Garamond";font-weight:500;font-size:clamp(48px,6.4vw,104px);line-height:.95;letter-spacing:-.015em;color:var(--plum)}
+h1 .ln{display:block;overflow:hidden;padding:.02em 0 .08em}h1 .ln>span{display:inline-block}
+h1 em{font-style:italic;color:var(--rose)}
+.lead{font-size:clamp(16px,1.3vw,18.5px);line-height:1.65;color:var(--mute);max-width:500px;margin:26px 0 32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap}
+.facts div{font-size:13px;color:var(--mute);line-height:1.4}
+.facts b{display:block;font:500 40px/1.05 "Cormorant Garamond";color:var(--plum)}
+.vis{position:relative;height:min(78vh,700px);display:grid;place-items:center}
+.arch{position:absolute;right:4%;top:0;width:min(62%,380px);height:88%;border-radius:999px 999px 26px 26px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(74,39,71,.55)}
+.arch img{width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+#stones{position:absolute;left:-4%;bottom:-2%;width:62%;height:70%;z-index:2}
+.badge{position:absolute;left:6%;top:10%;z-index:3;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:14px 18px;display:flex;gap:12px;align-items:center;box-shadow:0 20px 40px -25px rgba(74,39,71,.4)}
+.badge i{width:38px;height:38px;border-radius:50%;background:var(--lav2);display:grid;place-items:center;font-style:normal;font-size:18px}
+.badge b{font-size:14px;display:block}.badge span{font-size:12px;color:var(--mute)}
+
+/* promo */
+.promo{background:var(--plum);color:#f4ecf3;overflow:hidden;white-space:nowrap;padding:18px 0}
+.promo div{display:inline-block;font:italic 500 26px "Cormorant Garamond";will-change:transform}
+.promo span{margin:0 22px;color:var(--lav)}
+
+section{padding:110px 5vw}
+h2{font-family:"Cormorant Garamond";font-weight:500;font-size:clamp(40px,4.8vw,72px);line-height:1;margin-bottom:16px;color:var(--plum);letter-spacing:-.01em}
+h2 em{font-style:italic;color:var(--rose)}
+.sub{color:var(--mute);font-size:17px;line-height:1.65;max-width:600px;margin-bottom:44px}
+.kick{color:var(--rose);display:block;margin-bottom:16px}
+
+/* body map */
+.mapw{background:var(--card);border:1px solid var(--line);border-radius:44px;margin:0 14px}
+.mgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:start}
+.fig{position:relative;background:radial-gradient(circle at 50% 40%,var(--lav2),transparent 70%);border-radius:30px;padding:10px 0;display:grid;place-items:center}
+.fig svg{width:100%;max-width:300px;height:auto;overflow:visible}
+.z{fill:#eadfe9;stroke:var(--lav);stroke-width:1.2;cursor:pointer;transition:fill .25s}
+.z:hover{fill:#dccbe6}
+.z.on{fill:var(--plum);stroke:var(--plum)}
+.pulse{fill:none;stroke:var(--rose);stroke-width:1.5;opacity:0;pointer-events:none}
+.fig .hint{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:12.5px;color:var(--mute)}
+.zl{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:11px 17px;font:600 14px Manrope;cursor:pointer;color:var(--ink);transition:.15s}
+.chip:hover{border-color:var(--lav)}
+.chip.on{background:var(--plum);border-color:var(--plum);color:#fff}
+.procs{display:grid;gap:10px;margin-bottom:22px}
+.pr{display:flex;justify-content:space-between;align-items:center;gap:14px;border:1px solid var(--line);background:#fff;border-radius:20px;padding:16px 18px;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:.2s}
+.pr:hover{border-color:var(--lav)}
+.pr.on{border-color:var(--plum);box-shadow:inset 0 0 0 1px var(--plum)}
+.pr b{font-size:16px;display:block}
+.pr small{color:var(--mute);font-size:13px}
+.pr span{font:500 24px "Cormorant Garamond";color:var(--plum);white-space:nowrap}
+.res{background:var(--plum);color:#f4ecf3;border-radius:30px;padding:28px;position:relative;overflow:hidden}
+.res:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;right:-110px;top:-120px;background:radial-gradient(circle,rgba(201,143,155,.5),transparent 70%)}
+.res>*{position:relative;z-index:1}
+.lvl{display:inline-flex;background:rgba(255,255,255,.1);border-radius:999px;padding:4px;margin-bottom:18px}
+.lvl button{border:0;background:transparent;color:#e7d9e6;padding:9px 16px;border-radius:999px;font:600 13px Manrope;cursor:pointer}
+.lvl button.on{background:#fff;color:var(--plum)}
+.lvl button[disabled]{opacity:.35;cursor:default}
+.res h3{font:500 36px/1.05 "Cormorant Garamond";margin-bottom:6px}
+.res .ds{color:#d7c6d6;font-size:14.5px;line-height:1.55;margin-bottom:16px}
+.durs{display:flex;gap:8px;flex-wrap:wrap}
+.durs button{flex:1;min-width:90px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#f4ecf3;border-radius:16px;padding:11px 10px;font:600 13px Manrope;cursor:pointer}
+.durs button b{display:block;font:500 26px "Cormorant Garamond"}
+.durs button.on{background:#f4ecf3;color:var(--plum);border-color:#f4ecf3}
+.first{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;padding:14px 16px;border-radius:16px;background:rgba(185,162,207,.18);font-size:14px}
+.first>span:last-child{text-align:right;white-space:nowrap}
+.first s{opacity:.6;display:block;font-size:13px}
+.first b{font:500 28px "Cormorant Garamond";color:#fff}
+.res .btn{width:100%;margin-top:16px}
+.res .note{font-size:12px;color:#c4b0c3;margin-top:10px;text-align:center}
+.res.fl{animation:fl .45s}
+@keyframes fl{from{transform:scale(.985);opacity:.7}to{transform:none;opacity:1}}
+
+/* prices */
+.ptab{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.plist{border-top:1px solid var(--line)}
+.prow{display:grid;grid-template-columns:1fr 130px 130px;gap:16px;padding:18px 4px;border-bottom:1px solid var(--line);align-items:baseline}
+.prow.h{color:var(--mute);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:12px 4px}
+.prow b{font-weight:600}
+.prow small{color:var(--mute);font-size:13px;margin-left:8px}
+.prow span{font:500 23px "Cormorant Garamond";color:var(--plum);text-align:right}
+.prow span.no{color:#c9bdc8;font-size:18px}
+.pfoot{color:var(--mute);font-size:13px;margin-top:16px}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tm{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:10px}
+.tm .av{width:60px;height:60px;border-radius:50%;background:var(--lav2);display:grid;place-items:center;font:italic 600 24px "Cormorant Garamond";color:var(--plum);margin-bottom:6px}
+.tm h3{font:500 30px "Cormorant Garamond";color:var(--plum)}
+.tm p{color:var(--mute);line-height:1.6;font-size:15px}
+.tm q{font:italic 500 19px/1.4 "Cormorant Garamond";color:var(--ink);border-top:1px solid var(--line);padding-top:14px;margin-top:auto}
+
+/* gallery */
+.gal{overflow:hidden;padding:0 0 110px}
+.gal .head{padding:0 5vw}
+.track{display:flex;gap:16px;padding:0 5vw;will-change:transform}
+.track figure{flex:0 0 auto;width:min(340px,72vw);position:relative}
+.track figure:nth-child(even){margin-top:60px}
+.track img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:24px}
+.track figcaption{font-size:13px;color:var(--mute);margin-top:10px}
+
+/* reviews */
+.revs{columns:3;column-gap:16px}
+.rev{break-inside:avoid;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px;margin-bottom:16px}
+.rev .st{color:var(--rose);letter-spacing:3px;font-size:13px}
+.rev p{font-size:16.5px;line-height:1.6;margin:12px 0 14px}
+.rev span{font-size:13px;color:var(--mute)}
+
+/* gift */
+.gift{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:var(--bg2);border-radius:44px;margin:0 14px}
+.card3d{aspect-ratio:1.6;border-radius:24px;background:linear-gradient(135deg,#5d3459,#2f172e);color:#f4ecf3;padding:30px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 40px 70px -30px rgba(52,26,51,.65);transition:transform .15s;position:relative;overflow:hidden;max-width:520px;width:100%;justify-self:center}
+.card3d:before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,30%) var(--my,20%),rgba(255,255,255,.22),transparent 50%)}
+.card3d .top{display:flex;justify-content:space-between;align-items:flex-start}
+.card3d .mono{border-color:rgba(255,255,255,.4);color:#fff}
+.card3d b{font:500 clamp(28px,3vw,40px)/1.05 "Cormorant Garamond"}
+.card3d small{letter-spacing:.26em;font-size:10.5px;opacity:.8;text-transform:uppercase}
+
+.where{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.where .map{border-radius:30px;overflow:hidden;min-height:380px;background:var(--bg2)}
+.where iframe{width:100%;height:100%;min-height:380px;border:0;filter:saturate(.55) hue-rotate(-10deg)}
+.where .info{background:var(--plum);color:#f4ecf3;border-radius:30px;padding:36px;display:grid;gap:20px;align-content:start}
+.where .info .cap{color:var(--lav)}
+.where .info p{font-size:18px;font-weight:600;margin-top:6px}
+.where .info small{color:#cdb9cc}
+footer{color:var(--mute);padding:34px 5vw 110px;font-size:13px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line)}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;background:#25d366;color:#fff;border-radius:50px;padding:14px 18px;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.22);font-size:15px}
+.demo{position:fixed;left:16px;bottom:16px;z-index:30;background:#000;color:#fff;font-size:12px;padding:8px 12px;border-radius:6px;opacity:.85}
+.rv{opacity:0;transform:translateY(28px)}
+
+@media(max-width:980px){
+ nav .links{display:none}
+ .hero{grid-template-columns:1fr;padding:92px 16px 50px;min-height:auto;gap:10px}
+ .vis{height:440px;order:-1}
+ .arch{right:6%;width:58%}
+ #stones{left:-6%;width:70%;height:64%}
+ .badge{left:2%;top:6%}
+ .mgrid,.gift,.where{grid-template-columns:1fr}
+ .team{grid-template-columns:1fr}
+ .revs{columns:1}
+ section{padding:74px 16px}
+ .gal{padding-bottom:74px}.gal .head,.track{padding:0 16px}
+ .mapw,.gift{margin:0;border-radius:30px}
+ .fig svg{max-width:220px}
+ nav{padding:10px 16px}
+ footer{padding:30px 16px 100px}
+ .prow{grid-template-columns:1fr 92px 92px;gap:8px}
+ .prow small{display:block;margin:2px 0 0}
+}
+@media(max-width:480px){.res{padding:22px}.res h3{font-size:31px}.facts{gap:22px}.facts b{font-size:34px}.logo b{font-size:13.5px}.logo small{display:none}.prow span{font-size:20px}.badge{padding:10px 12px}.badge i{display:none}}
+</style>
+</head>
+<body>
+<nav>
+ <a class="logo" href="#top"><span class="mono">НТ</span><span><b>Студия эстетики тела</b><small>Натальи Труфановой</small></span></a>
+ <div class="links"><a href="#map">Подбор</a><a href="#prices">Цены</a><a href="#team">Мастера</a><a href="#where">Контакты</a></div>
+ <a class="btn p sm" href="#map">Записаться</a>
+</nav>
+
+<header class="hero" id="top">
+ <div>
+  <div class="k cap">Солнцево · Боровский проезд, 24</div>
+  <h1><span class="ln"><span>Руки, к которым</span></span><span class="ln"><span><em>возвращаются</em></span></span><span class="ln"><span>годами</span></span></h1>
+  <p class="lead">Классический, лимфодренажный и корректирующий массаж, массаж лица и СПА-обёртывания на французской косметике Phytomer. Приходят с болью в спине — уходят «летая». Многие ходят всей семьёй.</p>
+  <div class="btns"><a class="btn p" href="#map">Подобрать массаж</a><a class="btn o" href="#prices">Цены</a></div>
+  <div class="facts">
+   <div><b>5,0</b>на Яндекс Картах</div>
+   <div><b>76</b>оценок</div>
+   <div><b>−20%</b>на первый визит</div>
+  </div>
+ </div>
+ <div class="vis">
+  <div class="arch"><img src="img/hero.jpg" alt="Массаж лица в студии" id="heroImg"></div>
+  <canvas id="stones" aria-hidden="true"></canvas>
+  <div class="badge"><i>🏆</i><div><b>Хорошее место 2026</b><span>награда Яндекс Карт</span></div></div>
+ </div>
+</header>
+
+<div class="promo"><div id="promo"></div></div>
+
+<section class="mapw" id="map">
+ <span class="kick cap">Подбор за 20 секунд</span>
+ <h2>Где <em>болит</em> или устало?</h2>
+ <p class="sub">Нажмите на зону — покажем подходящие процедуры и цены студии. Выберите длительность и запишитесь в WhatsApp в один клик.</p>
+ <div class="mgrid">
+  <div class="fig rv">
+   <svg viewBox="0 0 200 400" id="body" role="group" aria-label="Карта тела">
+    <path class="z" data-z="head" d="M72 30 Q100 2 128 30 Q118 22 100 21 Q82 22 72 30z"/>
+    <ellipse class="z" data-z="face" cx="100" cy="48" rx="25" ry="29"/>
+    <path class="z" data-z="neck" d="M88 74 L112 74 L114 88 Q140 92 156 104 L150 120 Q124 108 100 108 Q76 108 50 120 L44 104 Q60 92 86 88z"/>
+    <path class="z" data-z="back" d="M52 122 Q76 110 100 110 Q124 110 148 122 L146 176 Q142 206 140 226 L60 226 Q58 206 54 176z"/>
+    <path class="z" data-z="back" d="M44 108 L50 122 L52 176 Q46 214 40 246 L28 244 Q30 200 36 160 Q38 128 44 108z M156 108 L150 122 L148 176 Q154 214 160 246 L172 244 Q170 200 164 160 Q162 128 156 108z" style="opacity:.75"/>
+    <path class="z" data-z="legs" d="M60 228 L140 228 Q144 250 140 270 L132 390 L108 390 L102 280 L98 280 L92 390 L68 390 L60 270 Q56 250 60 228z"/>
+    <circle class="pulse" id="pulse" cx="100" cy="150" r="20"/>
+   </svg>
+   <div class="hint">или выберите ниже ↓</div>
+  </div>
+  <div>
+   <div class="zl" id="zones"></div>
+   <div class="procs" id="procs"></div>
+   <aside class="res" id="res">
+    <div class="lvl" id="lvl"><button data-l="s">Специалист</button><button data-l="m">Мастер</button></div>
+    <h3 id="r-h"></h3>
+    <p class="ds" id="r-d"></p>
+    <div class="durs" id="durs"></div>
+    <div class="first"><span>Первый визит, −20%<br><small style="opacity:.7">акция студии для новых гостей</small></span><span><s id="r-old"></s><b id="r-new"></b></span></div>
+    <a class="btn wa" id="send" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>Записаться в WhatsApp</a>
+    <p class="note">Откроется чат с готовым текстом заявки</p>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<section id="prices">
+ <span class="kick cap">Прайс студии</span>
+ <h2>Специалист или <em>мастер</em></h2>
+ <p class="sub">В студии два уровня: специалист — доступнее, мастер — для сложных запросов и глубокой проработки. Цены с Яндекс Карт.</p>
+ <div class="ptab" id="ptab"></div>
+ <div class="plist rv" id="plist"></div>
+ <p class="pfoot">Актуальные цены и свободное время уточняйте в WhatsApp.</p>
+</section>
+
+<section id="team" style="padding-top:0">
+ <span class="kick cap">Команда</span>
+ <h2>Те самые <em>«золотые руки»</em></h2>
+ <p class="sub">Так о мастерах студии пишут в отзывах — и не один раз.</p>
+ <div class="team">
+  <div class="tm rv"><div class="av">Н</div><h3>Наталья Труфанова</h3><p>Основательница студии, массажист. Классический, корректирующий, спортивный и посттравматический массаж, массаж лица.</p><q>Посещаю её более 10 лет, другие руки не признаю.</q></div>
+  <div class="tm rv"><div class="av">И</div><h3>Илья</h3><p>Массажист. Работа со спиной и мышечными зажимами — эффект с первого сеанса, а после курса «летаешь».</p><q>Вы спасли меня от постоянных зажимов в спине!</q></div>
+  <div class="tm rv"><div class="av">Н</div><h3>Наталья</h3><p>Косметолог. Уходы за лицом на профессиональной косметике Phytomer и Juliette Armand.</p><q>Теперь я постоянный клиент и Натальи, и другой Натальи.</q></div>
+ </div>
+</section>
+
+<div class="gal" id="gal">
+ <div class="head"><span class="kick cap">Студия</span><h2 style="margin-bottom:40px">Чисто, светло, <em>спокойно</em></h2></div>
+ <div class="track" id="track">
+  <figure><img src="img/room.jpg" alt="Кабинет массажа" loading="lazy"><figcaption>Кабинет массажа</figcaption></figure>
+  <figure><img src="img/face.jpg" alt="Массаж лица" loading="lazy"><figcaption>Массаж лица</figcaption></figure>
+  <figure><img src="img/body.jpg" alt="Массаж спины" loading="lazy"><figcaption>Глубокая проработка спины</figcaption></figure>
+  <figure><img src="img/oils.jpg" alt="Масла для массажа" loading="lazy"><figcaption>Профессиональная косметика</figcaption></figure>
+  <figure><img src="img/head.jpg" alt="Массаж головы" loading="lazy"><figcaption>Массаж головы</figcaption></figure>
+  <figure><img src="img/wrap.jpg" alt="Средства для обёртывания Phytomer" loading="lazy"><figcaption>СПА-обёртывание Phytomer</figcaption></figure>
+  <figure><img src="img/room2.jpg" alt="Студия" loading="lazy"><figcaption>Студия с душевой</figcaption></figure>
+  <figure><img src="img/care.jpg" alt="Уход Phytomer" loading="lazy"><figcaption>Уходы за лицом и телом</figcaption></figure>
+ </div>
+</div>
+
+<section style="padding-top:0">
+ <span class="kick cap">Отзывы · 5,0 · 48 отзывов</span>
+ <h2>Уходишь <em>окрылённой</em></h2>
+ <div class="revs" style="margin-top:36px">
+  <div class="rev rv"><div class="st">★★★★★</div><p>Пришла по рекомендации к Наталье с обострением боли в спине, у неё золотые руки! Прошла курсом 10 сеансов, чувствую себя отлично.</p><span>Тёмная Н. · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Одна из немногих, кто действительно в состоянии сделать качественный сильный массаж. За всю жизнь встречал не более 5 таких специалистов.</p><span>Rustam Kurmaev · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Делали всей семьёй, и себе и детям! Наталья прекрасный мастер своего дела и очень приятный, тактичный человек.</p><span>Наталья Малькова · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Получила много удовольствия от массажа лица и от атмосферы салона. Продолжаю курс — результат уже вижу.</p><span>Светлана М. · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Занимаюсь спортом, есть травмы. Наталья владеет техниками посттравматического спортивного массажа — без неё уже не представляю подготовку к сезону.</p><span>Елена О. · Яндекс Карты</span></div>
+  <div class="rev rv"><div class="st">★★★★★</div><p>Хожу уже несколько лет. Ходит и моя сестра, и моя мама! Вот и дочку скоро приведу ❤️</p><span>Наталия Подпорина · Яндекс Карты</span></div>
+ </div>
+</section>
+
+<section class="gift" id="gift">
+ <div class="rv">
+  <span class="kick cap">К Новому году</span>
+  <h2>Подарите <em>лёгкость</em></h2>
+  <p class="sub" style="margin-bottom:26px">Подарочный сертификат на массаж или уход — для мамы, подруги или того, кто весь год «на нервах». На сумму или на конкретную процедуру.</p>
+  <a class="btn p" id="giftb" href="#" target="_blank" rel="noopener">Заказать сертификат</a>
+ </div>
+ <div class="card3d rv" id="card3d">
+  <div class="top"><span class="mono">НТ</span><small>Подарочный сертификат</small></div>
+  <div><b>Студия эстетики тела<br>Натальи Труфановой</b></div>
+ </div>
+</section>
+
+<section id="where">
+ <span class="kick cap">Контакты</span>
+ <h2>Как <em>добраться</em></h2>
+ <div class="where" style="margin-top:30px">
+  <div class="map"><iframe title="Карта" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=37.381954%2C55.653248&z=16&pt=37.381954,55.653248,pm2vvm"></iframe></div>
+  <div class="info">
+   <div><span class="cap">Адрес</span><p>Боровский проезд, 24</p><small>~1 км от метро «Солнцево»</small></div>
+   <div><span class="cap">Телефон</span><p><a href="tel:+79032178336">+7 903 217-83-36</a></p></div>
+   <div><span class="cap">Мессенджеры</span><p><a href="https://wa.me/79032178336" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/natalyamassag" target="_blank" rel="noopener">Telegram</a></p></div>
+   <a class="btn o" style="color:#f4ecf3;box-shadow:inset 0 0 0 1px #8f6f8d" href="#map">Подобрать массаж</a>
+  </div>
+ </div>
+</section>
+
+<footer><span class="serif" style="font-size:18px;color:var(--plum)">Студия эстетики тела Натальи Труфановой</span><span>Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></footer>
+<a class="fab" href="https://wa.me/79032178336" target="_blank" rel="noopener">WhatsApp</a>
+<div class="demo">Демо-версия сайта</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+const WA='79032178336';
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fmt=n=>n.toLocaleString('ru-RU').replace(/\s/g,' ')+' ₽';
+const waUrl=t=>'https://wa.me/'+WA+'?text='+encodeURIComponent(t);
+/* процедуры: s — специалист, m — мастер, x — единая цена; [минуты, цена] */
+const P={
+ classic:{n:'Классический массаж',d:'Общий массаж тела: снимает усталость, напряжение в мышцах и тяжесть после рабочей недели.',s:[[45,2000],[60,3500],[90,4500]],m:[[45,2800],[60,4500],[90,5500]]},
+ correct:{n:'Корректирующий массаж',d:'Глубокая работа с мышцами и осанкой: боли в спине, пояснице, зажимы.',s:[[60,3500]],m:[[60,4500],[90,5500]]},
+ sport:{n:'Спортивный массаж',d:'Для тех, кто тренируется: восстановление после нагрузок и травм.',x:[[60,3500]]},
+ lymph:{n:'Лимфодренажный массаж',d:'Убирает отёки и тяжесть в ногах, в теле появляется лёгкость.',s:[[60,3500],[90,4500]],m:[[60,4500],[90,5500]]},
+ cell:{n:'Антицеллюлитный массаж',d:'Интенсивная проработка проблемных зон — кожа ровнее, контуры чётче.',x:[[60,2900]]},
+ wrap:{n:'СПА-обёртывание',d:'Обёртывание на профессиональной косметике Phytomer — моделирование и уход за кожей.',x:[[90,5000]]},
+ anti:{n:'Антистрессовый массаж',d:'Мягкий, медленный, глубоко расслабляющий. Когда «на нервах» и плохо спится.',m:[[60,4500],[90,5500]]},
+ tonic:{n:'Тонизирующий массаж',d:'Бодрит и заряжает энергией — после него легко и одновременно бодро.',s:[[45,2500],[60,3500]],m:[[45,3500]]},
+ big:{n:'Большой сеанс 2 часа',d:'Полная проработка всего тела без спешки.',x:[[120,7500]]},
+ neck:{n:'Шейно-воротниковая зона',d:'Снимает напряжение в шее и плечах, помогает при головной боли от «сидячей» работы.',x:[[30,1500]]},
+ cup:{n:'Баночный массаж',d:'Вакуумный массаж: усиливает кровообращение, разбивает зажимы.',x:[[20,1000]],m:[[45,2500]]},
+ face:{n:'Массаж лица',d:'Снимает отёки и напряжение, лицо выглядит свежее и подтянутее.',m:[[30,2000],[45,2800]]},
+ care:{n:'Уход за лицом с косметикой',d:'Процедура на профессиональной косметике: греческая линейка или французская Phytomer.',x:[[0,3800],[1,6000]],lab:['Греческая','Франция']},
+ head:{n:'Массаж головы',d:'Расслабляет, снимает головную боль и напряжение — 30 минут тишины.',x:[[30,1500]],m:[[30,2100]]}
+};
+const Z={face:['Лицо',['face','care']],head:['Голова',['head']],neck:['Шея и плечи',['neck','cup']],back:['Спина',['classic','correct','sport']],legs:['Ноги и фигура',['lymph','cell','wrap']],all:['Всё тело',['anti','classic','tonic','big']]};
+let zone='back',proc='classic',lvl='m',di=1;
+const T=p=>({s:p.s||p.x,m:p.m});
+const both=p=>!!(T(p).s&&T(p).m);
+const minPrice=p=>Math.min(...[T(p).s,T(p).m].filter(Boolean).flat().map(v=>v[1]));
+const desc=p=>p.lab?'греческая или французская косметика':[...new Set([T(p).s,T(p).m].filter(Boolean).flat().map(v=>v[0]))].sort((a,b)=>a-b).join(' / ')+' мин'+(both(p)?' · специалист и мастер':'');
+function curLvl(){const t=T(P[proc]);return t[lvl]?lvl:(t.s?'s':'m');}
+function variants(){return T(P[proc])[curLvl()];}
+function render(anim){
+ document.getElementById('zones').innerHTML=Object.entries(Z).map(([k,[n]])=>`<button class="chip ${k===zone?'on':''}" data-z="${k}">${n}</button>`).join('');
+ document.querySelectorAll('#body .z').forEach(e=>e.classList.toggle('on',e.dataset.z===zone||zone==='all'));
+ document.getElementById('procs').innerHTML=Z[zone][1].map(k=>`<button class="pr ${k===proc?'on':''}" data-p="${k}"><div><b>${P[k].n}</b><small>${desc(P[k])}</small></div><span>от ${fmt(minPrice(P[k]))}</span></button>`).join('');
+ const p=P[proc],L=curLvl(),V=variants();if(di>=V.length)di=V.length-1;
+ document.querySelectorAll('#lvl button').forEach(b=>b.classList.toggle('on',b.dataset.l===L));
+ document.getElementById('lvl').style.display=both(p)?'inline-flex':'none';
+ document.getElementById('r-h').textContent=p.n;
+ document.getElementById('r-d').textContent=p.d;
+ document.getElementById('durs').innerHTML=V.map(([m,c],i)=>`<button data-i="${i}" class="${i===di?'on':''}"><b>${fmt(c)}</b>${p.lab?p.lab[i]:m+' мин'}</button>`).join('');
+ const price=V[di][1];
+ document.getElementById('r-old').textContent=fmt(price);
+ document.getElementById('r-new').textContent=fmt(Math.round(price*.8/10)*10);
+ const who=both(p)?(L==='s'?', специалист':', мастер'):'';
+ const what=p.lab?`${p.n} (${p.lab[di]})`:`${p.n}, ${V[di][0]} мин`;
+ document.getElementById('send').href=waUrl(`Здравствуйте! Хочу записаться: ${what}${who} — ${fmt(price)}.\nЯ у вас впервые — действует скидка 20%?\nПодскажите, когда есть свободное время?\n(заявка с сайта)`);
+ if(anim){const r=document.getElementById('res');r.classList.remove('fl');void r.offsetWidth;r.classList.add('fl');}
+}
+function setZone(z){zone=z;proc=Z[z][1][0];di=Math.min(1,variants().length-1);render(true);
+ const el=document.querySelector(`#body .z[data-z="${z}"]`)||document.querySelector('#body .z[data-z="back"]');
+ if(window.gsap&&!reduce&&el){const b=el.getBBox(),pu=document.getElementById('pulse');gsap.fromTo(pu,{attr:{cx:b.x+b.width/2,cy:b.y+b.height/2,r:6},opacity:1},{attr:{r:Math.max(b.width,b.height)*.75},opacity:0,duration:.9,ease:'power2.out'});}}
+document.getElementById('body').addEventListener('click',e=>{const z=e.target.closest('.z');if(z)setZone(z.dataset.z);});
+document.getElementById('zones').onclick=e=>{const b=e.target.closest('[data-z]');if(b)setZone(b.dataset.z);};
+document.getElementById('procs').onclick=e=>{const b=e.target.closest('[data-p]');if(b){proc=b.dataset.p;di=0;render(true);}};
+document.getElementById('lvl').onclick=e=>{const b=e.target.closest('[data-l]');if(b){lvl=b.dataset.l;di=0;render(true);}};
+document.getElementById('durs').onclick=e=>{const b=e.target.closest('[data-i]');if(b){di=+b.dataset.i;render(false);}};
+render(false);
+document.getElementById('giftb').href=waUrl('Здравствуйте! Хочу подарочный сертификат в вашу студию. Подскажите, какие есть варианты?\n(заявка с сайта)');
+
+/* прайс */
+const TABS={'Тело':['classic','correct','lymph','anti','tonic','sport','cell','wrap','big'],'Лицо и голова':['face','care','head'],'Шея и спина':['neck','cup']};
+let tab='Тело';
+const NO='<span class="no">—</span>';
+function prices(){
+ document.getElementById('ptab').innerHTML=Object.keys(TABS).map(t=>`<button class="chip ${t===tab?'on':''}" data-t="${t}">${t}</button>`).join('');
+ const one=(name,sub,price)=>`<div class="prow"><div><b>${name}</b><small>${sub}</small></div><span style="grid-column:2/4">${fmt(price)}</span></div>`;
+ document.getElementById('plist').innerHTML=`<div class="prow h"><div>Процедура</div><div style="text-align:right">Специалист</div><div style="text-align:right">Мастер</div></div>`+
+ TABS[tab].map(k=>{const p=P[k],t=T(p);
+  if(p.lab)return p.lab.map((l,i)=>one(p.n,l,p.x[i][1])).join('');
+  const mins=[...new Set([t.s,t.m].filter(Boolean).flat().map(v=>v[0]))].sort((a,b)=>a-b);
+  return mins.map(mn=>{const a=t.s&&t.s.find(v=>v[0]===mn),b=t.m&&t.m.find(v=>v[0]===mn);
+   if(!both(p))return one(p.n,mn+' мин',(a||b)[1]);
+   return `<div class="prow"><div><b>${p.n}</b><small>${mn} мин</small></div><span>${a?fmt(a[1]):NO}</span><span>${b?fmt(b[1]):NO}</span></div>`}).join('');}).join('');
+}
+document.getElementById('ptab').onclick=e=>{const b=e.target.closest('[data-t]');if(b){tab=b.dataset.t;prices();}};
+prices();
+
+/* промо-лента */
+document.getElementById('promo').innerHTML=('Первый визит −20%<span>✦</span>Массаж лица<span>✦</span>Лимфодренаж<span>✦</span>СПА-обёртывания Phytomer<span>✦</span>Корректирующий массаж<span>✦</span>Сертификаты в подарок<span>✦</span>').repeat(4);
+
+/* сертификат */
+const cd=document.getElementById('card3d');
+cd.addEventListener('pointermove',e=>{const r=cd.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;cd.style.transform=`perspective(900px) rotateY(${(x-.5)*16}deg) rotateX(${(.5-y)*12}deg)`;cd.style.setProperty('--mx',x*100+'%');cd.style.setProperty('--my',y*100+'%');});
+cd.addEventListener('pointerleave',()=>cd.style.transform='');
+
+/* 3D: пирамидка массажных камней */
+(function(){
+ const c=document.getElementById('stones');if(!window.THREE)return;
+ let r;try{r=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:true});}catch(e){return;}
+ r.setPixelRatio(Math.min(devicePixelRatio,2));
+ const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(32,1,.1,100);cam.position.set(0,1.2,11);cam.lookAt(0,1.4,0);
+ sc.add(new THREE.HemisphereLight(0xfff4f2,0x4a2747,.8));
+ const k=new THREE.DirectionalLight(0xffffff,.85);k.position.set(4,6,5);sc.add(k);
+ const rim=new THREE.PointLight(0xc98f9b,.9,25);rim.position.set(-4,2,-2);sc.add(rim);
+ const cols=[0x3c2238,0x6b4767,0x9d84ae,0xd9c7d3,0xf3e9ec];
+ const sizes=[[1.9,.62],[1.55,.55],[1.22,.48],[.92,.42],[.62,.36]];
+ const g=new THREE.Group();sc.add(g);const stones=[];let y=0;
+ sizes.forEach(([rx,ry],i)=>{const geo=new THREE.SphereGeometry(1,64,40);const pa=geo.attributes.position;
+  for(let j=0;j<pa.count;j++){const vx=pa.getX(j),vy=pa.getY(j),vz=pa.getZ(j);const n=1+Math.sin(vx*3+i)*.04+Math.cos(vz*2.6+i*2)*.05;pa.setXYZ(j,vx*rx*n,vy*ry,vz*rx*.88*n);}
+  geo.computeVertexNormals();
+  const m=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color:cols[i],roughness:i<2?.38:.55,metalness:.05}));
+  y+=ry*(i?1:0)+(i?sizes[i-1][1]*.82:0);m.position.y=y;m.userData={y,ph:i*.9,rot:(Math.random()-.5)*.6};m.rotation.y=m.userData.rot;g.add(m);stones.push(m);});
+ const sh=new THREE.Mesh(new THREE.CircleGeometry(2.4,48),new THREE.MeshBasicMaterial({color:0x4a2747,transparent:true,opacity:.12}));sh.rotation.x=-Math.PI/2;sh.position.y=-.6;sc.add(sh);
+ g.position.y=-.1;
+ function size(){const w=c.clientWidth,h=c.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}
+ size();addEventListener('resize',size);
+ let mx=0,my=0,scrollV=0,lastS=scrollY;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;},{passive:true});
+ addEventListener('scroll',()=>{scrollV+=(scrollY-lastS)*.002;lastS=scrollY;},{passive:true});
+ let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
+ const t0=performance.now();
+ (function loop(){requestAnimationFrame(loop);if(!vis)return;const t=(performance.now()-t0)/1000*(reduce?0:1);
+  scrollV*=.92;
+  stones.forEach((s,i)=>{const sway=Math.sin(t*.9+s.userData.ph)*.035*i+scrollV*i*.6;s.position.x=sway*.6;s.rotation.z=sway*.5;s.rotation.y=s.userData.rot+t*.08*(i%2?1:-1)+scrollV*2;});
+  g.rotation.y+=(mx*.7-g.rotation.y)*.04;g.rotation.x+=(my*.15-g.rotation.x)*.04;
+  r.render(sc,cam);})();
+ if(window.gsap&&!reduce)stones.forEach((s,i)=>gsap.from(s.position,{y:s.userData.y+5,duration:1.1,delay:.35+i*.16,ease:'bounce.out'}));
+})();
+
+/* motion */
+if(window.gsap&&window.ScrollTrigger&&!reduce){
+ gsap.registerPlugin(ScrollTrigger);
+ gsap.from('h1 .ln>span',{yPercent:110,duration:1.2,ease:'power4.out',stagger:.12,delay:.1});
+ gsap.from('.facts div,.lead,.btns',{opacity:0,y:16,duration:.8,stagger:.08,delay:.6});
+ gsap.from('.arch',{clipPath:'inset(100% 0 0 0 round 999px 999px 26px 26px)',duration:1.4,ease:'power3.inOut',delay:.1});
+ gsap.to('#heroImg',{yPercent:8,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+ document.querySelectorAll('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.9,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%'}}));
+ const pr=document.getElementById('promo');let x=0,v=0;
+ ScrollTrigger.create({onUpdate:s=>{v=s.getVelocity()/600;}});
+ gsap.ticker.add(()=>{x-=0.6+Math.abs(v);v*=.9;const w=pr.scrollWidth/4;if(-x>w)x+=w;pr.style.transform=`translateX(${x}px)`;});
+ const tr=document.getElementById('track');
+ const mm=gsap.matchMedia();
+ mm.add('(min-width:981px)',()=>{gsap.to(tr,{x:()=>-(tr.scrollWidth-innerWidth),ease:'none',scrollTrigger:{trigger:'#gal',start:'top top',end:()=>'+='+(tr.scrollWidth-innerWidth),pin:true,scrub:1,invalidateOnRefresh:true}});});
+ mm.add('(max-width:980px)',()=>{tr.style.overflowX='auto';tr.style.scrollSnapType='x mandatory';});
+}else document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none'});
+</script>
+</body>
+</html>
