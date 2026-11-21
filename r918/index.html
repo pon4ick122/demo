@@ -441,7 +441,7 @@ $('pt2').innerHTML=CARE.map(([n,d,p])=>`<tr><td>${n}${d?`<small>${d}</small>`:''
    if(ugOnly)tt=.62+sd.t*.36; else if(cur<.8)tt=.08+sd.t*.84;
    curve.getPoint(.04+tt*.92,p);
    const side=(tt-.5);
-   const len=(.75+.75*Math.sin(Math.PI*Math.min(1,.15+tt*.95))+ (ugOnly||cur<.8?side*.9:0))*(1+sd.l*.25)*(.9+Math.min(cur,4)*.06);
+   const len=(.75+.75*Math.sin(Math.PI*Math.min(1,.15+tt*.95))+ (ugOnly||cur<.8?side*.9:0))*(1+sd.l*.25)*(.9+Math.min(cur,4)*.06)*.72;
    const sway=Math.sin(t*1.6+tt*9)*.04;
    e.set(-.55-sd.z*.3, 0, -side*1.4+sd.a*.25*(1+cur*.25)+sway);
    q.setFromEuler(e);s.set(1,len,1);
@@ -449,7 +449,7 @@ $('pt2').innerHTML=CARE.map(([n,d,p])=>`<tr><td>${n}${d?`<small>${d}</small>`:''
   }
   inst.instanceMatrix.needsUpdate=true;
  }
- function size(){const W=c.clientWidth,H=c.clientHeight;r.setSize(W,H,false);cam.aspect=W/H;cam.position.z=W<560?19:14;cam.updateProjectionMatrix();}
+ function size(){const W=c.clientWidth,H=c.clientHeight;r.setSize(W,H,false);cam.aspect=W/H;cam.position.z=W<560?22:18;cam.updateProjectionMatrix();}
  size();addEventListener('resize',size);
  let mx=0,my=0;addEventListener('pointermove',ev=>{mx=ev.clientX/innerWidth-.5;my=ev.clientY/innerHeight-.5;},{passive:true});
  let vis=true;new IntersectionObserver(en=>vis=en[0].isIntersecting).observe(c);
