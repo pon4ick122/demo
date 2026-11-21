@@ -11,7 +11,7 @@
 :root{--bg:#fdf7f6;--bg2:#f9e9e8;--pk:#f4cfd1;--pk2:#eaa9b0;--rose:#c4707c;--gold:#c9a063;--gold2:#e2c48f;--ink:#2a1f22;--mute:#80707a;--line:#f0dcdc;--card:#fff}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip}
-body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);overflow-x:clip;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 a{color:inherit}
 .serif{font-family:Cormorant,Georgia,serif}
@@ -50,7 +50,7 @@ h1 em{font-style:italic}
 .shades button{width:28px;height:28px;border-radius:50%;border:0;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);transition:.2s}
 .shades button.on{transform:scale(1.22);box-shadow:0 0 0 2px #fff,0 0 0 3.5px var(--gold)}
 .shname{position:absolute;left:50%;bottom:calc(4% + 58px);transform:translateX(-50%);font:italic 500 22px Cormorant;white-space:nowrap}
-.ph1{position:absolute;right:0;top:4%;width:34%;aspect-ratio:3/4;border-radius:200px 200px 18px 18px;overflow:hidden;box-shadow:0 20px 50px rgba(120,60,70,.18);border:6px solid #fff}
+.ph1{position:absolute;left:2%;top:6%;width:24%;aspect-ratio:3/4;border-radius:200px 200px 18px 18px;overflow:hidden;box-shadow:0 20px 50px rgba(120,60,70,.18);border:6px solid #fff}
 .ph1 img{width:100%;height:100%;object-fit:cover}
 
 section{padding:110px 5vw}
@@ -169,7 +169,7 @@ footer{padding:40px 5vw 110px;color:var(--mute);font-size:13px;display:flex;just
  nav .links{display:none}
  .hero{grid-template-columns:1fr;padding-top:100px;min-height:auto}
  .stage{height:500px;order:-1;margin:0 -5vw}
- .ph1{width:30%;right:5vw}
+ .ph1{width:26%;left:auto;right:5vw}
  .why{grid-template-columns:1fr 1fr}
  .bw{grid-template-columns:1fr}
  .sum{position:relative;top:0}
@@ -413,7 +413,7 @@ giftHref();
 (function(){
  const c=$('fan');if(!window.THREE)return;
  let r;try{r=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:true});}catch(e){return;}
- r.setPixelRatio(Math.min(devicePixelRatio,2));
+ r.setPixelRatio(Math.min(devicePixelRatio,2));r.outputEncoding=THREE.sRGBEncoding;
  const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(32,1,.1,100);cam.position.set(0,.4,13);
  sc.add(new THREE.HemisphereLight(0xffffff,0xf2c9cc,.9));
  const k=new THREE.DirectionalLight(0xffffff,.9);k.position.set(-4,6,6);sc.add(k);
@@ -423,26 +423,26 @@ giftHref();
  sh.moveTo(-w,-h*.55);sh.lineTo(-w,h*.15);sh.bezierCurveTo(-w,h*.7,-w*.35,h*.95,0,h);sh.bezierCurveTo(w*.35,h*.95,w,h*.7,w,h*.15);sh.lineTo(w,-h*.55);sh.quadraticCurveTo(0,-h*.66,-w,-h*.55);
  const geo=new THREE.ExtrudeGeometry(sh,{depth:.12,bevelEnabled:true,bevelThickness:.06,bevelSize:.05,bevelSegments:6,curveSegments:28});geo.center();
  const stickG=new THREE.CylinderGeometry(.035,.035,2.6,10);
- const stickM=new THREE.MeshStandardMaterial({color:0xd9b77a,metalness:.8,roughness:.3});
+ const stickM=new THREE.MeshStandardMaterial({color:new THREE.Color(0xd9b77a).convertSRGBToLinear(),metalness:.8,roughness:.3});
  const fan=new THREE.Group();sc.add(fan);
  const N=9,tips=[];
  for(let i=0;i<N;i++){
   const g=new THREE.Group();
-  const m=new THREE.MeshPhysicalMaterial({color:new THREE.Color(SH[i][1]),roughness:.16,metalness:i===8?.6:0,clearcoat:1,clearcoatRoughness:.05});
+  const m=new THREE.MeshPhysicalMaterial({color:new THREE.Color(SH[i][1]).convertSRGBToLinear(),roughness:.16,metalness:i===8?.6:0,clearcoat:1,clearcoatRoughness:.05});
   const tip=new THREE.Mesh(geo,m);tip.position.y=2.9;g.add(tip);
   const st=new THREE.Mesh(stickG,stickM);st.position.y=1.05;g.add(st);
-  const a=(i-(N-1)/2)*.2;g.rotation.z=-a;g.userData={a,base:new THREE.Color(SH[i][1]),m};
+  const a=(i-(N-1)/2)*.17;g.rotation.z=-a;g.userData={a,base:new THREE.Color(SH[i][1]),m};
   fan.add(g);tips.push(g);
  }
  const ring=new THREE.Mesh(new THREE.TorusGeometry(.22,.07,12,40),stickM);ring.position.y=-.25;fan.add(ring);
- fan.position.y=-1.4;
+ fan.position.y=-1.9;fan.position.x=.6;
  /* блёстки вокруг */
  const pg=new THREE.BufferGeometry(),PN=140,pos=new Float32Array(PN*3);for(let i=0;i<PN;i++){pos[i*3]=(Math.random()-.5)*12;pos[i*3+1]=(Math.random()-.5)*9;pos[i*3+2]=(Math.random()-.5)*5-1;}
  pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
  const pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0xd9b77a,size:.06,transparent:true,opacity:.8}));sc.add(pts);
  let sel=0,spread=0;
  window.paint=hex=>{const i=SH.findIndex(s=>s[1]===hex);sel=i<0?0:i;spread=1;};
- function size(){const W=c.clientWidth,H=c.clientHeight;r.setSize(W,H,false);cam.aspect=W/H;cam.position.z=W<560?15.5:13;cam.updateProjectionMatrix();}
+ function size(){const W=c.clientWidth,H=c.clientHeight;r.setSize(W,H,false);cam.aspect=W/H;cam.position.z=W<560?21:17.5;cam.updateProjectionMatrix();}
  size();addEventListener('resize',size);
  let mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;},{passive:true});
  let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
