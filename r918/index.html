@@ -449,11 +449,11 @@ $('pt2').innerHTML=CARE.map(([n,d,p])=>`<tr><td>${n}${d?`<small>${d}</small>`:''
   }
   inst.instanceMatrix.needsUpdate=true;
  }
- function size(){const W=c.clientWidth,H=c.clientHeight;r.setSize(W,H,false);cam.aspect=W/H;cam.position.z=W<560?22:18;cam.updateProjectionMatrix();}
+ function size(){const W=c.clientWidth,H=c.clientHeight;r.setSize(W,H,false);cam.aspect=W/H;cam.position.z=W<560?22:19;cam.updateProjectionMatrix();}
  size();addEventListener('resize',size);
  let mx=0,my=0;addEventListener('pointermove',ev=>{mx=ev.clientX/innerWidth-.5;my=ev.clientY/innerHeight-.5;},{passive:true});
  let vis=true;new IntersectionObserver(en=>vis=en[0].isIntersecting).observe(c);
- G.position.y=.9;
+ G.position.y=.9;G.position.x=.35;
  (function loop(now){requestAnimationFrame(loop);if(!vis)return;const t=reduce?0:now/1000;
   cur+=(dens-cur)*.08;build(t);
   G.rotation.y+=((mx*.5)-G.rotation.y)*.05;G.rotation.x+=((my*.25+.08)-G.rotation.x)*.05;
