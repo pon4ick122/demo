@@ -8,9 +8,7 @@
 <meta property="og:title" content="Часовая на Соколе — время чинят здесь с 1961 года">
 <meta property="og:description" content="Бесплатная диагностика, гарантия, официальный сервис Citizen. 43 м от метро «Сокол».">
 <meta property="og:image" content="img/chrono.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{--green:#0f2b22;--green2:#163a2e;--felt:#7fb59a;--brass:#c9a24a;--brass2:#e6c574;--cream:#f2ece0;--ink:#13201b;--mute:#8aa196;--line:rgba(242,236,224,.16)}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -283,11 +281,12 @@ footer{border-top:1px solid var(--line);padding:30px 24px 110px;display:flex;jus
         <h2 class="split"><span class="ln"><span>Где мои</span></span><span class="ln"><span><em>часы?</em></span></span></h2>
         <p class="lead">Не нужно дозваниваться. Впишите номер квитанции — мастер ответит в WhatsApp, на каком этапе ремонт и когда забирать.</p>
       </div>
-      <form class="ticket" id="tk">
+      <form class="ticket" id="tk" data-pd-guard="tname">
         <span class="stamp m">квитанция</span>
         <div class="row"><label for="tn">№ квитанции</label><input id="tn" inputmode="numeric" placeholder="0000" maxlength="10"></div>
         <div class="row"><label for="tw">Часы</label><input id="tw" placeholder="Ракета, Tissot…" maxlength="40"></div>
         <div class="row"><label for="tname">Имя</label><input id="tname" placeholder="Как к вам обращаться" maxlength="30"></div>
+        <label class="pd-consent" data-pd style="display:flex;gap:8px;align-items:flex-start;margin:10px 0;font-size:13px;line-height:1.4;text-align:left;cursor:pointer"><input type="checkbox" class="pd-ok" style="margin-top:2px;flex:none;width:16px;height:16px"><span>Я согласен(на) на <a href="soglasie.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">обработку персональных данных</a></span></label>
         <button class="btn dark" type="submit">Узнать статус в WhatsApp →</button>
       </form>
     </div>
@@ -363,7 +362,7 @@ footer{border-top:1px solid var(--line);padding:30px 24px 110px;display:flex;jus
   </section>
 </main>
 
-<footer><span class="m">Часовая на Соколе · Ленинградский пр-т, 74к1</span><span class="m">Демо-версия сайта</span></footer>
+<footer><span class="m">Часовая на Соколе · Ленинградский пр-т, 74к1</span><span class="m">Демо-версия сайта</span><div class="pd-links" data-pd style="flex-basis:100%;width:100%;margin-top:14px;font-size:12px;line-height:1.6;opacity:.7"><a href="privacy.html" style="color:inherit;text-decoration:underline">Политика конфиденциальности</a> · <a href="soglasie.html" style="color:inherit;text-decoration:underline">Согласие на обработку персональных данных</a></div></footer>
 <a class="float hide" id="flt" data-wa href="#" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.9 11.9 0 004.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg></a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
@@ -535,5 +534,10 @@ if(window.gsap&&window.ScrollTrigger&&!RM){
   }});
 }
 </script>
+<style data-pd>.pd-consent.pd-err{color:#e5484d}.pd-consent.pd-err .pd-ok{outline:2px solid #e5484d;outline-offset:2px}</style>
+<script data-pd>(function(){function ok(el){var box=document.querySelector('.pd-ok');if(!box||box.checked)return true;var filled=(el.getAttribute('data-pd-guard')||'').split(',').some(function(i){var f=document.getElementById(i);return f&&f.value.trim()});if(!filled)return true;var l=box.closest('label');l.classList.add('pd-err');box.focus();return false}
+window.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button[data-pd-guard]');if(b&&!ok(b)){e.preventDefault();e.stopImmediatePropagation()}},true);
+window.addEventListener('submit',function(e){var f=e.target;if(f.hasAttribute&&f.hasAttribute('data-pd-guard')&&!ok(f)){e.preventDefault();e.stopImmediatePropagation()}},true);
+document.addEventListener('change',function(e){if(e.target.classList&&e.target.classList.contains('pd-ok'))e.target.closest('label').classList.remove('pd-err')})})();</script>
 </body>
 </html>
