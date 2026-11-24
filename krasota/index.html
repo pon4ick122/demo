@@ -38,7 +38,7 @@ nav .links a{text-decoration:none;opacity:.8}nav .links a:hover{opacity:1}
 nav .btn{padding:11px 18px;font-size:14px}
 /* hero */
 .hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;padding:96px 0 40px}
-.book{position:relative;aspect-ratio:1/1;width:100%;max-width:600px;justify-self:center;cursor:pointer}
+.book{position:relative;aspect-ratio:1/1;width:100%;max-width:600px;justify-self:center;cursor:pointer;filter:drop-shadow(0 30px 40px #3f4a2c30)}
 #gl{position:absolute;inset:0;width:100%;height:100%}
 .book .hint{position:absolute;left:50%;bottom:0;transform:translateX(-50%);font-size:12px;color:var(--mute);letter-spacing:.1em;white-space:nowrap}
 .book .fb{position:absolute;inset:8% 22%;display:none;box-shadow:0 30px 60px #0003}
@@ -53,7 +53,7 @@ nav .btn{padding:11px 18px;font-size:14px}
 .win{background:var(--olive2);color:#fff;border-radius:34px;padding:44px;display:grid;grid-template-columns:1fr 1.3fr;gap:30px;align-items:center;position:relative;overflow:hidden}
 .win .sub{color:#c9cdb8}
 .win h2 em{color:#d9bd84}
-.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
 .slot{appearance:none;border:1px solid #ffffff30;background:#ffffff0d;color:#fff;border-radius:18px;padding:14px;text-align:left;cursor:pointer;font:500 14px Manrope,sans-serif;transition:.2s}
 .slot b{display:block;font-family:"Playfair Display";font-size:24px;font-weight:400}
 .slot:hover{background:#fff;color:var(--olive2)}
@@ -316,7 +316,7 @@ function calc() {
  $("sl").innerHTML = out.length ? out.map(o => `<li><span>${o[0]}</span><b>${fmt(o[1])}</b></li>`).join("") + (first && sum ? `<li class="disc"><span>Скидка первого визита</span><b>−${fmt(sum * .1)}</b></li>` : "") : `<li class="empty">Выберите услуги слева</li>`;
  $("old").textContent = first && sum ? fmt(sum) : "";
  const el = $("tot");
- if (typeof gsap !== "undefined" && !reduce) gsap.to({ v: lastT }, { v: total, duration: .5, ease: "power2.out", onUpdate() { el.textContent = fmt(this.targets()[0].v); } }); else el.textContent = fmt(total);
+ if (window.__tw) window.__tw.kill(); if (typeof gsap !== "undefined" && !reduce) window.__tw = gsap.to({ v: lastT }, { v: total, duration: .5, ease: "power2.out", onUpdate() { el.textContent = fmt(this.targets()[0].v); }, onComplete() { el.textContent = fmt(total); } }); else el.textContent = fmt(total);
  lastT = total;
 }
 $("first").onchange = calc;
@@ -358,7 +358,7 @@ drawPrice();
  const cv = $("gl"); let rd;
  try { rd = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true }); } catch (e) { return fb(); }
  rd.setPixelRatio(Math.min(2, devicePixelRatio));
- const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(32, 1, .1, 100); cam.position.set(0, 0, 13.5);
+ const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(32, 1, .1, 100); cam.position.set(0, 0, 11);
  scene.add(new THREE.AmbientLight(0xffffff, .78));
  const key = new THREE.DirectionalLight(0xfff4e0, .55); key.position.set(-3, 4, 8); scene.add(key);
  const W = 3, H = 4, SEG = 30;
@@ -402,8 +402,6 @@ drawPrice();
  const pages = [mk(cover("img/pg1.jpg"), tex("img/pg2.jpg")), mk(tex("img/pg3.jpg"), tex("img/pg4.jpg")), mk(tex("img/pg5.jpg"), tex("img/pg6.jpg")), mk(tex("img/pg7.jpg"), tex("img/pg8.jpg"))];
  const base = new THREE.Mesh(new THREE.PlaneGeometry(W, H), new THREE.MeshStandardMaterial({ map: cover("img/recep.jpg", true), roughness: .8 }));
  base.position.set(W / 2, 0, -.03); book.add(base);
- const shadow = new THREE.Mesh(new THREE.PlaneGeometry(W * 2.3, H * 1.15), new THREE.MeshBasicMaterial({ color: 0x3f4a2c, transparent: true, opacity: .12 }));
- shadow.position.set(0, -.12, -.2); book.add(shadow);
  function bend(pg, i) {
   const { geo, x0, p } = pg.userData, a = geo.attributes.position.array, th = p * Math.PI, curl = .9 * Math.sin(th);
   for (let v = 0; v < a.length; v += 3) {
