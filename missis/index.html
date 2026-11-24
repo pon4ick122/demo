@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Миссис — салон красоты в Химках</title>
+<meta name="description" content="Салон «Миссис» в Химках, Транспортный пр., 3: стрижки, окрашивание, уходы, маникюр. 5,0 на Яндекс Картах. −20% на первое посещение по промокоду «МИНУС 20».">
+<meta property="og:title" content="Миссис — салон красоты в Химках">
+<meta property="og:description" content="Стрижки, сложное окрашивание, уходы и маникюр. 5,0 и 109 оценок. −20% на первое посещение.">
+<meta property="og:image" content="img/hall.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff6fb;--card:#ffffff;--ink:#2a1030;--mute:#7a5d80;--line:#f1d9ec;--pink:#e5268f;--pink2:#b5157a;--violet:#7b2cbf;--soft:#fde3f1;--dark:#1d0a22}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.cap{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--pink)}
+h1,h2,h3{font-family:Unbounded,sans-serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(28px,3.8vw,48px);margin:10px 0 14px}
+h1 em,h2 em{font-style:normal;background:linear-gradient(90deg,var(--pink),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mute);font-size:clamp(16px,1.5vw,18px);max-width:640px}
+section{padding:96px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:999px;font:700 15px Manrope,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:.2s}
+.btn.p{background:linear-gradient(90deg,var(--pink),var(--violet));color:#fff;box-shadow:0 14px 30px #e5268f45}.btn.p:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.o{box-shadow:inset 0 0 0 1.5px var(--ink);color:var(--ink);background:transparent}.btn.o:hover{background:var(--ink);color:#fff}
+nav{position:fixed;inset:0 0 auto;z-index:30;transition:.3s}
+nav.sc{background:#fff6fbee;backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{text-decoration:none;font-family:Unbounded;font-weight:800;font-size:20px;letter-spacing:.06em}
+.logo span{color:var(--pink)}
+nav .links{display:flex;gap:24px;font-size:14px;font-weight:600}
+nav .links a{text-decoration:none;opacity:.8}nav .links a:hover{opacity:1}
+nav .btn{padding:11px 18px;font-size:14px}
+/* hero */
+.hero{min-height:100svh;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:20px;padding:96px 0 40px}
+.hero h1{font-size:clamp(36px,5vw,70px);margin:14px 0 18px}
+.promo{display:inline-flex;align-items:center;gap:12px;background:var(--dark);color:#fff;border-radius:18px;padding:10px 12px 10px 16px;margin-bottom:22px;font-size:14px;cursor:pointer;border:0;font-family:Manrope}
+.promo code{font:700 15px Unbounded,monospace;background:linear-gradient(90deg,var(--pink),var(--violet));padding:6px 10px;border-radius:10px;letter-spacing:.06em}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:34px}
+.facts b{display:block;font-family:Unbounded;font-size:30px;line-height:1}
+.facts span{font-size:13px;color:var(--mute)}
+.stage{position:relative;aspect-ratio:1/1.05;width:100%;max-width:560px;justify-self:center;border-radius:40px;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,#3a1145 0,#1d0a22 70%)}
+#gl{position:absolute;inset:0;width:100%;height:100%}
+.neon{position:absolute;left:0;right:0;bottom:7%;text-align:center;font-family:Pacifico,cursive;font-size:clamp(34px,5vw,58px);color:#fff;text-shadow:0 0 6px #fff,0 0 14px #ff4fb3,0 0 28px #ff4fb3,0 0 52px #e5268f;animation:fl 5s infinite;pointer-events:none}
+.neon small{display:block;font-family:Manrope;font-size:12px;letter-spacing:.3em;text-transform:uppercase;text-shadow:none;color:#f5b7dc;margin-top:4px}
+@keyframes fl{0%,100%,22%,26%{opacity:1}24%{opacity:.55}}
+.stage .ctl{position:absolute;left:14px;right:14px;top:14px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.stage .ctl button{appearance:none;border:1px solid #ffffff38;background:#ffffff14;color:#fff;border-radius:99px;padding:7px 12px;font:600 12px Manrope,sans-serif;cursor:pointer;backdrop-filter:blur(6px)}
+.stage .ctl button.on{background:#fff;color:var(--dark)}
+/* builder */
+.build{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;margin-top:34px;align-items:start}
+.step{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:22px;margin-bottom:14px}
+.step h3{font-family:Manrope;font-weight:700;font-size:16px;margin-bottom:12px;display:flex;gap:10px;align-items:center}
+.step h3 i{font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--soft);color:var(--pink2);display:grid;place-items:center;font-size:13px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{appearance:none;border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:10px 14px;font:500 14px Manrope,sans-serif;color:var(--ink);cursor:pointer;text-align:left;transition:.18s}
+.opt small{display:block;color:var(--mute);font-size:12px;margin-top:2px}
+.opt:hover{border-color:var(--pink)}
+.opt.on{border-color:var(--pink);background:var(--soft);box-shadow:inset 0 0 0 1px var(--pink)}
+.sum{position:sticky;top:90px;background:var(--dark);color:#fff;border-radius:30px;padding:28px;overflow:hidden}
+.sum:before{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#e5268f66,transparent 65%)}
+.sum .k{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#f5b7dc;font-weight:700;position:relative}
+.sum ul{list-style:none;margin:16px 0;display:grid;gap:8px;font-size:14px;color:#e9d3ee;position:relative}
+.sum li{display:flex;justify-content:space-between;gap:12px}
+.sum li b{color:#fff;white-space:nowrap}
+.sum li.disc{color:#ff8fcc;font-weight:700}
+.first{display:flex;gap:12px;align-items:center;background:#ffffff12;border-radius:16px;padding:12px 14px;margin:4px 0 16px;cursor:pointer;font-size:14px;position:relative}
+.first input{width:20px;height:20px;accent-color:var(--pink)}
+.tot{font-family:Unbounded;font-size:40px;line-height:1;position:relative}
+.old{color:#b998be;text-decoration:line-through;font-size:16px;margin-left:8px;font-family:Manrope}
+.sum .btn{width:100%;margin-top:18px;position:relative}
+.sum .fine{font-size:12px;color:#b998be;margin-top:10px;position:relative}
+/* masters */
+.ms{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.m{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px}
+.m .r{font-size:12px;color:var(--pink);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.m h3{font-size:24px;margin:6px 0 10px}
+.m p{color:var(--mute);font-size:14px}
+/* studio */
+.studio{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pics img{border-radius:22px;width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.pics img:first-child{grid-row:span 2;aspect-ratio:auto}
+.perks{display:grid;gap:12px;margin-top:22px}
+.perk{display:flex;gap:14px;align-items:flex-start}
+.perk i{font-style:normal;flex:0 0 44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:20px}
+.perk span{color:var(--mute);font-size:14px;display:block}
+/* men */
+.men{background:var(--dark);color:#fff;border-radius:36px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.men .sub{color:#d9c3de}
+.men img{border-radius:24px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.men .pl div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #ffffff1f}
+.men .pl b{font-family:Unbounded;font-weight:600}
+/* price */
+.price{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:30px;margin-top:30px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tabs button{appearance:none;border:1.5px solid var(--line);background:#fff;font:700 14px Manrope,sans-serif;padding:10px 16px;border-radius:99px;cursor:pointer;color:var(--ink)}
+.tabs button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.prow{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+.prow:last-child{border-bottom:0}
+.prow b{font-family:Unbounded;font-weight:600;font-size:15px;white-space:nowrap;color:var(--pink2)}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.rv{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px}
+.rv .st{color:#f2b01e;letter-spacing:2px}
+.rv p{margin:12px 0}
+.rv span{color:var(--mute);font-size:13px}
+/* where */
+.where{display:grid;grid-template-columns:1fr 1.2fr;gap:30px}
+.info{display:grid;gap:16px;align-content:start}
+.info div{border-bottom:1px solid var(--line);padding-bottom:14px}
+.info small{display:block;color:var(--mute);font-size:13px}
+.info b{font-size:18px;font-weight:700}
+.map{border-radius:28px;overflow:hidden;min-height:360px;background:var(--soft)}
+.map iframe{width:100%;height:100%;min-height:360px;border:0}
+footer{padding:40px 0 90px;color:var(--mute);font-size:13px;border-top:1px solid var(--line)}
+.wa{position:fixed;right:18px;bottom:18px;z-index:40;background:#25d366;color:#fff;border-radius:99px;padding:14px 18px;font-weight:700;text-decoration:none;box-shadow:0 12px 30px #25d36655}
+.demo{position:fixed;left:16px;bottom:18px;z-index:40;background:#2a1030dd;color:#fff;border-radius:10px;padding:8px 12px;font-size:12px}
+.toast{position:fixed;left:50%;bottom:80px;transform:translate(-50%,160px);background:var(--dark);color:#fff;padding:12px 18px;border-radius:14px;font-size:14px;z-index:50;transition:transform .3s}
+.toast.on{transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(30px)}
+@media(max-width:980px){
+ nav .links{display:none}
+ .hero{grid-template-columns:1fr;padding-top:84px}
+ .stage{max-width:460px;order:-1}
+ .build,.studio,.men,.where{grid-template-columns:1fr}
+ .sum{position:relative;top:0}
+ .ms{grid-template-columns:1fr 1fr}
+ .revs{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+ section{padding:70px 0}
+ .men{padding:24px 18px;border-radius:26px}
+ .ms{grid-template-columns:1fr}
+ .price{padding:20px 16px}
+ .step{padding:18px}
+ .logo{font-size:17px}
+ nav .btn{padding:10px 14px}
+}
+@media(prefers-reduced-motion:reduce){.neon{animation:none}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+ <a class="logo" href="#top">МИС<span>С</span>ИС</a>
+ <div class="links"><a href="#build">Подбор</a><a href="#masters">Мастера</a><a href="#men">Мужской зал</a><a href="#price">Цены</a><a href="#where">Контакты</a></div>
+ <a class="btn p" href="#build">Записаться</a>
+</div></nav>
+
+<header class="wrap hero" id="top">
+ <div>
+  <span class="cap">Салон красоты · Химки</span>
+  <h1>Стрижка и цвет, после которых <em>ты просто WOW</em></h1>
+  <button class="promo" id="promo" title="Скопировать промокод">−20% на первое посещение <code>МИНУС 20</code></button>
+  <p class="sub">Сложное окрашивание, стрижки «волосок к волоску», уходы Lebel и маникюр на Транспортном проезде, 3. Работаем до 22:00, чай, кофе и конфетки — как пишут гости.</p>
+  <div class="cta"><a class="btn p" href="#build">Подобрать и узнать цену</a><a class="btn o" href="#price">Все цены</a></div>
+  <div class="facts">
+   <div><b>5,0</b><span>109 оценок на Картах</span></div>
+   <div><b>100%</b><span>довольны окрашиванием</span></div>
+   <div><b>до 22:00</b><span>каждый день</span></div>
+  </div>
+ </div>
+ <div class="stage" id="stage">
+  <canvas id="gl" aria-label="3D-пряди волос: меняют длину и цвет"></canvas>
+  <div class="ctl" id="ctl"></div>
+  <div class="neon">Ты просто WOW<small>нажмите на окрашивание сверху</small></div>
+ </div>
+</header>
+
+<section id="build" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Подбор и цена</span>
+ <h2>Цена зависит от длины — <em>посчитаем сразу</em></h2>
+ <p class="sub">Выберите длину волос и услуги — сайт посчитает стоимость по прайсу салона и сразу вычтет скидку первого визита. Пряди наверху меняются вместе с выбором.</p>
+ <div class="build">
+  <div id="steps"></div>
+  <aside class="sum" aria-live="polite">
+   <div class="k">Ваш визит</div>
+   <ul id="sl"></ul>
+   <label class="first"><input type="checkbox" id="first" checked> Я у вас впервые — промокод «МИНУС 20»</label>
+   <div><span class="tot" id="tot">0 ₽</span><span class="old" id="old"></span></div>
+   <button class="btn p" id="send">Записаться в WhatsApp</button>
+   <div class="fine">Откроется WhatsApp с готовым сообщением. Точную цену мастер подтвердит на консультации.</div>
+  </aside>
+ </div>
+</div></section>
+
+<section id="masters" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Мастера · из отзывов на Картах</span>
+ <h2>К кому <em>записываются</em></h2>
+ <div class="ms">
+  <div class="m reveal"><div class="r">Стрижки · сложное окрашивание</div><h3>Лаки</h3><p>«Педант и перфекционист: стриг волосок к волоску. В премиальных салонах так ровно не делали».</p></div>
+  <div class="m reveal"><div class="r">Тонирование · мелирование</div><h3>Артур</h3><p>«Давно не решалась на смену цвета, но Артур убедил. Переливы на солнце — волшебные».</p></div>
+  <div class="m reveal"><div class="r">Стрижки · укладки</div><h3>Светлана</h3><p>«Сделала стрижку, как я хотела, — идеально и быстро. Укладка превзошла ожидания».</p></div>
+  <div class="m reveal"><div class="r">Уходы · причёски</div><h3>София</h3><p>«Сделали шикарный уход за волосами и красивую причёску к празднику».</p></div>
+ </div>
+</div></section>
+
+<section style="padding-top:20px"><div class="wrap studio">
+ <div class="pics reveal"><img src="img/hall.jpg" alt="Зал салона «Миссис»" loading="lazy"><img src="img/wash.jpg" alt="Мойка в салоне" loading="lazy"><img src="img/wow.jpg" alt="Неоновая надпись «Ты просто WOW»" loading="lazy"></div>
+ <div class="reveal">
+  <span class="cap">Салон</span>
+  <h2>Розовый, неоновый <em>и очень уютный</em></h2>
+  <p class="sub">«Приятная атмосфера, музыка, чай, кофе, конфетки, всегда прислушиваются к пожеланиям» — из отзыва.</p>
+  <div class="perks">
+   <div class="perk"><i>💗</i><div><b>Администратор Даша</b><span>«Настолько внимательная, что хочется возвращаться ещё и ещё».</span></div></div>
+   <div class="perk"><i>🧴</i><div><b>Уходы Lebel</b><span>«Абсолютное счастье для волос», кератин, ботокс, полировка.</span></div></div>
+   <div class="perk"><i>☕</i><div><b>Чай, кофе и конфетки</b><span>Пока краска работает, вы отдыхаете.</span></div></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="men" style="padding-top:20px"><div class="wrap">
+ <div class="men reveal">
+  <div>
+   <span class="cap" style="color:#ff8fcc">Мужской зал</span>
+   <h2 style="color:#fff">Стрижка и борода — <em>для него</em></h2>
+   <p class="sub">Мастер Лаки стрижёт так, что мужчины возвращаются: «сразу нашли контакт, все запросы выполнены».</p>
+   <div class="pl" style="margin-top:18px">
+    <div><span>Мужская стрижка</span><b>900 ₽</b></div>
+    <div><span>Моделирование бороды</span><b>600 ₽</b></div>
+    <div><span>Машинкой, одна / две насадки</span><b>400 / 700 ₽</b></div>
+   </div>
+   <div style="margin-top:20px"><button class="btn p" id="menb">Записаться на стрижку</button></div>
+  </div>
+  <img src="img/beard.jpg" alt="Моделирование бороды в салоне «Миссис»" loading="lazy">
+ </div>
+</div></section>
+
+<section id="price" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Цены</span>
+ <h2>Полный прайс</h2>
+ <p class="sub">Цены с Яндекс Карт. Промокод «МИНУС 20» — для первого посещения.</p>
+ <div class="price reveal"><div class="tabs" id="ptabs"></div><div id="plist"></div></div>
+</div></section>
+
+<section style="padding-top:20px"><div class="wrap">
+ <span class="cap">Отзывы · 5,0</span>
+ <h2>Что пишут <em>гости</em></h2>
+ <div class="revs">
+  <div class="rv reveal"><div class="st">★★★★★</div><p>«Пришла по рекомендации — многие мои знакомые уже клиенты салона. Записалась к Лаки на сложное окрашивание: наконец-то нашла мастера-профессионала!»</p><span>Отзыв с Яндекс Карт</span></div>
+  <div class="rv reveal"><div class="st">★★★★★</div><p>«Сделали сложное тонирование с мелированием, волосы заиграли по-новому. При этом структура не пострадала».</p><span>Отзыв с Яндекс Карт</span></div>
+  <div class="rv reveal"><div class="st">★★★★★</div><p>«Все окрашивания и стрижки делаю тут, девочки — мастера своего дела. Всегда прислушиваются к пожеланиям, лучшие 🔥»</p><span>Отзыв с Яндекс Карт</span></div>
+ </div>
+</div></section>
+
+<section id="where" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Контакты</span>
+ <h2>Как <em>добраться</em></h2>
+ <div class="where">
+  <div class="info">
+   <div><small>Адрес</small><b>Химки, Транспортный пр., 3</b></div>
+   <div><small>Остановка</small><b>«Улица Германа Титова» — 430 м</b></div>
+   <div><small>Время работы</small><b>до 22:00</b></div>
+   <div><small>Телефон и WhatsApp</small><b><a href="tel:+79840000608" style="text-decoration:none">+7 (984) 000-06-08</a></b></div>
+   <div style="border:0"><a class="btn o" href="https://yandex.ru/maps/org/missis/137746261522/" target="_blank" rel="noopener">Открыть на Яндекс Картах</a></div>
+  </div>
+  <div class="map"><iframe title="«Миссис» на карте" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=37.413382%2C55.914049&z=16&pt=37.413382,55.914049,pm2rdm"></iframe></div>
+ </div>
+</div></section>
+
+<footer><div class="wrap">«Миссис» · салон красоты в Химках · Транспортный пр., 3 · фото, цены и отзывы — с Яндекс Карт</div></footer>
+<a class="wa" href="https://wa.me/79840000608" target="_blank" rel="noopener">WhatsApp</a>
+<div class="demo">Демо-версия сайта</div>
+<div class="toast" id="toast">Промокод «МИНУС 20» скопирован</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+"use strict";
+const WA = "79840000608";
+const $ = id => document.getElementById(id);
+const fmt = n => Math.round(n).toLocaleString("ru-RU").replace(/ /g, " ") + " ₽";
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const openWA = t => window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(t + "\n(заявка с сайта)"), "_blank", "noopener");
+addEventListener("scroll", () => $("nav").classList.toggle("sc", scrollY > 30), { passive: true });
+$("promo").onclick = () => { (async () => { try { await navigator.clipboard.writeText("МИНУС 20"); } catch (e) {} })(); $("toast").classList.add("on"); setTimeout(() => $("toast").classList.remove("on"), 2400); };
+
+/* ---------- данные: цены по длине [короткие, каре/средние, длинные, очень длинные] ---------- */
+const LEN = ["Короткие", "Средние", "Длинные", "Очень длинные"];
+const LENH = [.45, .7, 1, 1.3];  // длина прядей в 3D
+const HAIR = [
+ ["Женская стрижка", [1400, 1600, 1800, 2400]],
+ ["Окрашивание в 1 тон / тонирование", [2600, 3300, 5500, 6000], "tone"],
+ ["Прикорневое окрашивание (до 2 см)", [2600, 2600, 2600, 2600], "tone"],
+ ["Мелирование", [3000, 3500, 5500, 5500], "high"],
+ ["Сложное: омбре, шатуш, балаяж", [5000, 8000, 10000, 12000], "bal"],
+ ["Обесцвечивание", [3000, 4000, 5000, 6000], "blond"],
+ ["Осветление + тонирование", [null, null, null, 14000], "blond"]
+];
+const CARE = [["«Абсолютное счастье для волос» Lebel", 5000], ["Кератиновое выпрямление", 6000], ["Ботокс для волос", 5000], ["Полировка волос", [1000, 1500, 2100, 2500]], ["Маска для волос", 500]];
+const STYLE = [["Укладка на брашинг", [900, 1200, 1400, 1600]], ["Причёска", 2000], ["Локоны на плойку / утюжок", 400]];
+const NAILS = [["Маникюр без покрытия", 1200], ["Маникюр + гель-лак", 2200], ["Снятие + маникюр + гель-лак", 2500], ["Педикюр с покрытием", 2800]];
+const sel = { len: 1, hair: new Set([0]), care: new Set(), style: new Set(), nails: -1 };
+const price = (p) => Array.isArray(p) ? p[sel.len] : p;
+function opt(group, i, label, p, on, multi) {
+ const v = price(p);
+ return `<button class="opt${on ? " on" : ""}" data-g="${group}" data-i="${i}"${v == null ? " disabled style='opacity:.4'" : ""}>${label}<small>${v == null ? "только для очень длинных" : (multi && group !== "hair" ? "+" : "") + fmt(v)}</small></button>`;
+}
+function drawSteps() {
+ $("steps").innerHTML = `
+ <div class="step"><h3><i>1</i>Длина волос</h3><div class="opts">${LEN.map((l, i) => `<button class="opt${sel.len === i ? " on" : ""}" data-g="len" data-i="${i}">${l}</button>`).join("")}</div></div>
+ <div class="step"><h3><i>2</i>Стрижка и цвет</h3><div class="opts">${HAIR.map((h, i) => opt("hair", i, h[0], h[1], sel.hair.has(i), true)).join("")}</div></div>
+ <div class="step"><h3><i>3</i>Уход</h3><div class="opts">${CARE.map((h, i) => opt("care", i, h[0], h[1], sel.care.has(i), true)).join("")}</div></div>
+ <div class="step"><h3><i>4</i>Укладка</h3><div class="opts">${STYLE.map((h, i) => opt("style", i, h[0], h[1], sel.style.has(i), true)).join("")}</div></div>
+ <div class="step"><h3><i>5</i>Заодно ногти?</h3><div class="opts"><button class="opt${sel.nails < 0 ? " on" : ""}" data-g="nails" data-i="-1">Не нужно</button>${NAILS.map((h, i) => opt("nails", i, h[0], h[1], sel.nails === i, false)).join("")}</div></div>`;
+}
+$("steps").onclick = e => {
+ const b = e.target.closest(".opt"); if (!b || b.disabled) return;
+ const g = b.dataset.g, i = +b.dataset.i;
+ if (g === "len") { sel.len = i; hairLen(i); }
+ else if (g === "nails") sel.nails = i;
+ else { const s = sel[g]; s.has(i) ? s.delete(i) : s.add(i); }
+ if (g === "hair") { const last = [...sel.hair].reverse().find(k => HAIR[k][2]); hairColor(last != null ? HAIR[last][2] : "nat"); }
+ drawSteps(); calc();
+};
+function items() {
+ const out = [];
+ sel.hair.forEach(i => { const v = price(HAIR[i][1]); if (v != null) out.push([HAIR[i][0], v]); });
+ sel.care.forEach(i => out.push([CARE[i][0], price(CARE[i][1])]));
+ sel.style.forEach(i => out.push([STYLE[i][0], price(STYLE[i][1])]));
+ if (sel.nails >= 0) out.push(NAILS[sel.nails]);
+ return out;
+}
+let lastT = 0;
+function calc() {
+ const out = items(), sum = out.reduce((s, o) => s + o[1], 0), first = $("first").checked, total = first ? sum * .8 : sum;
+ $("sl").innerHTML = (out.length ? out.map(o => `<li><span>${o[0]}</span><b>${fmt(o[1])}</b></li>`).join("") : `<li><span>Выберите услуги</span></li>`) + (first && sum ? `<li class="disc"><span>Промокод «МИНУС 20»</span><b>−${fmt(sum * .2)}</b></li>` : "") + `<li><span>Длина</span><b>${LEN[sel.len].toLowerCase()}</b></li>`;
+ $("old").textContent = first && sum ? fmt(sum) : "";
+ const el = $("tot");
+ if (window.__tw) window.__tw.kill();
+ if (typeof gsap !== "undefined" && !reduce) window.__tw = gsap.to({ v: lastT }, { v: total, duration: .5, ease: "power2.out", onUpdate() { el.textContent = fmt(this.targets()[0].v); }, onComplete() { el.textContent = fmt(total); } });
+ else el.textContent = fmt(total);
+ lastT = total;
+}
+$("first").onchange = calc;
+$("send").onclick = () => {
+ const out = items(); if (!out.length) return $("steps").scrollIntoView({ behavior: "smooth" });
+ const sum = out.reduce((s, o) => s + o[1], 0), first = $("first").checked;
+ openWA(`Здравствуйте! Хочу записаться в «Миссис»:\n${out.map(o => "• " + o[0]).join("\n")}\nДлина волос: ${LEN[sel.len].toLowerCase()}.\nПо сайту: ${fmt(first ? sum * .8 : sum)}${first ? " (впервые, промокод «МИНУС 20»)" : ""}.\nПодскажите свободное время?`);
+};
+$("menb").onclick = () => openWA("Здравствуйте! Хочу записаться на мужскую стрижку. Когда есть свободное время?");
+
+/* ---------- прайс ---------- */
+const PRICE = [
+ ["Стрижки", [["Женская стрижка: короткие", "1 400"], ["Каре", "1 800"], ["Средние", "1 600"], ["Длинные", "1 800"], ["Очень длинные", "2 400"], ["Коррекция чёлки", "400"], ["Стрижка одним срезом (без мытья и укладки)", "800"], ["Мужская стрижка", "900"], ["Машинкой: одна / две насадки", "400 / 700"], ["Моделирование бороды", "600"]]],
+ ["Окрашивание", [["Прикорневое (до 2 см)", "2 600"], ["В 1 тон / тонирование: короткие · средние", "2 600 · 3 300"], ["В 1 тон / тонирование: длинные · очень длинные", "5 500 · 6 000"], ["Мелирование: короткие · средние", "3 000 · 3 500"], ["Мелирование: длинные и очень длинные", "5 500"], ["Обесцвечивание: короткие · средние", "3 000 · 4 000"], ["Обесцвечивание: длинные · очень длинные", "5 000 · 6 000"], ["Сложное (омбре, шатуш, балаяж): короткие · средние", "5 000 · 8 000"], ["Сложное: длинные · очень длинные", "10 000 · 12 000"], ["Осветление + тонирование (очень длинные)", "14 000"]]],
+ ["Уход и укладки", [["«Абсолютное счастье для волос» Lebel", "5 000"], ["Кератиновое выпрямление", "6 000"], ["Ботокс для волос", "5 000"], ["Полировка: средние · длинные · очень длинные", "1 500 · 2 100 · 2 500"], ["Маска для волос", "500"], ["Укладка на брашинг", "900–1 600"], ["Локоны на горячий инструмент", "400"], ["Причёска", "2 000"], ["Косички", "500"]]],
+ ["Ногти", [["Маникюр комбинированный без покрытия", "1 200"], ["Маникюр + гель-лак", "2 200"], ["Маникюр + гель-лак + укрепление", "2 500"], ["Снятие + маникюр + выравнивание + гель-лак", "2 500"], ["Педикюр: пальчики / стопа и пальчики", "2 000 / 2 200"], ["Педикюр с покрытием", "2 700–2 800"], ["Френч", "400"], ["Втирка, кошачий глаз", "100"], ["Укрепление гелем", "300"], ["Снятие гель-лака", "300"], ["Детский маникюр", "900"]]],
+ ["Брови и ресницы", [["Коррекция бровей", "400–600"], ["Окрашивание + коррекция бровей", "800–1 100"], ["Ламинирование бровей", "1 800"], ["Ламинирование ресниц + окрашивание + ботокс", "2 000"], ["Окрашивание ресниц", "500"], ["Перманент бровей", "6 000"], ["Коррекция перманента: брови / губы", "5 000 / 4 000"], ["Депиляция воском: верхняя губа / лицо", "500 / 1 000"]]]
+];
+let pt = 0;
+function drawPrice() {
+ $("ptabs").innerHTML = PRICE.map((c, i) => `<button class="${i === pt ? "on" : ""}" data-i="${i}">${c[0]}</button>`).join("");
+ $("plist").innerHTML = PRICE[pt][1].map(r => `<div class="prow"><span>${r[0]}</span><b>${r[1]} ₽</b></div>`).join("");
+}
+$("ptabs").onclick = e => { const b = e.target.closest("button"); if (!b) return; pt = +b.dataset.i; drawPrice(); };
+drawPrice();
+
+/* ---------- 3D: пряди волос ---------- */
+const PAL = {
+ nat: [0x4a2a1c, 0x5b3523, 0x3d2216, 0x6a4029],
+ tone: [0x7a2f3f, 0x8e3a4c, 0x6b2636, 0x9b4357],
+ high: [0x5b3523, 0xd9b98a, 0x4a2a1c, 0xe8cfa2],
+ bal: [0x4a2a1c, 0xb07a4a, 0xe0bf8c, 0xf1dcb5],
+ blond: [0xf3e2bd, 0xe9d3a6, 0xfbeed0, 0xdcc391]
+};
+let hairLen = () => {}, hairColor = () => {};
+const CTL = [["nat", "Натуральный"], ["tone", "Тонирование"], ["high", "Мелирование"], ["bal", "Балаяж"], ["blond", "Блонд"]];
+$("ctl").innerHTML = CTL.map((c, i) => `<button data-c="${c[0]}" class="${i ? "" : "on"}">${c[1]}</button>`).join("");
+$("ctl").onclick = e => { const b = e.target.closest("button"); if (!b) return; hairColor(b.dataset.c); };
+(function () {
+ if (typeof THREE === "undefined") return;
+ const cv = $("gl"); let rd;
+ try { rd = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true }); } catch (e) { return; }
+ rd.setPixelRatio(Math.min(2, devicePixelRatio));
+ const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(34, 1, .1, 100); cam.position.set(0, -.3, 11);
+ scene.add(new THREE.AmbientLight(0xffffff, .5));
+ const key = new THREE.DirectionalLight(0xffffff, 1); key.position.set(3, 5, 6); scene.add(key);
+ const p1 = new THREE.PointLight(0xff4fb3, 2.2, 20); p1.position.set(-4, -1, 4); scene.add(p1);
+ const p2 = new THREE.PointLight(0x8a4dff, 1.6, 20); p2.position.set(4, 2, 3); scene.add(p2);
+ const root = new THREE.Group(); root.position.y = 3.1; scene.add(root);
+ const strands = [];
+ const N = 26;
+ for (let i = 0; i < N; i++) {
+  const x = (i / (N - 1) - .5) * 5.4, z = Math.sin(i * 1.7) * .5;
+  const pts = []; for (let k = 0; k <= 10; k++) { const t = k / 10; pts.push(new THREE.Vector3(Math.sin(t * 3 + i) * .18 * t, -t * 5, Math.cos(t * 2.4 + i) * .14 * t)); }
+  const geo = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 40, .11 + (i % 3) * .025, 8, false);
+  const mat = new THREE.MeshPhysicalMaterial({ color: PAL.nat[i % 4], roughness: .32, metalness: .1, clearcoat: .8, clearcoatRoughness: .25, sheen: 1 });
+  const m = new THREE.Mesh(geo, mat); m.position.set(x, 0, z);
+  m.userData = { ph: i * .6, sp: .6 + (i % 5) * .12 };
+  root.add(m); strands.push(m);
+ }
+ let L = { v: LENH[1] };
+ strands.forEach(s => s.scale.y = L.v);
+ hairLen = i => gsap.to(L, { v: LENH[i], duration: .9, ease: "elastic.out(1,.6)", onUpdate: () => strands.forEach(s => s.scale.y = L.v) });
+ hairColor = c => {
+  [...$("ctl").children].forEach(b => b.classList.toggle("on", b.dataset.c === c));
+  strands.forEach((s, i) => { const to = new THREE.Color(PAL[c][i % 4]); gsap.to(s.material.color, { r: to.r, g: to.g, b: to.b, duration: .8, delay: i * .015 }); });
+ };
+ let mx = 0;
+ addEventListener("pointermove", e => { mx = e.clientX / innerWidth - .5; }, { passive: true });
+ function size() { const r = cv.getBoundingClientRect(); rd.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
+ addEventListener("resize", size); size();
+ const t0 = performance.now(); let vis = true; new IntersectionObserver(es => vis = es[0].isIntersecting).observe(cv);
+ (function loop() {
+  requestAnimationFrame(loop); if (!vis) return;
+  const t = (performance.now() - t0) / 1000;
+  if (!reduce) strands.forEach(s => { s.rotation.z = Math.sin(t * s.userData.sp + s.userData.ph) * .06 + mx * .15; s.rotation.x = Math.cos(t * .7 + s.userData.ph) * .05; });
+  root.rotation.y = Math.sin(t * .3) * .25 + mx * .4;
+  rd.render(scene, cam);
+ })();
+})();
+drawSteps(); calc();
+
+/* ---------- появление ---------- */
+const show = () => document.querySelectorAll(".reveal").forEach(el => { el.style.opacity = 1; el.style.transform = "none"; });
+if (typeof gsap !== "undefined" && !reduce) {
+ gsap.from(".hero .cap, .hero h1, .promo, .hero .sub, .hero .cta, .facts > div", { y: 30, opacity: 0, duration: .8, stagger: .08, ease: "power3.out" });
+ gsap.from(".stage", { scale: .92, opacity: 0, duration: 1.1, ease: "expo.out" });
+ if (typeof ScrollTrigger !== "undefined") { gsap.registerPlugin(ScrollTrigger); document.querySelectorAll(".reveal").forEach(el => gsap.to(el, { opacity: 1, y: 0, duration: .9, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 88%" } })); } else show();
+} else show();
+</script>
+</body>
+</html>
