@@ -364,6 +364,7 @@ function drawPrice() {
 $("ptabs").onclick = e => { const b = e.target.closest("button"); if (!b) return; pt = +b.dataset.i; drawPrice(); };
 drawPrice();
 
+drawSteps(); calc();
 /* ---------- 3D: пряди волос ---------- */
 const PAL = {
  nat: [0x4a2a1c, 0x5b3523, 0x3d2216, 0x6a4029],
@@ -393,7 +394,7 @@ $("ctl").onclick = e => { const b = e.target.closest("button"); if (!b) return; 
   const x = (i / (N - 1) - .5) * 5.4, z = Math.sin(i * 1.7) * .5;
   const pts = []; for (let k = 0; k <= 10; k++) { const t = k / 10; pts.push(new THREE.Vector3(Math.sin(t * 3 + i) * .18 * t, -t * 5, Math.cos(t * 2.4 + i) * .14 * t)); }
   const geo = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 40, .11 + (i % 3) * .025, 8, false);
-  const mat = new THREE.MeshPhysicalMaterial({ color: PAL.nat[i % 4], roughness: .32, metalness: .1, clearcoat: .8, clearcoatRoughness: .25, sheen: 1 });
+  const mat = new THREE.MeshPhysicalMaterial({ color: PAL.nat[i % 4], roughness: .32, metalness: .1, clearcoat: .8, clearcoatRoughness: .25 });
   const m = new THREE.Mesh(geo, mat); m.position.set(x, 0, z);
   m.userData = { ph: i * .6, sp: .6 + (i % 5) * .12 };
   root.add(m); strands.push(m);
@@ -415,10 +416,9 @@ $("ctl").onclick = e => { const b = e.target.closest("button"); if (!b) return; 
   const t = (performance.now() - t0) / 1000;
   if (!reduce) strands.forEach(s => { s.rotation.z = Math.sin(t * s.userData.sp + s.userData.ph) * .06 + mx * .15; s.rotation.x = Math.cos(t * .7 + s.userData.ph) * .05; });
   root.rotation.y = Math.sin(t * .3) * .25 + mx * .4;
-  rd.render(scene, cam);
+  try { rd.render(scene, cam); } catch (e) {}
  })();
 })();
-drawSteps(); calc();
 
 /* ---------- появление ---------- */
 const show = () => document.querySelectorAll(".reveal").forEach(el => { el.style.opacity = 1; el.style.transform = "none"; });
