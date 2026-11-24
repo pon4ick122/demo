@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Адвент-календарь — кофейня «Песок»</title>
 <meta name="description" content="31 окошко до Нового года. Каждый день — новый подарок от кофейни.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{--bg:#0c1210;--bg2:#13201b;--ink:#f6f1e7;--muted:#a9b8ad;--red:#e5483c;--gold:#f2c46b;--green:#2f6b4f;--line:#ffffff1c}
 *{box-sizing:border-box}
@@ -101,7 +99,7 @@ canvas.confetti{position:fixed;inset:0;pointer-events:none;z-index:30}
       <a href="https://wa.me/79256880017?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B0%D0%B4%D0%B2%D0%B5%D0%BD%D1%82-%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D1%8C" target="_blank" rel="noopener">Хочу такой</a>
     </div>
   </section>
-  <footer>Демо-проект студии Axiom · pon4ick122.github.io/demo/portfolio</footer>
+  <footer>Демо-проект студии Axiom · pon4ick122.github.io/demo/portfolio<div class="pd-links" data-pd style="flex-basis:100%;width:100%;margin-top:14px;font-size:12px;line-height:1.6;opacity:.7"><a href="privacy.html" style="color:inherit;text-decoration:underline">Политика конфиденциальности</a> · <a href="soglasie.html" style="color:inherit;text-decoration:underline">Согласие на обработку персональных данных</a></div></footer>
 </div>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="pz">
@@ -113,7 +111,8 @@ canvas.confetti{position:fixed;inset:0;pointer-events:none;z-index:30}
     <p id="pzText">Покажите код бариста или заберите подарок в WhatsApp.</p>
     <div class="code" id="code">PESOK-01-0000</div>
     <input id="name" placeholder="Как вас зовут?" autocomplete="given-name">
-    <button class="btn" id="claim">Забрать в WhatsApp</button>
+    <label class="pd-consent" data-pd style="display:flex;gap:8px;align-items:flex-start;margin:10px 0;font-size:13px;line-height:1.4;text-align:left;cursor:pointer"><input type="checkbox" class="pd-ok" style="margin-top:2px;flex:none;width:16px;height:16px"><span>Я согласен(на) на <a href="soglasie.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">обработку персональных данных</a></span></label>
+    <button class="btn" id="claim" data-pd-guard="name">Забрать в WhatsApp</button>
     <div class="fine">Код действует только в этот день.</div>
   </div>
 </div>
@@ -243,5 +242,10 @@ if (hasGsap && !reduce) {
   gsap.from(".day", { y: 30, opacity: 0, rotateX: -40, duration: .6, stagger: .025, delay: .3, ease: "back.out(1.4)" });
 }
 </script>
+<style data-pd>.pd-consent.pd-err{color:#e5484d}.pd-consent.pd-err .pd-ok{outline:2px solid #e5484d;outline-offset:2px}</style>
+<script data-pd>(function(){function ok(el){var box=document.querySelector('.pd-ok');if(!box||box.checked)return true;var filled=(el.getAttribute('data-pd-guard')||'').split(',').some(function(i){var f=document.getElementById(i);return f&&f.value.trim()});if(!filled)return true;var l=box.closest('label');l.classList.add('pd-err');box.focus();return false}
+window.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button[data-pd-guard]');if(b&&!ok(b)){e.preventDefault();e.stopImmediatePropagation()}},true);
+window.addEventListener('submit',function(e){var f=e.target;if(f.hasAttribute&&f.hasAttribute('data-pd-guard')&&!ok(f)){e.preventDefault();e.stopImmediatePropagation()}},true);
+document.addEventListener('change',function(e){if(e.target.classList&&e.target.classList.contains('pd-ok'))e.target.closest('label').classList.remove('pd-err')})})();</script>
 </body>
 </html>
