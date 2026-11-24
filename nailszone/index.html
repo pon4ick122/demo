@@ -375,7 +375,7 @@ function calc() {
  if (both && four) mins = mins - hT - fT + Math.max(hT, fT);
  $("sl").innerHTML = out.length ? out.map(o => `<li><span>${o[0]}</span><b>${o[0] === "В четыре руки" ? "+" : ""}${fmt(o[1])}</b></li>`).join("") : `<li class="empty">Пока ничего не выбрано</li>`;
  const el = $("tot");
- if (typeof gsap !== "undefined" && !reduce) gsap.to({ v: lastTotal }, { v: sum, duration: .5, ease: "power2.out", onUpdate() { el.textContent = "от " + fmt(Math.round(this.targets()[0].v)); } });
+ if (window.__tw) window.__tw.kill(); if (typeof gsap !== "undefined" && !reduce) window.__tw = gsap.to({ v: lastTotal }, { v: sum, duration: .5, ease: "power2.out", onUpdate() { el.textContent = "от " + fmt(Math.round(this.targets()[0].v)); }, onComplete() { el.textContent = "от " + fmt(sum); } });
  else el.textContent = "от " + fmt(sum);
  lastTotal = sum;
  const h = Math.floor(mins / 60), m = mins % 60;
