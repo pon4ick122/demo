@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sister Margaret — барбершоп на Сокольническом Валу</title>
 <meta name="description" content="Барбершоп Sister Margaret, ул. Сокольнический Вал, 22. Мужские и детские стрижки, борода, королевское бритьё. 5,0 на Яндекс Картах, «Хорошее место 2026».">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Old+Standard+TT:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{--green:#123a2c;--green2:#0b2a1f;--ox:#7a1622;--ox2:#9b2130;--cream:#f2e8d5;--cream2:#e4d6bc;--brass:#c9a35a;--ink:#14110e;--mute:#8e8573}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -220,7 +219,7 @@ footer p{line-height:1.8}footer a{color:var(--brass)}
 <footer>
  <div><div class="frak">Sister Margaret</div><p>Москва, ул. Сокольнический Вал, 22<br>Телефон / WhatsApp: <a href="tel:+79661431881">+7 966 143-18-81</a><br>Записаться: <a href="#book">онлайн на сайте</a></p></div>
  <div><iframe title="Карта" src="https://yandex.ru/map-widget/v1/?ll=37.66052%2C55.791791&z=16&pt=37.66052,55.791791,pm2rdm" style="width:100%;height:260px;border:0;border-radius:2px;filter:sepia(.35)" loading="lazy"></iframe></div>
-</footer>
+<div class="pd-links" data-pd style="flex-basis:100%;width:100%;margin-top:14px;font-size:12px;line-height:1.6;opacity:.7"><a href="privacy.html" style="color:inherit;text-decoration:underline">Политика конфиденциальности</a> · <a href="soglasie.html" style="color:inherit;text-decoration:underline">Согласие на обработку персональных данных</a></div></footer>
 
 <a class="fab" href="https://wa.me/79661431881">WhatsApp</a>
 <div class="demo">Демо-версия сайта</div>
@@ -288,5 +287,9 @@ if(window.gsap&&window.ScrollTrigger&&!matchMedia('(prefers-reduced-motion: redu
  document.querySelectorAll('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 90%'}}));
 }else document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none'});
 </script>
+<div id="pdCookie" data-pd hidden style="position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:420px;margin:0 auto 0 0;background:#1d1c1a;color:#f2f1ed;border-radius:12px;padding:14px 16px;font:13px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.25)">
+На сайте встроены Яндекс Карты — они могут сохранять cookie. Подробнее в <a href="privacy.html" style="color:inherit">политике</a>.
+<button type="button" id="pdCookieOk" style="display:block;margin-top:10px;background:#f2f1ed;color:#1d1c1a;border:0;border-radius:8px;padding:8px 16px;font:600 13px system-ui,sans-serif;cursor:pointer">Понятно</button></div>
+<script data-pd>(function(){var b=document.getElementById('pdCookie'),k='pd-cookie-ok',ok=false;try{ok=localStorage.getItem(k)==='1'}catch(e){}if(!ok)b.hidden=false;document.getElementById('pdCookieOk').onclick=function(){b.hidden=true;try{localStorage.setItem(k,'1')}catch(e){}}})();</script>
 </body>
 </html>
