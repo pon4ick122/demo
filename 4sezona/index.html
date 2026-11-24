@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>4 Сезона — салон красоты в Балашихе</title>
+<meta name="description" content="Салон «4 Сезона» на ул. Свердлова, 1В в Балашихе: маникюр, педикюр, стрижки, окрашивание, брови, ресницы и перманент. 4,9 на Яндекс Картах, «Хорошее место 2026».">
+<meta property="og:title" content="4 Сезона — салон красоты в Балашихе">
+<meta property="og:description" content="Всё в одном месте: ногти, волосы, брови, ресницы. 4,9 и «Хорошее место 2026».">
+<meta property="og:image" content="img/hall.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f6fa;--card:#fff;--ink:#14213a;--mute:#5d6b82;--line:#dfe6f0;--acc:#2e5aa8;--acc2:#1d3f7d;--soft:#e2ebf8;--dark:#14213a;transition:none}
+body[data-s="spring"]{--bg:#fbf5f6;--line:#f0dfe3;--acc:#c94f7c;--acc2:#9e3360;--soft:#fbe3ec;--mute:#7a5c66;--ink:#2e1621;--dark:#2e1621}
+body[data-s="summer"]{--bg:#fbf8ef;--line:#efe5c9;--acc:#d9822b;--acc2:#a95d14;--soft:#fbedd6;--mute:#7a6a4f;--ink:#2b2215;--dark:#2b2215}
+body[data-s="autumn"]{--bg:#f8f3ee;--line:#eadccd;--acc:#b5532b;--acc2:#87391a;--soft:#f6e2d4;--mute:#76604f;--ink:#2a1a10;--dark:#2a1a10}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;transition:background .8s,color .8s}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.cap{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--acc);transition:color .8s}
+h1,h2,h3{font-family:Lora,Georgia,serif;font-weight:500;line-height:1.08}
+h2{font-size:clamp(30px,4.2vw,52px);margin:10px 0 14px}
+h1 em,h2 em{color:var(--acc);font-style:italic;transition:color .8s}
+.sub{color:var(--mute);font-size:clamp(16px,1.5vw,18px);max-width:640px}
+section{padding:96px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:999px;font:700 15px Manrope,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background .3s,transform .2s}
+.btn.a{background:var(--acc);color:#fff}.btn.a:hover{background:var(--acc2);transform:translateY(-1px)}
+.btn.o{box-shadow:inset 0 0 0 1.5px var(--ink);color:var(--ink);background:transparent}.btn.o:hover{background:var(--ink);color:#fff}
+nav{position:fixed;inset:0 0 auto;z-index:30;transition:.3s}
+nav.sc{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Lora;font-size:22px;font-weight:600}
+.logo i{font-style:normal;width:36px;height:36px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font-size:18px;transition:background .8s}
+nav .links{display:flex;gap:24px;font-size:14px;font-weight:600}
+nav .links a{text-decoration:none;opacity:.8}
+nav .btn{padding:11px 18px;font-size:14px}
+/* hero */
+.hero{min-height:100svh;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:24px;padding:96px 0 40px}
+.hero h1{font-size:clamp(40px,5.4vw,76px);margin:14px 0 18px}
+.seasons{display:inline-flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px;margin-bottom:22px}
+.seasons button{appearance:none;border:0;background:transparent;border-radius:99px;padding:9px 14px;font:700 14px Manrope,sans-serif;color:var(--mute);cursor:pointer;transition:.3s}
+.seasons button.on{background:var(--acc);color:#fff}
+.offer{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:14px 16px;margin-top:24px;max-width:520px}
+.offer b{font-family:Lora;font-size:28px;color:var(--acc);white-space:nowrap}
+.offer span{font-size:14px;color:var(--mute)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:30px}
+.facts b{display:block;font-family:Lora;font-size:32px;line-height:1}
+.facts span{font-size:13px;color:var(--mute)}
+.stage{position:relative;aspect-ratio:1/1.08;width:100%;max-width:540px;justify-self:center}
+.stage .ph{position:absolute;inset:4% 8% 10% 8%;border-radius:200px 200px 32px 32px;overflow:hidden;box-shadow:0 40px 80px #14213a30}
+.stage .ph img{width:100%;height:100%;object-fit:cover;transition:opacity .8s}
+#gl{position:absolute;inset:-6%;width:112%;height:112%;pointer-events:none;z-index:2}
+.stage .lbl{position:absolute;right:0;bottom:4%;z-index:3;background:var(--card);border-radius:18px;padding:12px 16px;box-shadow:0 20px 40px #14213a24;font-size:13px}
+.stage .lbl b{display:block;font-family:Lora;font-size:20px;color:var(--acc)}
+/* builder */
+.build{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;margin-top:34px;align-items:start}
+.step{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:22px;margin-bottom:14px}
+.step h3{font-family:Manrope;font-weight:700;font-size:16px;margin-bottom:12px;display:flex;gap:10px;align-items:center}
+.step h3 i{font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--soft);color:var(--acc2);display:grid;place-items:center;font-size:13px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{appearance:none;border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:10px 14px;font:500 14px Manrope,sans-serif;color:var(--ink);cursor:pointer;text-align:left;transition:.18s}
+.opt small{display:block;color:var(--mute);font-size:12px;margin-top:2px}
+.opt:hover{border-color:var(--acc)}
+.opt.on{border-color:var(--acc);background:var(--soft);box-shadow:inset 0 0 0 1px var(--acc)}
+.opt .tag{display:inline-block;background:var(--acc);color:#fff;border-radius:6px;padding:1px 6px;font-size:11px;margin-left:6px}
+.sum{position:sticky;top:90px;background:var(--dark);color:#fff;border-radius:30px;padding:28px;transition:background .8s}
+.sum .k{font-size:12px;letter-spacing:.24em;text-transform:uppercase;opacity:.7;font-weight:700}
+.sum ul{list-style:none;margin:16px 0;display:grid;gap:8px;font-size:14px;opacity:.95}
+.sum li{display:flex;justify-content:space-between;gap:12px}
+.sum li b{white-space:nowrap}
+.sum li.disc{color:#ffd28a;font-weight:700}
+.tot{font-family:Lora;font-size:44px;line-height:1}
+.tm{opacity:.75;font-size:14px;margin-top:6px}
+.sum .btn{width:100%;margin-top:18px;background:#fff;color:var(--dark)}
+.sum .fine{font-size:12px;opacity:.6;margin-top:10px}
+/* gallery */
+.gal{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 16px;margin:30px -20px 0;scrollbar-width:none}
+.gal::-webkit-scrollbar{display:none}
+.gal figure{flex:0 0 clamp(210px,23vw,280px);aspect-ratio:3/4;border-radius:22px;overflow:hidden;scroll-snap-align:start;position:relative}
+.gal img{width:100%;height:100%;object-fit:cover}
+.gal figcaption{position:absolute;left:12px;bottom:12px;background:#fff;border-radius:99px;padding:6px 12px;font-size:12px;font-weight:700}
+/* masters & care */
+.ms{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.m{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px}
+.m .r{font-size:12px;color:var(--acc);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.m h3{font-size:26px;margin:6px 0 10px}
+.m p{color:var(--mute);font-size:14px;font-style:italic}
+.care{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.care .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.care .pics img{border-radius:22px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.perks{display:grid;gap:12px;margin-top:22px}
+.perk{display:flex;gap:14px}
+.perk i{font-style:normal;flex:0 0 44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:20px}
+.perk span{display:block;color:var(--mute);font-size:14px}
+/* price */
+.price{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:30px;margin-top:30px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tabs button{appearance:none;border:1.5px solid var(--line);background:#fff;font:700 14px Manrope,sans-serif;padding:10px 16px;border-radius:99px;cursor:pointer;color:var(--ink)}
+.tabs button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.prow{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+.prow:last-child{border-bottom:0}
+.prow b{font-family:Lora;font-weight:600;font-size:18px;white-space:nowrap;color:var(--acc2)}
+.where{display:grid;grid-template-columns:1fr 1.2fr;gap:30px}
+.info{display:grid;gap:16px;align-content:start}
+.info div{border-bottom:1px solid var(--line);padding-bottom:14px}
+.info small{display:block;color:var(--mute);font-size:13px}
+.info b{font-size:18px}
+.map{border-radius:28px;overflow:hidden;min-height:360px;background:var(--soft)}
+.map iframe{width:100%;height:100%;min-height:360px;border:0}
+footer{padding:40px 0 90px;color:var(--mute);font-size:13px;border-top:1px solid var(--line)}
+.wa{position:fixed;right:18px;bottom:18px;z-index:40;background:#25d366;color:#fff;border-radius:99px;padding:14px 18px;font-weight:700;text-decoration:none;box-shadow:0 12px 30px #25d36655}
+.demo{position:fixed;left:16px;bottom:18px;z-index:40;background:#14213add;color:#fff;border-radius:10px;padding:8px 12px;font-size:12px}
+.reveal{opacity:0;transform:translateY(30px)}
+@media(max-width:980px){
+ nav .links{display:none}
+ .hero{grid-template-columns:1fr;padding-top:84px}
+ .stage{max-width:420px;order:-1}
+ .build,.care,.where{grid-template-columns:1fr}
+ .sum{position:relative;top:0}
+ .ms{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+ section{padding:70px 0}
+ .price{padding:20px 16px}
+ .step{padding:18px}
+ .seasons button{padding:8px 10px;font-size:13px}
+ .logo{font-size:19px}
+ nav .btn{padding:10px 14px}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body data-s="winter">
+
+<nav id="nav"><div class="wrap">
+ <a class="logo" href="#top"><i>4</i>Сезона</a>
+ <div class="links"><a href="#build">Записаться</a><a href="#works">Работы</a><a href="#masters">Мастера</a><a href="#price">Цены</a><a href="#where">Контакты</a></div>
+ <a class="btn a" href="#build">Записаться</a>
+</div></nav>
+
+<header class="wrap hero" id="top">
+ <div>
+  <div class="seasons" id="seasons" role="group" aria-label="Сезон оформления"></div>
+  <h1 id="h1">Красота <em>в любой сезон</em> — всё в одном месте</h1>
+  <p class="sub">Маникюр, педикюр, стрижки, окрашивание, брови, ресницы и перманент на ул. Свердлова, 1В. «Долго искала свой салон, чтобы прийти — и всё в одном месте», — пишут гости.</p>
+  <div class="offer"><b>−10%</b><span>Маникюр «Всё включено»: снятие, маникюр, выравнивание и гель-лак — <strong>1 980 ₽</strong> вместо 2 200 ₽</span></div>
+  <div class="cta"><a class="btn a" href="#build">Собрать визит</a><a class="btn o" href="#price">Цены</a></div>
+  <div class="facts">
+   <div><b>4,9</b><span>140 оценок на Картах</span></div>
+   <div><b>2026</b><span>«Хорошее место»</span></div>
+   <div><b>до 22:00</b><span>Балашиха-2</span></div>
+  </div>
+ </div>
+ <div class="stage" id="stage">
+  <div class="ph"><img id="heroimg" src="img/hall.jpg" alt="Зал салона «4 Сезона»" fetchpriority="high"></div>
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="lbl"><b id="slbl">Зима</b>снег за окном — уют внутри</div>
+ </div>
+</header>
+
+<section id="build" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Всё за один визит</span>
+ <h2>Соберите визит — <em>цена и время сразу</em></h2>
+ <p class="sub">Ногти, волосы, брови и ресницы — в одном салоне и в один день. Цены с Яндекс Карт, заявка уходит администратору в WhatsApp.</p>
+ <div class="build">
+  <div id="steps"></div>
+  <aside class="sum" aria-live="polite">
+   <div class="k">Ваш визит</div>
+   <ul id="sl"></ul>
+   <div class="tot" id="tot">0 ₽</div>
+   <div class="tm" id="tm"></div>
+   <button class="btn" id="send">Записаться в WhatsApp</button>
+   <div class="fine">Откроется WhatsApp с готовым сообщением — останется отправить.</div>
+  </aside>
+ </div>
+</div></section>
+
+<section id="works" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Работы мастеров</span>
+ <h2>Френч, кошачий глаз, <em>стрижки и цвет</em></h2>
+ <p class="sub">Фото с Яндекс Карт салона — их там больше 500. Листайте вбок.</p>
+ <div class="gal" id="gal"></div>
+</div></section>
+
+<section id="masters" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Мастера · из отзывов</span>
+ <h2>Те, к кому <em>возвращаются</em></h2>
+ <div class="ms">
+  <div class="m reveal"><div class="r">Маникюр</div><h3>Милена</h3><p>«Сделала просто превосходные ноготочки, аккуратные и качественные. Тут я почувствовала сервис, который давно искала».</p></div>
+  <div class="m reveal"><div class="r">Педикюр</div><h3>Оксана</h3><p>«Процедура прошла в полном комфорте, учла все предпочтения, сделала безумно красивый педикюр».</p></div>
+  <div class="m reveal"><div class="r">Брови</div><h3>Анна</h3><p>«Учла все мои предпочтения. Всё аккуратно и стерильно — для меня это очень важно».</p></div>
+  <div class="m reveal"><div class="r">Стрижки</div><h3>Елена</h3><p>«Пришла без записи, предложили подождать полчаса. Результатом довольна, спасибо!»</p></div>
+  <div class="m reveal"><div class="r">Мастера</div><h3>Нарине и Рузанна</h3><p>«Очень компетентные, вежливые и чуткие. Много услуг — очень советую!»</p></div>
+  <div class="m reveal"><div class="r">Окрашивание</div><h3>Цвет за вечер</h3><p>«Обратилась уже после 19 часов — не отказали. Мастер подобрала цвет и длину, волосы живые и блестящие».</p></div>
+ </div>
+</div></section>
+
+<section style="padding-top:20px"><div class="wrap care">
+ <div class="pics reveal"><img src="img/chair.jpg" alt="Место парикмахера" loading="lazy"><img src="img/pal.jpg" alt="Палитра гель-лаков" loading="lazy"></div>
+ <div class="reveal">
+  <span class="cap">Салон</span>
+  <h2>Чай, кофе <em>и носочки в подарок</em></h2>
+  <p class="sub">«Сразу предложили чай или кофе — кстати, очень вкусный — и подарили носочки», — из отзыва гостьи, которая пришла впервые.</p>
+  <div class="perks">
+   <div class="perk"><i>☕</i><div><b>Кофе — 90% положительных отзывов</b><span>Пока мастер работает, вы отдыхаете.</span></div></div>
+   <div class="perk"><i>👧</i><div><b>Детская стрижка до 7 лет — 500 ₽</b><span>Можно прийти вместе с ребёнком.</span></div></div>
+   <div class="perk"><i>✨</i><div><b>Компетентность — 100%</b><span>Стерильные инструменты и аккуратная работа.</span></div></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="price" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Цены</span>
+ <h2>Полный прайс</h2>
+ <p class="sub">Цены с Яндекс Карт. Мастер подтвердит итог перед процедурой.</p>
+ <div class="price reveal"><div class="tabs" id="ptabs"></div><div id="plist"></div></div>
+</div></section>
+
+<section id="where" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Контакты</span>
+ <h2>Как <em>добраться</em></h2>
+ <div class="where">
+  <div class="info">
+   <div><small>Адрес</small><b>Балашиха, ул. Свердлова, 1В</b></div>
+   <div><small>Время работы</small><b>до 22:00</b></div>
+   <div><small>Телефон и WhatsApp</small><b><a href="tel:+79104866966" style="text-decoration:none">+7 (910) 486-69-66</a></b></div>
+   <div style="border:0"><a class="btn o" href="https://yandex.ru/maps/org/4_sezona/71257575890/" target="_blank" rel="noopener">Открыть на Яндекс Картах</a></div>
+  </div>
+  <div class="map"><iframe title="«4 Сезона» на карте" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=37.966733%2C55.818744&z=16&pt=37.966733,55.818744,pm2rdm"></iframe></div>
+ </div>
+</div></section>
+
+<footer><div class="wrap">«4 Сезона» · салон красоты · Балашиха, ул. Свердлова, 1В · фото, цены и отзывы — с Яндекс Карт</div></footer>
+<a class="wa" href="https://wa.me/79104866966" target="_blank" rel="noopener">WhatsApp</a>
+<div class="demo">Демо-версия сайта</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+"use strict";
+const WA = "79104866966";
+const $ = id => document.getElementById(id);
+const fmt = n => Math.round(n).toLocaleString("ru-RU").replace(/ /g, " ") + " ₽";
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const openWA = t => window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(t + "\n(заявка с сайта)"), "_blank", "noopener");
+addEventListener("scroll", () => $("nav").classList.toggle("sc", scrollY > 30), { passive: true });
+
+/* ---------- конструктор ---------- */
+const LEN = ["Короткие", "Средние", "Длинные"];
+const S = [
+ { id: "n", t: "Руки", one: true, o: [["Не нужно", 0, 0], ["«Всё включено»: снятие + маникюр + выравнивание + гель-лак", 2200, 120, "−10%"], ["Маникюр + выравнивание + гель-лак", 2200, 110], ["Маникюр без покрытия", 1200, 50], ["Маникюр + обычный лак", 1400, 60], ["Наращивание + гель-лак", 4000, 180], ["Коррекция наращивания + гель-лак", 3000, 150], ["Мужской маникюр", 1500, 50], ["Детский маникюр", 850, 40]] },
+ { id: "d", t: "Дизайн", one: false, o: [["Френч", 500, 20], ["Кошачий глаз", 300, 5], ["Втирка", 400, 10], ["Омбре", 500, 20], ["Матовый топ", 200, 5], ["Укрепление гелем", 600, 15]] },
+ { id: "p", t: "Ноги", one: true, o: [["Не нужно", 0, 0], ["Педикюр без покрытия", 2000, 70], ["Смарт-педикюр", 2500, 70], ["Педикюр + гель-лак", 2700, 100], ["Смарт-педикюр + гель-лак", 3000, 100], ["Пальчики + гель-лак", 2400, 80]] },
+ { id: "len", t: "Длина волос", one: true, info: true, o: [["Короткие"], ["Средние"], ["Длинные"]] },
+ { id: "h", t: "Волосы", one: false, o: [["Женская стрижка", [800, 1000, 1300], 60], ["Окрашивание в один тон", [2800, 3400, 4000], 120], ["Окрашивание корней", 2300, 90], ["Мелирование", [2500, 3000, 3500], 150], ["Тонирование", [2000, 2100, 2500], 60], ["Укладка феном", [800, 1000, 1200], 40], ["Вечерняя укладка", [1800, 2300, 2800], 60], ["Детская стрижка до 7 лет", 500, 30]] },
+ { id: "b", t: "Брови и ресницы", one: false, o: [["Коррекция бровей", 500, 20], ["Окрашивание бровей хной", 700, 30], ["Коррекция + окрашивание + ламинирование бровей", 2500, 70], ["Ламинирование ресниц", 2500, 60], ["Наращивание ресниц", 3000, 120], ["Окрашивание ресниц хной", 700, 20]] }
+];
+const sel = { n: 1, d: [], p: 0, len: 1, h: [], b: [] };
+const val = o => Array.isArray(o[1]) ? o[1][sel.len] : o[1];
+function drawSteps() {
+ let k = 0;
+ $("steps").innerHTML = S.map(s => `<div class="step"><h3><i>${++k}</i>${s.t}</h3><div class="opts">${s.o.map((o, i) => {
+  const on = s.one ? sel[s.id] === i : sel[s.id].includes(i); const v = s.info ? null : val(o);
+  return `<button class="opt${on ? " on" : ""}" data-s="${s.id}" data-i="${i}">${o[0]}${o[3] ? `<span class="tag">${o[3]}</span>` : ""}${v ? `<small>${s.id === "d" ? "+" : ""}${fmt(v)}</small>` : ""}</button>`;
+ }).join("")}</div></div>`).join("");
+}
+$("steps").onclick = e => {
+ const b = e.target.closest(".opt"); if (!b) return;
+ const s = S.find(x => x.id === b.dataset.s), i = +b.dataset.i;
+ if (s.one) sel[s.id] = i; else { const a = sel[s.id], j = a.indexOf(i); j < 0 ? a.push(i) : a.splice(j, 1); }
+ drawSteps(); calc();
+};
+function items() {
+ const out = [], g = id => S.find(s => s.id === id);
+ if (sel.n) out.push(g("n").o[sel.n]); sel.d.forEach(i => out.push(g("d").o[i]));
+ if (sel.p) out.push(g("p").o[sel.p]); sel.h.forEach(i => out.push(g("h").o[i])); sel.b.forEach(i => out.push(g("b").o[i]));
+ return out;
+}
+let lastT = 0;
+function calc() {
+ const out = items(); let sum = out.reduce((s, o) => s + val(o), 0);
+ const disc = sel.n === 1 ? 220 : 0; const total = sum - disc;
+ const mins = out.reduce((s, o) => s + (o[2] || 0), 0);
+ $("sl").innerHTML = out.length ? out.map(o => `<li><span>${o[0]}</span><b>${fmt(val(o))}</b></li>`).join("") + (disc ? `<li class="disc"><span>Акция «Всё включено» −10%</span><b>−${fmt(disc)}</b></li>` : "") + (sel.h.length ? `<li><span>Длина волос</span><b>${LEN[sel.len].toLowerCase()}</b></li>` : "") : `<li><span>Выберите услуги слева</span></li>`;
+ $("tm").textContent = mins ? `≈ ${Math.floor(mins / 60) ? Math.floor(mins / 60) + " ч " : ""}${mins % 60 ? mins % 60 + " мин" : ""} · всё в один день` : "";
+ const el = $("tot");
+ if (window.__tw) window.__tw.kill();
+ if (typeof gsap !== "undefined" && !reduce) window.__tw = gsap.to({ v: lastT }, { v: total, duration: .5, ease: "power2.out", onUpdate() { el.textContent = fmt(this.targets()[0].v); }, onComplete() { el.textContent = fmt(total); } });
+ else el.textContent = fmt(total);
+ lastT = total;
+}
+$("send").onclick = () => {
+ const out = items(); if (!out.length) return $("steps").scrollIntoView({ behavior: "smooth" });
+ const total = out.reduce((s, o) => s + val(o), 0) - (sel.n === 1 ? 220 : 0);
+ openWA(`Здравствуйте! Хочу записаться в «4 Сезона»:\n${out.map(o => "• " + o[0]).join("\n")}${sel.h.length ? "\nДлина волос: " + LEN[sel.len].toLowerCase() + "." : ""}\nПо сайту: ${fmt(total)}${sel.n === 1 ? " (с акцией −10%)" : ""}.\nПодскажите свободное время?`);
+};
+drawSteps(); calc();
+
+/* ---------- галерея и прайс ---------- */
+$("gal").innerHTML = [["n1", "Френч"], ["h5", "Окрашивание"], ["n3", "Кошачий глаз"], ["h3", "Укладка"], ["n5", "Синий френч"], ["kids", "Детская стрижка"], ["n2", "Бордо с блёстками"], ["h4", "Блонд"], ["n4", "Розовый"], ["pedi", "Педикюр"], ["n6", "Цветной френч"], ["h1", "Стрижка"], ["n10", "Нюд"], ["n7", "Летний френч"]].map(([f, c]) => `<figure><img src="img/${f}.jpg" alt="${c} — работа салона «4 Сезона»" loading="lazy"><figcaption>${c}</figcaption></figure>`).join("");
+const PRICE = [
+ ["Маникюр", [["Снятие + маникюр + выравнивание + гель-лак", "2 200"], ["Маникюр + выравнивание + гель-лак", "2 200"], ["Маникюр без покрытия (классический, комби, аппаратный)", "1 200"], ["Маникюр + обычный лак", "1 400"], ["Однотонное покрытие гель-лаком", "1 200"], ["Наращивание + гель-лак", "4 000"], ["Коррекция наращивания + гель-лак", "3 000"], ["Мужской маникюр", "1 500"], ["Детский маникюр", "850"], ["Френч / омбре", "500"], ["Втирка", "400"], ["Кошачий глаз", "300"], ["Матовый топ", "200"], ["Укрепление гелем / акриловой пудрой", "600 / 400"], ["Ремонт / наращивание одного ногтя", "150 / 350"], ["Снятие наращённых ногтей", "500"]]],
+ ["Педикюр", [["Педикюр классический / комби", "2 000"], ["Смарт-педикюр", "2 500"], ["Педикюр + гель-лак", "2 700"], ["Смарт-педикюр + гель-лак", "3 000"], ["Пальчики + гель-лак", "2 400"], ["Пальчики без покрытия", "1 700"], ["Обработка пяток", "1 700"]]],
+ ["Волосы", [["Стрижка: короткие / средние / длинные", "800 / 1 000 / 1 300"], ["Модельная стрижка", "800"], ["Машинкой: одна / две насадки", "500 / 600"], ["Стрижка чёлки", "400"], ["Детская стрижка до 7 лет", "500"], ["Окрашивание в один тон", "2 800 / 3 400 / 4 000"], ["Окрашивание корней", "2 300"], ["Мелирование", "2 500 / 3 000 / 3 500"], ["Прикорневое мелирование", "2 100"], ["Тонирование", "2 000 / 2 100 / 2 500"], ["Укладка феном", "800 / 1 000 / 1 200"], ["Коктейльная укладка", "1 300 / 1 800 / 2 300"], ["Вечерняя укладка (короткие / длинные)", "1 800 / 2 800"], ["Выпрямление утюжком", "800 / 1 000 / 1 200"], ["Мытьё с сушкой", "500 / 700 / 900"]]],
+ ["Брови и ресницы", [["Архитектура / коррекция бровей", "500"], ["Окрашивание бровей: краска / хна", "500 / 700"], ["Коррекция + окрашивание + ламинирование бровей", "2 500"], ["Ламинирование ресниц", "2 500"], ["Наращивание ресниц", "3 000"], ["Окрашивание ресниц: краска / хна", "500 / 700"]]],
+ ["Перманент", [["Брови", "7 000"], ["Губы", "7 000"], ["Межресничное пространство", "7 000"], ["Коррекция любой зоны", "4 000"]]]
+];
+let pt = 0;
+function drawPrice() { $("ptabs").innerHTML = PRICE.map((c, i) => `<button class="${i === pt ? "on" : ""}" data-i="${i}">${c[0]}</button>`).join(""); $("plist").innerHTML = PRICE[pt][1].map(r => `<div class="prow"><span>${r[0]}</span><b>${r[1]} ₽</b></div>`).join(""); }
+$("ptabs").onclick = e => { const b = e.target.closest("button"); if (!b) return; pt = +b.dataset.i; drawPrice(); };
+drawPrice();
+
+/* ---------- сезоны + 3D-частицы ---------- */
+const SEAS = { winter: ["Зима", "❄", "снег за окном — уют внутри", "img/hall.jpg", [0xffffff, 0xdbe8ff]], spring: ["Весна", "🌸", "весенний маникюр и новый цвет", "img/n4.jpg", [0xffb7cf, 0xffe1ec]], summer: ["Лето", "☀", "яркий френч и педикюр", "img/n7.jpg", [0xffd36b, 0xfff1c2]], autumn: ["Осень", "🍂", "бордо, медь и тёплый блонд", "img/n2.jpg", [0xd9622b, 0xf0a048]] };
+$("seasons").innerHTML = Object.entries(SEAS).map(([k, s], i) => `<button data-k="${k}" class="${i ? "" : "on"}">${s[1]} ${s[0]}</button>`).join("");
+let setParticles = () => {};
+$("seasons").onclick = e => {
+ const b = e.target.closest("button"); if (!b) return; const k = b.dataset.k, s = SEAS[k];
+ [...$("seasons").children].forEach(x => x.classList.toggle("on", x === b));
+ document.body.dataset.s = k; $("slbl").textContent = s[0]; $("slbl").nextSibling.textContent = s[2];
+ const img = $("heroimg"); img.style.opacity = 0; setTimeout(() => { img.src = s[3]; img.onload = () => img.style.opacity = 1; }, 400);
+ setParticles(k);
+};
+(function () {
+ if (typeof THREE === "undefined") return;
+ const cv = $("gl"); let rd;
+ try { rd = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true }); } catch (e) { return; }
+ rd.setPixelRatio(Math.min(2, devicePixelRatio));
+ const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(40, 1, .1, 100); cam.position.z = 10;
+ scene.add(new THREE.AmbientLight(0xffffff, .8)); const dl = new THREE.DirectionalLight(0xffffff, .7); dl.position.set(2, 4, 5); scene.add(dl);
+ const N = 90;
+ const geos = {
+  winter: (() => { const g = new THREE.OctahedronGeometry(.11, 0); return g; })(),
+  spring: (() => { const g = new THREE.SphereGeometry(.14, 12, 8); g.scale(1, .25, .7); return g; })(),
+  summer: new THREE.SphereGeometry(.07, 10, 8),
+  autumn: (() => { const s = new THREE.Shape(); s.moveTo(0, -.2); s.quadraticCurveTo(.2, 0, 0, .22); s.quadraticCurveTo(-.2, 0, 0, -.2); return new THREE.ShapeGeometry(s); })()
+ };
+ const mat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: .4, metalness: .1, side: THREE.DoubleSide, transparent: true, opacity: .95, emissive: 0x223355, emissiveIntensity: .15 });
+ let mesh = null, kind = "winter";
+ const P = Array.from({ length: N }, () => ({ x: (Math.random() - .5) * 9, y: (Math.random() - .5) * 10, z: (Math.random() - .5) * 4, vy: .006 + Math.random() * .012, rx: Math.random() * 6, ry: Math.random() * 6, sw: Math.random() * 6 }));
+ const dummy = new THREE.Object3D(), col = new THREE.Color();
+ function build(k) {
+  if (mesh) scene.remove(mesh);
+  mesh = new THREE.InstancedMesh(geos[k], mat, N);
+  const [c1, c2] = SEAS[k][4];
+  for (let i = 0; i < N; i++) { col.set(i % 2 ? c1 : c2); mesh.setColorAt(i, col); }
+  mesh.instanceColor.needsUpdate = true; mat.emissive.set(k === "summer" ? 0x664400 : k === "winter" ? 0x223355 : 0x220000);
+  scene.add(mesh); kind = k;
+ }
+ build("winter");
+ setParticles = k => { if (typeof gsap === "undefined") return build(k); gsap.to(mat, { opacity: 0, duration: .35, onComplete: () => { build(k); gsap.to(mat, { opacity: .95, duration: .6 }); } }); };
+ function size() { const r = cv.getBoundingClientRect(); rd.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
+ addEventListener("resize", size); size();
+ let vis = true; new IntersectionObserver(es => vis = es[0].isIntersecting).observe(cv);
+ const t0 = performance.now();
+ (function loop() {
+  requestAnimationFrame(loop); if (!vis || !mesh) return;
+  const t = (performance.now() - t0) / 1000;
+  P.forEach((p, i) => {
+   if (!reduce) { const up = kind === "summer"; p.y += up ? p.vy * .5 : -p.vy; if (p.y < -5.5) p.y = 5.5; if (p.y > 5.5) p.y = -5.5; p.rx += .01; p.ry += .013; }
+   dummy.position.set(p.x + Math.sin(t * .6 + p.sw) * .35, p.y, p.z);
+   dummy.rotation.set(p.rx, p.ry, 0);
+   const sc = kind === "summer" ? .7 + .5 * Math.sin(t * 2 + i) : 1; dummy.scale.setScalar(sc);
+   dummy.updateMatrix(); mesh.setMatrixAt(i, dummy.matrix);
+  });
+  mesh.instanceMatrix.needsUpdate = true;
+  try { rd.render(scene, cam); } catch (e) {}
+ })();
+})();
+
+/* ---------- появление ---------- */
+const show = () => document.querySelectorAll(".reveal").forEach(el => { el.style.opacity = 1; el.style.transform = "none"; });
+if (typeof gsap !== "undefined" && !reduce) {
+ gsap.from(".seasons, .hero h1, .hero .sub, .offer, .hero .cta, .facts > div", { y: 30, opacity: 0, duration: .8, stagger: .08, ease: "power3.out" });
+ gsap.from(".stage .ph", { scale: .92, opacity: 0, duration: 1.1, ease: "expo.out" });
+ if (typeof ScrollTrigger !== "undefined") { gsap.registerPlugin(ScrollTrigger); document.querySelectorAll(".reveal").forEach(el => gsap.to(el, { opacity: 1, y: 0, duration: .9, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 88%" } })); } else show();
+} else show();
+</script>
+</body>
+</html>
