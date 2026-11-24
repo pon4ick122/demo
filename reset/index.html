@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Reset The Body — массаж у Трубной</title>
 <meta name="description" content="Reset The Body — центр телесной психологии и массажа в Нижнем Кисельном переулке, у метро «Трубная» и «Цветной бульвар». Авторские программы массажа. 5,0 на Яндекс Картах.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{--bg:#f3efe8;--bg2:#ebe5da;--card:#fbf9f5;--sage:#5f6e5a;--sage2:#46523f;--sage3:#a9b5a0;--clay:#b9876b;--ink:#2a2b27;--mute:#7b7d73;--line:#dcd5c8}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -281,7 +280,7 @@ footer{color:var(--mute);padding:34px 6vw 110px;font-size:13px;display:flex;just
  </div>
 </section>
 
-<footer><span class="t" style="letter-spacing:.18em;color:var(--sage2)">RESET THE BODY</span><span>Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></footer>
+<footer><span class="t" style="letter-spacing:.18em;color:var(--sage2)">RESET THE BODY</span><span>Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span><div class="pd-links" data-pd style="flex-basis:100%;width:100%;margin-top:14px;font-size:12px;line-height:1.6;opacity:.7"><a href="privacy.html" style="color:inherit;text-decoration:underline">Политика конфиденциальности</a> · <a href="soglasie.html" style="color:inherit;text-decoration:underline">Согласие на обработку персональных данных</a></div></footer>
 <a class="fab" href="https://t.me/welcome_resetthebody" target="_blank" rel="noopener">Telegram</a>
 <div class="demo">Демо-версия сайта</div>
 <div class="toast" id="toast">Текст заявки скопирован — вставьте его в чат</div>
@@ -437,5 +436,9 @@ if(window.gsap&&window.ScrollTrigger&&!reduce){
  document.querySelectorAll('.cards figure').forEach((f,i,a)=>{if(i<a.length-1)gsap.to(f,{scale:.92,opacity:.6,ease:'none',scrollTrigger:{trigger:a[i+1],start:'top 85%',end:'top 120px',scrub:true}});});
 }else document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none'});
 </script>
+<div id="pdCookie" data-pd hidden style="position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:420px;margin:0 auto 0 0;background:#1d1c1a;color:#f2f1ed;border-radius:12px;padding:14px 16px;font:13px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.25)">
+На сайте встроены Яндекс Карты — они могут сохранять cookie. Подробнее в <a href="privacy.html" style="color:inherit">политике</a>.
+<button type="button" id="pdCookieOk" style="display:block;margin-top:10px;background:#f2f1ed;color:#1d1c1a;border:0;border-radius:8px;padding:8px 16px;font:600 13px system-ui,sans-serif;cursor:pointer">Понятно</button></div>
+<script data-pd>(function(){var b=document.getElementById('pdCookie'),k='pd-cookie-ok',ok=false;try{ok=localStorage.getItem(k)==='1'}catch(e){}if(!ok)b.hidden=false;document.getElementById('pdCookieOk').onclick=function(){b.hidden=true;try{localStorage.setItem(k,'1')}catch(e){}}})();</script>
 </body>
 </html>
