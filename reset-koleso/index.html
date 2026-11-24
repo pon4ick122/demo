@@ -23,9 +23,9 @@ header{display:flex;justify-content:space-between;align-items:center;gap:12px;pa
 .logo b{font-family:"Tenor Sans";font-size:20px;letter-spacing:.18em;font-weight:400;display:block;line-height:1}
 .logo small{font-size:10px;letter-spacing:.3em;display:block;color:var(--muted);margin-top:3px}
 .tag{font-family:"JetBrains Mono";font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:6px 12px;background:#fbf9f580;text-align:right}
-.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:24px;align-items:center;min-height:calc(100svh - 80px);padding-bottom:30px}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:24px;align-items:center;min-height:calc(100svh - 80px);padding:10px 0 30px}
 .kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--clay);margin:0 0 14px;font-weight:600}
-h1{font-family:"Tenor Sans";font-weight:400;font-size:clamp(38px,5.6vw,74px);line-height:1.02;margin:0 0 18px;color:var(--sage2)}
+h1{font-family:"Tenor Sans";font-weight:400;font-size:clamp(34px,4.4vw,58px);line-height:1.05;margin:0 0 18px;color:var(--sage2)}
 h1 .hl{color:var(--clay);display:inline-block}
 .lead{font-size:clamp(16px,1.6vw,19px);color:var(--muted);max-width:480px;line-height:1.55;margin:0 0 24px}
 .prizes{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0;list-style:none}
@@ -161,7 +161,7 @@ function wheelTexture(size) {
     const a0 = -Math.PI / 2 + i * SEG - SEG / 2, a1 = a0 + SEG;
     g.beginPath(); g.moveTo(0, 0); g.arc(0, 0, r * .96, a0, a1); g.closePath();
     const gr = g.createRadialGradient(0, 0, r * .1, 0, 0, r);
-    gr.addColorStop(0, shade(p.c, 25)); gr.addColorStop(1, p.c);
+    gr.addColorStop(0, shade(p.c, 10)); gr.addColorStop(1, p.c);
     g.fillStyle = gr; g.fill();
     g.strokeStyle = "#fbf9f5"; g.lineWidth = size * .008; g.stroke();
     g.save(); g.rotate(a0 + SEG / 2); g.textAlign = "right"; g.textBaseline = "middle";
