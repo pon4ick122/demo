@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>My love studio — маникюр, педикюр и брови в Балашихе</title>
 <meta name="description" content="My love studio — ногтевая студия в Никольско-Архангельском, Балашиха, 12-я Линия, 7А. Маникюр «всё включено» 2 800 ₽, педикюр, брови, подология. 5,0 на Яндекс Картах, 975 оценок. Ежедневно 9:00–21:00.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{--bg:#fdf7f6;--bg2:#f9e9e8;--pk:#f4cfd1;--pk2:#eaa9b0;--rose:#c4707c;--gold:#c9a063;--gold2:#e2c48f;--ink:#2a1f22;--mute:#80707a;--line:#f0dcdc;--card:#fff}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -325,7 +324,7 @@ footer{padding:40px 5vw 110px;color:var(--mute);font-size:13px;display:flex;just
  </div>
 </section>
 
-<footer><span>© My love studio, Балашиха</span><span>Демо-версия сайта · данные с Яндекс Карт</span></footer>
+<footer><span>© My love studio, Балашиха</span><span>Демо-версия сайта · данные с Яндекс Карт</span><div class="pd-links" data-pd style="flex-basis:100%;width:100%;margin-top:14px;font-size:12px;line-height:1.6;opacity:.7"><a href="privacy.html" style="color:inherit;text-decoration:underline">Политика конфиденциальности</a> · <a href="soglasie.html" style="color:inherit;text-decoration:underline">Согласие на обработку персональных данных</a></div></footer>
 <a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.1.1.7-.1 1.3Z"/></svg></a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
@@ -477,5 +476,9 @@ if(window.gsap&&window.ScrollTrigger&&!reduce){
  gsap.from('.gal figure',{scale:.92,stagger:.06,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.gal',start:'top 85%'}});
 }else{document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none'});document.querySelectorAll('#why .bar i').forEach(i=>i.style.width=i.dataset.w+'%');}
 </script>
+<div id="pdCookie" data-pd hidden style="position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:420px;margin:0 auto 0 0;background:#1d1c1a;color:#f2f1ed;border-radius:12px;padding:14px 16px;font:13px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.25)">
+На сайте встроены Яндекс Карты — они могут сохранять cookie. Подробнее в <a href="privacy.html" style="color:inherit">политике</a>.
+<button type="button" id="pdCookieOk" style="display:block;margin-top:10px;background:#f2f1ed;color:#1d1c1a;border:0;border-radius:8px;padding:8px 16px;font:600 13px system-ui,sans-serif;cursor:pointer">Понятно</button></div>
+<script data-pd>(function(){var b=document.getElementById('pdCookie'),k='pd-cookie-ok',ok=false;try{ok=localStorage.getItem(k)==='1'}catch(e){}if(!ok)b.hidden=false;document.getElementById('pdCookieOk').onclick=function(){b.hidden=true;try{localStorage.setItem(k,'1')}catch(e){}}})();</script>
 </body>
 </html>
