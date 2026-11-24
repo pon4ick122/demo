@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Красота требует — салон у метро «Лухмановская»</title>
+<meta name="description" content="Салон «Красота требует» на Святоозёрской, 34: маникюр, ресницы, брови, перманент и уход за лицом. 5,0 на Яндекс Картах, «Хорошее место 2026». −10% на первое посещение.">
+<meta property="og:title" content="Красота требует — салон у «Лухмановской»">
+<meta property="og:description" content="Маникюр, ресницы, брови, перманент. 5,0 и «Хорошее место 2026». −10% на первое посещение.">
+<meta property="og:image" content="img/pg1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1e9;--card:#fffdf9;--ink:#1f2218;--mute:#6c6a5f;--line:#e3dccf;--olive:#3f4a2c;--olive2:#2c3520;--olsoft:#e7e9dc;--gold:#b8924a;--rose:#c25a7a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.cap{font-size:12px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:400;line-height:1.06}
+h2{font-size:clamp(32px,4.4vw,56px);margin:10px 0 14px}
+h1 em,h2 em{color:var(--olive);font-style:italic}
+.sub{color:var(--mute);font-size:clamp(16px,1.5vw,18px);max-width:640px}
+section{padding:96px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:999px;font:600 15px Manrope,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:.2s}
+.btn.g{background:var(--olive);color:#fff;box-shadow:0 12px 30px #3f4a2c40}.btn.g:hover{background:var(--olive2)}
+.btn.o{box-shadow:inset 0 0 0 1.5px var(--ink);color:var(--ink);background:transparent}.btn.o:hover{background:var(--ink);color:#fff}
+nav{position:fixed;inset:0 0 auto;z-index:30;transition:.3s}
+nav.sc{background:#f6f1e9ee;backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{text-decoration:none;font-family:"Playfair Display";font-size:22px;font-style:italic;color:var(--olive2)}
+.logo b{font-style:normal;font-weight:600}
+nav .links{display:flex;gap:26px;font-size:14px;font-weight:500}
+nav .links a{text-decoration:none;opacity:.8}nav .links a:hover{opacity:1}
+nav .btn{padding:11px 18px;font-size:14px}
+/* hero */
+.hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;padding:96px 0 40px}
+.book{position:relative;aspect-ratio:1/1;width:100%;max-width:600px;justify-self:center;cursor:pointer}
+#gl{position:absolute;inset:0;width:100%;height:100%}
+.book .hint{position:absolute;left:50%;bottom:0;transform:translateX(-50%);font-size:12px;color:var(--mute);letter-spacing:.1em;white-space:nowrap}
+.book .fb{position:absolute;inset:8% 22%;display:none;box-shadow:0 30px 60px #0003}
+.hero h1{font-size:clamp(42px,5.8vw,82px);margin:14px 0 18px}
+.badge{display:inline-flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:8px 14px 8px 8px;font-size:14px;margin-bottom:22px}
+.badge b{background:var(--rose);color:#fff;border-radius:99px;padding:4px 10px;font-size:13px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:34px}
+.facts b{display:block;font-family:"Playfair Display";font-size:34px;font-weight:400;line-height:1}
+.facts span{font-size:13px;color:var(--mute)}
+/* windows */
+.win{background:var(--olive2);color:#fff;border-radius:34px;padding:44px;display:grid;grid-template-columns:1fr 1.3fr;gap:30px;align-items:center;position:relative;overflow:hidden}
+.win .sub{color:#c9cdb8}
+.win h2 em{color:#d9bd84}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.slot{appearance:none;border:1px solid #ffffff30;background:#ffffff0d;color:#fff;border-radius:18px;padding:14px;text-align:left;cursor:pointer;font:500 14px Manrope,sans-serif;transition:.2s}
+.slot b{display:block;font-family:"Playfair Display";font-size:24px;font-weight:400}
+.slot:hover{background:#fff;color:var(--olive2)}
+.win .note{font-size:12px;color:#a9ae96;margin-top:12px}
+/* builder */
+.build{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;margin-top:34px;align-items:start}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tabs button{appearance:none;border:1.5px solid var(--line);background:var(--card);font:600 14px Manrope,sans-serif;padding:10px 16px;border-radius:99px;cursor:pointer;color:var(--ink);position:relative}
+.tabs button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.tabs button i{position:absolute;top:-4px;right:-4px;width:12px;height:12px;border-radius:50%;background:var(--rose);display:none}
+.tabs button.has i{display:block}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:24px;display:grid;grid-template-columns:200px 1fr;gap:22px}
+.panel img{border-radius:20px;width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+.opts{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.opts h4{width:100%;font-size:13px;color:var(--mute);font-weight:600;margin-top:6px}
+.opt{appearance:none;border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:10px 14px;font:500 14px Manrope,sans-serif;color:var(--ink);cursor:pointer;text-align:left;transition:.18s}
+.opt small{display:block;color:var(--mute);font-size:12px;margin-top:2px}
+.opt:hover{border-color:var(--olive)}
+.opt.on{border-color:var(--olive);background:var(--olsoft);box-shadow:inset 0 0 0 1px var(--olive)}
+.sum{position:sticky;top:90px;background:var(--card);border:1px solid var(--line);border-radius:30px;padding:28px}
+.sum .k{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.sum ul{list-style:none;margin:16px 0;display:grid;gap:8px;font-size:14px}
+.sum li{display:flex;justify-content:space-between;gap:12px}
+.sum li b{white-space:nowrap}
+.sum li.disc{color:var(--rose);font-weight:600}
+.first{display:flex;gap:12px;align-items:center;background:#fbeef2;border-radius:16px;padding:12px 14px;margin:6px 0 16px;cursor:pointer;font-size:14px;user-select:none}
+.first input{width:20px;height:20px;accent-color:var(--rose)}
+.tot{font-family:"Playfair Display";font-size:46px;line-height:1}
+.old{color:var(--mute);text-decoration:line-through;font-size:16px;margin-left:8px;font-family:Manrope}
+.sum .btn{width:100%;margin-top:18px}
+.sum .fine{font-size:12px;color:var(--mute);margin-top:10px}
+.empty{color:var(--mute)}
+/* pmu */
+.pmu{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.pmu .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pmu .pics img{border-radius:22px;aspect-ratio:3/4;object-fit:cover;width:100%}
+.pmu .pics img:first-child{grid-row:span 2;aspect-ratio:auto;height:100%}
+.pl{margin-top:22px;border-top:1px solid var(--line)}
+.pl div{display:flex;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.pl b{font-family:"Playfair Display";font-weight:400;font-size:19px;white-space:nowrap}
+/* gallery */
+.gal{columns:4 220px;column-gap:14px;margin-top:30px}
+.gal img{width:100%;border-radius:18px;margin-bottom:14px;break-inside:avoid}
+/* masters */
+.ms{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.m{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px}
+.m .r{font-size:13px;color:var(--gold);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.m h3{font-size:30px;margin:6px 0 10px}
+.m p{color:var(--mute);font-style:italic;font-family:"Playfair Display";font-size:17px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tags span{background:var(--olsoft);color:var(--olive2);border-radius:99px;padding:7px 13px;font-size:13px;font-weight:600}
+/* price */
+.price{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:30px;margin-top:30px}
+.prow{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+.prow:last-child{border-bottom:0}
+.prow b{font-family:"Playfair Display";font-weight:400;font-size:18px;white-space:nowrap;color:var(--olive2)}
+/* where */
+.where{display:grid;grid-template-columns:1fr 1.2fr;gap:30px}
+.info{display:grid;gap:16px;align-content:start}
+.info div{border-bottom:1px solid var(--line);padding-bottom:14px}
+.info small{display:block;color:var(--mute);font-size:13px}
+.info b{font-size:18px;font-weight:600}
+.map{border-radius:28px;overflow:hidden;min-height:360px;background:var(--olsoft)}
+.map iframe{width:100%;height:100%;min-height:360px;border:0}
+footer{padding:40px 0 90px;color:var(--mute);font-size:13px;border-top:1px solid var(--line)}
+.wa{position:fixed;right:18px;bottom:18px;z-index:40;background:#25d366;color:#fff;border-radius:99px;padding:14px 18px;font-weight:700;text-decoration:none;box-shadow:0 12px 30px #25d36655}
+.demo{position:fixed;left:16px;bottom:18px;z-index:40;background:#1f2218dd;color:#fff;border-radius:10px;padding:8px 12px;font-size:12px}
+.reveal{opacity:0;transform:translateY(30px)}
+@media(max-width:980px){
+ nav .links{display:none}
+ .hero{grid-template-columns:1fr;padding-top:84px}
+ .book{max-width:460px}
+ .win,.build,.pmu,.where{grid-template-columns:1fr}
+ .sum{position:relative;top:0}
+ .ms{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+ section{padding:70px 0}
+ .win{padding:26px 18px;border-radius:26px}
+ .panel{grid-template-columns:1fr;padding:18px}
+ .panel img{aspect-ratio:16/10}
+ .price{padding:20px 16px}
+ .logo{font-size:19px}
+ nav .btn{padding:10px 14px}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+ <a class="logo" href="#top">Красота <b>требует</b></a>
+ <div class="links"><a href="#windows">Окна</a><a href="#build">Записаться</a><a href="#pmu">Перманент</a><a href="#masters">Мастера</a><a href="#price">Цены</a><a href="#where">Контакты</a></div>
+ <a class="btn g" href="#build">Записаться</a>
+</div></nav>
+
+<header class="wrap hero" id="top">
+ <div class="book" id="book" title="Нажмите, чтобы перелистнуть">
+  <canvas id="gl" aria-label="Журнал с работами мастеров салона"></canvas>
+  <img class="fb" id="fb" src="img/pg1.jpg" alt="Перманентный макияж губ — работа салона">
+  <div class="hint">нажмите, чтобы перелистнуть</div>
+ </div>
+ <div>
+  <span class="cap">Салон красоты · Лухмановская</span>
+  <h1>Красота <em>требует</em> — мы знаем, чего</h1>
+  <div class="badge"><b>−10%</b>на первое посещение</div>
+  <p class="sub">Маникюр, ресницы, брови, перманент и уход за лицом на Святоозёрской, 34. Мастера сначала обсуждают пожелания и показывают варианты — так пишут гости в отзывах.</p>
+  <div class="cta"><a class="btn g" href="#build">Собрать запись</a><a class="btn o" href="#windows">Свободные окна</a></div>
+  <div class="facts">
+   <div><b>5,0</b><span>113 оценок на Картах</span></div>
+   <div><b>2026</b><span>«Хорошее место»</span></div>
+   <div><b>98%</b><span>довольны персоналом</span></div>
+  </div>
+ </div>
+</header>
+
+<section id="windows" style="padding-top:30px"><div class="wrap">
+ <div class="win reveal">
+  <div>
+   <span class="cap">Окна на сегодня и завтра</span>
+   <h2 style="color:#fff">Освободилось <em>время?</em></h2>
+   <p class="sub">Вы уже публикуете окна в историях на Картах — на сайте они будут видны всем. Нажмите на время, и администратор получит заявку в WhatsApp.</p>
+   <p class="note">Пример. Окна администратор меняет сам за минуту.</p>
+  </div>
+  <div class="slots" id="slots"></div>
+ </div>
+</div></section>
+
+<section id="build" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Запись за минуту</span>
+ <h2>Соберите визит — <em>цена сразу</em></h2>
+ <p class="sub">Выберите услуги в разных разделах — сайт посчитает итог. Если вы у нас впервые, скидка 10% вычтется сразу. Цены с Яндекс Карт.</p>
+ <div class="build">
+  <div>
+   <div class="tabs" id="tabs"></div>
+   <div class="panel" id="panel"></div>
+  </div>
+  <aside class="sum" aria-live="polite">
+   <div class="k">Ваш визит</div>
+   <ul id="sl"></ul>
+   <label class="first"><input type="checkbox" id="first" checked> Я у вас впервые — скидка 10%</label>
+   <div><span class="tot" id="tot">0 ₽</span><span class="old" id="old"></span></div>
+   <button class="btn g" id="send">Записаться в WhatsApp</button>
+   <div class="fine">Откроется WhatsApp с готовым сообщением — останется отправить.</div>
+  </aside>
+ </div>
+</div></section>
+
+<section id="pmu" style="padding-top:20px"><div class="wrap pmu">
+ <div class="pics reveal"><img src="img/lips.jpg" alt="Перманентный макияж губ" loading="lazy"><img src="img/b1.jpg" alt="Пудровое напыление бровей" loading="lazy"><img src="img/b2.jpg" alt="Перманент бровей" loading="lazy"></div>
+ <div class="reveal">
+  <span class="cap">Перманентный макияж</span>
+  <h2>Просыпаетесь <em>уже красивой</em></h2>
+  <p class="sub">Брови, губы и стрелки, которые не нужно рисовать каждое утро. А если перманент неудачно сделали в другом месте — аккуратно удалим лазером или ремувером.</p>
+  <div class="pl">
+   <div><span>Пудровое напыление бровей</span><b>10 000 ₽</b></div>
+   <div><span>Перманентный макияж губ</span><b>10 000 ₽</b></div>
+   <div><span>Межресничка, графичная стрелка или с растушёвкой</span><b>10 000 ₽</b></div>
+   <div><span>Коррекция до 2 месяцев</span><b>5 000 ₽</b></div>
+   <div><span>Удаление татуажа лазером</span><b>3 000 ₽</b></div>
+   <div><span>Удаление ремувером / ревайвингом</span><b>3 500 ₽</b></div>
+  </div>
+  <div style="margin-top:22px"><button class="btn g" id="pmub">Записаться на консультацию</button></div>
+ </div>
+</div></section>
+
+<section style="padding-top:20px"><div class="wrap">
+ <span class="cap">Работы</span>
+ <h2>Френч, ресницы, <em>брови</em></h2>
+ <p class="sub">Фото с Яндекс Карт салона.</p>
+ <div class="gal" id="gal"></div>
+</div></section>
+
+<section id="masters" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Мастера · что о них пишут</span>
+ <h2>Те, к кому <em>возвращаются</em></h2>
+ <div class="tags"><span>Атмосфера 100%</span><span>Уход за бровями 100%</span><span>Персонал 98%</span><span>Наращивание ресниц 98%</span><span>Маникюр 96%</span></div>
+ <div class="ms">
+  <div class="m reveal"><div class="r">Маникюр</div><h3>Татьяна</h3><p>«Всё сделала быстро, чисто и очень красиво. В салоне уютно, стерильно, вкусный кофе».</p></div>
+  <div class="m reveal"><div class="r">Маникюр · френч</div><h3>Валерия</h3><p>«Девочки, это самый идеальный френч в моей жизни! Очень кропотливо, доводила до идеала».</p></div>
+  <div class="m reveal"><div class="r">Брови · ресницы · лицо</div><h3>Оксана</h3><p>«Мастер с золотыми ручками! Сделает такие бровки, что от зеркала не получится отлипнуть».</p></div>
+ </div>
+</div></section>
+
+<section id="price" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Цены</span>
+ <h2>Полный прайс</h2>
+ <p class="sub">Цены с Яндекс Карт. Точную стоимость мастер подтвердит перед процедурой.</p>
+ <div class="price reveal"><div class="tabs" id="ptabs"></div><div id="plist"></div></div>
+</div></section>
+
+<section id="where" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Контакты</span>
+ <h2>Как <em>добраться</em></h2>
+ <div class="where">
+  <div class="info">
+   <div><small>Адрес</small><b>Москва, Святоозёрская ул., 34</b></div>
+   <div><small>Метро</small><b>Лухмановская — 340 м</b></div>
+   <div><small>Время работы</small><b>до 21:00</b></div>
+   <div><small>Телефон и WhatsApp</small><b><a href="tel:+79256202555" style="text-decoration:none">+7 (925) 620-25-55</a></b></div>
+   <div style="border:0"><a class="btn o" href="https://yandex.ru/maps/org/krasota_trebuyet/234916121717/" target="_blank" rel="noopener">Открыть на Яндекс Картах</a></div>
+  </div>
+  <div class="map"><iframe title="«Красота требует» на карте" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=37.896614%2C55.712176&z=16&pt=37.896614,55.712176,pm2rdm"></iframe></div>
+ </div>
+</div></section>
+
+<footer><div class="wrap">«Красота требует» · салон красоты · Святоозёрская ул., 34 · фото, цены и отзывы — с Яндекс Карт</div></footer>
+<a class="wa" href="https://wa.me/79256202555" target="_blank" rel="noopener">WhatsApp</a>
+<div class="demo">Демо-версия сайта</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+"use strict";
+const WA = "79256202555";
+const $ = id => document.getElementById(id);
+const fmt = n => Math.round(n).toLocaleString("ru-RU").replace(/ /g, " ") + " ₽";
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const openWA = t => window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(t + "\n(заявка с сайта)"), "_blank", "noopener");
+addEventListener("scroll", () => $("nav").classList.toggle("sc", scrollY > 30), { passive: true });
+
+/* ---------- окна ---------- */
+const dd = d => d.toLocaleDateString("ru-RU", { day: "numeric", month: "long" });
+const today = new Date(), tom = new Date(Date.now() + 864e5);
+const SLOTS = [[today, "14:30", "Маникюр"], [today, "16:00", "Ресницы"], [today, "18:30", "Брови"], [tom, "11:00", "Маникюр + педикюр"], [tom, "13:00", "Лицо"], [tom, "17:30", "Ресницы"]];
+$("slots").innerHTML = SLOTS.map((s, i) => `<button class="slot" data-i="${i}"><span>${i < 3 ? "Сегодня" : "Завтра"}, ${dd(s[0])}</span><b>${s[1]}</b>${s[2]}</button>`).join("");
+$("slots").onclick = e => { const b = e.target.closest(".slot"); if (!b) return; const s = SLOTS[+b.dataset.i]; openWA(`Здравствуйте! Хочу занять окно: ${dd(s[0])}, ${s[1]} — ${s[2].toLowerCase()}. Оно ещё свободно?`); };
+
+/* ---------- конструктор ---------- */
+const CAT = [
+ { id: "n", t: "Руки", img: "n3", groups: [["Маникюр", true, [["Маникюр аппаратный / комби", 1100], ["Маникюр + гель-лак", 2500], ["Снятие + маникюр + гель-лак", 2600], ["Японский маникюр", 1600], ["Наращивание / коррекция", 3800], ["Наращивание, длина 4+", 4400], ["Детский маникюр + лак", 1300]]], ["Дополнительно", false, [["Френч / втирка / кошачий глаз / омбре", 400], ["Укрепление гелем", 500], ["Парафин для рук", 800]]]] },
+ { id: "p", t: "Ноги", img: "p1", groups: [["Педикюр", true, [["Педикюр", 2200], ["Смарт-педикюр", 2400], ["Пальчики + гель-лак", 2600], ["Педикюр + гель-лак", 3100], ["Смарт-педикюр + гель-лак", 3400], ["Снятие + смарт-педикюр + гель-лак", 3500]]]] },
+ { id: "l", t: "Ресницы", img: "l2", groups: [["Наращивание", true, [["Классика 1D", 2500], ["2D", 3000], ["3D", 3300], ["4D", 3700], ["5D", 4000], ["LED 1D", 3000], ["LED 2D", 3500], ["LED 3D", 3800]]], ["Эффекты", false, [["Мокрый эффект / лучики / цвет", 500], ["Окрашивание ресниц", 1000]]]] },
+ { id: "b", t: "Брови", img: "b2", groups: [["Брови", true, [["Коррекция воском", 1000], ["Коррекция + окрашивание", 1500], ["Ламинирование", 2000], ["Ламинирование + ботокс", 2500]]]] },
+ { id: "f", t: "Лицо", img: "l1", groups: [["Уход", true, [["Ультразвуковая чистка", 3000], ["Комбинированная чистка", 4000], ["Атравматическая чистка", 4500], ["Карбоновый пилинг", 2800], ["BioRePeel", 5000], ["PRX-T33", 5000], ["Экспресс-уход «Сияние»", 4000], ["Анти-эйдж уход", 5000]]]] }
+];
+const pick = {};  // key "cat:group" -> Set of indexes
+let cur = 0;
+function key(c, g) { return CAT[c].id + ":" + g; }
+function drawTabs() {
+ $("tabs").innerHTML = CAT.map((c, i) => { const has = c.groups.some((g, gi) => (pick[key(i, gi)] || new Set()).size); return `<button class="${i === cur ? "on" : ""}${has ? " has" : ""}" data-i="${i}">${c.t}<i></i></button>`; }).join("");
+}
+function drawPanel() {
+ const c = CAT[cur];
+ $("panel").innerHTML = `<img src="img/${c.img}.jpg" alt="${c.t} — работа салона"><div class="opts">${c.groups.map((g, gi) => `<h4>${g[0]}${g[1] ? "" : " · можно несколько"}</h4>${g[2].map((o, oi) => `<button class="opt${(pick[key(cur, gi)] || new Set()).has(oi) ? " on" : ""}" data-g="${gi}" data-o="${oi}">${o[0]}<small>${gi && !g[1] ? "+" : ""}${fmt(o[1])}</small></button>`).join("")}`).join("")}</div>`;
+}
+$("tabs").onclick = e => { const b = e.target.closest("button"); if (!b) return; cur = +b.dataset.i; drawTabs(); drawPanel(); };
+$("panel").onclick = e => {
+ const b = e.target.closest(".opt"); if (!b) return;
+ const gi = +b.dataset.g, oi = +b.dataset.o, single = CAT[cur].groups[gi][1], k = key(cur, gi);
+ const s = pick[k] || (pick[k] = new Set());
+ if (s.has(oi)) s.delete(oi); else { if (single) s.clear(); s.add(oi); }
+ drawTabs(); drawPanel(); calc();
+};
+let lastT = 0;
+function chosen() { const out = []; CAT.forEach((c, ci) => c.groups.forEach((g, gi) => (pick[key(ci, gi)] || new Set()).forEach(oi => out.push(g[2][oi])))); return out; }
+function calc() {
+ const out = chosen(), sum = out.reduce((s, o) => s + o[1], 0), first = $("first").checked, total = first ? sum * .9 : sum;
+ $("sl").innerHTML = out.length ? out.map(o => `<li><span>${o[0]}</span><b>${fmt(o[1])}</b></li>`).join("") + (first && sum ? `<li class="disc"><span>Скидка первого визита</span><b>−${fmt(sum * .1)}</b></li>` : "") : `<li class="empty">Выберите услуги слева</li>`;
+ $("old").textContent = first && sum ? fmt(sum) : "";
+ const el = $("tot");
+ if (typeof gsap !== "undefined" && !reduce) gsap.to({ v: lastT }, { v: total, duration: .5, ease: "power2.out", onUpdate() { el.textContent = fmt(this.targets()[0].v); } }); else el.textContent = fmt(total);
+ lastT = total;
+}
+$("first").onchange = calc;
+$("send").onclick = () => {
+ const out = chosen(); if (!out.length) { $("tabs").scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+ const first = $("first").checked, sum = out.reduce((s, o) => s + o[1], 0);
+ openWA(`Здравствуйте! Хочу записаться:\n${out.map(o => "• " + o[0]).join("\n")}\nПо сайту: ${fmt(first ? sum * .9 : sum)}${first ? " (я у вас впервые, со скидкой 10%)" : ""}.\nПодскажите свободное время?`);
+};
+// стартовый пример
+pick["n:0"] = new Set([1]); pick["l:0"] = new Set([1]);
+drawTabs(); drawPanel(); calc();
+$("pmub").onclick = () => openWA("Здравствуйте! Хочу на консультацию по перманентному макияжу. Когда можно подойти?");
+
+/* ---------- галерея ---------- */
+$("gal").innerHTML = ["n1", "l1", "n2", "b2", "n4", "l3", "n6", "n9", "l4", "n7", "n8", "l5", "n10", "tea", "n5", "recep"].map(f => `<img src="img/${f}.jpg" alt="Работа салона «Красота требует»" loading="lazy">`).join("");
+
+/* ---------- прайс ---------- */
+const PRICE = [
+ ["Маникюр", [["Маникюр (аппаратный / комбинированный)", "1 100"], ["Маникюр + гель-лак", "2 500"], ["Снятие + маникюр + гель-лак", "2 600"], ["Японский маникюр + ламинирование ногтей", "1 600"], ["Френч, втирка, кошачий глаз, омбре", "400"], ["Укрепление натуральных ногтей гелем", "500"], ["Покрытие гель-лаком", "1 400"], ["Снятие без покрытия", "600"], ["Парафин для рук", "800"], ["Детский маникюр + лак", "1 300"]]],
+ ["Наращивание ногтей", [["Наращивание / коррекция с маникюром", "3 800"], ["Наращивание, длина 4+", "4 400"], ["Коррекция с покрытием гель-лаком", "3 400"], ["Снятие наращённых + маникюр", "2 100"]]],
+ ["Педикюр", [["Педикюр", "2 200"], ["Смарт-педикюр", "2 400"], ["Педикюр + гель-лак", "3 100"], ["Смарт-педикюр + гель-лак", "3 400"], ["Пальчики", "1 500"], ["Пальчики + гель-лак", "2 600"], ["Снятие + педикюр + гель-лак", "3 200"], ["Снятие + смарт-педикюр + гель-лак", "3 500"], ["Покрытие гель-лаком", "1 100"]]],
+ ["Ресницы", [["Классика 1D", "2 500"], ["2D — мягкий объём", "3 000"], ["3D — насыщенный объём", "3 300"], ["4D", "3 700"], ["5D — максимальный объём", "4 000"], ["Трендовое наращивание", "4 000"], ["LED 1D / 2D / 3D", "3 000 / 3 500 / 3 800"], ["Мокрый эффект, лучики, цвет, стразы", "+500"], ["Окрашивание ресниц", "1 000"], ["Снятие", "500"]]],
+ ["Брови", [["Коррекция воском", "1 000"], ["Окрашивание", "800"], ["Коррекция + окрашивание", "1 500"], ["Ламинирование", "2 000"], ["Ламинирование + ботокс", "2 500"]]],
+ ["Перманент", [["Пудровое напыление бровей", "10 000"], ["Губы", "10 000"], ["Межресничка", "10 000"], ["Графичная стрелка / с растушёвкой", "10 000"], ["Коррекция до 2 месяцев", "5 000"], ["Удаление лазером", "3 000"], ["Удаление ремувером / ревайвингом", "3 500"]]],
+ ["Лицо", [["Ультразвуковая чистка", "3 000"], ["Вакуумная чистка", "3 000"], ["Комбинированная чистка", "4 000"], ["Атравматическая чистка", "4 500"], ["Механическая чистка", "5 000"], ["Чистка для подростков / Anti Acne", "3 000"], ["Карбоновый пилинг", "2 800"], ["Курс карбонового пилинга, 6 сеансов", "13 000"], ["BioRePeel", "5 000"], ["PRX-T33", "5 000"], ["TCA-пилинг", "4 500"], ["Peach Peel «Персиковое сияние»", "6 000"], ["Феруловый пилинг", "7 000"], ["Yellow peel 3-RETISES CT", "9 000"], ["Карбокситерапия", "4 000"], ["Фракционная мезотерапия", "5 000"], ["Уход «Про-коллаген» / анти-эйдж", "5 000"], ["Экспресс-уход «Сияние»", "4 000"], ["СПА-уход «Очищение»", "4 500"]]]
+];
+let pt = 0;
+function drawPrice() {
+ $("ptabs").innerHTML = PRICE.map((c, i) => `<button class="${i === pt ? "on" : ""}" data-i="${i}">${c[0]}</button>`).join("");
+ $("plist").innerHTML = PRICE[pt][1].map(r => `<div class="prow"><span>${r[0]}</span><b>${r[1]} ₽</b></div>`).join("");
+}
+$("ptabs").onclick = e => { const b = e.target.closest("button"); if (!b) return; pt = +b.dataset.i; drawPrice(); };
+drawPrice();
+
+/* ---------- 3D-журнал ---------- */
+(function () {
+ const fb = () => { $("fb").style.display = "block"; $("gl").style.display = "none"; };
+ if (typeof THREE === "undefined") return fb();
+ const cv = $("gl"); let rd;
+ try { rd = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true }); } catch (e) { return fb(); }
+ rd.setPixelRatio(Math.min(2, devicePixelRatio));
+ const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(32, 1, .1, 100); cam.position.set(0, 0, 13.5);
+ scene.add(new THREE.AmbientLight(0xffffff, .78));
+ const key = new THREE.DirectionalLight(0xfff4e0, .55); key.position.set(-3, 4, 8); scene.add(key);
+ const W = 3, H = 4, SEG = 30;
+ const loader = new THREE.TextureLoader();
+ const tex = src => { const t = loader.load(src); t.anisotropy = 4; return t; };
+ // обложка рисуется на canvas поверх фото
+ function cover(src, back) {
+  const c = document.createElement("canvas"); c.width = 600; c.height = 800; const g = c.getContext("2d");
+  const t = new THREE.CanvasTexture(c); t.anisotropy = 4;
+  const im = new Image(); im.onload = () => {
+   g.drawImage(im, 0, 0, 600, 800);
+   const gr = g.createLinearGradient(0, 0, 0, 800); gr.addColorStop(0, "#00000066"); gr.addColorStop(.3, "#0000"); gr.addColorStop(.7, "#0000"); gr.addColorStop(1, "#000000aa"); g.fillStyle = gr; g.fillRect(0, 0, 600, 800);
+   g.fillStyle = "#fff"; g.textAlign = "center";
+   if (!back) {
+    g.font = "italic 400 74px 'Playfair Display', Georgia, serif"; g.fillText("Красота", 300, 104);
+    g.font = "600 74px 'Playfair Display', Georgia, serif"; g.fillText("ТРЕБУЕТ", 300, 176);
+    g.font = "600 17px Manrope, sans-serif"; g.fillText("НОЯБРЬ · ДЕКАБРЬ 2026 · ЛУХМАНОВСКАЯ", 300, 214);
+    g.textAlign = "left"; g.font = "italic 400 34px 'Playfair Display', Georgia, serif"; g.fillText("Перманент:", 34, 640); g.fillText("просыпаетесь красивой", 34, 680);
+    g.font = "600 18px Manrope, sans-serif"; g.fillText("−10% НА ПЕРВОЕ ПОСЕЩЕНИЕ", 34, 730);
+    g.fillStyle = "#b8924a"; g.beginPath(); g.arc(510, 300, 62, 0, 7); g.fill(); g.fillStyle = "#fff"; g.textAlign = "center"; g.font = "600 40px 'Playfair Display', serif"; g.fillText("5,0", 510, 302); g.font = "600 12px Manrope, sans-serif"; g.fillText("ЯНДЕКС КАРТЫ", 510, 326);
+   } else {
+    g.fillStyle = "#3f4a2ce6"; g.fillRect(0, 520, 600, 280); g.fillStyle = "#fff"; g.textAlign = "left";
+    g.font = "italic 400 40px 'Playfair Display', serif"; g.fillText("Святоозёрская, 34", 34, 590);
+    g.font = "500 20px Manrope, sans-serif"; g.fillText("Маникюр · ресницы · брови · перманент · лицо", 34, 630);
+    g.font = "600 20px Manrope, sans-serif"; g.fillText("Запись: +7 (925) 620-25-55", 34, 690); g.fillText("Хорошее место 2026", 34, 726);
+   }
+   t.needsUpdate = true;
+  };
+  im.src = src; return t;
+ }
+ const book = new THREE.Group(); scene.add(book);
+ const mk = (front, backT) => {
+  const geo = new THREE.PlaneGeometry(W, H, SEG, 1); geo.translate(W / 2, 0, 0);
+  const bt = backT; bt.wrapS = THREE.RepeatWrapping; bt.repeat.x = -1;
+  const g = new THREE.Group();
+  g.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ map: front, side: THREE.FrontSide, roughness: .7 })));
+  g.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ map: bt, side: THREE.BackSide, roughness: .7 })));
+  g.userData = { geo, x0: geo.attributes.position.array.slice(), p: 0 };
+  book.add(g); return g;
+ };
+ const pages = [mk(cover("img/pg1.jpg"), tex("img/pg2.jpg")), mk(tex("img/pg3.jpg"), tex("img/pg4.jpg")), mk(tex("img/pg5.jpg"), tex("img/pg6.jpg")), mk(tex("img/pg7.jpg"), tex("img/pg8.jpg"))];
+ const base = new THREE.Mesh(new THREE.PlaneGeometry(W, H), new THREE.MeshStandardMaterial({ map: cover("img/recep.jpg", true), roughness: .8 }));
+ base.position.set(W / 2, 0, -.03); book.add(base);
+ const shadow = new THREE.Mesh(new THREE.PlaneGeometry(W * 2.3, H * 1.15), new THREE.MeshBasicMaterial({ color: 0x3f4a2c, transparent: true, opacity: .12 }));
+ shadow.position.set(0, -.12, -.2); book.add(shadow);
+ function bend(pg, i) {
+  const { geo, x0, p } = pg.userData, a = geo.attributes.position.array, th = p * Math.PI, curl = .9 * Math.sin(th);
+  for (let v = 0; v < a.length; v += 3) {
+   const x = x0[v], u = x / W, ang = th - curl * u * u;
+   a[v] = x * Math.cos(ang); a[v + 2] = x * Math.sin(ang) + (p < .5 ? -i * .006 : (i - pages.length) * .006 + .04);
+  }
+  geo.attributes.position.needsUpdate = true; geo.computeVertexNormals();
+ }
+ let n = 0, busy = false;
+ function flip() {
+  if (busy) return; busy = true;
+  if (n < pages.length) { const pg = pages[n++]; gsap.to(pg.userData, { p: 1, duration: 1.3, ease: "power2.inOut", onComplete: () => busy = false }); }
+  else { n = 0; pages.slice().reverse().forEach((pg, k) => gsap.to(pg.userData, { p: 0, duration: .9, delay: k * .12, ease: "power2.inOut" })); setTimeout(() => busy = false, 1400); }
+ }
+ $("book").addEventListener("click", flip);
+ let auto = !reduce && typeof gsap !== "undefined" ? setInterval(flip, 3200) : null;
+ $("book").addEventListener("pointerdown", () => { if (auto) { clearInterval(auto); auto = null; } });
+ let mx = 0, my = 0;
+ addEventListener("pointermove", e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; }, { passive: true });
+ function size() { const r = cv.getBoundingClientRect(); rd.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
+ addEventListener("resize", size); size();
+ let vis = true; new IntersectionObserver(es => vis = es[0].isIntersecting).observe(cv);
+ (function loop() {
+  requestAnimationFrame(loop); if (!vis) return;
+  pages.forEach(bend);
+  book.position.x = -W / 2 * (1 - pages[0].userData.p);
+  book.rotation.y += ((mx * .35 - .12) - book.rotation.y) * .05;
+  book.rotation.x += ((my * .2 - .05) - book.rotation.x) * .05;
+  rd.render(scene, cam);
+ })();
+})();
+
+/* ---------- появление ---------- */
+const show = () => document.querySelectorAll(".reveal").forEach(el => { el.style.opacity = 1; el.style.transform = "none"; });
+if (typeof gsap !== "undefined" && !reduce) {
+ gsap.from(".hero .cap, .hero h1, .badge, .hero .sub, .hero .cta, .facts > div", { y: 30, opacity: 0, duration: .8, stagger: .08, ease: "power3.out" });
+ gsap.from(".book", { scale: .9, opacity: 0, duration: 1.2, ease: "expo.out" });
+ if (typeof ScrollTrigger !== "undefined") { gsap.registerPlugin(ScrollTrigger); document.querySelectorAll(".reveal").forEach(el => gsap.to(el, { opacity: 1, y: 0, duration: .9, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 88%" } })); }
+ else show();
+} else show();
+</script>
+</body>
+</html>
