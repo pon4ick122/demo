@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Берсерк — компьютерный клуб</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Russo+One:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<meta name="description" content="Берсерк — компьютерный клуб. Цены, онлайн-запись, адрес и контакты.">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{--acc:#3d7bff;--acc2:#9b5cff;--bg:#07070c;--card:#11111a;--line:#23233a;--ink:#f3f3fa;--muted:#9a9ab5}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -193,7 +193,7 @@ h2:before{content:'ᛒ ᛖ ᚱ ᛊ';display:block;font-size:14px;letter-spacing:
  </div>
 </div></section>
 
-<footer>© Берсерк · компьютерный клуб<br><span class="demo">Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span></footer>
+<footer>© Берсерк · компьютерный клуб<br><span class="demo">Это демо-концепт сайта. Фото, цены и отзывы взяты с Яндекс Карт.</span><div class="pd-links" data-pd style="flex-basis:100%;width:100%;margin-top:14px;font-size:12px;line-height:1.6;opacity:.7"><a href="privacy.html" style="color:inherit;text-decoration:underline">Политика конфиденциальности</a> · <a href="soglasie.html" style="color:inherit;text-decoration:underline">Согласие на обработку персональных данных</a></div></footer>
 <a class="btn float" href="#book">🎮 Бронь</a>
 
 <script>
@@ -222,5 +222,9 @@ $('dc').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)ret
 $('send').addEventListener('click',()=>{try{navigator.clipboard.writeText($('send').dataset.m)}catch(e){}});
 render();
 </script>
+<div id="pdCookie" data-pd hidden style="position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:420px;margin:0 auto 0 0;background:#1d1c1a;color:#f2f1ed;border-radius:12px;padding:14px 16px;font:13px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.25)">
+На сайте встроены Яндекс Карты — они могут сохранять cookie. Подробнее в <a href="privacy.html" style="color:inherit">политике</a>.
+<button type="button" id="pdCookieOk" style="display:block;margin-top:10px;background:#f2f1ed;color:#1d1c1a;border:0;border-radius:8px;padding:8px 16px;font:600 13px system-ui,sans-serif;cursor:pointer">Понятно</button></div>
+<script data-pd>(function(){var b=document.getElementById('pdCookie'),k='pd-cookie-ok',ok=false;try{ok=localStorage.getItem(k)==='1'}catch(e){}if(!ok)b.hidden=false;document.getElementById('pdCookieOk').onclick=function(){b.hidden=true;try{localStorage.setItem(k,'1')}catch(e){}}})();</script>
 </body>
 </html>
