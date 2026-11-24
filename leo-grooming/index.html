@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Груминг у Льва — Московский</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Onest:wght@400;500;700&display=swap" rel="stylesheet">
+<meta name="description" content="Груминг у Льва — Московский. Цены, онлайн-запись, адрес и контакты.">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{--sun:#f2a33a;--sun-d:#c9761a;--sand:#fbf3e6;--paper:#fffdf9;--ink:#2a1f14;--muted:#7a6a58;--line:#eedfc8;--green:#2f6b4f}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -182,7 +182,7 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 100px}
  </div>
 </div></section>
 
-<footer>© Груминг у Льва · Московский<br><span class="demo">Это демо-концепт сайта. Фото и отзывы взяты с Яндекс Карт.</span></footer>
+<footer>© Груминг у Льва · Московский<br><span class="demo">Это демо-концепт сайта. Фото и отзывы взяты с Яндекс Карт.</span><div class="pd-links" data-pd style="flex-basis:100%;width:100%;margin-top:14px;font-size:12px;line-height:1.6;opacity:.7"><a href="privacy.html" style="color:inherit;text-decoration:underline">Политика конфиденциальности</a> · <a href="soglasie.html" style="color:inherit;text-decoration:underline">Согласие на обработку персональных данных</a></div></footer>
 <a class="btn sun float" href="#book">🦁 Записаться</a>
 
 <script>
@@ -208,5 +208,9 @@ document.getElementById('send').onclick=async()=>{
  window.open('https://t.me/leo_grooming','_blank');
 };
 </script>
+<div id="pdCookie" data-pd hidden style="position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:420px;margin:0 auto 0 0;background:#1d1c1a;color:#f2f1ed;border-radius:12px;padding:14px 16px;font:13px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.25)">
+На сайте встроены Яндекс Карты — они могут сохранять cookie. Подробнее в <a href="privacy.html" style="color:inherit">политике</a>.
+<button type="button" id="pdCookieOk" style="display:block;margin-top:10px;background:#f2f1ed;color:#1d1c1a;border:0;border-radius:8px;padding:8px 16px;font:600 13px system-ui,sans-serif;cursor:pointer">Понятно</button></div>
+<script data-pd>(function(){var b=document.getElementById('pdCookie'),k='pd-cookie-ok',ok=false;try{ok=localStorage.getItem(k)==='1'}catch(e){}if(!ok)b.hidden=false;document.getElementById('pdCookieOk').onclick=function(){b.hidden=true;try{localStorage.setItem(k,'1')}catch(e){}}})();</script>
 </body>
 </html>
