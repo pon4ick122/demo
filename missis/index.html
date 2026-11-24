@@ -8,9 +8,7 @@
 <meta property="og:title" content="Миссис — салон красоты в Химках">
 <meta property="og:description" content="Стрижки, сложное окрашивание, уходы и маникюр. 5,0 и 109 оценок. −20% на первое посещение.">
 <meta property="og:image" content="img/hall.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{--bg:#fff6fb;--card:#ffffff;--ink:#2a1030;--mute:#7a5d80;--line:#f1d9ec;--pink:#e5268f;--pink2:#b5157a;--violet:#7b2cbf;--soft:#fde3f1;--dark:#1d0a22}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -265,7 +263,7 @@ footer{padding:40px 0 90px;color:var(--mute);font-size:13px;border-top:1px solid
  </div>
 </div></section>
 
-<footer><div class="wrap">«Миссис» · салон красоты в Химках · Транспортный пр., 3 · фото, цены и отзывы — с Яндекс Карт</div></footer>
+<footer><div class="wrap">«Миссис» · салон красоты в Химках · Транспортный пр., 3 · фото, цены и отзывы — с Яндекс Карт<div class="pd-links" data-pd style="flex-basis:100%;width:100%;margin-top:14px;font-size:12px;line-height:1.6;opacity:.7"><a href="privacy.html" style="color:inherit;text-decoration:underline">Политика конфиденциальности</a> · <a href="soglasie.html" style="color:inherit;text-decoration:underline">Согласие на обработку персональных данных</a></div></div></footer>
 <a class="wa" href="https://wa.me/79840000608" target="_blank" rel="noopener">WhatsApp</a>
 <div class="demo">Демо-версия сайта</div>
 <div class="toast" id="toast">Промокод «МИНУС 20» скопирован</div>
@@ -428,5 +426,9 @@ if (typeof gsap !== "undefined" && !reduce) {
  if (typeof ScrollTrigger !== "undefined") { gsap.registerPlugin(ScrollTrigger); document.querySelectorAll(".reveal").forEach(el => gsap.to(el, { opacity: 1, y: 0, duration: .9, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 88%" } })); } else show();
 } else show();
 </script>
+<div id="pdCookie" data-pd hidden style="position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:420px;margin:0 auto 0 0;background:#1d1c1a;color:#f2f1ed;border-radius:12px;padding:14px 16px;font:13px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.25)">
+На сайте встроены Яндекс Карты — они могут сохранять cookie. Подробнее в <a href="privacy.html" style="color:inherit">политике</a>.
+<button type="button" id="pdCookieOk" style="display:block;margin-top:10px;background:#f2f1ed;color:#1d1c1a;border:0;border-radius:8px;padding:8px 16px;font:600 13px system-ui,sans-serif;cursor:pointer">Понятно</button></div>
+<script data-pd>(function(){var b=document.getElementById('pdCookie'),k='pd-cookie-ok',ok=false;try{ok=localStorage.getItem(k)==='1'}catch(e){}if(!ok)b.hidden=false;document.getElementById('pdCookieOk').onclick=function(){b.hidden=true;try{localStorage.setItem(k,'1')}catch(e){}}})();</script>
 </body>
 </html>
