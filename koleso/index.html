@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Колесо подарков — кофейня «Песок»</title>
 <meta name="description" content="Крути колесо и забирай подарок: скидка, десерт или кофе бесплатно.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{
   --bg:#140d09; --bg2:#22150d; --ink:#fff4e6; --muted:#c9ae94; --accent:#ff8a3d; --accent2:#ffd27a; --line:#ffffff1f;
@@ -95,7 +93,7 @@ canvas.confetti{position:fixed;inset:0;pointer-events:none;z-index:30}
       <div class="cell"><b>03</b><p>Код одноразовый и живёт 7 дней, поэтому гость возвращается быстро. Призы, цвета и тексты меняются за минуту.</p></div>
     </div>
   </section>
-  <footer>Демо от студии Axiom · колесо можно поставить на ваш сайт, в Telegram-бота или на отдельную страницу с QR-кодом.</footer>
+  <footer>Демо от студии Axiom · колесо можно поставить на ваш сайт, в Telegram-бота или на отдельную страницу с QR-кодом.<div class="pd-links" data-pd style="flex-basis:100%;width:100%;margin-top:14px;font-size:12px;line-height:1.6;opacity:.7"><a href="privacy.html" style="color:inherit;text-decoration:underline">Политика конфиденциальности</a> · <a href="soglasie.html" style="color:inherit;text-decoration:underline">Согласие на обработку персональных данных</a></div></footer>
 </div>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="pz">
@@ -105,7 +103,8 @@ canvas.confetti{position:fixed;inset:0;pointer-events:none;z-index:30}
     <p id="pzText">Покажите код бариста или заберите подарок в WhatsApp.</p>
     <div class="code" id="code">PESOK-0000</div>
     <input id="name" placeholder="Как вас зовут?" autocomplete="given-name">
-    <button class="btn" id="claim">Забрать в WhatsApp</button>
+    <label class="pd-consent" data-pd style="display:flex;gap:8px;align-items:flex-start;margin:10px 0;font-size:13px;line-height:1.4;text-align:left;cursor:pointer"><input type="checkbox" class="pd-ok" style="margin-top:2px;flex:none;width:16px;height:16px"><span>Я согласен(на) на <a href="soglasie.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">обработку персональных данных</a></span></label>
+    <button class="btn" id="claim" data-pd-guard="name">Забрать в WhatsApp</button>
     <div class="fine">Нажимая кнопку, вы отправляете код нам в WhatsApp. Одна попытка на гостя.</div>
   </div>
 </div>
@@ -307,5 +306,10 @@ if (hasGsap && !reduce) {
   gsap.to("#spin", { scale: 1.04, duration: .9, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1.5 });
 }
 </script>
+<style data-pd>.pd-consent.pd-err{color:#e5484d}.pd-consent.pd-err .pd-ok{outline:2px solid #e5484d;outline-offset:2px}</style>
+<script data-pd>(function(){function ok(el){var box=document.querySelector('.pd-ok');if(!box||box.checked)return true;var filled=(el.getAttribute('data-pd-guard')||'').split(',').some(function(i){var f=document.getElementById(i);return f&&f.value.trim()});if(!filled)return true;var l=box.closest('label');l.classList.add('pd-err');box.focus();return false}
+window.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button[data-pd-guard]');if(b&&!ok(b)){e.preventDefault();e.stopImmediatePropagation()}},true);
+window.addEventListener('submit',function(e){var f=e.target;if(f.hasAttribute&&f.hasAttribute('data-pd-guard')&&!ok(f)){e.preventDefault();e.stopImmediatePropagation()}},true);
+document.addEventListener('change',function(e){if(e.target.classList&&e.target.classList.contains('pd-ok'))e.target.closest('label').classList.remove('pd-err')})})();</script>
 </body>
 </html>
