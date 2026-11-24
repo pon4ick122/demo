@@ -152,6 +152,17 @@ footer{color:var(--mute);padding:34px 6vw 110px;font-size:13px;display:flex;just
  footer{padding:30px 16px 100px}
 }
 @media(max-width:480px){.res{padding:24px}.res h3{font-size:32px}.facts{gap:22px}.facts b{font-size:32px}.logo b{font-size:17px}}
+.price{background:var(--card);border:1px solid var(--line);border-radius:32px;padding:34px;margin-top:28px}
+.ptabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.ptabs button{appearance:none;border:1px solid var(--line);background:transparent;color:var(--sage2);font:500 14px "Inter Tight",sans-serif;padding:10px 16px;border-radius:99px;cursor:pointer;transition:.2s}
+.ptabs button.on{background:var(--sage2);border-color:var(--sage2);color:#fff}
+.prow{display:grid;grid-template-columns:1fr auto auto;gap:6px 18px;align-items:baseline;padding:14px 0;border-bottom:1px dashed var(--line)}
+.prow:last-child{border-bottom:0}
+.prow b{font-weight:500}.prow small{display:block;color:var(--mute);font-size:13px;margin-top:3px}
+.prow .t{color:var(--mute);font-size:14px;white-space:nowrap}.prow .c{font-family:"Tenor Sans";font-size:19px;color:var(--sage2);white-space:nowrap}
+.prow .go{grid-column:1/-1;justify-self:start;appearance:none;border:0;background:none;color:var(--clay);font:500 13px "Inter Tight",sans-serif;cursor:pointer;padding:0}
+.pnote{color:var(--mute);font-size:13px;margin-top:16px}
+@media(max-width:560px){.price{padding:22px 18px;border-radius:24px}.prow{grid-template-columns:1fr auto}.prow .t{grid-column:1;grid-row:2}}
 </style>
 </head>
 <body>
@@ -207,6 +218,12 @@ footer{color:var(--mute);padding:34px 6vw 110px;font-size:13px;display:flex;just
  <h2>У каждой — <em>своя задача</em></h2>
  <p class="sub">Цены с Яндекс Карт. Большинство программ — 1 час или 1,5 часа.</p>
  <div class="progs" id="pl"></div>
+ <div class="price rv" id="price">
+  <span class="kick cap">Полный прайс</span>
+  <div class="ptabs" id="ptabs"></div>
+  <div id="plist"></div>
+  <p class="pnote">Цены с Яндекс Карт. Нажмите «Записаться» у процедуры — текст заявки скопируется, останется вставить его в Telegram.</p>
+ </div>
 </section>
 
 <section style="padding-top:0">
@@ -277,9 +294,9 @@ const TG='welcome_resetthebody';
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fmt=n=>n.toLocaleString('ru-RU').replace(/ /g,' ')+' ₽';
 const PG={
- reboot:{n:'«Перезагрузка»',ty:'общий массаж тела',p:'Снимает усталость и напряжение, даёт глубокий релакс и восстановление. Для тех, кто много работает.',d:[[1,4500],[1.5,6000]]},
+ reboot:{n:'«Перезагрузка»',ty:'общий массаж тела',p:'Снимает усталость и напряжение, даёт глубокий релакс и восстановление. Для тех, кто много работает.',d:[[1,4500],[1.5,6000],[2,8000]]},
  flow:{n:'«Поток»',ty:'лимфодренажный массаж',p:'Уходят отёки, улучшается микроциркуляция, в теле появляется лёгкость.',d:[[1,4500],[1.5,6000]]},
- silence:{n:'«Тишина внутри»',ty:'антистрессовый массаж',p:'Мягкая работа, после которой выключается внутренний шум. Когда стресс на пределе.',d:[[1,4500],[1.5,6000]]},
+ silence:{n:'«Тишина внутри»',ty:'антистрессовый массаж',p:'Мягкая работа, после которой выключается внутренний шум. Когда стресс на пределе.',d:[[1,4500],[1.5,6000],[2,8000]]},
  support:{n:'«Точка опоры»',ty:'массаж спины',p:'Работа с болью и напряжением в спине, шее и пояснице — быстро и глубоко.',d:[[1,4500]]},
  freedom:{n:'«Свобода движения»',ty:'миофасциальный массаж',p:'Мягко снимает мышечные зажимы и возвращает свободу движения — без боли.',d:[[1.5,6000]]},
  legs:{n:'«Лёгкие ноги»',ty:'массаж ног',p:'Расслабляющий и восстанавливающий массаж: снимает усталость и отёки, улучшает кровообращение.',d:[[1,4500]]},
@@ -287,6 +304,54 @@ const PG={
 };
 document.getElementById('ribt').innerHTML=Object.values(PG).map(x=>x.n.replace(/[«»]/g,'')+'<span>❋</span>').join('').repeat(4);
 document.getElementById('pl').innerHTML=['reboot','silence','support','freedom','flow','venus'].map(k=>PG[k]).map(x=>`<div class="pg rv"><span class="cap">${x.ty}</span><h3>${x.n}</h3><p>${x.p}</p><div class="pr">${x.d.map(([h,c])=>`<span><b>${fmt(c)}</b>${String(h).replace('.',',')} ч</span>`).join('')}</div></div>`).join('');
+
+/* ---------- полный прайс ---------- */
+const PRICE=[
+ ['Массаж тела',[
+  ['«Перезагрузка» — общий массаж тела','1 / 1,5 / 2 ч','4 500 / 6 000 / 8 000 ₽'],
+  ['«Тишина внутри» — антистрессовый','1 / 1,5 / 2 ч','4 500 / 6 000 / 8 000 ₽'],
+  ['«Поток» — лимфодренажный','1 / 1,5 ч','4 500 / 6 000 ₽'],
+  ['«Точка опоры» — массаж спины','1 ч','4 500 ₽'],
+  ['«Лёгкие ноги» — массаж ног','','4 500 ₽'],
+  ['«Венера» — антицеллюлитный с элементами телесной терапии','','5 000 ₽'],
+  ['«Свобода движения» — миофасциальный','1,5 ч','6 000 ₽'],
+  ['Остеопластика','1,5 / 2 ч','6 000 / 8 000 ₽']]],
+ ['Лицо',[
+  ['Глубокое погружение — массаж лица + уход, авторская методика','1,5 ч','8 000 ₽'],
+  ['Скульптурный лифтинг лица — массаж + уход','1,5 ч','8 000 ₽'],
+  ['Миофасциальный массаж лица + уход','1,5 ч','8 000 ₽'],
+  ['Уход Montibello OXYGEN / VITA C','1,5 ч','8 500 ₽'],
+  ['Чистка лица комбинированная, 7 ступеней','1,5 ч','7 000 ₽'],
+  ['Коктейльные пилинги + альгинатная маска','','6 000 ₽'],
+  ['Остеопластика лица (без ухода)','1,5 ч','5 500 ₽'],
+  ['Нейро-лифтинг лица','','5 500 ₽'],
+  ['Экспресс-массаж лица','','3 600 ₽']]],
+ ['Телесная терапия',[
+  ['Остеопластика от телесного терапевта — коррекция лица и тела','1 / 1,5 ч','7 500 / 9 000 ₽'],
+  ['Reset-методика — височно-нижнечелюстной сустав и моделирование лица','1 ч','5 000 ₽'],
+  ['Авторская методика массажа «ЯЕСТЬ»','1,5 / 2 ч','15 000 / 24 000 ₽'],
+  ['«Свидание с собой» — авторская программа Елены Мирошиной','','15 000 ₽']]],
+ ['Спа',[
+  ['Талассо Магнезиум — массаж + обёртывание + чайная церемония','2,5 ч','9 500 ₽'],
+  ['Талассо Магнезиум — индивидуальный массаж тела','1,5 / 2 ч','6 500 / 8 000 ₽'],
+  ['Обёртывание-пеленание, косметика STYX','','5 500 ₽']]],
+ ['Короткие и дополнения',[
+  ['«Пробуждение» — голова и шейно-воротниковая зона','45 мин','3 500 ₽'],
+  ['«Дыхание» — работа с грудным отделом','45 мин','3 500 ₽'],
+  ['«Точка невесомости» — шейно-воротниковая зона','30 мин','2 500 ₽'],
+  ['«Центр силы» — массаж живота','30 мин','2 500 ₽'],
+  ['Антистресс для головы, рук или стоп — к любой процедуре','15 мин','1 100 ₽'],
+  ['Альгинатная маска — к процедуре','','1 500 ₽'],
+  ['Тейпирование — к процедуре','','500 ₽']]]
+];
+let ptab=0;
+function drawPrice(){
+ document.getElementById('ptabs').innerHTML=PRICE.map((c,i)=>`<button class="${i===ptab?'on':''}" data-i="${i}">${c[0]}</button>`).join('');
+ document.getElementById('plist').innerHTML=PRICE[ptab][1].map((r,i)=>`<div class="prow"><div><b>${r[0]}</b></div><span class="t">${r[1]}</span><span class="c">${r[2]}</span><button class="go" data-r="${i}">Записаться →</button></div>`).join('');
+}
+document.getElementById('ptabs').onclick=e=>{const b=e.target.closest('button');if(!b)return;ptab=+b.dataset.i;drawPrice();};
+document.getElementById('plist').onclick=e=>{const b=e.target.closest('.go');if(!b)return;const r=PRICE[ptab][1][+b.dataset.r];toTG(`Здравствуйте! Хочу записаться: ${r[0]}${r[1]?' ('+r[1]+')':''}.\nПодскажите, когда есть свободное время?\n(заявка с сайта)`);};
+drawPrice();
 
 /* ---------- state quiz ---------- */
 const st={s:7,t:5,w:3,f:'all'};let pick='reboot',di=0;
