@@ -223,8 +223,9 @@ function pickTime(i){
   const h = new Date().getHours();
   const slots = BIZ.slots.filter(s => i > 0 || !/^\d/.test(s) || +s.split(/[:–-]/)[0] > h + (s.includes('–') ? -1 : 1));
   if (!slots.length) return bot('На сегодня свободных окон уже нет 😔 Выберите другой день.').then(pickDay);
-  bot(BIZ.timeQ || 'Свободное время:', slots.map(s => [s, () => { order.time = s; askName(); }]), 2);
+  bot(BIZ.timeQ || 'Свободное время:', slots.map(s => [s, () => { order.time = s; askConsent(); }]), 2);
 }
+function askConsent(){ bot('Чтобы записать вас, понадобятся имя и телефон. Нажимая «Согласен», вы даёте <a href="soglasie.html" target="_blank" rel="noopener">согласие на обработку персональных данных</a>.', [['✅ Согласен', askName], ['⬅️ Меню', () => menu()]], 2); }
 function askName(){ waiting = 'name'; bot('Как к вам обращаться? Напишите имя 👇'); inp.focus(); }
 function askPhone(){ waiting = 'phone'; bot('Приятно познакомиться, ' + esc(order.name) + '! Оставьте номер телефона для подтверждения 👇'); inp.focus(); }
 function total(){
@@ -292,5 +293,6 @@ $('bar').addEventListener('submit', e => {
 
 setTimeout(() => bot(BIZ.hello, MENU(), 2), 400);
 </script>
+<div class="pd-links" data-pd style="text-align:center;padding:18px 16px 28px;font:12px/1.6 system-ui,sans-serif;opacity:.7"><a href="privacy.html" style="color:inherit;text-decoration:underline">Политика конфиденциальности</a> · <a href="soglasie.html" style="color:inherit;text-decoration:underline">Согласие на обработку персональных данных</a></div>
 </body>
 </html>
