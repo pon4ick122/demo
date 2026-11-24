@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Подарок к первому визиту — Reset The Body</title>
 <meta name="description" content="Покрутите колесо и заберите подарок к первому сеансу массажа в Reset The Body у Трубной.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{
   --bg:#f3efe8; --bg2:#ebe5da; --card:#fbf9f5; --ink:#2a2b27; --muted:#6f7168; --sage:#5f6e5a; --sage2:#46523f; --sage3:#a9b5a0; --clay:#b9876b; --sand:#e3d6c3; --line:#dcd5c8;
@@ -108,7 +106,7 @@ canvas.confetti{position:fixed;inset:0;pointer-events:none;z-index:30}
     </div>
     <a class="back" href="https://pon4ick122.github.io/demo/reset/">← Вернуться к сайту Reset The Body</a>
   </section>
-  <footer>Демо для Reset The Body · Нижний Кисельный пер., 4 · Трубная / Цветной бульвар</footer>
+  <footer>Демо для Reset The Body · Нижний Кисельный пер., 4 · Трубная / Цветной бульвар<div class="pd-links" data-pd style="flex-basis:100%;width:100%;margin-top:14px;font-size:12px;line-height:1.6;opacity:.7"><a href="privacy.html" style="color:inherit;text-decoration:underline">Политика конфиденциальности</a> · <a href="soglasie.html" style="color:inherit;text-decoration:underline">Согласие на обработку персональных данных</a></div></footer>
 </div>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="pz">
@@ -118,7 +116,8 @@ canvas.confetti{position:fixed;inset:0;pointer-events:none;z-index:30}
     <p id="pzText">Назовите код администратору или заберите подарок в Telegram.</p>
     <div class="code" id="code">RESET-0000</div>
     <input id="name" placeholder="Как вас зовут?" autocomplete="given-name">
-    <button class="btn" id="claim">Забрать в Telegram</button>
+    <label class="pd-consent" data-pd style="display:flex;gap:8px;align-items:flex-start;margin:10px 0;font-size:13px;line-height:1.4;text-align:left;cursor:pointer"><input type="checkbox" class="pd-ok" style="margin-top:2px;flex:none;width:16px;height:16px"><span>Я согласен(на) на <a href="soglasie.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">обработку персональных данных</a></span></label>
+    <button class="btn" id="claim" data-pd-guard="name">Забрать в Telegram</button>
     <div class="fine">Текст с кодом скопируется — вставьте его в чат. Одна попытка на гостя.</div>
   </div>
 </div>
@@ -321,5 +320,10 @@ if (hasGsap && !reduce) {
   gsap.to("#spin", { scale: 1.04, duration: .9, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1.5 });
 }
 </script>
+<style data-pd>.pd-consent.pd-err{color:#e5484d}.pd-consent.pd-err .pd-ok{outline:2px solid #e5484d;outline-offset:2px}</style>
+<script data-pd>(function(){function ok(el){var box=document.querySelector('.pd-ok');if(!box||box.checked)return true;var filled=(el.getAttribute('data-pd-guard')||'').split(',').some(function(i){var f=document.getElementById(i);return f&&f.value.trim()});if(!filled)return true;var l=box.closest('label');l.classList.add('pd-err');box.focus();return false}
+window.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button[data-pd-guard]');if(b&&!ok(b)){e.preventDefault();e.stopImmediatePropagation()}},true);
+window.addEventListener('submit',function(e){var f=e.target;if(f.hasAttribute&&f.hasAttribute('data-pd-guard')&&!ok(f)){e.preventDefault();e.stopImmediatePropagation()}},true);
+document.addEventListener('change',function(e){if(e.target.classList&&e.target.classList.contains('pd-ok'))e.target.closest('label').classList.remove('pd-err')})})();</script>
 </body>
 </html>
