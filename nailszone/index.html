@@ -437,13 +437,13 @@ $("giftb").onclick = () => openWA(`Здравствуйте! Хочу подар
  const capGeo = new THREE.CylinderGeometry(.26, .3, 1.3, 32);
  const cols = [0x1a9c97, 0xe2483d, 0xf6d6d0, 0x15201f, 0xd62f86, 0x3a7bd5];
  const group = new THREE.Group(); scene.add(group);
- const pos = [[-3.1, 2.8, 1], [3.0, 3.0, 0], [3.3, -.4, 1.5], [-3.3, -2.3, 1], [.9, -3.1, .5], [-.4, 3.3, -1]];
+ const pos = [[-2.7, 2.6, 1], [2.6, 2.7, 0], [2.8, -.5, 1.5], [-2.8, -2.4, 1], [1.0, -2.8, .5], [-.3, 2.9, -1]];
  const bottles = pos.map((p, i) => {
   const b = new THREE.Group();
   const glass = new THREE.Mesh(bottleGeo, new THREE.MeshPhysicalMaterial({ color: cols[i], roughness: .12, metalness: 0, clearcoat: 1, clearcoatRoughness: .05, reflectivity: .6 }));
   const cap = new THREE.Mesh(capGeo, new THREE.MeshStandardMaterial({ color: 0x101a1a, roughness: .35, metalness: .4 }));
   cap.position.y = 1.45; b.add(glass, cap);
-  b.position.set(p[0], p[1], p[2]); b.scale.setScalar(.62 + (i % 3) * .08);
+  b.position.set(p[0], p[1], p[2]); b.scale.setScalar(.4 + (i % 3) * .05);
   b.rotation.set(.3 * Math.sin(i), i, .4 * Math.cos(i * 2));
   b.userData = { y: p[1], s: .4 + i * .07, r: (i % 2 ? 1 : -1) * .004 };
   group.add(b); return b;
