@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Подберём подарок за 30 секунд — цветочная мастерская «Флора» (демо)</title>
+<meta name="description" content="Не знаете, что подарить на Новый год? Ответьте на 3 вопроса — подберём букет или подарочный набор и привезём.">
+<link rel="stylesheet" href="../koleso/fonts/fonts.css">
+<style>
+:root{--bg:#0d1a14;--ink:#f3fbf6;--muted:#b6cfc2;--a:#e8476a;--a2:#ffc2cf;--g:#3fbf7f;--line:#ffffff1f}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif}
+body{background:radial-gradient(110% 70% at 80% 0%,#3a1424 0,transparent 60%),radial-gradient(90% 60% at 0% 40%,#123a28 0,transparent 55%),var(--bg);min-height:100svh}
+.demo{background:#ffd6a5;color:#2a1a0c;text-align:center;font-size:12px;padding:7px 10px}
+.wrap{max-width:620px;margin:0 auto;padding:22px 20px 40px}
+.logo{font-family:"Dela Gothic One";font-size:22px}.logo span{color:var(--a)}
+h1{font-family:"Dela Gothic One";font-weight:400;font-size:clamp(32px,7vw,52px);line-height:1;margin:22px 0 10px}
+h1 span{color:var(--a2)}
+.lead{color:var(--muted);line-height:1.5;margin:0 0 20px}
+.prog{height:4px;border-radius:4px;background:#ffffff1a;margin:0 0 20px;overflow:hidden}.prog b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--g),var(--a));transition:width .3s}
+.q h2{font-size:22px;margin:0 0 14px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{appearance:none;cursor:pointer;text-align:left;font:500 16px Onest,sans-serif;color:var(--ink);background:#ffffff08;border:1px solid var(--line);border-radius:18px;padding:16px;transition:.15s}
+.opt:hover{border-color:#ffffff66;transform:translateY(-2px)}
+.opt i{display:block;font-style:normal;font-size:28px;margin-bottom:6px}
+.res{display:grid;gap:12px}
+.item{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;border:1px solid var(--line);border-radius:20px;padding:12px;background:#ffffff07}
+.pic{width:96px;height:96px;border-radius:16px;display:grid;place-items:center;font-size:44px}
+.item h3{margin:0 0 4px;font-size:17px}.item p{margin:0 0 6px;color:var(--muted);font-size:14px;line-height:1.4}
+.item b{color:var(--a2)}
+.btn{appearance:none;border:0;cursor:pointer;display:block;width:100%;font:700 17px Onest,sans-serif;color:#2a0d16;background:linear-gradient(180deg,var(--a2),var(--a));padding:16px;border-radius:16px;margin:12px 0 0;text-decoration:none;text-align:center}
+.btn.sm{display:inline-block;width:auto;padding:9px 14px;font-size:14px;margin:0}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.biz{margin-top:40px;border-top:1px solid var(--line);padding-top:24px}
+.biz h2{font-family:"Dela Gothic One";font-weight:400;font-size:24px;margin:0 0 10px}
+.biz li{color:var(--muted);line-height:1.5;margin:0 0 8px}
+footer{color:#7f9a8c;font-size:12px;margin-top:22px}footer a{color:inherit}
+@media (max-width:420px){.opts{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo">Демо: квиз «Подбор подарка» для цветочного или подарочного магазина. Заказ уходит в WhatsApp.</div>
+<div class="wrap">
+  <div class="logo">Флора<span>.</span></div>
+  <h1>Не знаете, что <span>подарить?</span></h1>
+  <p class="lead">Три вопроса — и мы предложим 3 варианта к Новому году. Доставка по городу в тот же день.</p>
+  <div class="prog"><b id="pb"></b></div>
+  <div id="quiz"></div>
+  <div id="result" hidden>
+    <h2 style="font-size:22px;margin:0 0 14px">Вот что мы советуем</h2>
+    <div class="res" id="list"></div>
+    <button class="btn ghost" id="again">Пройти ещё раз</button>
+  </div>
+  <section class="biz">
+    <h2>Для владельца магазина</h2>
+    <ul>
+      <li><b>Покупатель не уходит думать.</b> Вместо каталога на 200 позиций — 3 вопроса и 3 готовых варианта.</li>
+      <li><b>Заказ сразу в WhatsApp</b> с выбранным вариантом и бюджетом — администратору остаётся подтвердить.</li>
+      <li><b>Ваши товары и цены</b>, поводы: Новый год, 14 и 23 февраля, 8 Марта, день рождения.</li>
+      <li><b>Цена:</b> 6 900 ₽ — квиз в вашем стиле на 9–12 товаров; смена ассортимента к празднику — 1 500 ₽.</li>
+    </ul>
+  </section>
+  <footer>Демо. «Флора» — вымышленный магазин, товары и цены примерные. Квиз не собирает данные: заказ пишет сам покупатель в WhatsApp. <a href="privacy.html">Политика конфиденциальности</a></footer>
+</div>
+<script>
+(function(){
+const $=s=>document.querySelector(s),WA='79990000000';
+const Q=[
+ {k:'who',t:'Кому подарок?',o:[['she','💐','Ей'],['he','🎩','Ему'],['col','👔','Коллеге'],['mom','🏡','Маме / бабушке']]},
+ {k:'sum',t:'Какой бюджет?',o:[[1,'🙂','до 3 000 ₽'],[2,'😊','3 000–6 000 ₽'],[3,'🤩','больше 6 000 ₽']]},
+ {k:'vibe',t:'Какое настроение?',o:[['cozy','🕯️','Уютное'],['wow','✨','Чтобы ахнули'],['use','🎁','Практичное']]}
+];
+const P=[
+ {n:'Букет «Зимняя ягода»',d:'Эвкалипт, хлопок, гиперикум, еловая ветка',p:2900,s:1,w:['she','mom','col'],v:['cozy'],e:'🌲',c:'#1f4d3a'},
+ {n:'Набор «Глинтвейн»',d:'Специи, апельсин, свеча, открытка от руки',p:2400,s:1,w:['he','col','mom'],v:['cozy','use'],e:'🍷',c:'#5a1f2b'},
+ {n:'Мини-ёлка в горшке',d:'Живая, с игрушками — потом можно посадить',p:2700,s:1,w:['mom','col','she'],v:['use','cozy'],e:'🎄',c:'#174a2c'},
+ {n:'Букет «Северное сияние»',d:'Белые розы, гипсофила, серебряный декор',p:4900,s:2,w:['she','mom'],v:['wow'],e:'🤍',c:'#3b3f5c'},
+ {n:'Коробка «Кофейное утро»',d:'Кофе зерновой, кружка, печенье ручной работы',p:3900,s:2,w:['he','col'],v:['use','cozy'],e:'☕',c:'#4a3424'},
+ {n:'Композиция в шляпной коробке',d:'Пионовидные розы и ранункулюсы',p:5800,s:2,w:['she','mom','col'],v:['wow','cozy'],e:'🎀',c:'#6b2340'},
+ {n:'Букет «Гранд» 51 роза',d:'Красные розы 60 см в фирменной упаковке',p:12900,s:3,w:['she'],v:['wow'],e:'🌹',c:'#7a1427'},
+ {n:'Набор «Джентльмен»',d:'Виски-камни, стаканы, плед, открытка',p:7900,s:3,w:['he','col'],v:['use','wow'],e:'🥃',c:'#2c2c38'},
+ {n:'Корзина «Новогодний стол»',d:'Фрукты, сыры, мёд, ветки ели, свечи',p:8900,s:3,w:['mom','col','he','she'],v:['cozy','use','wow'],e:'🧺',c:'#4d3b14'}
+];
+const A={},fmt=n=>n.toLocaleString('ru-RU').replace(/ /g,' ')+' ₽';
+let step=0;
+function ask(){$('#pb').style.width=(step/Q.length*100)+'%';const q=Q[step];
+  $('#quiz').innerHTML=`<div class="q"><h2>${q.t}</h2><div class="opts">${q.o.map(o=>`<button class="opt" data-v="${o[0]}"><i>${o[1]}</i>${o[2]}</button>`).join('')}</div></div>`;
+  $('#quiz').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{A[q.k]=isNaN(+b.dataset.v)?b.dataset.v:+b.dataset.v;step++;step<Q.length?ask():show()})}
+const WHO={she:'для неё',he:'для него',col:'для коллеги',mom:'для мамы'};
+function show(){$('#pb').style.width='100%';$('#quiz').hidden=true;$('#result').hidden=false;
+  const sc=P.map(p=>({p,s:(p.w.includes(A.who)?3:0)+(p.s===A.sum?3:-Math.abs(p.s-A.sum))+(p.v.includes(A.vibe)?2:0)})).sort((a,b)=>b.s-a.s).slice(0,3);
+  $('#list').innerHTML=sc.map(({p})=>`<div class="item"><div class="pic" style="background:${p.c}">${p.e}</div><div><h3>${p.n}</h3><p>${p.d}</p><b>${fmt(p.p)}</b> &nbsp;<a class="btn sm" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent('Здравствуйте! Хочу заказать «'+p.n+'» ('+fmt(p.p)+') '+WHO[A.who]+'. Подскажите про доставку.')}">Заказать</a></div></div>`).join('')}
+$('#again').onclick=()=>{step=0;$('#quiz').hidden=false;$('#result').hidden=true;ask()};
+ask();
+})();
+</script>
+</body>
+</html>
