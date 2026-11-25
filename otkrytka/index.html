@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Именная новогодняя открытка от компании (демо)</title>
+<meta name="description" content="Именные новогодние открытки для сотрудников и клиентов компании: у каждого своя ссылка, 3D-подарок, поздравление и бонус.">
+<link rel="stylesheet" href="../koleso/fonts/fonts.css">
+<style>
+:root{--bg:#07121f;--ink:#f4f8ff;--muted:#a9bdd6;--a:#ff5a5f;--a2:#ffd27a;--line:#ffffff1f}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif;overflow-x:hidden}
+body{background:radial-gradient(100% 70% at 50% 0%,#143457 0,transparent 65%),var(--bg);min-height:100svh}
+.demo{background:var(--a2);color:#2a1a0c;text-align:center;font-size:13px;padding:8px 12px}
+.demo a{color:inherit;font-weight:700}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+.ui{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:22px 20px 40px;text-align:center;min-height:calc(100svh - 34px);display:flex;flex-direction:column}
+.brand{font-family:"JetBrains Mono";font-size:13px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
+.hi{font-family:"Dela Gothic One";font-weight:400;font-size:clamp(34px,7vw,72px);line-height:1;margin:14px 0 0}
+.hi span{color:var(--a2)}
+.tap{margin-top:auto;color:var(--muted);font-size:15px;padding-bottom:10px}
+.btn{appearance:none;border:0;cursor:pointer;font:700 17px Onest,sans-serif;color:#2a0d0e;background:linear-gradient(180deg,var(--a2),var(--a));padding:16px 26px;border-radius:16px;box-shadow:0 12px 34px #ff5a5f4d;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.letter{margin:auto 0 0;background:#0c1d33e6;backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:26px;padding:26px 22px;text-align:left;opacity:0;transform:translateY(30px)}
+.letter p{line-height:1.6;margin:0 0 14px;font-size:17px}
+.sign{color:var(--muted);font-size:15px}
+.gift{border:2px dashed var(--a2);border-radius:18px;padding:16px;margin:16px 0;text-align:center;background:#ffd27a10}
+.gift b{display:block;font-family:"JetBrains Mono";font-size:22px;letter-spacing:3px;color:var(--a2);margin-top:6px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+/* конструктор */
+.admin{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:26px 20px 50px}
+.admin h1{font-family:"Dela Gothic One";font-weight:400;font-size:clamp(28px,4.5vw,46px);margin:0 0 8px}
+.admin .sub{color:var(--muted);line-height:1.5;margin:0 0 22px}
+.card{background:#0c1d33e6;border:1px solid var(--line);border-radius:22px;padding:20px;margin:0 0 16px}
+label{display:block;font-size:13px;color:var(--muted);margin:0 0 6px}
+input,textarea{width:100%;font:500 16px Onest,sans-serif;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#ffffff0b;color:var(--ink);margin:0 0 12px}
+textarea{min-height:110px;resize:vertical}
+.links{font-family:"JetBrains Mono";font-size:13px;line-height:1.7;white-space:pre-wrap;word-break:break-all;max-height:260px;overflow:auto;background:#00000033;border-radius:12px;padding:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}
+.cell{border:1px solid var(--line);border-radius:18px;padding:16px;background:#ffffff06}
+.cell b{display:block;font-family:"Dela Gothic One";font-weight:400;font-size:24px;color:var(--a2);margin-bottom:6px}
+.cell p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+footer{position:relative;z-index:2;text-align:center;color:#7f93ad;font-size:12px;padding:0 20px 24px}
+footer a{color:inherit;margin:0 6px}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo">Демо: именные открытки для сотрудников и клиентов компании. <a href="?admin">Как это работает →</a></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<main class="ui" id="view">
+  <div class="brand" id="brand">ТехноСфера · 2027</div>
+  <h1 class="hi">С Новым годом,<br><span id="name">Анна</span>!</h1>
+  <div class="tap" id="tap"><p>Нажмите на подарок, чтобы открыть 🎁</p><button class="btn" id="open">Открыть подарок</button></div>
+  <div class="letter" id="letter" hidden>
+    <p id="msg">Спасибо, что были с нами в этом году! Пусть 2027-й принесёт много поводов для радости, смелые идеи и время для тех, кого вы любите.</p>
+    <div class="gift" id="giftBox">Ваш подарок от нас — скидка 15% на любой заказ в январе<b id="code">NY27-ANNA</b></div>
+    <p class="sign" id="sign">Команда «ТехноСферы»</p>
+    <div class="row"><button class="btn" id="copy">Скопировать код</button><button class="btn ghost" id="again">Открыть ещё раз</button></div>
+  </div>
+</main>
+
+<section class="admin" id="admin" hidden>
+  <h1>Именные открытки для вашей команды и клиентов</h1>
+  <p class="sub">Одна страница в вашем фирменном стиле — и у каждого получателя своя ссылка: его имя, поздравление и подарок. Рассылаете ссылки по почте, в WhatsApp или в Telegram. Ниже можно попробовать.</p>
+  <div class="grid">
+    <div class="cell"><b>1 ссылка</b><p>на каждого: сотрудника, клиента, партнёра — с его именем.</p></div>
+    <div class="cell"><b>Бонус</b><p>промокод, скидка или приглашение на праздник — растут повторные продажи.</p></div>
+    <div class="cell"><b>1–2 дня</b><p>ваш логотип, цвета и текст. От 9 900 ₽, оплата по счёту от самозанятого с чеком.</p></div>
+  </div>
+  <div class="card">
+    <label for="aBrand">Компания</label><input id="aBrand" value="ТехноСфера" maxlength="40">
+    <label for="aGift">Подарок (можно пусто)</label><input id="aGift" value="скидка 15% на любой заказ в январе" maxlength="80">
+    <label for="aNames">Имена получателей — по одному в строке</label>
+    <textarea id="aNames">Анна
+Дмитрий Сергеевич
+Ольга</textarea>
+    <button class="btn" id="gen">Создать ссылки</button>
+  </div>
+  <div class="card" id="out" hidden><label>Готовые ссылки</label><div class="links" id="links"></div><p style="margin:12px 0 0"><button class="btn ghost" id="copyAll">Скопировать все</button></p></div>
+  <p><a class="btn ghost" href="./">← Посмотреть открытку</a></p>
+</section>
+
+<footer><a href="privacy.html">Политика конфиденциальности</a> · Демо. «ТехноСфера» — вымышленная компания. Открытка не собирает данные получателей.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script>
+(function(){
+const $=s=>document.querySelector(s),Q=new URLSearchParams(location.search);
+const clean=(v,n)=>(v||'').replace(/[<>]/g,'').trim().slice(0,n);
+const translit=s=>{const m={а:'a',б:'b',в:'v',г:'g',д:'d',е:'e',ё:'e',ж:'zh',з:'z',и:'i',й:'y',к:'k',л:'l',м:'m',н:'n',о:'o',п:'p',р:'r',с:'s',т:'t',у:'u',ф:'f',х:'h',ц:'c',ч:'ch',ш:'sh',щ:'sh',ы:'y',э:'e',ю:'yu',я:'ya'};return s.toLowerCase().split('').map(c=>m[c]??(/[a-z0-9]/.test(c)?c:'')).join('').toUpperCase().slice(0,8)||'GIFT'};
+const brand=clean(Q.get('c'),40)||'ТехноСфера',name=clean(Q.get('to'),40)||'Анна',gift=Q.has('g')?clean(Q.get('g'),80):'скидка 15% на любой заказ в январе';
+if(Q.has('admin')){$('#view').hidden=true;$('#admin').hidden=false}
+$('#brand').textContent=brand+' · 2027';$('#name').textContent=name;$('#sign').textContent='Команда «'+brand+'»';
+$('#code').textContent='NY27-'+translit(name.split(' ')[0]);
+if(gift){$('#giftBox').firstChild.textContent='Ваш подарок от нас — '+gift}else $('#giftBox').hidden=true;
+document.title='С Новым годом, '+name+'! — '+brand;
+
+// 3D: подарок + снег
+let box=null,lid=null,R,S,C,opened=false;
+try{
+  if(!window.THREE||Q.has('admin'))throw 0;
+  R=new THREE.WebGLRenderer({canvas:$('#gl'),antialias:true,alpha:true});R.setPixelRatio(Math.min(2,devicePixelRatio));
+  S=new THREE.Scene();C=new THREE.PerspectiveCamera(40,1,.1,100);C.position.set(0,1.2,7);
+  S.add(new THREE.AmbientLight(0xffffff,.55));const L=new THREE.DirectionalLight(0xffffff,.9);L.position.set(3,5,4);S.add(L);
+  const P=new THREE.PointLight(0xffd27a,1.2,12);P.position.set(0,1,2);S.add(P);
+  const red=new THREE.MeshStandardMaterial({color:0xd8343a,roughness:.45,metalness:.1});
+  const gold=new THREE.MeshStandardMaterial({color:0xffd27a,roughness:.25,metalness:.8});
+  box=new THREE.Group();
+  const body=new THREE.Mesh(new THREE.BoxGeometry(1.6,1.3,1.6),red);box.add(body);
+  [[.22,1.32,1.62],[1.62,1.32,.22]].forEach(s=>box.add(new THREE.Mesh(new THREE.BoxGeometry(...s),gold)));
+  lid=new THREE.Group();lid.position.y=.75;
+  lid.add(new THREE.Mesh(new THREE.BoxGeometry(1.75,.28,1.75),red));
+  [[.24,.3,1.77],[1.77,.3,.24]].forEach(s=>lid.add(new THREE.Mesh(new THREE.BoxGeometry(...s),gold)));
+  const bow=new THREE.Mesh(new THREE.TorusKnotGeometry(.22,.07,64,8,2,3),gold);bow.position.y=.3;lid.add(bow);
+  box.add(lid);box.position.y=-.4;S.add(box);
+  const N=900,g=new THREE.BufferGeometry(),pos=new Float32Array(N*3);
+  for(let i=0;i<N;i++){pos[i*3]=(Math.random()-.5)*16;pos[i*3+1]=Math.random()*10-4;pos[i*3+2]=(Math.random()-.5)*8}
+  g.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  const snow=new THREE.Points(g,new THREE.PointsMaterial({color:0xffffff,size:.05,transparent:true,opacity:.85}));S.add(snow);
+  const size=()=>{R.setSize(innerWidth,innerHeight,false);C.aspect=innerWidth/innerHeight;C.updateProjectionMatrix();const m=innerWidth<640;box.scale.setScalar(m?.62:1);if(!opened)box.position.y=m?0:-.4};size();addEventListener('resize',size);
+  const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (function loop(){requestAnimationFrame(loop);if(!rm){box.rotation.y+=opened?.002:.008;const a=g.attributes.position.array;for(let i=1;i<a.length;i+=3){a[i]-=.012;if(a[i]<-4)a[i]=6}g.attributes.position.needsUpdate=true}R.render(S,C)})();
+  $('#gl').addEventListener('click',()=>!opened&&openGift());
+}catch(e){$('#gl').style.display='none'}
+
+function openGift(){if(opened)return;opened=true;$('#tap').hidden=true;$('#letter').hidden=false;
+  if(window.gsap){
+    if(lid){gsap.to(lid.position,{y:1.5,x:1.3,duration:1,ease:'power2.out'});gsap.to(lid.rotation,{z:-.9,x:.4,duration:1});gsap.to(box.position,{y:.9,duration:1.2,ease:'power2.out'});gsap.to(box.scale,{x:.42,y:.42,z:.42,duration:1.2})}
+    gsap.to('#letter',{opacity:1,y:0,duration:.8,delay:.5,ease:'power3.out'});
+  }else{$('#letter').style.opacity=1;$('#letter').style.transform='none'}
+  confetti();
+}
+function confetti(){const cv=document.createElement('canvas');cv.style.cssText='position:fixed;inset:0;pointer-events:none;z-index:5';cv.width=innerWidth;cv.height=innerHeight;document.body.appendChild(cv);
+  const c=cv.getContext('2d'),ps=[...Array(140)].map(()=>({x:innerWidth/2,y:innerHeight*.45,vx:(Math.random()-.5)*14,vy:-Math.random()*14-4,s:4+Math.random()*6,c:['#ff5a5f','#ffd27a','#7fd3ff','#fff'][Math.random()*4|0],r:Math.random()*6}));
+  let t=0;(function f(){c.clearRect(0,0,cv.width,cv.height);ps.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.r+=.1;c.save();c.translate(p.x,p.y);c.rotate(p.r);c.fillStyle=p.c;c.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);c.restore()});if(++t<140)requestAnimationFrame(f);else cv.remove()})()}
+$('#open').onclick=openGift;
+$('#again').onclick=()=>location.reload();
+$('#copy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText($('#code').textContent).then(()=>{$('#copy').textContent='Скопировано ✓'})};
+// конструктор ссылок
+$('#gen').onclick=()=>{const base=location.origin+location.pathname,c=clean($('#aBrand').value,40),g=clean($('#aGift').value,80);
+  const ls=$('#aNames').value.split('\n').map(x=>clean(x,40)).filter(Boolean).slice(0,500)
+    .map(n=>n+' — '+base+'?'+new URLSearchParams({to:n,c,g}).toString());
+  $('#links').textContent=ls.join('\n');$('#out').hidden=false};
+$('#copyAll').onclick=()=>navigator.clipboard&&navigator.clipboard.writeText($('#links').textContent).then(()=>{$('#copyAll').textContent='Скопировано ✓'});
+})();
+</script>
+</body>
+</html>
