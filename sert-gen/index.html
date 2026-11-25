@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Подарочный сертификат онлайн бесплатно — конструктор с номерами и печатью</title>
+<meta name="description" content="Сделайте подарочный сертификат для салона, мастера или кофейни за минуту: без регистрации, с номерами, готов к печати по 6 на листе А4 и в PNG для отправки. Бесплатно.">
+<link rel="stylesheet" href="../koleso/fonts/fonts.css">
+<style>
+:root{--bg:#f6f3ee;--ink:#1d1a16;--muted:#6b645a;--line:#e2dcd2;--card:#fff;--a:#e0573b}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:22px 18px 50px}
+header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.logo{font-family:"Dela Gothic One";font-size:20px}.logo span{color:var(--a)}
+.free{font-family:"JetBrains Mono";font-size:12px;background:#1d1a16;color:#fff;border-radius:99px;padding:6px 12px}
+h1{font-family:"Dela Gothic One";font-weight:400;font-size:clamp(30px,4.6vw,54px);line-height:1.02;margin:22px 0 10px}
+h1 span{color:var(--a)}
+.lead{color:var(--muted);font-size:17px;line-height:1.5;margin:0 0 24px;max-width:720px}
+.grid{display:grid;grid-template-columns:380px 1fr;gap:22px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px}
+label{display:block;font-size:13px;color:var(--muted);margin:0 0 5px}
+input,select{width:100%;font:500 15px Onest,sans-serif;padding:11px 12px;border-radius:12px;border:1px solid var(--line);background:#fbfaf7;color:var(--ink);margin:0 0 12px}
+input:focus,select:focus{outline:2px solid var(--a);outline-offset:1px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.themes{display:flex;gap:8px;margin:0 0 14px;flex-wrap:wrap}
+.th{width:44px;height:44px;border-radius:12px;border:2px solid transparent;cursor:pointer;padding:0}
+.th[aria-pressed="true"]{border-color:var(--ink);transform:scale(1.06)}
+.btn{appearance:none;border:0;cursor:pointer;display:block;width:100%;font:700 16px Onest,sans-serif;color:#fff;background:var(--ink);padding:15px;border-radius:14px;margin:8px 0 0;text-align:center;text-decoration:none}
+.btn.acc{background:var(--a)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.stage{position:sticky;top:14px}
+canvas#pv{width:100%;height:auto;border-radius:16px;box-shadow:0 20px 50px #0002;display:block;background:#fff}
+.note{font-size:13px;color:var(--muted);margin:10px 0 0;line-height:1.5}
+.up{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.up div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
+.up b{display:block;font-family:"Dela Gothic One";font-weight:400;font-size:22px;margin:0 0 4px}
+.up p{margin:0 0 10px;color:var(--muted);font-size:14px;line-height:1.45}
+.seo{margin-top:46px;max-width:780px}
+.seo h2{font-family:"Dela Gothic One";font-weight:400;font-size:26px;margin:26px 0 10px}
+.seo p,.seo li{color:var(--muted);line-height:1.6}
+footer{margin-top:30px;color:var(--muted);font-size:12px}footer a{color:inherit}
+#print{display:none}
+@media (max-width:880px){.grid{grid-template-columns:1fr}.stage{position:relative;top:0;order:-1}.up{grid-template-columns:1fr}}
+@media print{
+  @page{size:A4 portrait;margin:8mm}
+  body{background:#fff}
+  .wrap{display:none}
+  #print{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+  #print img{width:100%;height:auto;break-inside:avoid;border:0.2mm dashed #bbb}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">Сертификат<span>.</span>онлайн</div><div class="free">бесплатно · без регистрации</div></header>
+<h1>Подарочный сертификат <span>за 1 минуту</span></h1>
+<p class="lead">Для салона, мастера, барбершопа, кофейни или магазина. Впишите название и сумму — получите готовый сертификат с номером: в PNG для отправки клиенту и для печати по 6 штук на листе А4.</p>
+
+<div class="grid">
+  <div class="panel">
+    <label for="biz">Название</label><input id="biz" maxlength="32" value="Студия «Лаванда»">
+    <label for="kind">Кто вы (подпись)</label><input id="kind" maxlength="40" value="маникюр · педикюр · брови">
+    <label for="what">Сумма или услуга</label><input id="what" maxlength="34" value="3 000 ₽">
+    <div class="row">
+      <div><label for="till">Действует до</label><input id="till" maxlength="20" value="31.03.2027"></div>
+      <div><label for="num">Номер с</label><input id="num" type="number" min="1" max="99999" value="1" inputmode="numeric"></div>
+    </div>
+    <label for="cont">Контакты для записи</label><input id="cont" maxlength="48" value="+7 900 000-00-00 · @lavanda_studio">
+    <label>Дизайн</label>
+    <div class="themes" id="themes"></div>
+    <label for="cnt">Сколько штук распечатать (с номерами подряд)</label>
+    <select id="cnt"><option>4</option><option selected>8</option><option>12</option><option>20</option></select>
+    <button class="btn acc" id="dl">Скачать PNG</button>
+    <button class="btn" id="pr">Печать на А4 (6 на листе)</button>
+    <p class="note">Всё создаётся прямо в вашем браузере — мы ничего не сохраняем и не отправляем.</p>
+  </div>
+  <div class="stage">
+    <canvas id="pv" width="1480" height="1050" aria-label="Предпросмотр сертификата"></canvas>
+  </div>
+</div>
+
+<div class="up">
+      <div><b>Без надписи — 490 ₽</b><p>Уберу строчку «сделано на…» и вставлю ваш логотип. Готово в течение дня.</p><a class="btn ghost" id="wm" target="_blank" rel="noopener">Написать в Telegram</a></div>
+      <div><b>Продавать онлайн — 7 900 ₽</b><p>Страница, где сертификат покупают и оплачивают сами, 24/7. Идеально к Новому году.</p><a class="btn ghost" href="../sertifikat/" target="_blank" rel="noopener">Посмотреть пример</a></div>
+    </div>
+
+<section class="seo">
+  <h2>Как сделать подарочный сертификат</h2>
+  <ol>
+    <li>Впишите название, сумму или услугу и срок действия.</li>
+    <li>Выберите дизайн — превью обновляется сразу.</li>
+    <li>Скачайте PNG, чтобы отправить в WhatsApp или Telegram, или распечатайте сразу пачку с номерами по порядку.</li>
+  </ol>
+  <h2>Зачем номер на сертификате</h2>
+  <p>По номеру администратор отмечает, какой сертификат уже использован, — так его нельзя предъявить дважды. Ведите простой список: номер, кому продан, когда использован.</p>
+  <h2>Это правда бесплатно?</h2>
+  <p>Да. На сертификате будет маленькая строчка «сделано на…». Если нужен сертификат без неё и с вашим логотипом — напишите, сделаем за 490 ₽.</p>
+</section>
+<footer>Конструктор не собирает персональные данные. <a href="privacy.html">Политика конфиденциальности</a></footer>
+</div>
+<div id="print" aria-hidden="true"></div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s),cv=$('#pv'),W=cv.width,H=cv.height;
+const T=[
+ {sw:'#2b2140',bg:['#2b2140','#151020'],acc:'#c9a7ff',ink:'#ffffff',sub:'#d9ccef',deco:'snow'},
+ {sw:'#f7e9e4',bg:['#fff5f1','#f3ddd5'],acc:'#c2477a',ink:'#2b1820',sub:'#8a5a68',deco:'petals'},
+ {sw:'#141210',bg:['#1a1410','#2f2418'],acc:'#f5c26b',ink:'#fff4dc',sub:'#d8c39c',deco:'lines'},
+ {sw:'#123a2c',bg:['#123a2c','#0b2219'],acc:'#ff6b5e',ink:'#f3fbf6',sub:'#bcd9cb',deco:'snow'},
+ {sw:'#eef3ff',bg:['#f4f7ff','#dfe8ff'],acc:'#2e5aa8',ink:'#14213a',sub:'#5d6b82',deco:'lines'}
+];
+let ti=0;
+$('#themes').innerHTML=T.map((t,i)=>`<button class="th" data-i="${i}" aria-pressed="${i===0}" aria-label="Дизайн ${i+1}" style="background:linear-gradient(135deg,${t.bg[0]},${t.acc})"></button>`).join('');
+$('#themes').onclick=e=>{const b=e.target.closest('.th');if(!b)return;ti=+b.dataset.i;document.querySelectorAll('.th').forEach(x=>x.setAttribute('aria-pressed',x===b));draw(cv.getContext('2d'),num())};
+const v=id=>($(id).value||'').trim();
+const num=()=>Math.max(1,Math.min(99999,parseInt($('#num').value,10)||1));
+function rnd(s){return()=>{s=(s*16807)%2147483647;return(s-1)/2147483646}}
+function fit(c,txt,font,size,max){let s=size;c.font=font.replace('S',s);while(c.measureText(txt).width>max&&s>20){s-=4;c.font=font.replace('S',s)}return s}
+function draw(c,n){
+  const t=T[ti];const g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,t.bg[0]);g.addColorStop(1,t.bg[1]);c.fillStyle=g;c.fillRect(0,0,W,H);
+  const r=rnd(11+ti);
+  if(t.deco==='snow'){for(let i=0;i<110;i++){c.globalAlpha=.2+r()*.5;c.fillStyle='#fff';c.beginPath();c.arc(r()*W,r()*H,1+r()*4,0,7);c.fill()}}
+  if(t.deco==='petals'){for(let i=0;i<28;i++){c.globalAlpha=.15+r()*.2;c.fillStyle=t.acc;c.save();c.translate(r()*W,r()*H);c.rotate(r()*6);c.beginPath();c.ellipse(0,0,18+r()*30,8+r()*12,0,0,7);c.fill();c.restore()}}
+  if(t.deco==='lines'){c.strokeStyle=t.acc;c.lineWidth=2;for(let i=0;i<14;i++){c.globalAlpha=.08+i*.008;c.beginPath();c.arc(W*1.05,-H*.1,200+i*55,0,7);c.stroke()}}
+  c.globalAlpha=1;c.textAlign='left';c.textBaseline='alphabetic';
+  c.strokeStyle=t.acc;c.lineWidth=4;c.strokeRect(40,40,W-80,H-80);
+  const L=100,M=W-200;
+  c.fillStyle=t.sub;c.font='500 34px "JetBrains Mono",monospace';c.fillText('ПОДАРОЧНЫЙ СЕРТИФИКАТ',L,140);
+  c.fillStyle=t.ink;fit(c,v('#biz')||'Ваше название','400 Spx "Dela Gothic One",sans-serif',78,M);c.fillText(v('#biz')||'Ваше название',L,240);
+  c.fillStyle=t.sub;fit(c,v('#kind'),'500 Spx Onest,sans-serif',36,M);c.fillText(v('#kind'),L,295);
+  c.fillStyle=t.acc;const w=v('#what')||'3 000 ₽';const s=fit(c,w,'400 Spx "Dela Gothic One",sans-serif',w.length>12?120:170,M);c.fillText(w,L,330+30+s);
+  c.fillStyle=t.ink;c.font='500 38px Onest,sans-serif';c.fillText('Для: ____________________',L,700);
+  c.fillStyle=t.sub;c.font='500 32px Onest,sans-serif';if(v('#till'))c.fillText('Действует до '+v('#till'),L,780);
+  fit(c,v('#cont'),'500 Spx Onest,sans-serif',32,M);c.fillText(v('#cont'),L,H-110);
+  c.textAlign='right';c.fillStyle=t.ink;c.font='600 44px "JetBrains Mono",monospace';c.fillText('№ '+String(n).padStart(4,'0'),W-L,140);
+  c.textAlign='center';c.globalAlpha=.55;c.fillStyle=t.sub;c.font='500 20px Onest,sans-serif';c.fillText('сделано бесплатно · pon4ick122.github.io/demo/sert-gen',W/2,H-56);c.globalAlpha=1;
+}
+const redraw=()=>draw(cv.getContext('2d'),num());
+['#biz','#kind','#what','#till','#num','#cont'].forEach(id=>$(id).addEventListener('input',redraw));
+$('#dl').onclick=()=>{redraw();const a=document.createElement('a');a.download='sertifikat-'+String(num()).padStart(4,'0')+'.png';a.href=cv.toDataURL('image/png');document.body.appendChild(a);a.click();a.remove()};
+$('#pr').onclick=()=>{const n0=num(),k=+$('#cnt').value,off=document.createElement('canvas');off.width=W;off.height=H;const c=off.getContext('2d');
+  $('#print').innerHTML='';for(let i=0;i<k;i++){draw(c,n0+i);const im=new Image();im.alt='Сертификат № '+(n0+i);im.src=off.toDataURL('image/png');$('#print').appendChild(im)}
+  setTimeout(()=>print(),300)};
+$('#wm').href='https://t.me/mellchika';
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(redraw);redraw();
+})();
+</script>
+</body>
+</html>
