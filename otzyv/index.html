@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Как вам у нас? — оценка визита, кофейня «Песок» (демо)</title>
+<meta name="description" content="Оцените визит в кофейню за 5 секунд. Довольные гости оставляют отзыв на Картах, а замечания сразу видит владелец.">
+<link rel="stylesheet" href="../koleso/fonts/fonts.css">
+<style>
+:root{--bg:#140d09;--ink:#fff4e6;--muted:#c9ae94;--a:#ff8a3d;--a2:#ffd27a;--line:#ffffff1f}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif}
+body{background:radial-gradient(120% 70% at 50% 0%,#3a2213 0,var(--bg) 65%);min-height:100svh}
+.demo{background:var(--a2);color:#2a1a0c;text-align:center;font-size:12px;padding:7px 10px}.demo a{color:inherit;font-weight:700}
+.wrap{max-width:460px;margin:0 auto;padding:26px 20px 40px;text-align:center}
+.logo{font-family:"Dela Gothic One";font-size:24px}.logo span{color:var(--a)}
+h1{font-family:"Dela Gothic One";font-weight:400;font-size:clamp(32px,9vw,44px);line-height:1.02;margin:22px 0 10px}
+p{color:var(--muted);line-height:1.5;margin:0 0 14px}
+.stars{display:flex;justify-content:center;gap:8px;margin:22px 0}
+.star{appearance:none;border:0;background:none;cursor:pointer;font-size:46px;line-height:1;color:#ffffff30;transition:transform .15s,color .15s;padding:2px}
+.star.on{color:var(--a2);transform:scale(1.1)}
+.star:focus-visible{outline:2px solid var(--a);border-radius:8px}
+.btn{appearance:none;border:0;cursor:pointer;display:block;width:100%;font:700 17px Onest,sans-serif;color:#1b0f07;background:linear-gradient(180deg,var(--a2),var(--a));padding:16px;border-radius:16px;margin:10px 0;text-decoration:none;text-align:center}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+textarea,input[type=tel]{width:100%;font:500 16px Onest,sans-serif;padding:13px 14px;border-radius:14px;border:1px solid var(--line);background:#ffffff0b;color:var(--ink);margin:0 0 10px}
+textarea{min-height:110px;resize:vertical}
+.chk{display:flex;gap:10px;align-items:flex-start;text-align:left;font-size:13px;color:var(--muted);line-height:1.45;margin:4px 0 10px}
+.chk input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--a)}
+.chk a{color:inherit}
+.err{color:#ff9a9a;font-size:13px;min-height:18px}
+.hp{position:absolute;left:-9999px}
+.small{font-size:13px}.small a{color:var(--muted)}
+.biz{margin-top:36px;text-align:left;border-top:1px solid var(--line);padding-top:24px}
+.biz h2{font-family:"Dela Gothic One";font-weight:400;font-size:24px;margin:0 0 10px}
+.biz li{color:var(--muted);line-height:1.5;margin:0 0 8px}
+footer{color:#8a7360;font-size:12px;margin-top:22px}footer a{color:inherit}
+</style>
+</head>
+<body>
+<div class="demo">Демо: QR-табличка «Оцените нас» на стойке. <a href="print.html">Табличка для печати →</a></div>
+<div class="wrap">
+  <div class="logo">Песок<span>.</span></div>
+
+  <div id="s1">
+    <h1>Как вам у нас сегодня?</h1>
+    <p>Одно касание — нам очень важно.</p>
+    <div class="stars" id="stars" role="radiogroup" aria-label="Оценка">
+      <button class="star" data-v="1" role="radio" aria-label="1 из 5">★</button><button class="star" data-v="2" role="radio" aria-label="2 из 5">★</button><button class="star" data-v="3" role="radio" aria-label="3 из 5">★</button><button class="star" data-v="4" role="radio" aria-label="4 из 5">★</button><button class="star" data-v="5" role="radio" aria-label="5 из 5">★</button>
+    </div>
+  </div>
+
+  <div id="good" hidden>
+    <h1>Спасибо! Нам очень приятно ☕</h1>
+    <p>Если не сложно, расскажите о нас на Картах — так нас найдут другие любители кофе.</p>
+    <a class="btn" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Отзыв на Яндекс Картах</a>
+    <a class="btn ghost" href="https://2gis.ru/" target="_blank" rel="noopener">Отзыв в 2ГИС</a>
+    <p class="small">Есть пожелание? <a href="#" id="toBad">Напишите владельцу лично</a></p>
+  </div>
+
+  <form id="bad" hidden novalidate>
+    <h1>Простите, что не всё понравилось</h1>
+    <p>Напишите, что пошло не так, — сообщение сразу получит владелец, не администратор смены.</p>
+    <textarea id="txt" maxlength="1000" placeholder="Что случилось?" aria-label="Что случилось"></textarea>
+    <input type="tel" id="ph" placeholder="Телефон, если нужен ответ (необязательно)" maxlength="20" autocomplete="tel" aria-label="Телефон">
+    <div class="hp" aria-hidden="true"><input id="website" tabindex="-1" autocomplete="off"></div>
+    <label class="chk" id="chkBox" hidden><input type="checkbox" id="agree"><span>Даю <a href="soglasie.html" target="_blank">согласие на обработку персональных данных</a> (телефона) для ответа на мой отзыв.</span></label>
+    <div class="err" id="err" role="alert"></div>
+    <button class="btn" type="submit">Отправить владельцу</button>
+    <p class="small">Хотите оставить публичный отзыв? <a href="https://yandex.ru/maps/" target="_blank" rel="noopener">Яндекс Карты</a> · <a href="https://2gis.ru/" target="_blank" rel="noopener">2ГИС</a></p>
+  </form>
+
+  <div id="sent" hidden>
+    <h1>Спасибо, мы разберёмся</h1>
+    <p>Владелец уже видит ваше сообщение. В рабочей версии оно приходит ему в Telegram за секунду.</p>
+  </div>
+
+  <section class="biz">
+    <h2>Для владельца</h2>
+    <ul>
+      <li><b>Больше отзывов на Картах.</b> Довольные гости уходят молча — табличка с QR на стойке напоминает и ведёт прямо на страницу отзыва.</li>
+      <li><b>Жалобы — вам, а не в интернет.</b> Недовольный гость сразу пишет владельцу и получает ответ. Ссылка на публичный отзыв доступна всем — по правилам площадок.</li>
+      <li><b>Что входит:</b> страница в вашем стиле, ссылки на ваши карточки, уведомления в Telegram, табличка для печати.</li>
+      <li><b>Цена:</b> 3 900 ₽ запуск, табличка для печати в подарок.</li>
+    </ul>
+  </section>
+  <footer>Демо. «Песок» — концепт кофейни из портфолио. <a href="privacy.html">Политика конфиденциальности</a> · <a href="soglasie.html">Согласие на обработку ПДн</a></footer>
+</div>
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const stars=[...document.querySelectorAll('.star')];
+stars.forEach(b=>{b.onmouseenter=()=>paint(+b.dataset.v);b.onclick=()=>choose(+b.dataset.v)});
+$('#stars').onmouseleave=()=>paint(0);
+function paint(v){stars.forEach(s=>s.classList.toggle('on',+s.dataset.v<=v))}
+function choose(v){paint(v);stars.forEach(s=>s.setAttribute('aria-checked',+s.dataset.v===v));setTimeout(()=>{$('#s1').hidden=true;(v>=4?$('#good'):$('#bad')).hidden=false;scrollTo(0,0)},350)}
+$('#toBad').onclick=e=>{e.preventDefault();$('#good').hidden=true;$('#bad').hidden=false};
+$('#ph').oninput=()=>{$('#chkBox').hidden=!$('#ph').value.trim()};
+let last=0;
+$('#bad').onsubmit=e=>{e.preventDefault();const err=$('#err');err.textContent='';
+  if($('#website').value)return;
+  if(Date.now()-last<5000){err.textContent='Подождите несколько секунд.';return}
+  if($('#txt').value.trim().length<3){err.textContent='Напишите пару слов, что случилось.';return}
+  const ph=$('#ph').value.replace(/\D/g,'');
+  if(ph){if(ph.length<10||ph.length>12){err.textContent='Проверьте телефон или оставьте поле пустым.';return}
+    if(!$('#agree').checked){err.textContent='Для ответа по телефону нужно согласие на обработку ПДн.';return}}
+  last=Date.now();$('#bad').hidden=true;$('#sent').hidden=false;scrollTo(0,0)};
+})();
+</script>
+</body>
+</html>
