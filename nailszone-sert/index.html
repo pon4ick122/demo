@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Подарочный сертификат онлайн — NailsZone (демо)</title>
+<meta name="description" content="Подарочный сертификат в студию NailsZone за 2 минуты: выберите сумму и дизайн, оплатите онлайн и получите красивый сертификат с кодом. Отличный подарок на Новый год.">
+<link rel="stylesheet" href="../koleso/fonts/fonts.css">
+<style>
+:root{--bg:#0f0b14;--bg2:#1b1324;--ink:#fbf3ff;--muted:#bfaecd;--line:#ffffff1c;--a:#2ec4bd;--a2:#c9f3f0;--gold:#f5c26b}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif;overflow-x:hidden}
+body{background:radial-gradient(110% 70% at 80% 0%,#3b1d3f 0,transparent 60%),radial-gradient(90% 60% at 0% 30%,#1d2240 0,transparent 55%),var(--bg)}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.demo{background:#ffd6a5;color:#2a1a0c;text-align:center;font-size:13px;padding:8px 12px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-family:"Dela Gothic One";font-size:22px}.logo span{color:var(--a)}
+.tag{font-family:"JetBrains Mono";font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:6px 12px}
+.hero{display:grid;grid-template-columns:1fr 1.05fr;gap:34px;align-items:start;padding:26px 0 60px}
+h1{font-family:"Dela Gothic One";font-weight:400;font-size:clamp(36px,5.4vw,72px);line-height:.98;margin:0 0 16px}
+h1 .hl{color:var(--a)}
+.lead{color:var(--muted);font-size:clamp(16px,1.5vw,18px);line-height:1.5;margin:0 0 26px;max-width:520px}
+.step{margin:0 0 22px}
+.step h4{margin:0 0 10px;font-size:13px;font-family:"JetBrains Mono";letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{appearance:none;cursor:pointer;font:500 15px Onest,sans-serif;color:var(--ink);background:#ffffff08;border:1px solid var(--line);border-radius:14px;padding:11px 15px;transition:.15s}
+.chip:hover{border-color:#ffffff55}
+.chip[aria-pressed="true"]{background:linear-gradient(180deg,var(--a2),var(--a));color:#2a0f1e;border-color:transparent;font-weight:700}
+.chip small{display:block;font-size:12px;opacity:.75;font-weight:400}
+.field{display:block;margin:0 0 10px}
+.field span{display:block;font-size:13px;color:var(--muted);margin:0 0 5px}
+input[type=text],input[type=tel],input[type=number],textarea{width:100%;font:500 16px Onest,sans-serif;padding:13px 15px;border-radius:14px;border:1px solid var(--line);background:#ffffff0b;color:var(--ink)}
+textarea{resize:vertical;min-height:64px}
+input:focus,textarea:focus{outline:2px solid var(--a);outline-offset:1px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stage{position:sticky;top:20px}
+.cardbox{position:relative;aspect-ratio:16/11;width:100%}
+#gl,#flat{position:absolute;inset:0;width:100%;height:100%;display:block}
+#flat{display:none;object-fit:contain}
+.glow{position:absolute;inset:15%;background:radial-gradient(circle,#1a9c9766,transparent 65%);filter:blur(40px);z-index:-1}
+.hint{text-align:center;color:var(--muted);font-size:13px;margin:8px 0 18px}
+.total{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:18px;padding:16px 18px;background:#ffffff06;margin-bottom:14px}
+.total b{font-family:"Dela Gothic One";font-weight:400;font-size:30px;color:var(--a2)}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);line-height:1.45;margin:6px 0 14px}
+.chk input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--a)}
+.btn{text-decoration:none;text-align:center;appearance:none;border:0;cursor:pointer;width:100%;font:700 18px Onest,sans-serif;color:#2a0f1e;background:linear-gradient(180deg,var(--a2),var(--a));padding:18px;border-radius:18px;box-shadow:0 12px 34px #ff7eb64d,inset 0 -4px 0 #0000002a;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn[disabled]{opacity:.5;cursor:default;transform:none}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.err{color:#ff9a9a;font-size:13px;min-height:18px;margin:0 0 6px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* модалки */
+.modal{position:fixed;inset:0;display:grid;place-items:center;background:#07040acc;backdrop-filter:blur(6px);z-index:20;opacity:0;pointer-events:none;transition:opacity .3s;padding:18px}
+.modal.show{opacity:1;pointer-events:auto}
+.mcard{background:linear-gradient(180deg,#26182f,#160e1c);border:1px solid var(--line);border-radius:26px;padding:26px 22px;max-width:460px;width:100%;text-align:center;box-shadow:0 30px 80px #000a;max-height:92svh;overflow:auto}
+.mcard h2{font-family:"Dela Gothic One";font-weight:400;font-size:28px;margin:6px 0 8px}
+.mcard p{color:var(--muted);line-height:1.5;margin:0 0 16px}
+.mcard .k{font-family:"JetBrains Mono";font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+.mcard img{width:100%;border-radius:14px;margin:0 0 14px;box-shadow:0 14px 40px #0008}
+.code{font-family:"JetBrains Mono";font-size:20px;letter-spacing:3px;border:2px dashed var(--a);border-radius:14px;padding:10px;margin:0 0 14px;background:#ff7eb614}
+.stack{display:grid;gap:10px}
+.payfake{border:1px dashed var(--line);border-radius:16px;padding:16px;margin:0 0 16px;font-size:14px;color:var(--muted);text-align:left;line-height:1.5}
+/* для бизнеса */
+.biz{padding:70px 0;border-top:1px solid var(--line)}
+.biz h3{font-family:"Dela Gothic One";font-weight:400;font-size:clamp(28px,4vw,46px);margin:0 0 10px}
+.biz .sub{color:var(--muted);margin:0 0 30px;max-width:640px;line-height:1.5}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cell{border:1px solid var(--line);border-radius:22px;padding:20px;background:#ffffff06}
+.cell b{display:block;font-family:"Dela Gothic One";font-weight:400;font-size:28px;color:var(--a);margin-bottom:8px}
+.cell p{margin:0;color:var(--muted);line-height:1.5;font-size:15px}
+.price{margin-top:26px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.price .p{font-family:"Dela Gothic One";font-size:34px;color:var(--a2)}
+.price .btn{width:auto;padding:16px 26px;text-decoration:none;display:inline-block}
+footer{padding:26px 0 40px;color:#8f7ea0;font-size:13px;border-top:1px solid var(--line)}
+footer a{margin-right:14px}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.stage{position:relative;top:0;order:-1}.grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.grid{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Демо-версия: так может выглядеть продажа сертификатов на сайте NailsZone. Оплата здесь не настоящая.</div>
+<div class="wrap">
+<header>
+  <div class="logo">NailsZone<span>.</span></div>
+  <div class="tag">ногтевая студия · сертификаты</div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Подарок, который <span class="hl">точно</span> понравится</h1>
+    <p class="lead">Сертификат в студию «NailsZone» за 2 минуты: выберите сумму и дизайн, впишите имя, оплатите онлайн. Красивый сертификат с кодом придёт сразу — можно переслать в WhatsApp или распечатать.</p>
+
+    <div class="step"><h4>1 · Сумма или услуга</h4>
+      <div class="chips" id="amounts">
+        <button class="chip" data-v="2000" data-t="2 000 ₽" aria-pressed="false">2 000 ₽</button>
+        <button class="chip" data-v="3000" data-t="3 000 ₽" aria-pressed="true">3 000 ₽</button>
+        <button class="chip" data-v="5000" data-t="5 000 ₽" aria-pressed="false">5 000 ₽</button>
+        <button class="chip" data-v="7000" data-t="7 000 ₽" aria-pressed="false">7 000 ₽</button>
+        <button class="chip" data-v="0" data-t="custom">Своя сумма</button>
+      </div>
+      <label class="field" id="customBox" hidden style="margin-top:10px"><span>Сумма, ₽ (от 1 000)</span><input type="number" id="custom" min="1000" step="500" value="7000" inputmode="numeric"></label>
+    </div>
+
+    <div class="step"><h4>2 · Дизайн</h4>
+      <div class="chips" id="designs">
+        <button class="chip" data-d="0" aria-pressed="true">Новогодний</button>
+        <button class="chip" data-d="1">Мятный</button>
+        <button class="chip" data-d="2">Золото</button>
+      </div>
+    </div>
+
+    <div class="step"><h4>3 · Кому и от кого</h4>
+      <div class="row2">
+        <label class="field"><span>Имя получателя</span><input type="text" id="to" maxlength="24" value="Анне"></label>
+        <label class="field"><span>От кого</span><input type="text" id="from" maxlength="24" value="от Миши"></label>
+      </div>
+      <label class="field"><span>Пожелание (по желанию)</span><textarea id="wish" maxlength="90">С Новым годом! Красивых ноготков и отдыха ✨</textarea></label>
+    </div>
+
+    <div class="step"><h4>4 · Оплата</h4>
+    <form id="buy" novalidate>
+      <div class="total"><span>К оплате</span><b id="sum">3 000 ₽</b></div>
+      <div class="row2">
+        <label class="field"><span>Ваше имя</span><input type="text" id="bname" autocomplete="name" maxlength="40" required></label>
+        <label class="field"><span>Телефон</span><input type="tel" id="bphone" autocomplete="tel" placeholder="+7" maxlength="20" required></label>
+      </div>
+      <div class="hp" aria-hidden="true"><label>Сайт <input type="text" id="website" tabindex="-1" autocomplete="off"></label></div>
+      <label class="chk"><input type="checkbox" id="agree"><span>Я даю <a href="soglasie.html" target="_blank">согласие на обработку персональных данных</a> и ознакомлен(а) с <a href="privacy.html" target="_blank">политикой конфиденциальности</a>.</span></label>
+      <div class="err" id="err" role="alert"></div>
+      <button class="btn" type="submit" id="payBtn">Оплатить и получить сертификат</button>
+    </form>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="cardbox"><div class="glow"></div><canvas id="gl"></canvas><img id="flat" alt="Превью сертификата"></div>
+    <p class="hint">Двигайте мышкой или пальцем — сертификат поворачивается</p>
+
+  </div>
+</section>
+
+<section class="biz" id="biz">
+  <h3>Для владельца NailsZone</h3>
+  <p class="sub">В декабре сертификаты — один из главных источников выручки. С этой страницей вы продаёте их круглосуточно, даже когда администратор занят, а клиенту не нужно ехать в салон.</p>
+  <div class="grid">
+    <div class="cell"><b>24/7</b><p>Покупают ночью и в выходные — деньги сразу на ваш счёт через ЮKassa или эквайринг вашего банка.</p></div>
+    <div class="cell"><b>0 ₽</b><p>Без печати и курьеров: сертификат приходит покупателю за секунду, его удобно переслать.</p></div>
+    <div class="cell"><b>Код</b><p>У каждого сертификата свой код — администратор проверяет его, повторно использовать нельзя.</p></div>
+    <div class="cell"><b>Ваш стиль</b><p>Ваши цвета, логотип, услуги и суммы. Готово за 1–2 дня.</p></div>
+  </div>
+  <div class="price"><span class="p">от 7 900 ₽</span><a class="btn ghost" href="../nailszone/">← Демо сайта NailsZone</a></div>
+</section>
+
+<footer>
+  <a href="privacy.html">Политика конфиденциальности</a><a href="soglasie.html">Согласие на обработку данных</a>
+  <div style="margin-top:8px">Демо-вариант для NailsZone по открытым данным Яндекс Карт. Реквизиты владельца указываются при запуске.</div>
+</footer>
+</div>
+
+<div class="modal" id="payModal" role="dialog" aria-modal="true" aria-labelledby="payT">
+  <div class="mcard">
+    <div class="k">Оплата</div>
+    <h2 id="payT">Демо-оплата</h2>
+    <div class="payfake">В рабочей версии здесь откроется оплата картой или по СБП через ЮKassa / эквайринг салона. Деньги сразу зачисляются салону, покупателю приходит чек.</div>
+    <div class="stack"><button class="btn" id="payOk">Оплатить <span id="paySum"></span> (демо)</button><button class="btn ghost" id="payCancel">Отмена</button></div>
+  </div>
+</div>
+
+<div class="modal" id="doneModal" role="dialog" aria-modal="true" aria-labelledby="doneT">
+  <div class="mcard">
+    <div class="k">Готово</div>
+    <h2 id="doneT">Сертификат ваш!</h2>
+    <img id="doneImg" alt="Ваш сертификат">
+    <div class="code" id="doneCode"></div>
+    <p>Сохраните картинку или отправьте получателю. Чтобы записаться, назовите код администратору.</p>
+    <div class="stack">
+      <a class="btn" id="dl" download="sertifikat-nailszone.png" href="#">Скачать сертификат</a>
+      <a class="btn ghost" id="wa" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+      <button class="btn ghost" id="doneClose">Закрыть</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const st={v:3000,t:"3 000 ₽",d:0,code:''};
+const fmt=n=>n.toLocaleString('ru-RU').replace(/ /g,' ')+' ₽';
+const DES=[
+  {bg:['#0f3f3d','#082624'],acc:'#7fe3dc',ink:'#ffffff',sub:'#bfeeea',deco:'snow'},
+  {bg:['#e3f4f3','#c9ebe9'],acc:'#0f6f6b',ink:'#15201f',sub:'#3f5f5c',deco:'petals'},
+  {bg:['#1a1410','#2f2418'],acc:'#f5c26b',ink:'#fff4dc',sub:'#d8c39c',deco:'lines'}
+];
+function rnd(seed){return function(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646}}
+function wrapText(ctx,text,x,y,maxW,lh){const words=text.split(' ');let line='';for(const w of words){const t=line?line+' '+w:w;if(ctx.measureText(t).width>maxW&&line){ctx.fillText(line,x,y);line=w;y+=lh}else line=t}if(line)ctx.fillText(line,x,y)}
+function draw(cv){
+  const W=cv.width,H=cv.height,c=cv.getContext('2d'),D=DES[st.d],k=W/1600;
+  const g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,D.bg[0]);g.addColorStop(1,D.bg[1]);c.fillStyle=g;c.fillRect(0,0,W,H);
+  const r=rnd(7+st.d);
+  if(D.deco==='snow'){for(let i=0;i<90;i++){c.globalAlpha=.25+r()*.5;c.fillStyle='#fff';c.beginPath();c.arc(r()*W,r()*H,(1+r()*4)*k,0,7);c.fill()}}
+  if(D.deco==='petals'){for(let i=0;i<26;i++){c.globalAlpha=.18+r()*.2;c.fillStyle=D.acc;c.save();c.translate(r()*W,r()*H);c.rotate(r()*6);c.beginPath();c.ellipse(0,0,(18+r()*30)*k,(8+r()*12)*k,0,0,7);c.fill();c.restore()}}
+  if(D.deco==='lines'){c.strokeStyle=D.acc;for(let i=0;i<14;i++){c.globalAlpha=.08+i*.008;c.lineWidth=2*k;c.beginPath();c.arc(W*1.05,H*-.1,(200+i*55)*k,0,7);c.stroke()}}
+  c.globalAlpha=1;
+  c.strokeStyle=D.acc;c.lineWidth=4*k;c.strokeRect(40*k,40*k,W-80*k,H-80*k);
+  c.fillStyle=D.sub;c.font=`500 ${38*k}px "JetBrains Mono",monospace`;c.fillText('ПОДАРОЧНЫЙ СЕРТИФИКАТ',100*k,150*k);
+  c.fillStyle=D.ink;c.font=`400 ${80*k}px "Dela Gothic One",sans-serif`;c.fillText("NailsZone.",100*k,250*k);
+  const to=($('#to').value||'').trim(),from=($('#from').value||'').trim(),wish=($('#wish').value||'').trim();
+  c.fillStyle=D.sub;c.font=`500 ${50*k}px Onest,sans-serif`;if(to)c.fillText('Для '+to.replace(/^для\s+/i,''),100*k,350*k);
+  const big=st.t;c.fillStyle=D.acc;let fs=big.length>12?110:180;c.font=`400 ${fs*k}px "Dela Gothic One",sans-serif`;
+  while(c.measureText(big).width>W-200*k&&fs>40){fs-=6;c.font=`400 ${fs*k}px "Dela Gothic One",sans-serif`}
+  c.fillText(big,100*k,(350+30+fs)*k);
+  c.fillStyle=D.ink;c.font=`400 ${44*k}px Onest,sans-serif`;if(wish)wrapText(c,wish,100*k,760*k,W-200*k,56*k);
+  c.fillStyle=D.sub;c.font=`500 ${42*k}px Onest,sans-serif`;if(from)c.fillText(from,100*k,H-100*k);
+  c.textAlign='right';c.font=`500 ${36*k}px "JetBrains Mono",monospace`;c.fillText(st.code||'NZ-••••-••••',W-100*k,H-100*k);
+  c.font=`500 ${30*k}px Onest,sans-serif`;c.fillText('действует 12 месяцев',W-100*k,H-150*k);c.textAlign='left';
+}
+// текстура
+const tex=document.createElement('canvas');tex.width=1600;tex.height=1100;
+let three=null;
+function initGL(){
+  try{
+    if(!window.THREE)throw 0;const cv=$('#gl');
+    const R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});R.setPixelRatio(Math.min(2,devicePixelRatio));
+    const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(32,1,.1,50);C.position.z=5.4;
+    const T=new THREE.CanvasTexture(tex);T.anisotropy=4;
+    const back=new THREE.MeshStandardMaterial({color:0x2a1a33,roughness:.5,metalness:.4});
+    const edge=new THREE.MeshStandardMaterial({color:0xf5c26b,roughness:.3,metalness:.9});
+    const front=new THREE.MeshStandardMaterial({map:T,roughness:.45,metalness:.1});
+    const M=new THREE.Mesh(new THREE.BoxGeometry(4,2.75,.05),[edge,edge,edge,edge,front,back]);S.add(M);
+    S.add(new THREE.AmbientLight(0xffffff,.75));const L=new THREE.DirectionalLight(0xffffff,.7);L.position.set(2,3,5);S.add(L);
+    const P=new THREE.PointLight(0x1a9c97,.9,20);P.position.set(-3,-2,3);S.add(P);
+    function size(){const b=cv.parentElement.getBoundingClientRect();R.setSize(b.width,b.height,false);C.aspect=b.width/b.height;C.updateProjectionMatrix()}
+    size();addEventListener('resize',size);
+    let tx=0,ty=0;const red=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function mv(x,y){const b=cv.getBoundingClientRect();tx=((x-b.left)/b.width-.5)*.7;ty=((y-b.top)/b.height-.5)*.5}
+    addEventListener('pointermove',e=>mv(e.clientX,e.clientY));
+    let t0=performance.now();
+    (function loop(t){requestAnimationFrame(loop);const s=(t-t0)/1000;
+      M.rotation.y+=((red?0:tx)+(red?0:Math.sin(s*.6)*.08)-M.rotation.y)*.08;
+      M.rotation.x+=((red?0:ty)-M.rotation.x)*.08;M.position.y=red?0:Math.sin(s*1.1)*.05;R.render(S,C)})(t0);
+    three={T,M};
+  }catch(e){$('#gl').style.display='none';$('#flat').style.display='block'}
+}
+function refresh(flip){
+  draw(tex);
+  if(three){three.T.needsUpdate=true;if(flip&&window.gsap)gsap.fromTo(three.M.rotation,{y:three.M.rotation.y-Math.PI*2},{y:0,duration:.9,ease:'power3.out'})}
+  else $('#flat').src=tex.toDataURL('image/png');
+  $('#sum').textContent=fmt(st.v);
+}
+// выбор
+function pick(group,btn){group.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed',b===btn?'true':'false'))}
+$('#amounts').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;pick($('#amounts'),b);
+  if(b.dataset.t==='custom'){$('#customBox').hidden=false;setCustom()}else{$('#customBox').hidden=true;st.v=+b.dataset.v;st.t=b.dataset.t}refresh(false)});
+function setCustom(){let v=Math.round(+$('#custom').value||0);if(v<1000)v=1000;if(v>100000)v=100000;st.v=v;st.t=fmt(v)}
+$('#custom').addEventListener('input',()=>{setCustom();refresh(false)});
+$('#designs').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;pick($('#designs'),b);st.d=+b.dataset.d;refresh(true)});
+['#to','#from','#wish'].forEach(s=>$(s).addEventListener('input',()=>refresh(false)));
+// покупка
+let lastSubmit=0;
+$('#buy').addEventListener('submit',e=>{e.preventDefault();const err=$('#err');err.textContent='';
+  if($('#website').value)return; // ловушка для ботов
+  if(Date.now()-lastSubmit<4000){err.textContent='Подождите пару секунд.';return}
+  const name=$('#bname').value.trim(),ph=$('#bphone').value.replace(/\D/g,'');
+  if(name.length<2){err.textContent='Укажите ваше имя.';return}
+  if(ph.length<10||ph.length>12){err.textContent='Проверьте номер телефона.';return}
+  if(!$('#agree').checked){err.textContent='Нужно согласие на обработку персональных данных.';return}
+  lastSubmit=Date.now();$('#paySum').textContent=fmt(st.v);$('#payModal').classList.add('show')});
+$('#payCancel').onclick=()=>$('#payModal').classList.remove('show');
+$('#payOk').onclick=()=>{
+  const A='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',a=new Uint32Array(8);crypto.getRandomValues(a);
+  const s=[...a].map(x=>A[x%A.length]).join('');st.code='NZ-'+s.slice(0,4)+'-'+s.slice(4);
+  refresh(false);const url=tex.toDataURL('image/png');
+  $('#doneImg').src=url;$('#dl').href=url;$('#doneCode').textContent=st.code;
+  const to=$('#to').value.trim();
+  $('#wa').href='https://wa.me/?text='+encodeURIComponent((to?to+', ':'')+'это тебе подарок — сертификат в студию «NailsZone» на '+st.t+'. Код: '+st.code);
+  $('#payModal').classList.remove('show');$('#doneModal').classList.add('show')};
+$('#doneClose').onclick=()=>{$('#doneModal').classList.remove('show');st.code='';refresh(false)};
+addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal.show').forEach(m=>m.classList.remove('show'))});
+// старт после шрифтов
+initGL();
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>refresh(false));
+refresh(false);
+})();
+</script>
+</body>
+</html>
