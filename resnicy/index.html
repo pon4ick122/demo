@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Студия ресниц и бровей — Люберцы, у метро «Котельники»</title>
+<meta name="description" content="Студия ресниц и бровей на ул. Лётчика Ларюшина, 14 в Люберцах: наращивание и ламинирование ресниц, брови, маникюр. 5,0 на Яндекс Картах, «Хорошее место 2026». Ежедневно 10:00–19:00.">
+<meta property="og:title" content="Студия ресниц и бровей — Люберцы">
+<meta property="og:description" content="Наращивание и ламинирование ресниц, брови, маникюр. 5,0 и «Хорошее место 2026».">
+<meta property="og:image" content="img/eye1.jpg">
+<link rel="stylesheet" href="../krasota/fonts/fonts.css">
+<style>
+:root{--bg:#f4f2ee;--card:#fff;--ink:#171b1a;--mute:#65706c;--line:#e0ddd6;--em:#0d6b5a;--em2:#08493e;--emsoft:#e3efeb;--gr:#23292a;--gold:#c2a46a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.cap{font-size:12px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;color:var(--em)}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:400;line-height:1.06}
+h2{font-size:clamp(32px,4.4vw,56px);margin:10px 0 14px}
+h1 em,h2 em{color:var(--em);font-style:italic}
+.sub{color:var(--mute);font-size:clamp(16px,1.5vw,18px);max-width:640px}
+section{padding:96px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:999px;font:600 15px Manrope,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:.2s}
+.btn.g{background:var(--em);color:#fff;box-shadow:0 12px 30px #0d6b5a40}.btn.g:hover{background:var(--em2)}
+.btn.o{box-shadow:inset 0 0 0 1.5px var(--ink);color:var(--ink);background:transparent}.btn.o:hover{background:var(--ink);color:#fff}
+nav{position:fixed;inset:0 0 auto;z-index:30;transition:.3s}
+nav.sc{background:#f4f2eeee;backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{text-decoration:none;font-family:"Playfair Display";font-size:21px;color:var(--gr);line-height:1.05}
+.logo i{color:var(--em)}
+.logo small{display:block;font:600 10px Manrope;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+nav .links{display:flex;gap:26px;font-size:14px;font-weight:500}
+nav .links a{text-decoration:none;opacity:.8}nav .links a:hover{opacity:1}
+nav .btn{padding:11px 18px;font-size:14px}
+/* hero */
+.hero{min-height:100svh;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:30px;padding:96px 20px 40px}
+.stage{position:relative;aspect-ratio:1/1;width:100%;max-width:620px;justify-self:center;border-radius:50%;background:radial-gradient(circle at 50% 42%,#1d5c50 0%,#123e36 45%,#0b2622 100%);box-shadow:0 40px 80px #08493e40,inset 0 0 80px #0006}
+#gl{position:absolute;inset:0;width:100%;height:100%;border-radius:50%}
+.stage .fb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%;display:none}
+.fx{position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);display:flex;gap:6px;background:#fff;border-radius:99px;padding:6px;box-shadow:0 14px 34px #0002;white-space:nowrap}
+.fx button{appearance:none;border:0;background:transparent;font:600 13px Manrope;padding:9px 13px;border-radius:99px;cursor:pointer;color:var(--ink)}
+.fx button.on{background:var(--em);color:#fff}
+.stage .tip{position:absolute;top:8%;left:50%;transform:translateX(-50%);color:#d6e8e2;font-size:12px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;opacity:.8}
+.hero h1{font-size:clamp(42px,5.6vw,80px);margin:14px 0 18px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:34px}
+.facts b{display:block;font-family:"Playfair Display";font-size:34px;font-weight:400;line-height:1}
+.facts span{font-size:13px;color:var(--mute)}
+/* builder */
+.build{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;margin-top:34px;align-items:start}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tabs button{appearance:none;border:1.5px solid var(--line);background:var(--card);font:600 14px Manrope,sans-serif;padding:10px 16px;border-radius:99px;cursor:pointer;color:var(--ink);position:relative}
+.tabs button.on{background:var(--gr);border-color:var(--gr);color:#fff}
+.tabs button i{position:absolute;top:-4px;right:-4px;width:12px;height:12px;border-radius:50%;background:var(--em);display:none}
+.tabs button.has i{display:block}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:24px;display:grid;grid-template-columns:200px 1fr;gap:22px}
+.panel img{border-radius:20px;width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+.opts{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.opts h4{width:100%;font-size:13px;color:var(--mute);font-weight:600;margin-top:6px}
+.opt{appearance:none;border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:10px 14px;font:500 14px Manrope,sans-serif;color:var(--ink);cursor:pointer;text-align:left;transition:.18s}
+.opt small{display:block;color:var(--mute);font-size:12px;margin-top:2px}
+.opt:hover{border-color:var(--em)}
+.opt.on{border-color:var(--em);background:var(--emsoft);box-shadow:inset 0 0 0 1px var(--em)}
+.who{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.who span{width:100%;font-size:13px;color:var(--mute);font-weight:600}
+.sum{position:sticky;top:90px;background:var(--gr);color:#fff;border-radius:30px;padding:28px}
+.sum .k{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.sum ul{list-style:none;margin:16px 0;display:grid;gap:8px;font-size:14px}
+.sum li{display:flex;justify-content:space-between;gap:12px}
+.sum li b{white-space:nowrap}
+.sum .empty{color:#a9b3b0}
+.tot{font-family:"Playfair Display";font-size:46px;line-height:1}
+.dur{color:#a9b3b0;font-size:14px;margin-top:6px}
+.sum .btn{width:100%;margin-top:18px}
+.sum .fine{font-size:12px;color:#a9b3b0;margin-top:10px}
+/* brows */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pics img{border-radius:22px;aspect-ratio:3/4;object-fit:cover;width:100%}
+.pics img:first-child{grid-row:span 2;aspect-ratio:auto;height:100%}
+.pl{margin-top:22px;border-top:1px solid var(--line)}
+.pl div{display:flex;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.pl b{font-family:"Playfair Display";font-weight:400;font-size:19px;white-space:nowrap}
+/* studio */
+.studio{background:var(--gr);color:#fff;border-radius:40px;padding:56px 44px;overflow:hidden}
+.studio .sub{color:#b9c4c0}
+.studio h2 em{color:#6fd1b8}
+.strip{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px;gap:12px;margin-top:30px}
+.strip img{width:100%;height:100%;object-fit:cover;border-radius:20px}
+.strip img:first-child{grid-row:span 2}
+.perks{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.perks span{border:1px solid #ffffff30;border-radius:99px;padding:8px 14px;font-size:14px}
+/* masters */
+.ms{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+.m{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px;display:flex;flex-direction:column}
+.m .r{font-size:12px;color:var(--em);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.m h3{font-size:30px;margin:6px 0 10px}
+.m p{color:var(--mute);font-style:italic;font-family:"Playfair Display";font-size:17px;flex:1}
+.m button{margin-top:16px;align-self:flex-start;padding:10px 16px;font-size:13px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tags span{background:var(--emsoft);color:var(--em2);border-radius:99px;padding:7px 13px;font-size:13px;font-weight:600}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:30px}
+.gal img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px}
+/* price */
+.price{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:30px;margin-top:30px}
+.prow{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+.prow:last-child{border-bottom:0}
+.prow small{color:var(--mute);font-size:13px;margin-left:6px}
+.prow b{font-family:"Playfair Display";font-weight:400;font-size:18px;white-space:nowrap;color:var(--em2)}
+/* where */
+.where{display:grid;grid-template-columns:1fr 1.2fr;gap:30px}
+.info{display:grid;gap:16px;align-content:start}
+.info div{border-bottom:1px solid var(--line);padding-bottom:14px}
+.info small{display:block;color:var(--mute);font-size:13px}
+.info b{font-size:18px;font-weight:600}
+.map{border-radius:28px;overflow:hidden;min-height:380px;background:var(--emsoft)}
+.map iframe{width:100%;height:100%;min-height:380px;border:0}
+footer{padding:40px 0 90px;color:var(--mute);font-size:13px;border-top:1px solid var(--line)}
+.wa{position:fixed;right:18px;bottom:18px;z-index:40;background:#25d366;color:#fff;border-radius:99px;padding:14px 18px;font-weight:700;text-decoration:none;box-shadow:0 12px 30px #25d36655}
+.demo{position:fixed;left:16px;bottom:18px;z-index:40;background:#171b1add;color:#fff;border-radius:10px;padding:8px 12px;font-size:12px}
+.reveal{opacity:0;transform:translateY(30px)}
+@media(max-width:980px){
+ nav .links{display:none}
+ .hero{grid-template-columns:minmax(0,1fr);padding-top:84px}
+ .stage{max-width:440px;order:-1;margin-bottom:20px}
+ .build,.split,.where{grid-template-columns:1fr}
+ .sum{position:relative;top:0}
+ .ms{grid-template-columns:1fr 1fr}
+ .gal{grid-template-columns:repeat(3,1fr)}
+ .strip{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
+ .strip img:first-child{grid-column:span 2;grid-row:span 1}
+}
+@media(max-width:560px){
+ section{padding:70px 0}
+ .panel{grid-template-columns:1fr;padding:18px}
+ .panel img{aspect-ratio:16/10}
+ .price{padding:20px 16px}
+ .studio{padding:34px 18px;border-radius:28px}
+ .ms{grid-template-columns:1fr}
+ .gal{grid-template-columns:1fr 1fr}
+ .gal img:last-child{grid-column:span 2;aspect-ratio:16/10}
+ .facts{gap:20px}
+ .fx{gap:0;padding:4px;max-width:calc(100% + 10px)}.fx button{padding:8px 8px;font-size:12px}
+ .logo{font-size:18px}
+ nav .btn{padding:10px 14px}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+ <a class="logo" href="#top">Студия <i>ресниц</i> и бровей<small>Люберцы · Котельники</small></a>
+ <div class="links"><a href="#build">Записаться</a><a href="#brows">Брови</a><a href="#studio">Студия</a><a href="#masters">Мастера</a><a href="#price">Цены</a><a href="#where">Контакты</a></div>
+ <a class="btn g" href="#build">Записаться</a>
+</div></nav>
+
+<header class="wrap hero" id="top">
+ <div>
+  <span class="cap">Ресницы · брови · маникюр</span>
+  <h1>Взгляд, который <em>носится долго</em></h1>
+  <p class="sub">Наращивание и ламинирование ресниц, брови и маникюр на Лётчика Ларюшина, 14 — 740 метров от «Котельников». Мастера сначала советуют, что подойдёт именно вам, — так пишут гости в отзывах.</p>
+  <div class="cta"><a class="btn g" href="#build">Подобрать эффект и записаться</a><a class="btn o" href="#price">Цены</a></div>
+  <div class="facts">
+   <div><b>5,0</b><span>146 оценок на Картах</span></div>
+   <div><b>2026</b><span>«Хорошее место»</span></div>
+   <div><b>10–19</b><span>ежедневно</span></div>
+  </div>
+ </div>
+ <div class="stage" id="stage">
+  <canvas id="gl" aria-label="3D-модель глаза: можно примерить эффект наращивания"></canvas>
+  <img class="fb" id="fb" src="img/eye1.jpg" alt="Наращивание ресниц — работа студии">
+  <div class="tip">примерьте эффект</div>
+  <div class="fx" id="fx"></div>
+ </div>
+</header>
+
+<section id="build" style="padding-top:40px"><div class="wrap">
+ <span class="cap">Запись за минуту</span>
+ <h2>Соберите визит — <em>цена и время сразу</em></h2>
+ <p class="sub">Выберите эффект ресниц, брови или маникюр — сайт посчитает итог по прайсу студии. Эффект ресниц сразу видно на 3D-глазе наверху.</p>
+ <div class="build">
+  <div>
+   <div class="tabs" id="tabs"></div>
+   <div class="panel" id="panel"></div>
+   <div class="who" id="who"></div>
+  </div>
+  <aside class="sum" aria-live="polite">
+   <div class="k">Ваш визит</div>
+   <ul id="sl"></ul>
+   <div class="tot" id="tot">0 ₽</div>
+   <div class="dur" id="dur"></div>
+   <button class="btn g" id="send">Записаться в WhatsApp</button>
+   <div class="fine">Откроется WhatsApp с готовым сообщением — останется отправить. Точную цену мастер подтвердит перед процедурой.</div>
+  </aside>
+ </div>
+</div></section>
+
+<section id="brows" style="padding-top:20px"><div class="wrap split">
+ <div class="pics reveal"><img src="img/eye4.jpg" alt="Оформление бровей и наращивание ресниц" loading="lazy"><img src="img/eye2.jpg" alt="Брови и ресницы — работа студии" loading="lazy"><img src="img/eye5.jpg" alt="Ламинирование бровей" loading="lazy"></div>
+ <div class="reveal">
+  <span class="cap">Брови · 100% довольных</span>
+  <h2>Брови <em>с замечательным оттенком</em></h2>
+  <p class="sub">Так написала гостья о работе Влады. Краситель — любой на выбор, а после ламинирования — уход «Ботокс» или «Счастье для бровей».</p>
+  <div class="pl">
+   <div><span>Коррекция бровей</span><b>1 500 ₽</b></div>
+   <div><span>Окрашивание + коррекция</span><b>2 300 ₽</b></div>
+   <div><span>Ламинирование (с окрашиванием и коррекцией)</span><b>3 000 ₽</b></div>
+   <div><span>Мужская коррекция</span><b>1 700 ₽</b></div>
+   <div><span>Бережное осветление</span><b>1 000 ₽</b></div>
+   <div><span>Уход «Ботокс» / «Счастье для бровей»</span><b>500 ₽</b></div>
+  </div>
+  <div style="margin-top:22px"><button class="btn g" id="browb">Записаться на брови</button></div>
+ </div>
+</div></section>
+
+<section id="studio" style="padding-top:20px"><div class="wrap">
+ <div class="studio reveal">
+  <span class="cap" style="color:#6fd1b8">Студия</span>
+  <h2 style="color:#fff">Изумрудный бархат <em>и кофе</em></h2>
+  <p class="sub">Атмосфера и интерьер — 100% положительных отзывов. Пока идёт процедура, можно никуда не спешить: здесь предложат кофе и конфеты.</p>
+  <div class="strip"><img src="img/hall.jpg" alt="Зал студии с изумрудными кушетками" loading="lazy"><img src="img/chairs.jpg" alt="Зона ожидания" loading="lazy"><img src="img/coffee.jpg" alt="Кофемашина и чай для гостей" loading="lazy"><img src="img/vanity2.jpg" alt="Зеркало для макияжа" loading="lazy"><img src="img/hall3.jpg" alt="Рабочие места мастеров" loading="lazy"></div>
+  <div class="perks"><span>☕ Кофе 100% положительных</span><span>Чистота 100%</span><span>Удобные кушетки</span><span>Парковка</span><span>Вход без ступенек</span><span>Оплата картой</span></div>
+ </div>
+</div></section>
+
+<section id="masters" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Мастера · что о них пишут</span>
+ <h2>К кому <em>возвращаются</em></h2>
+ <div class="tags"><span>Атмосфера 100%</span><span>Уход за бровями 100%</span><span>Компетентность 97%</span><span>Персонал 95%</span><span>Наращивание ресниц 91%</span></div>
+ <div class="ms">
+  <div class="m reveal"><div class="r">Ресницы</div><h3>Алёна</h3><p>«Мастер очень аккуратная, выслушала все мои пожелания. Кажется, я нашла своё место по наращиванию ресниц».</p><button class="btn o" data-m="Алёна">К Алёне</button></div>
+  <div class="m reveal"><div class="r">Ресницы</div><h3>Светлана</h3><p>«Носятся долго и выглядят очень натурально. Всегда предложит что-то интересное и новенькое».</p><button class="btn o" data-m="Светлана">К Светлане</button></div>
+  <div class="m reveal"><div class="r">Брови · ламинирование</div><h3>Влада</h3><p>«Очень профессионально, качественно и достаточно быстро. Остались только самые лучшие впечатления».</p><button class="btn o" data-m="Влада">К Владе</button></div>
+  <div class="m reveal"><div class="r">Маникюр</div><h3>Яна</h3><p>«Кутикула обработана идеально, а гель-лак лёг ровно и без затёков. Обязательно приду ещё».</p><button class="btn o" data-m="Яна">К Яне</button></div>
+ </div>
+</div></section>
+
+<section style="padding-top:20px"><div class="wrap">
+ <span class="cap">Работы</span>
+ <h2>Натурально, <em>пушисто</em>, ровно</h2>
+ <p class="sub">Фото с Яндекс Карт студии.</p>
+ <div class="gal" id="gal"></div>
+</div></section>
+
+<section id="price" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Цены</span>
+ <h2>Полный прайс</h2>
+ <p class="sub">Цены с Яндекс Карт. Точную стоимость мастер подтвердит перед процедурой.</p>
+ <div class="price reveal"><div class="tabs" id="ptabs"></div><div id="plist"></div></div>
+</div></section>
+
+<section id="where" style="padding-top:20px"><div class="wrap">
+ <span class="cap">Контакты</span>
+ <h2>Как <em>добраться</em></h2>
+ <div class="where">
+  <div class="info">
+   <div><small>Адрес</small><b>Люберцы, ул. Лётчика Ларюшина, 14</b></div>
+   <div><small>Метро</small><b>Котельники — 740 м</b></div>
+   <div><small>Время работы</small><b>Ежедневно 10:00–19:00</b></div>
+   <div><small>Телефон и WhatsApp</small><b><a href="tel:+79265660662" style="text-decoration:none">+7 (926) 566-06-62</a></b></div>
+   <div style="border:0"><a class="btn o" href="https://yandex.ru/maps/org/studiya_resnits_i_brovey/146003121098/" target="_blank" rel="noopener">Открыть на Яндекс Картах</a></div>
+  </div>
+  <div class="map"><iframe title="Студия ресниц и бровей на карте" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=37.865669%2C55.679057&z=16&pt=37.865669,55.679057,pm2grm"></iframe></div>
+ </div>
+</div></section>
+
+<footer><div class="wrap">Студия ресниц и бровей · Люберцы, ул. Лётчика Ларюшина, 14 · фото, цены и отзывы — с Яндекс Карт<div class="pd-links" data-pd style="flex-basis:100%;width:100%;margin-top:14px;font-size:12px;line-height:1.6;opacity:.7"><a href="privacy.html" style="color:inherit;text-decoration:underline">Политика конфиденциальности</a> · <a href="soglasie.html" style="color:inherit;text-decoration:underline">Согласие на обработку персональных данных</a></div></div></footer>
+<a class="wa" href="https://wa.me/79265660662" target="_blank" rel="noopener">WhatsApp</a>
+<div class="demo">Демо-версия сайта</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<script>
+"use strict";
+const WA = "79265660662";
+const $ = id => document.getElementById(id);
+const fmt = n => Math.round(n).toLocaleString("ru-RU").replace(/\s/g, " ") + " ₽";
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const openWA = t => window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(t + "\n(заявка с сайта)"), "_blank", "noopener");
+addEventListener("scroll", () => $("nav").classList.toggle("sc", scrollY > 30), { passive: true });
+
+/* ---------- эффекты ресниц (общие для 3D и записи) ---------- */
+// n — сколько ресничек видно, len — длина, cl — сила пучков, spike — длинные «лучики», corner — только внешние уголки, lift — подкрут
+const FX = {
+ classic: { t: "Классика", n: 70, len: 1, cl: 0, spike: 0, corner: 0, lift: .45 },
+ d2: { t: "2D", n: 130, len: 1.05, cl: 0, spike: 0, corner: 0, lift: .5 },
+ d3: { t: "3D–5D", n: 220, len: 1.12, cl: 0, spike: 0, corner: 0, lift: .55 },
+ wet: { t: "Мокрый", n: 150, len: 1.1, cl: 1, spike: 0, corner: 0, lift: .5 },
+ anime: { t: "Аниме", n: 130, len: 1, cl: .7, spike: 1, corner: 0, lift: .55 },
+ flirt: { t: "Уголки", n: 120, len: 1.05, cl: 0, spike: 0, corner: 1, lift: .5 },
+ lami: { t: "Ламинирование", n: 60, len: .85, cl: 0, spike: 0, corner: 0, lift: 1 }
+};
+const HERO_FX = ["classic", "d2", "wet", "anime", "flirt"];
+let setEye = () => {};
+let curFx = "d2";
+function drawFx() { $("fx").innerHTML = HERO_FX.map(k => `<button class="${k === curFx ? "on" : ""}" data-k="${k}">${FX[k].t}</button>`).join(""); }
+$("fx").onclick = e => { const b = e.target.closest("button"); if (!b) return; selectFx(b.dataset.k, true); };
+
+/* ---------- конструктор ---------- */
+const CAT = [
+ { id: "l", t: "Ресницы", img: "eye3", groups: [
+  ["Наращивание или ламинирование", true, [["Классика 1D", 3000, 120, "classic"], ["1,5D", 3500, 120, "d2"], ["2D", 4000, 120, "d2"], ["3D–5D", 5000, 150, "d3"], ["Мокрый эффект", 4000, 120, "wet"], ["Аниме / американка", 4500, 150, "anime"], ["Уголки «флирт»", 2500, 60, "flirt"], ["Ламинирование FreiAVIVER", 3500, 60, "lami"], ["Ламинирование InLei (Италия)", 4000, 60, "lami"]]],
+  ["Дополнительно", false, [["Снятие старых ресниц", 500, 15], ["Окрашивание ресниц", 1500, 20]]]] },
+ { id: "b", t: "Брови", img: "eye5", groups: [
+  ["Брови", true, [["Коррекция", 1500, 30], ["Окрашивание + коррекция", 2300, 45], ["Ламинирование с окрашиванием", 3000, 60], ["Мужская коррекция", 1700, 30], ["Бережное осветление", 1000, 30]]],
+  ["Уход", false, [["«Ботокс для бровей»", 500, 10], ["«Счастье для бровей»", 500, 10]]]] },
+ { id: "n", t: "Маникюр и педикюр", img: "vanity", groups: [
+  ["Руки", true, [["Комбинированный маникюр", 1500, 60], ["Снятие + маникюр + покрытие", 3500, 120]]],
+  ["Ноги", true, [["Комбинированный педикюр", 3000, 90], ["Педикюр + гель-лак", 3700, 120], ["Педикюр пальцев", 2000, 60]]]] }
+];
+const MASTERS = ["Любой мастер", "Алёна", "Светлана", "Влада", "Яна"];
+let master = 0;
+const pick = {};
+let cur = 0;
+const key = (c, g) => CAT[c].id + ":" + g;
+function drawTabs() { $("tabs").innerHTML = CAT.map((c, i) => { const has = c.groups.some((g, gi) => (pick[key(i, gi)] || new Set()).size); return `<button class="${i === cur ? "on" : ""}${has ? " has" : ""}" data-i="${i}">${c.t}<i></i></button>`; }).join(""); }
+function drawPanel() {
+ const c = CAT[cur];
+ $("panel").innerHTML = `<img src="img/${c.img}.jpg" alt="${c.t} — работа студии"><div class="opts">${c.groups.map((g, gi) => `<h4>${g[0]}${g[1] ? "" : " · можно несколько"}</h4>${g[2].map((o, oi) => `<button class="opt${(pick[key(cur, gi)] || new Set()).has(oi) ? " on" : ""}" data-g="${gi}" data-o="${oi}">${o[0]}<small>${!g[1] ? "+" : ""}${fmt(o[1])}</small></button>`).join("")}`).join("")}</div>`;
+}
+function drawWho() { $("who").innerHTML = `<span>Мастер</span>` + MASTERS.map((m, i) => `<button class="opt${i === master ? " on" : ""}" data-w="${i}">${m}</button>`).join(""); }
+$("who").onclick = e => { const b = e.target.closest("[data-w]"); if (!b) return; master = +b.dataset.w; drawWho(); };
+$("tabs").onclick = e => { const b = e.target.closest("button"); if (!b) return; cur = +b.dataset.i; drawTabs(); drawPanel(); };
+$("panel").onclick = e => {
+ const b = e.target.closest(".opt"); if (!b) return;
+ const gi = +b.dataset.g, oi = +b.dataset.o, single = CAT[cur].groups[gi][1], k = key(cur, gi);
+ const s = pick[k] || (pick[k] = new Set());
+ if (s.has(oi)) s.delete(oi); else { if (single) s.clear(); s.add(oi); }
+ const o = CAT[cur].groups[gi][2][oi];
+ if (o[3] && s.has(oi)) { curFx = o[3]; drawFx(); setEye(o[3]); }
+ drawTabs(); drawPanel(); calc();
+};
+// выбор эффекта наверху = выбор услуги в записи
+function selectFx(k, fromHero) {
+ curFx = k; drawFx(); setEye(k);
+ if (fromHero) { const list = CAT[0].groups[0][2], i = list.findIndex(o => o[3] === k && !(k === "d2" && o[0] === "1,5D")); pick["l:0"] = new Set([i]); cur = 0; drawTabs(); drawPanel(); calc(); }
+}
+function chosen() { const out = []; CAT.forEach((c, ci) => c.groups.forEach((g, gi) => (pick[key(ci, gi)] || new Set()).forEach(oi => out.push(g[2][oi])))); return out; }
+const hm = m => { const h = Math.floor(m / 60), r = m % 60; return (h ? h + " ч" : "") + (r ? (h ? " " : "") + r + " мин" : ""); };
+let lastT = 0;
+function calc() {
+ const out = chosen(), sum = out.reduce((s, o) => s + o[1], 0), mins = out.reduce((s, o) => s + o[2], 0);
+ $("sl").innerHTML = out.length ? out.map(o => `<li><span>${o[0]}</span><b>${fmt(o[1])}</b></li>`).join("") : `<li class="empty">Выберите услуги слева</li>`;
+ $("dur").textContent = out.length ? "Примерно " + hm(mins) + " в студии" : "";
+ const el = $("tot");
+ if (window.__tw) window.__tw.kill();
+ if (typeof gsap !== "undefined" && !reduce) window.__tw = gsap.to({ v: lastT }, { v: sum, duration: .5, ease: "power2.out", onUpdate() { el.textContent = fmt(this.targets()[0].v); }, onComplete() { el.textContent = fmt(sum); } }); else el.textContent = fmt(sum);
+ lastT = sum;
+}
+$("send").onclick = () => {
+ const out = chosen(); if (!out.length) { $("tabs").scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+ const sum = out.reduce((s, o) => s + o[1], 0);
+ openWA(`Здравствуйте! Хочу записаться:\n${out.map(o => "• " + o[0]).join("\n")}\n${master ? "Мастер: " + MASTERS[master] + "\n" : ""}По сайту: ${fmt(sum)}.\nПодскажите свободное время?`);
+};
+document.querySelectorAll("[data-m]").forEach(b => b.onclick = () => { master = MASTERS.indexOf(b.dataset.m); drawWho(); $("build").scrollIntoView({ behavior: "smooth" }); });
+$("browb").onclick = () => { cur = 1; if (!(pick["b:0"] || new Set()).size) pick["b:0"] = new Set([2]); drawTabs(); drawPanel(); calc(); $("build").scrollIntoView({ behavior: "smooth" }); };
+pick["l:0"] = new Set([2]);
+drawFx(); drawTabs(); drawPanel(); drawWho(); calc();
+
+/* ---------- галерея ---------- */
+$("gal").innerHTML = ["eye1", "eye3", "eye2", "mirror", "eye5"].map(f => `<img src="img/${f}.jpg" alt="Работа студии ресниц и бровей" loading="lazy">`).join("");
+
+/* ---------- прайс ---------- */
+const PRICE = [
+ ["Ресницы", [["Наращивание классическое 1D", "3 000"], ["Наращивание 1,5D", "3 500", "от 2 ч"], ["Наращивание 2D", "4 000", "от 2 ч"], ["Наращивание 3D–5D", "5 000", "от 2 ч 30 мин"], ["«Мокрый эффект»", "4 000", "от 2 ч"], ["Аниме / американка", "4 500"], ["Уголки (флирт)", "2 500"], ["Ламинирование FreiAVIVER (Россия)", "3 500"], ["Ламинирование InLei (Италия)", "4 000"], ["Окрашивание ресниц (любой краситель)", "1 500"], ["Снятие ресниц", "500", "от 15 мин"]]],
+ ["Брови", [["Коррекция бровей", "1 500"], ["Окрашивание (любой краситель)", "1 300"], ["Окрашивание + коррекция", "2 300"], ["Ламинирование (с окрашиванием и коррекцией)", "3 000"], ["Мужская коррекция", "1 700"], ["Бережное осветление", "1 000"], ["Уход «Ботокс для бровей»", "500"], ["Уход «Счастье для бровей»", "500"]]],
+ ["Маникюр и педикюр", [["Комбинированный маникюр", "1 500"], ["Снятие + маникюр + покрытие (ремонт 1–4 ногтей и лёгкий дизайн входят)", "3 500"], ["Снятие без покрытия", "500"], ["Снятие нарощенных ногтей", "800"], ["Комбинированный педикюр", "3 000"], ["Педикюр + покрытие гель-лаком", "3 700"], ["Педикюр (пальцы)", "2 000"], ["Педикюр стопы", "1 500"]]],
+ ["Макияж", [["Макияж дневной", "4 000"], ["Макияж вечерний", "5 000"], ["Индивидуальный урок «Макияж для себя»", "15 000"], ["Пучковые ресницы", "500"]]],
+ ["Депиляция", [["Любая зона на лице", "500"], ["Над губой", "500"], ["3 зоны на лице", "1 500"], ["В носу", "500"]]]
+];
+let pt = 0;
+function drawPrice() {
+ $("ptabs").innerHTML = PRICE.map((c, i) => `<button class="${i === pt ? "on" : ""}" data-i="${i}">${c[0]}</button>`).join("");
+ $("plist").innerHTML = PRICE[pt][1].map(r => `<div class="prow"><span>${r[0]}${r[2] ? `<small>${r[2]}</small>` : ""}</span><b>${r[1]} ₽</b></div>`).join("");
+}
+$("ptabs").onclick = e => { const b = e.target.closest("button"); if (!b) return; pt = +b.dataset.i; drawPrice(); };
+drawPrice();
+
+/* ---------- 3D-глаз ---------- */
+(function () {
+ const fb = () => { $("fb").style.display = "block"; $("gl").style.display = "none"; };
+ if (typeof THREE === "undefined") return fb();
+ const cv = $("gl"); let rd;
+ try { rd = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true }); } catch (e) { return fb(); }
+ rd.setPixelRatio(Math.min(2, devicePixelRatio));
+ const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(30, 1, .1, 100); cam.position.set(0, -.2, 12);
+ scene.add(new THREE.AmbientLight(0xffffff, .55));
+ const keyL = new THREE.DirectionalLight(0xffffff, .9); keyL.position.set(-3, 5, 8); scene.add(keyL);
+ const rim = new THREE.DirectionalLight(0x6fd1b8, .7); rim.position.set(4, -2, 3); scene.add(rim);
+ const eye = new THREE.Group(); scene.add(eye);
+
+ // глазное яблоко с изумрудной радужкой
+ const ic = document.createElement("canvas"); ic.width = ic.height = 512; const g = ic.getContext("2d");
+ g.fillStyle = "#ebe6dd"; g.fillRect(0, 0, 512, 512);
+ const cx = 0, cy = 0; g.save(); g.translate(256, 256); g.scale(.25, 1);
+ let gr = g.createRadialGradient(cx, cy, 16, cx, cy, 120);
+ gr.addColorStop(0, "#0b2b25"); gr.addColorStop(.35, "#11745f"); gr.addColorStop(.8, "#1f9c80"); gr.addColorStop(1, "#0a3d33");
+ g.fillStyle = gr; g.beginPath(); g.arc(cx, cy, 120, 0, 7); g.fill();
+ for (let i = 0; i < 90; i++) { const a = i / 90 * Math.PI * 2; g.strokeStyle = `rgba(160,230,205,${.1 + Math.random() * .2})`; g.lineWidth = 3; g.beginPath(); g.moveTo(cx + Math.cos(a) * 46, cy + Math.sin(a) * 46); g.lineTo(cx + Math.cos(a) * (95 + Math.random() * 20), cy + Math.sin(a) * (95 + Math.random() * 20)); g.stroke(); }
+ g.fillStyle = "#050807"; g.beginPath(); g.arc(cx, cy, 44, 0, 7); g.fill(); g.restore();
+ const itex = new THREE.CanvasTexture(ic);
+ const ball = new THREE.Mesh(new THREE.SphereGeometry(1.7, 64, 48), new THREE.MeshStandardMaterial({ map: itex, roughness: .18, metalness: 0 }));
+ // радужка смотрит на камеру: центр текстуры (u=.5, v=.5) поворачиваем к +Z
+ ball.rotation.y = -Math.PI / 2;
+ const ballG = new THREE.Group(); ballG.add(ball); ballG.scale.set(1.25, .62, 1); eye.add(ballG);
+ const surf = (x, y, o) => Math.sqrt(Math.max(0, 1 - (x / 2.125) ** 2 - (y / 1.054) ** 2)) * 1.7 + o;
+ // блик
+ const glint = new THREE.Mesh(new THREE.SphereGeometry(.12, 16, 12), new THREE.MeshBasicMaterial({ color: 0xffffff }));
+ glint.position.set(-.28, .26, 1.64); eye.add(glint);
+
+ // веко — тёмная дуга
+ const A = 2.2, B = 1.0;
+ const lidPts = []; for (let i = 0; i <= 60; i++) { const a = Math.PI * (.04 + .92 * i / 60); { const x = Math.cos(a) * A, y = Math.sin(a) * B; lidPts.push(new THREE.Vector3(x, y, surf(x, y, .12))); } }
+ const lidCurve = new THREE.CatmullRomCurve3(lidPts);
+ const lashMat = new THREE.MeshStandardMaterial({ color: 0x0e1211, roughness: .35, metalness: .1 });
+ eye.add(new THREE.Mesh(new THREE.TubeGeometry(lidCurve, 80, .06, 8, false), lashMat));
+ // нижнее веко — тонкая линия
+ const lowPts = []; for (let i = 0; i <= 40; i++) { const a = Math.PI * (1.08 + .84 * i / 40); { const x = Math.cos(a) * A * .97, y = Math.sin(a) * B * .85; lowPts.push(new THREE.Vector3(x, y, surf(x, y, .06))); } }
+ eye.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(lowPts), 50, .025, 6, false), new THREE.MeshStandardMaterial({ color: 0x3b4442, roughness: .6 })));
+
+ // одна ресничка: изогнутая трубка, сужается к кончику
+ const lc = new THREE.CatmullRomCurve3([new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, .35, .12), new THREE.Vector3(0, .7, .38), new THREE.Vector3(0, .95, .75)]);
+ const lg = new THREE.TubeGeometry(lc, 14, .022, 5, false);
+ { const p = lg.attributes.position, ring = 6; for (let v = 0; v < p.count; v++) { const i = Math.floor(v / ring), t = i / 14, c = lc.getPointAt(t); const s = 1 - .85 * t; p.setXYZ(v, c.x + (p.getX(v) - c.x) * s, c.y + (p.getY(v) - c.y) * s, c.z + (p.getZ(v) - c.z) * s); } p.needsUpdate = true; lg.computeVertexNormals(); }
+ const N = 220;
+ const mesh = new THREE.InstancedMesh(lg, lashMat, N); eye.add(mesh);
+ const L = []; // текущее и целевое состояние каждой ресницы
+ for (let i = 0; i < N; i++) {
+  const u = i / (N - 1), a = Math.PI * (.06 + .88 * u);
+  const pos = lidCurve.getPointAt(.03 + .94 * u);
+  const nrm = a - Math.PI / 2; // наклон наружу
+  L.push({ u, pos, nrm, jit: (Math.random() - .5) * .1, lj: .9 + Math.random() * .2, s: 0, ts: 0, tilt: 0, tt: 0, lift: .5, tl: .5 });
+ }
+ const dummy = new THREE.Object3D();
+ setEye = k => {
+  const f = FX[k];
+  L.forEach((l, i) => {
+   const vis = f.n >= N || i === 0 || Math.floor(i * f.n / N) !== Math.floor((i - 1) * f.n / N);
+   // длина: к внешнему (правому) уголку длиннее, у внутреннего короче
+   let len = f.len * (.55 + .55 * Math.sin(Math.PI * Math.min(1, l.u * 1.15))) * l.lj;
+   if (f.corner) len = l.u > .62 ? f.len * (.7 + (l.u - .62) * 2.2) * l.lj : (l.u > .4 ? .35 : 0);
+   if (f.spike && i % 16 === 0) len *= 1.45;
+   l.ts = vis ? Math.max(0, len) : 0;
+   // пучки: соседние ресницы наклоняются к центру своей группы
+   const gs = 9, gc = (Math.floor(i / gs) + .5) * gs;
+   l.tt = f.cl ? -(i - gc) / gs * .28 * f.cl : 0;
+   l.tl = f.lift;
+  });
+  if (!vis3d || reduce) L.forEach(l => { l.s = l.ts; l.tilt = l.tt; l.lift = l.tl; });
+ };
+ let mx = 0, my = 0, t0 = performance.now();
+ addEventListener("pointermove", e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; }, { passive: true });
+ function size() { const r = cv.getBoundingClientRect(); rd.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
+ addEventListener("resize", size); size();
+ let vis3d = true; new IntersectionObserver(es => vis3d = es[0].isIntersecting).observe(cv);
+ setEye(curFx);
+ (function loop() {
+  requestAnimationFrame(loop); if (!vis3d) return;
+  const t = (performance.now() - t0) / 1000;
+  L.forEach((l, i) => {
+   l.s += (l.ts - l.s) * .09; l.tilt += (l.tt - l.tilt) * .09; l.lift += (l.tl - l.lift) * .07;
+   dummy.position.copy(l.pos);
+   dummy.rotation.set(-(l.lift - .5) * .9 + (reduce ? 0 : Math.sin(t * 1.6 + l.u * 6) * .03), 0, l.nrm + l.jit + l.tilt);
+   dummy.scale.setScalar(Math.max(.0001, l.s * .62));
+   dummy.updateMatrix(); mesh.setMatrixAt(i, dummy.matrix);
+  });
+  mesh.instanceMatrix.needsUpdate = true;
+  // взгляд следует за курсором
+  ball.rotation.y += ((-Math.PI / 2 + mx * .5) - ball.rotation.y) * .08;
+  ball.rotation.x += ((my * .35) - ball.rotation.x) * .08;
+  eye.rotation.y += ((mx * .3) - eye.rotation.y) * .05;
+  eye.rotation.x += ((my * .2 + .05) - eye.rotation.x) * .05;
+  eye.position.y = reduce ? 0 : Math.sin(t * .8) * .06;
+  rd.render(scene, cam);
+ })();
+})();
+
+/* ---------- появление ---------- */
+const show = () => document.querySelectorAll(".reveal").forEach(el => { el.style.opacity = 1; el.style.transform = "none"; });
+if (typeof gsap !== "undefined" && !reduce) {
+ gsap.from(".hero .cap, .hero h1, .hero .sub, .hero .cta, .facts > div", { y: 30, opacity: 0, duration: .8, stagger: .08, ease: "power3.out" });
+ gsap.from(".stage", { scale: .88, opacity: 0, duration: 1.3, ease: "expo.out" });
+ if (typeof ScrollTrigger !== "undefined") { gsap.registerPlugin(ScrollTrigger); document.querySelectorAll(".reveal").forEach(el => gsap.to(el, { opacity: 1, y: 0, duration: .9, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 88%" } })); }
+ else show();
+} else show();
+</script>
+<div id="pdCookie" data-pd hidden style="position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:420px;margin:0 auto 0 0;background:#1d1c1a;color:#f2f1ed;border-radius:12px;padding:14px 16px;font:13px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.25)">
+На сайте встроены Яндекс Карты — они могут сохранять cookie. Подробнее в <a href="privacy.html" style="color:inherit">политике</a>.
+<button type="button" id="pdCookieOk" style="display:block;margin-top:10px;background:#f2f1ed;color:#1d1c1a;border:0;border-radius:8px;padding:8px 16px;font:600 13px system-ui,sans-serif;cursor:pointer">Понятно</button></div>
+<script data-pd>(function(){var b=document.getElementById('pdCookie'),k='pd-cookie-ok',ok=false;try{ok=localStorage.getItem(k)==='1'}catch(e){}if(!ok)b.hidden=false;document.getElementById('pdCookieOk').onclick=function(){b.hidden=true;try{localStorage.setItem(k,'1')}catch(e){}}})();</script>
+</body>
+</html>
