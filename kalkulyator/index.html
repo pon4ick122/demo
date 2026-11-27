@@ -4,125 +4,228 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Калькулятор натяжного потолка — «Потолок Про» (демо)</title>
-<meta name="description" content="Посчитайте стоимость натяжного потолка за 30 секунд: площадь, полотно, светильники. Точная цена и бесплатный замер.">
-<link rel="stylesheet" href="../koleso/fonts/fonts.css">
+<meta name="description" content="Посчитайте натяжной потолок: размеры комнаты, полотно, светильники. Смета сразу, замер бесплатно.">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
-:root{--bg:#0e1220;--ink:#f2f4fb;--muted:#a9b0c8;--a:#5b8cff;--a2:#9fd0ff;--ok:#41d39a;--line:#ffffff1c;--card:#ffffff08}
-*{box-sizing:border-box}[hidden]{display:none!important}
-html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif}
-body{background:radial-gradient(100% 60% at 90% 0%,#22306a 0,transparent 60%),radial-gradient(80% 50% at 0% 60%,#10304a 0,transparent 60%),var(--bg);min-height:100svh}
-.demo{background:#ffd6a5;color:#2a1a0c;text-align:center;font-size:12px;padding:7px 10px}
-.wrap{max-width:640px;margin:0 auto;padding:22px 20px 40px}
-.logo{font-family:"Dela Gothic One";font-size:22px}.logo span{color:var(--a)}
-h1{font-family:"Dela Gothic One";font-weight:400;font-size:clamp(30px,7vw,48px);line-height:1.02;margin:22px 0 10px}
-h1 span{color:var(--a2)}
-.lead{color:var(--muted);line-height:1.5;margin:0 0 22px}
-.room{height:150px;border-radius:22px;border:1px solid var(--line);margin:0 0 20px;position:relative;overflow:hidden;background:linear-gradient(#ffffff06,#0000)}
-.ceil{position:absolute;left:8%;right:8%;top:18px;height:46px;border-radius:12px;transition:background .4s,box-shadow .4s}
-.lamp{position:absolute;top:34px;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 18px 6px #fff8;transition:opacity .3s}
-.floor{position:absolute;left:0;right:0;bottom:0;height:40px;background:linear-gradient(#0000,#ffffff0c)}
-.room small{position:absolute;right:14px;bottom:10px;color:var(--muted);font-size:12px}
-.f{margin:0 0 18px}.f>label,.f>.l{display:block;font-weight:600;margin:0 0 8px}
-.row{display:flex;align-items:center;gap:12px}
-input[type=range]{flex:1;accent-color:var(--a);height:28px}
-.val{min-width:84px;text-align:right;font:700 18px Onest,sans-serif}
-.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.seg button,.chk label{appearance:none;cursor:pointer;font:500 15px Onest,sans-serif;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 8px;transition:.15s;text-align:center}
-.seg button.on{border-color:var(--a);background:#5b8cff22}
-.seg button small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
-.chk{display:grid;gap:8px}
-.chk label{display:flex;align-items:center;gap:10px;text-align:left;padding:12px 14px}
-.chk input{width:20px;height:20px;accent-color:var(--a)}
-.chk label span{flex:1}.chk label em{font-style:normal;color:var(--muted);font-size:14px}
-.num{display:flex;align-items:center;gap:6px}
-.num button{appearance:none;width:38px;height:38px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:20px;cursor:pointer}
-.num b{min-width:28px;text-align:center}
-.total{position:sticky;bottom:12px;margin-top:22px;border-radius:22px;padding:18px;background:#141b33ee;border:1px solid #5b8cff55;backdrop-filter:blur(10px);box-shadow:0 20px 50px #0008}
-.total .t{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
-.total .sum{font-family:"Dela Gothic One";font-size:clamp(28px,7vw,40px)}
-.total .old{color:var(--muted);text-decoration:line-through;font-size:15px}
-.total p{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.4}
-.btn{appearance:none;border:0;cursor:pointer;display:block;width:100%;font:700 17px Onest,sans-serif;color:#081027;background:linear-gradient(180deg,var(--a2),var(--a));padding:16px;border-radius:16px;margin:12px 0 0;text-decoration:none;text-align:center}
-.biz{margin-top:40px;border-top:1px solid var(--line);padding-top:24px}
-.biz h2{font-family:"Dela Gothic One";font-weight:400;font-size:24px;margin:0 0 10px}
-.biz li{color:var(--muted);line-height:1.5;margin:0 0 8px}.biz b{color:var(--ink)}
-footer{color:#7f88a6;font-size:12px;margin-top:22px;line-height:1.5}footer a{color:inherit}
-@media (max-width:520px){.total{padding:12px 14px}.total p{display:none}.total .btn{padding:12px;font-size:16px;margin-top:8px}.room{height:110px}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+:root{--paper:#fff;--ink:#1d2125;--muted:#646c74;--rule:#dadee2;--soft:#f2f4f6;--acc:#2546b8;--acc-soft:#e9eefb}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.5 "IBM Plex Sans",system-ui,sans-serif;font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.demo{background:var(--soft);color:var(--muted);font-size:13px;padding:8px 20px;text-align:center}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.brand{font-weight:600;font-size:18px}
+.tel{color:var(--ink);text-decoration:none;font-weight:500}
+h1{font-weight:600;font-size:clamp(26px,5vw,36px);line-height:1.15;letter-spacing:-.01em;margin:32px 0 6px}
+.sub{color:var(--muted);margin:0 0 28px;max-width:60ch}
+
+.grid{display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start}
+.inputs>*+*{margin-top:26px}
+.label{display:block;font-weight:500;margin:0 0 8px}
+
+/* план комнаты */
+.plan{border:1px solid var(--rule);border-radius:8px;background:var(--soft);padding:12px}
+.plan svg{display:block;width:100%;height:auto}
+.plan .cap{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:6px}
+
+.dims{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.step{display:flex;border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+.step button{appearance:none;border:0;background:var(--soft);width:44px;font-size:20px;color:var(--ink);cursor:pointer}
+.step button:active{background:var(--rule)}
+.step input{flex:1;min-width:0;border:0;text-align:center;font:500 17px "IBM Plex Sans",sans-serif;color:var(--ink);padding:10px 0;-moz-appearance:textfield}
+.step input::-webkit-outer-spin-button,.step input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.dims small{display:block;color:var(--muted);font-size:13px;margin-bottom:4px}
+
+.radio{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+.radio label{position:relative;cursor:pointer;text-align:center;padding:10px 6px;border-left:1px solid var(--rule)}
+.radio label:first-child{border-left:0}
+.radio input{position:absolute;opacity:0}
+.radio label:has(input:checked){background:var(--acc-soft);box-shadow:inset 0 -2px 0 var(--acc)}
+.radio label:has(input:focus-visible){outline:2px solid var(--acc);outline-offset:-2px}
+.radio b{display:block;font-weight:500}
+.radio span{font-size:13px;color:var(--muted)}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+
+.lampsrow{display:flex;align-items:center;gap:14px}
+.lampsrow .step{width:150px}
+.lampsrow span{color:var(--muted);font-size:14px}
+
+.extras label{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--rule);cursor:pointer}
+.extras label:last-child{border-bottom:1px solid var(--rule)}
+.extras input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--acc)}
+.extras .t{flex:1}
+.extras .p{color:var(--muted);white-space:nowrap}
+
+/* смета */
+.est{position:sticky;top:20px;border:1px solid var(--ink);border-radius:8px;padding:20px}
+.est h2{font-size:17px;font-weight:600;margin:0 0 12px}
+.est table{width:100%;border-collapse:collapse;font-size:14px}
+.est td{padding:7px 0;border-bottom:1px dashed var(--rule);vertical-align:top}
+.est td:last-child{text-align:right;white-space:nowrap;padding-left:12px}
+.est td small{display:block;color:var(--muted)}
+.est .sum td{border-bottom:0;padding-top:12px;font-size:15px}
+.est .disc td{border-bottom:0;color:var(--acc);padding-top:0}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);margin-top:6px;padding-top:12px}
+.total b{font-size:28px;font-weight:600;letter-spacing:-.01em}
+.btn{display:block;margin-top:16px;padding:14px;border-radius:6px;background:var(--acc);color:#fff;text-align:center;text-decoration:none;font-weight:600}
+.btn:hover{background:#1d3a9c}
+.fine{font-size:13px;color:var(--muted);margin:10px 0 0}
+
+.bar{display:none}
+.owner{margin:56px 0 0;padding:28px 0;border-top:1px solid var(--rule);color:var(--muted);max-width:68ch}
+.owner h2{color:var(--ink);font-size:18px;font-weight:600;margin:0 0 10px}
+.owner b{color:var(--ink);font-weight:500}
+footer{padding:20px 0 40px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted)}
+footer a{color:inherit}
+
+@media (max-width:820px){
+  .grid{grid-template-columns:1fr;gap:28px}
+  .est{position:static}
+  .bar{display:flex;position:sticky;bottom:0;z-index:5;align-items:center;gap:12px;justify-content:space-between;background:var(--paper);border-top:1px solid var(--rule);padding:10px 20px calc(10px + env(safe-area-inset-bottom));margin:0 -20px}
+  .bar b{font-size:20px;font-weight:600}
+  .bar small{display:block;color:var(--muted);font-size:12px}
+  .bar a{padding:12px 16px;border-radius:6px;background:var(--acc);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
+}
 </style>
 </head>
 <body>
-<div class="demo">Демо: калькулятор стоимости для сайта или ссылки в Авито/ВК. Расчёт уходит заказчику в WhatsApp.</div>
+<div class="demo">Демо-калькулятор для компании по натяжным потолкам. Расчёт клиент отправляет сам в WhatsApp, страница данных не собирает.</div>
 <div class="wrap">
-  <div class="logo">Потолок<span>Про</span></div>
-  <h1>Сколько стоит <span>ваш потолок?</span></h1>
-  <p class="lead">Двигайте ползунки — цена пересчитывается сразу. Замер бесплатный, цена после замера не растёт больше чем на 5%.</p>
+  <header><span class="brand">Потолок Про</span><a class="tel" href="tel:+79990000000">+7 999 000-00-00</a></header>
 
-  <div class="room" aria-hidden="true"><div class="ceil" id="ceil"></div><div id="lamps"></div><div class="floor"></div><small id="rs">18 м²</small></div>
+  <h1>Расчёт натяжного потолка</h1>
+  <p class="sub">Укажите размеры комнаты и что нужно установить. Смета пересчитывается сразу. Замер бесплатный, после него цена меняется не больше чем на 5%.</p>
 
-  <div class="f"><label for="area">Площадь комнаты</label>
-    <div class="row"><input id="area" type="range" min="5" max="80" value="18" step="1"><span class="val" id="areaV">18 м²</span></div></div>
+  <div class="grid">
+    <div class="inputs">
+      <div class="plan">
+        <svg id="svg" viewBox="0 0 400 260" role="img" aria-label="План потолка"></svg>
+        <div class="cap"><span id="capA"></span><span id="capP"></span></div>
+      </div>
 
-  <div class="f"><div class="l">Полотно</div>
-    <div class="seg" id="mat">
-      <button data-v="mat" class="on">Матовое<small>390 ₽/м²</small></button>
-      <button data-v="sat">Сатин<small>450 ₽/м²</small></button>
-      <button data-v="gl">Глянец<small>520 ₽/м²</small></button>
-    </div></div>
+      <div>
+        <span class="label">Размеры комнаты, м</span>
+        <div class="dims">
+          <div><small>Длина</small><div class="step"><button type="button" data-t="L" data-d="-0.1" aria-label="Уменьшить длину">−</button><input id="L" type="number" inputmode="decimal" step="0.1" min="1" max="15" value="5.2" aria-label="Длина, м"><button type="button" data-t="L" data-d="0.1" aria-label="Увеличить длину">+</button></div></div>
+          <div><small>Ширина</small><div class="step"><button type="button" data-t="W" data-d="-0.1" aria-label="Уменьшить ширину">−</button><input id="W" type="number" inputmode="decimal" step="0.1" min="1" max="15" value="3.6" aria-label="Ширина, м"><button type="button" data-t="W" data-d="0.1" aria-label="Увеличить ширину">+</button></div></div>
+        </div>
+      </div>
 
-  <div class="f"><div class="l">Светильники (точечные)</div>
-    <div class="num"><button id="lm" aria-label="Меньше">−</button><b id="lc">4</b><button id="lp" aria-label="Больше">+</button><span style="color:var(--muted);font-size:14px;margin-left:8px">по 450 ₽ с установкой</span></div></div>
+      <div>
+        <span class="label">Полотно</span>
+        <div class="radio">
+          <label><input type="radio" name="m" value="mat" checked><b>Матовое</b><span>390 ₽/м²</span></label>
+          <label><input type="radio" name="m" value="sat"><b>Сатин</b><span>450 ₽/м²</span></label>
+          <label><input type="radio" name="m" value="gl"><b>Глянец</b><span>520 ₽/м²</span></label>
+        </div>
+        <p class="hint" id="mhint"></p>
+      </div>
 
-  <div class="f"><div class="l">Дополнительно</div>
-    <div class="chk">
-      <label><input type="checkbox" data-p="2900"><span>Люстра — установка и закладная</span><em>2 900 ₽</em></label>
-      <label><input type="checkbox" data-p="1100" data-m="1"><span>Парящий профиль с подсветкой</span><em>1 100 ₽/м</em></label>
-      <label><input type="checkbox" data-p="3500"><span>Ниша под шторы</span><em>3 500 ₽</em></label>
-      <label><input type="checkbox" data-p="0" id="pipe"><span>Обход труб</span><em>бесплатно</em></label>
-    </div></div>
+      <div>
+        <span class="label">Точечные светильники</span>
+        <div class="lampsrow"><div class="step"><button type="button" data-t="N" data-d="-1" aria-label="Меньше светильников">−</button><input id="N" type="number" inputmode="numeric" min="0" max="40" value="6" aria-label="Количество светильников"><button type="button" data-t="N" data-d="1" aria-label="Больше светильников">+</button></div><span>450 ₽ за штуку с установкой</span></div>
+      </div>
 
-  <div class="total">
-    <div class="t"><span class="sum" id="sum">0 ₽</span><span class="old" id="old"></span></div>
-    <p id="br">Монтаж включён. Скидка 10% при заказе до 31 декабря.</p>
-    <a class="btn" id="go" target="_blank" rel="noopener" href="#">Бесплатный замер</a>
+      <div class="extras">
+        <span class="label">Дополнительно</span>
+        <label><input type="checkbox" id="xLus"><span class="t">Люстра: закладная и подключение</span><span class="p">2 900 ₽</span></label>
+        <label><input type="checkbox" id="xFloat"><span class="t">Парящий профиль с подсветкой по периметру</span><span class="p">1 100 ₽/м</span></label>
+        <label><input type="checkbox" id="xNiche"><span class="t">Ниша под шторы вдоль длинной стены</span><span class="p">750 ₽/м</span></label>
+        <label><input type="checkbox" id="xPipe"><span class="t">Обход труб</span><span class="p">бесплатно</span></label>
+      </div>
+    </div>
+
+    <aside class="est" aria-live="polite">
+      <h2>Смета</h2>
+      <table><tbody id="rows"></tbody></table>
+      <div class="total"><span>К оплате</span><b id="tot"></b></div>
+      <a class="btn" id="go" target="_blank" rel="noopener" href="#">Записаться на бесплатный замер</a>
+      <p class="fine">Откроется WhatsApp с этой сметой. Монтаж и вывоз мусора уже в цене.</p>
+    </aside>
   </div>
 
-  <section class="biz">
+  <div class="bar"><div><small>К оплате</small><b id="tot2"></b></div><a id="go2" target="_blank" rel="noopener" href="#">На замер</a></div>
+
+  <section class="owner">
     <h2>Для владельца компании</h2>
-    <ul>
-      <li><b>Клиент сразу видит цену</b> и не уходит к тем, кто «посчитает после замера». Кто знает цену, чаще записывается на замер.</li>
-      <li><b>Заявка приходит готовой:</b> площадь, полотно, светильники, допы и сумма. Менеджеру не нужно 10 минут выспрашивать.</li>
-      <li><b>Работает где угодно:</b> отдельная ссылка для Авито, ВК, Карт или блок на вашем сайте.</li>
-      <li><b>Под любую нишу:</b> натяжные потолки, клининг, окна, ремонт, мебель на заказ, грузоперевозки, печать.</li>
-      <li><b>Цена:</b> 5 900 ₽ (ваши цены и стиль, 1–2 дня); смена прайса потом — бесплатно 1 раз в месяц.</li>
-    </ul>
+    <p><b>Клиент видит цену сразу</b> и не уходит к тем, кто «посчитает после замера». На замер приходят те, кого цена уже устроила.</p>
+    <p><b>Заявка приходит готовой сметой:</b> размеры, полотно, светильники, допы и сумма. Менеджеру не нужно выспрашивать по 10 минут.</p>
+    <p><b>Подходит и другим нишам:</b> клининг, окна, ремонт, мебель на заказ, грузоперевозки. Ставится ссылкой в Авито, ВК, на Карты или блоком на ваш сайт.</p>
+    <p><b>Стоимость:</b> 5 900 ₽ с вашими ценами и в вашем стиле, готово за 1–2 дня. Обновить прайс потом можно бесплатно раз в месяц.</p>
   </section>
-  <footer>Демо. «Потолок Про» — вымышленная компания, цены примерные. Калькулятор не собирает данные: заявку отправляет сам клиент в WhatsApp. <div class="pd-links" data-pd style="margin-top:14px;opacity:.75"><a href="privacy.html">Политика конфиденциальности</a> · <a href="soglasie.html">Согласие на обработку персональных данных</a></div></footer>
+
+  <footer>«Потолок Про» — вымышленная компания, цены примерные.
+    <div data-pd style="margin-top:8px"><a href="privacy.html">Политика конфиденциальности</a> · <a href="soglasie.html">Согласие на обработку персональных данных</a></div>
+  </footer>
 </div>
 <script>
 (function(){
-const $=s=>document.querySelector(s),WA='79990000000';
-const MAT={mat:[390,'матовое','#e9edf5','none'],sat:[450,'сатин','#f3efe6','0 6px 18px #fff3 inset'],gl:[520,'глянец','#c9d6ff','0 0 30px #9fd0ff88 inset, 0 10px 30px #5b8cff44']};
-let mat='mat',lamps=4;
-const fmt=n=>Math.round(n).toLocaleString('ru-RU').replace(/\s/g,' ')+' ₽';
-function calc(){
-  const a=+$('#area').value,per=Math.sqrt(a)*4;
-  $('#areaV').textContent=a+' м²';$('#rs').textContent=a+' м²';
-  let s=a*MAT[mat][0]+lamps*450,extra=[];
-  document.querySelectorAll('.chk input').forEach(c=>{if(c.checked){const p=+c.dataset.p;s+=c.dataset.m?p*per:p;extra.push(c.nextElementSibling.textContent)}});
-  s=Math.max(s,6500); // минимальный заказ
-  const fin=s*0.9;
-  $('#sum').textContent=fmt(fin);$('#old').textContent=fmt(s);
-  const c=$('#ceil');c.style.background=MAT[mat][2];c.style.boxShadow=MAT[mat][3];
-  $('#lamps').innerHTML=Array.from({length:lamps},(_,i)=>`<span class="lamp" style="left:calc(10% + ${(i+0.5)*(80/Math.max(lamps,1))}% - 5px)"></span>`).join('');
-  $('#lc').textContent=lamps;
-  const msg=`Здравствуйте! Посчитал на сайте: ${a} м², полотно ${MAT[mat][1]}, светильников ${lamps}${extra.length?', '+extra.join(', ').toLowerCase():''}. Вышло ${fmt(fin)} со скидкой. Хочу бесплатный замер.`;
-  $('#go').href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+const WA='79990000000',MIN=6500,DISC=.10;
+const MAT={mat:{n:'матовое',p:390,h:'Самое популярное: выглядит как обычный побелённый потолок.',fill:'#ffffff'},
+           sat:{n:'сатин',p:450,h:'Мягкий перламутровый отлив, хорошо смотрится в спальне.',fill:'#f7f5f0'},
+           gl:{n:'глянец',p:520,h:'Отражает свет, визуально делает комнату выше.',fill:'#eef2fb'}};
+const $=id=>document.getElementById(id),nf=n=>Math.round(n).toLocaleString('ru-RU'),rub=n=>nf(n)+' ₽';
+const num=(el,min,max,dec)=>{let v=parseFloat(String(el.value).replace(',','.'));if(isNaN(v))v=min;v=Math.min(max,Math.max(min,v));return dec?Math.round(v*10)/10:Math.round(v)};
+const fmt1=v=>v.toLocaleString('ru-RU',{minimumFractionDigits:1,maximumFractionDigits:1});
+
+function draw(L,W,N,m,lus,flo,niche){
+  const pad=34,maxW=400-pad*2,maxH=260-pad*2,s=Math.min(maxW/L,maxH/W),w=L*s,h=W*s,x=(400-w)/2,y=(260-h)/2+4;
+  let g=`<defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#9aa3ab" stroke-width="1.4"/></pattern></defs>`;
+  g+=`<rect x="${x-6}" y="${y-6}" width="${w+12}" height="${h+12}" fill="url(#hatch)"/>`;
+  g+=`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${MAT[m].fill}"/>`;
+  if(m==='gl')for(let i=0;i<3;i++)g+=`<line x1="${x+w*(.15+i*.12)}" y1="${y+h}" x2="${x+w*(.35+i*.12)}" y2="${y}" stroke="#d6def3" stroke-width="${6-i*2}"/>`;
+  if(flo)g+=`<rect x="${x+2}" y="${y+2}" width="${w-4}" height="${h-4}" fill="none" stroke="#2546b8" stroke-width="2" stroke-dasharray="1 0"/>`;
+  if(niche)g+=`<rect x="${x}" y="${y}" width="${w}" height="10" fill="#c9ced4"/>`;
+  // светильники — равномерной сеткой
+  const lamp=(cx,cy)=>`<circle cx="${cx}" cy="${cy}" r="4.5" fill="#fff" stroke="#1d2125" stroke-width="1.5"/>`;
+  if(N>0&&lus){ // с люстрой — светильники по периметру, отступ ~0,5 м
+    const top=y+(niche?10:0),ix=Math.min(.5*s,w/4),iy=Math.min(.5*s,(y+h-top)/4);
+    const rx=x+ix,ry=top+iy,rw=w-2*ix,rh=(y+h-top)-2*iy;
+    let a=Math.max(1,Math.round(N*rw/(2*(rw+rh)))),b=Math.floor((N-2*a)/2);if(b<0){b=0;a=Math.floor(N/2)}
+    const t1=N-2*b-a,sides=[[t1,(f)=>[rx+rw*f,ry]],[a,(f)=>[rx+rw*f,ry+rh]],[b,(f)=>[rx,ry+rh*f]],[b,(f)=>[rx+rw,ry+rh*f]]];
+    for(const [cnt,pos] of sides)for(let j=0;j<cnt;j++){const [cx,cy]=pos((j+1)/(cnt+1));g+=lamp(cx,cy)}
+  }else if(N>0){const ratio=L/W;let cols=Math.max(1,Math.round(Math.sqrt(N*ratio))),rows=Math.ceil(N/cols);let k=0;
+    for(let r=0;r<rows;r++){const inRow=Math.min(cols,N-k);for(let c=0;c<inRow;c++,k++){
+      const cx=x+w*(c+.5)/inRow,cy=y+(niche?10:0)+(h-(niche?10:0))*(r+.5)/rows;
+      g+=`<circle cx="${cx}" cy="${cy}" r="4.5" fill="#fff" stroke="#1d2125" stroke-width="1.5"/>`}}}
+  if(lus)g+=`<circle cx="${x+w/2}" cy="${y+h/2}" r="11" fill="none" stroke="#1d2125" stroke-width="1.5"/><circle cx="${x+w/2}" cy="${y+h/2}" r="3" fill="#1d2125"/>`;
+  // размерные линии
+  const dl=(x1,y1,x2,y2,t,tx,ty,rot)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#646c74"/><line x1="${x1}" y1="${y1-4}" x2="${x1}" y2="${y1+4}" stroke="#646c74" ${rot?`transform="rotate(90 ${x1} ${y1})"`:''}/><line x1="${x2}" y1="${y2-4}" x2="${x2}" y2="${y2+4}" stroke="#646c74" ${rot?`transform="rotate(90 ${x2} ${y2})"`:''}/><text x="${tx}" y="${ty}" font-size="12" fill="#1d2125" text-anchor="middle" font-family="IBM Plex Sans" ${rot?`transform="rotate(-90 ${tx} ${ty})"`:''} paint-order="stroke" stroke="#f2f4f6" stroke-width="5">${t}</text>`;
+  g+=dl(x,y-18,x+w,y-18,fmt1(L)+' м',x+w/2,y-14);
+  g+=dl(x-18,y,x-18,y+h,fmt1(W)+' м',x-14,y+h/2,true);
+  $('svg').innerHTML=g;
 }
-$('#area').oninput=calc;
-$('#mat').querySelectorAll('button').forEach(b=>b.onclick=()=>{$('#mat .on').classList.remove('on');b.classList.add('on');mat=b.dataset.v;calc()});
-$('#lm').onclick=()=>{lamps=Math.max(0,lamps-1);calc()};$('#lp').onclick=()=>{lamps=Math.min(30,lamps+1);calc()};
-document.querySelectorAll('.chk input').forEach(c=>c.onchange=calc);
+
+function calc(){
+  const L=num($('L'),1,15,1),W=num($('W'),1,15,1),N=num($('N'),0,40),m=document.querySelector('input[name=m]:checked').value;
+  const lus=$('xLus').checked,flo=$('xFloat').checked,niche=$('xNiche').checked,pipe=$('xPipe').checked;
+  const A=Math.round(L*W*10)/10,P=Math.round((L+W)*2*10)/10;
+  const rows=[[`Полотно ${MAT[m].n}`,`${fmt1(A)} м² × ${MAT[m].p} ₽`,A*MAT[m].p]];
+  if(N)rows.push(['Светильники',`${N} шт × 450 ₽`,N*450]);
+  if(lus)rows.push(['Люстра','закладная, подключение',2900]);
+  if(flo)rows.push(['Парящий профиль',`${fmt1(P)} м × 1 100 ₽`,P*1100]);
+  if(niche)rows.push(['Ниша под шторы',`${fmt1(L)} м × 750 ₽`,L*750]);
+  if(pipe)rows.push(['Обход труб','',0]);
+  let sum=rows.reduce((s,r)=>s+r[2],0),minNote='';
+  if(sum<MIN){minNote=`Минимальный заказ ${rub(MIN)}`;sum=MIN}
+  const disc=Math.round(sum*DISC),fin=sum-disc;
+  $('rows').innerHTML=rows.map(r=>`<tr><td>${r[0]}${r[1]?`<small>${r[1]}</small>`:''}</td><td>${r[2]?rub(r[2]):'0 ₽'}</td></tr>`).join('')+
+    `<tr class="sum"><td>Итого${minNote?`<small>${minNote}</small>`:''}</td><td>${rub(sum)}</td></tr><tr class="disc"><td>Скидка 10% до 31 декабря</td><td>−${rub(disc)}</td></tr>`;
+  $('tot').textContent=$('tot2').textContent=rub(fin);
+  $('capA').textContent=`Площадь ${fmt1(A)} м²`;$('capP').textContent=`Периметр ${fmt1(P)} м`;
+  $('mhint').textContent=MAT[m].h;
+  draw(L,W,N,m,lus,flo,niche);
+  const msg=['Здравствуйте! Посчитал потолок на сайте:',`Комната ${fmt1(L)} × ${fmt1(W)} м (${fmt1(A)} м²), полотно ${MAT[m].n}`,
+    `Светильников: ${N}`].concat(rows.slice(1).filter(r=>r[0]!=='Светильники').map(r=>r[0])).concat([`Смета: ${rub(fin)} со скидкой`,'Хочу записаться на бесплатный замер.']).join('\n');
+  $('go').href=$('go2').href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+}
+document.querySelectorAll('.step button').forEach(b=>b.addEventListener('click',()=>{const el=$(b.dataset.t),d=+b.dataset.d,dec=b.dataset.t!=='N';
+  el.value=dec?String(Math.round((num(el,1,15,1)+d)*10)/10):String(num(el,0,40)+d);
+  el.value=dec?String(num(el,1,15,1)):String(num(el,0,40));calc()}));
+document.querySelectorAll('input').forEach(i=>i.addEventListener('input',calc));
+document.querySelectorAll('.step input').forEach(i=>i.addEventListener('blur',()=>{const dec=i.id!=='N';i.value=dec?String(num(i,1,15,1)):String(num(i,0,40))}));
 calc();
 })();
 </script>
