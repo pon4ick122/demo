@@ -4,114 +4,206 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Вакансия: бариста в кофейню «Зерно» (демо)</title>
-<meta name="description" content="Ищем бариста. График 2/2, от 3 500 ₽ за смену + чаевые, обучение с нуля. Откликнуться за 1 минуту.">
-<link rel="stylesheet" href="../koleso/fonts/fonts.css">
+<meta name="description" content="Бариста в кофейню «Зерно». График 2/2, от 3 500 ₽ за смену плюс чаевые, оплачиваемое обучение. Отклик без резюме за минуту.">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
-:root{--bg:#f6efe6;--ink:#24170f;--muted:#6f5b4c;--a:#c8552b;--a2:#f2a65a;--line:#24170f1f;--card:#fffaf4}
-*{box-sizing:border-box}[hidden]{display:none!important}
-html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif}
-.demo{background:#24170f;color:#f6efe6;text-align:center;font-size:12px;padding:7px 10px}
-.wrap{max-width:640px;margin:0 auto;padding:22px 20px 40px}
-.logo{font-family:"Dela Gothic One";font-size:22px}.logo span{color:var(--a)}
-.tag{display:inline-block;background:var(--a);color:#fff;border-radius:99px;padding:5px 12px;font-size:13px;font-weight:600;margin-top:22px}
-h1{font-family:"Dela Gothic One";font-weight:400;font-size:clamp(34px,8vw,56px);line-height:1;margin:12px 0 10px}
-.money{font:700 22px Onest,sans-serif;margin:0 0 18px}.money small{color:var(--muted);font-weight:500;font-size:15px}
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 24px}
-.c{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px}
-.c i{font-style:normal;font-size:24px}.c b{display:block;margin:6px 0 2px}.c span{color:var(--muted);font-size:14px;line-height:1.35}
-h2{font-family:"Dela Gothic One";font-weight:400;font-size:24px;margin:28px 0 10px}
-ul.l{padding-left:20px;margin:0}ul.l li{line-height:1.5;margin:0 0 6px}
-.day{display:grid;gap:8px;margin:0}
-.day div{display:grid;grid-template-columns:64px 1fr;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px}
-.day b{color:var(--a)}
-.ap{margin-top:30px;background:#24170f;color:#f6efe6;border-radius:26px;padding:22px}
-.ap h2{margin-top:0;color:#fff}
-.ap p{color:#d8c7b8;margin:0 0 14px;line-height:1.45}
-.prog{height:4px;border-radius:4px;background:#ffffff22;margin:0 0 16px;overflow:hidden}.prog b{display:block;height:100%;width:0;background:var(--a2);transition:width .3s}
-.q h3{margin:0 0 12px;font-size:19px}
-.opts{display:grid;gap:8px}
-.opt{appearance:none;cursor:pointer;text-align:left;font:500 16px Onest,sans-serif;color:#fff;background:#ffffff10;border:1px solid #ffffff2a;border-radius:14px;padding:14px;transition:.15s}
-.opt:hover{border-color:var(--a2)}
-.btn{appearance:none;border:0;cursor:pointer;display:block;width:100%;font:700 17px Onest,sans-serif;color:#24170f;background:linear-gradient(180deg,#ffd29a,var(--a2));padding:16px;border-radius:16px;margin:12px 0 0;text-decoration:none;text-align:center}
-.btn.ghost{background:transparent;color:#fff;border:1px solid #ffffff3a}
-.sumr{background:#ffffff10;border-radius:14px;padding:12px 14px;line-height:1.55;font-size:15px}
-.biz{margin-top:40px;border-top:1px solid var(--line);padding-top:24px}
-.biz li{color:var(--muted);line-height:1.5;margin:0 0 8px}.biz b{color:var(--ink)}
-footer{color:#8b7766;font-size:12px;margin-top:22px;line-height:1.5}footer a{color:inherit}
-@media (max-width:420px){.cards{grid-template-columns:1fr}}
+:root{
+  --paper:#ffffff; --ink:#18201c; --muted:#5b665f; --rule:#dde3de;
+  --green:#1d5a45; --green-soft:#e8f0ec; --field:#eaeeea;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 "Golos Text",system-ui,sans-serif;font-variant-numeric:tabular-nums}
+a{color:var(--green)}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.demo{background:var(--green-soft);color:var(--green);font-size:13px;line-height:1.4;padding:8px 20px;text-align:center}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+
+/* шапка */
+header{display:flex;justify-content:space-between;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--rule)}
+.brand{font-weight:700;font-size:19px;letter-spacing:-.01em}
+.where{color:var(--muted);font-size:15px}
+
+/* главный блок */
+.hero{padding:44px 0 36px}
+.hero h1{font-weight:700;font-size:clamp(44px,11vw,76px);line-height:.95;letter-spacing:-.035em;margin:0}
+.pay{margin:28px 0 0;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.pay b{font-weight:700;font-size:clamp(30px,7vw,40px);letter-spacing:-.02em}
+.pay span{color:var(--muted)}
+
+/* график 2/2 */
+.shift{margin:30px 0 0}
+.shift p{margin:0 0 10px;font-weight:500}
+.days{display:grid;grid-template-columns:repeat(14,1fr);gap:4px}
+.d{aspect-ratio:1/1.25;border-radius:6px;background:var(--field);display:grid;place-items:end center;padding-bottom:4px;font-size:11px;color:var(--muted)}
+.d.w{background:var(--green);color:#cfe3d9}
+.legend{display:flex;gap:18px;margin-top:10px;font-size:14px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--field)}
+.legend i.w{background:var(--green)}
+
+/* условия */
+section{padding:36px 0;border-top:1px solid var(--rule)}
+h2{font-weight:700;font-size:24px;letter-spacing:-.015em;line-height:1.2;margin:0 0 18px}
+dl{margin:0}
+dl div{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+dl div:first-child{padding-top:0}
+dt{color:var(--muted)}
+dd{margin:0}
+ul{margin:0;padding-left:1.1em}
+li{margin:0 0 8px}
+li::marker{color:var(--green)}
+
+/* этапы — это реальная последовательность */
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:14px;margin:0 0 16px}
+ol.steps li::before{content:counter(s);width:32px;height:32px;border-radius:50%;border:1.5px solid var(--green);color:var(--green);font-weight:700;display:grid;place-items:center;font-size:15px}
+ol.steps b{display:block}
+ol.steps span{color:var(--muted)}
+
+/* отклик */
+#apply{background:var(--green-soft);border-top:0;margin:0 -20px;padding:36px 20px;border-radius:20px}
+#apply .lead{margin:-8px 0 24px;color:var(--muted)}
+fieldset{border:0;margin:0 0 22px;padding:0}
+legend{font-weight:500;padding:0;margin:0 0 10px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{position:relative;cursor:pointer}
+.opts input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.opts span{display:block;padding:10px 16px;border-radius:999px;background:var(--paper);border:1px solid var(--rule);font-size:16px;transition:background .15s,border-color .15s,color .15s}
+.opts input:checked+span{background:var(--green);border-color:var(--green);color:#fff}
+.opts input:focus-visible+span{outline:2px solid var(--green);outline-offset:2px}
+.send{display:block;width:100%;margin:6px 0 0;padding:17px 20px;border-radius:14px;border:0;background:var(--green);color:#fff;font:700 17px "Golos Text",sans-serif;text-align:center;text-decoration:none;cursor:pointer}
+.send[aria-disabled=true]{background:#b9c9c0;cursor:not-allowed}
+.note{margin:12px 0 0;font-size:14px;color:var(--muted);text-align:center}
+
+/* блок для владельца */
+.owner{color:var(--muted);font-size:15px}
+.owner h2{font-size:19px;color:var(--ink)}
+.owner b{color:var(--ink);font-weight:500}
+footer{padding:24px 0 40px;font-size:13px;color:var(--muted);border-top:1px solid var(--rule)}
+footer a{color:inherit}
+
+@media (max-width:520px){
+  dl div{grid-template-columns:1fr;gap:2px}
+  .d{font-size:0}
+  #apply{border-radius:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<div class="demo">Демо: страница вакансии с откликом за минуту. Ссылку ставят в hh, Авито, ВК, на стойку (QR) и в сторис.</div>
+<div class="demo">Демо-страница вакансии. Отклик кандидат отправляет сам в WhatsApp. Страница данных не собирает.</div>
 <div class="wrap">
-  <div class="logo">Зерно<span>.</span></div>
-  <span class="tag">Ищем в команду · Центр</span>
-  <h1>Бариста</h1>
-  <p class="money">от 3 500 ₽ за смену <small>+ чаевые ~700–1 500 ₽</small></p>
-  <div class="cards">
-    <div class="c"><i>📅</i><b>График 2/2</b><span>8:00–20:00, можно подработку на выходные</span></div>
-    <div class="c"><i>🎓</i><b>Учим с нуля</b><span>2 недели оплачиваемой стажировки</span></div>
-    <div class="c"><i>☕</i><b>Кофе и обед</b><span>Бесплатно в смену, скидка 50% для друзей</span></div>
-    <div class="c"><i>💸</i><b>Выплаты 2 раза в месяц</b><span>Официально, без задержек</span></div>
-  </div>
+  <header>
+    <span class="brand">Зерно</span>
+    <span class="where">кофейня на Советской, 12</span>
+  </header>
 
-  <h2>Как проходит смена</h2>
-  <div class="day">
-    <div><b>8:00</b><span>Открываем кофейню, калибруем помол</span></div>
-    <div><b>9–11</b><span>Утренний поток: капучино с собой и разговоры с постоянными гостями</span></div>
-    <div><b>14:00</b><span>Обед и спокойное время: учимся латте-арту</span></div>
-    <div><b>20:00</b><span>Закрытие, чистка машины, домой</span></div>
-  </div>
-
-  <h2>Нам подходит, если вы</h2>
-  <ul class="l">
-    <li>любите людей и умеете улыбаться не по скрипту;</li>
-    <li>готовы к работе на ногах и быстрому темпу по утрам;</li>
-    <li>опыт не обязателен — научим.</li>
-  </ul>
-
-  <section class="ap" id="ap">
-    <h2>Откликнуться за 1 минуту</h2>
-    <p>Без резюме. Ответьте на 4 вопроса — управляющая напишет вам в течение дня.</p>
-    <div class="prog"><b id="pb"></b></div>
-    <div id="quiz"></div>
-    <div id="done" hidden>
-      <div class="sumr" id="sumr"></div>
-      <a class="btn" id="go" target="_blank" rel="noopener" href="#">Отправить отклик в WhatsApp</a>
-      <button class="btn ghost" id="again">Изменить ответы</button>
+  <div class="hero">
+    <h1>Бариста</h1>
+    <p class="pay"><b>от 3 50 ₽ за смену</b><span>плюс чаевые, в среднем 700–1 50 ₽</span></p>
+    <div class="shift" aria-label="График два через два: две смены, два выходных">
+      <p>График 2/2, смена с 8:00 до 20:00</p>
+      <div class="days" id="days"></div>
+      <div class="legend"><span><i class="w"></i>смена</span><span><i></i>выходной</span></div>
     </div>
+  </div>
+
+  <section>
+    <h2>Условия</h2>
+    <dl>
+      <div><dt>Оформление</dt><dd>Официально по трудовому договору, выплаты 5 и 20 числа</dd></div>
+      <div><dt>Обучение</dt><dd>Две недели стажировки с оплатой 2 50 ₽ за смену, наставник рядом</dd></div>
+      <div><dt>В смену</dt><dd>Обед и напитки бесплатно</dd></div>
+      <div><dt>Рост</dt><dd>Через полгода можно стать старшим бариста, ставка 4 50 ₽ за смену</dd></div>
+    </dl>
   </section>
 
-  <section class="biz">
-    <h2>Для владельца</h2>
+  <section>
+    <h2>Чем предстоит заниматься</h2>
     <ul>
-      <li><b>Январь — пик найма.</b> Резюме на hh пишут единицы, а «откликнуться за минуту» с телефона готов почти каждый.</li>
-      <li><b>Отклик приходит отфильтрованным:</b> график, опыт и когда готов выйти. Сразу видно, кому звонить.</li>
-      <li><b>Одна ссылка везде:</b> hh, Авито, ВК, сторис, QR на стойке («Мы ищем бариста»).</li>
-      <li><b>Цена:</b> 3 900 ₽ за вакансию в вашем стиле; каждая следующая 1 500 ₽.</li>
+      <li>Готовить эспрессо-напитки, фильтр и авторское меню по техкартам</li>
+      <li>Встречать гостей и помогать с выбором</li>
+      <li>Открывать и закрывать смену: калибровка, касса, чистота станции</li>
     </ul>
   </section>
-  <footer>Демо. «Зерно» — вымышленная кофейня, условия примерные. Страница не собирает данные: отклик отправляет сам кандидат в WhatsApp. <div class="pd-links" data-pd style="margin-top:14px;opacity:.8"><a href="privacy.html">Политика конфиденциальности</a> · <a href="soglasie.html">Согласие на обработку персональных данных</a></div></footer>
+
+  <section>
+    <h2>Кого мы ищем</h2>
+    <ul>
+      <li>Опыт не обязателен, научим всему на стажировке</li>
+      <li>Готовы к быстрому темпу по утрам и работе на ногах</li>
+      <li>Вам нравится общаться с людьми</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Как проходит отбор</h2>
+    <ol class="steps">
+      <li><div><b>Отклик</b><span>Четыре вопроса ниже, около минуты</span></div></li>
+      <li><div><b>Звонок управляющей</b><span>В течение дня, 10 минут</span></div></li>
+      <li><div><b>Пробная смена</b><span>Оплачивается, даже если не сработаемся</span></div></li>
+    </ol>
+  </section>
+
+  <section id="apply">
+    <h2>Откликнуться</h2>
+    <p class="lead">Резюме не нужно. Отметьте ответы, и отклик откроется в WhatsApp. Останется дописать имя и отправить.</p>
+    <form id="f" novalidate>
+      <fieldset><legend>Какой график подходит?</legend><div class="opts" data-k="График">
+        <label><input type="radio" name="g" value="2/2 полный день"><span>2/2 полный день</span></label>
+        <label><input type="radio" name="g" value="Только выходные"><span>Только выходные</span></label>
+        <label><input type="radio" name="g" value="Обсудим"><span>Обсудим</span></label></div></fieldset>
+      <fieldset><legend>Работали бариста?</legend><div class="opts" data-k="Опыт">
+        <label><input type="radio" name="o" value="больше года"><span>Больше года</span></label>
+        <label><input type="radio" name="o" value="до года"><span>До года</span></label>
+        <label><input type="radio" name="o" value="нет, хочу научиться"><span>Нет, хочу научиться</span></label></div></fieldset>
+      <fieldset><legend>Когда готовы выйти?</legend><div class="opts" data-k="Готов выйти">
+        <label><input type="radio" name="v" value="на этой неделе"><span>На этой неделе</span></label>
+        <label><input type="radio" name="v" value="через 1–2 недели"><span>Через 1–2 недели</span></label>
+        <label><input type="radio" name="v" value="после праздников"><span>После праздников</span></label></div></fieldset>
+      <fieldset><legend>Вам есть 18 лет?</legend><div class="opts" data-k="Есть 18 лет">
+        <label><input type="radio" name="a" value="да"><span>Да</span></label>
+        <label><input type="radio" name="a" value="нет, 16–17"><span>Нет, мне 16–17</span></label></div></fieldset>
+      <a class="send" id="go" href="#" aria-disabled="true" target="_blank" rel="noopener">Ответьте ещё на 4 вопроса</a>
+      <p class="note">Ответ придёт в WhatsApp с номера кофейни</p>
+    </form>
+  </section>
+
+  <section class="owner">
+    <h2>Для владельца кофейни</h2>
+    <p><b>Январь — время найма.</b> Резюме на hh пишут немногие, а ответить на четыре вопроса с телефона готов почти каждый. Отклик приходит уже с графиком, опытом и датой выхода, поэтому сразу видно, кому звонить.</p>
+    <p><b>Одна ссылка для всех площадок:</b> hh, Авито, ВК, сторис и QR-код на стойке.</p>
+    <p><b>Стоимость:</b> 3 90 ₽ за страницу в вашем стиле, каждая следующая вакансия 1 50 ₽. Готово за день.</p>
+  </section>
+
+  <footer>«Зерно» — вымышленная кофейня, условия примерные.
+    <div data-pd style="margin-top:8px"><a href="privacy.html">Политика конфиденциальности</a> · <a href="soglasie.html">Согласие на обработку персональных данных</a></div>
+  </footer>
 </div>
 <script>
 (function(){
-const $=s=>document.querySelector(s),WA='79990000000';
-const Q=[
- {k:'График',t:'Какой график подходит?',o:['2/2 полный день','Только выходные','Пока не знаю']},
- {k:'Опыт',t:'Работали бариста?',o:['Да, больше года','Немного, до года','Нет, но хочу научиться']},
- {k:'Готов выйти',t:'Когда готовы выйти?',o:['На этой неделе','Через 1–2 недели','После праздников']},
- {k:'Есть 18 лет',t:'Вам есть 18 лет?',o:['Да','Нет, мне 16–17']}
-]; // имя кандидат пишет сам в мессенджере — страница его не спрашивает
-const A={};let step=0;
-function ask(){$('#pb').style.width=(step/Q.length*100)+'%';const q=Q[step];
-  $('#quiz').innerHTML=`<div class="q"><h3>${q.t}</h3><div class="opts">${q.o.map(o=>`<button class="opt">${o}</button>`).join('')}</div></div>`;
-  $('#quiz').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{A[q.k]=b.textContent;step++;step<Q.length?ask():done()})}
-function done(){$('#pb').style.width='100%';$('#quiz').hidden=true;$('#done').hidden=false;
-  const lines=Object.entries(A).map(([k,v])=>k+': '+v);
-  $('#sumr').innerHTML=lines.map(l=>l.replace(/^([^:]+):/,'<b>$1:</b>')).join('<br>');
-  $('#go').href='https://wa.me/'+WA+'?text='+encodeURIComponent('Здравствуйте! Откликаюсь на вакансию бариста.\n'+lines.join('\n')+'\nМеня зовут ');}
-$('#again').onclick=()=>{step=0;$('#quiz').hidden=false;$('#done').hidden=true;ask()};
-ask();
+  const WA='79990000000';
+  // полоска графика 2/2 на две недели
+  document.getElementById('days').innerHTML=Array.from({length:14},(_,i)=>
+    `<div class="d${(i%4)<2?' w':''}">${i+1}</div>`).join('');
+
+  const f=document.getElementById('f'),go=document.getElementById('go'),groups=[...f.querySelectorAll('.opts')];
+  function update(){
+    const ans=groups.map(g=>{const c=g.querySelector('input:checked');return c?g.dataset.k+': '+c.value:null});
+    const left=ans.filter(a=>!a).length;
+    if(left){
+      go.setAttribute('aria-disabled','true');go.removeAttribute('href');
+      go.textContent=left===1?'Остался 1 вопрос':left<5?`Ответьте ещё на ${left} вопроса`:`Ответьте ещё на ${left} вопросов`;
+    }else{
+      go.setAttribute('aria-disabled','false');
+      go.href='https://wa.me/'+WA+'?text='+encodeURIComponent('Здравствуйте! Откликаюсь на вакансию бариста.\n'+ans.join('\n')+'\nМеня зовут ');
+      go.textContent='Отправить отклик в WhatsApp';
+    }
+  }
+  f.addEventListener('change',update);
+  go.addEventListener('click',e=>{if(go.getAttribute('aria-disabled')==='true'){e.preventDefault();const g=groups.find(g=>!g.querySelector('input:checked'));g&&g.querySelector('input').focus()}});
+  update();
 })();
 </script>
 </body>
